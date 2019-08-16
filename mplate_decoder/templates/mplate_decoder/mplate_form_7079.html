@@ -1,0 +1,45 @@
+  {% load crispy_forms_tags %}
+
+  <form method="post" id="{{ mplate_form_7079_id }}" action="{% url 'mplate_create' %}">
+    {% csrf_token %}
+
+    <h2 class="mt-4">Volkswagen Type 2, model year 70-79</h2>
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-0">
+        {{ form.chassis_number_short|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-1 mb-0">
+        {{ form.emden|as_crispy_field }}
+      </div>
+    </div>
+
+    {{ form.m_codes_1|as_crispy_field}}
+
+    <div class="form-row">
+      <div class="form-group col-md-3 mb-10">
+        {{ form.paint_and_interior|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-8 offset-md-1 mb-0">
+        {{ form.m_codes_2|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-2 mb-0">
+        {{ form.production_date|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.production_planned|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.export_destination|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.model|as_crispy_field }}
+      </div> 
+      <div class="form-group col-md-2 mb-0">
+        {{ form.aggregate_code|as_crispy_field }}
+      </div>           
+    </div>    
+    <button id="mplate_form_7079_submit" class="btn btn-primary">Decode</button>
+  </form>

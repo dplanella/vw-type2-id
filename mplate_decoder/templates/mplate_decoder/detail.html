@@ -1,0 +1,65 @@
+{% extends "mplate_base_bootstrap.html" %}
+
+{% block content %}
+
+<div class="row mt-4">
+
+{{ plate|safe }}
+
+</div>
+
+<div class="row mt-4">
+
+<h2>Specifications</h2>
+<div class="table-responsive">
+<table class="table table-hover">
+  <tr>
+    <td><strong>{{ 'Model'|upper }}</strong></td> 
+    <td>{{ model_description|linebreaksbr }} </td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'Model year'|upper }}</strong></td> 
+    <td>{{ model_year }}</td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'Engine'|upper }}</strong></td> 
+    <td>{{ engine_description }} </td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'Transmission'|upper }}</strong></td> 
+    <td>{{ gearbox_description }} </td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'Vehicle Ident. Nr.'|upper }}</strong></td> 
+    <td>{{ chassis_number }}</td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'Production date'|upper }}</strong></td> 
+    <td>{{ production_date }} </td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'Optional extras'|upper }}</strong></td> 
+    <!-- <td>{{ mplate.m_codes_1 }} {{ mplate.m_codes_2 }}</td> -->
+    <td>
+    {% for key, value in m_codes.items %}
+        {{ key }}: {{ value }} <br>
+    {% endfor %}
+    </td>
+  <tr>
+    <td><strong>{{ 'Exterior'|upper }}</strong></td> 
+    <td>{{ exteriorcolor_description|linebreaksbr }} </td>
+  </tr>  
+  <tr>
+    <td><strong>{{ 'Interior'|upper }}</strong></td> 
+    <td>{{ interiorcolor_description }} </td>
+  </tr>  
+  <tr>
+    <td><strong>{{ 'Destination country'|upper }}</strong></td> 
+    <td>{{ export_destination }} </td>
+  </tr>
+</table>
+</div>
+
+</div>
+
+{% endblock %}

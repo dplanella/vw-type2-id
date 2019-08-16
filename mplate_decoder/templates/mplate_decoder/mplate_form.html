@@ -1,0 +1,103 @@
+{% extends "mplate_base_bootstrap.html" %}
+
+{% block content %}
+{% with mplate_form_7079_id="mplate_form_7079" mplate_form_6869_id="mplate_form_6869" %}
+
+  <div class="row mt-5">
+  <div class="col">
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="mod6869-tab" data-toggle="tab" href="#mod6869" role="tab" aria-controls="mod6869" aria-selected="true">Model 68-69</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="mod7079-tab" data-toggle="tab" href="#mod7079" role="tab" aria-controls="mod7079" aria-selected="false">Model 70-79</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="mod6869" role="tabpanel" aria-labelledby="mod6869-tab">
+      {% include "mplate_decoder/mplate_form_6869.html" with form_id=mplate_form_6869_id %}
+    </div>
+    <div class="tab-pane fade" id="mod7079" role="tabpanel" aria-labelledby="mod7079-tab">
+      {% include "mplate_decoder/mplate_form_7079.html" with form_id=mplate_form_7079_id %}
+    </div>
+  </div>
+
+  </div>
+  </div>
+{% endwith %}
+{% endblock %}
+
+{% block javascript %}
+{% with mplate_form_7079_id="mplate_form_7079" mplate_form_6869_id="mplate_form_6869" %}
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script type="text/javascript">
+  var csrftoken = Cookies.get('csrftoken');
+
+  // wait for the DOM to be loaded 
+//$(document).ready(function() {
+ 
+  //$("#{{ mplate_form_7079_id }}").submit(function(event) {
+  function submitForm(event) {
+
+    // Prevent execution of the form's
+    // default submit action
+    event.preventDefault();
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    function apply_form_field_error(form_id, fieldname, error) {
+
+      var input_selector = "#" + form_id + " #id_" + fieldname;
+      var input = $(input_selector);
+
+      // Mark the input as invalid (red frame)
+      input.addClass("is-invalid");
+
+      // Display the error message
+      $("<p/>", {
+        id: "error_1_id_" + fieldname,
+        "class": "invalid-feedback",
+        text: error
+      }).html('<strong>' + error + '</strong>').insertAfter(input);
+
+    }
+
+    function clear_form_field_errors(form) {
+      // TODO: https://docs.djangoproject.com/en/dev/ref/csrf/#setting-the-token-on-the-ajax-request
+      $(".invalid-feedback", $(form)).remove();
+      $(".is-invalid", $(form)).removeClass("is-invalid");
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: form.serialize(),
+      dataType: 'json',
+      context: this,
+      beforeSend: clear_form_field_errors(form),
+      success: function(data) {
+        window.location.href = "/mplate/" + data.chassis_number_short;
+      },
+      error: function(response) {
+        // TODO: check status code (response.status), apply error classes on 400 only
+        var form_errors = response.responseJSON;
+
+        for (field in form_errors) {
+          error = form_errors[field][0].message;
+          apply_form_field_error(this.id, field, error);
+        }
+      }
+    });
+  };
+  //});
+
+  $("#{{ mplate_form_7079_id }}").submit(submitForm);
+
+
+//});
+</script>
+{% endwith %}
+{% endblock %}

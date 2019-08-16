@@ -1,0 +1,5 @@
+.vscode
+*.sqlite3
+mplate_decoder/fixtures/*.json
+__pycache__/*
+*.pyc

@@ -1,0 +1,218 @@
+from django.forms import ModelForm, ValidationError
+import re
+from .models import (
+    Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
+)
+
+import logging
+logger = logging.getLogger('django')
+
+
+class MplateForm(ModelForm):
+
+    class Meta:
+        model = Mplate
+        fields = (
+            'chassis_number_short',
+            'm_codes_1',
+            'm_codes_2',
+            'paint_and_interior',
+            'production_date',
+            'production_planned',
+            'export_destination',
+            'model',
+            'aggregate_code',
+            'emden',
+        )
+
+    def clean_chassis_number_short(self):
+        MODEL_6869_YEAR_CHASSIS_NR_LEN = 7
+        MODEL_7079_YEAR_CHASSIS_NR_LEN = 8
+        data = self.cleaned_data['chassis_number_short']
+        decoder = MplateDecoder()
+
+        if len(data) < MODEL_6869_YEAR_CHASSIS_NR_LEN:
+            raise ValidationError(
+                "Minimum digits: "
+                "{} (mod. 68-68) or {} digits (mod. 70-79)".format(
+                    MODEL_6869_YEAR_CHASSIS_NR_LEN,
+                    MODEL_7079_YEAR_CHASSIS_NR_LEN
+                ))
+
+        # year_and_serial_from_chassis_no(str(data))
+        if not re.match("^[0-9]+$", data):
+            raise ValidationError(
+                "Only digits allowed")
+
+        try:
+            model_year = decoder.get_model_year(data)
+        except ValidationError:
+            raise ValidationError(
+                "Invalid shortened chassis number. "
+                "Check first and second digits."
+            )
+
+        logger.info(
+            "Model year validation: {} ({})".format(
+                model_year, type(model_year)))
+
+        if model_year.year not in range(1968, 1979):
+            raise ValidationError(
+                "Invalid shortened chassis number. "
+                "Check first and second digits."
+            )
+
+        return data
+
+    def clean_emden(self):
+        data = self.cleaned_data['emden']
+
+        data = data.upper()
+
+        if data and (data != 'E'):
+            raise ValidationError("Only the letter 'E' is allowed")
+
+        return data
+
+    def clean_m_codes(self, data):
+        MCODE_LEN = 3
+
+        if data:
+            data = data.upper()
+            if not re.match("^[A-Z0-9 ]+$", data):
+                raise ValidationError(
+                    "Only digits, letters and spaces allowed")
+
+            if len(data) < MCODE_LEN:
+                raise ValidationError(
+                    "Minimum M-code length: "
+                    "{} digits or letters".format(MCODE_LEN)
+                )
+        return data
+
+    def clean_m_codes_1(self):
+        data = self.clean_m_codes(self.cleaned_data['m_codes_1'])
+
+        return data
+
+    def clean_m_codes_2(self):
+        data = self.clean_m_codes(self.cleaned_data['m_codes_2'])
+
+        return data
+
+    def clean_paint_and_interior(self):
+        PAINT_AND_INTERIOR_LEN = 6
+        data = self.cleaned_data['paint_and_interior']
+
+        data = data.upper()
+
+        if not re.match("^[A-Z0-9]+$", data):
+            raise ValidationError("Only digits and letters allowed")
+
+        if len(data) < PAINT_AND_INTERIOR_LEN:
+            raise ValidationError(
+                "Minimum paint and interior code length: "
+                "{} digits or letters".format(
+                    PAINT_AND_INTERIOR_LEN)
+            )
+
+        return data
+
+    def clean_production_date(self):
+        PRODUCTION_DATE_LEN = 3
+        data = self.cleaned_data['production_date']
+
+        data = data.upper()
+        if not re.match("^[A-Z0-9]+$", data):
+            raise ValidationError("Only digits and letters allowed")
+
+        if len(data) < PRODUCTION_DATE_LEN:
+            raise ValidationError(
+                "Minimum production date code length: "
+                " {} digits or letters".format(
+                    PRODUCTION_DATE_LEN)
+            )
+
+        return data
+
+    def clean_production_planned(self):
+        data = self.cleaned_data['production_planned']
+
+        return data
+
+    def clean_export_destination(self):
+        EXPORT_DESTINATION_LEN = 2
+        data = self.cleaned_data['export_destination']
+
+        if data:
+            data = data.upper()
+            if not re.match("^[A-Z0-9]+$", data):
+                raise ValidationError("Only digits and letters allowed")
+
+        if len(data) < EXPORT_DESTINATION_LEN:
+            raise ValidationError(
+                "Minimum destination country length:"
+                " {} letters or digits".format(
+                    EXPORT_DESTINATION_LEN)
+            )
+
+        return data
+
+    def clean_model(self):
+        MODEL_LEN = 4
+        data = self.cleaned_data['model']
+
+        if len(data) < MODEL_LEN:
+            raise ValidationError(
+                "Minimum model code length: {} digits".format(
+                    MODEL_LEN)
+            )
+
+        VALID_MODELS = Type2Model.objects.values_list('model', flat=True)
+        VALID_MODELS = list(map(int, VALID_MODELS))
+
+        logger.info('Valid models: {}'.format(VALID_MODELS))
+
+        try:
+            model_int = int(data[:2])
+        except ValueError:
+            raise ValidationError("Only digits allowed in model code")
+
+        logger.info('Model code: {}'.format(model_int))
+
+        if model_int not in VALID_MODELS:
+            raise ValidationError("Invalid model code")
+
+        return data
+
+    def clean_aggregate_code(self):
+        AGGREGATE_CODE_LEN = 2
+        data = self.cleaned_data['aggregate_code']
+
+        if len(data) < AGGREGATE_CODE_LEN:
+            raise ValidationError(
+                "Minimum aggregate code length: {} digits".format(
+                    AGGREGATE_CODE_LEN)
+            )
+
+        valid_aggregates = []
+
+        try:
+            aggregate_int = int(data)
+        except ValueError:
+            raise ValidationError("Only digits allowed in aggregate code")
+
+        for engine in Engine.objects.all():
+            for gearbox in Gearbox.objects.all():
+                if gearbox.gearbox_description.startswith('Automatic'):
+                    if engine.engine_type == 'Type 4':
+                        valid_aggregates.append(
+                            (engine.engine_code * 10) + gearbox.gearbox_code)
+                else:
+                    valid_aggregates.append(
+                        (engine.engine_code * 10) + gearbox.gearbox_code)
+
+        if aggregate_int not in valid_aggregates:
+            raise ValidationError("Invalid aggregate code")
+
+        return data

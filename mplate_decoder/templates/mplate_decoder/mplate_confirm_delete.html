@@ -1,0 +1,18 @@
+{% extends "mplate_base_bootstrap.html" %}
+
+{% block content %}
+
+<div class="row mt-4">
+<div class="col">
+<h1>Delete M-plate</h1>
+
+<p>Are you sure you want to delete M-plate {{ mplate.chassis_number_short }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary">Yes, delete it</button>
+</form>
+</div>
+</div>
+
+{% endblock %}
