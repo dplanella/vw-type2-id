@@ -42,7 +42,7 @@ class MplateForm(ModelForm):
         # year_and_serial_from_chassis_no(str(data))
         if not re.match("^[0-9]+$", data):
             raise ValidationError(
-                "Only digits allowed")
+                "Only digits allowed (no spaces either)")
 
         try:
             model_year = decoder.get_model_year(data)

@@ -71,13 +71,23 @@
       $(".is-invalid", $(form)).removeClass("is-invalid");
     }
 
+    function csrfSafeMethod(method) {
+      // these HTTP methods do not require CSRF protection
+      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
     $.ajax({
       type: "POST",
       url: url,
       data: form.serialize(),
       dataType: 'json',
       context: this,
-      beforeSend: clear_form_field_errors(form),
+      beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+        clear_form_field_errors(form);
+      },
       success: function(data) {
         window.location.href = "/mplate/" + data.chassis_number_short;
       },

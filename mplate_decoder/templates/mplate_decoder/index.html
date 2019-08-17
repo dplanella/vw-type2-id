@@ -2,12 +2,15 @@
 
 {% block content %}
 
+<div class="row mt-5">
 <p class="lead">
   The M-plate is one of the identification plates found on VW busses. 
   Short for <em>Mehraustattung</em> (optional extras in German), it contains
   production codes with information about...
 </p>
+</div>
 
+<div class="row">
 <h2>Find it</h2>
 
 <p>
@@ -18,7 +21,9 @@ elit pellentesque. Nulla facilisi etiam dignissim diam quis enim
 lobortis scelerisque. Ut tellus elementum sagittis vitae et leo. 
 Etiam sit amet nisl purus in mollis nunc sed.
 </p>
+</div>
 
+<div class="row">
 <h2>Decode it</h2>
 
 <p>
@@ -33,12 +38,17 @@ Etiam sit amet nisl purus in mollis nunc sed.
 <a class="btn btn-secondary" href="/mplate/create" role="button">Decode &raquo;</a>
 
 </p>
+</div>
 
+<div class="row">
+<div class="column">
 <h2>Recent M-Plate submissions</h2>
     <ul>
         {% for mplate in object_list %}
             <li><a href="{{ mplate.get_absolute_url }}">{{ mplate.chassis_number_short }}</a> · <a class="btn btn-secondary btn-sm mt-1" href="{{ mplate.get_absolute_url }}/delete" role="button">Delete</a></li>
         {% endfor %}
     </ul>
+</div>
+</div>
 
 {% endblock %}

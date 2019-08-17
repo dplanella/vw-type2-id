@@ -50,7 +50,8 @@ class McodeCollectionAdmin(admin.ModelAdmin):
     search_fields = ('m_code', )
     list_display = ('m_code',
                     'collection',
-                    'years')
+                    'years',
+                    'remarks')
 
 
 @admin.register(InteriorColor)

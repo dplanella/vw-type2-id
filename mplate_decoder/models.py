@@ -362,7 +362,7 @@ class Mplate(Model):
 
             interiorcolor_description = '{}, {}'.format(color_name, material)
         else:
-            interiorcolor_description = 'No description available'
+            interiorcolor_description = 'No description available for special paint jobs'
 
         return interiorcolor_description
 
@@ -421,6 +421,7 @@ class Mplate(Model):
             mplate_field.text = getattr(self, field)
 
         color_chip_body = self._get_exteriorcolorchip()
+        logger.info(color_chip_body)
 
         if color_chip_body:
             # Replace gradient color
@@ -428,8 +429,7 @@ class Mplate(Model):
                 "//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
                 namespaces={'n': SVG_NAMESPACE}
             )
-            import sys
-            print(color_chip_body, file=sys.stderr)
+
             stop_color.attrib['style'] = stop_color.attrib['style'].replace(
                 MPLATE_STOP_COLOR, color_chip_body)
 
@@ -483,6 +483,9 @@ class MplateDecoder:
     def get_mcodes(self, m_codes_1=None, m_codes_2=None,
                    chassis_number_short=None):
 
+        is_special_code = False
+        mcode_prepend = 'M '
+
         if m_codes_1 or m_codes_2:
             m_codes_1 = m_codes_1
             m_codes_2 = m_codes_2
@@ -531,14 +534,16 @@ class MplateDecoder:
                         m_code=m_code, years__contains=model_year)
                 try:
                     description = m_code_query_set[0].description
+                    if m_code_query_set[0].is_special_code:
+                        mcode_prepend = 'S '
                 except IndexError:
                     description = (
                         "Error while fetching code:"
-                        " {}, year {}".format(m_code), model_year)
+                        " {}, year {}".format(m_code, model_year))
             else:
                 description = "Unknown code"
 
-            mcode_dict['M ' + m_code] = description
+            mcode_dict[mcode_prepend + m_code] = description
 
         return mcode_dict
 
@@ -649,6 +654,9 @@ class Mcode(Model):
     m_code = models.CharField(
         max_length=3)
     description = models.TextField()
+    model_type = models.CharField(max_length=30,
+                                  blank=True)
+    is_special_code = models.BooleanField(default=False)
     years = models.CharField(
         max_length=65,
         blank=True)
