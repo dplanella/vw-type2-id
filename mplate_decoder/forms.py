@@ -56,7 +56,7 @@ class MplateForm(ModelForm):
             "Model year validation: {} ({})".format(
                 model_year, type(model_year)))
 
-        if model_year.year not in range(1968, 1979):
+        if model_year.year not in range(1968, 1980):
             raise ValidationError(
                 "Invalid shortened chassis number. "
                 "Check first and second digits."
@@ -149,12 +149,12 @@ class MplateForm(ModelForm):
             if not re.match("^[A-Z0-9]+$", data):
                 raise ValidationError("Only digits and letters allowed")
 
-        if len(data) < EXPORT_DESTINATION_LEN:
-            raise ValidationError(
-                "Minimum destination country length:"
-                " {} letters or digits".format(
-                    EXPORT_DESTINATION_LEN)
-            )
+            if len(data) < EXPORT_DESTINATION_LEN:
+                raise ValidationError(
+                    "Minimum destination country length:"
+                    " {} letters or digits".format(
+                        EXPORT_DESTINATION_LEN)
+                )
 
         return data
 

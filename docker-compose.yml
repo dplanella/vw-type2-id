@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  web:
+    build: ./
+    command: python manage.py runserver 0.0.0.0:8000
+
+    volumes:
+      - ./:/usr/src/vw_type2_id/
+    ports:
+      - 8000:8000
+    environment:
+      - DJANGO_DEBUG=1
+      - DJANGO_VW_TYPE2_ID_SECRET_KEY=foo
