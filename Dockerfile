@@ -1,14 +1,15 @@
-# pull official base image
+# Pull official base image
 FROM python:3.7.4-alpine
 
-# set work directory
+# Set working directory
 WORKDIR /usr/src/vw_type2_id
 
-# set environment variables
+# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# install dependencies
+# Install build dependencies
+# using the image's package manager
 RUN apk --no-cache add --virtual build-dependencies \
                 build-base \
                 python3-dev \
@@ -16,6 +17,9 @@ RUN apk --no-cache add --virtual build-dependencies \
                 libxslt-dev \
                 jpeg-dev \
                 zlib-dev
+
+# Install app dependencies
+# using pipenv
 RUN pip install --upgrade pip
 RUN pip install pipenv
 COPY ./Pipfile /usr/src/vw_type2_id/Pipfile
