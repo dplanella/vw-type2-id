@@ -1,5 +1,27 @@
 {% extends "mplate_base_bootstrap.html" %}
 
+  {% block navbar %}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <!--<a class="navbar-brand" href="#">Fixed navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>-->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/mplate/">M-plate info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/mplate/decode/">M-plate decoder</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {% endblock %}
+
 {% block content %}
 
 <div class="row mt-5">
@@ -35,7 +57,7 @@ lobortis scelerisque. Ut tellus elementum sagittis vitae et leo.
 Etiam sit amet nisl purus in mollis nunc sed.
 </p>
 <p>
-<a class="btn btn-secondary" href="/mplate/create" role="button">Decode &raquo;</a>
+<a class="btn btn-secondary" href="{% url 'mplate_create' %}" role="button">Decode &raquo;</a>
 
 </p>
 </div>
@@ -45,7 +67,7 @@ Etiam sit amet nisl purus in mollis nunc sed.
 <h2>Recent M-Plate submissions</h2>
     <ul>
         {% for mplate in object_list %}
-            <li><a href="{{ mplate.get_absolute_url }}">{{ mplate.chassis_number_short }}</a> · <a class="btn btn-secondary btn-sm mt-1" href="{{ mplate.get_absolute_url }}/delete" role="button">Delete</a></li>
+            <li><a href="{{ mplate.get_absolute_url }}">{{ mplate.chassis_number_short }}</a></li>
         {% endfor %}
     </ul>
 </div>
