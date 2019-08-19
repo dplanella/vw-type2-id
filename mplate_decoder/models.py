@@ -51,7 +51,7 @@ class Mplate(Model):
 
     def get_absolute_url(self):
         return reverse(
-            'mplate_retrieve',
+            'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
 
     def _year_and_serial_from_chassis_no(self, chassis_number):
@@ -362,7 +362,8 @@ class Mplate(Model):
 
             interiorcolor_description = '{}, {}'.format(color_name, material)
         else:
-            interiorcolor_description = 'No description available for special paint jobs'
+            interiorcolor_description = ('No description available'
+                                         ' for special paint jobs')
 
         return interiorcolor_description
 
@@ -483,7 +484,6 @@ class MplateDecoder:
     def get_mcodes(self, m_codes_1=None, m_codes_2=None,
                    chassis_number_short=None):
 
-        is_special_code = False
         mcode_prepend = 'M '
 
         if m_codes_1 or m_codes_2:
