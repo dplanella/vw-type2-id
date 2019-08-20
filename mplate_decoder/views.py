@@ -93,4 +93,4 @@ class MplateDelete(generic.edit.DeleteView):
     model = Mplate
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
-    success_url = reverse_lazy('mplate_index')
+    success_url = reverse_lazy('mplate_decoder:mplate_index')

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mplate_decoder.apps.MplateDecoderConfig',
     'crispy_forms',
+    'svg',
 ]
 
 MIDDLEWARE = [

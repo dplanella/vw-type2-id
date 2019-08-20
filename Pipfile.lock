@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b4559b4196d8f3e4c6ee45ef3889b10d2fa33c285c8a5152c47b0136bce2c0af"
+            "sha256": "4a1569c31f7b5da926a8d5401203a6c1cdbcb4caaae2e13f23e9cb52963fb771"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -31,6 +31,21 @@
             ],
             "index": "pypi",
             "version": "==1.7.2"
+        },
+        "django-environ": {
+            "hashes": [
+                "sha256:6c9d87660142608f63ec7d5ce5564c49b603ea8ff25da595fd6098f6dc82afde",
+                "sha256:c57b3c11ec1f319d9474e3e5a79134f40174b17c7cc024bbb2fad84646b120c4"
+            ],
+            "index": "pypi",
+            "version": "==0.4.5"
+        },
+        "django-inline-svg": {
+            "hashes": [
+                "sha256:9a908eb7f2ed23317f896be6e0c355ec488b1944e6f4d2d829a74d1d4e5fb918"
+            ],
+            "index": "pypi",
+            "version": "==0.1.1"
         },
         "lxml": {
             "hashes": [

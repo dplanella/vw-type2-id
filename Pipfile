@@ -12,6 +12,8 @@ django = "*"
 django-crispy-forms = "*"
 lxml = "*"
 pillow = "*"
+django-environ = "*"
+django-inline-svg = "*"
 
 [requires]
 python_version = "3.6"

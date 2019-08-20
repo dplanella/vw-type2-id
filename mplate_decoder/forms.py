@@ -76,6 +76,7 @@ class MplateForm(ModelForm):
 
     def clean_m_codes(self, data):
         MCODE_LEN = 3
+        mcodes_list = []
 
         if data:
             data = data.upper()
@@ -83,11 +84,26 @@ class MplateForm(ModelForm):
                 raise ValidationError(
                     "Only digits, letters and spaces allowed")
 
-            if len(data) < MCODE_LEN:
+            if len(data) >= MCODE_LEN:
+                if ' ' in data:
+                    mcodes_list = data.split(' ')
+                else:
+                    mcodes_list = [data[i:i+MCODE_LEN]
+                                   for i in range(0, len(data), MCODE_LEN)]
+
+                for mcode in mcodes_list:
+                    if len(mcode) != MCODE_LEN:
+                        raise ValidationError(
+                            "Code: {}. M-code length should be "
+                            "{} digits or letters".format(mcode, MCODE_LEN)
+                        )
+                data = ' '.join(mcodes_list)
+            else:
                 raise ValidationError(
-                    "Minimum M-code length: "
-                    "{} digits or letters".format(MCODE_LEN)
-                )
+                            "Minimum M-code length: "
+                            "{} digits or letters".format(MCODE_LEN)
+                        )
+
         return data
 
     def clean_m_codes_1(self):

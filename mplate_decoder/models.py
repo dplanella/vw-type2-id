@@ -255,7 +255,10 @@ class Mplate(Model):
                 plate_code=exteriorcolor_code,
                 years__contains=model_year,
             )
-            exteriorcolor_object = exteriorcolor[0]
+            if exteriorcolor:
+                exteriorcolor_object = exteriorcolor[0]
+            else:
+                exteriorcolor_object = None
         else:
             exteriorcolor_object = exteriorcolor[0]
 

@@ -1,9 +1,15 @@
   {% load crispy_forms_tags %}
+  {% load svg %}
 
+  <div class="row mt-2">
+  <div class="col">
   <form method="post" id="{{ mplate_form_6869_id }}" action="{% url 'mplate_decoder:mplate_create' %}">
     {% csrf_token %}
 
-    <h2 class="mt-4">Volkswagen Type 2, model year 68-69</h2>
+    <h2 class="mt-4">Volkswagen Type 2 M-plate, model year 68-69</h2>
+
+    <p>Choose your bus' model year tab and fill in the fields to decode your M-plate. Scroll down to the reference info if you need help.</p>
+
     <div class="form-row">
       <div class="form-group col-md-2 mb-0">
         {{ form.production_date|as_crispy_field }}
@@ -40,3 +46,30 @@
     </div>    
     <button type="submit" class="btn btn-primary">Decode</button>
   </form>
+  </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h2 id="#reference">Reference</h2>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md mt-2">
+    {% svg 'mplate-6869-form' %}
+    </div>
+    <div class="col-md mt-2">
+     <ul>
+       <li><strong>DDD</strong>: production date. Enter without spaces.</li>
+       <li><strong>E</strong>: optional "E", indicates manufacture at the Emden plant.</li>
+       <li><strong>M01</strong>: M-codes, first row. Separated by spaces. Might be empty in some plates.</li>
+       <li><strong>AA</strong>: aggregate code</li>
+       <li><strong>M02</strong>: M-codes, second row. Separated by spaces.</li>
+       <li><strong>XXX</strong>: export destination. Two-letter code for worlwide exports. Three-digit or none for German market.</li>
+       <li><strong>TTTT</strong>: vehicle model type.</li>
+       <li><strong>PPPPII</strong>: paint and interior code.</li>
+       <li><strong>CCCCCCCC</strong>: chassis number. Enter without spaces.</li>
+      </ul>
+    </div>
+  </div>
