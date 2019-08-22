@@ -20,7 +20,7 @@ class Mplate(Model):
         max_length=19, blank=True,
         help_text='Row 1 of M codes (max 5)')
     m_codes_2 = models.CharField(
-        max_length=19,
+        max_length=19, blank=True,
         help_text="Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)")
     paint_and_interior = models.CharField(
         max_length=6,
@@ -554,6 +554,10 @@ class MplateDecoder:
 class ExportDestination(Model):
     export_code = models.CharField(max_length=3)
     export_destination = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    region = models.CharField(max_length=50, blank=True)
+    port = models.CharField(max_length=50, blank=True)
+    notes = models.CharField(max_length=50, blank=True)
 
 
 class Type2Model(Model):
@@ -664,6 +668,8 @@ class Mcode(Model):
         max_length=65,
         blank=True)
     remarks = models.TextField(blank=True)
+    source = models.TextField(blank=True)
+    editor_remarks = models.TextField(blank=True)
 
 
 class McodeCollection(Model):
@@ -674,3 +680,5 @@ class McodeCollection(Model):
         max_length=65,
         blank=True)
     remarks = models.TextField(blank=True)
+    source = models.TextField(blank=True)
+    editor_remarks = models.TextField(blank=True)
