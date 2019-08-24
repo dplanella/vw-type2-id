@@ -5,6 +5,7 @@ from django.forms import ValidationError
 from datetime import date, datetime
 import re
 from lxml import etree
+from isoweek import Week
 import os
 from vw_type2_id.settings import BASE_DIR
 import logging
@@ -129,9 +130,15 @@ class Mplate(Model):
 
         return type_body + self.chassis_number_short
 
-    def get_production_date(self):
-        model_year = self.get_model_year()
+    def get_production_date(self, as_string=True):
 
+        # Model year starts in August
+        MODEL_YEAR_START_MONTH = 8
+        model_year = self.get_model_year()
+        production_date = ''
+        production_date_fmt = ''
+
+        # Model year is 68-69
         if model_year < date(1970, 1, 1):
             month_dict = {
                 '1': 1,
@@ -150,22 +157,22 @@ class Mplate(Model):
             year = model_year.year - 1
             day = int(self.production_date[:2])
             month = month_dict[self.production_date[-1:]]
+            if month >= MODEL_YEAR_START_MONTH:
+                year = model_year.year - 1
 
-            production_date = datetime(year, month, day)
-
-            production_date = production_date.strftime("%b %d, %Y")
+            production_date = datetime(year, month, day).date()
         else:
-            iso_year = model_year.year - 1
+            iso_year = model_year.year
             iso_weeknumber = int(self.production_date[:2])
             iso_weekday = int(self.production_date[-1:])
 
-            production_date = datetime.strptime(
-                '{:04d} {:02d} {:d}'.format(iso_year,
-                                            iso_weeknumber,
-                                            iso_weekday),
-                '%G %V %u').date()
+            production_date = Week(iso_year, iso_weeknumber).day(iso_weekday)
+            if production_date.month >= MODEL_YEAR_START_MONTH:
+                production_date = Week(iso_year-1, iso_weeknumber).day(
+                    iso_weekday)
 
-        logger.info('Production date: {}'.format(production_date))
+        if as_string:
+            production_date = production_date.strftime("%b %d, %Y")
 
         return production_date
 

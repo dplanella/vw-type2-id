@@ -14,6 +14,7 @@ lxml = "*"
 pillow = "*"
 django-environ = "*"
 django-inline-svg = "*"
+isoweek = "*"
 
 [requires]
 python_version = "3.6"
