@@ -463,8 +463,6 @@ class MplateDecoder:
     def get_mcodes(self, m_codes_1=None, m_codes_2=None,
                    chassis_number_short=None):
 
-        mcode_prepend = 'M '
-
         if m_codes_1 or m_codes_2:
             m_codes_1 = m_codes_1
             m_codes_2 = m_codes_2
@@ -505,6 +503,7 @@ class MplateDecoder:
 
         # Retrieve the M-code description
         for m_code in m_codes_expanded:
+            mcode_prepend = 'M '
             m_code_query_set = Mcode.objects.filter(m_code=m_code)
 
             if m_code_query_set:
