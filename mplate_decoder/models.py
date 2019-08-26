@@ -504,11 +504,16 @@ class MplateDecoder:
         # Retrieve the M-code description
         for m_code in m_codes_expanded:
             mcode_prepend = 'M '
-            m_code_query_set = Mcode.objects.filter(m_code=m_code)
 
-            if m_code_query_set:
-                if m_code_query_set.count() > 1:
-                    m_code_query_set = Mcode.objects.filter(
+            try:
+                # We query with get() first, as not all M-codes
+                # contain their year
+                m_code_query_set = Mcode.objects.get(m_code=m_code)
+                description = m_code_query_set.description
+            except ObjectDoesNotExist:
+                description = "Unknown code"
+            except MultipleObjectsReturned:
+                m_code_query_set = Mcode.objects.filter(
                         m_code=m_code, years__contains=model_year)
                 try:
                     description = m_code_query_set[0].description
@@ -518,8 +523,6 @@ class MplateDecoder:
                     description = (
                         "Error while fetching code:"
                         " {}, year {}".format(m_code, model_year))
-            else:
-                description = "Unknown code"
 
             mcode_dict[mcode_prepend + m_code] = description
 
