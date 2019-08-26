@@ -275,7 +275,7 @@ class Mplate(Model):
             )
 
         if remarks:
-            exteriorcolor_description.append('\n' + remarks)
+            exteriorcolor_description += '\n' + remarks
 
         return exteriorcolor_description
 
@@ -351,7 +351,7 @@ class Mplate(Model):
                 engine.fuel_induction,
             )
             if engine.extra_specs:
-                engine_description.append(", " + engine.extra_specs)
+                engine_description += ", " + engine.extra_specs
 
         except ObjectDoesNotExist:
             engine_description = "Unavailable engine description"
