@@ -67,14 +67,15 @@ class MplateRetrieve(generic.DetailView):
         mplate = super().get_object()
         decoder = MplateDecoder(mplate)
 
+        context['plate'] = mplate.render_plate()
         context['chassis_number'] = mplate.get_chassis_number()
         context['model_year'] = decoder.get_model_year().year
         context['production_date'] = mplate.get_production_date()
         context['export_destination'] = mplate.get_export_destination()
-        context['plate'] = mplate.render_plate()
         context['model_description'] = mplate.get_model()
         context['interiorcolor_description'] = mplate.get_interiorcolor()
-        context['exteriorcolor_description'] = mplate.get_exteriorcolor()
+        context['exteriorcolor_description'] = \
+            mplate.get_exteriorcolor_description()
         context['engine_description'] = mplate.get_engine()
         context['gearbox_description'] = mplate.get_gearbox()
         context['m_codes'] = decoder.get_mcodes()

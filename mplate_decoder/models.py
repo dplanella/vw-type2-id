@@ -1,14 +1,19 @@
+import re
+import os
+import logging
+from datetime import date, datetime
 from django.db.models import Model
 from django.db import models
 from django.urls import reverse
 from django.forms import ValidationError
-from datetime import date, datetime
-import re
+from django.core.exceptions import (
+    ObjectDoesNotExist,
+    MultipleObjectsReturned,
+)
 from lxml import etree
 from isoweek import Week
-import os
 from vw_type2_id.settings import BASE_DIR
-import logging
+
 logger = logging.getLogger('django')
 
 
@@ -55,60 +60,6 @@ class Mplate(Model):
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
 
-    def _year_and_serial_from_chassis_no(self, chassis_number):
-
-        MODEL_6869_CHASSIS_NR_LEN = 7
-        MODEL_7079_CHASSIS_NR_LEN = 8
-        MODEL_6869_YEAR_CODE_LEN = 1
-        MODEL_7079_YEAR_CODE_LEN = 2
-
-        # Validate the shortened chassis no. type
-        try:
-            int(chassis_number)
-        except ValueError:
-            raise ValidationError(
-                "The shortened chassis number can only"
-                " contain digits.")
-
-        # Validate the shortened chassis no. length
-        if (len(chassis_number) < MODEL_6869_CHASSIS_NR_LEN or
-                len(chassis_number) > MODEL_7079_CHASSIS_NR_LEN):
-            raise ValidationError(
-                "The shortened chassis number should"
-                " be either 7 or 8 digits."
-                " You submitted {} digits".format(len(chassis_number)))
-
-        # Extract the model year code and serial number
-        splitat = -6
-        model_year_code, serial_no = \
-            chassis_number[:splitat], int(chassis_number[splitat:])
-
-        # d
-        if len(model_year_code) == MODEL_6869_YEAR_CODE_LEN:
-            year_base = date(1960, 1, 1)
-            year_delta = int(model_year_code)
-            if year_delta < 8:
-                raise ValidationError(
-                    "Invalid model year code: {}. ".format(model_year_code) +
-                    "Code must be either 8 (for 1968) or 9 (for 1969)")
-        elif len(model_year_code) == MODEL_7079_YEAR_CODE_LEN:
-            year_base = date(1970, 1, 1)
-            year_delta = int(model_year_code[:1])
-            decade_batch = int(model_year_code[1:])
-            if decade_batch != 2:
-                raise ValidationError(
-                    "Invalid decade batch: {}. ".format(str(decade_batch)) +
-                    "Second digit must be 2"
-                    " for model year 1970 onwards.")
-        else:
-            raise ValidationError(
-                "Invalid model year"
-                " code length: {}".format(len(model_year_code)))
-
-        model_year = year_base.replace(year=year_base.year + year_delta)
-
-        return model_year, serial_no
-
     def get_model_year(self):
         decoder = MplateDecoder(self)
         model_year = decoder.get_model_year()
@@ -136,7 +87,6 @@ class Mplate(Model):
         MODEL_YEAR_START_MONTH = 8
         model_year = self.get_model_year()
         production_date = ''
-        production_date_fmt = ''
 
         # Model year is 68-69
         if model_year < date(1970, 1, 1):
@@ -177,17 +127,16 @@ class Mplate(Model):
         return production_date
 
     def get_export_destination(self):
-        export_destination = ExportDestination.objects.filter(
-            export_code=self.export_destination)
-
-        if export_destination:
-            export_destination_description = \
-                export_destination[0].export_destination
-        else:
-            export_destination_description = \
+        try:
+            destination = ExportDestination.objects.get(
+                export_code=self.export_destination)
+            destination_description = \
+                destination.export_destination
+        except ObjectDoesNotExist:
+            destination_description = \
                 "Unknown ({})".format(self.export_destination)
 
-        return export_destination_description
+        return destination_description
 
     def get_model(self):
         model_code = self.model[:2]
@@ -195,32 +144,29 @@ class Mplate(Model):
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
 
-        model = Type2Model.objects.filter(
-            model=model_code
-        )
-
-        configuration = Type2ModelConfiguration.objects.filter(
-            model=model_code, configuration=configuration_code
-        )
-
-        extras = Type2ModelExtra.objects.filter(
-            model=model_code, extras=extras_code
-        )
-
-        if not model:
+        try:
+            model = Type2Model.objects.get(
+                model=model_code
+            )
+            model_description = model.description
+        except ObjectDoesNotExist:
             model_description = "Model description unavailable"
-        else:
-            model_description = model[0].description
 
-        if not configuration:
+        try:
+            configuration = Type2ModelConfiguration.objects.get(
+                model=model_code, configuration=configuration_code
+            )
+            configuration_description = configuration.description
+        except ObjectDoesNotExist:
             configuration_description = "Configuration description unavailable"
-        else:
-            configuration_description = configuration[0].description
 
-        if not extras:
+        try:
+            extras = Type2ModelExtra.objects.get(
+                model=model_code, extras=extras_code
+            )
+            extras_description = extras.description
+        except ObjectDoesNotExist:
             extras_description = "Extras description unavailable"
-        else:
-            extras_description = extras[0].description
 
         model_description = '''Volkswagen Type 2
             · {} (model {})
@@ -233,30 +179,35 @@ class Mplate(Model):
 
         return model_description
 
-    def _get_exteriorcolorobjectandcode(self):
+    def _get_exteriorcolor_code(self):
+        SPECIAL_PAINTJOB_ID = '5'
 
-        exteriorcolor_object = None
-        is_special_paint = False
-        decoder = MplateDecoder(self)
-        model_year = 0
-
-        if self.paint_and_interior[0] == '5':
+        if self.paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
             exteriorcolor_code = self.paint_and_interior[-3:]
-            is_special_paint = True
         else:
             exteriorcolor_code = self.paint_and_interior[:4]
 
-        logger.info('Exterior color code: {}'.format(exteriorcolor_code))
+        return exteriorcolor_code
 
-        # Get the exterior color object from the M-plate
-        # code
-        exteriorcolor = ExteriorColor.objects.filter(
-            plate_code=exteriorcolor_code
-        )
+    def _get_exteriorcolorobject(self):
 
-        if not exteriorcolor:
+        SPECIAL_PAINTJOB_CODE_LEN = 3
+        exteriorcolor_object = None
+        decoder = MplateDecoder(self)
+        model_year = 0
+
+        exteriorcolor_code = self._get_exteriorcolor_code()
+
+        try:
+            # Get the exterior color object from the M-plate
+            # code
+            exteriorcolor = ExteriorColor.objects.get(
+                plate_code=exteriorcolor_code
+            )
+            exteriorcolor_object = exteriorcolor
+        except ObjectDoesNotExist:
             exteriorcolor_object = None
-        elif exteriorcolor.count() > 1:
+        except MultipleObjectsReturned:
             model_year = decoder.get_model_year().year
             exteriorcolor = ExteriorColor.objects.filter(
                 plate_code=exteriorcolor_code,
@@ -265,42 +216,50 @@ class Mplate(Model):
             if exteriorcolor:
                 exteriorcolor_object = exteriorcolor[0]
             else:
-                exteriorcolor_object = None
-        else:
-            exteriorcolor_object = exteriorcolor[0]
+                # If there is no match by model year,
+                # simply return the first result
+                exteriorcolor_object = ExteriorColor.objects.filter(
+                    plate_code=exteriorcolor_code).first()
 
-        if is_special_paint:
+        if exteriorcolor_code == SPECIAL_PAINTJOB_CODE_LEN:
             exteriorcolor_code = self.paint_and_interior
 
-        return exteriorcolor_object, exteriorcolor_code
+        return exteriorcolor_object
 
-    def get_exteriorcolor(self):
+    def get_exteriorcolor_description(self):
         color_name_roof = ""
         remarks = ""
 
-        exteriorcolor, exteriorcolor_code = \
-            self._get_exteriorcolorobjectandcode()
+        exteriorcolor_code = self._get_exteriorcolor_code()
+        exteriorcolor = self._get_exteriorcolorobject()
+
         if not exteriorcolor:
             exteriorcolor_description = \
                 "{}: Unknown exterior color code".format(
                     exteriorcolor_code)
             return exteriorcolor_description
 
-        lacquer_code_body = exteriorcolor.lacquer_code_body
-        lacquer_code_roof = exteriorcolor.lacquer_code_roof
-
-        color_body = Color.objects.filter(
-            lacquer_code=exteriorcolor.lacquer_code_body
-        )
-        color_name_body = color_body[0].color_name
-
-        if lacquer_code_roof:
-            color_roof = Color.objects.filter(
-                lacquer_code=exteriorcolor.lacquer_code_roof
+        try:
+            color_body = Color.objects.get(
+                lacquer_code=exteriorcolor.lacquer_code_body
             )
-            color_name_roof = color_roof[0].color_name
+            color_name_body = color_body.color_name
+        except ObjectDoesNotExist:
+            color_name_body = "Unknown color ({})".format(
+                exteriorcolor.lacquer_code_body)
+
+        lacquer_code_roof = exteriorcolor.lacquer_code_roof
+        if lacquer_code_roof:
+            try:
+                color_roof = Color.objects.get(
+                    lacquer_code=exteriorcolor.lacquer_code_roof
+                )
+                color_name_roof = color_roof.color_name
+            except ObjectDoesNotExist:
+                color_name_roof = "Unknown color ({})".format(
+                    exteriorcolor.lacquer_code_roof)
         else:
-            lacquer_code_roof = lacquer_code_body
+            lacquer_code_roof = exteriorcolor.lacquer_code_body
             color_name_roof = color_name_body
 
         if exteriorcolor.remarks:
@@ -308,13 +267,15 @@ class Mplate(Model):
                 exteriorcolor.remarks)
 
         exteriorcolor_description = '''Body: {} ({})
-            Roof: {} ({}){}'''.format(
+            Roof: {} ({})'''.format(
                 color_name_body,
-                lacquer_code_body,
+                exteriorcolor.lacquer_code_body,
                 color_name_roof,
                 lacquer_code_roof,
-                remarks,
             )
+
+        if remarks:
+            exteriorcolor_description.append('\n' + remarks)
 
         return exteriorcolor_description
 
@@ -324,51 +285,52 @@ class Mplate(Model):
 
         # Get the exterior color object from the M-plate
         # code
-        exteriorcolor, _ = self._get_exteriorcolorobjectandcode()
+        exteriorcolor = self._get_exteriorcolorobject()
 
         if exteriorcolor:
-            # Get the color attributes from the lacquer code
-            color_body = Color.objects.filter(
-                lacquer_code=exteriorcolor.lacquer_code_body
-            )
-            if color_body:
+            try:
+                # Get the color attributes from the lacquer code
+                color_body = Color.objects.get(
+                    lacquer_code=exteriorcolor.lacquer_code_body
+                )
                 # Get the color chip
-                color_chip_body = color_body[0].chip
+                color_chip_body = color_body.chip
+            except ObjectDoesNotExist:
+                color_chip_body = ""
 
         return color_chip_body
 
     def get_interiorcolor(self):
+        SPECIAL_PAINTJOB_ID = '5'
         decoder = MplateDecoder(self)
         model_year = 0
 
-        if not self.paint_and_interior[0] == '5':
+        if not self.paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
             interiorcolor_code = self.paint_and_interior[-2:]
 
-            interiorcolor = InteriorColor.objects.filter(
-                plate_code=interiorcolor_code
-            )
-
-            if not interiorcolor:
+            try:
+                interiorcolor = InteriorColor.objects.get(
+                    plate_code=interiorcolor_code
+                )
+                color_name = interiorcolor.color_name
+                material = interiorcolor.material
+            except ObjectDoesNotExist:
                 color_name = "({}) Unknown color".format(interiorcolor_code)
                 material = "Unknown material"
-            elif interiorcolor.count() > 1:
+            except MultipleObjectsReturned:
                 model_year = decoder.get_model_year().year
                 interiorcolor = InteriorColor.objects.filter(
                     plate_code=interiorcolor_code,
                     years__contains=model_year,
                 )
-                try:
-                    color_name = interiorcolor[0].color_name
-                    material = interiorcolor[0].material
-                except IndexError:
+                if interiorcolor:
+                    color_name = interiorcolor.first().color_name
+                    material = interiorcolor.first().material
+                else:
                     color_name = (
                         "Error while fetching interior color code:"
                         " {}, year {}".format(interiorcolor_code), model_year)
                     material = ""
-
-            else:
-                color_name = interiorcolor[0].color_name
-                material = interiorcolor[0].material
 
             interiorcolor_description = '{}, {}'.format(color_name, material)
         else:
@@ -380,27 +342,34 @@ class Mplate(Model):
     def get_engine(self):
         engine_code = self.aggregate_code[0]
 
-        engine = Engine.objects.filter(
-            engine_code=engine_code
-        )
+        try:
+            engine = Engine.objects.get(
+                engine_code=engine_code
+            )
+            engine_description = '{}, {}'.format(
+                engine.engine_type,
+                engine.fuel_induction,
+            )
+            if engine.extra_specs:
+                engine_description.append(", " + engine.extra_specs)
 
-        engine_description = '{}, {}, {}'.format(
-            engine[0].engine_type,
-            engine[0].fuel_induction,
-            engine[0].extra_specs)
+        except ObjectDoesNotExist:
+            engine_description = "Unavailable engine description"
 
         return engine_description
 
     def get_gearbox(self):
         gearbox_code = self.aggregate_code[1]
 
-        gearbox = Gearbox.objects.filter(
-            gearbox_code=gearbox_code
-        )
-
-        gearbox_description = '{}'.format(
-            gearbox[0].gearbox_description,
-        )
+        try:
+            gearbox = Gearbox.objects.get(
+                gearbox_code=gearbox_code
+            )
+            gearbox_description = '{}'.format(
+                gearbox.gearbox_description,
+            )
+        except ObjectDoesNotExist:
+            gearbox_description = "Unavailable transmission description"
 
         return gearbox_description
 
