@@ -133,8 +133,11 @@ class Mplate(Model):
             destination_description = \
                 destination.export_destination
         except ObjectDoesNotExist:
-            destination_description = \
-                "Unknown ({})".format(self.export_destination)
+            if not self.export_destination:
+                destination_description = "Not specified"
+            else:
+                destination_description = \
+                    "Unknown ({})".format(self.export_destination)
 
         return destination_description
 
@@ -143,6 +146,7 @@ class Mplate(Model):
         configuration_code = self.model[2]
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
+        model_year = self.get_model_year().year
 
         try:
             model = Type2Model.objects.get(
@@ -161,12 +165,26 @@ class Mplate(Model):
             configuration_description = "Configuration description unavailable"
 
         try:
+            # Most of the configurations are single objects, and
+            # not all of them have a year model defined
             extras = Type2ModelExtra.objects.get(
-                model=model_code, extras=extras_code
+                model=model_code, extras=extras_code,
             )
             extras_description = extras.description
         except ObjectDoesNotExist:
             extras_description = "Extras description unavailable"
+        except MultipleObjectsReturned:
+            extras = Type2ModelExtra.objects.filter(
+                model=model_code, extras=extras_code,
+                years__contains=model_year,
+            )
+            if extras:
+                extras_description = extras.first().description
+            else:
+                extras_description = (
+                    "No model extras found for model"
+                    " {}, extras code {}, year {}".format(
+                        model_code, extras_code, model_year))
 
         model_description = '''Volkswagen Type 2
             · {} (model {})
