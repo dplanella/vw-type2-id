@@ -117,7 +117,7 @@ class Mplate(Model):
             iso_weekday = int(self.production_date[-1:])
 
             first_model_year_weeks = {
-                1969: "1969W12", 
+                1969: "1969W12",
                 1970: "1970W29",
                 1971: "1970W32",
                 1972: "1971W34",
@@ -130,7 +130,8 @@ class Mplate(Model):
                 1979: "1978W28",
             }
 
-            first_model_year_week = Week.fromstring(first_model_year_weeks[iso_year])
+            first_model_year_week = Week.fromstring(
+                first_model_year_weeks[iso_year])
 
             if iso_weeknumber >= first_model_year_week.week:
                 week_offset = iso_weeknumber - first_model_year_week.week
