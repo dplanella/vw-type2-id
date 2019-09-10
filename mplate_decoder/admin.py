@@ -113,4 +113,16 @@ class McodeAdmin(admin.ModelAdmin):
 
 @admin.register(ExportDestination)
 class ExportDestinationAdmin(admin.ModelAdmin):
-    search_fields = ('export_code', )
+    search_fields = (
+        'export_code',
+        'export_destination',
+        'country',
+    )
+    list_display = (
+        'export_code',
+        'export_destination',
+        'country',
+        'region',
+        'port',
+        'notes',
+    )
