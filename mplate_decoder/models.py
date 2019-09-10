@@ -116,10 +116,29 @@ class Mplate(Model):
             iso_weeknumber = int(self.production_date[:2])
             iso_weekday = int(self.production_date[-1:])
 
-            production_date = Week(iso_year, iso_weeknumber).day(iso_weekday)
-            if production_date.month >= MODEL_YEAR_START_MONTH:
-                production_date = Week(iso_year-1, iso_weeknumber).day(
-                    iso_weekday)
+            first_model_year_weeks = {
+                1969: "1969W12", 
+                1970: "1970W29",
+                1971: "1970W32",
+                1972: "1971W34",
+                1973: "1972W34",
+                1974: "1973W33",
+                1975: "1974W33",
+                1976: "1975W28",
+                1977: "1976W28",
+                1978: "1977W30",
+                1979: "1978W28",
+            }
+
+            first_model_year_week = Week.fromstring(first_model_year_weeks[iso_year])
+
+            if iso_weeknumber >= first_model_year_week.week:
+                week_offset = iso_weeknumber - first_model_year_week.week
+            else:
+                week_offset = first_model_year_week.week - iso_weeknumber + 52
+
+            production_week = first_model_year_week + week_offset
+            production_date = production_week.day(iso_weekday - 1)
 
         if as_string:
             production_date = production_date.strftime("%b %d, %Y")
