@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "604e08ee8d998047fcb7f196d1409d0968c69a7597bd878346191afe866364be"
+            "sha256": "0dffe3725ac3bb077d7303506021ffbda0ef9f5e31f6770aab0fc4e471253f66"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,11 +18,11 @@
     "default": {
         "django": {
             "hashes": [
-                "sha256:16a5d54411599780ac9dfe3b9b38f90f785c51259a584e0b24b6f14a7f69aae8",
-                "sha256:9a2f98211ab474c710fcdad29c82f30fc14ce9917c7a70c3682162a624de4035"
+                "sha256:148a4a2d1a85b23883b0a4e99ab7718f518a83675e4485e44dc0c1d36988c5fa",
+                "sha256:deb70aa038e59b58593673b15e9a711d1e5ccd941b5973b30750d5d026abfd56"
             ],
             "index": "pypi",
-            "version": "==2.2.4"
+            "version": "==2.2.5"
         },
         "django-crispy-forms": {
             "hashes": [
@@ -39,6 +39,14 @@
             ],
             "index": "pypi",
             "version": "==0.4.5"
+        },
+        "django-fullurl": {
+            "hashes": [
+                "sha256:68097baeaa55088b1803d18e97a24d4540fe4c13293f0a2cea4fd99c5b99f225",
+                "sha256:90e548214278bf42aec0bfdfb28c335562e1d904074962f11f24050ef30d3f81"
+            ],
+            "index": "pypi",
+            "version": "==1.0"
         },
         "django-inline-svg": {
             "hashes": [
@@ -170,11 +178,11 @@
         },
         "ipython": {
             "hashes": [
-                "sha256:1d3a1692921e932751bc1a1f7bb96dc38671eeefdc66ed33ee4cbc57e92a410e",
-                "sha256:537cd0176ff6abd06ef3e23f2d0c4c2c8a4d9277b7451544c6cbf56d1c79a83d"
+                "sha256:c4ab005921641e40a68e405e286e7a1fcc464497e14d81b6914b4fd95e5dee9b",
+                "sha256:dd76831f065f17bddd7eaa5c781f5ea32de5ef217592cf019e34043b56895aa1"
             ],
             "index": "pypi",
-            "version": "==7.7.0"
+            "version": "==7.8.0"
         },
         "ipython-genutils": {
             "hashes": [

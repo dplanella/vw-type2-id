@@ -1,5 +1,6 @@
   {% load crispy_forms_tags %}
   {% load svg %}
+  {% load fullurl %}
 
   <div class="row mt-2">
   <div class="col">
@@ -8,7 +9,12 @@
 
     <h2 class="mt-4">Volkswagen Type 2 M-plate, model year 70-79</h2>
 
-    <p>Choose your bus' model year tab and fill in the fields to decode your M-plate. Scroll down to the reference info if you need help.</p>
+    <p><div class="alert alert-secondary" role="alert">
+      Choose your bus' model year tab and fill in the fields to decode your M-plate. Scroll down to the reference info if you need help.
+    </div>
+    <div class="alert alert-info" role="alert">
+      Once submitted, the M-plate data will be stored and always available at '{% fullurl 'mplate_decoder:mplate_index' %}CCCCCCCC', where 'CCCCCCCC' is the shortened chassis number on the plate.
+    </div>
 
     <div class="form-row">
       <div class="form-group col-md-4 mb-0">
@@ -64,7 +70,7 @@
     </div>
     <div class="col-md mt-2">
      <ul>
-       <li><strong>CCCCCCCC</strong>: chassis number. Enter without spaces.</li>
+       <li><strong>CCCCCCCC</strong>: shortened chassis number. Enter without spaces.</li>
        <li><strong>E</strong>: optional "E", indicates manufacture at the Emden plant.</li>
        <li><strong>M01</strong>: M-codes, first row. Separated by spaces. Might be empty in some plates.</li>
        <li><strong>PPPPII</strong>: paint and interior code.</li>

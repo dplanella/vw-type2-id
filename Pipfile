@@ -16,6 +16,7 @@ pillow = "*"
 django-environ = "*"
 django-inline-svg = "*"
 isoweek = "*"
+django-fullurl = "*"
 
 [requires]
 python_version = "3.6"

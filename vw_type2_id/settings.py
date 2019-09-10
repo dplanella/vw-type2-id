@@ -27,7 +27,7 @@ DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 ALLOWED_HOSTS = ['localhost',
                  '127.0.0.1',
                  'vw-type2-id.xyz',
-                 'www.type2-id.xyz',
+                 'www.vw-type2-id.xyz',
                  ]
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mplate_decoder.apps.MplateDecoderConfig',
     'crispy_forms',
     'svg',
+    'fullurl',
 ]
 
 MIDDLEWARE = [
