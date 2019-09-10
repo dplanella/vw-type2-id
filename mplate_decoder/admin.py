@@ -48,10 +48,13 @@ class MplateAdmin(admin.ModelAdmin):
 @admin.register(McodeCollection)
 class McodeCollectionAdmin(admin.ModelAdmin):
     search_fields = ('m_code', )
-    list_display = ('m_code',
-                    'collection',
-                    'years',
-                    'remarks')
+    list_display = (
+        'm_code',
+        'collection',
+        'years',
+        'remarks',
+        'source',
+    )
 
 
 @admin.register(InteriorColor)
@@ -95,11 +98,17 @@ class ColorAdmin(admin.ModelAdmin):
 
 @admin.register(Mcode)
 class McodeAdmin(admin.ModelAdmin):
-    search_fields = ('m_code', )
-    list_display = ('m_code',
-                    'description',
-                    'years',
-                    'remarks')
+    search_fields = (
+        'm_code',
+        'description',
+    )
+    list_display = (
+        'm_code',
+        'description',
+        'years',
+        'remarks',
+        'source'
+        )
 
 
 @admin.register(ExportDestination)
