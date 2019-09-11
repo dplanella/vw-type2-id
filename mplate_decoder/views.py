@@ -51,6 +51,10 @@ class MplateIndex(generic.ListView):
     template_name = 'mplate_decoder/index.html'
 
 
+class MplateAbout(generic.TemplateView):
+    template_name = 'mplate_decoder/mplate_about.html'
+
+
 class MplateCreate(AjaxableResponseMixin, generic.edit.CreateView):
     form_class = MplateForm
     template_name = 'mplate_decoder/mplate_form.html'

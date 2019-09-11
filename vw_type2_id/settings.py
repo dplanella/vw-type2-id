@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'svg',
     'fullurl',
+    'markdownify',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,
                            STATIC_URL.replace('/', ''))
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MARKDOWNIFY_BLEACH = False

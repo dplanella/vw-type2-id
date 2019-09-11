@@ -1,0 +1,67 @@
+{% extends "mplate_base_bootstrap.html" %}
+{% load markdownify %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="row mt-4">
+<div class="col">
+
+{% blocktrans asvar about_copy %}
+## About this site
+
+This site provides means to identify and understand the origin of Volkswagen Type 2 busses
+from years 1967 to 1979. At this time, via an online M-Plate decoder, but it might expand in the future.
+M-Plates were metallic plates present in all VW busses, which contained a set of alphanumeric production
+codes to identify a vehicle.
+
+The site was created as a result of the [original VW M-Plate decoder](https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode.php)
+going offline, as a personal project to decode the author's own M-Plate and to experiment with code. From there,
+it evolved into a public website to share this tool with other vintage bus owners from the aircooled community. 
+
+The data used to decode the M-plates comes mainly from these sources, and keeps getting expanded every time a user finds out more about
+an unknown code and shares it with the community:
+
+- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www.crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and Alexander Prinz
+- [TheSamba.com forum](https://www.thesamba.com/vw/forum/viewforum.php?f=5)
+- [forum.bulli.org forum](https://forum.bulli.org/)
+- [type2.com](http://www.type2.com/m-codes/t2mcodes.html)
+
+## Privacy policy
+
+The data submitted on the form is stored on the site's database. Only those fields submitted are saved,
+decoded values are computed on the fly every time an M-plate page is shown.
+
+This is a hobby site without a commercial purpose and without intention to seek financial support. The stored database data
+will never be submitted to third parties or used for other purposes than improving the site and providing a better
+service to its users.
+
+The code for this site is Open Source. You can explore it and contribute
+to the [`vw-type2-id` project on GitLab](https://gitlab.com/dplanella/vw-type2-id).
+
+If you would like to have the data for a particular M-plate removed or amended, feel free to get in touch as per the `Contact`
+section.
+
+## Disclaimer
+
+The decoded vehicle data produced on this site comes from multiple sources. Despite best efforts to provide accurate data,
+it has to be noted that it comes from volunteer research over 40+ years of history of these vehicles.
+
+As such, data is not guaranteed to be accurate nor to have any legal validity. It should be considered as orientative
+only.
+
+## Contact
+
+If you've got feedback or questions about the site, feel free to post them on [the M-Plate decoder thread on TheSamba.com forum](https://www.thesamba.com/vw/forum/viewtopic.php?p=9165728).
+You're more than welcome to reach out by private message as well. 
+
+{% endblocktrans %}
+
+{{ start|markdownify }}
+{{ about_copy|markdownify }}
+  
+
+</div>
+</div>
+
+{% endblock %}

@@ -17,6 +17,7 @@ django-environ = "*"
 django-inline-svg = "*"
 isoweek = "*"
 django-fullurl = "*"
+django-markdownify = "*"
 
 [requires]
 python_version = "3.6"

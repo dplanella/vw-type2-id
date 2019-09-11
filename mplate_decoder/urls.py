@@ -12,4 +12,5 @@ urlpatterns = [
          name='mplate_update'),
     path('<slug:chassis_number_short>/delete/', views.MplateDelete.as_view(),
          name='mplate_delete'),
+    path('about/', views.MplateAbout.as_view(), name='mplate_about'),
 ]
