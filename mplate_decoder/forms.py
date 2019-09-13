@@ -1,5 +1,6 @@
-from django.forms import ModelForm, ValidationError
+from django.forms import ModelForm, ValidationError, TextInput
 import re
+from django.utils.text import slugify
 from .models import (
     Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
 )
@@ -24,6 +25,9 @@ class MplateForm(ModelForm):
             'aggregate_code',
             'emden',
         )
+        #widgets = {
+        #    'chassis_number_short': TextInput(attrs={'placeholder': 'CCCCCCCC'}),
+        #}
 
     def clean_chassis_number_short(self):
         MODEL_6869_YEAR_CHASSIS_NR_LEN = 7
@@ -61,6 +65,14 @@ class MplateForm(ModelForm):
                 "Invalid shortened chassis number. "
                 "Check first and second digits."
             )
+
+        data = slugify(data)
+
+        if Mplate.objects.filter(chassis_number_short=data).exists():
+            url = 'https://vw-type2-id.xyz/mplate/' + data
+            href = '<a href="{}">{}</a>'.format(url, data)
+            raise ValidationError(
+                'M-Plate {} already exists.'.format(href))
 
         return data
 
