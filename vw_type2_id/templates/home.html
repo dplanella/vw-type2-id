@@ -1,6 +1,6 @@
 {% extends "base_bootstrap.html" %}
 
-{% block content %}
+{% block contentnocontainer %}
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -9,22 +9,17 @@
   </div>
 </div>
 
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>M-plate decoder</h2>
-            <p>Decode the M-plate and find information about your bus. </p>
-            <p><a class="btn btn-secondary" href="{% url 'mplate_decoder:mplate_index'%}" role="button">Learn more &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Engine number decoder</h2>
-            <p>Under construction.</p>
-          </div>
-          <div class="col-md-4">
-            <h2>Reference</h2>
-            <p>Under construction.</p>
-          </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <h2>M-plate decoder</h2>
+      <p>Decode the M-plate and find information about your bus. </p>
+      <p><a class="btn btn-secondary" href="{% url 'mplate_decoder:mplate_index'%}" role="button">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md">
+      <h2>Engine number decoder</h2>
+      <p>Coming soon</p>
+    </div>
+</div>
 
 {% endblock %}

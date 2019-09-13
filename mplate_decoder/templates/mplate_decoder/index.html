@@ -3,47 +3,49 @@
 
 {% block content %}
 
+<!-- Intro row -->
 <div class="row mt-4">
-<div class="col">
-<p class="lead">
-  The M-plate is one of the identification plates found on VW busses. 
-  Short for <em>Mehraustattung</em> (optional extras in German), it contains
-  production codes with information about equipment, manufacturing date, destination, specs and more.
-</p>
+  <div class="col">
+    <p class="lead">
+      The M-plate is one of the identification plates found on VW busses. 
+      Short for <em>Mehraustattung</em> (optional extras in German), it contains
+      production codes with information about equipment, manufacturing date, destination, specs and more.
+    </p>
+  </div>
 </div>
+
+<!-- Location rows -->
+<div class="row mt-4">
+  <div class="col-sm">
+    <h2>Find it</h2>
+  </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-sm">
-    <div class="row">
-      <div class="col-sm">
-        <h2>
-          Find it
-          <small class="text-muted">(mod. 68-76)</small>
-        </h2>
-        <img class="img-fluid img-thumbnail" src="https://www.thesamba.com/vw/gallery/pix/1039800.jpg">
-        <p><small class="text-muted">Image from <a href="https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789">The Samba forum</a></small></p>
-        <p class="mt-1">
-          <strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles).
-        </p>
-      </div>
-    <div class="col-sm">
-      <h2>
-        Find it
-        <small class="text-muted">(mod. 77-79)</small>
-      </h2>
-      <img class="img-fluid img-thumbnail" src="https://www.thesamba.com/vw/gallery/pix/433251.jpg">
+    <h4>
+      <span class="text-muted">Model years 68-76</span>
+    </h4>
+    <img class="img-fluid img-thumbnail" src="https://www.thesamba.com/vw/gallery/pix/1039800.jpg">
+    <p><small class="text-muted">Image from <a href="https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789">The Samba forum</a></small></p>
+    <p class="mt-1">
+      <strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles).
+    </p>
+  </div>
+
+  <div class="col-sm">
+    <h4>
+      <span class="text-muted">Model years 77-79</span>
+    </h4>
+    <img class="img-fluid img-thumbnail" src="https://www.thesamba.com/vw/gallery/pix/433251.jpg">
       <p><small class="text-muted">Image from <a href="https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789">The Samba forum</a></small></p>
       <p class="mt-1">
         <strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe. 
       </p>
-    </div>
-
   </div>
 </div>
 
-</div>
-
+<!-- Decoder rows -->
 <div class="row mt-4">
   <div class="col-sm">
     <h2>Decode it</h2>
@@ -51,30 +53,39 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-sm-6">
+  <div class="col-sm">
+  <h4 class="mb-3">M-plate decoder</h4>
+  <div>
     {% svg 'mplate-7079-form' %}
+  </div>
+  <p class="mt-3">
+    Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields.
+  </p>
+  
+  <div>
+    <a class="btn btn-primary btn-lg btn-block mt-3 mb-4" href="{% url 'mplate_decoder:mplate_create' %}" role="button">Decode an M-plate&raquo;</a>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col">
-  <p>Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields.
-  </p>
-  <p>
-    <a class="btn btn-secondary" href="{% url 'mplate_decoder:mplate_create' %}" role="button">Decode an M-plate&raquo;</a>
-  </p>
-</div>
-</div>
-
-<div class="row mt-4">
-<div class="col">
-<h2>Recent M-plate submissions</h2>
-    <ul>
-        {% for mplate in object_list %}
-            <li><a href="{{ mplate.get_absolute_url }}">{{ mplate.chassis_number_short }}</a></li>
+<div class="col-sm">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted">M-plate submissions</span>
+      <span class="badge badge-secondary badge-pill">{{ object_list.count }}</span>
+    </h4>
+    <ul class="list-group">
+        {% for mplate in object_list|slice:":7" %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <a href="{{ mplate.get_absolute_url }}">{{ mplate.chassis_number_short }}</a>
+              <span class="badge badge-info badge-pill">New</span>
+            </li>
         {% endfor %}
     </ul>
 </div>
+
+</div>
+
+<div class="row mt-4">
+
 </div>
 
 {% endblock %}
