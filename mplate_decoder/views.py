@@ -1,7 +1,7 @@
 from django.views import generic
 from django.http import JsonResponse, HttpResponse
 from .models import Mplate, MplateDecoder
-from .forms import MplateForm
+from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 import logging
 
@@ -16,33 +16,35 @@ class AjaxableResponseMixin:
     def form_invalid(self, form):
         response = super().form_invalid(form)
         if self.request.is_ajax():
-            logger.info("request is ajax, form invalid")
+            logger.info("form_invalid: ajax request")
             data = form.errors.as_json()
             response = HttpResponse(
                 data,
                 status=400,
                 content_type='application/json')
         else:
-            logger.info("request is not ajax, form invalid")
+            logger.info("form_invalid: NOT ajax request")
 
         # logger.info("form invalid, response: {}".format(response.content))
         return response
 
     def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        #
         # We make sure to call the parent's form_valid() method because
         # it might do some processing (in the case of CreateView, it will
         # call form.save() for example).
         response = super().form_valid(form)
         if self.request.is_ajax():
-            logger.info("request is ajax, form valid")
+            logger.info("form_valid: ajax request")
             data = {
                 'chassis_number_short': self.object.chassis_number_short,
             }
             response = JsonResponse(data)
         else:
-            logger.info("request is not ajax, form valid")
+            logger.info("form_valid: NOT ajax request")
 
-        # logger.info("form valid, response: {}".format(response.content))
         return response
 
 
@@ -56,7 +58,7 @@ class MplateAbout(generic.TemplateView):
 
 
 class MplateCreate(AjaxableResponseMixin, generic.edit.CreateView):
-    form_class = MplateForm
+    form_class = MplateCreateForm
     template_name = 'mplate_decoder/mplate_form.html'
 
 
@@ -87,9 +89,11 @@ class MplateRetrieve(generic.DetailView):
         return context
 
 
-class MplateUpdate(generic.edit.UpdateView):
+class MplateUpdate(AjaxableResponseMixin, generic.edit.UpdateView):
     model = Mplate
-    fields = '__all__'
+    # fields = '__all__'
+    form_class = MplateUpdateForm
+    template_name = 'mplate_decoder/mplate_form.html'
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
 

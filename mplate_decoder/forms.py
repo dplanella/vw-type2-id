@@ -1,4 +1,4 @@
-from django.forms import ModelForm, ValidationError, TextInput
+from django.forms import ModelForm, ValidationError  # , TextInput
 import re
 from django.utils.text import slugify
 from .models import (
@@ -9,7 +9,7 @@ import logging
 logger = logging.getLogger('django')
 
 
-class MplateForm(ModelForm):
+class MplateCreateForm(ModelForm):
 
     class Meta:
         model = Mplate
@@ -25,9 +25,9 @@ class MplateForm(ModelForm):
             'aggregate_code',
             'emden',
         )
-        #widgets = {
+        # widgets = {
         #    'chassis_number_short': TextInput(attrs={'placeholder': 'CCCCCCCC'}),
-        #}
+        # }
 
     def clean_chassis_number_short(self):
         MODEL_6869_YEAR_CHASSIS_NR_LEN = 7
@@ -68,7 +68,13 @@ class MplateForm(ModelForm):
 
         data = slugify(data)
 
-        if Mplate.objects.filter(chassis_number_short=data).exists():
+        qs = Mplate.objects.filter(chassis_number_short=data)
+
+        # Update view
+        if self.instance.pk:
+            qs = qs.exclude(pk=self.instance.pk)
+
+        if qs.exists():
             url = 'https://vw-type2-id.xyz/mplate/' + data
             href = '<a href="{}">{}</a>'.format(url, data)
             raise ValidationError(
@@ -244,3 +250,9 @@ class MplateForm(ModelForm):
             raise ValidationError("Invalid aggregate code")
 
         return data
+
+
+class MplateUpdateForm(MplateCreateForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)

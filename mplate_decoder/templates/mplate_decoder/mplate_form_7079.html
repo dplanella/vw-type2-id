@@ -4,7 +4,7 @@
 
   <div class="row mt-2">
   <div class="col">
-  <form method="post" id="{{ mplate_form_7079_id }}" action="{% url 'mplate_decoder:mplate_create' %}">
+  <form method="post" id="{{ form_id }}">
     {% csrf_token %}
 
     <h2 class="mt-4">Volkswagen Type 2 M-plate, model year 70-79</h2>
@@ -54,7 +54,11 @@
     <div class="alert alert-info" role="alert">
       Once submitted, the M-plate data will be stored and always available at '{% fullurl 'mplate_decoder:mplate_index' %}CCCCCCCC', where 'CCCCCCCC' is the shortened chassis number on the plate.
     </div>
-    <button id="mplate_form_7079_submit" class="btn btn-primary btn-lg btn-block">Decode this M-plate</button>
+    {% if object %}
+    <button class="btn btn-primary btn-lg btn-block">Update this M-plate</button>
+    {% else %}
+    <button class="btn btn-primary btn-lg btn-block">Decode this M-plate</button>
+    {% endif %}
   </form>
   </div>
   </div>
@@ -86,3 +90,9 @@
   </div>
 
   </div>
+
+<!--
+<script type="text/javascript">
+  $("#{{ form_id }}").submit(submitForm);
+</script>
+-->
