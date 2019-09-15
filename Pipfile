@@ -7,6 +7,8 @@ verify_ssl = true
 flake8 = "*"
 gunicorn = "*"
 ipython = "*"
+pytest-django = "*"
+pytest = "<=5.0.1"
 
 [packages]
 django = "*"
