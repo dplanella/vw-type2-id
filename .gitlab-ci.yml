@@ -20,5 +20,3 @@ test:
     - pipenv run python manage.py test
   variables:
     DJANGO_VW_TYPE2_ID_SECRET_KEY: "dummy_secret_key_testing"
-#    LC_ALL: "C.UTF-8"
-#    LANG: "C.UTF-8"
