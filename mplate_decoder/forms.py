@@ -26,7 +26,8 @@ class MplateCreateForm(ModelForm):
             'emden',
         )
         # widgets = {
-        #    'chassis_number_short': TextInput(attrs={'placeholder': 'CCCCCCCC'}),
+        #    'chassis_number_short': TextInput(
+        # attrs={'placeholder': 'CCCCCCCC'}),
         # }
 
     def clean_chassis_number_short(self):
@@ -157,7 +158,7 @@ class MplateCreateForm(ModelForm):
         data = self.cleaned_data['production_date']
 
         data = data.upper()
-        if not re.match("^[A-Z0-9]+$", data):
+        if not re.match("^[0-9]{2}[0-9OND]$", data):
             raise ValidationError("Only digits and letters allowed")
 
         if len(data) < PRODUCTION_DATE_LEN:
