@@ -47,7 +47,10 @@ class MplateAdmin(admin.ModelAdmin):
 
 @admin.register(McodeCollection)
 class McodeCollectionAdmin(admin.ModelAdmin):
-    search_fields = ('m_code', )
+    search_fields = (
+        'm_code',
+        'collection',
+        )
     list_display = (
         'm_code',
         'collection',
