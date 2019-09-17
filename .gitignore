@@ -3,7 +3,7 @@
 mplate_decoder/fixtures/*.json
 __pycache__/*
 *.pyc
-static/
+/static/
 .pytest_cache/
 builds/
 cache/
