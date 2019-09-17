@@ -8,6 +8,7 @@ image: python:3.6
 # https://gitlab.com/gitlab-org/gitlab-runner/issues/4445
 cache:
   paths:
+    - ~/.cache/pip/
     - ~/.cache/pipenv/
 
 before_script:
