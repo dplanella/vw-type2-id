@@ -73,7 +73,7 @@
       <span class="badge badge-secondary badge-pill">{{ object_list.count }}</span>
     </h4>
     <ul class="list-group">
-        {% for mplate in object_list|dictsortreversed:"id"|slice:":7"|dictsort:"id" %}
+        {% for mplate in object_list|dictsortreversed:"id"|slice:":7" %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <a href="{{ mplate.get_absolute_url }}">{{ mplate.chassis_number_short }}</a>
               <span class="badge badge-info badge-pill">New</span>
