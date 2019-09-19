@@ -6,11 +6,10 @@ from datetime import date
 class MplateDecodeTestCase(TestCase):
 
     LATE_BAY_01_CHASSIS = "92023025"
+    LATE_BAY_02_CHASSIS = "22138101"
     EARLY_BAY_01_CHASSIS = "9123833"
 
     def setUp(self):
-        # Animal.objects.create(name="lion", sound="roar")
-        # Animal.objects.create(name="cat", sound="meow")
         Mplate.objects.create(
             chassis_number_short=self.LATE_BAY_01_CHASSIS,
             m_codes_1='',
@@ -21,6 +20,19 @@ class MplateDecodeTestCase(TestCase):
             export_destination='UT',
             model='2319',
             aggregate_code='61',
+            emden='',
+        )
+
+        Mplate.objects.create(
+            chassis_number_short=self.LATE_BAY_02_CHASSIS,
+            m_codes_1='A89 089 100 119',
+            m_codes_2='',
+            paint_and_interior='918551',
+            production_date='105',
+            production_planned='7490',
+            export_destination='056',
+            model='2319',
+            aggregate_code='31',
             emden='',
         )
 
@@ -43,10 +55,14 @@ class MplateDecodeTestCase(TestCase):
         late_bay_01 = Mplate.objects.get(
             chassis_number_short=self.LATE_BAY_01_CHASSIS)
 
+        late_bay_02 = Mplate.objects.get(
+            chassis_number_short=self.LATE_BAY_02_CHASSIS)
+
         early_bay_01 = Mplate.objects.get(
             chassis_number_short=self.EARLY_BAY_01_CHASSIS)
 
         self.assertEqual(late_bay_01.get_model_year().year, 1979)
+        self.assertEqual(late_bay_02.get_model_year().year, 1972)
         self.assertEqual(early_bay_01.get_model_year().year, 1969)
 
     def test_decode_production_date(self):
@@ -55,10 +71,15 @@ class MplateDecodeTestCase(TestCase):
         late_bay_01 = Mplate.objects.get(
             chassis_number_short=self.LATE_BAY_01_CHASSIS)
 
+        late_bay_02 = Mplate.objects.get(
+            chassis_number_short=self.LATE_BAY_02_CHASSIS)
+
         early_bay_01 = Mplate.objects.get(
             chassis_number_short=self.EARLY_BAY_01_CHASSIS)
 
         self.assertEqual(late_bay_01.get_production_date(as_string=False),
                          date(1978, 9, 19))
+        self.assertEqual(late_bay_02.get_production_date(as_string=False),
+                         date(1972, 3, 10))
         self.assertEqual(early_bay_01.get_production_date(as_string=False),
                          date(1968, 2, 7))

@@ -136,7 +136,7 @@ class Mplate(Model):
             if iso_weeknumber >= first_model_year_week.week:
                 week_offset = iso_weeknumber - first_model_year_week.week
             else:
-                week_offset = first_model_year_week.week - iso_weeknumber + 52
+                week_offset = (52 + iso_weeknumber) - first_model_year_week.week
 
             production_week = first_model_year_week + week_offset
             production_date = production_week.day(iso_weekday - 1)
