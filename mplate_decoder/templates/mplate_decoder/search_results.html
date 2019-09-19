@@ -1,0 +1,33 @@
+{% extends "mplate_base_bootstrap.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col my-5">
+    <h2>M-plates with M-code: {{ request.GET.q }}</h2>
+
+    {% if object_list %}
+    <div class="list-group mt-4">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="my-1">M-PLATE</h5>
+            <h5 class="my-1">M-CODES</h5>
+          </div>
+        </a>
+      {% for mplate in object_list %}
+        <a href="{{ mplate.get_absolute_url }}" class="list-group-item list-group-item-action">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="my-1">{{ mplate.chassis_number_short }}</h5>
+            <span>{{ mplate.m_codes_1 }} {{ mplate.m_codes_2}}</span>
+          </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="lead mt-4">There are currently no M-plates containing that M-code.</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

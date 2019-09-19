@@ -16,4 +16,6 @@ urlpatterns = [
           name='mplate_index'),
      path('about/', views.MplateAbout.as_view(),
           name='mplate_about'),
+     path('search/', views.SearchResultsView.as_view(),
+          name='search_results'),
 ]

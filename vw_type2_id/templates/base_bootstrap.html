@@ -48,6 +48,10 @@
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_about' %}">{{ 'About'|upper }}</a>
           </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0" action="{% url 'mplate_decoder:search_results' %}" method="get">
+          <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search M-codes (e.g. 500)" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
     </nav>
 

@@ -3,6 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from .models import Mplate, MplateDecoder
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
+from django.db.models import Q
 import logging
 
 logger = logging.getLogger('django')
@@ -103,3 +104,18 @@ class MplateDelete(generic.edit.DeleteView):
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
     success_url = reverse_lazy('mplate_decoder:mplate_index')
+
+
+class SearchResultsView(generic.ListView):
+    model = Mplate
+    template_name = 'mplate_decoder/search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+
+        if query:
+            return Mplate.objects.filter(
+                Q(m_codes_1__icontains=query) | Q(m_codes_2__icontains=query)
+            )
+        else:
+            return
