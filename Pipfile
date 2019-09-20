@@ -9,8 +9,8 @@ gunicorn = "*"
 ipython = "*"
 pytest-django = "*"
 pytest = "<=5.0.1"
-pyvirtualdisplay = "*"
 selenium = "*"
+pyvirtualdisplay = "*"
 
 [packages]
 django = "*"
