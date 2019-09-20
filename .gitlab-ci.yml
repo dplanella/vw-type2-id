@@ -12,7 +12,7 @@ cache:
     - ~/.cache/pipenv/
 
 before_script:
-  - apt install -y xvfb firefox-esr
+  - apt-get update && apt-get install -y xvfb firefox-esr
   - pip3 install pipenv
   - pipenv install
 
