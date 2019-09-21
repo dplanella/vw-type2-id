@@ -1,0 +1,56 @@
+[
+  {
+    "model": "mplate_decoder.type2model",
+    "pk": 0,
+    "fields": {
+      "model": 21,
+      "description": "Panelvan",
+      "schematic": ""
+    }
+  },
+  {
+    "model": "mplate_decoder.type2model",
+    "pk": 1,
+    "fields": {
+      "model": 22,
+      "description": "Microbus/Microbus L",
+      "schematic": ""
+    }
+  },
+  {
+    "model": "mplate_decoder.type2model",
+    "pk": 2,
+    "fields": {
+      "model": 23,
+      "description": "Kombi",
+      "schematic": ""
+    }
+  },
+  {
+    "model": "mplate_decoder.type2model",
+    "pk": 3,
+    "fields": {
+      "model": 24,
+      "description": "Microbus L",
+      "schematic": ""
+    }
+  },
+  {
+    "model": "mplate_decoder.type2model",
+    "pk": 4,
+    "fields": {
+      "model": 26,
+      "description": "Pick-up Single Cab and Double Cab",
+      "schematic": ""
+    }
+  },
+  {
+    "model": "mplate_decoder.type2model",
+    "pk": 5,
+    "fields": {
+      "model": 27,
+      "description": "Ambulance",
+      "schematic": ""
+    }
+  }
+]

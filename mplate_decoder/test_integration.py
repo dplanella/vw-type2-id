@@ -5,7 +5,6 @@ A simple functional headless UI test with pyvirtualdisplay and selenium
 from django.test import LiveServerTestCase
 from pyvirtualdisplay import Display
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -25,15 +24,12 @@ class ExampleTestCase(LiveServerTestCase):
     ]
 
     def setUp(self):
-
         # Start the display
-        self.vdisplay = Display(visible=1, size=(1280, 900))
+        self.vdisplay = Display(visible=0, size=(1280, 900))
         self.vdisplay.start()
 
         # Start the browser
         self.selenium = webdriver.Firefox()
-        #self.selenium.set_window_position(0, 0)
-        #self.selenium.set_window_size(2560, 1440)
         self.selenium.maximize_window()
         super(ExampleTestCase, self).setUp()
 
@@ -79,23 +75,13 @@ class ExampleTestCase(LiveServerTestCase):
 
         current_url = self.selenium.current_url
 
-        #self.selenium.set_window_size(2000, 950)
         decode_button = self.selenium.find_element_by_id('btn-decode-6869')
-        #decode_button = WebDriverWait(
-        #    self.selenium, 10).until(
-        #        EC.element_to_be_clickable((By.ID, "btn-decode-6869")))
-
-        #actions = ActionChains(self.selenium)
-        #actions.move_to_element(decode_button).perform()
 
         decode_button.location_once_scrolled_into_view
         decode_button.click()
 
         WebDriverWait(self.selenium, 15).until(EC.url_changes(current_url))
-        new_url = self.selenium.current_url
-        print(new_url)
 
-        #production_date = self.selenium.find_element_by_name("production-date")
         production_date = WebDriverWait(
             self.selenium, 10).until(
                 EC.element_to_be_clickable((By.ID, "production-date")))

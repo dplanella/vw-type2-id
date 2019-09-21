@@ -1,9 +1,11 @@
 .vscode
 *.sqlite3
-mplate_decoder/fixtures/*.json
+mplate_decoder/fixtures/mplate_*
 __pycache__/*
 *.pyc
 /static/
 .pytest_cache/
 builds/
 cache/
+geckodriver.log
+

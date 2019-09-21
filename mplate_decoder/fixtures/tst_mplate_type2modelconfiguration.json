@@ -1,0 +1,173 @@
+[
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 0,
+    "fields": {
+      "model": 21,
+      "configuration": 1,
+      "description": "LHD, sliding door right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 1,
+    "fields": {
+      "model": 21,
+      "configuration": 4,
+      "description": "RHD, sliding door left"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 2,
+    "fields": {
+      "model": 21,
+      "configuration": 5,
+      "description": "LHD, two sliding doors"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 3,
+    "fields": {
+      "model": 21,
+      "configuration": 6,
+      "description": "RHD, two sliding doors"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 4,
+    "fields": {
+      "model": 22,
+      "configuration": 1,
+      "description": "LHD, sliding door right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 5,
+    "fields": {
+      "model": 22,
+      "configuration": 4,
+      "description": "RHD, sliding door left"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 6,
+    "fields": {
+      "model": 22,
+      "configuration": 5,
+      "description": "LHD, sliding door right, sliding roof"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 7,
+    "fields": {
+      "model": 22,
+      "configuration": 8,
+      "description": "RHD, sliding door left, sliding roof"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 8,
+    "fields": {
+      "model": 23,
+      "configuration": 1,
+      "description": "LHD, sliding door right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 9,
+    "fields": {
+      "model": 23,
+      "configuration": 4,
+      "description": "RHD, sliding door left"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 10,
+    "fields": {
+      "model": 23,
+      "configuration": 5,
+      "description": "LHD, sliding door right, sliding roof"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 11,
+    "fields": {
+      "model": 24,
+      "configuration": 1,
+      "description": "LHD, sliding door right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 12,
+    "fields": {
+      "model": 24,
+      "configuration": 4,
+      "description": "RHD, sliding door left"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 13,
+    "fields": {
+      "model": 26,
+      "configuration": 1,
+      "description": "Single-cab, LHD, locker lid right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 14,
+    "fields": {
+      "model": 26,
+      "configuration": 4,
+      "description": "Single-cab, RHD, locker lid left"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 15,
+    "fields": {
+      "model": 26,
+      "configuration": 5,
+      "description": "Double-cab, LHD, rear passenger door right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 16,
+    "fields": {
+      "model": 26,
+      "configuration": 8,
+      "description": "Double-cab, RHD, rear passenger door left"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 17,
+    "fields": {
+      "model": 27,
+      "configuration": 1,
+      "description": "LHD, sliding door right"
+    }
+  },
+  {
+    "model": "mplate_decoder.type2modelconfiguration",
+    "pk": 18,
+    "fields": {
+      "model": 27,
+      "configuration": 4,
+      "description": "RHD, sliding door left"
+    }
+  }
+]
