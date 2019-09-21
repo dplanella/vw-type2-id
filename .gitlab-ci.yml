@@ -16,7 +16,7 @@ before_script:
   - mkdir geckodriver
   - tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C /usr/local/bin
   - geckodriver --version
-  - apt-get update && apt-get install -y xvfb firefox-esr xdpyinfo
+  - apt-get update && apt-get install -y xvfb firefox-esr x11-utils
   - pip3 install pipenv
   - pipenv install --dev
 
