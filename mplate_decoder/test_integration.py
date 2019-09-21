@@ -36,7 +36,7 @@ class ExampleTestCase(LiveServerTestCase):
             '{}{}'.format(self.live_server_url, '/mplate/decode/')
         )
         decode_button = self.selenium.find_element_by_id('btn-decode')
-        chassis_number_short_input = self.selenium.find_element_by_name("id_chassis_number_short")
+        chassis_number_short_input = self.selenium.find_element_by_name("chassis_number_short")
         chassis_number_short_input.send_keys(self.EARLY_BAY_01_CHASSIS)
 
         m_codes_2_input = self.selenium.find_element_by_name("m_codes_2")
@@ -59,5 +59,6 @@ class ExampleTestCase(LiveServerTestCase):
 
         decode_button.click()
 
+        self.selenium.sleep(15)
         production_date = self.selenium.find_element_by_name("production_date")
         self.assertEqual(production_date.text, "Feb 07, 1968")
