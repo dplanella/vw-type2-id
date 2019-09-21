@@ -13,7 +13,6 @@ cache:
 
 before_script:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
-  - mkdir geckodriver
   - tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C /usr/local/bin
   - geckodriver --version
   - apt-get update && apt-get install -y xvfb firefox-esr x11-utils

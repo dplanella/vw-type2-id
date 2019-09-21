@@ -5,9 +5,6 @@ A simple functional headless UI test with pyvirtualdisplay and selenium
 from django.test import LiveServerTestCase
 from pyvirtualdisplay import Display
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class ExampleTestCase(LiveServerTestCase):
@@ -65,10 +62,8 @@ class ExampleTestCase(LiveServerTestCase):
             "aggregate_code")
         aggregate_code_input.send_keys('11')
 
-        # decode_button = self.selenium.find_element_by_id('btn-decode')
-        decode_button = WebDriverWait(
-            self.selenium, 10).until(
-                EC.element_to_be_clickable((By.ID, "btn-decode")))
+        decode_button = self.selenium.find_element_by_id('btn-decode')
+        decode_button.location_once_scrolled_into_view
         decode_button.click()
 
         self.selenium.sleep(15)
