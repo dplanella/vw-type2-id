@@ -16,11 +16,11 @@ class ExampleTestCase(LiveServerTestCase):
     EARLY_BAY_01_CHASSIS = "9123833"
 
     fixtures = [
-        'mplate_gearbox.json',
-        'mplate_engine.json',
-        'mplate_type2model',
-        'mplate_type2modelconfiguration',
-        'mplate_type2modelextra',
+        'tst_mplate_gearbox.json',
+        'tst_mplate_engine.json',
+        'tst_mplate_type2model',
+        'tst_mplate_type2modelconfiguration',
+        'tst_mplate_type2modelextra',
     ]
 
     def setUp(self):
