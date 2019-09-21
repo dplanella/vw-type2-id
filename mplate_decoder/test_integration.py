@@ -5,6 +5,9 @@ A simple functional headless UI test with pyvirtualdisplay and selenium
 from django.test import LiveServerTestCase
 from pyvirtualdisplay import Display
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class ExampleTestCase(LiveServerTestCase):
@@ -35,28 +38,37 @@ class ExampleTestCase(LiveServerTestCase):
         self.selenium.get(
             '{}{}'.format(self.live_server_url, '/mplate/decode/')
         )
-        decode_button = self.selenium.find_element_by_id('btn-decode')
-        chassis_number_short_input = self.selenium.find_element_by_name("chassis_number_short")
+
+        chassis_number_short_input = self.selenium.find_element_by_name(
+            "chassis_number_short")
         chassis_number_short_input.send_keys(self.EARLY_BAY_01_CHASSIS)
 
         m_codes_2_input = self.selenium.find_element_by_name("m_codes_2")
         m_codes_2_input.send_keys('408 095 504 507')
 
-        paint_and_interior_input = self.selenium.find_element_by_name("paint_and_interior")
+        paint_and_interior_input = self.selenium.find_element_by_name(
+            "paint_and_interior")
         paint_and_interior_input.send_keys('383851')
 
-        production_date_input = self.selenium.find_element_by_name("production_date")
+        production_date_input = self.selenium.find_element_by_name(
+            "production_date")
         production_date_input.send_keys('072')
 
-        export_destination_input = self.selenium.find_element_by_name("export_destination")
+        export_destination_input = self.selenium.find_element_by_name(
+            "export_destination")
         export_destination_input.send_keys('PG')
 
         model_input = self.selenium.find_element_by_name("model")
         model_input.send_keys('2650')
 
-        aggregate_code_input = self.selenium.find_element_by_name("aggregate_code")
+        aggregate_code_input = self.selenium.find_element_by_name(
+            "aggregate_code")
         aggregate_code_input.send_keys('11')
 
+        # decode_button = self.selenium.find_element_by_id('btn-decode')
+        decode_button = WebDriverWait(
+            self.selenium, 10).until(
+                EC.element_to_be_clickable((By.ID, "btn-decode")))
         decode_button.click()
 
         self.selenium.sleep(15)
