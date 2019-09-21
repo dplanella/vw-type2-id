@@ -14,7 +14,7 @@ cache:
 before_script:
   - apt-get update && apt-get install -y xvfb firefox-esr
   - pip3 install pipenv
-  - pipenv install
+  - pipenv install --dev
 
 test:
   stage: test
