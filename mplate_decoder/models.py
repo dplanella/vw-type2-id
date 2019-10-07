@@ -104,7 +104,7 @@ class Mplate(Model):
                 'N': 11,
                 'D': 12
             }
-            year = model_year.year - 1
+            year = model_year.year
             day = int(self.production_date[:2])
             month = month_dict[self.production_date[-1:]]
             if month >= MODEL_YEAR_START_MONTH:
