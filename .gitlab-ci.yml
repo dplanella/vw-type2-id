@@ -28,6 +28,9 @@ test:
     MOZ_HEADLESS: "1"
 
 include:
+  template: Dependency-Scanning.gitlab-ci.yml
+
+include:
   template: DAST.gitlab-ci.yml
 
 variables:
