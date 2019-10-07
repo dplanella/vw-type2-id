@@ -85,4 +85,4 @@ class ExampleTestCase(LiveServerTestCase):
         production_date = WebDriverWait(
             self.selenium, 10).until(
                 EC.element_to_be_clickable((By.ID, "production-date")))
-        self.assertEqual(production_date.text, "Feb 07, 1968")
+        self.assertEqual(production_date.text, "Feb 07, 1969")
