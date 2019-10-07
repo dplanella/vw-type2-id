@@ -26,3 +26,9 @@ test:
   variables:
     DJANGO_VW_TYPE2_ID_SECRET_KEY: "dummy_secret_key_testing"
     MOZ_HEADLESS: "1"
+
+include:
+  template: DAST.gitlab-ci.yml
+
+variables:
+  DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
