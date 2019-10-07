@@ -35,3 +35,7 @@ include:
 
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
+
+include:
+  template: License-Management.gitlab-ci.yml
+
