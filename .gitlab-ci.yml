@@ -1,6 +1,14 @@
+include:
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: DAST.gitlab-ci.yml
+  - template: License-Management.gitlab-ci.yml
+
 # Official framework image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/python
 image: python:3.6
+
+variables:
+  DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
@@ -25,16 +33,3 @@ test:
   variables:
     DJANGO_VW_TYPE2_ID_SECRET_KEY: "dummy_secret_key_testing"
     MOZ_HEADLESS: "1"
-
-include:
-  template: Dependency-Scanning.gitlab-ci.yml
-
-include:
-  template: DAST.gitlab-ci.yml
-
-variables:
-  DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
-
-include:
-  template: License-Management.gitlab-ci.yml
-
