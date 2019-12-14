@@ -7,7 +7,7 @@ https://vw-type2-id.xyz/
 Developed with:
 - [Django](https://www.djangoproject.com/)
 - [Python 3](https://python.org)
-- [Bootstrap](https://getbootstrap.com/).
+- [Bootstrap](https://getbootstrap.com/)
 
 ### M-plate decoder
 
@@ -20,7 +20,7 @@ https://vw-type2-id.xyz/mplate/decode/
 Local development is done via a virtual environment managed with [`pipenv`](https://github.com/pypa/pipenv). To get started:
 
 1. Clone this repository
-1. Install `pipenv` => `pip install pipenv --user`
+1. Install `pipenv` => `pip3 install pipenv --user`
 1. `cd vw-type2-id`
 1. `pipenv shell`
 1. Install project dependencies, if you've not already done it => `pipenv install`
