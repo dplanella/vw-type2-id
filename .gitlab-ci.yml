@@ -6,6 +6,9 @@ include:
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
 
+before_script:
+  - sudo apt-get build-dep python3-lxml
+
 cache:
   paths:
     - ~/.cache/pip/
