@@ -6,11 +6,6 @@ include:
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
 
-cache:
-  paths:
-    - ~/.cache/pip/
-    - ~/.cache/pipenv/
-
 test:
   stage: test
   image: python:3.6
@@ -26,3 +21,7 @@ test:
   variables:
     DJANGO_VW_TYPE2_ID_SECRET_KEY: "dummy_secret_key_testing"
     MOZ_HEADLESS: "1"
+  cache:
+    paths:
+      - ~/.cache/pip/
+      - ~/.cache/pipenv/
