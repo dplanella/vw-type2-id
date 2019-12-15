@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.com/vw-type2/vw-type2-id/badges/master/pipeline.svg)](https://gitlab.com/vw-type2/vw-type2-id/commits/master)
+
 ## Volkswagen Type 2 identification
 
 A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979.
