@@ -11,6 +11,7 @@ pytest-django = "*"
 pytest = "*"
 selenium = "*"
 pyvirtualdisplay = "*"
+coverage = "*"
 
 [packages]
 django = "==2.2.8"
