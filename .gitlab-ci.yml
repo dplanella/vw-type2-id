@@ -2,9 +2,14 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: DAST.gitlab-ci.yml
   - template: License-Management.gitlab-ci.yml
+  - template: SAST.gitlab-ci.yml
 
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
+
+dependency_scanning:
+  before_script:
+    - apk add --update --no-cache g++ gcc libxslt-dev build-base python-dev py-pip jpeg-dev zlib-dev
 
 test:
   stage: test
