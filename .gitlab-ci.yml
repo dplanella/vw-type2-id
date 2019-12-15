@@ -7,9 +7,22 @@ include:
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
 
+build:
+  image: python:3.6
+  stage: build
+  script:
+    - pip wheel --no-binary=':all:' --wheel-dir ./dist -r requirements.txt
+  artifacts:
+    paths:
+      - ./dist
+
 dependency_scanning:
-  before_script:
-    - apk add --update --no-cache g++ gcc libxslt-dev build-base python-dev py-pip jpeg-dev zlib-dev
+  dependencies:
+    - build
+  variables:
+    PIP_DEPENDENCY_PATH: ./dist
+  artifacts:
+    paths: [gl-dependency-scanning-report.json]
 
 test:
   stage: test
