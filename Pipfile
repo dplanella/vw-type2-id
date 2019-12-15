@@ -13,7 +13,7 @@ selenium = "*"
 pyvirtualdisplay = "*"
 
 [packages]
-django = "*"
+django = "==2.2.8"
 django-crispy-forms = "*"
 lxml = "*"
 pillow = "*"
