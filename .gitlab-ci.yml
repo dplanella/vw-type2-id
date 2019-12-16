@@ -6,25 +6,30 @@ include:
 
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
+  WHEEL_DIR: ./dist
 
-build:
+# Required for dependency scanning to work: build the binaries for the libraries
+# needed to build native pip dependencies
+build_dep_wheels:
   image: python:3.6
   stage: build
   script:
-    - pip wheel --no-binary=':all:' --wheel-dir ./dist -r requirements.txt
+    - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
   artifacts:
     paths:
-      - ./dist
+      - $WHEEL_DIR
 
+# Override the dependency scanning job to use PIP_DEPENDENCY_PATH and find
+# the binaries required to build the native pip dependencies
 dependency_scanning:
   dependencies:
-    - build
+    - build_dep_wheels
   variables:
-    PIP_DEPENDENCY_PATH: ./dist
+    PIP_DEPENDENCY_PATH: $WHEEL_DIR
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
-test:
+test_apps:
   stage: test
   image: python:3.6
   before_script:
@@ -35,10 +40,15 @@ test:
     - pip3 install pipenv
     - pipenv install --dev
   script:
-    - pipenv run python manage.py test
+    - pipenv run coverage run --source='.' manage.py test --verbosity 2
+    - pipenv run coverage report
+    - pipenv run coverage html
   variables:
     DJANGO_VW_TYPE2_ID_SECRET_KEY: "dummy_secret_key_testing"
     MOZ_HEADLESS: "1"
+  artifacts:
+    paths:
+      - htmlcov/
   cache:
     paths:
       - ~/.cache/pip/
