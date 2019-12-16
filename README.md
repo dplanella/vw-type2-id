@@ -1,5 +1,5 @@
 [![pipeline status](https://gitlab.com/vw-type2/vw-type2-id/badges/master/pipeline.svg)](https://gitlab.com/vw-type2/vw-type2-id/commits/master)
-[![coverage report](https://gitlab.com/vw-type2/vw-type2-id/badges/master/coverage.svg)](https://gitlab.com/vw-type2/vw-type2-id/commits/master)
+[![coverage report](https://gitlab.com/vw-type2/vw-type2-id/badges/master/coverage.svg)](https://vw-type2.gitlab.io/vw-type2-id)
 
 ## Volkswagen Type 2 identification
 
