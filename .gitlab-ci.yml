@@ -53,3 +53,16 @@ test_apps:
     paths:
       - ~/.cache/pip/
       - ~/.cache/pipenv/
+
+pages:
+  stage: deploy
+  dependencies:
+    - test_apps
+  script:
+    - mv htmlconv/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 90 days
+  only:
+    - master
