@@ -37,7 +37,13 @@
   </tr>
   <tr>
     <td><strong>{{ 'Production date'|upper }}</strong></td> 
-    <td id="production-date">{{ production_date }} </td>
+    <td id="production-date">
+        {{ production_date }}{% if emden %}, Manufactured at the Emden plant
+            <ion-icon title="From December 1967 to April 1973, as the Hannover plant was over capacity"
+                      style="vertical-align: sub; font-size: 1.3rem;" name="information-circle-outline">
+            </ion-icon>
+        {% endif %}
+    </td>
   </tr>
   <tr>
     <td><strong>{{ 'Optional extras'|upper }}</strong></td> 

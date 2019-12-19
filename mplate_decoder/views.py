@@ -86,6 +86,7 @@ class MplateRetrieve(generic.DetailView):
         context['engine_description'] = mplate.get_engine()
         context['gearbox_description'] = mplate.get_gearbox()
         context['m_codes'] = decoder.get_mcodes()
+        context['emden'] = mplate.emden
 
         return context
 
