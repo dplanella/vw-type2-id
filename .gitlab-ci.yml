@@ -29,6 +29,27 @@ dependency_scanning:
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
+flake8:
+  stage: test
+  image: python:3.6
+  before_script:
+  - python --version
+  - pip install -r requirements-dev.txt
+  script:
+  - flake8 --exclude=migrations
+  allow_failure: true
+
+pylint:
+  stage: test
+  image: python:3.6
+  before_script:
+  - python --version
+  - pip install -r requirements.txt
+  - pip install pylint
+  script:
+  - pylint **/*.py
+  allow_failure: true
+
 test_apps:
   stage: test
   image: python:3.6
