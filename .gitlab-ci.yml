@@ -36,8 +36,7 @@ flake8:
   - python --version
   - pip install -r requirements-dev.txt
   script:
-  - flake8 --exclude=migrations
-  allow_failure: true
+  - flake8 --exclude=migrationsgit
 
 pylint:
   stage: test
