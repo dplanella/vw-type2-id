@@ -33,20 +33,19 @@ flake8:
   stage: test
   image: python:3.6
   before_script:
-  - python --version
-  - pip install -r requirements-dev.txt
+    - pip3 install pipenv
+    - pipenv install --dev
   script:
-  - flake8 --exclude=migrationsgit
+  - pipenv run flake8 --exclude=migrationsgit
 
 pylint:
   stage: test
   image: python:3.6
   before_script:
-  - python --version
-  - pip install -r requirements.txt
-  - pip install pylint
+    - pip3 install pipenv
+    - pipenv install --dev
   script:
-  - pylint **/*.py
+  - pipenv run pylint **/*.py
   allow_failure: true
 
 test_apps:
