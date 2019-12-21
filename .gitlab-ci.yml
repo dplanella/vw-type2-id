@@ -36,7 +36,7 @@ flake8:
   - python --version
   - pip install -r requirements-dev.txt
   script:
-  - flake8 --exclude=migrationsgit
+  - flake8 --exclude=migrations
 
 pylint:
   stage: test
