@@ -1,4 +1,5 @@
 .vscode
+.coverage
 *.sqlite3
 mplate_decoder/fixtures/mplate_*
 __pycache__/*
@@ -7,5 +8,6 @@ __pycache__/*
 .pytest_cache/
 builds/
 cache/
+htmlcov/
 geckodriver.log
 
