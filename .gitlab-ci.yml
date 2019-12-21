@@ -36,7 +36,7 @@ flake8:
     - pip3 install pipenv
     - pipenv install --dev
   script:
-  - pipenv run flake8 --exclude=migrationsgit
+  - pipenv run flake8 --exclude=migrations
 
 pylint:
   stage: test
