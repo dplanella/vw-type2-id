@@ -12,6 +12,7 @@ pytest = "*"
 selenium = "*"
 pyvirtualdisplay = "*"
 coverage = "*"
+pylint = "*"
 
 [packages]
 django = "==2.2.8"
