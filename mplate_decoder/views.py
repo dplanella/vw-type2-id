@@ -110,6 +110,7 @@ class MplateDelete(generic.edit.DeleteView):
 class SearchResultsView(generic.ListView):
     model = Mplate
     template_name = 'mplate_decoder/search_results.html'
+    paginate_by = 25
 
     def get_queryset(self):
 
