@@ -118,8 +118,12 @@ class SearchResultsView(generic.ListView):
         query = self.request.GET.get('q')
 
         if query:
-            results = Mplate.objects.filter(
-                Q(m_codes_1__icontains=query) | Q(m_codes_2__icontains=query)
-            )
+            if query != '*':
+                results = Mplate.objects.filter(
+                    Q(m_codes_1__icontains=query)
+                    | Q(m_codes_2__icontains=query)
+                )
+            else:
+                results = Mplate.objects.all()
 
         return results
