@@ -1,6 +1,10 @@
 from django.views import generic
 from django.http import JsonResponse, HttpResponse
-from .models import Mplate, MplateDecoder
+from .models import (
+    Mplate,
+    MplateDecoder,
+    Mcode,
+)
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
@@ -127,3 +131,14 @@ class SearchResultsView(generic.ListView):
                 results = Mplate.objects.all()
 
         return results
+
+    def get_context_data(self, **kwargs):
+        query = self.request.GET.get('q')
+        context = super().get_context_data(**kwargs)
+
+        m_code_query_set = Mcode.objects.filter(
+                m_code=query)
+
+        context['m_code_query_set'] = m_code_query_set
+
+        return context

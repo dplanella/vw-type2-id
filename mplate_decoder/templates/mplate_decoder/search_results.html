@@ -4,6 +4,13 @@
 
 <div class="row">
   <div class="col my-5">
+
+  <ul>
+  {% for mcode in m_code_query_set %}
+    <li>{{ mcode.description}}, {{ mcode.years }}</li>
+  {% endfor %}
+  </ul>
+
     {% if object_list %}
     <h2>Found {{ paginator.count }} M-plates with M-code: {{ request.GET.q }}</h2>
     <div class="list-group mt-4">
