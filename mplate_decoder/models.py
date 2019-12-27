@@ -550,7 +550,7 @@ class MplateDecoder:
                 m_code_query_set = Mcode.objects.get(m_code=m_code)
                 description = m_code_query_set.description
             except ObjectDoesNotExist:
-                description = "Unknown code"
+                description = f"Unknown code, year {model_year}"
             except MultipleObjectsReturned:
                 m_code_query_set = Mcode.objects.filter(
                         m_code=m_code, years__contains=model_year)
@@ -559,9 +559,8 @@ class MplateDecoder:
                     if m_code_query_set[0].is_special_code:
                         mcode_prepend = 'S '
                 except IndexError:
-                    description = (
-                        "Error while fetching code:"
-                        " {}, year {}".format(m_code, model_year))
+                    description = \
+                        f"Undefined code for year {model_year}"
 
             mcode_dict[mcode_prepend + m_code] = description
 
