@@ -10,13 +10,12 @@ class Command(BaseCommand):
             decoder = MplateDecoder(mplate)
 
             mcodes = decoder.get_mcodes()
-            model_year = decoder.get_model_year().year
 
             for mcode, description in mcodes.items():
-                if description == 'Unknown code':
+                if 'Unknown' in description or 'Undefined' in description:
                     self.stdout.write(
                         self.style.WARNING(
-                            f'{mcode}: {description}, year {model_year}. '
+                            f'{mcode}: {description}. '
                         ) +
                         f'M-plate: {mplate.chassis_number_short}'
                     )
