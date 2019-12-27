@@ -110,13 +110,20 @@ class MplateDelete(generic.edit.DeleteView):
 class SearchResultsView(generic.ListView):
     model = Mplate
     template_name = 'mplate_decoder/search_results.html'
+    paginate_by = 25
 
     def get_queryset(self):
+
+        results = None
         query = self.request.GET.get('q')
 
         if query:
-            return Mplate.objects.filter(
-                Q(m_codes_1__icontains=query) | Q(m_codes_2__icontains=query)
-            )
-        else:
-            return
+            if query != '*':
+                results = Mplate.objects.filter(
+                    Q(m_codes_1__icontains=query)
+                    | Q(m_codes_2__icontains=query)
+                )
+            else:
+                results = Mplate.objects.all()
+
+        return results
