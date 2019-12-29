@@ -4,9 +4,8 @@
 
 @font-face {
     font-family: 'Embossing Tape 1 (BRK)';
-    src: url('embosst1-webfont.woff2') format('woff2'),
-         url('embosst1-webfont.woff') format('woff');
+    src: url('../fonts/embosst1-webfont.woff2') format('woff2'),
+         url('../fonts/embosst1-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
