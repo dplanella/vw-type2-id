@@ -1,4 +1,6 @@
 /*! Provides the SVG font for the M-Plate image */
+/* We need both WOFF and WOFF 2.0 formats, as IE still does not support 2.0:
+   https://caniuse.com/#feat=woff2 */
 
 @font-face {
     font-family: 'Embossing Tape 1 (BRK)';
