@@ -1,5 +1,6 @@
 {% extends "mplate_base_bootstrap.html" %}
 
+{% load static %}
 {% load svg %}
 
 {% block content %}
@@ -38,9 +39,11 @@
   <tr>
     <td><strong>{{ 'Production date'|upper }}</strong></td> 
     <td id="production-date">
-        {{ production_date }}{% if emden %}, Manufactured at the Emden plant
-            <ion-icon title="From December 1967 to April 1973, as the Hannover plant was over capacity"
-                      style="vertical-align: sub; font-size: 1.3rem;" name="information-circle-outline">
+        {{ production_date }}{% if emden %}. Manufactured at the Emden plant
+            <ion-icon
+              class="icon"
+              title="From December 1967 to April 1973, as the Hannover plant was over capacity"
+              name="information-circle-outline">
             </ion-icon>
         {% endif %}
     </td>
