@@ -42,6 +42,7 @@
         {{ production_date }}{% if emden %}. Manufactured at the Emden plant
             <ion-icon
               class="icon"
+              data-toggle="tooltip"
               title="From December 1967 to April 1973, as the Hannover plant was over capacity"
               name="information-circle-outline">
             </ion-icon>
@@ -73,4 +74,8 @@
 
 </div>
 
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'js/bootstrap-tooltips.js' %}"></script>
 {% endblock %}
