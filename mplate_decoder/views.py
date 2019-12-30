@@ -138,11 +138,11 @@ class SearchResultsView(generic.ListView):
         context = super().get_context_data(**kwargs)
 
         m_code_query_set = Mcode.objects.filter(
-                m_code=query)
+                m_code__iexact=query)
 
         if not m_code_query_set:
             m_code_query_set = McodeCollection.objects.filter(
-                m_code=query)
+                m_code__iexact=query)
 
         context['m_code_query_set'] = m_code_query_set
 
