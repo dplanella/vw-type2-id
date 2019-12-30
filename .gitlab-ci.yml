@@ -1,3 +1,9 @@
+stages:
+  - build
+  - test
+  - deploy
+  - dast
+
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: DAST.gitlab-ci.yml
@@ -8,10 +14,23 @@ variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
   WHEEL_DIR: ./dist
 
+cache:
+  paths:
+    - ~/.cache/pip/
+    - ~/.cache/pipenv/
+
+default:
+  image: python:3.6
+
+.linter_template:
+  stage: test
+  before_script:
+    - pip3 install pipenv
+    - pipenv install --dev
+
 # Required for dependency scanning to work: build the binaries for the libraries
 # needed to build native pip dependencies
 build_dep_wheels:
-  image: python:3.6
   stage: build
   script:
     - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
@@ -30,27 +49,18 @@ dependency_scanning:
     paths: [gl-dependency-scanning-report.json]
 
 flake8:
-  stage: test
-  image: python:3.6
-  before_script:
-    - pip3 install pipenv
-    - pipenv install --dev
+  extends: .linter_template
   script:
   - pipenv run flake8 --exclude=migrations
 
 pylint:
-  stage: test
-  image: python:3.6
-  before_script:
-    - pip3 install pipenv
-    - pipenv install --dev
+  extends: .linter_template
   script:
   - pipenv run pylint **/*.py
   allow_failure: true
 
 test_apps:
   stage: test
-  image: python:3.6
   before_script:
     - wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
     - tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C /usr/local/bin
@@ -71,10 +81,6 @@ test_apps:
       - test-results/
     reports:
       junit: ./test-results/TEST-*.xml
-  cache:
-    paths:
-      - ~/.cache/pip/
-      - ~/.cache/pipenv/
 
 pages:
   stage: deploy
