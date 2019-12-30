@@ -19,6 +19,9 @@ def summarizemodelyears(value):
         # If no years list available, assume and return all years
         years_list = [str(year) for year in list(range(1968, 1979))]
 
-    summarizedmodelyears = f"{years_list[0]}-{years_list[-1][-2:]}"
+    if len(years_list) > 1:
+        summarizedmodelyears = f"{years_list[0]}-{years_list[-1][-2:]}"
+    else:
+        summarizedmodelyears = years_list[0]
 
     return summarizedmodelyears
