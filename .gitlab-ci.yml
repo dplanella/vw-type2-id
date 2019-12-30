@@ -39,7 +39,7 @@ build_dep_wheels:
     paths:
       - $WHEEL_DIR
 
-# Override the dependency scanning job to use PIP_DEPENDENCY_PATH and find
+# Override the dependency_scanning job to use PIP_DEPENDENCY_PATH and find
 # the binaries required to build the native pip dependencies
 dependency_scanning:
   dependencies:
@@ -48,6 +48,12 @@ dependency_scanning:
     PIP_DEPENDENCY_PATH: $WHEEL_DIR
   artifacts:
     paths: [gl-dependency-scanning-report.json]
+
+# Override the code_quality job to make the code quality report artifact
+# downloadable from the job detail page
+code_quality:
+  artifacts:
+    paths: [gl-code-quality-report.json]
 
 flake8:
   extends: .linter_template
