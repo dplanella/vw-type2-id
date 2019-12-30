@@ -68,6 +68,7 @@ test_apps:
   artifacts:
     paths:
       - htmlcov/
+      - test-results/
     reports:
       junit: ./test-results/TEST-*.xml
   cache:
