@@ -8,23 +8,21 @@
   <div class="col my-5">
 
     {% if m_code_query_set%}
-      <div class="list-group mt-4">
-        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
-          <div class="d-flex justify-content-between align-items-right">
-            <h5 class="my-1">CODE</h5>
-            <h5 class="my-1">YEARS</h5>
-            <h5 class="my-1">DESCRIPTION</h5>
-          </div>
-        </a>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tr>
+            <th><strong>{{ 'Code'|upper }}</strong></th> 
+            <th><strong>{{ 'Years'|upper }}</strong></th>
+            <th><strong>{{ 'Description'|upper }}</strong></th>            
+          </tr>
       {% for mcode in m_code_query_set %}
-        <a href="{{ mplate.get_absolute_url }}" class="list-group-item list-group-item-action">
-          <div class="d-flex justify-content-between align-items-right">
-            <h5 class="my-1">{{ request.GET.q }}</h5>
-            <span>{{ mcode.years|summarizemodelyears }}</span>
-            <span>{{ mcode.description}}</span>
-          </div>
-        </a>
+          <tr>
+            <td>{{ request.GET.q }}</td> 
+            <td>{{ mcode.years|summarizemodelyears }}</td>
+            <td>{{ mcode.description}}</td>            
+          </tr>
       {% endfor %}
+        </table>
       </div>
     {% endif %}
 
