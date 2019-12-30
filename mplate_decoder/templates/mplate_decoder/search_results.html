@@ -1,11 +1,39 @@
 {% extends "mplate_base_bootstrap.html" %}
 
+{% load summarizemodelyears %}
+
 {% block content %}
 
 <div class="row">
   <div class="col my-5">
+
+    {% if m_code_query_set%}
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tr>
+            <th><strong>{{ 'Code'|upper }}</strong></th> 
+            <th><strong>{{ 'Years'|upper }}</strong></th>
+            <th><strong>{{ 'Description'|upper }}</strong></th>            
+          </tr>
+      {% for mcode in m_code_query_set %}
+          <tr>
+            <td>{{ request.GET.q }}</td> 
+            <td>{{ mcode.years|summarizemodelyears }}</td>
+            <td>
+              {% if mcode.description|length > 0 %}
+                {{ mcode.description }}
+              {% else %}
+                M-code collection: {{ mcode.collection }}
+              {% endif %}
+             </td>
+          </tr>
+      {% endfor %}
+        </table>
+      </div>
+    {% endif %}
+
     {% if object_list %}
-    <h2>Found {{ paginator.count }} M-plates with M-code: {{ request.GET.q }}</h2>
+    <h2 class="mt-3" >Found {{ paginator.count }} M-plates with M-code: {{ request.GET.q }}</h2>
     <div class="list-group mt-4">
         <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
           <div class="d-flex justify-content-between align-items-center">
@@ -20,7 +48,7 @@
             <span>{{ mplate.m_codes_1 }} {{ mplate.m_codes_2}}</span>
           </div>
         </a>
-        {% endfor %}
+      {% endfor %}
     </div>
       {% if is_paginated %}
         <div class="mt-3">
