@@ -13,6 +13,7 @@ selenium = "*"
 pyvirtualdisplay = "*"
 coverage = "*"
 pylint = "*"
+unittest-xml-reporting = "*"
 
 [packages]
 django = "==2.2.8"
