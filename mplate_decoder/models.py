@@ -40,7 +40,6 @@ class Mplate(Model):
     export_destination = models.CharField(
         max_length=3, blank=True,
         help_text='Destination code')
-    # export_destination = models.ForeignKey(ExportDestination)
     model = models.CharField(
         max_length=4,
         help_text='Vehicle model')
@@ -569,9 +568,10 @@ class MplateDecoder:
 
 class ExportDestination(Model):
     export_code = models.CharField(max_length=3)
-    export_destination = models.CharField(max_length=50)
+    destination = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     region = models.CharField(max_length=50, blank=True)
+    city = models.CharField(max_length=50, blank=True)
     port = models.CharField(max_length=50, blank=True)
     notes = models.CharField(max_length=50, blank=True)
 
