@@ -568,7 +568,7 @@ class MplateDecoder:
 
 class ExportDestination(Model):
     export_code = models.CharField(max_length=3)
-    destination = models.CharField(max_length=50)
+    destination = models.CharField(max_length=50, blank=True)
     country = models.CharField(max_length=50)
     region = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50, blank=True)
