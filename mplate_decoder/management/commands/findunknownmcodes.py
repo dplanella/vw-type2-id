@@ -24,7 +24,8 @@ class Command(BaseCommand):
                         unknowns[f'{mcode}: {description}'] = \
                             [mplate.chassis_number_short]
 
-        for unknown, mplate_list in sorted(unknowns.items(), key=lambda item: item[0]):
+        for unknown, mplate_list in sorted(unknowns.items(),
+                                           key=lambda item: item[0]):
             self.stdout.write(
                 self.style.WARNING(
                     f'{unknown}. '
