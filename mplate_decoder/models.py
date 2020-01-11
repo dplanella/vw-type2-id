@@ -173,7 +173,7 @@ class Mplate(Model):
                 destination_description = f"{export_destination.destination}"
                 # Destinations in Germany have a 3-digit export code. If it
                 # is a German destination, show the city as well.
-                if len(export_code) == 3:
+                if len(export_code) == 3 and export_destination.city:
                     destination_description += f", {export_destination.city}"
             else:
                 # The export code is not on the database
@@ -195,12 +195,21 @@ class Mplate(Model):
 
         if export_code:
             if export_destination:
-                destination_geo_description = f"{export_destination.country}"
+                if export_destination.country:
+                    destination_geo_description = \
+                        f"{export_destination.country}"
+                elif (export_destination.region and
+                      not export_destination.country):
+                    destination_geo_description = \
+                        f"{export_destination.region}"
+                else:
+                    destination_geo_description = "Undefined country or region"
                 # Destinations in Germany have a 3-digit export code. If it
                 # not is a German destination, show the rest of geographical
                 # info.
                 if len(export_code) < 3:
-                    if export_destination.region:
+                    if (export_destination.region and
+                            export_destination.country):
                         destination_geo_description += \
                             f", {export_destination.region}"
                     if export_destination.port:
