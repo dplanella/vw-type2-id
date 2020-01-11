@@ -148,7 +148,7 @@ class Mplate(Model):
 
     def get_export_destination_object(self):
         '''
-        Return the ExportDestination object corresponding to the M-plate's 
+        Return the ExportDestination object corresponding to the M-plate's
         export code. Return None if code is not in the database.
         '''
         try:
@@ -158,11 +158,11 @@ class Mplate(Model):
             destination = None
 
         return destination
-    
+
     def get_export_destination(self):
         '''
         Return a description of the export destination for display purposes.
-        The destination may include a purpose or a location (e.g. dealer, city),
+        The destination may include a purpose or a location (e.g. dealer, city)
         but otherwise will not contain any other geographical information.
         '''
         export_code = self.export_destination
