@@ -64,11 +64,19 @@
   <tr>
     <td><strong>{{ 'Interior'|upper }}</strong></td> 
     <td>{{ interiorcolor_description }} </td>
-  </tr>  
+  </tr>
+  {% if export_destination and 'Unknown' not in export_destination and 'Not specified' not in export_destination %}
   <tr>
-    <td><strong>{{ 'Export destination'|upper }}</strong></td>
+    <td><strong>{{ 'Destination'|upper }}</strong></td>
     <td>{{ export_destination }} </td>
   </tr>
+  {% endif %}
+  {% if export_destination_geo %}
+  <tr>
+    <td><strong>{{ 'Destination country'|upper }}</strong></td>
+    <td>{{ export_destination_geo }} </td>
+  </tr>
+  {% endif %}
 </table>
 </div>
 

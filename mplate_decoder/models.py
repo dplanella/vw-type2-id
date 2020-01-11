@@ -146,20 +146,77 @@ class Mplate(Model):
 
         return production_date
 
-    def get_export_destination(self):
+    def get_export_destination_object(self):
+        '''
+        Return the ExportDestination object corresponding to the M-plate's 
+        export code. Return None if code is not in the database.
+        '''
         try:
             destination = ExportDestination.objects.get(
                 export_code=self.export_destination)
-            destination_description = \
-                destination.export_destination
         except ObjectDoesNotExist:
-            if not self.export_destination:
-                destination_description = "Not specified"
+            destination = None
+
+        return destination
+    
+    def get_export_destination(self):
+        '''
+        Return a description of the export destination for display purposes.
+        The destination may include a purpose or a location (e.g. dealer, city),
+        but otherwise will not contain any other geographical information.
+        '''
+        export_code = self.export_destination
+        export_destination = self.get_export_destination_object()
+
+        if export_code:
+            if export_destination:
+                destination_description = f"{export_destination.destination}"
+                # Destinations in Germany have a 3-digit export code. If it
+                # is a German destination, show the city as well.
+                if len(export_code) == 3:
+                    destination_description += f", {export_destination.city}"
             else:
-                destination_description = \
-                    "Unknown ({})".format(self.export_destination)
+                # The export code is not on the database
+                destination_description = f"Unknown ({export_code})"
+        else:
+            # The export code hasn't been specified on M-plate form submission
+            destination_description = "Not specified"
 
         return destination_description
+
+    def get_export_destination_geo(self):
+        '''
+        Return a description of the export country or region for display
+        purposes.
+        The destination may include a country, region and port/city of entry.
+        '''
+        export_code = self.export_destination
+        export_destination = self.get_export_destination_object()
+
+        if export_code:
+            if export_destination:
+                destination_geo_description = f"{export_destination.country}"
+                # Destinations in Germany have a 3-digit export code. If it
+                # not is a German destination, show the rest of geographical
+                # info.
+                if len(export_code) < 3:
+                    if export_destination.region:
+                        destination_geo_description += \
+                            f", {export_destination.region}"
+                    if export_destination.port:
+                        destination_geo_description += \
+                            f" via {export_destination.port}"
+                    elif export_destination.city:
+                        destination_geo_description += \
+                            f" via {export_destination.city}"
+            else:
+                # The export code is not on the database
+                destination_geo_description = f"Unknown ({export_code})"
+        else:
+            # The export code hasn't been specified on M-plate form submission
+            destination_geo_description = "Not specified"
+
+        return destination_geo_description
 
     def get_model(self):
         model_code = self.model[:2]
