@@ -118,14 +118,15 @@ class McodeAdmin(admin.ModelAdmin):
 class ExportDestinationAdmin(admin.ModelAdmin):
     search_fields = (
         'export_code',
-        'export_destination',
+        'destination',
         'country',
     )
     list_display = (
         'export_code',
-        'export_destination',
+        'destination',
         'country',
         'region',
+        'city',
         'port',
         'notes',
     )

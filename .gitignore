@@ -10,4 +10,4 @@ builds/
 cache/
 htmlcov/
 geckodriver.log
-
+test-results/

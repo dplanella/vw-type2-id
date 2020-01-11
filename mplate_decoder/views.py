@@ -84,6 +84,7 @@ class MplateRetrieve(generic.DetailView):
         context['model_year'] = decoder.get_model_year().year
         context['production_date'] = mplate.get_production_date()
         context['export_destination'] = mplate.get_export_destination()
+        context['export_destination_geo'] = mplate.get_export_destination_geo()
         context['model_description'] = mplate.get_model()
         context['interiorcolor_description'] = mplate.get_interiorcolor()
         context['exteriorcolor_description'] = \
