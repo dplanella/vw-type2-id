@@ -1,5 +1,5 @@
 from django.urls import path
-
+from django.contrib import admin
 from . import views
 
 app_name = 'mplate_decoder'
@@ -19,3 +19,8 @@ urlpatterns = [
      path('search/', views.SearchResultsView.as_view(),
           name='search_results'),
 ]
+
+SITE_NAME = "VW Type 2 ID"
+admin.site.site_header = f"{SITE_NAME} Admin"
+admin.site.site_title = f"{SITE_NAME} Admin Portal"
+admin.site.index_title = f"Welcome to {SITE_NAME} Admin Portal"
