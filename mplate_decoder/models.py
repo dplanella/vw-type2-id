@@ -50,6 +50,10 @@ class Mplate(Model):
         max_length=1, blank=True,
         help_text='''Optional "E" for
             Emden''')
+    plate_version = models.CharField(
+        max_length=3, blank=True,
+        help_text='''M-plate format
+            version''')
 
     def __unicode__(self):
         return self.chassis_number_short
