@@ -1,5 +1,5 @@
 # Pull official base image
-FROM python:3.7.4-alpine
+FROM python:3.6-alpine
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -13,6 +13,9 @@ ENV CONTAINER_PROJECT=$CONTAINER_HOME/$PROJECT
 
 # Set working directory
 WORKDIR ${CONTAINER_PROJECT}
+COPY ./docker-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Install build dependencies
 # using the image's package manager
@@ -26,10 +29,14 @@ RUN apk --no-cache add --virtual .build-dependencies \
 
 # Install app dependencies
 # using pipenv
-RUN pip install --upgrade pip
-RUN pip install pipenv
-COPY ./Pipfile ${CONTAINER_PROJECT}/Pipfile
-RUN pipenv install --skip-lock --system --dev
+RUN pip install --upgrade pip \
+    pipenv \
+    gunicorn
 
-# Copy project
+# Copy the app's source code to the project location
+# within the container
 COPY . ${CONTAINER_PROJECT}
+
+# Install local dependencies
+#RUN pipenv install --skip-lock --system --dev
+RUN pipenv install --system --deploy --ignore-pipfile
