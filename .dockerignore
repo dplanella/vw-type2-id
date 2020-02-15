@@ -1,0 +1,14 @@
+.git/
+**/.vscode
+**/.coverage
+**/*.sqlite3*
+**/mplate_decoder/fixtures/mplate_*
+**/__pycache__/*
+**/*.pyc
+static/
+**/.pytest_cache/
+**/builds/
+**/cache/
+**/htmlcov/
+**/geckodriver.log
+**/test-results/
