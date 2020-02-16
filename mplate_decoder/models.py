@@ -548,13 +548,24 @@ class MplateDecoder:
 
             year = model_year.year
             day = int(encoded_production_date[:2])
-            month = month_dict[encoded_production_date[-1:]]
+            try:
+                month = month_dict[encoded_production_date[-1:]]
+            except:
+                logger.error(
+                    f'Could not decode production date {encoded_production_date}'
+                    f' for chassis number {chassis_number}')
+                return None
 
             if month >= MODEL_YEAR_START_MONTH:
                 year = model_year.year - 1
 
-            production_date = datetime(year, month, day).date()
-
+            try:
+                production_date = datetime(year, month, day).date()
+            except:
+                logger.error(
+                    f'Could not decode production date {encoded_production_date}'
+                    f' for chassis number {chassis_number}')
+                return None
         else:
             iso_year = model_year.year
             iso_weeknumber = int(encoded_production_date[:2])
