@@ -11,9 +11,9 @@ class Command(BaseCommand):
         years_submissions_count = 0
 
         for mplate in Mplate.objects.all():
-            decoder = MplateDecoder(mplate)
+            #decoder = MplateDecoder(mplate)
 
-            model_year = decoder.get_model_year().year
+            model_year = mplate.model_year # decoder.get_model_year().year
 
             try:
                 years[model_year].append(

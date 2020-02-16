@@ -17,6 +17,21 @@ from vw_type2_id.settings import BASE_DIR
 logger = logging.getLogger('django')
 
 
+from django.db.models import Value
+from django.db.models.functions import Concat
+
+class MplateManager(models.Manager):
+    """QuerySet manager for Invoice class to add non-database fields.
+
+    A @property in the model cannot be used because QuerySets (eg. return
+    value from .all()) are directly tied to the database Fields -
+    this does not include @property attributes."""
+
+    def get_queryset(self):
+        """Overrides the models.Manager method"""
+        qs = super(MplateManager, self).get_queryset().annotate(link=Concat(Value("<a href='#'>"), 'id', Value('</a>')))
+        return qs
+
 class Mplate(Model):
     chassis_number_short = models.CharField(
         max_length=8, unique=True,
@@ -59,7 +74,8 @@ class Mplate(Model):
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
 
-    def get_model_year(self):
+    @property
+    def model_year(self):
         decoder = MplateDecoder(self)
         model_year = decoder.get_model_year()
 
@@ -176,7 +192,7 @@ class Mplate(Model):
         configuration_code = self.model[2]
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
-        model_year = self.get_model_year().year
+        model_year = self.get_model_year()
 
         try:
             model = Type2Model.objects.get(
@@ -256,7 +272,7 @@ class Mplate(Model):
         except ObjectDoesNotExist:
             exteriorcolor_object = None
         except MultipleObjectsReturned:
-            model_year = decoder.get_model_year().year
+            model_year = decoder.get_model_year()
             exteriorcolor = ExteriorColor.objects.filter(
                 plate_code=exteriorcolor_code,
                 years__contains=model_year,
@@ -366,7 +382,7 @@ class Mplate(Model):
                 color_name = "({}) Unknown color".format(interiorcolor_code)
                 material = "Unknown material"
             except MultipleObjectsReturned:
-                model_year = decoder.get_model_year().year
+                model_year = decoder.get_model_year()
                 interiorcolor = InteriorColor.objects.filter(
                     plate_code=interiorcolor_code,
                     years__contains=model_year,
@@ -424,7 +440,7 @@ class Mplate(Model):
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         decoder = MplateDecoder(self)
-        model_year = decoder.get_model_year().year
+        model_year = decoder.get_model_year()
         logger.info("Model year: {} {}".format(model_year, type(model_year)))
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
@@ -464,6 +480,8 @@ class Mplate(Model):
         plate = etree.tostring(tree).decode('utf-8')
 
         return plate
+    
+    objects = MplateManager()
 
 
 class MplateDecoder:
@@ -506,7 +524,7 @@ class MplateDecoder:
             year=MODEL_YEAR_START.year + ((10 * model_year_decade) +
                                           model_year_delta))
 
-        return model_year
+        return model_year.year
 
     def get_production_date(
             self, chassis_number=None,
@@ -530,7 +548,7 @@ class MplateDecoder:
         production_date = None
 
         # Model year is 68-69
-        if model_year < date(1970, 1, 1):
+        if model_year < 1970:
             month_dict = {
                 '1': 1,
                 '2': 2,
@@ -546,7 +564,7 @@ class MplateDecoder:
                 'D': 12
             }
 
-            year = model_year.year
+            year = model_year
             day = int(encoded_production_date[:2])
             try:
                 month = month_dict[encoded_production_date[-1:]]
@@ -557,7 +575,7 @@ class MplateDecoder:
                 return None
 
             if month >= MODEL_YEAR_START_MONTH:
-                year = model_year.year - 1
+                year = model_year - 1
 
             try:
                 production_date = datetime(year, month, day).date()
@@ -567,7 +585,7 @@ class MplateDecoder:
                     f' for chassis number {chassis_number}')
                 return None
         else:
-            iso_year = model_year.year
+            iso_year = model_year
             iso_weeknumber = int(encoded_production_date[:2])
             iso_weekday = int(encoded_production_date[-1:])
 
@@ -628,7 +646,7 @@ class MplateDecoder:
             raise ValueError('MplateDecoder requires'
                              ' an mplate or chassis_number_short')
 
-        model_year = self.get_model_year(chassis_number_short).year
+        model_year = self.get_model_year(chassis_number_short)
 
         mcode_dict = {}
         m_codes = list(filter(None,

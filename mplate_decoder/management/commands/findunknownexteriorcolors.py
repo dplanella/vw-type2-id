@@ -7,10 +7,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for mplate in Mplate.objects.all():
-            decoder = MplateDecoder(mplate)
+            # decoder = MplateDecoder(mplate)
 
             description = mplate.get_exteriorcolor_description()
-            model_year = decoder.get_model_year().year
+            model_year = mplate.model_year  # decoder.get_model_year().year
 
             if 'Unknown exterior color code' in description:
                 self.stdout.write(

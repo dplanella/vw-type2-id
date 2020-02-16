@@ -18,13 +18,13 @@ class Type2ModelExtraAdmin(admin.ModelAdmin):
 
 
 @admin.register(Type2ModelConfiguration)
-class Type2ModelConfiguration(admin.ModelAdmin):
+class Type2ModelConfigurationAdmin(admin.ModelAdmin):
     search_fields = ('model', 'configuration', 'description')
     list_display = ('model', 'configuration', 'description')
 
 
 @admin.register(Type2Model)
-class Type2ModelConfiguration(admin.ModelAdmin):
+class Type2ModelAdmin(admin.ModelAdmin):
     search_fields = ('model', )
     list_display = (
         'model',
@@ -48,6 +48,7 @@ class MplateAdmin(admin.ModelAdmin):
                     'model',
                     'aggregate_code',
                     'emden',
+                    'model_year',
                     )
     list_display_links = ('chassis_number_short', )
     view_on_site = True
