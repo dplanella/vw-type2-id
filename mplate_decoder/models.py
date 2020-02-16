@@ -80,69 +80,12 @@ class Mplate(Model):
 
         return type_body + self.chassis_number_short
 
-    def get_production_date(self, as_string=True):
+    def get_production_date(self, as_string=True, as_iso_string=False):
 
-        # Model year starts in August
-        MODEL_YEAR_START_MONTH = 8
-        model_year = self.get_model_year()
-        production_date = ''
+        decoder = MplateDecoder(self)
+        production_date = decoder.get_production_date(as_string)
 
-        # Model year is 68-69
-        if model_year < date(1970, 1, 1):
-            month_dict = {
-                '1': 1,
-                '2': 2,
-                '3': 3,
-                '4': 4,
-                '5': 5,
-                '6': 6,
-                '7': 7,
-                '8': 8,
-                '9': 9,
-                'O': 10,
-                'N': 11,
-                'D': 12
-            }
-            year = model_year.year
-            day = int(self.production_date[:2])
-            month = month_dict[self.production_date[-1:]]
-            if month >= MODEL_YEAR_START_MONTH:
-                year = model_year.year - 1
-
-            production_date = datetime(year, month, day).date()
-        else:
-            iso_year = model_year.year
-            iso_weeknumber = int(self.production_date[:2])
-            iso_weekday = int(self.production_date[-1:])
-
-            first_model_year_weeks = {
-                1969: "1969W12",
-                1970: "1970W29",
-                1971: "1970W32",
-                1972: "1971W34",
-                1973: "1972W34",
-                1974: "1973W33",
-                1975: "1974W33",
-                1976: "1975W28",
-                1977: "1976W28",
-                1978: "1977W30",
-                1979: "1978W28",
-            }
-
-            first_model_year_week = Week.fromstring(
-                first_model_year_weeks[iso_year])
-
-            if iso_weeknumber >= first_model_year_week.week:
-                week_offset = iso_weeknumber - first_model_year_week.week
-            else:
-                week_offset = ((52 + iso_weeknumber)
-                               - first_model_year_week.week)
-
-            production_week = first_model_year_week + week_offset
-            production_date = production_week.day(iso_weekday - 1)
-
-        if as_string:
-            production_date = production_date.strftime("%b %d, %Y")
+        logger.info(f'Production date: {production_date}')
 
         return production_date
 
@@ -563,6 +506,95 @@ class MplateDecoder:
                                           model_year_delta))
 
         return model_year
+
+    def get_production_date(
+            self, chassis_number=None,
+            encoded_production_date=None,
+            as_string=True, as_iso_string=False):
+
+        if chassis_number and encoded_production_date:
+            chassis_number = chassis_number
+            encoded_production_date = encoded_production_date
+        elif self.mplate:
+            chassis_number = self.mplate.chassis_number_short
+            encoded_production_date = self.mplate.production_date
+
+        else:
+            raise ValidationError(
+                'MplateDecoder requires either'
+                ' an m-plate or chassis_number with encoded production date')
+
+        # Model year starts in August
+        MODEL_YEAR_START_MONTH = 8
+        model_year = self.get_model_year(chassis_number)
+        production_date = None
+
+        # Model year is 68-69
+        if model_year < date(1970, 1, 1):
+            month_dict = {
+                '1': 1,
+                '2': 2,
+                '3': 3,
+                '4': 4,
+                '5': 5,
+                '6': 6,
+                '7': 7,
+                '8': 8,
+                '9': 9,
+                'O': 10,
+                'N': 11,
+                'D': 12
+            }
+
+            year = model_year.year
+            day = int(encoded_production_date[:2])
+            month = month_dict[encoded_production_date[-1:]]
+
+            if month >= MODEL_YEAR_START_MONTH:
+                year = model_year.year - 1
+
+            production_date = datetime(year, month, day).date()
+
+        else:
+            iso_year = model_year.year
+            iso_weeknumber = int(encoded_production_date[:2])
+            iso_weekday = int(encoded_production_date[-1:])
+
+            first_model_year_weeks = {
+                1969: "1969W12",
+                1970: "1970W29",
+                1971: "1970W32",
+                1972: "1971W34",
+                1973: "1972W34",
+                1974: "1973W33",
+                1975: "1974W33",
+                1976: "1975W28",
+                1977: "1976W28",
+                1978: "1977W30",
+                1979: "1978W28",
+            }
+
+            first_model_year_week = Week.fromstring(
+                first_model_year_weeks[iso_year])
+
+            if iso_weeknumber >= first_model_year_week.week:
+                week_offset = iso_weeknumber - first_model_year_week.week
+            else:
+                week_offset = ((52 + iso_weeknumber)
+                               - first_model_year_week.week)
+
+            production_week = first_model_year_week + week_offset
+            production_date = production_week.day(iso_weekday - 1)
+
+        if as_iso_string:
+            STRF_FORMAT = "%b %d, %Y"
+        elif as_string:
+            STRF_FORMAT = "%Y-%m-%d"
+
+        if as_iso_string or as_string:
+            production_date = production_date.strftime(STRF_FORMAT)
+
+        return production_date
 
     def get_mcodes(self, m_codes_1=None, m_codes_2=None,
                    chassis_number_short=None):
