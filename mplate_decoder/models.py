@@ -83,7 +83,8 @@ class Mplate(Model):
     def get_production_date(self, as_string=True, as_iso_string=False):
 
         decoder = MplateDecoder(self)
-        production_date = decoder.get_production_date(as_string)
+        production_date = decoder.get_production_date(
+            as_string=as_string, as_iso_string=as_iso_string)
 
         logger.info(f'Production date: {production_date}')
 
@@ -518,7 +519,6 @@ class MplateDecoder:
         elif self.mplate:
             chassis_number = self.mplate.chassis_number_short
             encoded_production_date = self.mplate.production_date
-
         else:
             raise ValidationError(
                 'MplateDecoder requires either'
@@ -587,9 +587,9 @@ class MplateDecoder:
             production_date = production_week.day(iso_weekday - 1)
 
         if as_iso_string:
-            STRF_FORMAT = "%b %d, %Y"
-        elif as_string:
             STRF_FORMAT = "%Y-%m-%d"
+        elif as_string:
+            STRF_FORMAT = "%b %d, %Y"
 
         if as_iso_string or as_string:
             production_date = production_date.strftime(STRF_FORMAT)
