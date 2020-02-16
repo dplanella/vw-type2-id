@@ -65,9 +65,7 @@ class MplateAdmin(admin.ModelAdmin):
 
     def production_date_iso(self, obj):
         '''Returns decoded date in ISO time format'''
-        ISO_FORMAT = "%Y-%m-%d"
-        production_date = obj.get_production_date(as_string=False)
-        production_date_iso = production_date.strftime(ISO_FORMAT)
+        production_date_iso = obj.get_production_date(as_iso_string=True)
 
         return production_date_iso
 
