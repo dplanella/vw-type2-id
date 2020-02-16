@@ -197,7 +197,7 @@ class MplateCreateForm(ModelForm):
         MODEL_LEN = 4
         data = self.cleaned_data['model']
 
-        if len(data) < MODEL_LEN:
+        if len(data.strip()) < MODEL_LEN:
             raise ValidationError(
                 "Minimum model code length: {} digits".format(
                     MODEL_LEN)
@@ -207,6 +207,10 @@ class MplateCreateForm(ModelForm):
         VALID_MODELS = list(map(int, VALID_MODELS))
 
         logger.info('Valid models: {}'.format(VALID_MODELS))
+
+        if not re.match("^2[1-467][14568][0-9]$", data):
+            raise ValidationError(
+                "Invalid model. Please double check.")
 
         try:
             model_int = int(data[:2])
