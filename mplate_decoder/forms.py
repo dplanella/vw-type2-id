@@ -1,6 +1,7 @@
 from django.forms import ModelForm, ValidationError  # , TextInput
 import re
 from django.utils.text import slugify
+from datetime import date
 from .models import (
     Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
 )
@@ -154,19 +155,39 @@ class MplateCreateForm(ModelForm):
         return data
 
     def clean_production_date(self):
-        PRODUCTION_DATE_LEN = 3
         data = self.cleaned_data['production_date']
+        decoder = MplateDecoder()
 
-        data = data.upper()
-        if not re.match("^[0-9]{2}[0-9OND]$", data):
-            raise ValidationError("Only digits and letters allowed")
+        # Get the model year to check the date format
+        chassis_number_short = self.cleaned_data['chassis_number_short']
+        model_year = decoder.get_model_year(chassis_number_short)
 
-        if len(data) < PRODUCTION_DATE_LEN:
-            raise ValidationError(
-                "Minimum production date code length: "
-                " {} digits or letters".format(
-                    PRODUCTION_DATE_LEN)
-            )
+        # Model year is 68-69, check if valid production date
+        if model_year < date(1970, 1, 1):
+            data = data.upper()
+            if not re.match("^[1-3][0-9][1-9OND]$", data):
+                raise ValidationError(
+                    "Invalid production date format. Please double check.")
+
+            try:
+                decoder.get_production_date(
+                    chassis_number=chassis_number_short,
+                    encoded_production_date=data)
+            except ValueError as exc:
+                raise ValidationError(
+                    f"Invalid production date ({exc}). Please double check.")
+
+        # Model year is 70-79, check if valid production date
+        else:
+            if not re.match("^[1-5][0-9][1-6]$", data):
+                raise ValidationError(
+                    "Invalid production date format. Please double check.")
+
+            iso_week = int(data[2:])
+            if iso_week > 52:
+                raise ValidationError(
+                    "Invalid production week date. Please double check"
+                    " the two first digits.")
 
         return data
 
