@@ -63,7 +63,7 @@ flake8:
 pylint:
   extends: .linter_template
   script:
-  - pipenv run pylint **/*.py
+  - pipenv run pylint **/*.py --ignore=migrations
   allow_failure: true
 
 test_apps:
