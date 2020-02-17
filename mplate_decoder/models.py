@@ -17,21 +17,6 @@ from vw_type2_id.settings import BASE_DIR
 logger = logging.getLogger('django')
 
 
-from django.db.models import Value
-from django.db.models.functions import Concat
-
-class MplateManager(models.Manager):
-    """QuerySet manager for Invoice class to add non-database fields.
-
-    A @property in the model cannot be used because QuerySets (eg. return
-    value from .all()) are directly tied to the database Fields -
-    this does not include @property attributes."""
-
-    def get_queryset(self):
-        """Overrides the models.Manager method"""
-        qs = super(MplateManager, self).get_queryset().annotate(link=Concat(Value("<a href='#'>"), 'id', Value('</a>')))
-        return qs
-
 class Mplate(Model):
     chassis_number_short = models.CharField(
         max_length=8, unique=True,
@@ -66,6 +51,17 @@ class Mplate(Model):
         help_text='''Optional "E" for
             Emden''')
 
+    # Computed (decoded) fields
+    m_codes = models.CharField(
+        max_length=38, blank=True, editable=False,
+        help_text="Full list of M codes for this M plate")
+    production_date_as_time = models.DateField(
+        blank=True, editable=False,
+        help_text="Planned production date, in time format")
+    model_year = models.CharField(
+        max_length=4, blank=True, editable=False,
+        help_text='Model year')
+
     def __unicode__(self):
         return self.chassis_number_short
 
@@ -74,20 +70,15 @@ class Mplate(Model):
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
 
-    @property
-    def model_year(self):
+    def get_model_year(self):
         decoder = MplateDecoder(self)
         model_year = decoder.get_model_year()
-
-        logger.info('Model year: {}'.format(model_year))
 
         return model_year
 
     def get_serial_production_number(self):
         splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
         serial_number = int(self.chassis_number[splitat:])
-
-        logger.info('Serial number: {}'.format(serial_number))
 
         return serial_number
 
@@ -96,13 +87,10 @@ class Mplate(Model):
 
         return type_body + self.chassis_number_short
 
-    def get_production_date(self, as_string=True, as_iso_string=False):
+    def get_production_date(self):
 
         decoder = MplateDecoder(self)
-        production_date = decoder.get_production_date(
-            as_string=as_string, as_iso_string=as_iso_string)
-
-        logger.info(f'Production date: {production_date}')
+        production_date = decoder.get_production_date()
 
         return production_date
 
@@ -192,7 +180,7 @@ class Mplate(Model):
         configuration_code = self.model[2]
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
-        model_year = self.get_model_year()
+        model_year = self.model_year
 
         try:
             model = Type2Model.objects.get(
@@ -257,7 +245,6 @@ class Mplate(Model):
 
         SPECIAL_PAINTJOB_CODE_LEN = 3
         exteriorcolor_object = None
-        decoder = MplateDecoder(self)
         model_year = 0
 
         exteriorcolor_code = self._get_exteriorcolor_code()
@@ -272,7 +259,7 @@ class Mplate(Model):
         except ObjectDoesNotExist:
             exteriorcolor_object = None
         except MultipleObjectsReturned:
-            model_year = decoder.get_model_year()
+            model_year = self.model_year
             exteriorcolor = ExteriorColor.objects.filter(
                 plate_code=exteriorcolor_code,
                 years__contains=model_year,
@@ -366,7 +353,6 @@ class Mplate(Model):
 
     def get_interiorcolor(self):
         SPECIAL_PAINTJOB_ID = '5'
-        decoder = MplateDecoder(self)
         model_year = 0
 
         if not self.paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
@@ -382,7 +368,7 @@ class Mplate(Model):
                 color_name = "({}) Unknown color".format(interiorcolor_code)
                 material = "Unknown material"
             except MultipleObjectsReturned:
-                model_year = decoder.get_model_year()
+                model_year = self.model_year
                 interiorcolor = InteriorColor.objects.filter(
                     plate_code=interiorcolor_code,
                     years__contains=model_year,
@@ -439,8 +425,7 @@ class Mplate(Model):
 
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
-        decoder = MplateDecoder(self)
-        model_year = decoder.get_model_year()
+        model_year = self.model_year
         logger.info("Model year: {} {}".format(model_year, type(model_year)))
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
@@ -454,7 +439,8 @@ class Mplate(Model):
         tree = etree.parse(svg_file)
 
         # Get all fields of an M-plate
-        fields = [f.name for f in Mplate._meta.get_fields() if f.name != 'id']
+        fields = [f.name for f in Mplate._meta.get_fields()
+                  if (f.name != 'id' and f.editable)]
 
         # Replace each field name with a matching id on the SVG file, with
         # its value
@@ -480,8 +466,24 @@ class Mplate(Model):
         plate = etree.tostring(tree).decode('utf-8')
 
         return plate
-    
-    objects = MplateManager()
+
+    def save(self, *args, **kwargs):
+
+        obj = self
+
+        # Calculate the full m_codes field
+        obj.m_codes = \
+            f"{obj.m_codes_1} {obj.m_codes_2}"
+
+        # Calculate model year
+        obj.model_year = \
+            obj.get_model_year()
+
+        # Calculate production date
+        date = obj.get_production_date()
+        obj.production_date_as_time = date
+
+        super().save(*args, **kwargs)
 
 
 class MplateDecoder:
@@ -528,8 +530,7 @@ class MplateDecoder:
 
     def get_production_date(
             self, chassis_number=None,
-            encoded_production_date=None,
-            as_string=True, as_iso_string=False):
+            encoded_production_date=None):
 
         if chassis_number and encoded_production_date:
             chassis_number = chassis_number
@@ -565,25 +566,35 @@ class MplateDecoder:
             }
 
             year = model_year
-            day = int(encoded_production_date[:2])
             try:
-                month = month_dict[encoded_production_date[-1:]]
-            except:
+                day = encoded_production_date[:2]
+                day = int(day)
+            except ValueError as e:
                 logger.error(
-                    f'Could not decode production date {encoded_production_date}'
-                    f' for chassis number {chassis_number}')
-                return None
+                    f'Could not decode production day {day}'
+                    f' for chassis number {chassis_number}: {e}')
+                return datetime.now()
+
+            try:
+                month = encoded_production_date[-1:]
+                month = month_dict[month]
+            except KeyError as e:
+                logger.error(
+                    f'Could not decode production month {month}'
+                    f' for chassis number {chassis_number}: {e}')
+                return datetime.now()
 
             if month >= MODEL_YEAR_START_MONTH:
                 year = model_year - 1
 
             try:
                 production_date = datetime(year, month, day).date()
-            except:
+            except ValueError as e:
                 logger.error(
-                    f'Could not decode production date {encoded_production_date}'
-                    f' for chassis number {chassis_number}')
-                return None
+                    f'Could not decode production'
+                    f' date {encoded_production_date}'
+                    f' for chassis number {chassis_number}: {e}')
+                return datetime.now()
         else:
             iso_year = model_year
             iso_weeknumber = int(encoded_production_date[:2])
@@ -614,14 +625,6 @@ class MplateDecoder:
 
             production_week = first_model_year_week + week_offset
             production_date = production_week.day(iso_weekday - 1)
-
-        if as_iso_string:
-            STRF_FORMAT = "%Y-%m-%d"
-        elif as_string:
-            STRF_FORMAT = "%b %d, %Y"
-
-        if as_iso_string or as_string:
-            production_date = production_date.strftime(STRF_FORMAT)
 
         return production_date
 

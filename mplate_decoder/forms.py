@@ -1,7 +1,6 @@
-from django.forms import ModelForm, ValidationError  # , TextInput
+from django.forms import ModelForm, ValidationError
 import re
 from django.utils.text import slugify
-from datetime import date
 from .models import (
     Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
 )
@@ -26,10 +25,23 @@ class MplateCreateForm(ModelForm):
             'aggregate_code',
             'emden',
         )
-        # widgets = {
-        #    'chassis_number_short': TextInput(
-        # attrs={'placeholder': 'CCCCCCCC'}),
-        # }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.saved_data = {}
+
+    # For each field in the form (in the order they are declared in the form
+    # definition),
+    # 1. the Field.clean() method (or its override) is run,
+    # 2. then clean_<fieldname>().
+    # 3. Finally, once those two methods are run for every field, the
+    #    Form.clean() method, or its override, is executed whether or not the
+    #    previous methods have raised errors.
+
+    # Validate each one of the fields:
+    # https://docs.djangoproject.com/en/dev/ref/forms/validation/#django.forms.Form.clean
+    # https://docs.djangoproject.com/en/dev/topics/forms/modelforms/#validation-on-a-modelform
 
     def clean_chassis_number_short(self):
         MODEL_6869_YEAR_CHASSIS_NR_LEN = 7
@@ -62,25 +74,28 @@ class MplateCreateForm(ModelForm):
             "Model year validation: {} ({})".format(
                 model_year, type(model_year)))
 
-        if model_year.year not in range(1968, 1980):
+        if model_year not in range(1968, 1980):
             raise ValidationError(
                 "Invalid shortened chassis number. "
                 "Check first and second digits."
             )
 
         data = slugify(data)
+        logger.info(f"Data after slugify: {data}")
 
         qs = Mplate.objects.filter(chassis_number_short=data)
 
         # Update view
         if self.instance.pk:
             qs = qs.exclude(pk=self.instance.pk)
+            logger.info(f"Data after exclude: {data}")
 
         if qs.exists():
-            url = 'https://vw-type2-id.xyz/mplate/' + data
-            href = '<a href="{}">{}</a>'.format(url, data)
+            mplate_url = f'https://vw-type2-id.xyz/mplate/{data}'
+            mplate_link = f'<a href="{mplate_url}">M-plate {data}</a>'
+            self.saved_data['chassis_number_short'] = data
             raise ValidationError(
-                'M-Plate {} already exists.'.format(href))
+                f'M-Plate already exists. View {mplate_link}.')
 
         return data
 
@@ -159,24 +174,35 @@ class MplateCreateForm(ModelForm):
         decoder = MplateDecoder()
 
         # Get the model year to check the date format
-        chassis_number_short = self.cleaned_data['chassis_number_short']
+        try:
+            chassis_number_short = self.cleaned_data['chassis_number_short']
+        except KeyError:
+            # This happens when chassis_number_short is not valid (i.e. the
+            # M-plate was already on the database)
+            logger.warning("Chassis no. short not available from cleaned_data."
+                           " Trying from saved data...")
+            chassis_number_short = self.saved_data['chassis_number_short']
+            logger.warning(f"Chassis no. short: {chassis_number_short}")
+
         model_year = decoder.get_model_year(chassis_number_short)
 
         # Model year is 68-69, check if valid production date
-        if model_year < date(1970, 1, 1):
+        if model_year < 1970:
             data = data.upper()
             if not re.match("^[1-3][0-9][1-9OND]$", data):
                 raise ValidationError(
                     "Invalid production date format. Please double check.")
 
             try:
-                decoder.get_production_date(
+                production_data_decoded = decoder.get_production_date(
                     chassis_number=chassis_number_short,
                     encoded_production_date=data)
+                if not production_data_decoded:
+                    raise ValidationError(
+                        f"Invalid production date. Please double check.")
             except ValueError as exc:
                 raise ValidationError(
                     f"Invalid production date ({exc}). Please double check.")
-
         # Model year is 70-79, check if valid production date
         else:
             if not re.match("^[1-5][0-9][1-6]$", data):
