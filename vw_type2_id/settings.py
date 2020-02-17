@@ -156,3 +156,6 @@ TEST_OUTPUT_DIR = 'test-results'
 # User model look in our app users for the model called CustomUser
 # and use that instead everywhere in our project.
 AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
+LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
