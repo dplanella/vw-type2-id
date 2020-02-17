@@ -39,13 +39,14 @@ build_dep_wheels:
     paths:
       - $WHEEL_DIR
 
-# Override the dependency_scanning job to use PIP_DEPENDENCY_PATH and find
+# Override the dependency_scanning job to use DS_PIP_DEPENDENCY_PATH and find
 # the binaries required to build the native pip dependencies
 dependency_scanning:
   dependencies:
     - build_dep_wheels
   variables:
-    PIP_DEPENDENCY_PATH: $WHEEL_DIR
+    DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
+    #PIP_REQUIREMENTS_FILE: requirements.txt
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
