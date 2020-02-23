@@ -46,16 +46,11 @@
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_about' %}">{{ 'About'|upper }}</a>
           </li>
         </ul>
-        <!-- Search box 2 -->
+        <!-- Search box -->
         <form class="form-inline my-2 my-lg-0" action="{% url 'mplate_decoder:search_results' %}" method="get">
           <div class="input-group mr-sm-2">
             <input class="form-control" name="q" type="text" aria-label="Search"placeholder="Search M-codes (e.g. 500)">
               <div class="input-group-append">
-                <!--
-                <button class="btn btn-outline-success" type="submit">
-                  <span class=""><ion-icon name="search-outline"></ion-icon></span>
-                </button>
-                -->
                 <span class="input-group-text"><ion-icon name="search-outline"></ion-icon></span>
               </div>
           </div>
