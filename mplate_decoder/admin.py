@@ -18,13 +18,13 @@ class Type2ModelExtraAdmin(admin.ModelAdmin):
 
 
 @admin.register(Type2ModelConfiguration)
-class Type2ModelConfiguration(admin.ModelAdmin):
+class Type2ModelConfigurationAdmin(admin.ModelAdmin):
     search_fields = ('model', 'configuration', 'description')
     list_display = ('model', 'configuration', 'description')
 
 
 @admin.register(Type2Model)
-class Type2ModelConfiguration(admin.ModelAdmin):
+class Type2ModelAdmin(admin.ModelAdmin):
     search_fields = ('model', )
     list_display = (
         'model',
@@ -33,16 +33,44 @@ class Type2ModelConfiguration(admin.ModelAdmin):
 
 @admin.register(Mplate)
 class MplateAdmin(admin.ModelAdmin):
-    search_fields = ('chassis_number_short', )
+    search_fields = ('chassis_number_short',
+                     'm_codes_1',
+                     'm_codes_2',
+                     )
+    list_filter = ('emden',
+                   )
     list_display = ('chassis_number_short',
-                    'm_codes_1', 'm_codes_2',
+                    'm_codes',
                     'paint_and_interior',
-                    'production_date',
+                    'production_date_iso',
                     'export_destination',
+                    'destination_country',
                     'model',
                     'aggregate_code',
-                    'emden')
+                    'emden',
+                    'model_year',
+                    )
     list_display_links = ('chassis_number_short', )
+    view_on_site = True
+
+    def m_codes(self, obj):
+        '''Returns computed field with joined M-codes rows'''
+        return f"{obj.m_codes_1} {obj.m_codes_2}"
+
+    def destination_country(self, obj):
+        '''Returns decoded destination country'''
+        export_destination = obj.get_export_destination_object()
+
+        if export_destination:
+            return export_destination.country
+
+    def production_date_iso(self, obj):
+        '''Returns decoded date in ISO time format'''
+        production_date_iso = obj.get_production_date(as_iso_string=True)
+
+        return production_date_iso
+
+    m_codes.admin_order_field = 'm_codes_1'
 
 
 @admin.register(McodeCollection)

@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from mplate_decoder.models import Mplate, MplateDecoder
+from mplate_decoder.models import Mplate
 
 
 class Command(BaseCommand):
@@ -11,9 +11,7 @@ class Command(BaseCommand):
         years_submissions_count = 0
 
         for mplate in Mplate.objects.all():
-            decoder = MplateDecoder(mplate)
-
-            model_year = decoder.get_model_year().year
+            model_year = mplate.model_year
 
             try:
                 years[model_year].append(

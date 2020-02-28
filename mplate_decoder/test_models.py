@@ -61,9 +61,9 @@ class MplateDecodeTestCase(TestCase):
         early_bay_01 = Mplate.objects.get(
             chassis_number_short=self.EARLY_BAY_01_CHASSIS)
 
-        self.assertEqual(late_bay_01.get_model_year().year, 1979)
-        self.assertEqual(late_bay_02.get_model_year().year, 1972)
-        self.assertEqual(early_bay_01.get_model_year().year, 1969)
+        self.assertEqual(late_bay_01.model_year, 1979)
+        self.assertEqual(late_bay_02.model_year, 1972)
+        self.assertEqual(early_bay_01.model_year, 1969)
 
     def test_decode_production_date(self):
         """Mplate production date is correctly decoded"""
