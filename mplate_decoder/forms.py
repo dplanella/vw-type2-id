@@ -1,7 +1,6 @@
 from django.forms import ModelForm, ValidationError  # , TextInput
 import re
 from django.utils.text import slugify
-from datetime import date
 from .models import (
     Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
 )
