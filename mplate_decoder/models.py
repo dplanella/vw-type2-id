@@ -193,7 +193,7 @@ class Mplate(Model):
         configuration_code = self.model[2]
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
-        model_year = self.get_model_year()
+        model_year = self.model_year
 
         try:
             model = Type2Model.objects.get(

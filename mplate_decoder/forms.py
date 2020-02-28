@@ -62,7 +62,7 @@ class MplateCreateForm(ModelForm):
             "Model year validation: {} ({})".format(
                 model_year, type(model_year)))
 
-        if model_year.year not in range(1968, 1980):
+        if model_year not in range(1968, 1980):
             raise ValidationError(
                 "Invalid shortened chassis number. "
                 "Check first and second digits."
@@ -163,7 +163,7 @@ class MplateCreateForm(ModelForm):
         model_year = decoder.get_model_year(chassis_number_short)
 
         # Model year is 68-69, check if valid production date
-        if model_year < date(1970, 1, 1):
+        if model_year < 1970:
             data = data.upper()
             if not re.match("^[1-3][0-9][1-9OND]$", data):
                 raise ValidationError(
