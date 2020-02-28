@@ -6,6 +6,8 @@ from django.db.models import Model
 from django.db import models
 from django.urls import reverse
 from django.forms import ValidationError
+from django.db.models import Value
+from django.db.models.functions import Concat
 from django.core.exceptions import (
     ObjectDoesNotExist,
     MultipleObjectsReturned,
@@ -17,9 +19,6 @@ from vw_type2_id.settings import BASE_DIR
 logger = logging.getLogger('django')
 
 
-from django.db.models import Value
-from django.db.models.functions import Concat
-
 class MplateManager(models.Manager):
     """QuerySet manager for Invoice class to add non-database fields.
 
@@ -29,8 +28,10 @@ class MplateManager(models.Manager):
 
     def get_queryset(self):
         """Overrides the models.Manager method"""
-        qs = super(MplateManager, self).get_queryset().annotate(link=Concat(Value("<a href='#'>"), 'id', Value('</a>')))
+        qs = super(MplateManager, self).get_queryset().annotate(
+            link=Concat(Value("<a href='#'>"), 'id', Value('</a>')))
         return qs
+
 
 class Mplate(Model):
     chassis_number_short = models.CharField(
@@ -480,7 +481,7 @@ class Mplate(Model):
         plate = etree.tostring(tree).decode('utf-8')
 
         return plate
-    
+
     objects = MplateManager()
 
 
@@ -568,10 +569,11 @@ class MplateDecoder:
             day = int(encoded_production_date[:2])
             try:
                 month = month_dict[encoded_production_date[-1:]]
-            except:
+            except Exception:
                 logger.error(
-                    f'Could not decode production date {encoded_production_date}'
-                    f' for chassis number {chassis_number}')
+                    f'Could not decode '
+                    f'production date {encoded_production_date} '
+                    f'for chassis number {chassis_number}')
                 return None
 
             if month >= MODEL_YEAR_START_MONTH:
@@ -579,10 +581,11 @@ class MplateDecoder:
 
             try:
                 production_date = datetime(year, month, day).date()
-            except:
+            except Exception:
                 logger.error(
-                    f'Could not decode production date {encoded_production_date}'
-                    f' for chassis number {chassis_number}')
+                    f'Could not decode '
+                    f'production date {encoded_production_date} '
+                    f'for chassis number {chassis_number}')
                 return None
         else:
             iso_year = model_year
