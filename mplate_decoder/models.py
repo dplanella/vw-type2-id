@@ -6,8 +6,6 @@ from django.db.models import Model
 from django.db import models
 from django.urls import reverse
 from django.forms import ValidationError
-from django.db.models import Value
-from django.db.models.functions import Concat
 from django.core.exceptions import (
     ObjectDoesNotExist,
     MultipleObjectsReturned,
