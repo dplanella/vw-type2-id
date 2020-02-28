@@ -82,7 +82,7 @@ class MplateRetrieve(generic.DetailView):
         context['plate'] = mplate.render_plate()
         context['chassis_number'] = mplate.get_chassis_number()
         context['model_year'] = mplate.model_year
-        context['production_date'] = mplate.get_production_date()
+        context['production_date'] = mplate.production_date_as_time
         context['export_destination'] = mplate.get_export_destination()
         context['export_destination_geo'] = mplate.get_export_destination_geo()
         context['model_description'] = mplate.get_model()

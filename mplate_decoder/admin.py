@@ -34,28 +34,24 @@ class Type2ModelAdmin(admin.ModelAdmin):
 @admin.register(Mplate)
 class MplateAdmin(admin.ModelAdmin):
     search_fields = ('chassis_number_short',
-                     'm_codes_1',
-                     'm_codes_2',
+                     'm_codes',
                      )
     list_filter = ('emden',
+                   'model_year',
                    )
     list_display = ('chassis_number_short',
                     'm_codes',
                     'paint_and_interior',
-                    'production_date_iso',
                     'export_destination',
                     'destination_country',
                     'model',
                     'aggregate_code',
                     'emden',
                     'model_year',
+                    'production_date_as_time'
                     )
     list_display_links = ('chassis_number_short', )
     view_on_site = True
-
-    def m_codes(self, obj):
-        '''Returns computed field with joined M-codes rows'''
-        return f"{obj.m_codes_1} {obj.m_codes_2}"
 
     def destination_country(self, obj):
         '''Returns decoded destination country'''
@@ -64,13 +60,8 @@ class MplateAdmin(admin.ModelAdmin):
         if export_destination:
             return export_destination.country
 
-    def production_date_iso(self, obj):
-        '''Returns decoded date in ISO time format'''
-        production_date_iso = obj.get_production_date(as_iso_string=True)
-
-        return production_date_iso
-
-    m_codes.admin_order_field = 'm_codes_1'
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
 
 
 @admin.register(McodeCollection)
