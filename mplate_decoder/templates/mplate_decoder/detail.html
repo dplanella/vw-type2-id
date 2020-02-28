@@ -85,5 +85,9 @@
 {% endblock %}
 
 {% block javascript %}
-<script type="text/javascript" src="{% static 'js/bootstrap-tooltips.js' %}"></script>
+<script type="text/javascript">
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 {% endblock %}
