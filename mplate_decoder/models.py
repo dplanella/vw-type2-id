@@ -51,6 +51,12 @@ class Mplate(Model):
         max_length=1, blank=True,
         help_text='''Optional "E" for
             Emden''')
+    created_at = models.DateTimeField(
+        auto_now_add=True, blank=True,
+        null=True)
+    updated_at = models.DateTimeField(
+        auto_now=True, blank=True,
+        null=True)
     owner = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE,
         editable=False,

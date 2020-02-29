@@ -51,7 +51,7 @@ class MplateAdmin(admin.ModelAdmin):
                     'production_date_as_time',
                     'owner'
                     )
-    readonly_fields = ('owner', )
+    readonly_fields = ('owner', 'created_at', 'updated_at')
     list_display_links = ('chassis_number_short', )
     view_on_site = True
 
