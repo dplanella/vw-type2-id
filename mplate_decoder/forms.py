@@ -1,4 +1,5 @@
 from django.forms import ModelForm, ValidationError
+from django.urls import reverse
 import re
 from django.utils.text import slugify
 from .models import (
@@ -91,7 +92,7 @@ class MplateCreateForm(ModelForm):
             logger.info(f"Data after exclude: {data}")
 
         if qs.exists():
-            mplate_url = f'https://vw-type2-id.xyz/mplate/{data}'
+            mplate_url = reverse('mplate_decoder:mplate_retrieve', args=[data])
             mplate_link = f'<a href="{mplate_url}">M-plate {data}</a>'
             self.saved_data['chassis_number_short'] = data
             raise ValidationError(
