@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.contrib import admin
 from . import views
 
@@ -6,12 +6,15 @@ app_name = 'mplate_decoder'
 urlpatterns = [
      path('decode/', views.MplateCreate.as_view(),
           name='mplate_create'),
-     path('<slug:chassis_number_short>', views.MplateRetrieve.as_view(),
-          name='mplate_retrieve'),
-     path('<slug:chassis_number_short>/update/', views.MplateUpdate.as_view(),
-          name='mplate_update'),
-     path('<slug:chassis_number_short>/delete/', views.MplateDelete.as_view(),
-          name='mplate_delete'),
+     re_path(r'^(?P<chassis_number_short>[0-9]{7,8})/$',
+             views.MplateRetrieve.as_view(),
+             name='mplate_retrieve'),
+     re_path(r'^(?P<chassis_number_short>[0-9]{7,8})/update/$',
+             views.MplateUpdate.as_view(),
+             name='mplate_update'),
+     re_path(r'^(?P<chassis_number_short>[0-9]{7,8})/delete/$',
+             views.MplateDelete.as_view(),
+             name='mplate_delete'),
      path('mine/', views.MplatesByUserListView.as_view(),
           name='mplate_mine'),
      path('', views.MplateIndex.as_view(),
