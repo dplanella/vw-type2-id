@@ -4,6 +4,7 @@ import logging
 from datetime import date, datetime
 from django.db.models import Model
 from django.db import models
+from django.urls import reverse
 from django.forms import ValidationError
 from django.core.exceptions import (
     ObjectDoesNotExist,
@@ -75,6 +76,12 @@ class Mplate(Model):
 
     def __unicode__(self):
         return self.chassis_number_short
+
+    def get_absolute_url(self):
+        # Required for the admin's "View on site" feature to work
+        return reverse(
+            'mplate_decoder:mplate_retrieve',
+            kwargs={'chassis_number_short': self.chassis_number_short})
 
     def get_model_year(self):
         decoder = MplateDecoder(self)
