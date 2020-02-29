@@ -12,12 +12,15 @@ urlpatterns = [
           name='mplate_update'),
      path('<slug:chassis_number_short>/delete/', views.MplateDelete.as_view(),
           name='mplate_delete'),
+     path('mine/', views.MplatesByUserListView.as_view(),
+          name='mplate_mine'),
      path('', views.MplateIndex.as_view(),
           name='mplate_index'),
      path('about/', views.MplateAbout.as_view(),
           name='mplate_about'),
      path('search/', views.SearchResultsView.as_view(),
           name='search_results'),
+
 ]
 
 SITE_NAME = "VW Type 2 ID"

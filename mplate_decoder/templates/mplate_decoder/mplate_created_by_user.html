@@ -1,0 +1,24 @@
+{% extends "mplate_base_bootstrap.html" %}
+
+{% block content %}
+
+    <div class="row">
+    <div class="col">
+    <h1>My M-plates</h1>
+
+    {% if mplate_list %}
+    <ul>
+      {% for mplate in mplate_list %} 
+      <li class="">
+        <a href="{% url 'mplate_decoder:mplate_retrieve' mplate.chassis_number_short %}">{{ mplate.chassis_number_short }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no M-plates.</p>
+    {% endif %}
+    </div>
+    </div>
+
+{% endblock %}
