@@ -425,7 +425,7 @@ class Mplate(Model):
 
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
-        model_year = self.model_year
+        model_year = int(self.model_year)
         logger.info("Model year: {} {}".format(model_year, type(model_year)))
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
