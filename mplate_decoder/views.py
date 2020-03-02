@@ -120,7 +120,7 @@ class SearchResultsView(generic.ListView):
 
     def get_queryset(self):
 
-        results = None
+        results = []
         query = self.request.GET.get('q')
 
         if query:
