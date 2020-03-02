@@ -205,7 +205,7 @@ class MplateCreateForm(ModelForm):
                     f"Invalid production date ({exc}). Please double check.")
         # Model year is 70-79, check if valid production date
         else:
-            if not re.match("^([0][1-9]|[1-4][0-9]|5[0-2])$", data):
+            if not re.match("^([0][1-9]|[1-4][0-9]|5[0-2])[1-6]$", data):
                 raise ValidationError(
                     "Invalid production date format. Please double check.")
 
