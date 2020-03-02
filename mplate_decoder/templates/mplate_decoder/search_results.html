@@ -49,8 +49,8 @@
       {% for mplate in object_list %}
         <a href="{{ mplate.get_absolute_url }}" class="list-group-item list-group-item-action">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="my-1">{{ mplate.chassis_number_short }}</h5>
-            <span>{{ mplate.m_codes_1 }} {{ mplate.m_codes_2}}</span>
+            <h5 class="my-1 text-info">{{ mplate.chassis_number_short }} ({{ mplate.model_year }})</h5>
+            <span>{{ mplate.m_codes }}</span>
           </div>
         </a>
       {% endfor %}
