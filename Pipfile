@@ -16,7 +16,7 @@ pylint = "*"
 unittest-xml-reporting = "*"
 
 [packages]
-django = "==2.2.8"
+django = "<3.0.0"
 django-crispy-forms = "*"
 lxml = "*"
 pillow = "*"
