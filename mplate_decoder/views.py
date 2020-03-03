@@ -9,6 +9,7 @@ from .models import (
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 
 logger = logging.getLogger('django')
@@ -148,3 +149,16 @@ class SearchResultsView(generic.ListView):
         context['m_code_query_set'] = m_code_query_set
 
         return context
+
+
+class MplatesByUserListView(LoginRequiredMixin, generic.ListView):
+    """
+    Generic class-based view listing M-plates created by the current user.
+    """
+    model = Mplate
+    template_name = 'mplate_decoder/mplate_created_by_user.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        qs = Mplate.objects.filter(owner=self.request.user)
+        return qs

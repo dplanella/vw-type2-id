@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'svg',
     'fullurl',
     'markdownify',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crum.CurrentRequestUserMiddleware',
 ]
 
 ROOT_URLCONF = 'vw_type2_id.urls'
@@ -150,3 +152,11 @@ MARKDOWNIFY_BLEACH = False
 # Generate jUnit test reports
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_DIR = 'test-results'
+
+# This tells Django that instead of using the default
+# User model look in our app users for the model called CustomUser
+# and use that instead everywhere in our project.
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
+LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'

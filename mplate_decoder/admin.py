@@ -48,8 +48,10 @@ class MplateAdmin(admin.ModelAdmin):
                     'aggregate_code',
                     'emden',
                     'model_year',
-                    'production_date_as_time'
+                    'production_date_as_time',
+                    'owner'
                     )
+    readonly_fields = ('owner', 'created_at', 'updated_at')
     list_display_links = ('chassis_number_short', )
     view_on_site = True
 

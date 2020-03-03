@@ -26,11 +26,12 @@
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">VW Type 2 ID</a>
+      <a class="navbar-brand" href="/">VW Type 2 ID</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- Breadcrumbs -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item {% navactive request 'home' %}">
             <a class="nav-link" href="/">{{ 'Home'|upper }}</a>
@@ -45,10 +46,32 @@
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_about' %}">{{ 'About'|upper }}</a>
           </li>
         </ul>
+        <!-- Search box -->
         <form class="form-inline my-2 my-lg-0" action="{% url 'mplate_decoder:search_results' %}" method="get">
-          <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search M-codes (e.g. 500)" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <div class="input-group mr-sm-2">
+            <input class="form-control" name="q" type="text" aria-label="Search"placeholder="Search M-codes (e.g. 500)">
+              <div class="input-group-append">
+                <span class="input-group-text"><ion-icon name="search-outline"></ion-icon></span>
+              </div>
+          </div>
         </form>
+        <!-- Authentication menu -->
+        {% if user.is_authenticated %}
+        <div class="dropdown">
+          <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ user.username }}
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'mplate_decoder:mplate_mine' %}">My M-plates</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+          </div>
+        </div>
+        
+        {% else %}
+        <a class="btn btn-outline-success ml-sm-2" href="{% url 'login' %}">Sign up or login</a>           
+        {% endif %}
       </div>
     </nav>
 
@@ -72,9 +95,8 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
-
     <script
-      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"
+      src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"
       integrity="SUKVFL96/F3W7HeIynfEsxa4KzwJDaMoDmUg55kklFVgIfxhDIrvEkQIHfLfGV2J"
       crossorigin="anonymous" ></script>
 

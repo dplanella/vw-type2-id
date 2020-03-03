@@ -13,6 +13,8 @@ from django.core.exceptions import (
 from lxml import etree
 from isoweek import Week
 from vw_type2_id.settings import BASE_DIR
+from users.models import CustomUser
+from crum import get_current_user
 
 logger = logging.getLogger('django')
 
@@ -50,6 +52,16 @@ class Mplate(Model):
         max_length=1, blank=True,
         help_text='''Optional "E" for
             Emden''')
+    created_at = models.DateTimeField(
+        auto_now_add=True, blank=True,
+        null=True)
+    updated_at = models.DateTimeField(
+        auto_now=True, blank=True,
+        null=True)
+    owner = models.ForeignKey(
+        CustomUser, on_delete=models.CASCADE,
+        editable=False,
+        blank=True, null=True, default=None)
 
     # Computed (decoded) fields
     m_codes = models.CharField(
@@ -66,6 +78,7 @@ class Mplate(Model):
         return self.chassis_number_short
 
     def get_absolute_url(self):
+        # Required for the admin's "View on site" feature to work
         return reverse(
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
@@ -469,19 +482,29 @@ class Mplate(Model):
 
     def save(self, *args, **kwargs):
 
-        obj = self
-
         # Calculate the full m_codes field
-        obj.m_codes = \
-            f"{obj.m_codes_1} {obj.m_codes_2}"
+        self.m_codes = \
+            f"{self.m_codes_1} {self.m_codes_2}"
 
         # Calculate model year
-        obj.model_year = \
-            obj.get_model_year()
+        self.model_year = \
+            self.get_model_year()
 
         # Calculate production date
-        date = obj.get_production_date()
-        obj.production_date_as_time = date
+        date = self.get_production_date()
+        self.production_date_as_time = date
+
+        # Get currently logged in user
+        user = get_current_user()
+        if user and not user.pk:
+            user = None
+
+        # Save the user as the owner only if
+        # the M-plate is being created (added),
+        # but NOT when it's being updated
+        is_new = self._state.adding
+        if is_new:
+            self.owner = user
 
         super().save(*args, **kwargs)
 

@@ -1,0 +1,26 @@
+{% extends "base_bootstrap.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row mt-4">
+  <div class="col-4 offset-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Login</h2>
+        <form method="post" id="{{ form_id }}" action="">
+          {% csrf_token %}
+          {{ form|crispy }}
+
+          <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up now</a></p>
+
+          <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+          
+          <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">Log me in!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
