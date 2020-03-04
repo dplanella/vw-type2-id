@@ -13,13 +13,16 @@ from django.core.exceptions import (
 from lxml import etree
 from isoweek import Week
 from vw_type2_id.settings import BASE_DIR
-from users.models import CustomUser
+from django.conf import settings
 from crum import get_current_user
 
 logger = logging.getLogger('django')
 
 
 class Mplate(Model):
+    class Meta:
+        ordering = ['-id']
+
     chassis_number_short = models.CharField(
         max_length=8, unique=True,
         help_text=("Chassis number shortened, with the two leading digits "
@@ -59,7 +62,7 @@ class Mplate(Model):
         auto_now=True, blank=True,
         null=True)
     owner = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE,
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
         editable=False,
         blank=True, null=True, default=None)
 
