@@ -1,0 +1,85 @@
+{% load crispy_forms_tags %}
+{% load svg %}
+
+<div class="row mt-2">
+  <div class="col">
+    <form method="post" id="{{ form_id }}" action="">
+      {% csrf_token %}
+
+      <h2 class="mt-4">Volkswagen Type 2 M-plate, model year 68-69</h2>
+
+      {% include "mplate_decoder/partials/mplate_form_alerts_pre.html"%}
+
+      <hr class="my-4">
+
+      <div class="form-row">
+        <div class="form-group col-md-2 mb-0">
+          {{ form.production_date|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-1 mb-0">
+          {{ form.emden|as_crispy_field }}
+        </div>
+      </div>
+
+      {{ form.m_codes_1|as_crispy_field}}
+
+      <div class="form-row">
+        <div class="form-group col-md-2 mb-10">
+          {{ form.aggregate_code|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-9 offset-md-1 mb-0">
+          {{ form.m_codes_2|as_crispy_field }}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2 mb-0">
+          {{ form.export_destination|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-2 mb-0">
+          {{ form.model|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-2 mb-0">
+          {{ form.paint_and_interior|as_crispy_field }}
+        </div> 
+        <div class="form-group col-md-6 mb-0 chassis_number_short-6869">
+          {{ form.chassis_number_short|as_crispy_field }}
+        </div>           
+      </div>
+
+      <hr class="mb-4">
+      {% include "mplate_decoder/partials/mplate_form_alerts_post.html"%}
+
+      {% if object %}
+      <button id="btn-update-6869" class="btn btn-primary btn-lg btn-block">Update this M-plate</button>
+      {% else %}
+      <button id="btn-decode-6869" class="btn btn-primary btn-lg btn-block">Decode this M-plate</button>
+      {% endif %}
+    </form>
+  </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h2 id="#reference">Reference</h2>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md mt-2">
+    {% svg 'mplate-6869-form' %}
+    </div>
+    <div class="col-md mt-2">
+     <ul>
+       <li><strong>DDD</strong>: production date. Enter without spaces.</li>
+       <li><strong>E</strong>: optional "E", indicates manufacture at the Emden plant.</li>
+       <li><strong>M01</strong>: M-codes, first row. Separated by spaces. Might be empty in some plates.</li>
+       <li><strong>AA</strong>: aggregate code</li>
+       <li><strong>M02</strong>: M-codes, second row. Separated by spaces.</li>
+       <li><strong>XXX</strong>: export destination. Two-letter code for worldwide exports. Three-digit or none for German market.</li>
+       <li><strong>TTTT</strong>: vehicle model type.</li>
+       <li><strong>PPPPII</strong>: paint and interior code.</li>
+       <li><strong>CCCCCCC</strong>: shortened chassis number. Enter without spaces.</li>
+      </ul>
+    </div>
+  </div>

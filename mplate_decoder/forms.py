@@ -50,6 +50,7 @@ class MplateCreateForm(ModelForm):
         data = self.cleaned_data['chassis_number_short']
         decoder = MplateDecoder()
 
+        # 1. Check for correct length
         if len(data) < MODEL_6869_YEAR_CHASSIS_NR_LEN:
             raise ValidationError(
                 "Minimum digits: "
@@ -58,35 +59,45 @@ class MplateCreateForm(ModelForm):
                     MODEL_7079_YEAR_CHASSIS_NR_LEN
                 ))
 
-        # year_and_serial_from_chassis_no(str(data))
-        if not re.match("^[0-9]+$", data):
+        # 2. Check for correct format
+        if not re.match("^[0-9]{7,8}$", data):
             raise ValidationError(
-                "Only digits allowed (no spaces either)")
+                "Only digits allowed, without spaces. "
+                "The second digit is always a 2."
+            )
 
+        # 3. Check for correctly decoded model year
+        # Raises ValidationError if no valid chassis number
+        # is provided, or if the length is invalid
         try:
             model_year = decoder.get_model_year(data)
         except ValidationError:
             raise ValidationError(
                 "Invalid shortened chassis number. "
-                "Check first and second digits."
+                "Check first digit."
             )
 
         logger.info(
             "Model year validation: {} ({})".format(
                 model_year, type(model_year)))
 
+        # 4. Check for correct range
         if model_year not in range(1968, 1980):
             raise ValidationError(
                 "Invalid shortened chassis number. "
                 "Check first and second digits."
             )
 
+        # 5. Convert string to URL slug
         data = slugify(data)
-        logger.info(f"Data after slugify: {data}")
+
+        # There are two paths here:
+        # 1. When creating a new M-Plate (Mplate instance does not exist)
+        # 2. When updating an existing M-plate (Mplate instance exists)
 
         qs = Mplate.objects.filter(chassis_number_short=data)
 
-        # Update view
+        # If it already exists in the database
         if self.instance.pk:
             qs = qs.exclude(pk=self.instance.pk)
             logger.info(f"Data after exclude: {data}")
@@ -182,9 +193,15 @@ class MplateCreateForm(ModelForm):
             # M-plate was already on the database)
             logger.warning("Chassis no. short not available from cleaned_data."
                            " Trying from saved data...")
-            chassis_number_short = self.saved_data['chassis_number_short']
-            logger.warning(f"Chassis no. short: {chassis_number_short}")
-
+            try:
+                chassis_number_short = self.saved_data['chassis_number_short']
+                logger.warning(f"Chassis no. short: {chassis_number_short}")
+            except KeyError:
+                logger.warning(
+                    "Chassis no. short not available from saved_data.")
+                raise ValidationError(
+                    "Cannot validate production date format "
+                    "without a valid chassis number.")
         model_year = decoder.get_model_year(chassis_number_short)
 
         # Model year is 68-69, check if valid production date

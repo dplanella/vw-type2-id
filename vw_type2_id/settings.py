@@ -160,3 +160,5 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
 LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
+
+DEFAULT_FROM_EMAIL = 'VW Type 2 ID <admin@vw-type2-id.xyz>'

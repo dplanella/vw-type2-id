@@ -15,6 +15,14 @@ import logging
 logger = logging.getLogger('django')
 
 
+class OwnerQuerysetMixin(object):
+    def get_queryset(self):
+        queryset = super(OwnerQuerysetMixin, self).get_queryset()
+        # perhaps handle the case where user is not authenticated
+        queryset = queryset.filter(owner=self.request.user)
+        return queryset
+
+
 class AjaxableResponseMixin:
     """
     Mixin to add AJAX support to a form.
@@ -98,7 +106,8 @@ class MplateRetrieve(generic.DetailView):
         return context
 
 
-class MplateUpdate(AjaxableResponseMixin, generic.edit.UpdateView):
+class MplateUpdate(AjaxableResponseMixin, LoginRequiredMixin,
+                   OwnerQuerysetMixin, generic.edit.UpdateView):
     model = Mplate
     # fields = '__all__'
     form_class = MplateUpdateForm
@@ -107,7 +116,8 @@ class MplateUpdate(AjaxableResponseMixin, generic.edit.UpdateView):
     slug_url_kwarg = 'chassis_number_short'
 
 
-class MplateDelete(generic.edit.DeleteView):
+class MplateDelete(LoginRequiredMixin, OwnerQuerysetMixin,
+                   generic.edit.DeleteView):
     model = Mplate
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
