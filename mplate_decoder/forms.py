@@ -93,19 +93,10 @@ class MplateCreateForm(ModelForm):
 
         # There are two paths here:
         # 1. When creating a new M-Plate (Mplate instance does not exist)
-        # 2. When editing an existing M-plate (Mplate instance exists)
+        # 2. When updating an existing M-plate (Mplate instance exists)
 
         qs = Mplate.objects.filter(chassis_number_short=data)
 
-        #try:
-        #    mplate = Mplate.objects.get(chassis_number_short=data)
-        #except Mplate.DoesNotExist:
-        #    pass
-
-        #
-        # is_new = self.instance._state.adding
-        # if not is_new:
-        #
         # If it already exists in the database
         if self.instance.pk:
             qs = qs.exclude(pk=self.instance.pk)
