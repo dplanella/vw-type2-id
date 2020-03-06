@@ -16,3 +16,7 @@
     color: #212529;
     text-decoration: none;
 }
+
+.alert>ol {
+    margin-bottom: 0rem;
+}
