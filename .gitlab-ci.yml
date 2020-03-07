@@ -21,7 +21,7 @@ cache:
     - ~/.cache/pipenv/
 
 default:
-  image: python:3.6
+  image: python:3.8
 
 .linter_template:
   stage: test
