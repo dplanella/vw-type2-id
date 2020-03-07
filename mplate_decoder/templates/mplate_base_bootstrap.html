@@ -13,7 +13,7 @@
 <script>
   anchors.options.placement = 'left';
   document.addEventListener('DOMContentLoaded', function(event) {
-    anchors.add();
+    anchors.add().remove('.no-anchor');
   });
 </script>
 {% endblock %}
