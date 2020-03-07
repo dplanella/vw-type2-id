@@ -714,6 +714,7 @@ class MplateDecoder:
         # Retrieve the M-code description
         for m_code in m_codes_expanded:
             mcode_prepend = 'M '
+            m_code_query_set = None
 
             try:
                 # We query with get() first, as not all M-codes
