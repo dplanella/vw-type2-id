@@ -746,13 +746,14 @@ class MplateDecoder:
                 # or there has been an error. Have a guess at
                 # whether it's an S-code
                 description = error_description
-                try:
-                    if int(m_code) in range(700, 800):
-                        mcode_prepend = 'S '
-                except ValueError:
-                    logger.warning(
-                        f'Probably an invalid M-code: '
-                        f'{m_code}, M-plate {chassis_number_short}')
+                if m_code.startswith('7'):
+                    try:
+                        if int(m_code) in range(700, 800):
+                            mcode_prepend = 'S '
+                    except ValueError:
+                        logger.warning(
+                            f'Probably an invalid M-code: '
+                            f'{m_code}, M-plate {chassis_number_short}')
 
             mcode_dict[f"{mcode_prepend} {m_code}"] = description
 
