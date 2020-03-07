@@ -65,6 +65,7 @@ class Mplate(Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
         editable=False,
         blank=True, null=True, default=None)
+    editor_remarks = models.TextField(blank=True)
 
     # Computed (decoded) fields
     m_codes = models.CharField(
@@ -76,6 +77,9 @@ class Mplate(Model):
     model_year = models.CharField(
         max_length=4, blank=True, editable=False,
         help_text='Model year')
+    destination_country = models.CharField(
+        max_length=30, blank=True,
+        help_text='''Country of destination''')
 
     def __unicode__(self):
         return self.chassis_number_short
@@ -451,12 +455,20 @@ class Mplate(Model):
                                     "images/mplate-7079-ref.svg")
         MPLATE_STOP_COLOR_ID = 'stopBusColor'
         MPLATE_STOP_COLOR = '#a6a6a6'
+        fields = (
+            'chassis_number_short',
+            'm_codes_1',
+            'm_codes_2',
+            'paint_and_interior',
+            'production_date',
+            'production_planned',
+            'export_destination',
+            'model',
+            'aggregate_code',
+            'emden',
+        )
 
         tree = etree.parse(svg_file)
-
-        # Get all fields of an M-plate
-        fields = [f.name for f in Mplate._meta.get_fields()
-                  if (f.name != 'id' and f.editable)]
 
         # Replace each field name with a matching id on the SVG file, with
         # its value
@@ -486,16 +498,22 @@ class Mplate(Model):
     def save(self, *args, **kwargs):
 
         # Calculate the full m_codes field
-        self.m_codes = \
-            f"{self.m_codes_1} {self.m_codes_2}"
+        self.m_codes = f"{self.m_codes_1} {self.m_codes_2}"
 
         # Calculate model year
-        self.model_year = \
-            self.get_model_year()
+        self.model_year = self.get_model_year()
 
         # Calculate production date
-        date = self.get_production_date()
-        self.production_date_as_time = date
+        self.production_date_as_time = self.get_production_date()
+
+        # Calculate destination country
+        country_or_region = ''
+        export_dest = self.get_export_destination_object()
+
+        if export_dest and (export_dest.country or export_dest.region):
+            country_or_region = export_dest.country or export_dest.region
+
+        self.destination_country = country_or_region
 
         # Get currently logged in user
         user = get_current_user()

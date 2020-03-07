@@ -49,7 +49,11 @@
       {% for mplate in object_list %}
         <a href="{% url 'mplate_decoder:mplate_retrieve' mplate.chassis_number_short %}" class="list-group-item list-group-item-action">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="my-1 text-info no-anchor">{{ mplate.chassis_number_short }} ({{ mplate.model_year }})</h5>
+            <h5 class="my-1 text-info no-anchor">
+              {{ mplate.chassis_number_short }}
+              <span class="badge badge-secondary badge-pill">{{ mplate.model_year }}</span>
+              <span class="badge badge-secondary badge-pill">{{ mplate.destination_country }}</span>
+            </h5>
             <span>{{ mplate.m_codes }}</span>
           </div>
         </a>

@@ -55,13 +55,6 @@ class MplateAdmin(admin.ModelAdmin):
     list_display_links = ('chassis_number_short', )
     view_on_site = True
 
-    def destination_country(self, obj):
-        '''Returns decoded destination country'''
-        export_destination = obj.get_export_destination_object()
-
-        if export_destination:
-            return export_destination.country
-
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
 
