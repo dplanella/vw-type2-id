@@ -1,9 +1,6 @@
-import logging
 from django import template
 from django.template.defaultfilters import stringfilter
 register = template.Library()
-
-logger = logging.getLogger('django')
 
 
 @register.filter

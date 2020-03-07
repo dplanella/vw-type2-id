@@ -1,10 +1,6 @@
-# Custom tag - is_active.py
-import logging
 from django.template import Library
 from django.urls import reverse
 register = Library()
-
-logger = logging.getLogger('django')
 
 
 @register.simple_tag

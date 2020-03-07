@@ -162,3 +162,44 @@ LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
 LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
 
 DEFAULT_FROM_EMAIL = 'VW Type 2 ID <admin@vw-type2-id.xyz>'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '[{asctime}] {levelname} [{name}:{lineno}] '
+                      '{message}',
+            'datefmt': '%d/%b/%Y %H:%M:%S',
+            'style': '{',
+        },
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} '
+                      '{thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+        'server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        'mplate_decoder': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}

@@ -16,7 +16,7 @@ from vw_type2_id.settings import BASE_DIR
 from django.conf import settings
 from crum import get_current_user
 
-logger = logging.getLogger('django')
+logger = logging.getLogger(__name__)
 
 
 class Mplate(Model):
@@ -442,7 +442,7 @@ class Mplate(Model):
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         model_year = int(self.model_year)
-        logger.info("Model year: {} {}".format(model_year, type(model_year)))
+        logger.info(f"Model year on rendered M-plate: {model_year}")
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
                                     "images/mplate-6869-ref.svg")
