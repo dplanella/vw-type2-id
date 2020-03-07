@@ -16,10 +16,19 @@ logger = logging.getLogger(__name__)
 
 
 class OwnerQuerysetMixin(object):
+    """
+    Mixin to restrict views to object instances the logged-in user is the
+    creator of. Staff members can override this check.
+    The user will get a 404 error if they do not own the object.
+    See https://stackoverflow.com/a/38545128
+    """
     def get_queryset(self):
-        queryset = super(OwnerQuerysetMixin, self).get_queryset()
+        queryset = super().get_queryset()
+
         # perhaps handle the case where user is not authenticated
-        queryset = queryset.filter(owner=self.request.user)
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(owner=self.request.user)
+
         return queryset
 
 
