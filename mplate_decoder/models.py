@@ -201,6 +201,7 @@ class Mplate(Model):
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
         model_year = self.model_year
+        model_description_dict = {}
 
         try:
             model = Type2Model.objects.get(
@@ -240,16 +241,13 @@ class Mplate(Model):
                     " {}, extras code {}, year {}".format(
                         model_code, extras_code, model_year))
 
-        model_description = '''Volkswagen Type 2
-            · {} (model {})
-            · {}
-            · {}'''.format(
-                model_description, model_code_catalog,
-                configuration_description,
-                extras_description
-        )
+        model_description_dict['model_description'] = model_description
+        model_description_dict['model_code_catalog'] = model_code_catalog
+        model_description_dict['configuration_description'] = \
+            configuration_description
+        model_description_dict['extras_description'] = extras_description
 
-        return model_description
+        return model_description_dict
 
     def _get_exteriorcolor_code(self):
         SPECIAL_PAINTJOB_ID = '5'

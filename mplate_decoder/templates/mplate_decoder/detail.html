@@ -18,7 +18,11 @@
 <table class="table table-hover">
   <tr>
     <td><strong>{{ 'Model'|upper }}</strong></td> 
-    <td>{{ model_description|linebreaksbr }} </td>
+    <td>Volkswagen Type 2<br>
+        ➡ {{ model_description.model_description }} (model {{ model_description.model_code_catalog }})<br>
+        ➡ {{ model_description.configuration_description }}<br>
+        ➡ {{ model_description.extras_description }}<br>
+    </td>
   </tr>
   <tr>
     <td><strong>{{ 'Model year'|upper }}</strong></td> 
