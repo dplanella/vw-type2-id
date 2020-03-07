@@ -20,13 +20,20 @@
     {% block style %}<!-- Additional styles -->{%endblock%}
 
     {% block title %}<title>VW M-plate decoder</title>{% endblock %}
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+
   </head>
 
   <body>
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/">VW Type 2 ID</a>
+      <a class="navbar-brand" href="/">
+        <img src="{% static 'img/logo-32x32.png' %}" width="30" height="30" alt="Volkswagen Type 2 identification">
+        <!-- VW Type 2 id -->
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
