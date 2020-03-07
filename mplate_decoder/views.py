@@ -12,7 +12,7 @@ from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 
-logger = logging.getLogger('django')
+logger = logging.getLogger(__name__)
 
 
 class OwnerQuerysetMixin(object):
