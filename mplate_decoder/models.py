@@ -751,7 +751,8 @@ class MplateDecoder:
                     if int(m_code) in range(700, 800):
                         mcode_prepend = 'S '
                 except ValueError:
-                    logger.warning(f'Probably an invalid M-code: '
+                    logger.warning(
+                        f'Probably an invalid M-code: '
                         f'{m_code}, M-plate {chassis_number_short}')
 
             mcode_dict[f"{mcode_prepend} {m_code}"] = description
