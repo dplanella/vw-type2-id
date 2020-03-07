@@ -6,8 +6,8 @@
 :target::before {
     content: "";
     display: block;
-    margin-top: -80px;
     height: 80px;
+    margin-top: -80px;
     width: 1px;
 }
 
@@ -18,5 +18,5 @@
 }
 
 .alert>ol {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 }
