@@ -155,6 +155,9 @@ class SearchResultsView(generic.ListView):
         return results
 
     def get_context_data(self, **kwargs):
+        '''
+        Add additional context data
+        '''
         query = self.request.GET.get('q')
         context = super().get_context_data(**kwargs)
 
@@ -166,6 +169,13 @@ class SearchResultsView(generic.ListView):
                 m_code__iexact=query)
 
         context['m_code_query_set'] = m_code_query_set
+
+        mplates = self.get_queryset()
+
+        for mplate in mplates:
+            mplate.model = mplate.get_model()
+
+        context['mplates'] = mplates
 
         return context
 
