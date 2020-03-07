@@ -725,21 +725,36 @@ class MplateDecoder:
                     # But we make sure that if the year is defined
                     # we check for it
                     raise MultipleObjectsReturned
-                description = m_code_query_set.description
             except ObjectDoesNotExist:
-                description = f"Unknown code, year {model_year}"
+                # There is no such a code in the database
+                error_description = f"Unknown code, year {model_year}"
             except MultipleObjectsReturned:
                 m_code_query_set = Mcode.objects.filter(
                         m_code=m_code, years__contains=model_year)
                 try:
-                    description = m_code_query_set[0].description
-                    if m_code_query_set[0].is_special_code:
-                        mcode_prepend = 'S '
+                    m_code_query_set = m_code_query_set[0]
                 except IndexError:
-                    description = \
-                        f"Undefined code for year {model_year}"
+                    m_code_query_set = None
+                    error_description = \
+                        f"Undefined code, year {model_year}"
 
-            mcode_dict[mcode_prepend + m_code] = description
+            if m_code_query_set:
+                description = m_code_query_set.description
+                if m_code_query_set.is_special_code:
+                    mcode_prepend = 'S '
+            else:
+                # There is no m-code on the database to read
+                # or there has been an error. Have a guess at
+                # whether it's an S-code
+                description = error_description
+                try:
+                    if int(m_code) in range(700, 800):
+                        mcode_prepend = 'S '
+                except ValueError:
+                    logger.warning(f'Probably an invalid M-code: '
+                        f'{m_code}, M-plate {chassis_number_short}')
+
+            mcode_dict[f"{mcode_prepend} {m_code}"] = description
 
         return mcode_dict
 
