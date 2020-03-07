@@ -721,6 +721,10 @@ class MplateDecoder:
                 # We query with get() first, as not all M-codes
                 # contain their year
                 m_code_query_set = Mcode.objects.get(m_code=m_code)
+                if m_code_query_set.years:
+                    # But we make sure that if the year is defined
+                    # we check for it
+                    raise MultipleObjectsReturned
                 description = m_code_query_set.description
             except ObjectDoesNotExist:
                 description = f"Unknown code, year {model_year}"
