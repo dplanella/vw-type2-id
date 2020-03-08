@@ -25,6 +25,8 @@ class ExampleTestCase(LiveServerTestCase):
 
     def setUp(self):
         # Start the display
+        # Set visible to 1 to view the actual browser
+        # for visual debugging
         self.vdisplay = Display(visible=0, size=(1280, 900))
         self.vdisplay.start()
 
@@ -60,7 +62,7 @@ class ExampleTestCase(LiveServerTestCase):
 
         production_date_input = self.selenium.find_element_by_name(
             "production_date")
-        production_date_input.send_keys('072')
+        production_date_input.send_keys('172')
 
         export_destination_input = self.selenium.find_element_by_name(
             "export_destination")
@@ -85,4 +87,4 @@ class ExampleTestCase(LiveServerTestCase):
         production_date = WebDriverWait(
             self.selenium, 10).until(
                 EC.element_to_be_clickable((By.ID, "production-date")))
-        self.assertEqual(production_date.text, "Feb 07, 1969")
+        self.assertEqual(production_date.text, "Feb. 17, 1969")

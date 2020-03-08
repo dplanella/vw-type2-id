@@ -9,9 +9,27 @@ from .models import (
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 
-logger = logging.getLogger('django')
+logger = logging.getLogger(__name__)
+
+
+class OwnerQuerysetMixin(object):
+    """
+    Mixin to restrict views to object instances the logged-in user is the
+    creator of. Staff members can override this check.
+    The user will get a 404 error if they do not own the object.
+    See https://stackoverflow.com/a/38545128
+    """
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        # perhaps handle the case where user is not authenticated
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(owner=self.request.user)
+
+        return queryset
 
 
 class AjaxableResponseMixin:
@@ -81,8 +99,8 @@ class MplateRetrieve(generic.DetailView):
 
         context['plate'] = mplate.render_plate()
         context['chassis_number'] = mplate.get_chassis_number()
-        context['model_year'] = decoder.get_model_year().year
-        context['production_date'] = mplate.get_production_date()
+        context['model_year'] = mplate.model_year
+        context['production_date'] = mplate.production_date_as_time
         context['export_destination'] = mplate.get_export_destination()
         context['export_destination_geo'] = mplate.get_export_destination_geo()
         context['model_description'] = mplate.get_model()
@@ -97,7 +115,8 @@ class MplateRetrieve(generic.DetailView):
         return context
 
 
-class MplateUpdate(AjaxableResponseMixin, generic.edit.UpdateView):
+class MplateUpdate(AjaxableResponseMixin, LoginRequiredMixin,
+                   OwnerQuerysetMixin, generic.edit.UpdateView):
     model = Mplate
     # fields = '__all__'
     form_class = MplateUpdateForm
@@ -106,7 +125,8 @@ class MplateUpdate(AjaxableResponseMixin, generic.edit.UpdateView):
     slug_url_kwarg = 'chassis_number_short'
 
 
-class MplateDelete(generic.edit.DeleteView):
+class MplateDelete(LoginRequiredMixin, OwnerQuerysetMixin,
+                   generic.edit.DeleteView):
     model = Mplate
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
@@ -117,24 +137,36 @@ class SearchResultsView(generic.ListView):
     model = Mplate
     template_name = 'mplate_decoder/search_results.html'
     paginate_by = 25
+    context_object_name = 'mplates'
 
     def get_queryset(self):
 
-        results = None
+        results = []
         query = self.request.GET.get('q')
 
         if query:
             if query != '*':
-                results = Mplate.objects.filter(
-                    Q(m_codes_1__icontains=query)
-                    | Q(m_codes_2__icontains=query)
+                results = Mplate.objects.order_by('-id').filter(
+                    Q(m_codes__icontains=query)
                 )
             else:
                 results = Mplate.objects.all()
 
+        # Enrich the mplate data with the model descriptions dictionary
+        for mplate in results:
+            try:
+                mplate.model = mplate.get_model()
+            except ValueError:
+                logging.error(
+                    'Could not get model descriptions for M-plate '
+                    f'{mplate.chassis_number_short}')
+
         return results
 
     def get_context_data(self, **kwargs):
+        '''
+        Add additional context data
+        '''
         query = self.request.GET.get('q')
         context = super().get_context_data(**kwargs)
 
@@ -148,3 +180,16 @@ class SearchResultsView(generic.ListView):
         context['m_code_query_set'] = m_code_query_set
 
         return context
+
+
+class MplatesByUserListView(LoginRequiredMixin, generic.ListView):
+    """
+    Generic class-based view listing M-plates created by the current user.
+    """
+    model = Mplate
+    template_name = 'mplate_decoder/mplate_created_by_user.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        qs = Mplate.objects.filter(owner=self.request.user)
+        return qs

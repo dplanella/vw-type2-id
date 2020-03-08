@@ -18,13 +18,13 @@ class Type2ModelExtraAdmin(admin.ModelAdmin):
 
 
 @admin.register(Type2ModelConfiguration)
-class Type2ModelConfiguration(admin.ModelAdmin):
+class Type2ModelConfigurationAdmin(admin.ModelAdmin):
     search_fields = ('model', 'configuration', 'description')
     list_display = ('model', 'configuration', 'description')
 
 
 @admin.register(Type2Model)
-class Type2ModelConfiguration(admin.ModelAdmin):
+class Type2ModelAdmin(admin.ModelAdmin):
     search_fields = ('model', )
     list_display = (
         'model',
@@ -33,16 +33,30 @@ class Type2ModelConfiguration(admin.ModelAdmin):
 
 @admin.register(Mplate)
 class MplateAdmin(admin.ModelAdmin):
-    search_fields = ('chassis_number_short', )
+    search_fields = ('chassis_number_short',
+                     'm_codes',
+                     )
+    list_filter = ('emden',
+                   'model_year',
+                   )
     list_display = ('chassis_number_short',
-                    'm_codes_1', 'm_codes_2',
+                    'm_codes',
                     'paint_and_interior',
-                    'production_date',
                     'export_destination',
+                    'destination_country',
                     'model',
                     'aggregate_code',
-                    'emden')
+                    'emden',
+                    'model_year',
+                    'production_date_as_time',
+                    'owner'
+                    )
+    readonly_fields = ('owner', 'created_at', 'updated_at')
     list_display_links = ('chassis_number_short', )
+    view_on_site = True
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
 
 
 @admin.register(McodeCollection)

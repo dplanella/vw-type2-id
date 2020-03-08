@@ -13,11 +13,16 @@ from django.core.exceptions import (
 from lxml import etree
 from isoweek import Week
 from vw_type2_id.settings import BASE_DIR
+from django.conf import settings
+from crum import get_current_user
 
-logger = logging.getLogger('django')
+logger = logging.getLogger(__name__)
 
 
 class Mplate(Model):
+    class Meta:
+        ordering = ['-id']
+
     chassis_number_short = models.CharField(
         max_length=8, unique=True,
         help_text=("Chassis number shortened, with the two leading digits "
@@ -50,11 +55,37 @@ class Mplate(Model):
         max_length=1, blank=True,
         help_text='''Optional "E" for
             Emden''')
+    created_at = models.DateTimeField(
+        auto_now_add=True, blank=True,
+        null=True)
+    updated_at = models.DateTimeField(
+        auto_now=True, blank=True,
+        null=True)
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+        editable=False,
+        blank=True, null=True, default=None)
+    editor_remarks = models.TextField(blank=True)
+
+    # Computed (decoded) fields
+    m_codes = models.CharField(
+        max_length=38, blank=True, editable=False,
+        help_text="Full list of M codes for this M plate")
+    production_date_as_time = models.DateField(
+        blank=True, editable=False,
+        help_text="Planned production date, in time format")
+    model_year = models.CharField(
+        max_length=4, blank=True, editable=False,
+        help_text='Model year')
+    destination_country = models.CharField(
+        max_length=30, blank=True,
+        help_text='''Country of destination''')
 
     def __unicode__(self):
         return self.chassis_number_short
 
     def get_absolute_url(self):
+        # Required for the admin's "View on site" feature to work
         return reverse(
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
@@ -63,15 +94,11 @@ class Mplate(Model):
         decoder = MplateDecoder(self)
         model_year = decoder.get_model_year()
 
-        logger.info('Model year: {}'.format(model_year))
-
         return model_year
 
     def get_serial_production_number(self):
         splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
         serial_number = int(self.chassis_number[splitat:])
-
-        logger.info('Serial number: {}'.format(serial_number))
 
         return serial_number
 
@@ -80,69 +107,10 @@ class Mplate(Model):
 
         return type_body + self.chassis_number_short
 
-    def get_production_date(self, as_string=True):
+    def get_production_date(self):
 
-        # Model year starts in August
-        MODEL_YEAR_START_MONTH = 8
-        model_year = self.get_model_year()
-        production_date = ''
-
-        # Model year is 68-69
-        if model_year < date(1970, 1, 1):
-            month_dict = {
-                '1': 1,
-                '2': 2,
-                '3': 3,
-                '4': 4,
-                '5': 5,
-                '6': 6,
-                '7': 7,
-                '8': 8,
-                '9': 9,
-                'O': 10,
-                'N': 11,
-                'D': 12
-            }
-            year = model_year.year
-            day = int(self.production_date[:2])
-            month = month_dict[self.production_date[-1:]]
-            if month >= MODEL_YEAR_START_MONTH:
-                year = model_year.year - 1
-
-            production_date = datetime(year, month, day).date()
-        else:
-            iso_year = model_year.year
-            iso_weeknumber = int(self.production_date[:2])
-            iso_weekday = int(self.production_date[-1:])
-
-            first_model_year_weeks = {
-                1969: "1969W12",
-                1970: "1970W29",
-                1971: "1970W32",
-                1972: "1971W34",
-                1973: "1972W34",
-                1974: "1973W33",
-                1975: "1974W33",
-                1976: "1975W28",
-                1977: "1976W28",
-                1978: "1977W30",
-                1979: "1978W28",
-            }
-
-            first_model_year_week = Week.fromstring(
-                first_model_year_weeks[iso_year])
-
-            if iso_weeknumber >= first_model_year_week.week:
-                week_offset = iso_weeknumber - first_model_year_week.week
-            else:
-                week_offset = ((52 + iso_weeknumber)
-                               - first_model_year_week.week)
-
-            production_week = first_model_year_week + week_offset
-            production_date = production_week.day(iso_weekday - 1)
-
-        if as_string:
-            production_date = production_date.strftime("%b %d, %Y")
+        decoder = MplateDecoder(self)
+        production_date = decoder.get_production_date()
 
         return production_date
 
@@ -232,7 +200,8 @@ class Mplate(Model):
         configuration_code = self.model[2]
         extras_code = self.model[3]
         model_code_catalog = self.model[:3]
-        model_year = self.get_model_year().year
+        model_year = self.model_year
+        model_description_dict = {}
 
         try:
             model = Type2Model.objects.get(
@@ -272,16 +241,13 @@ class Mplate(Model):
                     " {}, extras code {}, year {}".format(
                         model_code, extras_code, model_year))
 
-        model_description = '''Volkswagen Type 2
-            · {} (model {})
-            · {}
-            · {}'''.format(
-                model_description, model_code_catalog,
-                configuration_description,
-                extras_description
-        )
+        model_description_dict['model_description'] = model_description
+        model_description_dict['model_code_catalog'] = model_code_catalog
+        model_description_dict['configuration_description'] = \
+            configuration_description
+        model_description_dict['extras_description'] = extras_description
 
-        return model_description
+        return model_description_dict
 
     def _get_exteriorcolor_code(self):
         SPECIAL_PAINTJOB_ID = '5'
@@ -297,7 +263,6 @@ class Mplate(Model):
 
         SPECIAL_PAINTJOB_CODE_LEN = 3
         exteriorcolor_object = None
-        decoder = MplateDecoder(self)
         model_year = 0
 
         exteriorcolor_code = self._get_exteriorcolor_code()
@@ -312,7 +277,7 @@ class Mplate(Model):
         except ObjectDoesNotExist:
             exteriorcolor_object = None
         except MultipleObjectsReturned:
-            model_year = decoder.get_model_year().year
+            model_year = self.model_year
             exteriorcolor = ExteriorColor.objects.filter(
                 plate_code=exteriorcolor_code,
                 years__contains=model_year,
@@ -406,7 +371,6 @@ class Mplate(Model):
 
     def get_interiorcolor(self):
         SPECIAL_PAINTJOB_ID = '5'
-        decoder = MplateDecoder(self)
         model_year = 0
 
         if not self.paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
@@ -422,7 +386,7 @@ class Mplate(Model):
                 color_name = "({}) Unknown color".format(interiorcolor_code)
                 material = "Unknown material"
             except MultipleObjectsReturned:
-                model_year = decoder.get_model_year().year
+                model_year = self.model_year
                 interiorcolor = InteriorColor.objects.filter(
                     plate_code=interiorcolor_code,
                     years__contains=model_year,
@@ -479,9 +443,8 @@ class Mplate(Model):
 
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
-        decoder = MplateDecoder(self)
-        model_year = decoder.get_model_year().year
-        logger.info("Model year: {} {}".format(model_year, type(model_year)))
+        model_year = int(self.model_year)
+        logger.info(f"Model year on rendered M-plate: {model_year}")
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
                                     "images/mplate-6869-ref.svg")
@@ -490,11 +453,20 @@ class Mplate(Model):
                                     "images/mplate-7079-ref.svg")
         MPLATE_STOP_COLOR_ID = 'stopBusColor'
         MPLATE_STOP_COLOR = '#a6a6a6'
+        fields = (
+            'chassis_number_short',
+            'm_codes_1',
+            'm_codes_2',
+            'paint_and_interior',
+            'production_date',
+            'production_planned',
+            'export_destination',
+            'model',
+            'aggregate_code',
+            'emden',
+        )
 
         tree = etree.parse(svg_file)
-
-        # Get all fields of an M-plate
-        fields = [f.name for f in Mplate._meta.get_fields() if f.name != 'id']
 
         # Replace each field name with a matching id on the SVG file, with
         # its value
@@ -520,6 +492,40 @@ class Mplate(Model):
         plate = etree.tostring(tree).decode('utf-8')
 
         return plate
+
+    def save(self, *args, **kwargs):
+
+        # Calculate the full m_codes field
+        self.m_codes = f"{self.m_codes_1} {self.m_codes_2}"
+
+        # Calculate model year
+        self.model_year = self.get_model_year()
+
+        # Calculate production date
+        self.production_date_as_time = self.get_production_date()
+
+        # Calculate destination country
+        country_or_region = ''
+        export_dest = self.get_export_destination_object()
+
+        if export_dest and (export_dest.country or export_dest.region):
+            country_or_region = export_dest.country or export_dest.region
+
+        self.destination_country = country_or_region
+
+        # Get currently logged in user
+        user = get_current_user()
+        if user and not user.pk:
+            user = None
+
+        # Save the user as the owner only if
+        # the M-plate is being created (added),
+        # but NOT when it's being updated
+        is_new = self._state.adding
+        if is_new:
+            self.owner = user
+
+        super().save(*args, **kwargs)
 
 
 class MplateDecoder:
@@ -562,7 +568,107 @@ class MplateDecoder:
             year=MODEL_YEAR_START.year + ((10 * model_year_decade) +
                                           model_year_delta))
 
-        return model_year
+        return model_year.year
+
+    def get_production_date(
+            self, chassis_number=None,
+            encoded_production_date=None):
+
+        if chassis_number and encoded_production_date:
+            chassis_number = chassis_number
+            encoded_production_date = encoded_production_date
+        elif self.mplate:
+            chassis_number = self.mplate.chassis_number_short
+            encoded_production_date = self.mplate.production_date
+        else:
+            raise ValidationError(
+                'MplateDecoder requires either'
+                ' an m-plate or chassis_number with encoded production date')
+
+        # Model year starts in August
+        MODEL_YEAR_START_MONTH = 8
+        model_year = self.get_model_year(chassis_number)
+        production_date = None
+
+        # Model year is 68-69
+        if model_year < 1970:
+            month_dict = {
+                '1': 1,
+                '2': 2,
+                '3': 3,
+                '4': 4,
+                '5': 5,
+                '6': 6,
+                '7': 7,
+                '8': 8,
+                '9': 9,
+                'O': 10,
+                'N': 11,
+                'D': 12
+            }
+
+            year = model_year
+            try:
+                day = encoded_production_date[:2]
+                day = int(day)
+            except ValueError as e:
+                logger.error(
+                    f'Could not decode production day {day}'
+                    f' for chassis number {chassis_number}: {e}')
+                return datetime.now()
+
+            try:
+                month = encoded_production_date[-1:]
+                month = month_dict[month]
+            except KeyError as e:
+                logger.error(
+                    f'Could not decode production month {month}'
+                    f' for chassis number {chassis_number}: {e}')
+                return datetime.now()
+
+            if month >= MODEL_YEAR_START_MONTH:
+                year = model_year - 1
+
+            try:
+                production_date = datetime(year, month, day).date()
+            except ValueError as e:
+                logger.error(
+                    f'Could not decode production'
+                    f' date {encoded_production_date}'
+                    f' for chassis number {chassis_number}: {e}')
+                return datetime.now()
+        else:
+            iso_year = model_year
+            iso_weeknumber = int(encoded_production_date[:2])
+            iso_weekday = int(encoded_production_date[-1:])
+
+            first_model_year_weeks = {
+                1969: "1969W12",
+                1970: "1970W29",
+                1971: "1970W32",
+                1972: "1971W34",
+                1973: "1972W34",
+                1974: "1973W33",
+                1975: "1974W33",
+                1976: "1975W28",
+                1977: "1976W28",
+                1978: "1977W30",
+                1979: "1978W28",
+            }
+
+            first_model_year_week = Week.fromstring(
+                first_model_year_weeks[iso_year])
+
+            if iso_weeknumber >= first_model_year_week.week:
+                week_offset = iso_weeknumber - first_model_year_week.week
+            else:
+                week_offset = ((52 + iso_weeknumber)
+                               - first_model_year_week.week)
+
+            production_week = first_model_year_week + week_offset
+            production_date = production_week.day(iso_weekday - 1)
+
+        return production_date
 
     def get_mcodes(self, m_codes_1=None, m_codes_2=None,
                    chassis_number_short=None):
@@ -585,7 +691,7 @@ class MplateDecoder:
             raise ValueError('MplateDecoder requires'
                              ' an mplate or chassis_number_short')
 
-        model_year = self.get_model_year(chassis_number_short).year
+        model_year = self.get_model_year(chassis_number_short)
 
         mcode_dict = {}
         m_codes = list(filter(None,
@@ -608,26 +714,48 @@ class MplateDecoder:
         # Retrieve the M-code description
         for m_code in m_codes_expanded:
             mcode_prepend = 'M '
+            m_code_query_set = None
 
             try:
                 # We query with get() first, as not all M-codes
                 # contain their year
                 m_code_query_set = Mcode.objects.get(m_code=m_code)
-                description = m_code_query_set.description
+                if m_code_query_set.years:
+                    # But we make sure that if the year is defined
+                    # we check for it
+                    raise MultipleObjectsReturned
             except ObjectDoesNotExist:
-                description = f"Unknown code, year {model_year}"
+                # There is no such a code in the database
+                error_description = f"Unknown code, year {model_year}"
             except MultipleObjectsReturned:
                 m_code_query_set = Mcode.objects.filter(
                         m_code=m_code, years__contains=model_year)
                 try:
-                    description = m_code_query_set[0].description
-                    if m_code_query_set[0].is_special_code:
-                        mcode_prepend = 'S '
+                    m_code_query_set = m_code_query_set[0]
                 except IndexError:
-                    description = \
-                        f"Undefined code for year {model_year}"
+                    m_code_query_set = None
+                    error_description = \
+                        f"Undefined code, year {model_year}"
 
-            mcode_dict[mcode_prepend + m_code] = description
+            if m_code_query_set:
+                description = m_code_query_set.description
+                if m_code_query_set.is_special_code:
+                    mcode_prepend = 'S '
+            else:
+                # There is no m-code on the database to read
+                # or there has been an error. Have a guess at
+                # whether it's an S-code
+                description = error_description
+                if m_code.startswith('7'):
+                    try:
+                        if int(m_code) in range(700, 800):
+                            mcode_prepend = 'S '
+                    except ValueError:
+                        logger.warning(
+                            f'Probably an invalid M-code: '
+                            f'{m_code}, M-plate {chassis_number_short}')
+
+            mcode_dict[f"{mcode_prepend} {m_code}"] = description
 
         return mcode_dict
 

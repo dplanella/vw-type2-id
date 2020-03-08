@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'svg',
     'fullurl',
     'markdownify',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crum.CurrentRequestUserMiddleware',
 ]
 
 ROOT_URLCONF = 'vw_type2_id.urls'
@@ -150,3 +152,54 @@ MARKDOWNIFY_BLEACH = False
 # Generate jUnit test reports
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_DIR = 'test-results'
+
+# This tells Django that instead of using the default
+# User model look in our app users for the model called CustomUser
+# and use that instead everywhere in our project.
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
+LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
+
+DEFAULT_FROM_EMAIL = 'VW Type 2 ID <admin@vw-type2-id.xyz>'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '[{asctime}] {levelname} [{name}:{lineno}] '
+                      '{message}',
+            'datefmt': '%d/%b/%Y %H:%M:%S',
+            'style': '{',
+        },
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} '
+                      '{thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+        'server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        'mplate_decoder': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
