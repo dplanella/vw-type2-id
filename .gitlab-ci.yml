@@ -31,11 +31,15 @@ default:
 
 # Required for dependency scanning to work: build the binaries for the libraries
 # needed to build native pip dependencies
+# Note: the dependency_scanning seems to support Python 3.6 only, hence the
+# dedicated image here
 build_dep_wheels:
   image: python:3.6
   stage: build
   script:
+    # - apt-get update && apt-get install -y build-essential
     - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
+    # - make requirements && cp requirements.txt $WHEEL_DIR
   artifacts:
     paths:
       - $WHEEL_DIR
@@ -47,7 +51,7 @@ dependency_scanning:
     - build_dep_wheels
   variables:
     DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
-    #PIP_REQUIREMENTS_FILE: requirements.txt
+    # PIP_REQUIREMENTS_FILE: $WHEEL_DIR/requirements.txt
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
@@ -68,6 +72,8 @@ pylint:
   - pipenv run pylint **/*.py
   allow_failure: true
 
+# Note: firefox-esr is only required as the firefox package is
+# not available on the Debian-based python:3.8 image
 test_apps:
   stage: test
   before_script:
