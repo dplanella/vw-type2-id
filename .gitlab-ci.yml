@@ -21,7 +21,7 @@ cache:
     - ~/.cache/pipenv/
 
 default:
-  image: python:3.6
+  image: python:3.8
 
 .linter_template:
   stage: test
@@ -32,6 +32,7 @@ default:
 # Required for dependency scanning to work: build the binaries for the libraries
 # needed to build native pip dependencies
 build_dep_wheels:
+  image: python:3.6
   stage: build
   script:
     - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
