@@ -26,6 +26,3 @@ isoweek = "*"
 django-fullurl = "*"
 django-markdownify = "*"
 django-crum = "*"
-
-[requires]
-python_version = "3.8"
