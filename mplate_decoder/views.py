@@ -137,6 +137,7 @@ class SearchResultsView(generic.ListView):
     model = Mplate
     template_name = 'mplate_decoder/search_results.html'
     paginate_by = 25
+    context_object_name = 'mplates'
 
     def get_queryset(self):
 
@@ -145,12 +146,20 @@ class SearchResultsView(generic.ListView):
 
         if query:
             if query != '*':
-                results = Mplate.objects.filter(
-                    Q(m_codes_1__icontains=query)
-                    | Q(m_codes_2__icontains=query)
+                results = Mplate.objects.order_by('-id').filter(
+                    Q(m_codes__icontains=query)
                 )
             else:
                 results = Mplate.objects.all()
+
+        # Enrich the mplate data with the model descriptions dictionary
+        for mplate in results:
+            try:
+                mplate.model = mplate.get_model()
+            except ValueError:
+                logging.error(
+                    'Could not get model descriptions for M-plate '
+                    f'{mplate.chassis_number_short}')
 
         return results
 
@@ -169,13 +178,6 @@ class SearchResultsView(generic.ListView):
                 m_code__iexact=query)
 
         context['m_code_query_set'] = m_code_query_set
-
-        mplates = self.get_queryset()
-
-        for mplate in mplates:
-            mplate.model = mplate.get_model()
-
-        context['mplates'] = mplates
 
         return context
 
