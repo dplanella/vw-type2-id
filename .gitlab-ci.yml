@@ -37,9 +37,7 @@ build_dep_wheels:
   image: python:3.6
   stage: build
   script:
-    - apt-get update && apt-get install -y jq
     - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
-    - make requirements && cp requirements.txt $WHEEL_DIR
   artifacts:
     paths:
       - $WHEEL_DIR
@@ -51,7 +49,6 @@ dependency_scanning:
     - build_dep_wheels
   variables:
     DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
-#    PIP_REQUIREMENTS_FILE: $WHEEL_DIR/requirements.txt
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
