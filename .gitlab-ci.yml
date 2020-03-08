@@ -51,7 +51,7 @@ dependency_scanning:
     - build_dep_wheels
   variables:
     DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
-    PIP_REQUIREMENTS_FILE: $WHEEL_DIR/requirements.txt
+#    PIP_REQUIREMENTS_FILE: $WHEEL_DIR/requirements.txt
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
