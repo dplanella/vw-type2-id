@@ -1,5 +1,9 @@
+import logging
 from django.views import generic
 from django.http import JsonResponse, HttpResponse
+from django.urls import reverse_lazy
+from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import (
     Mplate,
     MplateDecoder,
@@ -7,10 +11,6 @@ from .models import (
     McodeCollection,
 )
 from .forms import MplateCreateForm, MplateUpdateForm
-from django.urls import reverse_lazy
-from django.db.models import Q
-from django.contrib.auth.mixins import LoginRequiredMixin
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -171,7 +171,7 @@ class SearchResultsView(generic.ListView):
         context = super().get_context_data(**kwargs)
 
         m_code_query_set = Mcode.objects.filter(
-                m_code__iexact=query)
+            m_code__iexact=query)
 
         if not m_code_query_set:
             m_code_query_set = McodeCollection.objects.filter(

@@ -10,11 +10,11 @@ from django.core.exceptions import (
     ObjectDoesNotExist,
     MultipleObjectsReturned,
 )
+from django.conf import settings
 from lxml import etree
 from isoweek import Week
-from vw_type2_id.settings import BASE_DIR
-from django.conf import settings
 from crum import get_current_user
+from vw_type2_id.settings import BASE_DIR
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +81,7 @@ class Mplate(Model):
         max_length=30, blank=True,
         help_text='''Country of destination''')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.chassis_number_short
 
     def get_absolute_url(self):
@@ -95,12 +95,6 @@ class Mplate(Model):
         model_year = decoder.get_model_year()
 
         return model_year
-
-    def get_serial_production_number(self):
-        splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
-        serial_number = int(self.chassis_number[splitat:])
-
-        return serial_number
 
     def get_chassis_number(self):
         type_body = self.model[:2]
@@ -695,8 +689,8 @@ class MplateDecoder:
 
         mcode_dict = {}
         m_codes = list(filter(None,
-                       (re.split(r'\W+', m_codes_1) +
-                           re.split(r'\W+', m_codes_2))))
+                              (re.split(r'\W+', m_codes_1) +
+                               re.split(r'\W+', m_codes_2))))
         m_codes_expanded = []
 
         # First check if the M-code contains a collection of M-codes
@@ -707,7 +701,7 @@ class MplateDecoder:
                 m_code_collection = m_code_query_set[0].collection
                 m_codes_expanded += \
                     list(filter(None,
-                         (re.split(r'\W+', m_code_collection))))
+                                (re.split(r'\W+', m_code_collection))))
             else:
                 m_codes_expanded.append(m_code)
 
@@ -729,7 +723,7 @@ class MplateDecoder:
                 error_description = f"Unknown code, year {model_year}"
             except MultipleObjectsReturned:
                 m_code_query_set = Mcode.objects.filter(
-                        m_code=m_code, years__contains=model_year)
+                    m_code=m_code, years__contains=model_year)
                 try:
                     m_code_query_set = m_code_query_set[0]
                 except IndexError:
@@ -797,44 +791,44 @@ class Type2ModelExtra(Model):
         help_text=("Model description as it appears on the chassis plate"),
         blank=True)
     years = models.CharField(
-            max_length=65, blank=True)
+        max_length=65, blank=True)
 
 
 class InteriorColor(Model):
     plate_code = models.CharField(
-            max_length=2)
+        max_length=2)
     color_name = models.CharField(
-            max_length=50)
+        max_length=50)
     material = models.CharField(
-            max_length=20)
+        max_length=20)
     years = models.CharField(
-            max_length=65, blank=True)
+        max_length=65, blank=True)
     remarks = models.TextField(blank=True)
     image = models.ImageField(blank=True)
 
 
 class ExteriorColor(Model):
     plate_code = models.CharField(
-            max_length=4)
+        max_length=4)
     lacquer_code_body = models.CharField(
-            max_length=20)
+        max_length=20)
     lacquer_code_roof = models.CharField(
-            max_length=20, blank=True)
+        max_length=20, blank=True)
     years = models.CharField(
-            max_length=65, blank=True)
+        max_length=65, blank=True)
     sonderlackierung = models.BooleanField()
     remarks = models.TextField(blank=True)
 
 
 class Color(Model):
     lacquer_code = models.CharField(
-            max_length=30)
+        max_length=30)
     color_name = models.CharField(
-            max_length=75)
+        max_length=75)
     ral_code = models.CharField(
-            max_length=30, blank=True)
+        max_length=30, blank=True)
     chip = models.CharField(
-            max_length=36, blank=True)
+        max_length=36, blank=True)
 
 
 class Engine(Model):

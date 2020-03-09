@@ -1,12 +1,12 @@
+import re
+import logging
 from django.forms import ModelForm, ValidationError
 from django.urls import reverse
-import re
 from django.utils.text import slugify
 from .models import (
     Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
 )
 
-import logging
 logger = logging.getLogger(__name__)
 
 
@@ -147,9 +147,9 @@ class MplateCreateForm(ModelForm):
                 data = ' '.join(mcodes_list)
             else:
                 raise ValidationError(
-                            "Minimum M-code length: "
-                            "{} digits or letters".format(MCODE_LEN)
-                        )
+                    "Minimum M-code length: "
+                    "{} digits or letters".format(MCODE_LEN)
+                )
 
         return data
 
