@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'fullurl',
     'markdownify',
     'users',
+    'contact.apps.ContactConfig',
 ]
 
 MIDDLEWARE = [
@@ -203,3 +204,5 @@ LOGGING = {
         },
     },
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
