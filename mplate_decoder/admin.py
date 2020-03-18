@@ -5,6 +5,7 @@ from .models import (
     Type2ModelConfiguration, Type2ModelExtra,
     InteriorColor, ExteriorColor, Color,
     Engine, Gearbox, Mcode, McodeCollection,
+    VwType2Model,
 )
 
 admin.site.register(Engine)
@@ -144,3 +145,26 @@ class ExportDestinationAdmin(admin.ModelAdmin):
         'port',
         'notes',
     )
+
+
+@admin.register(VwType2Model)
+class VwType2ModelAdmin(admin.ModelAdmin):
+    search_fields = (
+        'model',
+        'model_description',
+        'extras_description',
+    )
+    list_display = (
+        'model',
+        'configuration',
+        'extras',
+        'model_description',
+        'configuration_description',
+        'extras_description',
+        'm_codes',
+        'chassis_plate',
+        'years',
+        'schematic_bitmap',
+        'schematic_vector',
+    )
+    save_as = True

@@ -892,3 +892,26 @@ class McodeCollection(Model):
     remarks = models.TextField(blank=True)
     source = models.TextField(blank=True)
     editor_remarks = models.TextField(blank=True)
+
+
+class VwType2Model(Model):
+    model = models.PositiveSmallIntegerField()
+    configuration = models.PositiveSmallIntegerField()
+    extras = models.PositiveSmallIntegerField()
+    model_description = models.CharField(
+        max_length=35,
+        help_text=("Model description"))
+    configuration_description = models.TextField()
+    extras_description = models.TextField()
+    m_codes = models.CharField(
+        max_length=50,
+        help_text=("List of M-codes for the corresponding extras"),
+        blank=True)
+    chassis_plate = models.CharField(
+        max_length=20,
+        help_text=("Model description as it appears on the chassis plate"),
+        blank=True)
+    years = models.CharField(
+            max_length=65, blank=True)
+    schematic_bitmap = models.ImageField(blank=True)
+    schematic_vector = models.TextField(blank=True)
