@@ -184,17 +184,20 @@ class MplateRetrieve(generic.DetailView):
             if color_chip_body:
                 # Replace body color
                 body_color = tree.find(
-                    ".//n:path[@id='{}']".format(BUS_BODY_COLOR_ID),
+                    f".//n:path[@id='{BUS_BODY_COLOR_ID}']",
                     namespaces={'n': SVG_NAMESPACE}
                 )
 
                 if body_color is not None:
                     logger.debug(f'Body color: {body_color}')
-                    logger.debug(f"Body color style: {body_color.attrib['style']}")
-                    body_color.attrib['style'] = body_color.attrib['style'].replace(
-                        f'fill:{BUS_BODY_COLOR_DEFAULT}',
-                        f'fill:{color_chip_body}')
-                    logger.debug(f"Body color style: {body_color.attrib['style']}")
+                    logger.debug(
+                        f"Body color style: {body_color.attrib['style']}")
+                    body_color.attrib['style'] = \
+                        body_color.attrib['style'].replace(
+                            f'fill:{BUS_BODY_COLOR_DEFAULT}',
+                            f'fill:{color_chip_body}')
+                    logger.debug(
+                        f"Body color style: {body_color.attrib['style']}")
 
             roof_color = None
             if color_chip_roof:
@@ -206,11 +209,14 @@ class MplateRetrieve(generic.DetailView):
 
                 if roof_color is not None:
                     logger.debug(f'Roof color: {roof_color}')
-                    logger.debug(f"Roof color style: {body_color.attrib['style']}")
-                    roof_color.attrib['style'] = roof_color.attrib['style'].replace(
-                        f'fill:{BUS_ROOF_COLOR_DEFAULT}',
-                        f'fill:{color_chip_roof}')
-                    logger.debug(f"Roof color style: {roof_color.attrib['style']}")
+                    logger.debug(
+                        f"Roof color style: {body_color.attrib['style']}")
+                    roof_color.attrib['style'] = \
+                        roof_color.attrib['style'].replace(
+                            f'fill:{BUS_ROOF_COLOR_DEFAULT}',
+                            f'fill:{color_chip_roof}')
+                    logger.debug(
+                        f"Roof color style: {roof_color.attrib['style']}")
 
             schematic = etree.tostring(tree).decode('utf-8')
 
