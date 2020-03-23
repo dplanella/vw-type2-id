@@ -16,6 +16,7 @@ from django.core.exceptions import (
     MultipleObjectsReturned,
 )
 import logging
+from lxml import etree
 
 logger = logging.getLogger(__name__)
 
@@ -97,12 +98,12 @@ class MplateRetrieve(generic.DetailView):
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
 
-    def get_schematic(self, model_code, model_year, m_codes):
+    def get_schematic(self, mplate):
 
         schematic = None
-        model = int(model_code[:2])
-        configuration = int(model_code[2])
-        extras = int(model_code[3])
+        model = int(mplate.model[:2])
+        configuration = int(mplate.model[2])
+        extras = int(mplate.model[3])
         special_sales_m_codes = ['736', '723', 'D61', 'D63', 'D64', 'W51']
         # - Wild Westerner is 736, year 1973
         #   - Model 2211
@@ -115,6 +116,14 @@ class MplateRetrieve(generic.DetailView):
         #   - Model 2319 (D63)
         # - Silverfish is 766 (W51), years 1978-1979 (nine-seater)
         #   - Model 2210
+        model_code = mplate.model
+        model_year = mplate.model_year
+        m_codes = mplate.m_codes
+        SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
+        BUS_ROOF_COLOR_ID = 'roof-color'
+        BUS_BODY_COLOR_ID = 'body-color'
+        BUS_ROOF_COLOR_DEFAULT = '#ffffff'
+        BUS_BODY_COLOR_DEFAULT = '#ffffff'
 
         logger.debug(
             f'Getting schematic for model {model}{configuration}{extras}, '
@@ -163,7 +172,47 @@ class MplateRetrieve(generic.DetailView):
                     f'Model {model_code}, years {model_year}, '
                     f'M-codes: {m_codes}')
 
-        schematic = t2_model.schematic_bitmap
+        schematic = t2_model.schematic_vector
+
+        if schematic:
+            tree = etree.fromstring(schematic)
+
+            color_chip_body, color_chip_roof = mplate._get_exteriorcolorchip()
+            logger.debug(f'Body color chip code: {color_chip_body}')
+            logger.debug(f'Roof color chip code: {color_chip_roof}')
+
+            if color_chip_body:
+                # Replace body color
+                body_color = tree.find(
+                    ".//n:path[@id='{}']".format(BUS_BODY_COLOR_ID),
+                    namespaces={'n': SVG_NAMESPACE}
+                )
+
+                if body_color is not None:
+                    logger.debug(f'Body color: {body_color}')
+                    logger.debug(f"Body color style: {body_color.attrib['style']}")
+                    body_color.attrib['style'] = body_color.attrib['style'].replace(
+                        f'fill:{BUS_BODY_COLOR_DEFAULT}',
+                        f'fill:{color_chip_body}')
+                    logger.debug(f"Body color style: {body_color.attrib['style']}")
+
+            roof_color = None
+            if color_chip_roof:
+                # Replace roof color
+                roof_color = tree.find(
+                    f".//n:path[@id='{BUS_ROOF_COLOR_ID}']",
+                    namespaces={'n': SVG_NAMESPACE}
+                )
+
+                if roof_color is not None:
+                    logger.debug(f'Roof color: {roof_color}')
+                    logger.debug(f"Roof color style: {body_color.attrib['style']}")
+                    roof_color.attrib['style'] = roof_color.attrib['style'].replace(
+                        f'fill:{BUS_ROOF_COLOR_DEFAULT}',
+                        f'fill:{color_chip_roof}')
+                    logger.debug(f"Roof color style: {roof_color.attrib['style']}")
+
+            schematic = etree.tostring(tree).decode('utf-8')
 
         return schematic
 
@@ -173,10 +222,7 @@ class MplateRetrieve(generic.DetailView):
         decoder = MplateDecoder(mplate)
 
         context['plate'] = mplate.render_plate()
-        context['schematic'] = self.get_schematic(
-            mplate.model,
-            mplate.model_year,
-            mplate.m_codes)
+        context['schematic'] = self.get_schematic(mplate)
         context['chassis_number'] = mplate.get_chassis_number()
         context['model_year'] = mplate.model_year
         context['production_date'] = mplate.production_date_as_time

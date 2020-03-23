@@ -164,7 +164,14 @@ class VwType2ModelAdmin(admin.ModelAdmin):
         'm_codes',
         'chassis_plate',
         'years',
-        'schematic_bitmap',
-        'schematic_vector',
+        'schematic_vector_short',
     )
     save_as = True
+
+    def schematic_vector_short(self, obj):
+        schematic_vector_short = obj.schematic_vector[:20]
+        if schematic_vector_short:
+            schematic_vector_short += ' [...]'
+        return schematic_vector_short
+
+    schematic_vector_short.short_description = "Schematic"

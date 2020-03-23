@@ -351,6 +351,7 @@ class Mplate(Model):
     def _get_exteriorcolorchip(self):
 
         color_chip_body = ""
+        color_chip_roof = ""
 
         # Get the exterior color object from the M-plate
         # code
@@ -367,7 +368,17 @@ class Mplate(Model):
             except ObjectDoesNotExist:
                 color_chip_body = ""
 
-        return color_chip_body
+            try:
+                # Get the color attributes from the lacquer code
+                color_roof = Color.objects.get(
+                    lacquer_code=exteriorcolor.lacquer_code_roof
+                )
+                # Get the color chip
+                color_chip_roof = color_roof.chip
+            except ObjectDoesNotExist:
+                color_chip_roof = ""
+
+        return (color_chip_body, color_chip_roof)
 
     def get_interiorcolor(self):
         SPECIAL_PAINTJOB_ID = '5'
@@ -476,7 +487,7 @@ class Mplate(Model):
                 namespaces={'n': SVG_NAMESPACE})
             mplate_field.text = getattr(self, field)
 
-        color_chip_body = self._get_exteriorcolorchip()
+        color_chip_body, _ = self._get_exteriorcolorchip()
         logger.info(color_chip_body)
 
         if color_chip_body:
