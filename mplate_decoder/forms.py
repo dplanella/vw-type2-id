@@ -77,7 +77,7 @@ class MplateCreateForm(ModelForm):
                 "Check first digit."
             )
 
-        logger.info(
+        logger.debug(
             "Model year validation: {} ({})".format(
                 model_year, type(model_year)))
 
@@ -271,7 +271,7 @@ class MplateCreateForm(ModelForm):
         VALID_MODELS = Type2Model.objects.values_list('model', flat=True)
         VALID_MODELS = list(map(int, VALID_MODELS))
 
-        logger.info('Valid models: {}'.format(VALID_MODELS))
+        logger.debug('Valid models: {}'.format(VALID_MODELS))
 
         if not re.match("^2[1-467][14568][0-9]$", data):
             raise ValidationError(
@@ -282,7 +282,7 @@ class MplateCreateForm(ModelForm):
         except ValueError:
             raise ValidationError("Only digits allowed in model code")
 
-        logger.info('Model code: {}'.format(model_int))
+        logger.debug('Model code: {}'.format(model_int))
 
         if model_int not in VALID_MODELS:
             raise ValidationError("Invalid model code")

@@ -67,13 +67,13 @@ class AjaxableResponseMixin:
         # call form.save() for example).
         response = super().form_valid(form)
         if self.request.is_ajax():
-            logger.info("form_valid: ajax request")
+            logger.debug("form_valid: ajax request")
             data = {
                 'chassis_number_short': self.object.chassis_number_short,
             }
             response = JsonResponse(data)
         else:
-            logger.info("form_valid: NOT ajax request")
+            logger.debug("form_valid: NOT ajax request")
 
         return response
 

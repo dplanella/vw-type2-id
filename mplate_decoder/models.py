@@ -455,7 +455,6 @@ class Mplate(Model):
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         model_year = int(self.model_year)
-        logger.info(f"Model year on rendered M-plate: {model_year}")
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
                                     "images/mplate-6869-ref.svg")
@@ -488,7 +487,6 @@ class Mplate(Model):
             mplate_field.text = getattr(self, field)
 
         color_chip_body, _ = self._get_exteriorcolorchip()
-        logger.info(color_chip_body)
 
         if color_chip_body:
             # Replace gradient color
