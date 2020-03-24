@@ -351,6 +351,7 @@ class Mplate(Model):
     def _get_exteriorcolorchip(self):
 
         color_chip_body = ""
+        color_chip_roof = ""
 
         # Get the exterior color object from the M-plate
         # code
@@ -367,7 +368,17 @@ class Mplate(Model):
             except ObjectDoesNotExist:
                 color_chip_body = ""
 
-        return color_chip_body
+            try:
+                # Get the color attributes from the lacquer code
+                color_roof = Color.objects.get(
+                    lacquer_code=exteriorcolor.lacquer_code_roof
+                )
+                # Get the color chip
+                color_chip_roof = color_roof.chip
+            except ObjectDoesNotExist:
+                color_chip_roof = ""
+
+        return (color_chip_body, color_chip_roof)
 
     def get_interiorcolor(self):
         SPECIAL_PAINTJOB_ID = '5'
@@ -444,7 +455,6 @@ class Mplate(Model):
     def render_plate(self):
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         model_year = int(self.model_year)
-        logger.info(f"Model year on rendered M-plate: {model_year}")
         if model_year in [1968, 1969]:
             svg_file = os.path.join(BASE_DIR, "mplate_decoder",
                                     "images/mplate-6869-ref.svg")
@@ -476,8 +486,7 @@ class Mplate(Model):
                 namespaces={'n': SVG_NAMESPACE})
             mplate_field.text = getattr(self, field)
 
-        color_chip_body = self._get_exteriorcolorchip()
-        logger.info(color_chip_body)
+        color_chip_body, _ = self._get_exteriorcolorchip()
 
         if color_chip_body:
             # Replace gradient color
@@ -892,3 +901,26 @@ class McodeCollection(Model):
     remarks = models.TextField(blank=True)
     source = models.TextField(blank=True)
     editor_remarks = models.TextField(blank=True)
+
+
+class VwType2Model(Model):
+    model = models.PositiveSmallIntegerField()
+    configuration = models.PositiveSmallIntegerField()
+    extras = models.PositiveSmallIntegerField()
+    model_description = models.CharField(
+        max_length=35,
+        help_text=("Model description"))
+    configuration_description = models.TextField()
+    extras_description = models.TextField()
+    m_codes = models.CharField(
+        max_length=50,
+        help_text=("List of M-codes for the corresponding extras"),
+        blank=True)
+    chassis_plate = models.CharField(
+        max_length=20,
+        help_text=("Model description as it appears on the chassis plate"),
+        blank=True)
+    years = models.CharField(
+            max_length=65, blank=True)
+    schematic_bitmap = models.ImageField(blank=True)
+    schematic_vector = models.TextField(blank=True)

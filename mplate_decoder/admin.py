@@ -5,6 +5,7 @@ from .models import (
     Type2ModelConfiguration, Type2ModelExtra,
     InteriorColor, ExteriorColor, Color,
     Engine, Gearbox, Mcode, McodeCollection,
+    VwType2Model,
 )
 
 admin.site.register(Engine)
@@ -144,3 +145,33 @@ class ExportDestinationAdmin(admin.ModelAdmin):
         'port',
         'notes',
     )
+
+
+@admin.register(VwType2Model)
+class VwType2ModelAdmin(admin.ModelAdmin):
+    search_fields = (
+        'model',
+        'model_description',
+        'extras_description',
+    )
+    list_display = (
+        'model',
+        'configuration',
+        'extras',
+        'model_description',
+        'configuration_description',
+        'extras_description',
+        'm_codes',
+        'chassis_plate',
+        'years',
+        'schematic_vector_short',
+    )
+    save_as = True
+
+    def schematic_vector_short(self, obj):
+        schematic_vector_short = obj.schematic_vector[:20]
+        if schematic_vector_short:
+            schematic_vector_short += ' [...]'
+        return schematic_vector_short
+
+    schematic_vector_short.short_description = "Schematic"

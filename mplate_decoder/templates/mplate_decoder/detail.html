@@ -5,14 +5,19 @@
 
 {% block content %}
 
-<div class="row mt-4">
-
+<div class="row">
+<div class="col-sm-6 mt-4">
 {{ plate|safe }}
-
+</div>
+<div class="col-sm-6 mt-4">
+{% if schematic %}
+{{ schematic|safe }}
+{% endif %}
+</div>
 </div>
 
 <div class="row mt-4">
-
+<div class="col">
 <h2>Specifications</h2>
 <div class="table-responsive">
 <table class="table table-hover">
@@ -83,7 +88,7 @@
   {% endif %}
 </table>
 </div>
-
+</div>
 </div>
 
 {% endblock %}

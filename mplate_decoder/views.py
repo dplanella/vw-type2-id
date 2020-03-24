@@ -5,12 +5,18 @@ from .models import (
     MplateDecoder,
     Mcode,
     McodeCollection,
+    VwType2Model,
 )
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import (
+    ObjectDoesNotExist,
+    MultipleObjectsReturned,
+)
 import logging
+from lxml import etree
 
 logger = logging.getLogger(__name__)
 
@@ -61,13 +67,13 @@ class AjaxableResponseMixin:
         # call form.save() for example).
         response = super().form_valid(form)
         if self.request.is_ajax():
-            logger.info("form_valid: ajax request")
+            logger.debug("form_valid: ajax request")
             data = {
                 'chassis_number_short': self.object.chassis_number_short,
             }
             response = JsonResponse(data)
         else:
-            logger.info("form_valid: NOT ajax request")
+            logger.debug("form_valid: NOT ajax request")
 
         return response
 
@@ -92,12 +98,137 @@ class MplateRetrieve(generic.DetailView):
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
 
+    def get_schematic(self, mplate):
+
+        schematic = None
+        model = int(mplate.model[:2])
+        configuration = int(mplate.model[2])
+        extras = int(mplate.model[3])
+        special_sales_m_codes = ['736', '723', 'D61', 'D63', 'D64', 'W51']
+        # - Wild Westerner is 736, year 1973
+        #   - Model 2211
+        #   - Model 2215
+        # - Champaigne ed. I is 723 (D09), year 1977 (seven-seater)
+        #   - Model 2218
+        # - Champaigne ed. II is 765 (D61, D63, D64), year 1978
+        #   (seven-seater or Campmobile)
+        #   - Model 2218 (D61)
+        #   - Model 2319 (D63)
+        # - Silverfish is 766 (W51), years 1978-1979 (nine-seater)
+        #   - Model 2210
+        model_code = mplate.model
+        model_year = mplate.model_year
+        m_codes = mplate.m_codes
+        SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
+        BUS_ROOF_COLOR_ID = 'roof-color'
+        BUS_BODY_COLOR_ID = 'body-color'
+        BUS_ROOF_COLOR_DEFAULT = '#ffffff'
+        BUS_BODY_COLOR_DEFAULT = '#ffffff'
+
+        logger.debug(
+            f'Getting schematic for model {model}{configuration}{extras}, '
+            f'model year {model_year}, M-codes: {m_codes}')
+
+        model_query = Q(model=model) \
+            & Q(configuration=configuration) \
+            & Q(extras=extras) \
+            & Q(years__icontains=model_year)
+
+        try:
+            t2_model = VwType2Model.objects.get(model_query)
+            logger.debug(
+                f'Model {t2_model.model}, years {t2_model.years}, '
+                f'M-codes: {t2_model.m_codes}')
+            schematic = t2_model.schematic_bitmap
+        except ObjectDoesNotExist:
+            logger.error(
+                f'Does not exist: Model {model_code}, years {model_year}, '
+                f'M-codes: {m_codes}')
+        except MultipleObjectsReturned:
+            logger.debug(
+                f'Multiple objects: Model {model_code}, years {model_year}, '
+                f'M-codes: {m_codes}')
+
+            m_codes_query = Q()
+            for m_code in special_sales_m_codes:
+                m_codes_query |= Q(m_codes__icontains=m_code)
+
+            model_query &= m_codes_query
+
+            try:
+                t2_model = VwType2Model.objects.get(model_query)
+                logger.debug(
+                    f'Model {t2_model.model}, years {t2_model.years}, '
+                    f'M-codes: {t2_model.m_codes}')
+                schematic = t2_model.schematic_bitmap
+            except ObjectDoesNotExist:
+                logger.error(
+                    'Does not exist: '
+                    f'Model {model_code}, years {model_year}, '
+                    f'M-codes: {m_codes}')
+            except MultipleObjectsReturned:
+                logger.error(
+                    'Multiple objects: '
+                    f'Model {model_code}, years {model_year}, '
+                    f'M-codes: {m_codes}')
+
+        schematic = t2_model.schematic_vector
+
+        if schematic:
+            tree = etree.fromstring(schematic)
+
+            color_chip_body, color_chip_roof = mplate._get_exteriorcolorchip()
+            logger.debug(f'Body color chip code: {color_chip_body}')
+            logger.debug(f'Roof color chip code: {color_chip_roof}')
+
+            if color_chip_body:
+                # Replace body color
+                body_color = tree.find(
+                    f".//n:path[@id='{BUS_BODY_COLOR_ID}']",
+                    namespaces={'n': SVG_NAMESPACE}
+                )
+
+                if body_color is not None:
+                    logger.debug(f'Body color: {body_color}')
+                    logger.debug(
+                        f"Body color style: {body_color.attrib['style']}")
+                    body_color.attrib['style'] = \
+                        body_color.attrib['style'].replace(
+                            f'fill:{BUS_BODY_COLOR_DEFAULT}',
+                            f'fill:{color_chip_body}')
+                    logger.debug(
+                        f"Body color style: {body_color.attrib['style']}")
+
+            roof_color = None
+            if color_chip_roof:
+                # Replace roof color
+                roof_color = tree.find(
+                    f".//n:path[@id='{BUS_ROOF_COLOR_ID}']",
+                    namespaces={'n': SVG_NAMESPACE}
+                )
+
+                if roof_color is not None:
+                    logger.debug(f'Roof color: {roof_color}')
+                    logger.debug(
+                        f"Roof color style: {body_color.attrib['style']}")
+                    roof_color.attrib['style'] = \
+                        roof_color.attrib['style'].replace(
+                            f'fill:{BUS_ROOF_COLOR_DEFAULT}',
+                            f'fill:{color_chip_roof}')
+                    logger.debug(
+                        f"Roof color style: {roof_color.attrib['style']}")
+
+            schematic = etree.tostring(tree).decode('utf-8')
+
+        return schematic
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         mplate = super().get_object()
         decoder = MplateDecoder(mplate)
 
         context['plate'] = mplate.render_plate()
+        context['schematic'] = self.get_schematic(mplate)
         context['chassis_number'] = mplate.get_chassis_number()
         context['model_year'] = mplate.model_year
         context['production_date'] = mplate.production_date_as_time
@@ -157,7 +288,7 @@ class SearchResultsView(generic.ListView):
             try:
                 mplate.model = mplate.get_model()
             except ValueError:
-                logging.error(
+                logger.error(
                     'Could not get model descriptions for M-plate '
                     f'{mplate.chassis_number_short}')
 
