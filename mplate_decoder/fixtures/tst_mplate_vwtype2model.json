@@ -1,0 +1,1634 @@
+[
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 1,
+  "fields": {
+    "model": 21,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "21",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 2,
+  "fields": {
+    "model": 21,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Fire truck",
+    "m_codes": "140",
+    "chassis_plate": "21 F",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 3,
+  "fields": {
+    "model": 21,
+    "configuration": 1,
+    "extras": 2,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "High-roof Panelvan",
+    "m_codes": "516",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 4,
+  "fields": {
+    "model": 21,
+    "configuration": 1,
+    "extras": 3,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "High-roof Panelvan with high-roof sliding door",
+    "m_codes": "515",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 5,
+  "fields": {
+    "model": 21,
+    "configuration": 1,
+    "extras": 9,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Karmann Camper",
+    "m_codes": "575",
+    "chassis_plate": "21-515",
+    "years": "1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 6,
+  "fields": {
+    "model": 21,
+    "configuration": 4,
+    "extras": 0,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "21",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 7,
+  "fields": {
+    "model": 21,
+    "configuration": 4,
+    "extras": 1,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Fire truck",
+    "m_codes": "140",
+    "chassis_plate": "21 F",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 8,
+  "fields": {
+    "model": 21,
+    "configuration": 4,
+    "extras": 2,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "High-roof Panelvan",
+    "m_codes": "516",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 9,
+  "fields": {
+    "model": 21,
+    "configuration": 4,
+    "extras": 3,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "High-roof Panelvan with high-roof sliding door",
+    "m_codes": "515",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 10,
+  "fields": {
+    "model": 21,
+    "configuration": 4,
+    "extras": 9,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Karmann Camper",
+    "m_codes": "575",
+    "chassis_plate": "21-515",
+    "years": "1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 11,
+  "fields": {
+    "model": 21,
+    "configuration": 5,
+    "extras": 0,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, two sliding doors",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "21",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 12,
+  "fields": {
+    "model": 21,
+    "configuration": 5,
+    "extras": 1,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, two sliding doors",
+    "extras_description": "Fire truck",
+    "m_codes": "140",
+    "chassis_plate": "21 F",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 13,
+  "fields": {
+    "model": 21,
+    "configuration": 5,
+    "extras": 2,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, two sliding doors",
+    "extras_description": "High-roof Panelvan",
+    "m_codes": "516",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 14,
+  "fields": {
+    "model": 21,
+    "configuration": 5,
+    "extras": 3,
+    "model_description": "Panelvan",
+    "configuration_description": "LHD, two sliding doors",
+    "extras_description": "High-roof Panelvan with high-roof sliding door",
+    "m_codes": "515",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 15,
+  "fields": {
+    "model": 21,
+    "configuration": 6,
+    "extras": 0,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, two sliding doors",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "21",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 16,
+  "fields": {
+    "model": 21,
+    "configuration": 6,
+    "extras": 1,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, two sliding doors",
+    "extras_description": "Fire truck",
+    "m_codes": "140",
+    "chassis_plate": "21 F",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 17,
+  "fields": {
+    "model": 21,
+    "configuration": 6,
+    "extras": 2,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, two sliding doors",
+    "extras_description": "High-roof Panelvan",
+    "m_codes": "516",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 18,
+  "fields": {
+    "model": 21,
+    "configuration": 6,
+    "extras": 3,
+    "model_description": "Panelvan",
+    "configuration_description": "RHD, two sliding doors",
+    "extras_description": "High-roof Panelvan with high-roof sliding door",
+    "m_codes": "515",
+    "chassis_plate": "21-515",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 19,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Eight-seater, seat arrangement 2-3-3",
+    "m_codes": "",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 20,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "28",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 21,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3 - Deluxe",
+    "m_codes": "603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 22,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 2,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 23,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 2,
+    "model_description": "Microbus and Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "147 500",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 24,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 3,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3 - Deluxe",
+    "m_codes": "147 500 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 25,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 4,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "147 500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 26,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 4,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 27,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 5,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 28,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 5,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3 - Deluxe",
+    "m_codes": "501 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 29,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 6,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3 - Deluxe",
+    "m_codes": "500",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 30,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 7,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3 - Deluxe",
+    "m_codes": "500 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 31,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 8,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "22/28",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 32,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 9,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3 - Deluxe",
+    "m_codes": "147 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 33,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 0,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Eight-seater, seat arrangement 2-3-3",
+    "m_codes": "",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 34,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 1,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "28",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 35,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 1,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3 - Deluxe",
+    "m_codes": "603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 36,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 2,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 37,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 2,
+    "model_description": "Microbus and Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "147 500",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 38,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 3,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3 - Deluxe",
+    "m_codes": "147 500 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 39,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 4,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "147 500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 40,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 4,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 41,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 5,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 42,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 5,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3 - Deluxe",
+    "m_codes": "501 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 43,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 6,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3 - Deluxe",
+    "m_codes": "500",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 44,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 7,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3 - Deluxe",
+    "m_codes": "500 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 45,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 8,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "22/28",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 46,
+  "fields": {
+    "model": 22,
+    "configuration": 4,
+    "extras": 9,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3 - Deluxe",
+    "m_codes": "147 603",
+    "chassis_plate": "22",
+    "years": "1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 47,
+  "fields": {
+    "model": 22,
+    "configuration": 5,
+    "extras": 0,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Eight-seater, seat arrangement 2-3-3",
+    "m_codes": "",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 48,
+  "fields": {
+    "model": 22,
+    "configuration": 5,
+    "extras": 1,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "28",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 50,
+  "fields": {
+    "model": 22,
+    "configuration": 5,
+    "extras": 2,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 53,
+  "fields": {
+    "model": 22,
+    "configuration": 5,
+    "extras": 4,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "147 500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 55,
+  "fields": {
+    "model": 22,
+    "configuration": 5,
+    "extras": 5,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 61,
+  "fields": {
+    "model": 22,
+    "configuration": 8,
+    "extras": 0,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left, sliding roof",
+    "extras_description": "Eight-seater, seat arrangement 2-3-3",
+    "m_codes": "",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 62,
+  "fields": {
+    "model": 22,
+    "configuration": 8,
+    "extras": 1,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left, sliding roof",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "28",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 63,
+  "fields": {
+    "model": 22,
+    "configuration": 8,
+    "extras": 2,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left, sliding roof",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 64,
+  "fields": {
+    "model": 22,
+    "configuration": 8,
+    "extras": 4,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left, sliding roof",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "147 500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 65,
+  "fields": {
+    "model": 22,
+    "configuration": 8,
+    "extras": 5,
+    "model_description": "Microbus",
+    "configuration_description": "RHD, sliding door left, sliding roof",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "500",
+    "chassis_plate": "22",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 66,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "23",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": "<svg\r\n   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n   xmlns:cc=\"http://creativecommons.org/ns#\"\r\n   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\r\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\r\n   xmlns=\"http://www.w3.org/2000/svg\"\r\n   xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\r\n   xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\r\n   version=\"1.1\"\r\n   width=\"100%\"\r\n   height=\"100%\"\r\n   viewBox=\"0 0 1472.626 665.81287\"\r\n   id=\"svg2\"\r\n   xml:space=\"preserve\"\r\n   sodipodi:docname=\"t2b-profile.svg\"\r\n   inkscape:version=\"0.92.4 (5da689c313, 2019-01-14)\"><metadata\r\n     id=\"metadata8\"><rdf:RDF><cc:Work\r\n         rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\r\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs\r\n     id=\"defs6\"><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath180\"><path\r\n         d=\"m 1186.13,2961.5 c 0,-1105.3 296.01,-1746 372.83,-1895.9 110.51,48.7 318.47,144.2 367.18,176.1 l 24.36,15 c 67.44,37.5 118.02,74.9 118.02,134.9 0,15 -3.74,31.8 -9.36,50.5 -112.4,307.3 -168.61,1341.4 -168.61,1519.4 0,178 56.21,1212.1 168.61,1519.4 5.62,18.7 9.36,33.7 9.36,48.7 0,61.8 -50.58,99.3 -118.02,136.7 l -24.36,15 c -48.71,31.9 -256.67,127.4 -367.18,176.1 -76.82,-149.9 -372.83,-790.6 -372.83,-1895.9\"\r\n         id=\"path178\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath186\"><path\r\n         d=\"m 1186.13,4857.4 h 882.39 V 1065.6 h -882.39 z\"\r\n         id=\"path184\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(882.392,0,0,882.392,1186.13,2961.5)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient192\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop188\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop190\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath216\"><path\r\n         d=\"m 11372,4426.5 c -15,-5.6 -78.7,-58 -101.2,-82.4 -14.9,-18.7 -16.8,-67.4 -16.8,-146.1 V 2961.5 1725 c 0,-78.6 1.9,-127.4 16.8,-146.1 22.5,-24.3 86.2,-76.8 101.2,-82.4 9.4,-3.8 18.8,-3.8 24.4,28.1 5.6,26.2 7.5,71.2 7.5,134.9 v 2604.1 c 0,63.6 -1.9,108.6 -7.5,134.8 -4.2,23.7 -10.5,29.8 -17.3,29.8 -2.3,0 -4.7,-0.7 -7.1,-1.7\"\r\n         id=\"path214\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath222\"><path\r\n         d=\"m 11254,4428.2 h 149.9 V 1492.7 H 11254 Z\"\r\n         id=\"path220\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(149.873,0,0,149.873,11254,2960.5)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient228\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop224\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop226\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath252\"><path\r\n         d=\"m 7791.88,1054.4 c -121.78,0 -142.37,-5.7 -142.37,-20.7 V 882 c 0,-9.398 0,-20.598 131.13,-20.598 h 2568.46 c 33.7,0 63.7,3.7 86.2,7.5 30,7.5 37.5,20.598 24.3,33.7 -29.9,37.5 -78.6,86.199 -112.3,102.998 -31.9,18.8 -90,50.6 -372.86,50.6 l -2182.56,-1.8 m -2585.35,0 V 861.402 h 1946.51 c 131.14,0 131.14,11.2 131.14,20.598 v 151.7 c 0,15 -20.62,20.7 -142.38,20.7 H 5206.53 m -436.51,0 c -123.65,0 -142.39,-5.7 -142.39,-20.7 V 882 c 0,-9.398 0,-20.598 131.16,-20.598 h 406.54 V 1054.4 H 4770.02 M 2600.57,859.5 h 1446.31 c 97.41,0 104.91,20.602 104.91,28.102 V 1030 c 0,16.9 -22.49,16.9 -89.92,16.9 l -1461.3,1.8 V 859.5 m -118.02,189.2 c -114.28,0 -146.12,-11.2 -174.21,-22.5 -28.11,-9.3 -230.45,-103.001 -284.76,-131.098 -20.62,-11.2 -20.62,-20.602 0,-28.102 14.98,-3.699 43.08,-7.5 76.79,-7.5 h 462.74 v 189.2 h -80.56\"\r\n         id=\"path250\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath258\"><path\r\n         d=\"M 2002.95,1056.2 H 10472.8 V 859.5 H 2002.95 Z\"\r\n         id=\"path256\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(8457.43,0,0,8457.43,2002.95,957.9)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient264\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop260\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop262\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath424\"><path\r\n         d=\"m 2600.57,5063.5 v -189.2 l 1461.3,1.9 c 67.43,0 89.92,0 89.92,16.8 v 142.4 c 0,7.5 -7.5,28.1 -104.91,28.1 H 2600.57 m -500.2,0 c -33.71,0 -61.81,-3.7 -76.79,-7.5 -20.62,-7.5 -20.62,-16.8 0,-28.1 54.31,-28.1 256.65,-121.8 284.76,-131.1 28.09,-11.3 59.93,-22.5 174.21,-22.5 h 80.56 v 189.2 h -462.74 m 5680.27,-1.9 c -131.13,0 -131.13,-13.1 -131.13,-20.6 v -151.7 c 0,-15 20.59,-20.6 142.37,-20.6 l 2182.56,-1.9 c 282.86,0 340.96,31.8 372.86,50.6 33.7,16.8 82.4,65.5 112.3,101.1 13.2,15 5.7,28.1 -24.3,35.6 -22.5,3.8 -52.5,7.5 -86.2,7.5 H 7780.64 m -2574.11,0 V 4868.7 H 7141.8 c 121.76,0 142.38,5.6 142.38,20.6 V 5041 c 0,7.5 0,20.6 -131.14,20.6 H 5206.53 m -447.74,0 c -131.16,0 -131.16,-13.1 -131.16,-20.6 v -151.7 c 0,-15 18.74,-20.6 142.39,-20.6 h 395.31 v 192.9 h -406.54\"\r\n         id=\"path422\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath430\"><path\r\n         d=\"M 2002.95,5063.5 H 10472.8 V 4866.8 H 2002.95 Z\"\r\n         id=\"path428\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(8457.43,0,0,8457.43,2002.95,4965.1)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient436\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop432\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop434\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath678\"><path\r\n         d=\"m 1743.27,10373.5 c -252.9,-86.2 -294.14,-187.4 -325.98,-258.6 -33.71,-82.4 -183.6,-631.31 -202.32,-756.84 -5.62,-41.2 -1.89,-71.19 9.36,-86.15 9.36,-9.38 28.1,-15 56.2,-15 h 3797.46 c 29.98,0 48.7,5.62 58.08,15 11.24,14.96 14.99,44.95 7.49,86.15 -18.74,125.53 -166.74,674.44 -202.33,756.84 -29.98,71.2 -71.19,172.4 -324.11,258.6 -181.71,59.9 -768.11,125.5 -1436.92,125.5 -668.82,0 -1255.2,-65.6 -1436.93,-125.5\"\r\n         id=\"path676\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath684\"><path\r\n         d=\"M 1209.35,10499 H 5151.06 V 9256.91 H 1209.35 Z\"\r\n         id=\"path682\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(3935.95,0,0,3935.95,1209.35,9877.96)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient690\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop686\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop688\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath810\"><path\r\n         d=\"M 9291.73,10056.9 H 8055.26 c -78.67,0 -127.38,-5.6 -146.11,-89.96 -24.36,-116.15 -76.82,-457.12 -84.31,-539.55 -3.74,-46.83 -3.74,-99.29 28.08,-133.02 26.23,-26.23 71.2,-39.34 136.78,-39.34 h 2602.2 c 65.6,0 110.5,13.11 136.8,39.34 31.8,33.73 31.8,86.19 28.1,133.02 -7.5,82.43 -58.1,423.4 -84.3,539.55 -18.8,84.36 -67.5,89.96 -144.3,89.96 H 9291.73\"\r\n         id=\"path808\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath816\"><path\r\n         d=\"m 7821.1,10056.9 h 2939.4 V 9255.04 H 7821.1 Z\"\r\n         id=\"path814\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(2935.11,0,0,2935.11,7821.1,9655.96)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient822\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop818\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop820\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath1404\"><path\r\n         d=\"m 7758.13,15385.8 c -123.64,0 -142.37,-29.9 -142.37,-101.1 v -726.9 c 0,-43.1 0,-101.2 129.28,-101.2 h 2568.46 c 33.7,0 65.6,13.1 86.2,39.3 30,35.7 39.3,91.9 26.2,163 -31.8,172.4 -80.5,406.6 -114.3,494.6 -29.9,84.3 -89.9,239.8 -372.79,239.8 l -2180.68,-7.5 m -2587.2,0 v -929.2 H 7119.3 c 129.28,0 129.28,58.1 129.28,101.2 v 726.9 c 0,71.2 -20.62,101.1 -140.52,101.1 H 5170.93 m -436.51,0 c -121.79,0 -142.39,-29.9 -142.39,-101.1 v -726.9 c 0,-43.1 0,-101.2 131.14,-101.2 h 408.4 v 929.2 h -397.15 m -2167.58,-936.7 h 1446.29 c 97.43,0 104.92,101.2 104.92,131.2 v 685.6 c 0,78.7 -24.36,82.5 -91.8,82.5 l -1459.41,5.6 v -904.9 m -119.89,904.9 c -114.29,0 -146.14,-54.3 -174.24,-103.1 -28.09,-48.7 -230.42,-498.3 -282.88,-633.2 -22.49,-54.3 -22.49,-101.1 -1.88,-131.1 16.87,-24.4 43.09,-37.5 76.81,-37.5 h 462.75 v 904.9 h -80.56\"\r\n         id=\"path1402\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath1410\"><path\r\n         d=\"M 1967.34,15393.3 H 10439 v -944.2 H 1967.34 Z\"\r\n         id=\"path1408\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(8459.3,0,0,8459.3,1967.34,14921.2)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient1416\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop1412\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#3f4143\"\r\n         offset=\"1\"\r\n         id=\"stop1414\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath1464\"><path\r\n         d=\"M 12427,16396 H 936.441 c -43.621,0 -78.98,-34.6 -78.98,-77.4 0,-42.7 35.359,-77.4 78.98,-77.4 H 12427 Z\"\r\n         id=\"path1462\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><linearGradient\r\n       x1=\"0\"\r\n       y1=\"0\"\r\n       x2=\"1\"\r\n       y2=\"0\"\r\n       gradientUnits=\"userSpaceOnUse\"\r\n       gradientTransform=\"matrix(11743,0,0,-11743,857.461,16318.6)\"\r\n       spreadMethod=\"pad\"\r\n       id=\"linearGradient1472\"><stop\r\n         style=\"stop-opacity:1;stop-color:#ffffff\"\r\n         offset=\"0\"\r\n         id=\"stop1468\" /><stop\r\n         style=\"stop-opacity:1;stop-color:#6acdc9\"\r\n         offset=\"1\"\r\n         id=\"stop1470\" /></linearGradient><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath1404-3\"><path\r\n         d=\"m 7758.13,15385.8 c -123.64,0 -142.37,-29.9 -142.37,-101.1 v -726.9 c 0,-43.1 0,-101.2 129.28,-101.2 h 2568.46 c 33.7,0 65.6,13.1 86.2,39.3 30,35.7 39.3,91.9 26.2,163 -31.8,172.4 -80.5,406.6 -114.3,494.6 -29.9,84.3 -89.9,239.8 -372.79,239.8 l -2180.68,-7.5 m -2587.2,0 v -929.2 H 7119.3 c 129.28,0 129.28,58.1 129.28,101.2 v 726.9 c 0,71.2 -20.62,101.1 -140.52,101.1 H 5170.93 m -436.51,0 c -121.79,0 -142.39,-29.9 -142.39,-101.1 v -726.9 c 0,-43.1 0,-101.2 131.14,-101.2 h 408.4 v 929.2 h -397.15 m -2167.58,-936.7 h 1446.29 c 97.43,0 104.92,101.2 104.92,131.2 v 685.6 c 0,78.7 -24.36,82.5 -91.8,82.5 l -1459.41,5.6 v -904.9 m -119.89,904.9 c -114.29,0 -146.14,-54.3 -174.24,-103.1 -28.09,-48.7 -230.42,-498.3 -282.88,-633.2 -22.49,-54.3 -22.49,-101.1 -1.88,-131.1 16.87,-24.4 43.09,-37.5 76.81,-37.5 h 462.75 v 904.9 h -80.56\"\r\n         id=\"path1402-6\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath><clipPath\r\n       clipPathUnits=\"userSpaceOnUse\"\r\n       id=\"clipPath1410-7\"><path\r\n         d=\"M 1967.34,15393.3 H 10439 v -944.2 H 1967.34 Z\"\r\n         id=\"path1408-5\"\r\n         inkscape:connector-curvature=\"0\" /></clipPath></defs><sodipodi:namedview\r\n     pagecolor=\"#ffffff\"\r\n     bordercolor=\"#666666\"\r\n     borderopacity=\"1\"\r\n     objecttolerance=\"10\"\r\n     gridtolerance=\"10\"\r\n     guidetolerance=\"10\"\r\n     inkscape:pageopacity=\"0\"\r\n     inkscape:pageshadow=\"2\"\r\n     inkscape:window-width=\"1848\"\r\n     inkscape:window-height=\"1016\"\r\n     id=\"namedview4\"\r\n     showgrid=\"false\"\r\n     inkscape:zoom=\"0.70710678\"\r\n     inkscape:cx=\"786.52993\"\r\n     inkscape:cy=\"570.35576\"\r\n     inkscape:window-x=\"72\"\r\n     inkscape:window-y=\"27\"\r\n     inkscape:window-maximized=\"1\"\r\n     inkscape:current-layer=\"layer9\"\r\n     showguides=\"true\"\r\n     inkscape:guide-bbox=\"true\"\r\n     inkscape:snap-to-guides=\"true\"\r\n     inkscape:snap-intersection-paths=\"true\"\r\n     inkscape:object-paths=\"false\"\r\n     inkscape:snap-global=\"true\"\r\n     inkscape:snap-nodes=\"true\"\r\n     fit-margin-top=\"0\"\r\n     fit-margin-left=\"0\"\r\n     fit-margin-right=\"0\"\r\n     fit-margin-bottom=\"0\"><sodipodi:guide\r\n       position=\"1447.8762,873.30148\"\r\n       orientation=\"1,0\"\r\n       id=\"guide2939\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"369.40565,569.30308\"\r\n       orientation=\"1,0\"\r\n       id=\"guide2941\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"1152.9254,759.30208\"\r\n       orientation=\"1,0\"\r\n       id=\"guide2943\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"1096.6039,129.31744\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5105\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"615.06413,582.57288\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5148\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"542.93923,448.22258\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5150\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"885.88602,483.57798\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5154\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"675.87531,625.70638\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5156\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"477.1783,419.93828\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5158\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"247.69388,268.49998\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5164\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"177.19387,155.49999\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5166\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"925.69387,376.49998\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5168\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"161.69388,255.49998\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5172\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"269.44388,509.49998\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5186\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"387.37574,598.83638\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5196\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"393.7397,591.76528\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5198\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"112.31119,417.81698\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5208\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"161.80867,300.43728\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5210\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"219.79143,314.57941\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5212\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"219.79143,158.49997\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5214\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"228.98381,169.26897\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5216\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"195.19388,418.49998\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5218\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"508.69388,676.49998\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5238\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"906.69387,209.49998\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5240\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"824.69389,200.49998\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5244\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"310.69388,214.49998\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5248\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"1312.9786,357.00578\"\r\n       orientation=\"1,0\"\r\n       id=\"guide5285\"\r\n       inkscape:locked=\"false\" /><sodipodi:guide\r\n       position=\"304.69388,120.49998\"\r\n       orientation=\"0,1\"\r\n       id=\"guide5536\"\r\n       inkscape:locked=\"false\" /></sodipodi:namedview><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer4\"\r\n     inkscape:label=\"Bus shell (inner)\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><path\r\n       sodipodi:nodetypes=\"ccccsccccsccsccccsccccccccc\"\r\n       inkscape:connector-curvature=\"0\"\r\n       id=\"path5103\"\r\n       d=\"m 149.32755,1637.9159 c 601.90201,0 1306.75885,0 1392.37635,0 0.052,-4.0345 0.2396,-12.2007 0.2835,-13.7189 0,-1.4902 0.918,-52.75 4.0344,-58.1285 3.369,-5.8145 6.2941,-1.2947 7.6607,-7.7576 1.3666,-6.4629 1.7499,-81.318 1.75,-87.8747 0.013,-5.9762 -1.6219,-9.4419 -3.6583,-11.3339 -1.713,-1.6136 -3.451,-1.9395 -4.5878,-2.0268 1.7013,-35.8342 -3.0603,-69.908 -5.5019,-105.6534 2.9364,-1.871 5.6895,-11.478 4.3652,-18.0459 -1.3243,-6.5679 -1.9931,-14.1528 -8.3223,-16.217 -4.5071,-42.6217 -15.2061,-96.8755 -31.4406,-142.7637 0.5997,-0.8287 1.0313,-1.6964 1.0313,-2.6136 0,-0.9262 -0.3556,-1.7913 -1.062,-2.6503 -2.4811,-2.2153 -2.7503,-3.0049 -5.8657,-2.9758 -12.694,-13.7318 -15.3597,-16.637 -28.7344,-23.5757 -45.7238,-22.4976 -86.3985,-22.2846 -162.0691,-27.4892 -94.1659,-6.9407 -241.482,-8.6704 -494.39902,-8.6704 -252.917,0 -430.51744,7.2464 -459.5659,11.9025 -17.46419,2.8787 -42.53064,6.0133 -63.08605,26.6564 -5.31951,1.9626 -7.93726,10.0221 -7.791,14.1115 -36.46359,54.5343 -69.24012,100.0171 -105.39795,159.305 -15.82904,8.0845 -22.61813,17.8324 -25.8867,30.2464 -3.1867,3.8643 -4.9023,3.9187 -8.7871,9.1968 -5.60881,53.8652 -8.83462,119.2912 -8.90009,175.4541 3.23512,6.2143 4.70274,9.6588 9.39789,14.9369 0.16086,32.7248 2.21208,57.033 4.15657,89.6858 z\"\r\n       style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#1d1d1d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\" /></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer7\"\r\n     inkscape:label=\"Wheels (t2b)\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><g\r\n       style=\"display:inline\"\r\n       id=\"g5746\"\r\n       transform=\"translate(783.46966)\"><circle\r\n         style=\"opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5694\"\r\n         cx=\"477.71176\"\r\n         cy=\"1646.7334\"\r\n         r=\"115.49999\" /><circle\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5696\"\r\n         cx=\"477.71176\"\r\n         cy=\"1646.7334\"\r\n         r=\"67.788223\" /><circle\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5698\"\r\n         cx=\"477.71176\"\r\n         cy=\"1646.7334\"\r\n         r=\"61.499989\" /><circle\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5700\"\r\n         cx=\"477.71176\"\r\n         cy=\"1646.7334\"\r\n         r=\"43.487049\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"1713.7559\"\r\n         cx=\"-2.5371349\"\r\n         id=\"circle5702\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-49.460525\"\r\n         inkscape:transform-center-y=\"-16.069784\"\r\n         transform=\"rotate(-18)\" /><circle\r\n         transform=\"rotate(-36)\"\r\n         inkscape:transform-center-y=\"-30.567461\"\r\n         inkscape:transform-center-x=\"-42.073908\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5704\"\r\n         cx=\"-529.44702\"\r\n         cy=\"1613.024\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"1354.3983\"\r\n         cx=\"-999.44031\"\r\n         id=\"circle5706\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-30.56878\"\r\n         inkscape:transform-center-y=\"-42.07293\"\r\n         transform=\"rotate(-54)\" /><circle\r\n         transform=\"rotate(-72)\"\r\n         inkscape:transform-center-y=\"-49.460002\"\r\n         inkscape:transform-center-x=\"-16.071354\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5708\"\r\n         cx=\"-1366.5107\"\r\n         cy=\"963.1947\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"477.707\"\r\n         cx=\"-1594.7269\"\r\n         id=\"circle5710\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-0.00079867683\"\r\n         inkscape:transform-center-y=\"-52.005551\"\r\n         transform=\"rotate(-90)\" /><circle\r\n         transform=\"rotate(-108)\"\r\n         inkscape:transform-center-y=\"-49.460512\"\r\n         inkscape:transform-center-x=\"16.069856\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5712\"\r\n         cx=\"-1661.7494\"\r\n         cy=\"-54.541927\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-581.45184\"\r\n         cx=\"-1561.0176\"\r\n         id=\"circle5714\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"30.567514\"\r\n         inkscape:transform-center-y=\"-42.073912\"\r\n         transform=\"rotate(-126)\" /><circle\r\n         transform=\"rotate(-144)\"\r\n         inkscape:transform-center-y=\"-30.568831\"\r\n         inkscape:transform-center-x=\"42.072971\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5716\"\r\n         cx=\"-1302.3918\"\r\n         cy=\"-1051.4451\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-1418.5155\"\r\n         cx=\"-911.18823\"\r\n         id=\"circle5718\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"49.460094\"\r\n         inkscape:transform-center-y=\"-16.071418\"\r\n         transform=\"rotate(-162)\" /><circle\r\n         transform=\"scale(-1)\"\r\n         inkscape:transform-center-y=\"-0.00078951846\"\r\n         inkscape:transform-center-x=\"52.005672\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5720\"\r\n         cx=\"-425.70053\"\r\n         cy=\"-1646.7317\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-1713.7542\"\r\n         cx=\"106.54839\"\r\n         id=\"circle5722\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"49.46059\"\r\n         inkscape:transform-center-y=\"16.069838\"\r\n         transform=\"rotate(162)\" /><circle\r\n         transform=\"rotate(144)\"\r\n         inkscape:transform-center-y=\"30.567461\"\r\n         inkscape:transform-center-x=\"42.074001\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5724\"\r\n         cx=\"633.45831\"\r\n         cy=\"-1613.0223\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-1354.3966\"\r\n         cx=\"1103.4515\"\r\n         id=\"circle5726\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"30.568872\"\r\n         inkscape:transform-center-y=\"42.07292\"\r\n         transform=\"rotate(126)\" /><circle\r\n         transform=\"rotate(108)\"\r\n         inkscape:transform-center-y=\"49.460031\"\r\n         inkscape:transform-center-x=\"16.07151\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5728\"\r\n         cx=\"1470.522\"\r\n         cy=\"-963.19299\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-477.70529\"\r\n         cx=\"1698.7382\"\r\n         id=\"circle5730\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"0.0009102497\"\r\n         inkscape:transform-center-y=\"52.005682\"\r\n         transform=\"rotate(90)\" /><circle\r\n         transform=\"rotate(72)\"\r\n         inkscape:transform-center-y=\"49.460577\"\r\n         inkscape:transform-center-x=\"-16.069757\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5732\"\r\n         cx=\"1765.7606\"\r\n         cy=\"54.543636\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"581.45355\"\r\n         cx=\"1665.0288\"\r\n         id=\"circle5734\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-30.567372\"\r\n         inkscape:transform-center-y=\"42.073947\"\r\n         transform=\"rotate(54)\" /><circle\r\n         transform=\"rotate(36)\"\r\n         inkscape:transform-center-y=\"30.56882\"\r\n         inkscape:transform-center-x=\"-42.072879\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5736\"\r\n         cx=\"1406.4031\"\r\n         cy=\"1051.4468\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"1418.5172\"\r\n         cx=\"1015.1995\"\r\n         id=\"circle5738\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-49.459996\"\r\n         inkscape:transform-center-y=\"16.071465\"\r\n         transform=\"rotate(18)\" /><circle\r\n         inkscape:transform-center-y=\"0.00091954716\"\r\n         inkscape:transform-center-x=\"-52.005591\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5740\"\r\n         cx=\"529.71179\"\r\n         cy=\"1646.7334\"\r\n         r=\"4.8886046\" /><circle\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5742\"\r\n         cx=\"477.71176\"\r\n         cy=\"1646.7334\"\r\n         r=\"15.84876\" /><circle\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5744\"\r\n         cx=\"477.71176\"\r\n         cy=\"1646.7334\"\r\n         r=\"11.206754\" /></g><g\r\n       style=\"display:inline\"\r\n       id=\"g5692\"><circle\r\n         r=\"115.49999\"\r\n         cy=\"1646.7334\"\r\n         cx=\"477.71176\"\r\n         id=\"path5542\"\r\n         style=\"opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><circle\r\n         r=\"67.788223\"\r\n         cy=\"1646.7334\"\r\n         cx=\"477.71176\"\r\n         id=\"path5544\"\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><circle\r\n         r=\"61.499989\"\r\n         cy=\"1646.7334\"\r\n         cx=\"477.71176\"\r\n         id=\"path5546\"\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><circle\r\n         r=\"43.487049\"\r\n         cy=\"1646.7334\"\r\n         cx=\"477.71176\"\r\n         id=\"path5548\"\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><circle\r\n         transform=\"rotate(-18)\"\r\n         inkscape:transform-center-y=\"-16.069784\"\r\n         inkscape:transform-center-x=\"-49.460525\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5566\"\r\n         cx=\"-2.5371349\"\r\n         cy=\"1713.7559\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"1613.024\"\r\n         cx=\"-529.44702\"\r\n         id=\"circle5568\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-42.073908\"\r\n         inkscape:transform-center-y=\"-30.567461\"\r\n         transform=\"rotate(-36)\" /><circle\r\n         transform=\"rotate(-54)\"\r\n         inkscape:transform-center-y=\"-42.07293\"\r\n         inkscape:transform-center-x=\"-30.56878\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5570\"\r\n         cx=\"-999.44031\"\r\n         cy=\"1354.3983\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"963.1947\"\r\n         cx=\"-1366.5107\"\r\n         id=\"circle5572\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-16.071354\"\r\n         inkscape:transform-center-y=\"-49.460002\"\r\n         transform=\"rotate(-72)\" /><circle\r\n         transform=\"rotate(-90)\"\r\n         inkscape:transform-center-y=\"-52.005551\"\r\n         inkscape:transform-center-x=\"-0.00079867683\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5574\"\r\n         cx=\"-1594.7269\"\r\n         cy=\"477.707\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-54.541927\"\r\n         cx=\"-1661.7494\"\r\n         id=\"circle5576\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"16.069856\"\r\n         inkscape:transform-center-y=\"-49.460512\"\r\n         transform=\"rotate(-108)\" /><circle\r\n         transform=\"rotate(-126)\"\r\n         inkscape:transform-center-y=\"-42.073912\"\r\n         inkscape:transform-center-x=\"30.567514\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5578\"\r\n         cx=\"-1561.0176\"\r\n         cy=\"-581.45184\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-1051.4451\"\r\n         cx=\"-1302.3918\"\r\n         id=\"circle5580\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"42.072971\"\r\n         inkscape:transform-center-y=\"-30.568831\"\r\n         transform=\"rotate(-144)\" /><circle\r\n         transform=\"rotate(-162)\"\r\n         inkscape:transform-center-y=\"-16.071418\"\r\n         inkscape:transform-center-x=\"49.460094\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5582\"\r\n         cx=\"-911.18823\"\r\n         cy=\"-1418.5155\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-1646.7317\"\r\n         cx=\"-425.70053\"\r\n         id=\"circle5584\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"52.005672\"\r\n         inkscape:transform-center-y=\"-0.00078951846\"\r\n         transform=\"scale(-1)\" /><circle\r\n         transform=\"rotate(162)\"\r\n         inkscape:transform-center-y=\"16.069838\"\r\n         inkscape:transform-center-x=\"49.46059\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5586\"\r\n         cx=\"106.54839\"\r\n         cy=\"-1713.7542\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-1613.0223\"\r\n         cx=\"633.45831\"\r\n         id=\"circle5588\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"42.074001\"\r\n         inkscape:transform-center-y=\"30.567461\"\r\n         transform=\"rotate(144)\" /><circle\r\n         transform=\"rotate(126)\"\r\n         inkscape:transform-center-y=\"42.07292\"\r\n         inkscape:transform-center-x=\"30.568872\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5590\"\r\n         cx=\"1103.4515\"\r\n         cy=\"-1354.3966\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"-963.19299\"\r\n         cx=\"1470.522\"\r\n         id=\"circle5592\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"16.07151\"\r\n         inkscape:transform-center-y=\"49.460031\"\r\n         transform=\"rotate(108)\" /><circle\r\n         transform=\"rotate(90)\"\r\n         inkscape:transform-center-y=\"52.005682\"\r\n         inkscape:transform-center-x=\"0.0009102497\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5594\"\r\n         cx=\"1698.7382\"\r\n         cy=\"-477.70529\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"54.543636\"\r\n         cx=\"1765.7606\"\r\n         id=\"circle5596\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-16.069757\"\r\n         inkscape:transform-center-y=\"49.460577\"\r\n         transform=\"rotate(72)\" /><circle\r\n         transform=\"rotate(54)\"\r\n         inkscape:transform-center-y=\"42.073947\"\r\n         inkscape:transform-center-x=\"-30.567372\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5598\"\r\n         cx=\"1665.0288\"\r\n         cy=\"581.45355\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"1051.4468\"\r\n         cx=\"1406.4031\"\r\n         id=\"circle5600\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-42.072879\"\r\n         inkscape:transform-center-y=\"30.56882\"\r\n         transform=\"rotate(36)\" /><circle\r\n         transform=\"rotate(18)\"\r\n         inkscape:transform-center-y=\"16.071465\"\r\n         inkscape:transform-center-x=\"-49.459996\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"circle5602\"\r\n         cx=\"1015.1995\"\r\n         cy=\"1418.5172\"\r\n         r=\"4.8886046\" /><circle\r\n         r=\"4.8886046\"\r\n         cy=\"1646.7334\"\r\n         cx=\"529.71179\"\r\n         id=\"circle5604\"\r\n         style=\"opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         inkscape:transform-center-x=\"-52.005591\"\r\n         inkscape:transform-center-y=\"0.00091954716\" /><circle\r\n         r=\"15.84876\"\r\n         cy=\"1646.7334\"\r\n         cx=\"477.71176\"\r\n         id=\"path5608\"\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><circle\r\n         r=\"11.206754\"\r\n         cy=\"1646.7334\"\r\n         cx=\"477.71176\"\r\n         id=\"path5610\"\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#080000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /></g></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer9\"\r\n     inkscape:label=\"Body color\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><path\r\n       style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n       d=\"m 153.38086,1348.7344 c -3.13283,3.7637 -4.85671,3.8742 -8.70703,9.1054 -5.60881,53.8652 -8.83492,119.2903 -8.90039,175.4532 3.23512,6.2143 4.70328,9.6594 9.39844,14.9375 0.16086,32.7248 2.56527,65.3687 4.50976,98.0215 81.69041,0.6643 110.92136,1.1075 189.20117,0.832 8.27625,0.2547 13.13804,-3.2571 14.9961,-8.3223 19.7509,-53.842 35.85759,-80.7394 46.34961,-101.9512 3.25378,-6.5782 7.66509,-11.1154 12.32421,-14.3769 4.65912,-3.2615 11.38563,-5.3475 21.89063,-5.5117 l 93.38672,-1.459 c 13.75773,0.7381 17.81251,5.3312 23.00195,12.3945 16.24644,21.6583 23.39408,50.1345 44.0957,98.4629 7.21277,21.3676 14.40858,19.8115 24.51563,19.5352 l 483.36524,-2.3301 c 8.4355,0.091 10.7816,-4.7699 15.6035,-11.2715 3.6958,-4.7992 17.3136,-41.6626 31.0059,-61.5176 9.0632,-12.9152 20.6123,-10.8379 42.7187,-10.8379 h 156.1211 c 30.8008,0 30.7488,9.8272 37.7988,23.4688 7.05,13.6416 21.5925,43.1004 30.2481,54.9433 1.078,1.292 2.6101,2.4403 4.7578,3.2383 2.1465,0.8114 6.6816,1.1918 8.4687,1.2774 1.7873,0.085 111.0469,-0.5313 111.0469,-0.5313 0.7679,-0.1346 1.1205,-0.7922 1.0977,-1.1914 0.1727,-7.9814 0.11,-10.064 0.3125,-16.9062 0,-1.4902 0.9168,-52.7504 4.0332,-58.1289 3.369,-5.8145 6.2935,-1.295 7.6601,-7.7579 1.3666,-6.4629 1.7499,-81.3183 1.75,-87.875 0.013,-5.9762 -1.6218,-9.4419 -3.6582,-11.3339 -1.713,-1.6136 -3.4511,-1.9381 -4.5879,-2.0254 1.7013,-35.8342 -3.0603,-69.9089 -5.5019,-105.6543 0.7344,-0.468 1.4569,-1.4204 2.1074,-2.6875 z\"\r\n       id=\"body-color\"\r\n       inkscape:connector-curvature=\"0\" /></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer10\"\r\n     inkscape:label=\"Roof color\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><path\r\n       style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n       d=\"m 815.1875,1106.4199 c -252.917,0 -430.51795,7.2463 -459.56641,11.9024 -17.46419,2.8787 -42.53052,6.0131 -63.08593,26.6562 -5.31951,1.9626 -7.93728,10.0239 -7.79102,14.1133 -36.46359,54.5343 -69.23865,100.0168 -105.39648,159.3047 -15.82904,8.0845 -22.61815,17.8321 -25.88672,30.2461 -0.0283,0.034 -0.052,0.058 -0.0801,0.092 H 1543.791 c 1.9506,-3.7994 3.2509,-10.4322 2.2578,-15.3574 -1.3243,-6.5679 -1.993,-14.1526 -8.3222,-16.2168 -4.5071,-42.6217 -15.205,-96.8775 -31.4395,-142.7657 0.5997,-0.8287 1.0313,-1.696 1.0313,-2.6133 0,-0.9262 -0.3561,-1.7913 -1.0625,-2.6503 -2.4811,-2.2153 -2.7499,-3.0038 -5.8653,-2.9747 -12.694,-13.7318 -15.3596,-16.6374 -28.7344,-23.5761 -45.7237,-22.4976 -86.3997,-22.2837 -162.0703,-27.4883 -94.1659,-6.9407 -241.4814,-8.6719 -494.3984,-8.6719 z\"\r\n       id=\"roof-color\"\r\n       inkscape:connector-curvature=\"0\" /></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer3\"\r\n     inkscape:label=\"Bus shell\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><path\r\n       style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#080000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n       d=\"m 149.6811,1646.2527 c 81.69041,0.6643 110.92191,1.1063 189.20172,0.8308 8.27625,0.2547 13.13734,-3.2565 14.9954,-8.3217 19.7509,-53.842 35.85822,-80.7391 46.35024,-101.9509 3.25378,-6.5782 7.66575,-11.1155 12.32487,-14.377 4.65912,-3.2615 11.3842,-5.3469 21.8892,-5.5111 l 93.38809,-1.4602 c 13.75773,0.7381 17.81262,5.3312 23.00206,12.3945 16.24644,21.6583 23.39402,50.1346 44.09564,98.463 7.21277,21.3676 14.40811,19.8115 24.51516,19.5352 l 483.36522,-2.3308 c 8.4355,0.091 10.7821,-4.7691 15.604,-11.2707 3.6958,-4.7992 17.3123,-41.662 31.0046,-61.517 9.0632,-12.9152 20.6139,-10.838 42.7203,-10.838 h 156.1211 c 30.8008,0 30.7488,9.8261 37.7988,23.4677 7.05,13.6416 21.5916,43.1009 30.2472,54.9438 v 0 0 c 1.078,1.292 2.6102,2.4414 4.7579,3.2394 2.1465,0.8114 6.6815,1.1906 8.4687,1.2762 1.7873,0.085 111.0476,-0.5304 111.0476,-0.5304 0.7679,-0.1346 1.1206,-0.7931 1.0978,-1.1923 0.1727,-7.9814 0.1082,-10.064 0.3107,-16.9062 0,-1.4902 0.918,-52.75 4.0344,-58.1285 3.369,-5.8145 6.2941,-1.2947 7.6607,-7.7576 1.3666,-6.4629 1.7499,-81.318 1.75,-87.8747 0.013,-5.9762 -1.6219,-9.4419 -3.6583,-11.3339 -1.713,-1.6136 -3.451,-1.9395 -4.5878,-2.0268 1.7013,-35.8342 -3.0603,-69.908 -5.5019,-105.6534 2.9364,-1.871 5.6895,-11.478 4.3652,-18.0459 -1.3243,-6.5679 -1.9931,-14.1528 -8.3223,-16.217 -4.5071,-42.6217 -15.2061,-96.8755 -31.4406,-142.7637 0.5997,-0.8287 1.0313,-1.6964 1.0313,-2.6136 0,-0.9262 -0.3556,-1.7913 -1.062,-2.6503 -2.4811,-2.2153 -2.7503,-3.0049 -5.8657,-2.9758 -12.694,-13.7318 -15.3597,-16.637 -28.7344,-23.5757 -45.7238,-22.4976 -86.3985,-22.2846 -162.0691,-27.4892 -94.1659,-6.9407 -241.482,-8.6704 -494.39902,-8.6704 -252.917,0 -430.51744,7.2464 -459.5659,11.9025 -17.46419,2.8787 -42.53064,6.0133 -63.08605,26.6564 -5.31951,1.9626 -7.93726,10.0221 -7.791,14.1115 -36.46359,54.5343 -69.24012,100.0171 -105.39795,159.305 -15.82904,8.0845 -22.61813,17.8324 -25.8867,30.2464 -3.1867,3.8643 -4.9023,3.9187 -8.7871,9.1968 -5.60881,53.8652 -8.83462,119.2912 -8.90009,175.4541 3.23512,6.2143 4.70274,9.6588 9.39789,14.9369 0.16086,32.7248 2.56563,65.3698 4.51012,98.0226 z\"\r\n       id=\"path276\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"cccssccccccccssscccccccccsccccsccsccccsccccccccc\" /></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer8\"\r\n     inkscape:label=\"Windows\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><rect\r\n       style=\"display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       id=\"rect5178\"\r\n       width=\"355.67471\"\r\n       height=\"134.3503\"\r\n       x=\"638.51746\"\r\n       y=\"1184.6605\"\r\n       ry=\"11.5\" /><path\r\n       style=\"display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1045.5,1184.6605 h 309 c 14.0335,0 29.4146,10.9263 35.25,36.25 5.8353,25.3237 9.4732,39.511 12.25,65.3503 2.7768,25.8393 -5.629,32.75 -18,32.75 h -338.5 c -6.371,0 -11.5,-5.129 -11.5,-11.5 v -111.3503 c 0,-6.371 5.129,-11.5 11.5,-11.5 z\"\r\n       id=\"rect5180\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"sszzsssss\" /><path\r\n       style=\"display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 377.75,1184.6605 h 196.23444 c 6.371,0 11.5,5.129 11.5,11.5 v 111.3503 c 0,6.371 -5.129,11.5 -11.5,11.5 H 377.75 Z\"\r\n       id=\"rect5183\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"csssscc\" /><path\r\n       style=\"display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 350.5,1184.6605 h 27.25 v 134.3503 H 298.5 c -8.371,0 -16.11665,-10.9354 -7.5,-28 l 39.5,-93.1003 c 3.46958,-8.1777 13.629,-13.25 20,-13.25 z\"\r\n       id=\"rect5188\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"sccscss\" /><path\r\n       sodipodi:nodetypes=\"sccscss\"\r\n       inkscape:connector-curvature=\"0\"\r\n       id=\"path5191\"\r\n       d=\"m 350.52468,1190.9648 h 21.31202 v 123.1102 h -64.36616 c -17.35113,0 -16.094,-11.7705 -9.45973,-25.6574 l 35.95459,-84.8113 c 3.13235,-7.3887 11.28468,-12.7034 16.55928,-12.6415 z\"\r\n       style=\"display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#080000;stroke-width:1.30654573;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><path\r\n       style=\"display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\r\n       d=\"m 309.75,1184.6605 c 0.375,-1.934 1.125,-7.9931 -3,-10.6771 l -22.00507,-14.8925 -106.57851,159.9199 H 234.75 c 11.3434,0 19.96953,-2.7862 25.75,-15.0274 z\"\r\n       id=\"path5193\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"ccccccc\" /></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer6\"\r\n     inkscape:label=\"Chassis\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><path\r\n       style=\"opacity:1;fill:none;fill-opacity:0;stroke:#080000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 298.49559,1168.397 1208.16911,10e-5 c 4.6626,0.3782 3.5744,6.9631 0,7.071 H 308.3527 c -1.74562,-1.7925 -3.35522,-2.9857 -9.85711,-7.0711 z\"\r\n       id=\"rect5200\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"ccccc\" /><path\r\n       style=\"display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\r\n       d=\"m 316.51867,1164.2428 c -7.46392,-7.1282 -15.98849,-12.8423 -23.98274,-19.2634\"\r\n       id=\"path5203\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"cc\" /><path\r\n       style=\"fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\r\n       d=\"m 345.32226,1120.0388 c 10.10214,21.4882 21.61849,21.4882 32.42774,21.4882 h 1030.2764 c 21.4191,0 25.8677,-2.0166 34.0285,-10.7147\"\r\n       id=\"path5206\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"cccc\" /><path\r\n       style=\"fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\r\n       d=\"m 328.09756,1175.4681 -57.98276,143.5427 c -11.1216,6.6575 -24.6182,17.3151 -31.1148,29.7226 0,0 -44.32603,108.4315 -18.38268,263 h 111.79762 c 7.36302,0 8.97604,-4.4153 11.96406,-8.8729 l 38.51115,-77.6826 c 9.02649,-16.6751 23.25537,-26.4445 44.98485,-26.4445 H 605 v -150 c 0,-11.8154 1.63911,-21.0651 -4.66634,-29.7226 v -143.5427 z\"\r\n       id=\"path5220\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"ccccccccccccc\" /><g\r\n       id=\"g5283\"><ellipse\r\n         ry=\"12.350633\"\r\n         rx=\"20.975613\"\r\n         cy=\"1405.5251\"\r\n         cx=\"565.84692\"\r\n         id=\"path5088\"\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.07354403;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><path\r\n         sodipodi:nodetypes=\"sssssssss\"\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"rect5090\"\r\n         d=\"m 548.54979,1401.8765 47.60691,-1.6227 c 1.98934,-0.068 3.59334,1.4713 3.59334,3.2989 v 3.945 c 0,1.8276 -1.604,3.3667 -3.59334,3.2989 l -47.60691,-1.6227 c -1.98933,-0.068 -3.59334,-1.4713 -3.59334,-3.2989 v -0.6996 c 0,-1.8276 1.60401,-3.2311 3.59334,-3.2989 z\"\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#000000;stroke-width:1.23670101;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><ellipse\r\n         ry=\"2.5817189\"\r\n         rx=\"2.8121829\"\r\n         cy=\"1405.5251\"\r\n         cx=\"591.59644\"\r\n         id=\"path5093\"\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.27019382;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /></g><path\r\n       style=\"display:inline;opacity:1;fill:none;fill-opacity:0;stroke:#0f0000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.96568627\"\r\n       d=\"M 176.74231,1319.0108 H 1540.8993 c 6.2147,5.7825 5.8043,23.9401 2.894,29.7226 H 153.38483 c 4.66083,-16.9075 13.69665,-23.0651 23.35748,-29.7226 z\"\r\n       id=\"rect5234\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"ccccc\" /><rect\r\n       style=\"opacity:1;fill:none;fill-opacity:0;stroke:#0f0000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.96568627\"\r\n       id=\"rect5242\"\r\n       width=\"397.99997\"\r\n       height=\"436.26529\"\r\n       x=\"617\"\r\n       y=\"1175.4681\" /><path\r\n       style=\"fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\r\n       d=\"m 1140,1566.7334 c 0,0 23.8333,-32.5 32,-40 8.1667,-7.5 22.4167,-15 35,-15 l 108.75,0 c 17.1667,0 30.5417,10.625 36.25,15 5.7083,4.375 36,40 36,40\"\r\n       id=\"path5246\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"czcczc\" /><path\r\n       style=\"fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\r\n       d=\"m 377.75,1552.7334 c 8.78718,-13.6667 17.76367,-31.7372 26.36153,-41 8.59786,-9.2628 10.73332,-13 23.13682,-13 h 99.62831 c 9.87139,0 21.44854,5.7295 29.26282,13 15.21315,14.1546 29.34494,55 29.34494,55\"\r\n       id=\"path5250\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"czccac\" /><path\r\n       style=\"fill:none;stroke:#100000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\r\n       d=\"m 144.67318,1357.8391 c 7.28349,0.2566 10.59499,-0.3896 22.29241,2.0071 11.69742,2.3968 19.6353,8.0149 21.47837,17.8544 1.84307,9.8395 -3.53352,111.5154 -5.3033,121.0328 -1.76978,9.5174 -6.15886,17.1916 -9.54595,21.8028 -3.38709,4.6112 -13.54715,14.1615 -37.82162,12.757 0.49182,-58.8383 3.10497,-116.9694 8.90009,-175.4541 z\"\r\n       id=\"path5252\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"czzzzcc\" /><path\r\n       style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#100000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 179.95867,1475.6349 c 0,18.9968 -3.81269,35.1486 -9.12672,41.0711 -6.47853,-1.4371 -8.45441,-1.8943 -13.06706,-4.9726 -2.13689,-7.5264 -3.79239,-19.5509 -3.79239,-36.0985 -1e-5,-13.5654 0.70674,-27.4479 3.75347,-35.423 4.36589,-3.4688 8.15817,-4.1239 14.6276,-5.056 4.9787,6.4658 7.6051,22.2511 7.6051,40.479 z\"\r\n       id=\"path5254\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"sccsccs\" /><g\r\n       id=\"g5517\"><path\r\n         sodipodi:nodetypes=\"czcccc\"\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"path5257\"\r\n         d=\"m 143.49136,1370.239 c 23.41055,-0.1645 38.16894,3.5019 38.94219,11.8811 0.77325,8.3791 -0.11785,12.4922 -0.17678,19.6222 -0.26516,4.8908 -1.59099,7.0416 -6.36396,7.2478 -11.83068,-0.074 -23.66135,-0.1486 -35.49203,-0.2229 0.7428,-16.7493 2.06039,-25.6855 3.09058,-38.5282 z\"\r\n         style=\"fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /><path\r\n         sodipodi:nodetypes=\"cccscc\"\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"path5259\"\r\n         d=\"m 161.22035,1378.0542 -0.88389,24.8371 c 3.18198,0.029 6.36396,0.059 9.54594,0.088 5.59793,0 6.36414,-7.9082 6.18718,-12.4627 -0.17695,-4.5545 -0.79549,-11.3432 -5.92201,-11.9325 -2.12132,-0.3829 -4.2532,-0.3539 -8.92722,-0.5299 z\"\r\n         style=\"display:inline;opacity:1;fill:#fbbf83;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /><path\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"path5262\"\r\n         d=\"m 151.32085,1376.5516 -1.41421,24.4836\"\r\n         style=\"fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /><path\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"path5264\"\r\n         d=\"m 156.44738,1378.9381 -0.88389,20.4177\"\r\n         style=\"fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /></g><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\r\n       d=\"m 1412.873,1202.1094 c 0.7576,2.7623 1.4855,5.5143 2.1641,8.25 h 37.1387 c -1.0891,-4.1426 -1.9353,-7.0553 -2.3848,-8.25 z\"\r\n       id=\"path5439\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1413.1875,1188.8594 c -1.4041,0.043 -2.9157,0.084 -4.1875,0.125 0.8666,2.7277 1.6802,5.4316 2.4629,8.125 h 36.3242 c -1.6043,-3.6106 -3.4964,-6.3336 -7.3496,-7.4375 -1.3569,-0.3888 -3.348,-0.6488 -5.7324,-0.8125 z\"\r\n       id=\"rect5441\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1427.6133,1294.8594 c 0.2115,2.3748 0.4281,4.7185 0.6367,7.125 30.2071,1.2271 35.9121,1.5719 37.2695,-7.125 z\"\r\n       id=\"rect5443\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1416.2227,1215.3594 c 0.6419,2.7581 1.2581,5.5086 1.83,8.25 h 37.4024 c -0.6962,-2.9501 -1.37,-5.7433 -1.9981,-8.25 z\"\r\n       id=\"rect5447\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1419.0508,1228.6094 c 0.5363,2.7529 1.0487,5.5032 1.5254,8.25 h 37.8691 c -0.6111,-2.8339 -1.2217,-5.585 -1.8301,-8.25 z\"\r\n       id=\"rect5451\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1421.4102,1241.8594 c 0.4441,2.7477 0.8639,5.4975 1.2597,8.25 h 38.4844 c -0.5329,-2.7639 -1.0846,-5.515 -1.6523,-8.25 z\"\r\n       id=\"rect5453\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1423.3633,1255.1094 c 0.3678,2.7423 0.7195,5.4922 1.0508,8.25 h 39.0957 c -0.4357,-2.7017 -0.908,-5.4538 -1.418,-8.25 z\"\r\n       id=\"rect5455\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1424.998,1268.3594 c 0.3088,2.7371 0.6029,5.4874 0.8868,8.25 h 39.4394 c -0.2763,-2.6036 -0.6318,-5.3687 -1.0488,-8.25 z\"\r\n       id=\"rect5457\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       style=\"opacity:0.35;fill:#030003;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n       d=\"m 1426.3906,1281.6094 c 0.2669,2.727 0.5222,5.4887 0.7754,8.25 h 38.7637 c 0.024,-0.6106 0.049,-1.2081 0.07,-1.875 0.028,-1.8879 -0.054,-4.0428 -0.2168,-6.375 z\"\r\n       id=\"rect5459\"\r\n       inkscape:connector-curvature=\"0\" /><path\r\n       sodipodi:nodetypes=\"cczzc\"\r\n       inkscape:connector-curvature=\"0\"\r\n       id=\"path5476\"\r\n       d=\"m 1434.625,1308.8584 c 36.6642,1.4894 38.8723,-1.5336 39.375,-14.875 0.3319,-22.4578 -10.3014,-71.7555 -16.75,-90.25 -6.4486,-18.4945 -8.9913,-19.0729 -12.8125,-20.0625 -3.8212,-0.9896 -12.1979,-1.0208 -15.8125,-0.9688\"\r\n       style=\"fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\" /><path\r\n       style=\"fill:none;stroke:#000000;stroke-width:1.00275457px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\r\n       d=\"m 1452.5,1319.0108 c 42.9142,0 37.8952,-3.5968 37.5,-30.4792 -0.3952,-26.8824 -13.1764,-77.4469 -16.25,-86.4745 -3.0736,-9.0276 -8.8663,-17.3966 -16.9375,-21.8804 -8.0712,-4.4838 -25.1945,-5.0437 -35.5278,-4.7086\"\r\n       id=\"path5502\"\r\n       inkscape:connector-curvature=\"0\"\r\n       sodipodi:nodetypes=\"czzzc\" /><g\r\n       id=\"g5511\"><rect\r\n         rx=\"0\"\r\n         ry=\"12.28598\"\r\n         y=\"1263.1494\"\r\n         x=\"359.91736\"\r\n         height=\"62.402184\"\r\n         width=\"24.04163\"\r\n         id=\"rect5504\"\r\n         style=\"opacity:1;fill:#deddde;fill-opacity:1;stroke:#080000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /><rect\r\n         style=\"opacity:1;fill:none;fill-opacity:1;stroke:#080000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\r\n         id=\"rect5506\"\r\n         width=\"20.329315\"\r\n         height=\"61.871891\"\r\n         x=\"359.91736\"\r\n         y=\"1263.1494\"\r\n         ry=\"12.28598\"\r\n         rx=\"0\" /><path\r\n         sodipodi:nodetypes=\"sssccsssccs\"\r\n         inkscape:connector-curvature=\"0\"\r\n         d=\"m 357.875,1328.4834 c 0,2.4853 -4.0854,4.5 -9.125,4.5 -5.0396,0 -9.125,-2.0147 -9.125,-4.5 0,-2.233 3.2981,-4.0861 7.62311,-4.4393 l 16.98404,-25.2507 c -0.61654,-0.8165 -0.98215,-1.833 -0.98215,-2.935 0,-2.6924 2.18261,-4.875 4.875,-4.875 2.69239,0 4.875,2.1826 4.875,4.875 0,2.1825 -1.43421,4.03 -3.41156,4.6515 l -13.75739,25.135 c 1.27788,0.7743 2.04395,1.7623 2.04395,2.8385 z\"\r\n         style=\"fill:#deddde;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\r\n         id=\"path5272\" /></g></g><g\r\n     inkscape:groupmode=\"layer\"\r\n     id=\"layer5\"\r\n     inkscape:label=\"Bumpers (t2b)\"\r\n     style=\"display:inline\"\r\n     transform=\"translate(-108.30613,-1101.4205)\"><g\r\n       id=\"g5118\"><path\r\n         sodipodi:nodetypes=\"cccccccc\"\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"path4876\"\r\n         d=\"m 145.69963,1581.6429 c -14.75861,-0.024 -20.09921,1.0427 -30.80735,5.6396 -1.02003,3.6568 -0.34754,7.0743 -0.16795,9.9423 1.28503,0.9123 2.53942,1.9818 4.6613,2.4917 l 0.2551,11.6089 c -2.12115,1.0974 -2.12712,0.6318 -4.35925,2.4151 0,0 -0.8994,4.4437 -0.0168,9.5864 14.09279,5.0935 23.20645,3.3483 32.6411,3.281\"\r\n         style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#120012;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\" /><path\r\n         style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#800080;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n         d=\"m 145.69922,1581.6426 c -14.75861,-0.024 -20.0985,1.0437 -30.80664,5.6406 -1.02003,3.6568 -0.34756,7.0734 -0.16797,9.9414 1.28503,0.9123 2.53828,1.9823 4.66016,2.4922 l 0.25585,11.6094 c -2.12115,1.0974 -2.12724,0.6307 -4.35937,2.414 0,0 -0.89823,4.4433 -0.0156,9.586 14.0928,5.0935 23.20598,3.3485 32.64063,3.2812 9.43465,0.067 32.97865,0.7742 39.89453,-2.539 6.91588,-3.3132 12.60062,-26.9332 11.12305,-33.9102 -1.47757,-6.977 -38.466,-8.5396 -53.22461,-8.5156 z\"\r\n         id=\"path4879\"\r\n         inkscape:connector-curvature=\"0\" /><path\r\n         id=\"path360\"\r\n         d=\"m 145.69922,1581.6426 c -14.75861,-0.024 -20.0985,1.0437 -30.80664,5.6406 -1.02003,3.6568 -0.34756,7.0734 -0.16797,9.9414 1.28503,0.9123 2.53828,1.9823 4.66016,2.4922 l 0.25585,11.6094 c -2.12115,1.0974 -2.12724,0.6307 -4.35937,2.414 0,0 -0.89823,4.4433 -0.0156,9.586 14.0928,5.0935 23.20598,3.3485 32.64063,3.2812 9.43465,0.067 32.97865,0.7742 39.89453,-2.539 6.91588,-3.3132 12.60062,-26.9332 11.12305,-33.9102 -1.47757,-6.977 -38.466,-8.5396 -53.22461,-8.5156 z\"\r\n         style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#120012;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n         inkscape:connector-curvature=\"0\" /><path\r\n         sodipodi:nodetypes=\"ccccc\"\r\n         inkscape:connector-curvature=\"0\"\r\n         id=\"rect4873\"\r\n         d=\"M 119.38563,1599.7166 H 198.375 l -2.74004,11.6418 -75.99423,-0.033 z\"\r\n         style=\"opacity:1;fill:none;fill-opacity:0.39215686;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /></g><g\r\n       id=\"g5130\"><path\r\n         style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#120012;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n         d=\"m 1543.5386,1576.3501 c 14.7586,-0.024 20.0992,1.0427 30.8073,5.6396 1.02,3.6568 0.3476,7.0743 0.168,9.9423 -1.2851,0.9123 -2.5394,1.9818 -4.6613,2.4917 l -0.2551,11.6089 c 2.1211,1.0974 2.1271,0.6318 4.3592,2.4151 0,0 0.8994,4.4437 0.017,9.5864 -14.0928,5.0935 -23.2064,3.3483 -32.6411,3.281\"\r\n         id=\"path4887\"\r\n         inkscape:connector-curvature=\"0\"\r\n         sodipodi:nodetypes=\"cccccccc\" /><g\r\n         id=\"g4908\"><path\r\n           inkscape:connector-curvature=\"0\"\r\n           style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n           d=\"m 1543.539,1576.3498 c 14.7586,-0.024 20.0985,1.0437 30.8066,5.6406 1.0201,3.6568 0.3476,7.0734 0.168,9.9414 -1.285,0.9123 -2.5383,1.9823 -4.6602,2.4922 l -0.2558,11.6094 c 2.1211,1.0974 2.1272,0.6307 4.3594,2.414 0,0 0.8982,4.4433 0.016,9.586 -14.0928,5.0935 -23.206,3.3485 -32.6407,3.2812 -9.4346,0.067 -54.9786,0.7742 -61.8945,-2.539 -6.9159,-3.3132 -12.6006,-26.9332 -11.1231,-33.9102 1.4776,-6.977 60.466,-8.5396 75.2247,-8.5156 z\"\r\n           id=\"path4889\"\r\n           sodipodi:nodetypes=\"ccccccccsccc\" /><path\r\n           inkscape:connector-curvature=\"0\"\r\n           id=\"path4891\"\r\n           d=\"m 1543.539,1576.3498 c 14.7586,-0.024 20.0985,1.0437 30.8066,5.6406 1.0201,3.6568 0.3476,7.0734 0.168,9.9414 -1.285,0.9123 -2.5383,1.9823 -4.6602,2.4922 l -0.2558,11.6094 c 2.1211,1.0974 2.1272,0.6307 4.3594,2.414 0,0 0.8982,4.4433 0.016,9.586 -14.0928,5.0935 -23.206,3.3485 -32.6407,3.2812 -9.4346,0.067 -54.9786,0.7742 -61.8945,-2.539 -6.9159,-3.3132 -12.6006,-26.9332 -11.1231,-33.9102 1.4776,-6.977 60.466,-8.5396 75.2247,-8.5156 z\"\r\n           style=\"color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#120012;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate\"\r\n           sodipodi:nodetypes=\"ccccccccsccc\" /><path\r\n           sodipodi:nodetypes=\"ccccc\"\r\n           inkscape:connector-curvature=\"0\"\r\n           id=\"path4893\"\r\n           d=\"m 1569.8526,1594.4238 h -101.1662 l 2.74,11.6418 98.1711,-0.033 z\"\r\n           style=\"opacity:1;fill:none;fill-opacity:0.39215686;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\" /></g></g></g></svg>"
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 67,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Fire brigade vehicle",
+    "m_codes": "140",
+    "chassis_plate": "23",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 68,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 2,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seat arrangement 2-3-3",
+    "m_codes": "013",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 69,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 3,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seat arrangement 2-3-0",
+    "m_codes": "015",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 70,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 4,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seat arrangement 2-2-3",
+    "m_codes": "146",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 71,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 6,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seat arrangement 2-0-3",
+    "m_codes": "177",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 72,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 9,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Campmobile",
+    "m_codes": "609",
+    "chassis_plate": "23-517",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "2319.png",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 73,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 0,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "23",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 74,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 1,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Fire brigade vehicle",
+    "m_codes": "140",
+    "chassis_plate": "23",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 75,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 2,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seat arrangement 2-3-3",
+    "m_codes": "013",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 76,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 3,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seat arrangement 2-3-0",
+    "m_codes": "015",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 77,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 4,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seat arrangement 2-2-3",
+    "m_codes": "146",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 78,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 6,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seat arrangement 2-0-3",
+    "m_codes": "177",
+    "chassis_plate": "23",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 79,
+  "fields": {
+    "model": 23,
+    "configuration": 4,
+    "extras": 9,
+    "model_description": "Kombi",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Campmobile",
+    "m_codes": "609",
+    "chassis_plate": "23-517",
+    "years": "1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 80,
+  "fields": {
+    "model": 23,
+    "configuration": 5,
+    "extras": 0,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "23",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 81,
+  "fields": {
+    "model": 23,
+    "configuration": 5,
+    "extras": 1,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right, sliding roof",
+    "extras_description": "Fire brigade vehicle",
+    "m_codes": "140",
+    "chassis_plate": "23",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 82,
+  "fields": {
+    "model": 24,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Eight-seater, seat arrangement 2-3-3",
+    "m_codes": "",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 83,
+  "fields": {
+    "model": 24,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 84,
+  "fields": {
+    "model": 24,
+    "configuration": 1,
+    "extras": 2,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 85,
+  "fields": {
+    "model": 24,
+    "configuration": 1,
+    "extras": 4,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "500",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 86,
+  "fields": {
+    "model": 24,
+    "configuration": 1,
+    "extras": 5,
+    "model_description": "Microbus L",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "500",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 87,
+  "fields": {
+    "model": 24,
+    "configuration": 4,
+    "extras": 0,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Eight-seater, seat arrangement 2-3-3",
+    "m_codes": "",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 88,
+  "fields": {
+    "model": 24,
+    "configuration": 4,
+    "extras": 1,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3",
+    "m_codes": "147",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 89,
+  "fields": {
+    "model": 24,
+    "configuration": 4,
+    "extras": 2,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "501",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 90,
+  "fields": {
+    "model": 24,
+    "configuration": 4,
+    "extras": 4,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Eight-seater, seat arrangement 3-2-3",
+    "m_codes": "500",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 91,
+  "fields": {
+    "model": 24,
+    "configuration": 4,
+    "extras": 5,
+    "model_description": "Microbus L",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3",
+    "m_codes": "500",
+    "chassis_plate": "24",
+    "years": "1968 1969 1970 1971 1972 1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 92,
+  "fields": {
+    "model": 26,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Pick-up single cab",
+    "configuration_description": "LHD, locker lid right",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "26",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 93,
+  "fields": {
+    "model": 26,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Pick-up single cab",
+    "configuration_description": "LHD, locker lid right",
+    "extras_description": "Extended wooden platform",
+    "m_codes": "201",
+    "chassis_plate": "26-201 (1977>: 26)",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 94,
+  "fields": {
+    "model": 26,
+    "configuration": 4,
+    "extras": 0,
+    "model_description": "Pick-up single cab",
+    "configuration_description": "RHD, locker lid left",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "26",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 95,
+  "fields": {
+    "model": 26,
+    "configuration": 4,
+    "extras": 1,
+    "model_description": "Pick-up single cab",
+    "configuration_description": "RHD, locker lid left",
+    "extras_description": "Extended wooden platform",
+    "m_codes": "201",
+    "chassis_plate": "26-201 (1977>: 26)",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 96,
+  "fields": {
+    "model": 26,
+    "configuration": 5,
+    "extras": 0,
+    "model_description": "Pick-up double cab",
+    "configuration_description": "LHD, rear passenger door right",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "26-201 (1977>: 26)",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 97,
+  "fields": {
+    "model": 26,
+    "configuration": 8,
+    "extras": 0,
+    "model_description": "Pick-up double cab",
+    "configuration_description": "RHD, rear passenger door left",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "26-201 (1977>: 26)",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 98,
+  "fields": {
+    "model": 27,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Ambulance",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "27",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 99,
+  "fields": {
+    "model": 27,
+    "configuration": 4,
+    "extras": 0,
+    "model_description": "Ambulance",
+    "configuration_description": "RHD, sliding door left",
+    "extras_description": "Standard version",
+    "m_codes": "",
+    "chassis_plate": "27",
+    "years": "1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 101,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 1,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3, Wild Westerner edition",
+    "m_codes": "147 736",
+    "chassis_plate": "28",
+    "years": "1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 102,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 5,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3, Wild Westerner edition",
+    "m_codes": "500 736",
+    "chassis_plate": "22",
+    "years": "1973",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 104,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 8,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3, Champaigne edition I",
+    "m_codes": "147 723",
+    "chassis_plate": "22/28",
+    "years": "1977",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 105,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 8,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Seven-seater, seat arrangement 2-2-3, Champaigne edition II",
+    "m_codes": "147 D61",
+    "chassis_plate": "22/28",
+    "years": "1978",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 106,
+  "fields": {
+    "model": 23,
+    "configuration": 1,
+    "extras": 9,
+    "model_description": "Kombi",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Campmobile, Champaigne edition II",
+    "m_codes": "609 D63",
+    "chassis_plate": "23-517",
+    "years": "1978",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+},
+{
+  "model": "mplate_decoder.vwtype2model",
+  "pk": 107,
+  "fields": {
+    "model": 22,
+    "configuration": 1,
+    "extras": 0,
+    "model_description": "Microbus",
+    "configuration_description": "LHD, sliding door right",
+    "extras_description": "Nine-seater, seat arrangement 3-3-3, Lord von Hannover edition",
+    "m_codes": "W51",
+    "chassis_plate": "22",
+    "years": "1978 1979",
+    "schematic_bitmap": "",
+    "schematic_vector": ""
+  }
+}
+]

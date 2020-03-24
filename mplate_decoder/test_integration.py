@@ -21,6 +21,7 @@ class ExampleTestCase(LiveServerTestCase):
         'tst_mplate_type2model',
         'tst_mplate_type2modelconfiguration',
         'tst_mplate_type2modelextra',
+        'tst_mplate_vwtype2model',
     ]
 
     def setUp(self):
