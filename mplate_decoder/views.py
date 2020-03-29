@@ -118,7 +118,8 @@ class MplateRetrieve(generic.DetailView):
         #   - Model 2210
         model_code = mplate.model
         model_year = mplate.model_year
-        m_codes = mplate.m_codes
+        m_codes = mplate.m_codes.split()
+        t2_model = None
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         BUS_ROOF_COLOR_ID = 'roof-color'
         BUS_BODY_COLOR_ID = 'body-color'
@@ -153,6 +154,13 @@ class MplateRetrieve(generic.DetailView):
             for m_code in special_sales_m_codes:
                 m_codes_query |= Q(m_codes__icontains=m_code)
 
+            if any(x in m_codes for x in special_sales_m_codes):
+                logger.debug("Special sales M-code")
+                model_query &= m_codes_query
+            else:
+                logger.debug("Not any")
+                model_query &= ~m_codes_query
+
             model_query &= m_codes_query
 
             try:
@@ -172,7 +180,8 @@ class MplateRetrieve(generic.DetailView):
                     f'Model {model_code}, years {model_year}, '
                     f'M-codes: {m_codes}')
 
-        schematic = t2_model.schematic_vector
+        if t2_model:
+            schematic = t2_model.schematic_vector
 
         if schematic:
             tree = etree.fromstring(schematic)
