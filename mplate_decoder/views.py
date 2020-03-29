@@ -161,8 +161,6 @@ class MplateRetrieve(generic.DetailView):
                 logger.debug("Not any")
                 model_query &= ~m_codes_query
 
-            model_query &= m_codes_query
-
             try:
                 t2_model = VwType2Model.objects.get(model_query)
                 logger.debug(
