@@ -22,6 +22,10 @@ requirements-dev:
 	${JQ} ${JQ_FLAGS} ${JSON_TRANSFORM_DEV} \
 		${PIPFILE_LOCK} > requirements-dev.txt
 
+lint:
+	@echo "Linting code..."
+	flake8 --exclude=migrations
+
 clean:
 	@echo "Cleaning up generated files..."
 	rm -rvf \
