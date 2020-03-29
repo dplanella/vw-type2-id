@@ -92,10 +92,12 @@ class InteriorColorAdmin(admin.ModelAdmin):
 
 @admin.register(ExteriorColor)
 class ExteriorColorAdmin(admin.ModelAdmin):
-    search_fields = ('plate_code',
-                     'lacquer_code_body',
-                     'lacquer_code_roof',
-                     )
+    search_fields = (
+        'plate_code',
+        'lacquer_code_body',
+        'lacquer_code_roof',
+        'remarks',
+    )
     list_display = (
         'plate_code',
         'lacquer_code_body',
@@ -165,6 +167,11 @@ class VwType2ModelAdmin(admin.ModelAdmin):
         'chassis_plate',
         'years',
         'schematic_vector_short',
+    )
+    list_filter = (
+        'model',
+        'configuration',
+        'extras',
     )
     save_as = True
 
