@@ -29,6 +29,7 @@ class Type2ModelAdmin(admin.ModelAdmin):
     search_fields = ('model', )
     list_display = (
         'model',
+        'description',
     )
 
 
