@@ -140,7 +140,7 @@ class MplateRetrieve(generic.DetailView):
             logger.debug(
                 f'Model {t2_model.model}, years {t2_model.years}, '
                 f'M-codes: {t2_model.m_codes}')
-            schematic = t2_model.schematic_bitmap
+            schematic = t2_model.schematic_vector
         except ObjectDoesNotExist:
             logger.error(
                 f'Does not exist: Model {model_code}, years {model_year}, '
@@ -168,7 +168,7 @@ class MplateRetrieve(generic.DetailView):
                 logger.debug(
                     f'Model {t2_model.model}, years {t2_model.years}, '
                     f'M-codes: {t2_model.m_codes}')
-                schematic = t2_model.schematic_bitmap
+                schematic = t2_model.schematic_vector
             except ObjectDoesNotExist:
                 logger.error(
                     'Does not exist: '
