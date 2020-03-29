@@ -777,6 +777,7 @@ class ExportDestination(Model):
     city = models.CharField(max_length=50, blank=True)
     port = models.CharField(max_length=50, blank=True)
     notes = models.CharField(max_length=50, blank=True)
+    editor_remarks = models.TextField(blank=True)
 
 
 class Type2Model(Model):
@@ -820,6 +821,7 @@ class InteriorColor(Model):
             max_length=65, blank=True)
     remarks = models.TextField(blank=True)
     image = models.ImageField(blank=True)
+    editor_remarks = models.TextField(blank=True)
 
 
 class ExteriorColor(Model):
@@ -833,6 +835,7 @@ class ExteriorColor(Model):
             max_length=65, blank=True)
     sonderlackierung = models.BooleanField()
     remarks = models.TextField(blank=True)
+    editor_remarks = models.TextField(blank=True)
 
 
 class Color(Model):
@@ -844,6 +847,7 @@ class Color(Model):
             max_length=30, blank=True)
     chip = models.CharField(
             max_length=36, blank=True)
+    editor_remarks = models.TextField(blank=True)
 
 
 class Engine(Model):
@@ -861,6 +865,7 @@ class Engine(Model):
     years = models.CharField(
         max_length=65,
         blank=True)
+    editor_remarks = models.TextField(blank=True)
 
 
 class Gearbox(Model):
@@ -882,6 +887,7 @@ class Mcode(Model):
     description = models.TextField()
     model_type = models.CharField(max_length=30,
                                   blank=True)
+    collection = models.TextField(blank=True)
     is_special_code = models.BooleanField(default=False)
     years = models.CharField(
         max_length=65,
@@ -922,5 +928,5 @@ class VwType2Model(Model):
         blank=True)
     years = models.CharField(
             max_length=65, blank=True)
-    schematic_bitmap = models.ImageField(blank=True)
     schematic_vector = models.TextField(blank=True)
+    editor_remarks = models.TextField(blank=True)
