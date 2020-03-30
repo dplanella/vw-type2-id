@@ -1,0 +1,135 @@
+{% extends "mplate_base_bootstrap.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col">
+    <h2 class='mt-4'>Top 10 models</h2>
+    <canvas id="models-chart"></canvas> 
+  </div>
+  <div class="col">
+    <h2 class='mt-4'>Model years</h2>
+    <canvas id="years-chart"></canvas>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h2 class='mt-4'>Top 10 colors</h2>
+    <canvas id="colors-chart"></canvas> 
+  </div>
+  <div class="col">
+    <h2 class='mt-4'>Top 10 destination countries</h2>
+    <canvas id="countries-chart"></canvas>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
+
+  <script>
+
+    var configModels = {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: {{ modelsData|safe }},
+          label: 'VW Type 2 models'
+        }],
+        labels: {{ modelsLabels|safe }}
+      },
+      options: {
+        responsive: true,
+        circumference: Math.PI,
+        rotation: -Math.PI,
+        plugins: {
+            colorschemes: {
+                scheme: 'tableau.Tableau10'
+            }
+        }
+      }
+    };
+
+    var configYears = {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: {{ yearsData|safe }},
+          label: 'Model year'
+        }],
+        labels: {{ yearsLabels|safe }}
+      },
+      options: {
+        responsive: true,
+        plugins: {
+            colorschemes: {
+                scheme: 'brewer.Paired12'
+            }
+        }
+      }
+    };
+
+    var configColors = {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: {{ colorsData|safe }},
+          label: 'Color'
+        }],
+        labels: {{ colorsLabels|safe }}
+      },
+      options: {
+        responsive: true,
+        circumference: Math.PI,
+        rotation: -Math.PI,
+        plugins: {
+            colorschemes: {
+                scheme: 'brewer.Paired12'
+            }
+        }
+      }
+    };
+
+    var configCountries = {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: {{ countriesData|safe }},
+          label: 'Countries'
+        }],
+        labels: {{ countriesLabels|safe }}
+      },
+      options: {
+        responsive: true,
+        circumference: Math.PI,
+        rotation: -Math.PI,
+        plugins: {
+            colorschemes: {
+                scheme: 'tableau.Winter10'
+            }
+        }
+      }
+    };
+
+    window.onload = function() {
+      var ctxModels = document.getElementById('models-chart').getContext('2d');
+      window.modelsPie = new Chart(ctxModels, configModels);
+
+      var ctxYears = document.getElementById('years-chart').getContext('2d');
+      window.yearsPie = new Chart(ctxYears, configYears);
+
+      var ctxColors = document.getElementById('colors-chart').getContext('2d');
+      window.colorsPie = new Chart(ctxColors, configColors);
+
+      var ctxCountries = document.getElementById('countries-chart').getContext('2d');
+      window.countriesPie = new Chart(ctxCountries, configCountries);
+    };
+
+  </script>
+{% endblock %}

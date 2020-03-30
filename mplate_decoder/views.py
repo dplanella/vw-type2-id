@@ -15,8 +15,10 @@ from django.core.exceptions import (
     ObjectDoesNotExist,
     MultipleObjectsReturned,
 )
+from collections import Counter
 import logging
 from lxml import etree
+
 
 logger = logging.getLogger(__name__)
 
@@ -331,3 +333,71 @@ class MplatesByUserListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         qs = Mplate.objects.filter(owner=self.request.user)
         return qs
+
+
+class MetricsView(generic.TemplateView):
+    model = Mplate
+    template_name = 'mplate_decoder/metrics.html'
+    # context_object_name = 'mplates'
+
+    def get_context_data(self, **kwargs):
+        '''
+        Add additional context data
+        '''
+        models_labels = []
+        models_data = []
+        years_labels = []
+        years_data = []
+        colors_labels = []
+        colors_data = []
+        countries_labels = []
+        countries_data = []
+
+        context = super().get_context_data(**kwargs)
+
+        mplates_all = Mplate.objects.all()
+
+        models = [mplate.model for mplate in mplates_all]
+        models_most_common = Counter(models).most_common(10)
+
+        for model in models_most_common:
+            models_labels.append(model[0])
+            models_data.append(model[1])
+
+        years = [mplate.model_year for mplate in mplates_all]
+        years_most_common = Counter(years).most_common()
+        for year in years_most_common:
+            years_labels.append(year[0])
+            years_data.append(year[1])
+
+        colors = [mplate.paint_and_interior for mplate in mplates_all]
+        colors_exterior = []
+        for color in colors:
+            if color.startswith('5'):
+                colors_exterior.append(color[3:])
+            else:
+                colors_exterior.append(color[:4])
+        colors_most_common = Counter(colors_exterior).most_common(10)
+        for color in colors_most_common:
+            colors_labels.append(color[0])
+            colors_data.append(color[1])
+
+        countries = [mplate.destination_country for mplate in mplates_all]
+        countries_most_common = Counter(countries).most_common(10)
+        for country in countries_most_common:
+            if country[0]:
+                countries_labels.append(country[0])
+            else:
+                countries_labels.append('Unknown')
+            countries_data.append(country[1])
+
+        context['modelsLabels'] = models_labels
+        context['modelsData'] = models_data
+        context['yearsLabels'] = years_labels
+        context['yearsData'] = years_data
+        context['colorsLabels'] = colors_labels
+        context['colorsData'] = colors_data
+        context['countriesLabels'] = countries_labels
+        context['countriesData'] = countries_data
+
+        return context
