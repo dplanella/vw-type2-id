@@ -23,7 +23,8 @@ urlpatterns = [
           name='mplate_about'),
      path('search/', views.SearchResultsView.as_view(),
           name='search_results'),
-
+     path('metrics/', views.MetricsView.as_view(),
+          name='metrics'),
 ]
 
 SITE_NAME = "VW Type 2 ID"
