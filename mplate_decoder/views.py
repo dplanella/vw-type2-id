@@ -291,9 +291,49 @@ class SearchResultsView(generic.ListView):
         query = self.request.GET.get('q')
 
         if query:
+            advanced_search_query = Q()
+            query_strings = query.split()
+
+            for q_string in query_strings:
+                exclude = False
+                try:
+                    key, value = q_string.split(':')
+                except ValueError:
+                    key, value = ('mcode', q_string)
+
+                if key.startswith('-'):
+                    key = key[1:]
+                    exclude = True
+
+                if key == 'year':
+                    if not exclude:
+                        advanced_search_query &= Q(model_year__exact=value)
+                    else:
+                        advanced_search_query &= ~Q(model_year__exact=value)
+                elif key == 'model':
+                    if not exclude:
+                        advanced_search_query &= Q(model__exact=value)
+                    else:
+                        advanced_search_query &= ~Q(model__exact=value)
+                elif key == 'mcode':
+                    if not exclude:
+                        advanced_search_query &= Q(m_codes__icontains=value)
+                    else:
+                        advanced_search_query &= ~Q(m_codes__icontains=value)
+                elif key == 'country':
+                    if not exclude:
+                        advanced_search_query &= Q(m_codes__iexact=value)
+                    else:
+                        advanced_search_query &= ~Q(m_codes__iexact=value)
+                else:
+                    if not exclude:
+                        advanced_search_query &= Q(m_codes__icontains=value)
+                    else:
+                        advanced_search_query &= ~Q(m_codes__icontains=value)
+
             if query != '*':
                 results = Mplate.objects.order_by('-id').filter(
-                    Q(m_codes__icontains=query)
+                    advanced_search_query
                 )
             else:
                 results = Mplate.objects.all()
