@@ -153,15 +153,21 @@ class MplateRetrieve(generic.DetailView):
                 f'M-codes: {m_codes}')
 
             m_codes_query = Q()
-            for m_code in special_sales_m_codes:
-                m_codes_query |= Q(m_codes__icontains=m_code)
 
             if any(x in m_codes for x in special_sales_m_codes):
+                # If the M-plate contains any special sales M-codes
+                # use all special sales M-codes in the query
                 logger.debug("Special sales M-code")
+                for m_code in special_sales_m_codes:
+                    m_codes_query |= Q(m_codes__icontains=m_code)
                 model_query &= m_codes_query
             else:
-                logger.debug("Not any")
-                model_query &= ~m_codes_query
+                # If the M-plate does not contain any special sales M-codes
+                # use all of the M-plate's M-codes in the query
+                logger.debug("Not special sales M-code")
+                for m_code in m_codes:
+                    m_codes_query |= Q(m_codes__icontains=m_code)
+                model_query &= m_codes_query
 
             try:
                 t2_model = VwType2Model.objects.get(model_query)
