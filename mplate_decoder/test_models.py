@@ -79,7 +79,7 @@ class MplateDecodeTestCase(TestCase):
 
         self.assertEqual(late_bay_01.production_date_as_time,
                          date(1978, 9, 19))
-        self.assertEqual(late_bay_02.get_production_date(),
+        self.assertEqual(late_bay_02.production_date_as_time,
                          date(1972, 3, 10))
-        self.assertEqual(early_bay_01.get_production_date(),
+        self.assertEqual(early_bay_01.production_date_as_time,
                          date(1969, 2, 7))

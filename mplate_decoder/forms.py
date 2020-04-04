@@ -70,7 +70,7 @@ class MplateCreateForm(ModelForm):
         # Raises ValidationError if no valid chassis number
         # is provided, or if the length is invalid
         try:
-            model_year = decoder.get_model_year(data)
+            model_year = decoder.decode_model_year(data)
         except ValidationError:
             raise ValidationError(
                 "Invalid shortened chassis number. "
@@ -202,7 +202,7 @@ class MplateCreateForm(ModelForm):
                 raise ValidationError(
                     "Cannot validate production date format "
                     "without a valid chassis number.")
-        model_year = decoder.get_model_year(chassis_number_short)
+        model_year = decoder.decode_model_year(chassis_number_short)
 
         # Model year is 68-69, check if valid production date
         if model_year < 1970:
@@ -212,7 +212,7 @@ class MplateCreateForm(ModelForm):
                     "Invalid production date format. Please double check.")
 
             try:
-                production_data_decoded = decoder.get_production_date(
+                production_data_decoded = decoder.decode_production_date(
                     chassis_number=chassis_number_short,
                     encoded_production_date=data)
                 if not production_data_decoded:

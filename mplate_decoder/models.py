@@ -89,12 +89,18 @@ class Mplate(Model):
         return reverse(
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
+    
+    def _get_decoder(self):
+        return MplateDecoder(self)
 
-    def get_model_year(self):
-        decoder = MplateDecoder(self)
-        model_year = decoder.get_model_year()
+    def _decode_model_year(self):
+        return self._get_decoder().decode_model_year()
 
-        return model_year
+    def _decode_production_date(self):
+        return self._get_decoder().decode_production_date()
+
+    def _get_exteriorcolor_code(self):
+        return self._get_decoder().get_exteriorcolor_code()
 
     def get_serial_production_number(self):
         splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
@@ -106,13 +112,6 @@ class Mplate(Model):
         type_body = self.model[:2]
 
         return type_body + self.chassis_number_short
-
-    def get_production_date(self):
-
-        decoder = MplateDecoder(self)
-        production_date = decoder.get_production_date()
-
-        return production_date
 
     def get_export_destination_object(self):
         '''
@@ -136,6 +135,7 @@ class Mplate(Model):
         export_code = self.export_destination
         export_destination = self.get_export_destination_object()
 
+        # If the export destination code was submitted
         if export_code:
             if export_destination:
                 destination_description = f"{export_destination.destination}"
@@ -248,16 +248,6 @@ class Mplate(Model):
         model_description_dict['extras_description'] = extras_description
 
         return model_description_dict
-
-    def _get_exteriorcolor_code(self):
-        SPECIAL_PAINTJOB_ID = '5'
-
-        if self.paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
-            exteriorcolor_code = self.paint_and_interior[-3:]
-        else:
-            exteriorcolor_code = self.paint_and_interior[:4]
-
-        return exteriorcolor_code
 
     def _get_exteriorcolorobject(self):
 
@@ -508,10 +498,10 @@ class Mplate(Model):
         self.m_codes = f"{self.m_codes_1} {self.m_codes_2}"
 
         # Calculate model year
-        self.model_year = self.get_model_year()
+        self.model_year = self._decode_model_year()
 
         # Calculate production date
-        self.production_date_as_time = self.get_production_date()
+        self.production_date_as_time = self._decode_production_date()
 
         # Calculate destination country
         country_or_region = ''
@@ -543,8 +533,28 @@ class MplateDecoder:
 
     def __init__(self, mplate=None):
         self.mplate = mplate
+    
+    def get_exteriorcolor_code(self, paint_and_interior=None):
 
-    def get_model_year(self, chassis_number=None):
+        SPECIAL_PAINTJOB_ID = '5'
+
+        if paint_and_interior:
+            paint_and_interior = paint_and_interior
+        elif self.mplate:
+            paint_and_interior = self.mplate.paint_and_interior
+        else:
+            raise ValidationError(
+                'MplateDecoder requires'
+                ' an mplate or paint_and_interior')
+
+        if paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
+            exteriorcolor_code = paint_and_interior[-3:]
+        else:
+            exteriorcolor_code = paint_and_interior[:4]
+
+        return exteriorcolor_code
+
+    def decode_model_year(self, chassis_number=None):
 
         if chassis_number:
             chassis_number = chassis_number
@@ -579,7 +589,7 @@ class MplateDecoder:
 
         return model_year.year
 
-    def get_production_date(
+    def decode_production_date(
             self, chassis_number=None,
             encoded_production_date=None):
 
@@ -596,7 +606,7 @@ class MplateDecoder:
 
         # Model year starts in August
         MODEL_YEAR_START_MONTH = 8
-        model_year = self.get_model_year(chassis_number)
+        model_year = self.decode_model_year(chassis_number)
         production_date = None
 
         # Model year is 68-69
@@ -679,8 +689,8 @@ class MplateDecoder:
 
         return production_date
 
-    def get_mcodes(self, m_codes_1=None, m_codes_2=None,
-                   chassis_number_short=None):
+    def decode_mcodes(self, m_codes_1=None, m_codes_2=None,
+                      chassis_number_short=None):
 
         if m_codes_1 or m_codes_2:
             m_codes_1 = m_codes_1
@@ -700,7 +710,7 @@ class MplateDecoder:
             raise ValueError('MplateDecoder requires'
                              ' an mplate or chassis_number_short')
 
-        model_year = self.get_model_year(chassis_number_short)
+        model_year = self.decode_model_year(chassis_number_short)
 
         mcode_dict = {}
         m_codes = list(filter(None,

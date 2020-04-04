@@ -255,7 +255,7 @@ class MplateRetrieve(generic.DetailView):
             mplate.get_exteriorcolor_description()
         context['engine_description'] = mplate.get_engine()
         context['gearbox_description'] = mplate.get_gearbox()
-        context['m_codes'] = decoder.get_mcodes()
+        context['m_codes'] = decoder.decode_mcodes()
         context['emden'] = mplate.emden
 
         return context

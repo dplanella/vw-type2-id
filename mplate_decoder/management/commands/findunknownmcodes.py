@@ -12,7 +12,7 @@ class Command(BaseCommand):
         for mplate in Mplate.objects.all():
             decoder = MplateDecoder(mplate)
 
-            mcodes = decoder.get_mcodes()
+            mcodes = decoder.decode_mcodes()
 
             for mcode, description in mcodes.items():
                 if 'Unknown' in description or 'Undefined' in description:
