@@ -26,34 +26,44 @@ class Mplate(Model):
     _MODEL_YEAR_SERIAL_NR_SPLIT_AT = -6
 
     chassis_number_short = models.CharField(
+        "Shortened chassis number",
         max_length=8, unique=True,
         help_text=("Chassis number shortened, with the two leading digits "
                    "removed."))
     m_codes_1 = models.CharField(
+        "M-codes, row 1",
         max_length=19, blank=True,
         help_text='Row 1 of M codes (max 5)')
     m_codes_2 = models.CharField(
+        "M-codes, row 2",
         max_length=19, blank=True,
         help_text="Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)")
     paint_and_interior = models.CharField(
+        "Paint and interior",
         max_length=6,
         help_text='Combined VW body/roof paint and interior codes')
     production_date = models.CharField(
+        "Production date",
         max_length=3,
-        help_text='Production date')
+        help_text='Production date code')
     production_planned = models.CharField(
+        "Production planning",
         max_length=4, blank=True,
-        help_text='Code used for production planning')
+        help_text='Production planning code')
     export_destination = models.CharField(
+        "Export destination",
         max_length=3, blank=True,
-        help_text='Destination code')
+        help_text='Export destination code')
     model = models.CharField(
+        "Model",
         max_length=4,
-        help_text='Vehicle model')
+        help_text='Vehicle model code')
     aggregate_code = models.CharField(
+        "Agggregate",
         max_length=2,
-        help_text='Engine and gearbox codes')
+        help_text='Engine and gearbox aggregate code')
     emden = models.CharField(
+        "Emden",
         max_length=1, blank=True,
         help_text='Optional "E" for Emden')
     created_at = models.DateTimeField(
@@ -66,7 +76,8 @@ class Mplate(Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
         editable=False,
         blank=True, null=True, default=None)
-    editor_remarks = models.TextField(blank=True)
+    editor_remarks = models.TextField(
+        blank=True)
 
     # Computed (decoded) fields
     m_codes = models.CharField(
