@@ -77,10 +77,6 @@ class MplateCreateForm(ModelForm):
                 "Check first digit."
             )
 
-        logger.debug(
-            "Model year validation: {} ({})".format(
-                model_year, type(model_year)))
-
         # 4. Check for correct range
         if model_year not in range(1968, 1980):
             raise ValidationError(
