@@ -43,7 +43,7 @@ class MplateAdmin(admin.ModelAdmin):
                    )
     list_display = ('chassis_number_short',
                     'm_codes',
-                    'paint_and_interior',
+                    'paint_and_interior_code',
                     'export_destination',
                     'destination_country',
                     'model',

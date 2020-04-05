@@ -18,7 +18,7 @@ class MplateCreateForm(ModelForm):
             'chassis_number_short',
             'm_codes_1',
             'm_codes_2',
-            'paint_and_interior',
+            'paint_and_interior_code',
             'production_date',
             'production_planned',
             'export_destination',
@@ -159,9 +159,9 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_paint_and_interior(self):
+    def clean_paint_and_interior_code(self):
         PAINT_AND_INTERIOR_LEN = 6
-        data = self.cleaned_data['paint_and_interior']
+        data = self.cleaned_data['paint_and_interior_code']
 
         data = data.upper()
 

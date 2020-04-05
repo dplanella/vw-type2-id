@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 class Mplate(Model):
     class Meta:
         ordering = ['-id']
-    
+
     _MODEL_YEAR_SERIAL_NR_SPLIT_AT = -6
 
     chassis_number_short = models.CharField(
@@ -38,7 +38,7 @@ class Mplate(Model):
         "M-codes, row 2",
         max_length=19, blank=True,
         help_text="Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)")
-    paint_and_interior = models.CharField(
+    paint_and_interior_code = models.CharField(
         "Paint and interior",
         max_length=6,
         help_text='Combined VW body/roof paint and interior codes')
@@ -300,7 +300,7 @@ class Mplate(Model):
                     plate_code=exteriorcolor_code).first()
 
         if exteriorcolor_code == SPECIAL_PAINTJOB_CODE_LEN:
-            exteriorcolor_code = self.paint_and_interior
+            exteriorcolor_code = self.paint_and_interior_code
 
         return exteriorcolor_object
 
@@ -375,6 +375,7 @@ class Mplate(Model):
                 # Get the color chip
                 color_chip_body = color_body.chip
             except ObjectDoesNotExist:
+                logger.warning('Body color chip does not exist')
                 color_chip_body = ""
 
             try:
@@ -385,6 +386,7 @@ class Mplate(Model):
                 # Get the color chip
                 color_chip_roof = color_roof.chip
             except ObjectDoesNotExist:
+                logger.warning('Body color chip does not exist')
                 color_chip_roof = ""
 
         return (color_chip_body, color_chip_roof)
@@ -393,8 +395,8 @@ class Mplate(Model):
         SPECIAL_PAINTJOB_ID = '5'
         model_year = 0
 
-        if not self.paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
-            interiorcolor_code = self.paint_and_interior[-2:]
+        if not self.paint_and_interior_code.startswith(SPECIAL_PAINTJOB_ID):
+            interiorcolor_code = self.paint_and_interior_code[-2:]
 
             try:
                 interiorcolor = InteriorColor.objects.get(
@@ -477,7 +479,7 @@ class Mplate(Model):
             'chassis_number_short',
             'm_codes_1',
             'm_codes_2',
-            'paint_and_interior',
+            'paint_and_interior_code',
             'production_date',
             'production_planned',
             'export_destination',
@@ -554,23 +556,27 @@ class MplateDecoder:
     def __init__(self, mplate=None):
         self.mplate = mplate
 
-    def get_exteriorcolor_code(self, paint_and_interior=None):
+    def get_exteriorcolor_code(self, paint_and_interior_code=None):
 
         SPECIAL_PAINTJOB_ID = '5'
 
-        if paint_and_interior:
-            paint_and_interior = paint_and_interior
+        if paint_and_interior_code:
+            paint_and_interior_code = paint_and_interior_code
+            logger.debug(
+                f'Passed paint and interior code: {paint_and_interior_code}')
         elif self.mplate:
-            paint_and_interior = self.mplate.paint_and_interior
+            paint_and_interior_code = self.mplate.paint_and_interior_code
+            logger.debug(
+                f'M-plate paint and interior code: {paint_and_interior_code}')
         else:
             raise ValidationError(
                 'MplateDecoder requires'
-                ' an mplate or paint_and_interior')
+                ' an mplate or paint_and_interior_code')
 
-        if paint_and_interior.startswith(SPECIAL_PAINTJOB_ID):
-            exteriorcolor_code = paint_and_interior[-3:]
+        if paint_and_interior_code.startswith(SPECIAL_PAINTJOB_ID):
+            exteriorcolor_code = paint_and_interior_code[-3:]
         else:
-            exteriorcolor_code = paint_and_interior[:4]
+            exteriorcolor_code = paint_and_interior_code[:4]
 
         return exteriorcolor_code
 

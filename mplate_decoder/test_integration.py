@@ -58,7 +58,7 @@ class ExampleTestCase(LiveServerTestCase):
         m_codes_2_input.send_keys('408 095 504 507')
 
         paint_and_interior_input = self.selenium.find_element_by_name(
-            "paint_and_interior")
+            "paint_and_interior_code")
         paint_and_interior_input.send_keys('383851')
 
         production_date_input = self.selenium.find_element_by_name(
