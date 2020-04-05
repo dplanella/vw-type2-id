@@ -100,10 +100,15 @@ class ExteriorColorAdmin(admin.ModelAdmin):
         'lacquer_code_roof',
         'remarks',
     )
+    list_filter = (
+        'sonderlackierung',
+    )
     list_display = (
         'plate_code',
         'lacquer_code_body',
         'lacquer_code_roof',
+        'lacquer_code_body_link',
+        'lacquer_code_roof_link',
         'years',
         'sonderlackierung',
         'remarks',

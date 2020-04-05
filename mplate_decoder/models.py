@@ -860,20 +860,6 @@ class InteriorColor(Model):
     editor_remarks = models.TextField(blank=True)
 
 
-class ExteriorColor(Model):
-    plate_code = models.CharField(
-            max_length=4)
-    lacquer_code_body = models.CharField(
-            max_length=20)
-    lacquer_code_roof = models.CharField(
-            max_length=20, blank=True)
-    years = models.CharField(
-            max_length=65, blank=True)
-    sonderlackierung = models.BooleanField()
-    remarks = models.TextField(blank=True)
-    editor_remarks = models.TextField(blank=True)
-
-
 class Color(Model):
     lacquer_code = models.CharField(
             max_length=30)
@@ -883,6 +869,36 @@ class Color(Model):
             max_length=30, blank=True)
     chip = models.CharField(
             max_length=36, blank=True)
+    editor_remarks = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"{self.lacquer_code}, {self.color_name}"
+
+
+class ExteriorColor(Model):
+    plate_code = models.CharField(
+            max_length=4)
+    lacquer_code_body = models.CharField(
+            max_length=20)
+    lacquer_code_roof = models.CharField(
+            max_length=20, blank=True)
+    lacquer_code_body_link = models.ForeignKey(
+        Color,
+        on_delete=models.CASCADE,
+        related_name='lacquer_code_body',
+        null=True,
+    )
+    lacquer_code_roof_link = models.ForeignKey(
+        Color,
+        on_delete=models.CASCADE,
+        related_name='lacquer_code_roof',
+        blank=True,
+        null=True,
+    )
+    years = models.CharField(
+            max_length=65, blank=True)
+    sonderlackierung = models.BooleanField()
+    remarks = models.TextField(blank=True)
     editor_remarks = models.TextField(blank=True)
 
 
