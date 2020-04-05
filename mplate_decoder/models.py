@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
 class Mplate(Model):
     class Meta:
         ordering = ['-id']
+    
+    _MODEL_YEAR_SERIAL_NR_SPLIT_AT = -6
 
     chassis_number_short = models.CharField(
         max_length=8, unique=True,
@@ -53,8 +55,7 @@ class Mplate(Model):
         help_text='Engine and gearbox codes')
     emden = models.CharField(
         max_length=1, blank=True,
-        help_text='''Optional "E" for
-            Emden''')
+        help_text='Optional "E" for Emden')
     created_at = models.DateTimeField(
         auto_now_add=True, blank=True,
         null=True)
@@ -89,7 +90,20 @@ class Mplate(Model):
         return reverse(
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
-    
+
+    @property
+    def serial_production_number(self):
+        splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
+        serial_number = int(self.chassis_number[splitat:])
+
+        return serial_number
+
+    @property
+    def chassis_number(self):
+        type_body = self.model[:2]
+
+        return type_body + self.chassis_number_short
+
     def _get_decoder(self):
         return MplateDecoder(self)
 
@@ -102,18 +116,7 @@ class Mplate(Model):
     def _get_exteriorcolor_code(self):
         return self._get_decoder().get_exteriorcolor_code()
 
-    def get_serial_production_number(self):
-        splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
-        serial_number = int(self.chassis_number[splitat:])
-
-        return serial_number
-
-    def get_chassis_number(self):
-        type_body = self.model[:2]
-
-        return type_body + self.chassis_number_short
-
-    def get_export_destination_object(self):
+    def _get_export_destination_object(self):
         '''
         Return the ExportDestination object corresponding to the M-plate's
         export code. Return None if code is not in the database.
@@ -122,23 +125,27 @@ class Mplate(Model):
             destination = ExportDestination.objects.get(
                 export_code=self.export_destination)
         except ObjectDoesNotExist:
+            logger.warning(
+                f'Unknown export destination code: {self.export_destination},'
+                f' M-plate: {self.chassis_number_short}')
             destination = None
 
         return destination
 
-    def get_export_destination(self):
+    def _get_export_destination(self):
         '''
         Return a description of the export destination for display purposes.
         The destination may include a purpose or a location (e.g. dealer, city)
         but otherwise will not contain any other geographical information.
         '''
         export_code = self.export_destination
-        export_destination = self.get_export_destination_object()
 
         # If the export destination code was submitted
         if export_code:
+            export_destination = self._get_export_destination_object()
+
             if export_destination:
-                destination_description = f"{export_destination.destination}"
+                destination_description = export_destination.destination
                 # Destinations in Germany have a 3-digit export code. If it
                 # is a German destination, show the city as well.
                 if len(export_code) == 3 and export_destination.city:
@@ -152,30 +159,30 @@ class Mplate(Model):
 
         return destination_description
 
-    def get_export_destination_geo(self):
+    def _get_export_destination_country(self):
         '''
         Return a description of the export country or region for display
         purposes.
         The destination may include a country, region and port/city of entry.
         '''
-        export_code = self.export_destination
-        export_destination = self.get_export_destination_object()
+        export_destination_code = self.export_destination
 
-        if export_code:
+        if export_destination_code:
+            export_destination = self._get_export_destination_object()
+
             if export_destination:
                 if export_destination.country:
-                    destination_geo_description = \
-                        f"{export_destination.country}"
+                    destination_geo_description = export_destination.country
                 elif (export_destination.region and
                       not export_destination.country):
-                    destination_geo_description = \
-                        f"{export_destination.region}"
+                    destination_geo_description = export_destination.region
                 else:
                     destination_geo_description = "Undefined country or region"
+
                 # Destinations in Germany have a 3-digit export code. If it
                 # not is a German destination, show the rest of geographical
                 # info.
-                if len(export_code) < 3:
+                if len(export_destination_code) < 3:
                     if (export_destination.region and
                             export_destination.country):
                         destination_geo_description += \
@@ -188,7 +195,8 @@ class Mplate(Model):
                             f" via {export_destination.city}"
             else:
                 # The export code is not on the database
-                destination_geo_description = f"Unknown ({export_code})"
+                destination_geo_description = \
+                    f"Unknown ({export_destination_code})"
         else:
             # The export code hasn't been specified on M-plate form submission
             destination_geo_description = "Not specified"
@@ -424,6 +432,7 @@ class Mplate(Model):
 
         except ObjectDoesNotExist:
             engine_description = "Unavailable engine description"
+            logger.error(engine_description)
 
         return engine_description
 
@@ -505,7 +514,7 @@ class Mplate(Model):
 
         # Calculate destination country
         country_or_region = ''
-        export_dest = self.get_export_destination_object()
+        export_dest = self._get_export_destination_object()
 
         if export_dest and (export_dest.country or export_dest.region):
             country_or_region = export_dest.country or export_dest.region
@@ -533,7 +542,7 @@ class MplateDecoder:
 
     def __init__(self, mplate=None):
         self.mplate = mplate
-    
+
     def get_exteriorcolor_code(self, paint_and_interior=None):
 
         SPECIAL_PAINTJOB_ID = '5'
