@@ -59,7 +59,7 @@ class Mplate(Model):
         max_length=4,
         help_text='Vehicle model code')
     aggregate_code = models.CharField(
-        "Agggregate",
+        "Aggregate",
         max_length=2,
         help_text='Engine and gearbox aggregate code')
     emden = models.CharField(
