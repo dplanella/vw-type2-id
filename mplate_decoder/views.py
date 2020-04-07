@@ -6,6 +6,7 @@ from .models import (
     Mcode,
     McodeCollection,
     VwType2Model,
+    ExteriorColor,
 )
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
@@ -18,6 +19,7 @@ from django.core.exceptions import (
 from collections import Counter
 import logging
 from lxml import etree
+from datetime import datetime, timedelta
 
 
 logger = logging.getLogger(__name__)
@@ -397,13 +399,17 @@ class MetricsView(generic.TemplateView):
         years_data = []
         colors_labels = []
         colors_data = []
+        colors_backgroundcolor = []
         countries_labels = []
         countries_data = []
+        submissions_labels = []
+        submissions_data = []
 
         context = super().get_context_data(**kwargs)
 
         mplates_all = Mplate.objects.all()
 
+        # Collect model data
         models = [mplate.model for mplate in mplates_all]
         models_most_common = Counter(models).most_common(10)
 
@@ -411,24 +417,43 @@ class MetricsView(generic.TemplateView):
             models_labels.append(model[0])
             models_data.append(model[1])
 
+        # Collect years data
         years = [mplate.model_year for mplate in mplates_all]
         years_most_common = Counter(years).most_common()
         for year in years_most_common:
             years_labels.append(year[0])
             years_data.append(year[1])
 
-        colors = [mplate.paint_and_interior for mplate in mplates_all]
+        # Collect colors data
+        colors = [mplate.paint_and_interior_code for mplate in mplates_all]
         colors_exterior = []
+        color_description = ''
+        color_code = ''
+        exteriorcolor_object = None
         for color in colors:
             if color.startswith('5'):
-                colors_exterior.append(color[3:])
+                color_code = color[3:]
             else:
-                colors_exterior.append(color[:4])
-        colors_most_common = Counter(colors_exterior).most_common(10)
+                color_code = color[:4]
+            colors_exterior.append(color_code)
+        colors_most_common = Counter(colors_exterior).most_common(15)
+        logger.info(colors_most_common)
         for color in colors_most_common:
-            colors_labels.append(color[0])
+            try:
+                exteriorcolor_object = \
+                    ExteriorColor.objects.filter(
+                        plate_code=color[0])[0]
+                color_description = \
+                    exteriorcolor_object.lacquer_code_body_link.color_name
+                color_chip = \
+                    exteriorcolor_object.lacquer_code_body_link.chip
+            except IndexError:
+                break
+            colors_labels.append(f'{color_description} ({color[0]})')
             colors_data.append(color[1])
+            colors_backgroundcolor.append(color_chip)
 
+        # Collect countries data
         countries = [mplate.destination_country for mplate in mplates_all]
         countries_most_common = Counter(countries).most_common(10)
         for country in countries_most_common:
@@ -438,13 +463,30 @@ class MetricsView(generic.TemplateView):
                 countries_labels.append('Unknown')
             countries_data.append(country[1])
 
+        end_date = datetime.today()
+        start_date = end_date - timedelta(days=30)
+
+        # Collect submissions data
+        monthly_submissions = Mplate.objects.filter(
+            created_at__range=(start_date, end_date))
+        days = [mplate.created_at.date().isoformat()
+                for mplate in monthly_submissions]
+        days_submissions = sorted(Counter(days).items())
+
+        for day in days_submissions:
+            submissions_labels.append(day[0])
+            submissions_data.append(day[1])
+
         context['modelsLabels'] = models_labels
         context['modelsData'] = models_data
         context['yearsLabels'] = years_labels
         context['yearsData'] = years_data
         context['colorsLabels'] = colors_labels
         context['colorsData'] = colors_data
+        context['colorsBackgroundColor'] = colors_backgroundcolor
         context['countriesLabels'] = countries_labels
         context['countriesData'] = countries_data
+        context['submissionsLabels'] = submissions_labels
+        context['submissionsData'] = submissions_data
 
         return context

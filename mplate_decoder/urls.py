@@ -24,7 +24,7 @@ urlpatterns = [
      path('search/', views.SearchResultsView.as_view(),
           name='search_results'),
      path('metrics/', views.MetricsView.as_view(),
-          name='metrics'),
+          name='mplate_metrics'),
 ]
 
 SITE_NAME = "VW Type 2 ID"
