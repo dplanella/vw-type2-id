@@ -3,7 +3,7 @@ from django.urls import reverse
 import re
 from django.utils.text import slugify
 from .models import (
-    Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
+    Mplate, Engine, Gearbox, MplateDecoder,
 )
 
 import logging
@@ -22,7 +22,7 @@ class MplateCreateForm(ModelForm):
             'production_date',
             'production_planned',
             'export_destination',
-            'model',
+            'model_code',
             'aggregate_code',
             'emden',
         )
@@ -208,10 +208,10 @@ class MplateCreateForm(ModelForm):
                     "Invalid production date format. Please double check.")
 
             try:
-                production_data_decoded = decoder.decode_production_date(
+                production_date_decoded = decoder.decode_production_date(
                     chassis_number=chassis_number_short,
                     encoded_production_date=data)
-                if not production_data_decoded:
+                if not production_date_decoded:
                     raise ValidationError(
                         f"Invalid production date. Please double check.")
             except ValueError as exc:

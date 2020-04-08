@@ -2,7 +2,7 @@ import re
 import os
 import logging
 from datetime import date, datetime
-from django.db.models import Model
+from django.db.models import Model, Q
 from django.db import models
 from django.urls import reverse
 from django.forms import ValidationError
@@ -23,7 +23,7 @@ class Mplate(Model):
     class Meta:
         ordering = ['-id']
 
-    _MODEL_YEAR_SERIAL_NR_SPLIT_AT = -6
+    _decoder = None
 
     chassis_number_short = models.CharField(
         "Shortened chassis number",
@@ -54,8 +54,8 @@ class Mplate(Model):
         "Export destination",
         max_length=3, blank=True,
         help_text='Export destination code')
-    model = models.CharField(
-        "Model",
+    model_code = models.CharField(
+        "Vehicle model",
         max_length=4,
         help_text='Vehicle model code')
     aggregate_code = models.CharField(
@@ -91,41 +91,68 @@ class Mplate(Model):
         help_text='Model year')
     destination_country = models.CharField(
         max_length=30, blank=True,
-        help_text='''Country of destination''')
+        help_text="Country of destination")
 
     def __unicode__(self):
         return self.chassis_number_short
 
     def get_absolute_url(self):
-        # Required for the admin's "View on site" feature to work
+        '''
+        Return the Mplate objects canonical URL. Required for the admin's
+        "View on site" feature to work:
+        https://docs.djangoproject.com/en/2.2/ref/models/instances/#get-absolute-url
+        '''
         return reverse(
             'mplate_decoder:mplate_retrieve',
             kwargs={'chassis_number_short': self.chassis_number_short})
 
     @property
+    def decoder(self):
+        '''
+        Return the object used to decode all the various M-plate codes
+        '''
+        if not self._decoder:
+            decoder = MplateDecoder(self)
+        else:
+            decoder = self._decoder
+
+        return decoder
+
+    @property
     def serial_production_number(self):
-        splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
+        '''
+        Return the bus' 6-digit serial production number
+        '''
+        _MODEL_YEAR_SERIAL_NR_SPLIT_AT = -6
+        splitat = _MODEL_YEAR_SERIAL_NR_SPLIT_AT
         serial_number = int(self.chassis_number[splitat:])
 
         return serial_number
 
     @property
     def chassis_number(self):
-        type_body = self.model[:2]
+        '''
+        Return the bus' full chassis (VIN) number
+        '''
+        type_body = self.model_code[:2]
 
         return type_body + self.chassis_number_short
 
-    def _get_decoder(self):
-        return MplateDecoder(self)
+    @property
+    def model(self):
+        return self.decoder.decode_model()
+
+    def get_model_description(self):
+        return self.decoder.get_model_description()
 
     def _decode_model_year(self):
-        return self._get_decoder().decode_model_year()
+        return self.decoder.decode_model_year()
 
     def _decode_production_date(self):
-        return self._get_decoder().decode_production_date()
+        return self.decoder.decode_production_date()
 
     def _get_exteriorcolor_code(self):
-        return self._get_decoder().get_exteriorcolor_code()
+        return self.decoder.get_exteriorcolor_code()
 
     def _get_export_destination_object(self):
         '''
@@ -213,60 +240,6 @@ class Mplate(Model):
             destination_geo_description = "Not specified"
 
         return destination_geo_description
-
-    def get_model(self):
-        model_code = self.model[:2]
-        configuration_code = self.model[2]
-        extras_code = self.model[3]
-        model_code_catalog = self.model[:3]
-        model_year = self.model_year
-        model_description_dict = {}
-
-        try:
-            model = Type2Model.objects.get(
-                model=model_code
-            )
-            model_description = model.description
-        except ObjectDoesNotExist:
-            model_description = "Model description unavailable"
-
-        try:
-            configuration = Type2ModelConfiguration.objects.get(
-                model=model_code, configuration=configuration_code
-            )
-            configuration_description = configuration.description
-        except ObjectDoesNotExist:
-            configuration_description = "Configuration description unavailable"
-
-        try:
-            # Most of the configurations are single objects, and
-            # not all of them have a year model defined
-            extras = Type2ModelExtra.objects.get(
-                model=model_code, extras=extras_code,
-            )
-            extras_description = extras.description
-        except ObjectDoesNotExist:
-            extras_description = "Extras description unavailable"
-        except MultipleObjectsReturned:
-            extras = Type2ModelExtra.objects.filter(
-                model=model_code, extras=extras_code,
-                years__contains=model_year,
-            )
-            if extras:
-                extras_description = extras.first().description
-            else:
-                extras_description = (
-                    "No model extras found for model"
-                    " {}, extras code {}, year {}".format(
-                        model_code, extras_code, model_year))
-
-        model_description_dict['model_description'] = model_description
-        model_description_dict['model_code_catalog'] = model_code_catalog
-        model_description_dict['configuration_description'] = \
-            configuration_description
-        model_description_dict['extras_description'] = extras_description
-
-        return model_description_dict
 
     def _get_exteriorcolorobject(self):
 
@@ -483,7 +456,7 @@ class Mplate(Model):
             'production_date',
             'production_planned',
             'export_destination',
-            'model',
+            'model_code',
             'aggregate_code',
             'emden',
         )
@@ -579,6 +552,124 @@ class MplateDecoder:
             exteriorcolor_code = paint_and_interior_code[:4]
 
         return exteriorcolor_code
+
+    def decode_model(self, model_code=None, model_year=None, m_codes=None):
+        special_sales_m_codes = ['736', '723', 'D61', 'D63', 'D64', 'W51']
+        # - Wild Westerner is 736, year 1973
+        #   - Model 2211
+        #   - Model 2215
+        # - Champaigne ed. I is 723 (D09), year 1977 (seven-seater)
+        #   - Model 2218
+        # - Champaigne ed. II is 765 (D61, D63, D64), year 1978
+        #   (seven-seater or Campmobile)
+        #   - Model 2218 (D61)
+        #   - Model 2319 (D63)
+        # - Silverfish is 766 (W51), years 1978-1979 (nine-seater)
+        #   - Model 2210
+        t2_model = None
+
+        if model_code:
+            model_code = model_code
+        elif self.mplate:
+            model_code = self.mplate.model_code
+        else:
+            raise ValueError('MplateDecoder requires'
+                             ' an mplate or model code')
+
+        model = int(model_code[:2])
+        configuration = int(model_code[2])
+        extras = int(model_code[3])
+
+        if model_year:
+            model_year = model_year
+        elif self.mplate:
+            model_year = self.mplate.model_year
+        else:
+            raise ValueError('MplateDecoder requires'
+                             ' an mplate or model year')
+        if m_codes:
+            m_codes = m_codes
+        elif self.mplate:
+            m_codes = self.mplate.m_codes.split()
+        else:
+            raise ValueError('MplateDecoder requires'
+                             ' an mplate or M codes')
+
+        logger.debug(
+            f'Getting model {model}{configuration}{extras}, '
+            f'model year {model_year}, M-codes: {m_codes}')
+
+        model_query = Q(model=model) \
+            & Q(configuration=configuration) \
+            & Q(extras=extras) \
+            & Q(years__icontains=model_year)
+
+        try:
+            t2_model = VwType2Model.objects.get(model_query)
+            logger.debug(
+                f'Model {t2_model.model}, years {t2_model.years}, '
+                f'M-codes: {t2_model.m_codes}')
+        except ObjectDoesNotExist:
+            logger.error(
+                f'Does not exist: Model {model_code}, years {model_year}, '
+                f'M-codes: {m_codes}')
+        except MultipleObjectsReturned:
+            logger.debug(
+                f'Multiple objects: Model {model_code}, years {model_year}, '
+                f'M-codes: {m_codes}')
+
+            m_codes_query = Q()
+
+            if any(x in m_codes for x in special_sales_m_codes):
+                # If the M-plate contains any special sales M-codes
+                # use all special sales M-codes in the query
+                logger.debug("Special sales M-code")
+                for m_code in special_sales_m_codes:
+                    m_codes_query |= Q(m_codes__icontains=m_code)
+                model_query &= m_codes_query
+            else:
+                # If the M-plate does not contain any special sales M-codes
+                # use all of the M-plate's M-codes in the query
+                logger.debug("Not special sales M-code")
+                for m_code in m_codes:
+                    m_codes_query |= Q(m_codes__icontains=m_code)
+                model_query &= m_codes_query
+
+            try:
+                t2_model = VwType2Model.objects.get(model_query)
+                logger.debug(
+                    f'Model {t2_model.model}, years {t2_model.years}, '
+                    f'M-codes: {t2_model.m_codes}')
+            except ObjectDoesNotExist:
+                logger.error(
+                    'Does not exist: '
+                    f'Model {model_code}, years {model_year}, '
+                    f'M-codes: {m_codes}')
+            except MultipleObjectsReturned:
+                logger.error(
+                    'Multiple objects: '
+                    f'Model {model_code}, years {model_year}, '
+                    f'M-codes: {m_codes}')
+
+        return t2_model
+
+    def get_model_description(self):
+        model_description_dict = {}
+
+        t2_model = self.decode_model()
+        model_code_catalog = \
+            f'{t2_model.model}{t2_model.configuration}'
+
+        model_description_dict['model_description'] = \
+            t2_model.model_description
+        model_description_dict['model_code_catalog'] = \
+            model_code_catalog
+        model_description_dict['configuration_description'] = \
+            t2_model.configuration_description
+        model_description_dict['extras_description'] = \
+            t2_model.extras_description
+
+        return model_description_dict
 
     def decode_model_year(self, chassis_number=None):
 
@@ -814,36 +905,6 @@ class ExportDestination(Model):
     port = models.CharField(max_length=50, blank=True)
     notes = models.CharField(max_length=50, blank=True)
     editor_remarks = models.TextField(blank=True)
-
-
-class Type2Model(Model):
-    model = models.PositiveSmallIntegerField()
-    description = models.CharField(
-        max_length=35,
-        help_text=("Model description"))
-    schematic = models.TextField(blank=True)
-
-
-class Type2ModelConfiguration(Model):
-    model = models.PositiveSmallIntegerField()
-    configuration = models.PositiveSmallIntegerField()
-    description = models.TextField()
-
-
-class Type2ModelExtra(Model):
-    model = models.PositiveSmallIntegerField()
-    extras = models.PositiveSmallIntegerField()
-    description = models.TextField()
-    m_codes = models.CharField(
-        max_length=50,
-        help_text=("List of M-codes for the corresponding extras"),
-        blank=True)
-    chassis_plate = models.CharField(
-        max_length=20,
-        help_text=("Model description as it appears on the chassis plate"),
-        blank=True)
-    years = models.CharField(
-            max_length=65, blank=True)
 
 
 class InteriorColor(Model):

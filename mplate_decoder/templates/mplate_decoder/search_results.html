@@ -52,16 +52,8 @@
             <h5 class="my-1 text-info no-anchor">
               {{ mplate.chassis_number_short }}
               <span class="badge badge-secondary badge-pill">{{ mplate.model_year }}</span>
-              {% if 'Kombi' in mplate.model.model_description %}
-                {% if not 'Standard version' in mplate.model.extras_description%}
-              <span class="badge badge-secondary badge-pill">{{ mplate.model.extras_description }}</span>
-                {% else %}
               <span class="badge badge-secondary badge-pill">{{ mplate.model.model_description }}</span>
-                {% endif %}
-              {% else %}
-              <span class="badge badge-secondary badge-pill">{{ mplate.model.model_description }}</span>
-              <!-- <span class="badge badge-secondary badge-pill">{{ mplate.model.extras_description }}</span> -->
-              {% endif %}
+              <span class="badge badge-secondary badge-pill">{{ mplate.model.extras_description }}</span>              
               <span class="badge badge-secondary badge-pill">{{ mplate.destination_country }}</span>
             </h5>
             <span>{{ mplate.m_codes }}</span>

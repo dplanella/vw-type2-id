@@ -5,17 +5,12 @@ from .models import (
     MplateDecoder,
     Mcode,
     McodeCollection,
-    VwType2Model,
     ExteriorColor,
 )
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.exceptions import (
-    ObjectDoesNotExist,
-    MultipleObjectsReturned,
-)
 from collections import Counter
 import logging
 from lxml import etree
@@ -105,24 +100,6 @@ class MplateRetrieve(generic.DetailView):
     def get_schematic(self, mplate):
 
         schematic = None
-        model = int(mplate.model[:2])
-        configuration = int(mplate.model[2])
-        extras = int(mplate.model[3])
-        special_sales_m_codes = ['736', '723', 'D61', 'D63', 'D64', 'W51']
-        # - Wild Westerner is 736, year 1973
-        #   - Model 2211
-        #   - Model 2215
-        # - Champaigne ed. I is 723 (D09), year 1977 (seven-seater)
-        #   - Model 2218
-        # - Champaigne ed. II is 765 (D61, D63, D64), year 1978
-        #   (seven-seater or Campmobile)
-        #   - Model 2218 (D61)
-        #   - Model 2319 (D63)
-        # - Silverfish is 766 (W51), years 1978-1979 (nine-seater)
-        #   - Model 2210
-        model_code = mplate.model
-        model_year = mplate.model_year
-        m_codes = mplate.m_codes.split()
         t2_model = None
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         BUS_ROOF_COLOR_ID = 'roof-color'
@@ -130,63 +107,7 @@ class MplateRetrieve(generic.DetailView):
         BUS_ROOF_COLOR_DEFAULT = '#ffffff'
         BUS_BODY_COLOR_DEFAULT = '#ffffff'
 
-        logger.debug(
-            f'Getting schematic for model {model}{configuration}{extras}, '
-            f'model year {model_year}, M-codes: {m_codes}')
-
-        model_query = Q(model=model) \
-            & Q(configuration=configuration) \
-            & Q(extras=extras) \
-            & Q(years__icontains=model_year)
-
-        try:
-            t2_model = VwType2Model.objects.get(model_query)
-            logger.debug(
-                f'Model {t2_model.model}, years {t2_model.years}, '
-                f'M-codes: {t2_model.m_codes}')
-            schematic = t2_model.schematic_vector
-        except ObjectDoesNotExist:
-            logger.error(
-                f'Does not exist: Model {model_code}, years {model_year}, '
-                f'M-codes: {m_codes}')
-        except MultipleObjectsReturned:
-            logger.debug(
-                f'Multiple objects: Model {model_code}, years {model_year}, '
-                f'M-codes: {m_codes}')
-
-            m_codes_query = Q()
-
-            if any(x in m_codes for x in special_sales_m_codes):
-                # If the M-plate contains any special sales M-codes
-                # use all special sales M-codes in the query
-                logger.debug("Special sales M-code")
-                for m_code in special_sales_m_codes:
-                    m_codes_query |= Q(m_codes__icontains=m_code)
-                model_query &= m_codes_query
-            else:
-                # If the M-plate does not contain any special sales M-codes
-                # use all of the M-plate's M-codes in the query
-                logger.debug("Not special sales M-code")
-                for m_code in m_codes:
-                    m_codes_query |= Q(m_codes__icontains=m_code)
-                model_query &= m_codes_query
-
-            try:
-                t2_model = VwType2Model.objects.get(model_query)
-                logger.debug(
-                    f'Model {t2_model.model}, years {t2_model.years}, '
-                    f'M-codes: {t2_model.m_codes}')
-                schematic = t2_model.schematic_vector
-            except ObjectDoesNotExist:
-                logger.error(
-                    'Does not exist: '
-                    f'Model {model_code}, years {model_year}, '
-                    f'M-codes: {m_codes}')
-            except MultipleObjectsReturned:
-                logger.error(
-                    'Multiple objects: '
-                    f'Model {model_code}, years {model_year}, '
-                    f'M-codes: {m_codes}')
+        t2_model = mplate.model
 
         if t2_model:
             schematic = t2_model.schematic_vector
@@ -252,7 +173,7 @@ class MplateRetrieve(generic.DetailView):
         context['export_destination'] = mplate._get_export_destination()
         context['export_destination_country'] = \
             mplate._get_export_destination_country()
-        context['model_description'] = mplate.get_model()
+        context['model_description'] = mplate.get_model_description()
         context['interiorcolor_description'] = mplate.get_interiorcolor()
         context['exteriorcolor_description'] = \
             mplate.get_exteriorcolor_description()
@@ -344,7 +265,7 @@ class SearchResultsView(generic.ListView):
         # Enrich the mplate data with the model descriptions dictionary
         for mplate in results:
             try:
-                mplate.model = mplate.get_model()
+                mplate.model = mplate.model
             except ValueError:
                 logger.error(
                     'Could not get model descriptions for M-plate '

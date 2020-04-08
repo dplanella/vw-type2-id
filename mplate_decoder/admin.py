@@ -1,8 +1,7 @@
 from django.contrib import admin
 
 from .models import (
-    Mplate, ExportDestination, Type2Model,
-    Type2ModelConfiguration, Type2ModelExtra,
+    Mplate, ExportDestination,
     InteriorColor, ExteriorColor, Color,
     Engine, Gearbox, Mcode, McodeCollection,
     VwType2Model,
@@ -10,27 +9,6 @@ from .models import (
 
 admin.site.register(Engine)
 admin.site.register(Gearbox)
-
-
-@admin.register(Type2ModelExtra)
-class Type2ModelExtraAdmin(admin.ModelAdmin):
-    search_fields = ('model', 'extras')
-    list_display = ('model', 'extras', 'description', 'years')
-
-
-@admin.register(Type2ModelConfiguration)
-class Type2ModelConfigurationAdmin(admin.ModelAdmin):
-    search_fields = ('model', 'configuration', 'description')
-    list_display = ('model', 'configuration', 'description')
-
-
-@admin.register(Type2Model)
-class Type2ModelAdmin(admin.ModelAdmin):
-    search_fields = ('model', )
-    list_display = (
-        'model',
-        'description',
-    )
 
 
 @admin.register(Mplate)

@@ -18,7 +18,7 @@ class MplateDecodeTestCase(TestCase):
             production_date='382',
             production_planned='7494',
             export_destination='UT',
-            model='2319',
+            model_code='2319',
             aggregate_code='61',
             emden='',
         )
@@ -31,7 +31,7 @@ class MplateDecodeTestCase(TestCase):
             production_date='105',
             production_planned='7490',
             export_destination='056',
-            model='2319',
+            model_code='2319',
             aggregate_code='31',
             emden='',
         )
@@ -44,7 +44,7 @@ class MplateDecodeTestCase(TestCase):
             production_date='072',
             production_planned='',
             export_destination='PG',
-            model='2650',
+            model_code='2650',
             aggregate_code='11',
             emden='',
         )

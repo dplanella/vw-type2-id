@@ -18,9 +18,6 @@ class ExampleTestCase(LiveServerTestCase):
     fixtures = [
         'tst_mplate_gearbox.json',
         'tst_mplate_engine.json',
-        'tst_mplate_type2model',
-        'tst_mplate_type2modelconfiguration',
-        'tst_mplate_type2modelextra',
         'tst_mplate_vwtype2model',
     ]
 
@@ -69,7 +66,7 @@ class ExampleTestCase(LiveServerTestCase):
             "export_destination")
         export_destination_input.send_keys('PG')
 
-        model_input = self.selenium.find_element_by_name("model")
+        model_input = self.selenium.find_element_by_name("model_code")
         model_input.send_keys('2650')
 
         aggregate_code_input = self.selenium.find_element_by_name(
