@@ -63,7 +63,7 @@ class ExampleTestCase(LiveServerTestCase):
         production_date_input.send_keys('172')
 
         export_destination_input = self.selenium.find_element_by_name(
-            "export_destination")
+            "export_destination_code")
         export_destination_input.send_keys('PG')
 
         model_input = self.selenium.find_element_by_name("model_code")

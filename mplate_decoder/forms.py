@@ -3,7 +3,11 @@ from django.urls import reverse
 import re
 from django.utils.text import slugify
 from .models import (
-    Mplate, Engine, Gearbox, MplateDecoder,
+    Mplate,
+    Engine,
+    Gearbox,
+    MplateDecoder,
+    VwType2Model,
 )
 
 import logging
@@ -21,7 +25,7 @@ class MplateCreateForm(ModelForm):
             'paint_and_interior_code',
             'production_date',
             'production_planned',
-            'export_destination',
+            'export_destination_code',
             'model_code',
             'aggregate_code',
             'emden',
@@ -236,9 +240,9 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_export_destination(self):
+    def clean_export_destination_code(self):
         EXPORT_DESTINATION_LEN = 2
-        data = self.cleaned_data['export_destination']
+        data = self.cleaned_data['export_destination_code']
 
         if data:
             data = data.upper()
@@ -248,15 +252,14 @@ class MplateCreateForm(ModelForm):
             if len(data) < EXPORT_DESTINATION_LEN:
                 raise ValidationError(
                     "Minimum destination country length:"
-                    " {} letters or digits".format(
-                        EXPORT_DESTINATION_LEN)
+                    f" {EXPORT_DESTINATION_LEN} letters or digits"
                 )
 
         return data
 
-    def clean_model(self):
+    def clean_model_code(self):
         MODEL_LEN = 4
-        data = self.cleaned_data['model']
+        data = self.cleaned_data['model_code']
 
         if len(data.strip()) < MODEL_LEN:
             raise ValidationError(
@@ -264,8 +267,8 @@ class MplateCreateForm(ModelForm):
                     MODEL_LEN)
             )
 
-        VALID_MODELS = Type2Model.objects.values_list('model', flat=True)
-        VALID_MODELS = list(map(int, VALID_MODELS))
+        VALID_MODELS = VwType2Model.objects.values_list('model', flat=True)
+        VALID_MODELS = list(set(map(int, VALID_MODELS)))
 
         logger.debug('Valid models: {}'.format(VALID_MODELS))
 

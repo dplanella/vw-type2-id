@@ -50,7 +50,7 @@ class Mplate(Model):
         "Production planning",
         max_length=4, blank=True,
         help_text='Production planning code')
-    export_destination = models.CharField(
+    export_destination_code = models.CharField(
         "Export destination",
         max_length=3, blank=True,
         help_text='Export destination code')
@@ -140,10 +140,34 @@ class Mplate(Model):
 
     @property
     def model(self):
+        '''
+        Decoded vehicle model object
+        '''
         return self.decoder.decode_model()
 
-    def get_model_description(self):
-        return self.decoder.get_model_description()
+    @property
+    def exteriorcolor_code(self):
+        return self.decoder.get_exteriorcolor_code()
+
+    @property
+    def export_destination(self):
+        '''
+        Return the ExportDestination object corresponding to the M-plate's
+        export code. Return None if code is not in the database.
+        '''
+        try:
+            destination = ExportDestination.objects.get(
+                export_code=self.export_destination_code)
+        except ObjectDoesNotExist:
+            logger.warning(
+                f'Unknown export destination code: {self.export_destination_code},'
+                f' M-plate: {self.chassis_number_short}')
+            destination = None
+
+        return destination
+
+    def describe_model(self):
+        return self.decoder.describe_model()
 
     def _decode_model_year(self):
         return self.decoder.decode_model_year()
@@ -151,36 +175,17 @@ class Mplate(Model):
     def _decode_production_date(self):
         return self.decoder.decode_production_date()
 
-    def _get_exteriorcolor_code(self):
-        return self.decoder.get_exteriorcolor_code()
-
-    def _get_export_destination_object(self):
-        '''
-        Return the ExportDestination object corresponding to the M-plate's
-        export code. Return None if code is not in the database.
-        '''
-        try:
-            destination = ExportDestination.objects.get(
-                export_code=self.export_destination)
-        except ObjectDoesNotExist:
-            logger.warning(
-                f'Unknown export destination code: {self.export_destination},'
-                f' M-plate: {self.chassis_number_short}')
-            destination = None
-
-        return destination
-
     def _get_export_destination(self):
         '''
         Return a description of the export destination for display purposes.
         The destination may include a purpose or a location (e.g. dealer, city)
         but otherwise will not contain any other geographical information.
         '''
-        export_code = self.export_destination
+        export_code = self.export_destination_code
 
         # If the export destination code was submitted
         if export_code:
-            export_destination = self._get_export_destination_object()
+            export_destination = self.export_destination
 
             if export_destination:
                 destination_description = export_destination.destination
@@ -203,10 +208,10 @@ class Mplate(Model):
         purposes.
         The destination may include a country, region and port/city of entry.
         '''
-        export_destination_code = self.export_destination
+        export_destination_code = self.export_destination_code
 
         if export_destination_code:
-            export_destination = self._get_export_destination_object()
+            export_destination = self.export_destination
 
             if export_destination:
                 if export_destination.country:
@@ -241,13 +246,13 @@ class Mplate(Model):
 
         return destination_geo_description
 
-    def _get_exteriorcolorobject(self):
+    def _decode_exteriorcolor(self):
 
         SPECIAL_PAINTJOB_CODE_LEN = 3
         exteriorcolor_object = None
         model_year = 0
 
-        exteriorcolor_code = self._get_exteriorcolor_code()
+        exteriorcolor_code = self.exteriorcolor_code
 
         try:
             # Get the exterior color object from the M-plate
@@ -277,12 +282,12 @@ class Mplate(Model):
 
         return exteriorcolor_object
 
-    def get_exteriorcolor_description(self):
+    def describe_exteriorcolor(self):
         color_name_roof = ""
         remarks = ""
 
-        exteriorcolor_code = self._get_exteriorcolor_code()
-        exteriorcolor = self._get_exteriorcolorobject()
+        exteriorcolor_code = self.exteriorcolor_code
+        exteriorcolor = self._decode_exteriorcolor()
 
         if not exteriorcolor:
             exteriorcolor_description = \
@@ -337,7 +342,7 @@ class Mplate(Model):
 
         # Get the exterior color object from the M-plate
         # code
-        exteriorcolor = self._get_exteriorcolorobject()
+        exteriorcolor = self._decode_exteriorcolor()
 
         if exteriorcolor:
             try:
@@ -455,7 +460,7 @@ class Mplate(Model):
             'paint_and_interior_code',
             'production_date',
             'production_planned',
-            'export_destination',
+            'export_destination_code',
             'model_code',
             'aggregate_code',
             'emden',
@@ -500,7 +505,7 @@ class Mplate(Model):
 
         # Calculate destination country
         country_or_region = ''
-        export_dest = self._get_export_destination_object()
+        export_dest = self.export_destination
 
         if export_dest and (export_dest.country or export_dest.region):
             country_or_region = export_dest.country or export_dest.region
@@ -529,22 +534,42 @@ class MplateDecoder:
     def __init__(self, mplate=None):
         self.mplate = mplate
 
-    def get_exteriorcolor_code(self, paint_and_interior_code=None):
-
-        SPECIAL_PAINTJOB_ID = '5'
-
-        if paint_and_interior_code:
-            paint_and_interior_code = paint_and_interior_code
+    def _get_value_or_mplate(self, attribute_name, value=None):
+        if value:
+            value = value
             logger.debug(
-                f'Passed paint and interior code: {paint_and_interior_code}')
+                f'Passed {attribute_name}: {value}')
         elif self.mplate:
-            paint_and_interior_code = self.mplate.paint_and_interior_code
+            value = getattr(self.mplate, attribute_name)
             logger.debug(
-                f'M-plate paint and interior code: {paint_and_interior_code}')
+                f'M-plate {attribute_name}: {value}')
         else:
             raise ValidationError(
                 'MplateDecoder requires'
-                ' an mplate or paint_and_interior_code')
+                f' an mplate or {attribute_name}')
+
+        return value
+
+    def get_exteriorcolor_code(self, paint_and_interior_code=None):
+        '''
+        Extracts the exterior color code from the paint and interior code.
+        Depending on the model year and the special paintjob ID, the
+        resulting code will be either a 3-digit or 4-digit one.
+
+        - From 1968-71: regular codes are 4 digits. Special paint jobs
+          start with '5' and are 3 digits.
+        - From 1972-79: all codes are 4-digit ones. Special paint jobs
+          start with '9'.
+        '''
+
+        # 1968-71 special paint job marker. It also indicates that it
+        # is a 3-digit code
+        SPECIAL_PAINTJOB_ID = '5'
+
+        paint_and_interior_code = self._get_value_or_mplate(
+            f'{paint_and_interior_code=}'.split('=')[0],
+            paint_and_interior_code
+        )
 
         if paint_and_interior_code.startswith(SPECIAL_PAINTJOB_ID):
             exteriorcolor_code = paint_and_interior_code[-3:]
@@ -653,7 +678,7 @@ class MplateDecoder:
 
         return t2_model
 
-    def get_model_description(self):
+    def describe_model(self):
         model_description_dict = {}
 
         t2_model = self.decode_model()
@@ -671,16 +696,12 @@ class MplateDecoder:
 
         return model_description_dict
 
-    def decode_model_year(self, chassis_number=None):
+    def decode_model_year(self, chassis_number_short=None):
 
-        if chassis_number:
-            chassis_number = chassis_number
-        elif self.mplate:
-            chassis_number = self.mplate.chassis_number_short
-        else:
-            raise ValidationError(
-                'MplateDecoder requires'
-                ' an mplate or chassis_number')
+        chassis_number_short = self._get_value_or_mplate(
+            f'{chassis_number_short=}'.split('=')[0],
+            chassis_number_short
+        )
 
         MODEL_6869_YEAR_CODE_LEN = 1
         MODEL_7079_YEAR_CODE_LEN = 2
@@ -688,17 +709,19 @@ class MplateDecoder:
         model_year_decade = 0
 
         splitat = self._MODEL_YEAR_SERIAL_NR_SPLIT_AT
-        model_year_code = chassis_number[:splitat]
-        model_year_delta = int(chassis_number[0])
+        model_year_code = chassis_number_short[:splitat]
+        model_year_delta = int(chassis_number_short[0])
 
         if len(model_year_code) == MODEL_6869_YEAR_CODE_LEN:
             model_year_decade = 1
         elif len(model_year_code) == MODEL_7079_YEAR_CODE_LEN:
-            model_year_decade = int(chassis_number[1])
+            model_year_decade = int(chassis_number_short[1])
         else:
             raise ValidationError(
-                "Invalid model year"
-                " code length: {}".format(len(model_year_code)))
+                "Invalid model year "
+                f"code length: {len(model_year_code)}, "
+                f"code {model_year_code}, "
+                f"chassis no. {chassis_number_short}")
 
         model_year = MODEL_YEAR_START.replace(
             year=MODEL_YEAR_START.year + ((10 * model_year_decade) +

@@ -11,7 +11,7 @@ class Command(BaseCommand):
         country_submissions_count = 0
 
         for mplate in Mplate.objects.all():
-            export_dest = mplate._get_export_destination_object()
+            export_dest = mplate.export_destination
 
             if export_dest and (export_dest.country or export_dest.region):
 

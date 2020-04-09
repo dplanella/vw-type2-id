@@ -173,10 +173,10 @@ class MplateRetrieve(generic.DetailView):
         context['export_destination'] = mplate._get_export_destination()
         context['export_destination_country'] = \
             mplate._get_export_destination_country()
-        context['model_description'] = mplate.get_model_description()
+        context['model_description'] = mplate.describe_model()
         context['interiorcolor_description'] = mplate.get_interiorcolor()
         context['exteriorcolor_description'] = \
-            mplate.get_exteriorcolor_description()
+            mplate.describe_exteriorcolor()
         context['engine_description'] = mplate.get_engine()
         context['gearbox_description'] = mplate.get_gearbox()
         context['m_codes'] = decoder.decode_mcodes()
