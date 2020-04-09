@@ -1,5 +1,6 @@
 .vscode
 .coverage
+.env
 *.sqlite3*
 mplate_decoder/fixtures/mplate_*
 __pycache__/*
