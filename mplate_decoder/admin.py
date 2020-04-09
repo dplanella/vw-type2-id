@@ -13,27 +13,36 @@ admin.site.register(Gearbox)
 
 @admin.register(Mplate)
 class MplateAdmin(admin.ModelAdmin):
-    search_fields = ('chassis_number_short',
-                     'm_codes',
-                     )
-    list_filter = ('emden',
-                   'model_year',
-                   )
-    list_display = ('chassis_number_short',
-                    'm_codes',
-                    'paint_and_interior_code',
-                    'export_destination_code',
-                    'destination_country',
-                    'model',
-                    'aggregate_code',
-                    'emden',
-                    'model_year',
-                    'production_date_as_time',
-                    'owner',
-                    'created_at'
-                    )
-    readonly_fields = ('owner', 'created_at', 'updated_at')
-    list_display_links = ('chassis_number_short', )
+    search_fields = (
+        'chassis_number_short',
+        'm_codes',
+    )
+    list_filter = (
+        'emden',
+        'model_year',
+    )
+    list_display = (
+        'chassis_number_short',
+        'm_codes',
+        'paint_and_interior_code',
+        'export_destination_code',
+        'destination_country',
+        'model_code',
+        'aggregate_code',
+        'emden',
+        'model_year',
+        'production_date_as_time',
+        'owner',
+        'created_at'
+    )
+    readonly_fields = (
+        'owner',
+        'created_at',
+        'updated_at'
+    )
+    list_display_links = (
+        'chassis_number_short',
+    )
     view_on_site = True
 
     def save_model(self, request, obj, form, change):
@@ -57,9 +66,10 @@ class McodeCollectionAdmin(admin.ModelAdmin):
 
 @admin.register(InteriorColor)
 class InteriorColorAdmin(admin.ModelAdmin):
-    search_fields = ('plate_code',
-                     'color_name',
-                     )
+    search_fields = (
+        'plate_code',
+        'color_name',
+    )
     list_display = (
         'plate_code',
         'color_name',
@@ -95,10 +105,15 @@ class ExteriorColorAdmin(admin.ModelAdmin):
 
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):
-    search_fields = ('lacquer_code', 'color_name')
-    list_display = ('lacquer_code',
-                    'color_name',
-                    'chip')
+    search_fields = (
+        'lacquer_code',
+        'color_name',
+    )
+    list_display = (
+        'lacquer_code',
+        'color_name',
+        'chip'
+    )
 
 
 @admin.register(Mcode)
