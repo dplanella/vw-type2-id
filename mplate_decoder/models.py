@@ -739,7 +739,7 @@ class MplateDecoder:
             encoded_production_date = encoded_production_date
         elif self.mplate:
             chassis_number = self.mplate.chassis_number_short
-            encoded_production_date = self.mplate.production_date
+            encoded_production_date = self.mplate.production_date_code
         else:
             raise ValidationError(
                 'MplateDecoder requires either'
