@@ -32,7 +32,7 @@ class SimpleTest(TestCase):
 
         self._test_view('/mplate/search/')
 
-    def test_mplate_metrics(self):
-        """M-plate about view is rendered"""
+    # def test_mplate_metrics(self):
+    #     """M-plate about view is rendered"""
 
-        self._test_view('/mplate/metrics/')
+    #     self._test_view('/mplate/metrics/')
