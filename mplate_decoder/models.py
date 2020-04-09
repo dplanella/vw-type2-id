@@ -160,8 +160,9 @@ class Mplate(Model):
                 export_code=self.export_destination_code)
         except ObjectDoesNotExist:
             logger.warning(
-                f'Unknown export destination code: {self.export_destination_code},'
-                f' M-plate: {self.chassis_number_short}')
+                f'Unknown export destination code: '
+                f'{self.export_destination_code}, '
+                f'M-plate: {self.chassis_number_short}')
             destination = None
 
         return destination
