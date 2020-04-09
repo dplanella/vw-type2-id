@@ -170,118 +170,20 @@ class Mplate(Model):
     def describe_model(self):
         return self.decoder.describe_model()
 
+    def describe_export_destination(self):
+        return self.decoder.describe_export_destination()
+
+    def describe_export_destination_country(self, with_port=True):
+        return self.decoder.describe_export_destination(with_port)
+
     def _decode_model_year(self):
         return self.decoder.decode_model_year()
 
     def _decode_production_date(self):
         return self.decoder.decode_production_date()
 
-    def _get_export_destination(self):
-        '''
-        Return a description of the export destination for display purposes.
-        The destination may include a purpose or a location (e.g. dealer, city)
-        but otherwise will not contain any other geographical information.
-        '''
-        export_code = self.export_destination_code
-
-        # If the export destination code was submitted
-        if export_code:
-            export_destination = self.export_destination
-
-            if export_destination:
-                destination_description = export_destination.destination
-                # Destinations in Germany have a 3-digit export code. If it
-                # is a German destination, show the city as well.
-                if len(export_code) == 3 and export_destination.city:
-                    destination_description += f", {export_destination.city}"
-            else:
-                # The export code is not on the database
-                destination_description = f"Unknown ({export_code})"
-        else:
-            # The export code hasn't been specified on M-plate form submission
-            destination_description = "Not specified"
-
-        return destination_description
-
-    def _get_export_destination_country(self):
-        '''
-        Return a description of the export country or region for display
-        purposes.
-        The destination may include a country, region and port/city of entry.
-        '''
-        export_destination_code = self.export_destination_code
-
-        if export_destination_code:
-            export_destination = self.export_destination
-
-            if export_destination:
-                if export_destination.country:
-                    destination_geo_description = export_destination.country
-                elif (export_destination.region and
-                      not export_destination.country):
-                    destination_geo_description = export_destination.region
-                else:
-                    destination_geo_description = "Undefined country or region"
-
-                # Destinations in Germany have a 3-digit export code. If it
-                # not is a German destination, show the rest of geographical
-                # info.
-                if len(export_destination_code) < 3:
-                    if (export_destination.region and
-                            export_destination.country):
-                        destination_geo_description += \
-                            f", {export_destination.region}"
-                    if export_destination.port:
-                        destination_geo_description += \
-                            f" via {export_destination.port}"
-                    elif export_destination.city:
-                        destination_geo_description += \
-                            f" via {export_destination.city}"
-            else:
-                # The export code is not on the database
-                destination_geo_description = \
-                    f"Unknown ({export_destination_code})"
-        else:
-            # The export code hasn't been specified on M-plate form submission
-            destination_geo_description = "Not specified"
-
-        return destination_geo_description
-
     def _decode_exteriorcolor(self):
-
-        SPECIAL_PAINTJOB_CODE_LEN = 3
-        exteriorcolor_object = None
-        model_year = 0
-
-        exteriorcolor_code = self.exteriorcolor_code
-
-        try:
-            # Get the exterior color object from the M-plate
-            # code
-            exteriorcolor = ExteriorColor.objects.get(
-                plate_code=exteriorcolor_code
-            )
-            exteriorcolor_object = exteriorcolor
-        except ObjectDoesNotExist:
-            exteriorcolor_object = None
-        except MultipleObjectsReturned:
-            model_year = self.model_year
-            exteriorcolor = ExteriorColor.objects.filter(
-                plate_code=exteriorcolor_code,
-                years__contains=model_year,
-            )
-            if exteriorcolor:
-                exteriorcolor_object = exteriorcolor[0]
-            else:
-                # If there is no match by model year,
-                # simply return the first result
-                exteriorcolor_object = ExteriorColor.objects.filter(
-                    plate_code=exteriorcolor_code).first()
-
-        if exteriorcolor_code == SPECIAL_PAINTJOB_CODE_LEN:
-            exteriorcolor_code = self.paint_and_interior_code
-
-        return exteriorcolor_object
+        return self.decoder.decode_exteriorcolor()
 
     def describe_exteriorcolor(self):
         color_name_roof = ""
@@ -370,7 +272,7 @@ class Mplate(Model):
 
         return (color_chip_body, color_chip_roof)
 
-    def get_interiorcolor(self):
+    def describe_interiorcolor(self):
         SPECIAL_PAINTJOB_ID = '5'
         model_year = 0
 
@@ -505,14 +407,10 @@ class Mplate(Model):
         self.production_date_as_time = self._decode_production_date()
 
         # Calculate destination country
-        country_or_region = ''
-        export_dest = self.export_destination
+        self.destination_country = \
+            self.describe_export_destination_country(with_port=False)
 
-        if export_dest and (export_dest.country or export_dest.region):
-            country_or_region = export_dest.country or export_dest.region
-
-        self.destination_country = country_or_region
-
+        # Calculate owner
         # Get currently logged in user
         user = get_current_user()
         if user and not user.pk:
@@ -918,6 +816,119 @@ class MplateDecoder:
             mcode_dict[f"{mcode_prepend} {m_code}"] = description
 
         return mcode_dict
+
+    def describe_export_destination(self, export_code=None):
+        '''
+        Return a description of the export destination for display purposes.
+        The destination may include a purpose or a location (e.g. dealer, city)
+        but otherwise will not contain any other geographical information.
+        '''
+
+        export_code = self._get_value_or_mplate(
+            f'{export_code=}'.split('=')[0],
+            export_code
+        )
+
+        # If the export destination code was submitted
+        if export_code:
+            export_destination = self.export_destination
+
+            if export_destination:
+                destination_description = export_destination.destination
+            else:
+                # The export code is not on the database
+                destination_description = f"Unknown ({export_code})"
+        else:
+            # The export code hasn't been specified on M-plate form submission
+            destination_description = "Not specified"
+
+        return destination_description
+
+    def describe_export_destination_country(self, export_destination_code=None, with_port=True):
+        '''
+        Return a description of the export country or region for display
+        purposes.
+        The destination may include a country, region and port/city of entry.
+        '''
+
+        export_destination_code = self._get_value_or_mplate(
+            f'{export_destination_code=}'.split('=')[0],
+            export_destination_code
+        )
+
+        if export_destination_code:
+            export_destination = self.export_destination
+
+            if export_destination:
+                if export_destination.country:
+                    destination_country_description = \
+                        export_destination.country
+                elif (export_destination.region and
+                      not export_destination.country):
+                    destination_country_description = export_destination.region
+                else:
+                    destination_country_description = \
+                        "Undefined country or region"
+
+                if with_port:
+                    if (export_destination.region and
+                            export_destination.country):
+                        destination_country_description += \
+                            f", {export_destination.region}"
+                    if export_destination.port:
+                        destination_country_description += \
+                            f" via {export_destination.port}"
+                    elif export_destination.city:
+                        destination_country_description += \
+                            f" via {export_destination.city}"
+            else:
+                # The export code is not on the database
+                destination_country_description = \
+                    f"Unknown ({export_destination_code})"
+        else:
+            # The export code hasn't been specified on M-plate form submission
+            destination_country_description = "Not specified"
+
+        return destination_country_description
+
+    def decode_exteriorcolor(self, exteriorcolor_code=None):
+
+        SPECIAL_PAINTJOB_CODE_LEN = 3
+        exteriorcolor_object = None
+        model_year = 0
+
+        exteriorcolor_code = self._get_value_or_mplate(
+            f'{exteriorcolor_code=}'.split('=')[0],
+            exteriorcolor_code
+        )
+
+        try:
+            # Get the exterior color object from the M-plate
+            # code
+            exteriorcolor = ExteriorColor.objects.get(
+                plate_code=exteriorcolor_code
+            )
+            exteriorcolor_object = exteriorcolor
+        except ObjectDoesNotExist:
+            exteriorcolor_object = None
+        except MultipleObjectsReturned:
+            model_year = self.model_year
+            exteriorcolor = ExteriorColor.objects.filter(
+                plate_code=exteriorcolor_code,
+                years__contains=model_year,
+            )
+            if exteriorcolor:
+                exteriorcolor_object = exteriorcolor[0]
+            else:
+                # If there is no match by model year,
+                # simply return the first result
+                exteriorcolor_object = ExteriorColor.objects.filter(
+                    plate_code=exteriorcolor_code).first()
+
+        if exteriorcolor_code == SPECIAL_PAINTJOB_CODE_LEN:
+            exteriorcolor_code = self.paint_and_interior_code
+
+        return exteriorcolor_object
 
 
 class ExportDestination(Model):
