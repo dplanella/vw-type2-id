@@ -42,7 +42,7 @@ class Mplate(Model):
         "Paint and interior",
         max_length=6,
         help_text='Combined VW body/roof paint and interior codes')
-    production_date = models.CharField(
+    production_date_code = models.CharField(
         "Production date",
         max_length=3,
         help_text='Production date code')
@@ -459,7 +459,7 @@ class Mplate(Model):
             'm_codes_1',
             'm_codes_2',
             'paint_and_interior_code',
-            'production_date',
+            'production_date_code',
             'production_planned',
             'export_destination_code',
             'model_code',

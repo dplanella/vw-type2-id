@@ -23,7 +23,7 @@ class MplateCreateForm(ModelForm):
             'm_codes_1',
             'm_codes_2',
             'paint_and_interior_code',
-            'production_date',
+            'production_date_code',
             'production_planned',
             'export_destination_code',
             'model_code',
@@ -181,8 +181,8 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_production_date(self):
-        data = self.cleaned_data['production_date']
+    def clean_production_date_code(self):
+        data = self.cleaned_data['production_date_code']
         decoder = MplateDecoder()
 
         # Get the model year to check the date format

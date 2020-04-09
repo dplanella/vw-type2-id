@@ -59,7 +59,7 @@ class ExampleTestCase(LiveServerTestCase):
         paint_and_interior_input.send_keys('383851')
 
         production_date_input = self.selenium.find_element_by_name(
-            "production_date")
+            "production_date_code")
         production_date_input.send_keys('172')
 
         export_destination_input = self.selenium.find_element_by_name(

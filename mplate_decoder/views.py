@@ -335,7 +335,14 @@ class MetricsView(generic.TemplateView):
         models_most_common = Counter(models).most_common(10)
 
         for model in models_most_common:
-            models_labels.append(model[0])
+            logger.debug(model[0])
+            if model[0] is None:
+                continue
+            models_labels.append(
+                f'{model[0].model_description} '
+                f'{model[0].extras_description} '
+                f'({model[0].model}{model[0].configuration}{model[0].extras})'
+                )
             models_data.append(model[1])
 
         # Collect years data
@@ -369,7 +376,7 @@ class MetricsView(generic.TemplateView):
                 color_chip = \
                     exteriorcolor_object.lacquer_code_body_link.chip
             except IndexError:
-                break
+                continue
             colors_labels.append(f'{color_description} ({color[0]})')
             colors_data.append(color[1])
             colors_backgroundcolor.append(color_chip)
