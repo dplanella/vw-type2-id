@@ -15,6 +15,8 @@ from collections import Counter
 import logging
 from lxml import etree
 from datetime import datetime, timedelta
+import os
+from vw_type2_id.settings import BASE_DIR
 
 
 logger = logging.getLogger(__name__)
@@ -97,7 +99,57 @@ class MplateRetrieve(generic.DetailView):
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
 
-    def get_schematic(self, mplate):
+    def render_plate(self, mplate):
+        SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
+        model_year = int(mplate.model_year)
+        if model_year in [1968, 1969]:
+            svg_file = os.path.join(BASE_DIR, "mplate_decoder",
+                                    "images/mplate-6869-ref.svg")
+        else:
+            svg_file = os.path.join(BASE_DIR, "mplate_decoder",
+                                    "images/mplate-7079-ref.svg")
+        MPLATE_STOP_COLOR_ID = 'stopBusColor'
+        MPLATE_STOP_COLOR = '#a6a6a6'
+        fields = (
+            'chassis_number_short',
+            'm_codes_1',
+            'm_codes_2',
+            'paint_and_interior_code',
+            'production_date_code',
+            'production_planned',
+            'export_destination_code',
+            'model_code',
+            'aggregate_code',
+            'emden',
+        )
+
+        tree = etree.parse(svg_file)
+
+        # Replace each field name with a matching id on the SVG file, with
+        # its value
+        for field in fields:
+            mplate_field = tree.find(
+                "//n:text[@id='{}']/n:tspan".format(field),
+                namespaces={'n': SVG_NAMESPACE})
+            mplate_field.text = getattr(mplate, field)
+
+        color_chip_body, _ = mplate._get_exteriorcolorchip()
+
+        if color_chip_body:
+            # Replace gradient color
+            stop_color = tree.find(
+                "//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
+                namespaces={'n': SVG_NAMESPACE}
+            )
+
+            stop_color.attrib['style'] = stop_color.attrib['style'].replace(
+                MPLATE_STOP_COLOR, color_chip_body)
+
+        plate = etree.tostring(tree).decode('utf-8')
+
+        return plate
+
+    def render_schematic(self, mplate):
 
         schematic = None
         t2_model = None
@@ -165,8 +217,8 @@ class MplateRetrieve(generic.DetailView):
         mplate = super().get_object()
         decoder = MplateDecoder(mplate)
 
-        context['plate'] = mplate.render_plate()
-        context['schematic'] = self.get_schematic(mplate)
+        context['plate'] = self.render_plate(mplate)
+        context['schematic'] = self.render_schematic(mplate)
         context['chassis_number'] = mplate.chassis_number
         context['model_year'] = mplate.model_year
         context['production_date'] = mplate.production_date_as_time

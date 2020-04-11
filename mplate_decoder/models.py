@@ -1,5 +1,4 @@
 import re
-import os
 import logging
 from datetime import date, datetime
 from django.db.models import Model, Q
@@ -10,10 +9,8 @@ from django.core.exceptions import (
     ObjectDoesNotExist,
     MultipleObjectsReturned,
 )
-from lxml import etree
-from isoweek import Week
-from vw_type2_id.settings import BASE_DIR
 from django.conf import settings
+from isoweek import Week
 from crum import get_current_user
 
 logger = logging.getLogger(__name__)
@@ -151,21 +148,11 @@ class Mplate(Model):
 
     @property
     def export_destination(self):
-        '''
-        Return the ExportDestination object corresponding to the M-plate's
-        export code. Return None if code is not in the database.
-        '''
-        try:
-            destination = ExportDestination.objects.get(
-                export_code=self.export_destination_code)
-        except ObjectDoesNotExist:
-            logger.warning(
-                f'Unknown export destination code: '
-                f'{self.export_destination_code}, '
-                f'M-plate: {self.chassis_number_short}')
-            destination = None
+        return self.decoder.decode_export_destination()
 
-        return destination
+    @property
+    def exteriorcolor(self):
+        return self.decoder.decode_exteriorcolor()
 
     def describe_model(self):
         return self.decoder.describe_model()
@@ -174,69 +161,18 @@ class Mplate(Model):
         return self.decoder.describe_export_destination()
 
     def describe_export_destination_country(self, with_port=True):
-        return self.decoder.describe_export_destination(with_port)
+        return self.decoder.describe_export_destination_country(with_port)
+
+    def describe_exteriorcolor(self):
+        return self.decoder.describe_exteriorcolor()
 
     def _decode_model_year(self):
+        '''Used to compute property before saving'''
         return self.decoder.decode_model_year()
 
     def _decode_production_date(self):
+        '''Used to compute property before saving'''
         return self.decoder.decode_production_date()
-
-    def _decode_exteriorcolor(self):
-        return self.decoder.decode_exteriorcolor()
-
-    def describe_exteriorcolor(self):
-        color_name_roof = ""
-        remarks = ""
-
-        exteriorcolor_code = self.exteriorcolor_code
-        exteriorcolor = self._decode_exteriorcolor()
-
-        if not exteriorcolor:
-            exteriorcolor_description = \
-                "{}: Unknown exterior color code".format(
-                    exteriorcolor_code)
-            return exteriorcolor_description
-
-        try:
-            color_body = Color.objects.get(
-                lacquer_code=exteriorcolor.lacquer_code_body
-            )
-            color_name_body = color_body.color_name
-        except ObjectDoesNotExist:
-            color_name_body = "Unknown color ({})".format(
-                exteriorcolor.lacquer_code_body)
-
-        lacquer_code_roof = exteriorcolor.lacquer_code_roof
-        if lacquer_code_roof:
-            try:
-                color_roof = Color.objects.get(
-                    lacquer_code=exteriorcolor.lacquer_code_roof
-                )
-                color_name_roof = color_roof.color_name
-            except ObjectDoesNotExist:
-                color_name_roof = "Unknown color ({})".format(
-                    exteriorcolor.lacquer_code_roof)
-        else:
-            lacquer_code_roof = exteriorcolor.lacquer_code_body
-            color_name_roof = color_name_body
-
-        if exteriorcolor.remarks:
-            remarks = '\nRemarks: {}'.format(
-                exteriorcolor.remarks)
-
-        exteriorcolor_description = '''Body: {} ({})
-            Roof: {} ({})'''.format(
-                color_name_body,
-                exteriorcolor.lacquer_code_body,
-                color_name_roof,
-                lacquer_code_roof,
-            )
-
-        if remarks:
-            exteriorcolor_description += '\n' + remarks
-
-        return exteriorcolor_description
 
     def _get_exteriorcolorchip(self):
 
@@ -245,7 +181,7 @@ class Mplate(Model):
 
         # Get the exterior color object from the M-plate
         # code
-        exteriorcolor = self._decode_exteriorcolor()
+        exteriorcolor = self.exteriorcolor
 
         if exteriorcolor:
             try:
@@ -344,56 +280,6 @@ class Mplate(Model):
             gearbox_description = "Unavailable transmission description"
 
         return gearbox_description
-
-    def render_plate(self):
-        SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
-        model_year = int(self.model_year)
-        if model_year in [1968, 1969]:
-            svg_file = os.path.join(BASE_DIR, "mplate_decoder",
-                                    "images/mplate-6869-ref.svg")
-        else:
-            svg_file = os.path.join(BASE_DIR, "mplate_decoder",
-                                    "images/mplate-7079-ref.svg")
-        MPLATE_STOP_COLOR_ID = 'stopBusColor'
-        MPLATE_STOP_COLOR = '#a6a6a6'
-        fields = (
-            'chassis_number_short',
-            'm_codes_1',
-            'm_codes_2',
-            'paint_and_interior_code',
-            'production_date_code',
-            'production_planned',
-            'export_destination_code',
-            'model_code',
-            'aggregate_code',
-            'emden',
-        )
-
-        tree = etree.parse(svg_file)
-
-        # Replace each field name with a matching id on the SVG file, with
-        # its value
-        for field in fields:
-            mplate_field = tree.find(
-                "//n:text[@id='{}']/n:tspan".format(field),
-                namespaces={'n': SVG_NAMESPACE})
-            mplate_field.text = getattr(self, field)
-
-        color_chip_body, _ = self._get_exteriorcolorchip()
-
-        if color_chip_body:
-            # Replace gradient color
-            stop_color = tree.find(
-                "//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
-                namespaces={'n': SVG_NAMESPACE}
-            )
-
-            stop_color.attrib['style'] = stop_color.attrib['style'].replace(
-                MPLATE_STOP_COLOR, color_chip_body)
-
-        plate = etree.tostring(tree).decode('utf-8')
-
-        return plate
 
     def save(self, *args, **kwargs):
 
@@ -771,7 +657,7 @@ class MplateDecoder:
 
         # Retrieve the M-code description
         for m_code in m_codes_expanded:
-            mcode_prepend = 'M '
+            mcode_prepend = 'M'
             m_code_query_set = None
 
             try:
@@ -798,7 +684,7 @@ class MplateDecoder:
             if m_code_query_set:
                 description = m_code_query_set.description
                 if m_code_query_set.is_special_code:
-                    mcode_prepend = 'S '
+                    mcode_prepend = 'S'
             else:
                 # There is no m-code on the database to read
                 # or there has been an error. Have a guess at
@@ -807,7 +693,7 @@ class MplateDecoder:
                 if m_code.startswith('7'):
                     try:
                         if int(m_code) in range(700, 800):
-                            mcode_prepend = 'S '
+                            mcode_prepend = 'S'
                     except ValueError:
                         logger.warning(
                             f'Probably an invalid M-code: '
@@ -817,34 +703,60 @@ class MplateDecoder:
 
         return mcode_dict
 
-    def describe_export_destination(self, export_code=None):
+    def decode_export_destination(self, export_destination_code=None):
+        '''
+        Return the ExportDestination object corresponding to the M-plate's
+        export code. Return None if code is not in the database.
+        '''
+
+        export_destination_code = self._get_value_or_mplate(
+            f'{export_destination_code=}'.split('=')[0],
+            export_destination_code
+        )
+
+        try:
+            destination = ExportDestination.objects.get(
+                export_code=export_destination_code)
+        except ObjectDoesNotExist:
+            logger.warning(
+                f'Unknown export destination code: '
+                f'{export_destination_code}, ')
+            destination = None
+
+        return destination
+
+    def describe_export_destination(self, export_destination_code=None):
         '''
         Return a description of the export destination for display purposes.
         The destination may include a purpose or a location (e.g. dealer, city)
         but otherwise will not contain any other geographical information.
         '''
 
-        export_code = self._get_value_or_mplate(
-            f'{export_code=}'.split('=')[0],
-            export_code
+        export_destination_code = self._get_value_or_mplate(
+            f'{export_destination_code=}'.split('=')[0],
+            export_destination_code
         )
 
         # If the export destination code was submitted
-        if export_code:
-            export_destination = self.export_destination
+        if export_destination_code:
+            export_destination = self.decode_export_destination()
 
             if export_destination:
                 destination_description = export_destination.destination
             else:
                 # The export code is not on the database
-                destination_description = f"Unknown ({export_code})"
+                destination_description = \
+                    f"Unknown ({export_destination_code})"
         else:
             # The export code hasn't been specified on M-plate form submission
             destination_description = "Not specified"
 
+        logger.debug(f'Export destination desc.: {destination_description}')
+
         return destination_description
 
-    def describe_export_destination_country(self, export_destination_code=None, with_port=True):
+    def describe_export_destination_country(self, export_destination_code=None,
+                                            with_port=True):
         '''
         Return a description of the export country or region for display
         purposes.
@@ -857,7 +769,7 @@ class MplateDecoder:
         )
 
         if export_destination_code:
-            export_destination = self.export_destination
+            export_destination = self.decode_export_destination()
 
             if export_destination:
                 if export_destination.country:
@@ -888,10 +800,12 @@ class MplateDecoder:
         else:
             # The export code hasn't been specified on M-plate form submission
             destination_country_description = "Not specified"
+        
+        logger.debug(f'Export destination country desc.: {destination_country_description}')
 
         return destination_country_description
 
-    def decode_exteriorcolor(self, exteriorcolor_code=None):
+    def decode_exteriorcolor(self, model_year=None, exteriorcolor_code=None):
 
         SPECIAL_PAINTJOB_CODE_LEN = 3
         exteriorcolor_object = None
@@ -912,7 +826,10 @@ class MplateDecoder:
         except ObjectDoesNotExist:
             exteriorcolor_object = None
         except MultipleObjectsReturned:
-            model_year = self.model_year
+            model_year = self._get_value_or_mplate(
+                f'{model_year=}'.split('=')[0],
+                model_year
+            )
             exteriorcolor = ExteriorColor.objects.filter(
                 plate_code=exteriorcolor_code,
                 years__contains=model_year,
@@ -929,6 +846,63 @@ class MplateDecoder:
             exteriorcolor_code = self.paint_and_interior_code
 
         return exteriorcolor_object
+
+    def describe_exteriorcolor(self, model_year=None, exteriorcolor_code=None):
+        color_name_roof = ""
+        remarks = ""
+
+        exteriorcolor_code = self._get_value_or_mplate(
+            f'{exteriorcolor_code=}'.split('=')[0],
+            exteriorcolor_code
+        )
+        exteriorcolor = self.decode_exteriorcolor(model_year,
+                                                  exteriorcolor_code)
+
+        if not exteriorcolor:
+            exteriorcolor_description = \
+                "{}: Unknown exterior color code".format(
+                    exteriorcolor_code)
+            return exteriorcolor_description
+
+        try:
+            color_body = Color.objects.get(
+                lacquer_code=exteriorcolor.lacquer_code_body
+            )
+            color_name_body = color_body.color_name
+        except ObjectDoesNotExist:
+            color_name_body = "Unknown color ({})".format(
+                exteriorcolor.lacquer_code_body)
+
+        lacquer_code_roof = exteriorcolor.lacquer_code_roof
+        if lacquer_code_roof:
+            try:
+                color_roof = Color.objects.get(
+                    lacquer_code=exteriorcolor.lacquer_code_roof
+                )
+                color_name_roof = color_roof.color_name
+            except ObjectDoesNotExist:
+                color_name_roof = "Unknown color ({})".format(
+                    exteriorcolor.lacquer_code_roof)
+        else:
+            lacquer_code_roof = exteriorcolor.lacquer_code_body
+            color_name_roof = color_name_body
+
+        if exteriorcolor.remarks:
+            remarks = '\nRemarks: {}'.format(
+                exteriorcolor.remarks)
+
+        exteriorcolor_description = '''Body: {} ({})
+            Roof: {} ({})'''.format(
+                color_name_body,
+                exteriorcolor.lacquer_code_body,
+                color_name_roof,
+                lacquer_code_roof,
+            )
+
+        if remarks:
+            exteriorcolor_description += '\n' + remarks
+
+        return exteriorcolor_description
 
 
 class ExportDestination(Model):
