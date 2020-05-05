@@ -314,15 +314,6 @@ class SearchResultsView(generic.ListView):
             else:
                 results = Mplate.objects.all()
 
-        # Enrich the mplate data with the model descriptions dictionary
-        for mplate in results:
-            try:
-                mplate.model = mplate.model
-            except ValueError:
-                logger.error(
-                    'Could not get model descriptions for M-plate '
-                    f'{mplate.chassis_number_short}')
-
         return results
 
     def get_context_data(self, **kwargs):
