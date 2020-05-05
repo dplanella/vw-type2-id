@@ -802,8 +802,9 @@ class MplateDecoder:
         else:
             # The export code hasn't been specified on M-plate form submission
             destination_country_description = "Not specified"
-        
-        logger.debug(f'Export destination country desc.: {destination_country_description}')
+
+        logger.debug(f'Export destination country desc.:'
+                     f' {destination_country_description}')
 
         return destination_country_description
 
