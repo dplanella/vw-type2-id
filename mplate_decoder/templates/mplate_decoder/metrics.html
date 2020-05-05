@@ -4,6 +4,14 @@
 
 <div class="row">
   <div class="col">
+    <p class="lead mt-4">
+      Vehicle production data extracted from the M-plate decoder submissions
+    </p>
+  </div>
+</div>
+
+<div class="row my-4">
+  <div class="col">
     <h2 class='mt-4'>Top 10 models</h2>
     <canvas id="models-chart"></canvas> 
   </div>
@@ -13,9 +21,9 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row my-4">
   <div class="col">
-    <h2 class='mt-4'>Top 10 colors</h2>
+    <h2 class='mt-4'>Top 15 colors</h2>
     <canvas id="colors-chart"></canvas> 
   </div>
   <div class="col">
@@ -24,112 +32,152 @@
   </div>
 </div>
 
+<div class="row my-4">
+  <div class="col">
+    <h2 class='my-4'>Daily M-plate submissions</h2>
+    <canvas id="submissions-chart"></canvas> 
+  </div>
+</div>
+
 {% endblock %}
 
 {% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+        integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM="
         crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
 
-  <script>
+<script>
+  var timeFormat = 'YYYY-MM-DD';
 
-    var configModels = {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: {{ modelsData|safe }},
-          label: 'VW Type 2 models'
-        }],
-        labels: {{ modelsLabels|safe }}
+  var configSubmissions = {
+    type: 'line',
+    data: {
+      datasets: [{
+        data: {{ submissionsData|safe }},
+        label: 'M-plate submissions'
+      }],
+      labels: {{ submissionsLabels|safe }},
+    },
+    options: {
+      responsive: true,
+      legend: {
+        display: false,
       },
-      options: {
-        responsive: true,
-        circumference: Math.PI,
-        rotation: -Math.PI,
-        plugins: {
-            colorschemes: {
-                scheme: 'tableau.Tableau10'
-            }
-        }
-      }
-    };
-
-    var configYears = {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: {{ yearsData|safe }},
-          label: 'Model year'
+      scales: {
+        xAxes: [{
+          type: "time",
+          time: {
+            parser: timeFormat,
+            tooltipFormat: 'll'
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Date'
+          }
         }],
-        labels: {{ yearsLabels|safe }}
-      },
-      options: {
-        responsive: true,
-        plugins: {
-            colorschemes: {
-                scheme: 'brewer.Paired12'
-            }
-        }
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'M-plate submissions'
+          }
+        }]
       }
-    };
-
-    var configColors = {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: {{ colorsData|safe }},
-          label: 'Color'
-        }],
-        labels: {{ colorsLabels|safe }}
-      },
-      options: {
-        responsive: true,
-        circumference: Math.PI,
-        rotation: -Math.PI,
-        plugins: {
-            colorschemes: {
-                scheme: 'brewer.Paired12'
-            }
-        }
+    }
+  };
+  
+  var configModels = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: {{ modelsData|safe }},
+        label: 'VW Type 2 models'
+      }],
+      labels: {{ modelsLabels|safe }}
+    },
+    options: {
+      responsive: true,
+      circumference: Math.PI,
+      rotation: -Math.PI,
+      plugins: {
+          colorschemes: {
+              scheme: 'tableau.Tableau10'
+          }
       }
-    };
-
-    var configCountries = {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: {{ countriesData|safe }},
-          label: 'Countries'
-        }],
-        labels: {{ countriesLabels|safe }}
-      },
-      options: {
-        responsive: true,
-        circumference: Math.PI,
-        rotation: -Math.PI,
-        plugins: {
-            colorschemes: {
-                scheme: 'tableau.Winter10'
-            }
-        }
+    }
+  };
+  var configYears = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: {{ yearsData|safe }},
+        label: 'Model year'
+      }],
+      labels: {{ yearsLabels|safe }}
+    },
+    options: {
+      responsive: true,
+      plugins: {
+          colorschemes: {
+              scheme: 'brewer.Paired12'
+          }
       }
-    };
-
-    window.onload = function() {
-      var ctxModels = document.getElementById('models-chart').getContext('2d');
-      window.modelsPie = new Chart(ctxModels, configModels);
-
-      var ctxYears = document.getElementById('years-chart').getContext('2d');
-      window.yearsPie = new Chart(ctxYears, configYears);
-
-      var ctxColors = document.getElementById('colors-chart').getContext('2d');
-      window.colorsPie = new Chart(ctxColors, configColors);
-
-      var ctxCountries = document.getElementById('countries-chart').getContext('2d');
-      window.countriesPie = new Chart(ctxCountries, configCountries);
-    };
-
-  </script>
+    }
+  };
+  var configColors = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: {{ colorsData|safe }},
+        label: 'Color',
+        backgroundColor: {{ colorsBackgroundColor|safe }},
+      }],
+      labels: {{ colorsLabels|safe }}
+    },
+    options: {
+      responsive: true,
+      circumference: Math.PI,
+      rotation: -Math.PI,
+      plugins: {
+          colorschemes: {
+              scheme: 'brewer.Paired12'
+          }
+      }
+    }
+  };
+  var configCountries = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: {{ countriesData|safe }},
+        label: 'Countries'
+      }],
+      labels: {{ countriesLabels|safe }}
+    },
+    options: {
+      responsive: true,
+      circumference: Math.PI,
+      rotation: -Math.PI,
+      plugins: {
+          colorschemes: {
+              scheme: 'tableau.Winter10'
+          }
+      }
+    }
+  };
+  window.onload = function() {
+    var ctxSubmissions = document.getElementById('submissions-chart').getContext('2d');
+    window.submissionsTimeseries = new Chart(ctxSubmissions, configSubmissions);
+    var ctxModels = document.getElementById('models-chart').getContext('2d');
+    window.modelsPie = new Chart(ctxModels, configModels);
+    var ctxYears = document.getElementById('years-chart').getContext('2d');
+    window.yearsPie = new Chart(ctxYears, configYears);
+    var ctxColors = document.getElementById('colors-chart').getContext('2d');
+    window.colorsPie = new Chart(ctxColors, configColors);
+    var ctxCountries = document.getElementById('countries-chart').getContext('2d');
+    window.countriesPie = new Chart(ctxCountries, configCountries);
+  };
+</script>
 {% endblock %}

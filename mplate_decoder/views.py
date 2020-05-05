@@ -5,19 +5,18 @@ from .models import (
     MplateDecoder,
     Mcode,
     McodeCollection,
-    VwType2Model,
+    ExteriorColor,
 )
 from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.exceptions import (
-    ObjectDoesNotExist,
-    MultipleObjectsReturned,
-)
 from collections import Counter
 import logging
 from lxml import etree
+from datetime import datetime, timedelta
+import os
+from vw_type2_id.settings import BASE_DIR
 
 
 logger = logging.getLogger(__name__)
@@ -100,27 +99,59 @@ class MplateRetrieve(generic.DetailView):
     slug_field = 'chassis_number_short'
     slug_url_kwarg = 'chassis_number_short'
 
-    def get_schematic(self, mplate):
+    def render_plate(self, mplate):
+        SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
+        model_year = int(mplate.model_year)
+        if model_year in [1968, 1969]:
+            svg_file = os.path.join(BASE_DIR, "mplate_decoder",
+                                    "images/mplate-6869-ref.svg")
+        else:
+            svg_file = os.path.join(BASE_DIR, "mplate_decoder",
+                                    "images/mplate-7079-ref.svg")
+        MPLATE_STOP_COLOR_ID = 'stopBusColor'
+        MPLATE_STOP_COLOR = '#a6a6a6'
+        fields = (
+            'chassis_number_short',
+            'm_codes_1',
+            'm_codes_2',
+            'paint_and_interior_code',
+            'production_date_code',
+            'production_planned',
+            'export_destination_code',
+            'model_code',
+            'aggregate_code',
+            'emden',
+        )
+
+        tree = etree.parse(svg_file)
+
+        # Replace each field name with a matching id on the SVG file, with
+        # its value
+        for field in fields:
+            mplate_field = tree.find(
+                "//n:text[@id='{}']/n:tspan".format(field),
+                namespaces={'n': SVG_NAMESPACE})
+            mplate_field.text = getattr(mplate, field)
+
+        color_chip_body, _ = mplate._get_exteriorcolorchip()
+
+        if color_chip_body:
+            # Replace gradient color
+            stop_color = tree.find(
+                "//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
+                namespaces={'n': SVG_NAMESPACE}
+            )
+
+            stop_color.attrib['style'] = stop_color.attrib['style'].replace(
+                MPLATE_STOP_COLOR, color_chip_body)
+
+        plate = etree.tostring(tree).decode('utf-8')
+
+        return plate
+
+    def render_schematic(self, mplate):
 
         schematic = None
-        model = int(mplate.model[:2])
-        configuration = int(mplate.model[2])
-        extras = int(mplate.model[3])
-        special_sales_m_codes = ['736', '723', 'D61', 'D63', 'D64', 'W51']
-        # - Wild Westerner is 736, year 1973
-        #   - Model 2211
-        #   - Model 2215
-        # - Champaigne ed. I is 723 (D09), year 1977 (seven-seater)
-        #   - Model 2218
-        # - Champaigne ed. II is 765 (D61, D63, D64), year 1978
-        #   (seven-seater or Campmobile)
-        #   - Model 2218 (D61)
-        #   - Model 2319 (D63)
-        # - Silverfish is 766 (W51), years 1978-1979 (nine-seater)
-        #   - Model 2210
-        model_code = mplate.model
-        model_year = mplate.model_year
-        m_codes = mplate.m_codes.split()
         t2_model = None
         SVG_NAMESPACE = u"http://www.w3.org/2000/svg"
         BUS_ROOF_COLOR_ID = 'roof-color'
@@ -128,63 +159,7 @@ class MplateRetrieve(generic.DetailView):
         BUS_ROOF_COLOR_DEFAULT = '#ffffff'
         BUS_BODY_COLOR_DEFAULT = '#ffffff'
 
-        logger.debug(
-            f'Getting schematic for model {model}{configuration}{extras}, '
-            f'model year {model_year}, M-codes: {m_codes}')
-
-        model_query = Q(model=model) \
-            & Q(configuration=configuration) \
-            & Q(extras=extras) \
-            & Q(years__icontains=model_year)
-
-        try:
-            t2_model = VwType2Model.objects.get(model_query)
-            logger.debug(
-                f'Model {t2_model.model}, years {t2_model.years}, '
-                f'M-codes: {t2_model.m_codes}')
-            schematic = t2_model.schematic_vector
-        except ObjectDoesNotExist:
-            logger.error(
-                f'Does not exist: Model {model_code}, years {model_year}, '
-                f'M-codes: {m_codes}')
-        except MultipleObjectsReturned:
-            logger.debug(
-                f'Multiple objects: Model {model_code}, years {model_year}, '
-                f'M-codes: {m_codes}')
-
-            m_codes_query = Q()
-
-            if any(x in m_codes for x in special_sales_m_codes):
-                # If the M-plate contains any special sales M-codes
-                # use all special sales M-codes in the query
-                logger.debug("Special sales M-code")
-                for m_code in special_sales_m_codes:
-                    m_codes_query |= Q(m_codes__icontains=m_code)
-                model_query &= m_codes_query
-            else:
-                # If the M-plate does not contain any special sales M-codes
-                # use all of the M-plate's M-codes in the query
-                logger.debug("Not special sales M-code")
-                for m_code in m_codes:
-                    m_codes_query |= Q(m_codes__icontains=m_code)
-                model_query &= m_codes_query
-
-            try:
-                t2_model = VwType2Model.objects.get(model_query)
-                logger.debug(
-                    f'Model {t2_model.model}, years {t2_model.years}, '
-                    f'M-codes: {t2_model.m_codes}')
-                schematic = t2_model.schematic_vector
-            except ObjectDoesNotExist:
-                logger.error(
-                    'Does not exist: '
-                    f'Model {model_code}, years {model_year}, '
-                    f'M-codes: {m_codes}')
-            except MultipleObjectsReturned:
-                logger.error(
-                    'Multiple objects: '
-                    f'Model {model_code}, years {model_year}, '
-                    f'M-codes: {m_codes}')
+        t2_model = mplate.model
 
         if t2_model:
             schematic = t2_model.schematic_vector
@@ -242,20 +217,21 @@ class MplateRetrieve(generic.DetailView):
         mplate = super().get_object()
         decoder = MplateDecoder(mplate)
 
-        context['plate'] = mplate.render_plate()
-        context['schematic'] = self.get_schematic(mplate)
-        context['chassis_number'] = mplate.get_chassis_number()
+        context['plate'] = self.render_plate(mplate)
+        context['schematic'] = self.render_schematic(mplate)
+        context['chassis_number'] = mplate.chassis_number
         context['model_year'] = mplate.model_year
         context['production_date'] = mplate.production_date_as_time
-        context['export_destination'] = mplate.get_export_destination()
-        context['export_destination_geo'] = mplate.get_export_destination_geo()
-        context['model_description'] = mplate.get_model()
-        context['interiorcolor_description'] = mplate.get_interiorcolor()
+        context['export_destination'] = mplate.describe_export_destination()
+        context['export_destination_country'] = \
+            mplate.describe_export_destination_country()
+        context['model_description'] = mplate.describe_model()
+        context['interiorcolor_description'] = mplate.describe_interiorcolor()
         context['exteriorcolor_description'] = \
-            mplate.get_exteriorcolor_description()
+            mplate.describe_exteriorcolor()
         context['engine_description'] = mplate.get_engine()
         context['gearbox_description'] = mplate.get_gearbox()
-        context['m_codes'] = decoder.get_mcodes()
+        context['m_codes'] = decoder.decode_mcodes()
         context['emden'] = mplate.emden
 
         return context
@@ -338,15 +314,6 @@ class SearchResultsView(generic.ListView):
             else:
                 results = Mplate.objects.all()
 
-        # Enrich the mplate data with the model descriptions dictionary
-        for mplate in results:
-            try:
-                mplate.model = mplate.get_model()
-            except ValueError:
-                logger.error(
-                    'Could not get model descriptions for M-plate '
-                    f'{mplate.chassis_number_short}')
-
         return results
 
     def get_context_data(self, **kwargs):
@@ -396,38 +363,68 @@ class MetricsView(generic.TemplateView):
         years_data = []
         colors_labels = []
         colors_data = []
+        colors_backgroundcolor = []
         countries_labels = []
         countries_data = []
+        submissions_labels = []
+        submissions_data = []
 
         context = super().get_context_data(**kwargs)
 
         mplates_all = Mplate.objects.all()
 
+        # Collect model data
         models = [mplate.model for mplate in mplates_all]
         models_most_common = Counter(models).most_common(10)
 
         for model in models_most_common:
-            models_labels.append(model[0])
+            logger.debug(model[0])
+            if model[0] is None:
+                continue
+            models_labels.append(
+                f'{model[0].model_description} '
+                f'{model[0].extras_description} '
+                f'({model[0].model}{model[0].configuration}{model[0].extras})'
+                )
             models_data.append(model[1])
 
+        # Collect years data
         years = [mplate.model_year for mplate in mplates_all]
         years_most_common = Counter(years).most_common()
         for year in years_most_common:
             years_labels.append(year[0])
             years_data.append(year[1])
 
-        colors = [mplate.paint_and_interior for mplate in mplates_all]
+        # Collect colors data
+        colors = [mplate.paint_and_interior_code for mplate in mplates_all]
         colors_exterior = []
+        color_description = ''
+        color_code = ''
+        exteriorcolor_object = None
         for color in colors:
             if color.startswith('5'):
-                colors_exterior.append(color[3:])
+                color_code = color[3:]
             else:
-                colors_exterior.append(color[:4])
-        colors_most_common = Counter(colors_exterior).most_common(10)
+                color_code = color[:4]
+            colors_exterior.append(color_code)
+        colors_most_common = Counter(colors_exterior).most_common(15)
+        logger.info(colors_most_common)
         for color in colors_most_common:
-            colors_labels.append(color[0])
+            try:
+                exteriorcolor_object = \
+                    ExteriorColor.objects.filter(
+                        plate_code=color[0])[0]
+                color_description = \
+                    exteriorcolor_object.lacquer_code_body_link.color_name
+                color_chip = \
+                    exteriorcolor_object.lacquer_code_body_link.chip
+            except IndexError:
+                continue
+            colors_labels.append(f'{color_description} ({color[0]})')
             colors_data.append(color[1])
+            colors_backgroundcolor.append(color_chip)
 
+        # Collect countries data
         countries = [mplate.destination_country for mplate in mplates_all]
         countries_most_common = Counter(countries).most_common(10)
         for country in countries_most_common:
@@ -437,13 +434,30 @@ class MetricsView(generic.TemplateView):
                 countries_labels.append('Unknown')
             countries_data.append(country[1])
 
+        end_date = datetime.today()
+        start_date = end_date - timedelta(days=30)
+
+        # Collect submissions data
+        monthly_submissions = Mplate.objects.filter(
+            created_at__range=(start_date, end_date))
+        days = [mplate.created_at.date().isoformat()
+                for mplate in monthly_submissions]
+        days_submissions = sorted(Counter(days).items())
+
+        for day in days_submissions:
+            submissions_labels.append(day[0])
+            submissions_data.append(day[1])
+
         context['modelsLabels'] = models_labels
         context['modelsData'] = models_data
         context['yearsLabels'] = years_labels
         context['yearsData'] = years_data
         context['colorsLabels'] = colors_labels
         context['colorsData'] = colors_data
+        context['colorsBackgroundColor'] = colors_backgroundcolor
         context['countriesLabels'] = countries_labels
         context['countriesData'] = countries_data
+        context['submissionsLabels'] = submissions_labels
+        context['submissionsData'] = submissions_data
 
         return context

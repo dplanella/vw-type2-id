@@ -3,7 +3,11 @@ from django.urls import reverse
 import re
 from django.utils.text import slugify
 from .models import (
-    Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
+    Mplate,
+    Engine,
+    Gearbox,
+    MplateDecoder,
+    VwType2Model,
 )
 
 import logging
@@ -18,11 +22,11 @@ class MplateCreateForm(ModelForm):
             'chassis_number_short',
             'm_codes_1',
             'm_codes_2',
-            'paint_and_interior',
-            'production_date',
+            'paint_and_interior_code',
+            'production_date_code',
             'production_planned',
-            'export_destination',
-            'model',
+            'export_destination_code',
+            'model_code',
             'aggregate_code',
             'emden',
         )
@@ -70,16 +74,12 @@ class MplateCreateForm(ModelForm):
         # Raises ValidationError if no valid chassis number
         # is provided, or if the length is invalid
         try:
-            model_year = decoder.get_model_year(data)
+            model_year = decoder.decode_model_year(data)
         except ValidationError:
             raise ValidationError(
                 "Invalid shortened chassis number. "
                 "Check first digit."
             )
-
-        logger.debug(
-            "Model year validation: {} ({})".format(
-                model_year, type(model_year)))
 
         # 4. Check for correct range
         if model_year not in range(1968, 1980):
@@ -163,9 +163,9 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_paint_and_interior(self):
+    def clean_paint_and_interior_code(self):
         PAINT_AND_INTERIOR_LEN = 6
-        data = self.cleaned_data['paint_and_interior']
+        data = self.cleaned_data['paint_and_interior_code']
 
         data = data.upper()
 
@@ -181,8 +181,8 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_production_date(self):
-        data = self.cleaned_data['production_date']
+    def clean_production_date_code(self):
+        data = self.cleaned_data['production_date_code']
         decoder = MplateDecoder()
 
         # Get the model year to check the date format
@@ -202,7 +202,7 @@ class MplateCreateForm(ModelForm):
                 raise ValidationError(
                     "Cannot validate production date format "
                     "without a valid chassis number.")
-        model_year = decoder.get_model_year(chassis_number_short)
+        model_year = decoder.decode_model_year(chassis_number_short)
 
         # Model year is 68-69, check if valid production date
         if model_year < 1970:
@@ -212,10 +212,10 @@ class MplateCreateForm(ModelForm):
                     "Invalid production date format. Please double check.")
 
             try:
-                production_data_decoded = decoder.get_production_date(
+                production_date_decoded = decoder.decode_production_date(
                     chassis_number=chassis_number_short,
                     encoded_production_date=data)
-                if not production_data_decoded:
+                if not production_date_decoded:
                     raise ValidationError(
                         f"Invalid production date. Please double check.")
             except ValueError as exc:
@@ -240,9 +240,9 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_export_destination(self):
+    def clean_export_destination_code(self):
         EXPORT_DESTINATION_LEN = 2
-        data = self.cleaned_data['export_destination']
+        data = self.cleaned_data['export_destination_code']
 
         if data:
             data = data.upper()
@@ -252,15 +252,14 @@ class MplateCreateForm(ModelForm):
             if len(data) < EXPORT_DESTINATION_LEN:
                 raise ValidationError(
                     "Minimum destination country length:"
-                    " {} letters or digits".format(
-                        EXPORT_DESTINATION_LEN)
+                    f" {EXPORT_DESTINATION_LEN} letters or digits"
                 )
 
         return data
 
-    def clean_model(self):
+    def clean_model_code(self):
         MODEL_LEN = 4
-        data = self.cleaned_data['model']
+        data = self.cleaned_data['model_code']
 
         if len(data.strip()) < MODEL_LEN:
             raise ValidationError(
@@ -268,8 +267,8 @@ class MplateCreateForm(ModelForm):
                     MODEL_LEN)
             )
 
-        VALID_MODELS = Type2Model.objects.values_list('model', flat=True)
-        VALID_MODELS = list(map(int, VALID_MODELS))
+        VALID_MODELS = VwType2Model.objects.values_list('model', flat=True)
+        VALID_MODELS = list(set(map(int, VALID_MODELS)))
 
         logger.debug('Valid models: {}'.format(VALID_MODELS))
 

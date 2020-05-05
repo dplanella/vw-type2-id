@@ -7,7 +7,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for mplate in Mplate.objects.all():
-            description = mplate.get_exteriorcolor_description()
+            description = mplate.describe_exteriorcolor()
             model_year = mplate.model_year
 
             if 'Unknown exterior color code' in description:
