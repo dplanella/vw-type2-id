@@ -443,7 +443,7 @@ class MplateDecoder:
                 logger.debug("Not special sales M-code")
                 for m_code in m_codes:
                     m_codes_query |= Q(m_codes__icontains=m_code)
-                model_query &= m_codes_query
+                model_query |= m_codes_query
 
             try:
                 t2_model = VwType2Model.objects.get(model_query)
@@ -460,6 +460,8 @@ class MplateDecoder:
                     'Multiple objects: '
                     f'Model {model_code}, years {model_year}, '
                     f'M-codes: {m_codes}')
+                # Fall back to a model
+                t2_model = VwType2Model.objects.filter(model_query)[0]
 
         return t2_model
 
