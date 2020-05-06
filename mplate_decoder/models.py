@@ -1044,7 +1044,7 @@ class VwType2Model(Model):
     configuration_description = models.TextField()
     extras_description = models.TextField()
     m_codes = models.CharField(
-        max_length=50,
+        max_length=100,
         help_text=("List of M-codes for the corresponding extras"),
         blank=True)
     chassis_plate = models.CharField(
