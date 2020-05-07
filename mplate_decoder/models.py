@@ -27,7 +27,7 @@ class Mplate(Model):
         _("Shortened chassis number"),
         max_length=8, unique=True,
         help_text=_("Chassis number shortened, with the two leading digits "
-                   "removed."))
+                    "removed."))
     m_codes_1 = models.CharField(
         _("M-codes, row 1"),
         max_length=19, blank=True,
@@ -35,7 +35,8 @@ class Mplate(Model):
     m_codes_2 = models.CharField(
         _("M-codes, row 2"),
         max_length=19, blank=True,
-        help_text=_("Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"))
+        help_text=_("Row 2 of M codes (max 4 -mod. '70-'79 or "
+                    "5 -mod. '68-'69-)"))
     paint_and_interior_code = models.CharField(
         _("Paint and interior"),
         max_length=6,
