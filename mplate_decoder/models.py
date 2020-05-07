@@ -10,6 +10,7 @@ from django.core.exceptions import (
     MultipleObjectsReturned,
 )
 from django.conf import settings
+from django.utils.translation import gettext as _
 from isoweek import Week
 from crum import get_current_user
 
@@ -23,46 +24,46 @@ class Mplate(Model):
     _decoder = None
 
     chassis_number_short = models.CharField(
-        "Shortened chassis number",
+        _("Shortened chassis number"),
         max_length=8, unique=True,
-        help_text=("Chassis number shortened, with the two leading digits "
+        help_text=_("Chassis number shortened, with the two leading digits "
                    "removed."))
     m_codes_1 = models.CharField(
-        "M-codes, row 1",
+        _("M-codes, row 1"),
         max_length=19, blank=True,
-        help_text='Row 1 of M codes (max 5)')
+        help_text=_("Row 1 of M codes (max 5)"))
     m_codes_2 = models.CharField(
-        "M-codes, row 2",
+        _("M-codes, row 2"),
         max_length=19, blank=True,
-        help_text="Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)")
+        help_text=_("Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"))
     paint_and_interior_code = models.CharField(
-        "Paint and interior",
+        _("Paint and interior"),
         max_length=6,
         help_text='Combined VW body/roof paint and interior codes')
     production_date_code = models.CharField(
-        "Production date",
+        _("Production date"),
         max_length=3,
-        help_text='Production date code')
+        help_text=_('Production date code'))
     production_planned = models.CharField(
-        "Production planning",
+        _("Production planning"),
         max_length=4, blank=True,
-        help_text='Production planning code')
+        help_text=_('Production planning code'))
     export_destination_code = models.CharField(
-        "Export destination",
+        _("Export destination"),
         max_length=3, blank=True,
-        help_text='Export destination code')
+        help_text=_('Export destination code'))
     model_code = models.CharField(
-        "Vehicle model",
+        _("Vehicle model"),
         max_length=4,
-        help_text='Vehicle model code')
+        help_text=_('Vehicle model code'))
     aggregate_code = models.CharField(
-        "Aggregate",
+        _("Aggregate"),
         max_length=2,
-        help_text='Engine and gearbox aggregate code')
+        help_text=_('Engine and gearbox aggregate code'))
     emden = models.CharField(
-        "Emden",
+        _("Emden"),
         max_length=1, blank=True,
-        help_text='Optional "E" for Emden')
+        help_text=_('Optional "E" for Emden'))
     created_at = models.DateTimeField(
         auto_now_add=True, blank=True,
         null=True)
@@ -79,16 +80,16 @@ class Mplate(Model):
     # Computed (decoded) fields
     m_codes = models.CharField(
         max_length=38, blank=True, editable=False,
-        help_text="Full list of M codes for this M plate")
+        help_text=_("Full list of M codes for this M plate"))
     production_date_as_time = models.DateField(
         blank=True, editable=False,
-        help_text="Planned production date, in time format")
+        help_text=_("Planned production date, in time format"))
     model_year = models.CharField(
         max_length=4, blank=True, editable=False,
-        help_text='Model year')
+        help_text=_('Model year'))
     destination_country = models.CharField(
         max_length=30, blank=True,
-        help_text="Country of destination")
+        help_text=_("Country of destination"))
 
     def __unicode__(self):
         return self.chassis_number_short
