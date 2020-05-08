@@ -12,3 +12,4 @@ htmlcov/
 geckodriver.log
 test-results/
 *_models.png
+*.mo
