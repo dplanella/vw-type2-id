@@ -10,7 +10,7 @@ from django.core.exceptions import (
     MultipleObjectsReturned,
 )
 from django.conf import settings
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from isoweek import Week
 from crum import get_current_user
 
@@ -332,8 +332,7 @@ class MplateDecoder:
                 f'M-plate {attribute_name}: {value}')
         else:
             raise ValidationError(
-                'MplateDecoder requires'
-                f' an mplate or {attribute_name}')
+                _(f'MplateDecoder requires an mplate or {attribute_name}'))
 
         return value
 
@@ -385,8 +384,8 @@ class MplateDecoder:
         elif self.mplate:
             model_code = self.mplate.model_code
         else:
-            raise ValueError('MplateDecoder requires'
-                             ' an mplate or model code')
+            raise ValueError(
+                _('MplateDecoder requires an mplate or model code'))
 
         model = int(model_code[:2])
         configuration = int(model_code[2])
