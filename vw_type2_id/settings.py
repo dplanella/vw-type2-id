@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -207,3 +208,13 @@ LOGGING = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Create a single set of PO files on this directory
+# It allows us to run the makemessages command at the root
+# directory
+LOCALE_PATHS = (
+    PROJECT_ROOT + '/locale', )
+
+
+# Default language used when Django cannot recognize user's language.
+LANGUAGE_CODE = 'en-us'

@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vw-type2-id\n"
+"Report-Msgid-Bugs-To: https://gitlab.com/vw-type2/vw-type2-id/-/issues/new\n"
+"POT-Creation-Date: 2020-05-08 06:00+0000\n"
+"PO-Revision-Date: 2020-05-08 06:05+0000\n"
+"Last-Translator: David Planella <david.planella@gmail.com>\n"
+"Language-Team: Catalan <ca@li.org>\n"
+"Language: Catalan\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: mplate_decoder/models.py:27
+msgid "Shortened chassis number"
+msgstr "Número de bastidor escurçat"
+
+#: mplate_decoder/models.py:29
+msgid "Chassis number shortened, with the two leading digits removed."
+msgstr "Número de bastidor escurçat"
+
+#: mplate_decoder/models.py:32
+msgid "M-codes, row 1"
+msgstr "Codis M, fila 1"
+
+#: mplate_decoder/models.py:34
+msgid "Row 1 of M codes (max 5)"
+msgstr "Primera fila de codis M (5 codis màx.)"
+
+#: mplate_decoder/models.py:36
+msgid "M-codes, row 2"
+msgstr "Codis M, fila 2"
+
+#: mplate_decoder/models.py:38
+msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
+msgstr ""
+"Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 "
+"a 69-)"
+
+#: mplate_decoder/models.py:41
+msgid "Paint and interior"
+msgstr ""
+
+#: mplate_decoder/models.py:45
+msgid "Production date"
+msgstr "Data de producció"
+
+#: mplate_decoder/models.py:47
+msgid "Production date code"
+msgstr "Codi de data de producció"
+
+#: mplate_decoder/models.py:49
+msgid "Production planning"
+msgstr "Planificació de producció"
+
+#: mplate_decoder/models.py:51
+msgid "Production planning code"
+msgstr "Codi de planificació de producció"
+
+#: mplate_decoder/models.py:53
+msgid "Export destination"
+msgstr "Destinació d'exportació"
+
+#: mplate_decoder/models.py:55
+msgid "Export destination code"
+msgstr "Codi de destinació d'exportació"
+
+#: mplate_decoder/models.py:57
+msgid "Vehicle model"
+msgstr "Model de vehicle"
+
+#: mplate_decoder/models.py:59
+msgid "Vehicle model code"
+msgstr "Codi de model de vehicle"
+
+#: mplate_decoder/models.py:61
+msgid "Aggregate"
+msgstr "Agregat"
+
+#: mplate_decoder/models.py:63
+msgid "Engine and gearbox aggregate code"
+msgstr ""
+
+#: mplate_decoder/models.py:65
+msgid "Emden"
+msgstr "Emden"
+
+#: mplate_decoder/models.py:67
+msgid "Optional \"E\" for Emden"
+msgstr ""
+
+#: mplate_decoder/models.py:84
+msgid "Full list of M codes for this M plate"
+msgstr ""
+
+#: mplate_decoder/models.py:87
+msgid "Planned production date, in time format"
+msgstr ""
+
+#: mplate_decoder/models.py:90
+msgid "Model year"
+msgstr "Any de model"
+
+#: mplate_decoder/models.py:93
+msgid "Country of destination"
+msgstr "País de destinació"
+
+#: mplate_decoder/models.py:335
+#, python-brace-format
+msgid "MplateDecoder requires                   an mplate or {attribute_name}"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/mplate_about.html:10
+msgid ""
+"\n"
+"## About this site\n"
+"\n"
+"This site provides means to identify and understand the origin of Volkswagen "
+"Type 2 busses\n"
+"from years 1967 to 1979. At this time, via an online M-Plate decoder, but it "
+"might expand in the future.\n"
+"M-Plates were metallic plates present in all VW busses, which contained a "
+"set of alphanumeric production\n"
+"codes to identify a vehicle.\n"
+"\n"
+"The site was created as a result of the [original VW M-Plate decoder]"
+"(https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode."
+"php)\n"
+"going offline, as a personal project to decode the author's own M-Plate and "
+"to experiment with code. From there,\n"
+"it evolved into a public website to share this tool with other vintage bus "
+"owners from the aircooled community. \n"
+"\n"
+"The data used to decode the M-plates comes mainly from these sources, and "
+"keeps getting expanded every time a user finds out more about\n"
+"an unknown code and shares it with the community:\n"
+"\n"
+"- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www."
+"crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and "
+"Alexander Prinz\n"
+"- [TheSamba.com forum](https://www.thesamba.com/vw/forum/viewforum.php?f=5)\n"
+"- [forum.bulli.org forum](https://forum.bulli.org/)\n"
+"- [type2.com](http://www.type2.com/m-codes/t2mcodes.html)\n"
+"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n"
+"\n"
+"Thanks so much to the authors of those resources and to everyone who share "
+"their knowledge. The M-plate decoder would not have been possible without "
+"that vast collaborative effort.\n"
+"\n"
+"## Privacy policy\n"
+"\n"
+"This is a hobby site without a commercial purpose and without intention to "
+"seek financial profit. The stored database data\n"
+"will never be submitted to third parties or used for other purposes than "
+"improving the site and providing a better\n"
+"service to its users.\n"
+"\n"
+"The code for this site is Open Source. You can explore it and contribute\n"
+"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-"
+"type2-id).\n"
+"\n"
+"The site's backend has a database that stores:\n"
+"\n"
+"- The original data submitted through the M-plate form, along with some of "
+"the decoded values computed from that data (e.g. model year in readable "
+"form).\n"
+"- The creation date and last update date of the submitted M-plate data.\n"
+"- If the user has chosen to create an account on the site, their user name, "
+"e-mail and last login date.\n"
+"\n"
+"If you've used this service without creating an account and would like to "
+"have the data for a particular M-plate removed or amended, feel free to "
+"[contact the author](#contact).\n"
+"If you have created an account, you already have full control over your data "
+"and should be able to either remove or change the data on the `My M-plates` "
+"section.\n"
+"\n"
+"## Disclaimer\n"
+"\n"
+"The decoded vehicle data produced on this site comes from multiple sources. "
+"Despite best efforts to provide accurate data,\n"
+"it has to be noted that it comes from volunteer research over 40+ years of "
+"history of these vehicles.\n"
+"\n"
+"As such, data is neither guaranteed to be accurate nor to have any legal "
+"validity. It should be considered as orientative\n"
+"only.\n"
+"\n"
+"## Contact\n"
+"\n"
+"If you've got feedback or questions about the site, feel free to post them "
+"on [the M-Plate decoder thread on TheSamba.com forum](https://www.thesamba."
+"com/vw/forum/viewtopic.php?p=9165728).\n"
+"You're more than welcome to reach out by private message as well. \n"
+"\n"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:13
+msgid "Code"
+msgstr "Codi"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:14
+msgid "Years"
+msgstr "Anys"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:15
+msgid "Description"
+msgstr "Descripció"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:26
+msgid "M-code collection:"
+msgstr "Col·lecció de codis M:"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:34
+#: mplate_decoder/templates/mplate_decoder/search_results.html:35
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:42
+#, python-format
+msgid "Found %(count)s M-plates with M-code:"
+msgstr "Hi ha %(count)s plaquetes M amb el codi M:"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:46
+msgid "M-plate"
+msgstr "Plaqueta M"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:47
+msgid "M-codes"
+msgstr "Codis M"
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:105
+msgid "There are currently no M-plates with M-code:"
+msgstr "No hi ha cap plaqueta M amb el codi M:"
