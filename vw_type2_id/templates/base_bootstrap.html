@@ -49,6 +49,9 @@
           <li class="nav-item {% navactive request 'mplate_decoder:mplate_create' %}">
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_create' %}">{{ 'M-Plate decoder'|upper }}</a>
           </li>
+          <li class="nav-item {% navactive request 'mplate_decoder:mplate_metrics' %}">
+            <a class="nav-link" href="{% url 'mplate_decoder:mplate_metrics' %}">{{ 'Metrics'|upper }}</a>
+          </li>
           <li class="nav-item {% navactive request 'mplate_decoder:mplate_about' %}">
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_about' %}">{{ 'About'|upper }}</a>
           </li>

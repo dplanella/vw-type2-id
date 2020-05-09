@@ -1,58 +1,48 @@
 from django.contrib import admin
 
 from .models import (
-    Mplate, ExportDestination, Type2Model,
-    Type2ModelConfiguration, Type2ModelExtra,
+    Mplate, ExportDestination,
     InteriorColor, ExteriorColor, Color,
     Engine, Gearbox, Mcode, McodeCollection,
+    VwType2Model,
 )
 
 admin.site.register(Engine)
 admin.site.register(Gearbox)
 
 
-@admin.register(Type2ModelExtra)
-class Type2ModelExtraAdmin(admin.ModelAdmin):
-    search_fields = ('model', 'extras')
-    list_display = ('model', 'extras', 'description', 'years')
-
-
-@admin.register(Type2ModelConfiguration)
-class Type2ModelConfigurationAdmin(admin.ModelAdmin):
-    search_fields = ('model', 'configuration', 'description')
-    list_display = ('model', 'configuration', 'description')
-
-
-@admin.register(Type2Model)
-class Type2ModelAdmin(admin.ModelAdmin):
-    search_fields = ('model', )
-    list_display = (
-        'model',
-    )
-
-
 @admin.register(Mplate)
 class MplateAdmin(admin.ModelAdmin):
-    search_fields = ('chassis_number_short',
-                     'm_codes',
-                     )
-    list_filter = ('emden',
-                   'model_year',
-                   )
-    list_display = ('chassis_number_short',
-                    'm_codes',
-                    'paint_and_interior',
-                    'export_destination',
-                    'destination_country',
-                    'model',
-                    'aggregate_code',
-                    'emden',
-                    'model_year',
-                    'production_date_as_time',
-                    'owner'
-                    )
-    readonly_fields = ('owner', 'created_at', 'updated_at')
-    list_display_links = ('chassis_number_short', )
+    search_fields = (
+        'chassis_number_short',
+        'm_codes',
+    )
+    list_filter = (
+        'emden',
+        'model_year',
+    )
+    list_display = (
+        'chassis_number_short',
+        'm_codes',
+        'paint_and_interior_code',
+        'export_destination_code',
+        'destination_country',
+        'model_code',
+        'aggregate_code',
+        'emden',
+        'model_year',
+        'production_date_as_time',
+        'owner',
+        'created_at'
+    )
+    readonly_fields = (
+        'owner',
+        'created_at',
+        'updated_at'
+    )
+    list_display_links = (
+        'chassis_number_short',
+    )
     view_on_site = True
 
     def save_model(self, request, obj, form, change):
@@ -76,9 +66,10 @@ class McodeCollectionAdmin(admin.ModelAdmin):
 
 @admin.register(InteriorColor)
 class InteriorColorAdmin(admin.ModelAdmin):
-    search_fields = ('plate_code',
-                     'color_name',
-                     )
+    search_fields = (
+        'plate_code',
+        'color_name',
+    )
     list_display = (
         'plate_code',
         'color_name',
@@ -91,14 +82,21 @@ class InteriorColorAdmin(admin.ModelAdmin):
 
 @admin.register(ExteriorColor)
 class ExteriorColorAdmin(admin.ModelAdmin):
-    search_fields = ('plate_code',
-                     'lacquer_code_body',
-                     'lacquer_code_roof',
-                     )
+    search_fields = (
+        'plate_code',
+        'lacquer_code_body',
+        'lacquer_code_roof',
+        'remarks',
+    )
+    list_filter = (
+        'sonderlackierung',
+    )
     list_display = (
         'plate_code',
         'lacquer_code_body',
         'lacquer_code_roof',
+        'lacquer_code_body_link',
+        'lacquer_code_roof_link',
         'years',
         'sonderlackierung',
         'remarks',
@@ -107,10 +105,15 @@ class ExteriorColorAdmin(admin.ModelAdmin):
 
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):
-    search_fields = ('lacquer_code', 'color_name')
-    list_display = ('lacquer_code',
-                    'color_name',
-                    'chip')
+    search_fields = (
+        'lacquer_code',
+        'color_name',
+    )
+    list_display = (
+        'lacquer_code',
+        'color_name',
+        'chip'
+    )
 
 
 @admin.register(Mcode)
@@ -144,3 +147,38 @@ class ExportDestinationAdmin(admin.ModelAdmin):
         'port',
         'notes',
     )
+
+
+@admin.register(VwType2Model)
+class VwType2ModelAdmin(admin.ModelAdmin):
+    search_fields = (
+        'model',
+        'model_description',
+        'extras_description',
+    )
+    list_display = (
+        'model',
+        'configuration',
+        'extras',
+        'model_description',
+        'configuration_description',
+        'extras_description',
+        'm_codes',
+        'chassis_plate',
+        'years',
+        'schematic_vector_short',
+    )
+    list_filter = (
+        'model',
+        'configuration',
+        'extras',
+    )
+    save_as = True
+
+    def schematic_vector_short(self, obj):
+        schematic_vector_short = obj.schematic_vector[:20]
+        if schematic_vector_short:
+            schematic_vector_short += ' [...]'
+        return schematic_vector_short
+
+    schematic_vector_short.short_description = "Schematic"

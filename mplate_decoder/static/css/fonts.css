@@ -10,6 +10,10 @@
     font-style: normal;
 }
 
+tspan {
+   white-space: pre !important;
+}
+
 .icon {
     vertical-align: sub;
     font-size: 1.3rem;

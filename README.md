@@ -5,6 +5,8 @@
 
 A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979.
 
+![Type 2 ID](https://i.imgur.com/DWkcx2v.gif)
+
 https://vw-type2-id.xyz/
 
 Developed with:

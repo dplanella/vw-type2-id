@@ -18,9 +18,7 @@ class ExampleTestCase(LiveServerTestCase):
     fixtures = [
         'tst_mplate_gearbox.json',
         'tst_mplate_engine.json',
-        'tst_mplate_type2model',
-        'tst_mplate_type2modelconfiguration',
-        'tst_mplate_type2modelextra',
+        'tst_mplate_vwtype2model',
     ]
 
     def setUp(self):
@@ -57,18 +55,18 @@ class ExampleTestCase(LiveServerTestCase):
         m_codes_2_input.send_keys('408 095 504 507')
 
         paint_and_interior_input = self.selenium.find_element_by_name(
-            "paint_and_interior")
+            "paint_and_interior_code")
         paint_and_interior_input.send_keys('383851')
 
         production_date_input = self.selenium.find_element_by_name(
-            "production_date")
+            "production_date_code")
         production_date_input.send_keys('172')
 
         export_destination_input = self.selenium.find_element_by_name(
-            "export_destination")
+            "export_destination_code")
         export_destination_input.send_keys('PG')
 
-        model_input = self.selenium.find_element_by_name("model")
+        model_input = self.selenium.find_element_by_name("model_code")
         model_input.send_keys('2650')
 
         aggregate_code_input = self.selenium.find_element_by_name(
