@@ -1,1 +1,6 @@
-Thank you for your support request! We are tracking your request as ticket %{ISSUE_ID}, and will respond as soon as we can.
+Hi,
+
+Thanks for getting in touch and for your interest in the M-plate decoder!
+
+This is just a message to confirm I received your contact request and that I'll get back to you as soon as I can.
+
