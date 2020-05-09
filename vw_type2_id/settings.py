@@ -163,8 +163,9 @@ AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
 LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = os.environ.get('DJANGO_VW_TYPE2_EMAIL',
-                                    'VW Type 2 ID <admin@vw-type2-id.xyz>')
+                                    'VW Type 2 ID <info@vw-type2-id.xyz>')
 
 LOGGING = {
     'version': 1,
@@ -206,8 +207,6 @@ LOGGING = {
         },
     },
 }
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
