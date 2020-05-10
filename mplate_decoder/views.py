@@ -11,6 +11,7 @@ from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.translation import gettext_lazy as _
 from collections import Counter
 import logging
 from lxml import etree
@@ -431,7 +432,7 @@ class MetricsView(generic.TemplateView):
             if country[0]:
                 countries_labels.append(country[0])
             else:
-                countries_labels.append('Unknown')
+                countries_labels.append(_('Unknown'))
             countries_data.append(country[1])
 
         end_date = datetime.today()

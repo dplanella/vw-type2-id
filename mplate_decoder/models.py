@@ -40,7 +40,7 @@ class Mplate(Model):
     paint_and_interior_code = models.CharField(
         _("Paint and interior"),
         max_length=6,
-        help_text='Combined VW body/roof paint and interior codes')
+        help_text=_('Combined VW body/roof paint and interior codes'))
     production_date_code = models.CharField(
         _("Production date"),
         max_length=3,
@@ -505,11 +505,10 @@ class MplateDecoder:
         elif len(model_year_code) == MODEL_7079_YEAR_CODE_LEN:
             model_year_decade = int(chassis_number_short[1])
         else:
+            model_year_code_len = len(model_year_code)
             raise ValidationError(
-                _(f"Invalid model year "
-                  f"code length: {len(model_year_code)}, "
-                  f"code {model_year_code}, "
-                  f"chassis no. {chassis_number_short}"))
+                _(f"Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}")  # noqa: E501
+            )
 
         model_year = MODEL_YEAR_START.replace(
             year=MODEL_YEAR_START.year + ((10 * model_year_decade) +
@@ -529,7 +528,8 @@ class MplateDecoder:
             encoded_production_date = self.mplate.production_date_code
         else:
             raise ValidationError(
-                _('MplateDecoder requires either an m-plate or chassis_number with encoded production date'))
+                _('MplateDecoder requires either an m-plate or '
+                  'chassis_number with encoded production date'))
 
         # Model year starts in August
         MODEL_YEAR_START_MONTH = 8
@@ -863,7 +863,7 @@ class MplateDecoder:
 
         if not exteriorcolor:
             exteriorcolor_description = \
-                _(f"{exteriorcolor_code}: Unknown exterior color code")
+                _(f"Unknown exterior color code ({exteriorcolor_code})")
 
             return exteriorcolor_description
 

@@ -1,5 +1,6 @@
 from django.urls import path, re_path
 from django.contrib import admin
+from django.utils.translation import gettext as _
 from . import views
 
 app_name = 'mplate_decoder'
@@ -27,7 +28,7 @@ urlpatterns = [
           name='mplate_metrics'),
 ]
 
-SITE_NAME = "VW Type 2 ID"
-admin.site.site_header = f"{SITE_NAME} Admin"
-admin.site.site_title = f"{SITE_NAME} Admin Portal"
-admin.site.index_title = f"Welcome to {SITE_NAME} Admin Portal"
+SITE_NAME = _("VW Type 2 ID")
+admin.site.site_header = _(f"{SITE_NAME} Admin")
+admin.site.site_title = _(f"{SITE_NAME} Admin Portal")
+admin.site.index_title = _(f"Welcome to {SITE_NAME} Admin Portal")
