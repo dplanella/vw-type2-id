@@ -40,7 +40,7 @@ class Mplate(Model):
     paint_and_interior_code = models.CharField(
         _("Paint and interior"),
         max_length=6,
-        help_text='Combined VW body/roof paint and interior codes')
+        help_text=_('Combined VW body/roof paint and interior codes'))
     production_date_code = models.CharField(
         _("Production date"),
         max_length=3,
@@ -224,8 +224,8 @@ class Mplate(Model):
                 color_name = interiorcolor.color_name
                 material = interiorcolor.material
             except ObjectDoesNotExist:
-                color_name = "({}) Unknown color".format(interiorcolor_code)
-                material = "Unknown material"
+                color_name = _(f"({interiorcolor_code}) Unknown color")
+                material = _("Unknown material")
             except MultipleObjectsReturned:
                 model_year = self.model_year
                 interiorcolor = InteriorColor.objects.filter(
@@ -237,14 +237,14 @@ class Mplate(Model):
                     material = interiorcolor.first().material
                 else:
                     color_name = (
-                        "Error while fetching interior color code:"
-                        " {}, year {}".format(interiorcolor_code, model_year))
+                        _("Error while fetching interior color code:") +
+                        _(f" {interiorcolor_code}, year {model_year}"))
                     material = ""
 
             interiorcolor_description = '{}, {}'.format(color_name, material)
         else:
-            interiorcolor_description = ('No description available'
-                                         ' for special paint jobs')
+            interiorcolor_description = (
+                _('No description available for special paint jobs'))
 
         return interiorcolor_description
 
@@ -263,7 +263,7 @@ class Mplate(Model):
                 engine_description += ", " + engine.extra_specs
 
         except ObjectDoesNotExist:
-            engine_description = "Unavailable engine description"
+            engine_description = _("Unavailable engine description")
             logger.error(engine_description)
 
         return engine_description
@@ -279,7 +279,7 @@ class Mplate(Model):
                 gearbox.gearbox_description,
             )
         except ObjectDoesNotExist:
-            gearbox_description = "Unavailable transmission description"
+            gearbox_description = _("Unavailable transmission description")
 
         return gearbox_description
 
@@ -396,15 +396,15 @@ class MplateDecoder:
         elif self.mplate:
             model_year = self.mplate.model_year
         else:
-            raise ValueError('MplateDecoder requires'
-                             ' an mplate or model year')
+            raise ValueError(
+                _('MplateDecoder requires an mplate or model year'))
         if m_codes:
             m_codes = m_codes
         elif self.mplate:
             m_codes = self.mplate.m_codes.split()
         else:
-            raise ValueError('MplateDecoder requires'
-                             ' an mplate or M codes')
+            raise ValueError(
+                _('MplateDecoder requires an mplate or M codes'))
 
         logger.debug(
             f'Getting model {model}{configuration}{extras}, '
@@ -505,11 +505,10 @@ class MplateDecoder:
         elif len(model_year_code) == MODEL_7079_YEAR_CODE_LEN:
             model_year_decade = int(chassis_number_short[1])
         else:
+            model_year_code_len = len(model_year_code)
             raise ValidationError(
-                "Invalid model year "
-                f"code length: {len(model_year_code)}, "
-                f"code {model_year_code}, "
-                f"chassis no. {chassis_number_short}")
+                _(f"Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}")  # noqa: E501
+            )
 
         model_year = MODEL_YEAR_START.replace(
             year=MODEL_YEAR_START.year + ((10 * model_year_decade) +
@@ -529,8 +528,8 @@ class MplateDecoder:
             encoded_production_date = self.mplate.production_date_code
         else:
             raise ValidationError(
-                'MplateDecoder requires either'
-                ' an m-plate or chassis_number with encoded production date')
+                _('MplateDecoder requires either an m-plate or '
+                  'chassis_number with encoded production date'))
 
         # Model year starts in August
         MODEL_YEAR_START_MONTH = 8
@@ -627,16 +626,16 @@ class MplateDecoder:
             m_codes_1 = self.mplate.m_codes_1
             m_codes_2 = self.mplate.m_codes_2
         else:
-            raise ValueError('MplateDecoder requires'
-                             ' an mplate or mcodes_1/m_codes_2')
+            raise ValueError(
+                _('MplateDecoder requires an mplate or mcodes_1/m_codes_2'))
 
         if chassis_number_short:
             chassis_number_short = chassis_number_short
         elif self.mplate:
             chassis_number_short = self.mplate.chassis_number_short
         else:
-            raise ValueError('MplateDecoder requires'
-                             ' an mplate or chassis_number_short')
+            raise ValueError(
+                _('MplateDecoder requires an mplate or chassis_number_short'))
 
         model_year = self.decode_model_year(chassis_number_short)
 
@@ -673,7 +672,7 @@ class MplateDecoder:
                     raise MultipleObjectsReturned
             except ObjectDoesNotExist:
                 # There is no such a code in the database
-                error_description = f"Unknown code, year {model_year}"
+                error_description = _(f"Unknown code, year {model_year}")
             except MultipleObjectsReturned:
                 m_code_query_set = Mcode.objects.filter(
                         m_code=m_code, years__contains=model_year)
@@ -682,7 +681,7 @@ class MplateDecoder:
                 except IndexError:
                     m_code_query_set = None
                     error_description = \
-                        f"Undefined code, year {model_year}"
+                        _(f"Undefined code, year {model_year}")
 
             if m_code_query_set:
                 description = m_code_query_set.description
@@ -749,7 +748,7 @@ class MplateDecoder:
             else:
                 # The export code is not on the database
                 destination_description = \
-                    f"Unknown ({export_destination_code})"
+                    _(f"Unknown ({export_destination_code})")
         else:
             # The export code hasn't been specified on M-plate form submission
             destination_description = "Not specified"
@@ -783,7 +782,7 @@ class MplateDecoder:
                     destination_country_description = export_destination.region
                 else:
                     destination_country_description = \
-                        "Undefined country or region"
+                        _("Undefined country or region")
 
                 if with_port:
                     if (export_destination.region and
@@ -799,7 +798,7 @@ class MplateDecoder:
             else:
                 # The export code is not on the database
                 destination_country_description = \
-                    f"Unknown ({export_destination_code})"
+                    _(f"Unknown ({export_destination_code})")
         else:
             # The export code hasn't been specified on M-plate form submission
             destination_country_description = "Not specified"
@@ -864,8 +863,8 @@ class MplateDecoder:
 
         if not exteriorcolor:
             exteriorcolor_description = \
-                "{}: Unknown exterior color code".format(
-                    exteriorcolor_code)
+                _(f"Unknown exterior color code ({exteriorcolor_code})")
+
             return exteriorcolor_description
 
         try:
@@ -874,8 +873,8 @@ class MplateDecoder:
             )
             color_name_body = color_body.color_name
         except ObjectDoesNotExist:
-            color_name_body = "Unknown color ({})".format(
-                exteriorcolor.lacquer_code_body)
+            color_name_body = \
+                _(f"Unknown color ({exteriorcolor.lacquer_code_body})")
 
         lacquer_code_roof = exteriorcolor.lacquer_code_roof
         if lacquer_code_roof:
@@ -885,23 +884,18 @@ class MplateDecoder:
                 )
                 color_name_roof = color_roof.color_name
             except ObjectDoesNotExist:
-                color_name_roof = "Unknown color ({})".format(
-                    exteriorcolor.lacquer_code_roof)
+                color_name_roof = \
+                    _(f"Unknown color ({exteriorcolor.lacquer_code_roof})")
         else:
             lacquer_code_roof = exteriorcolor.lacquer_code_body
             color_name_roof = color_name_body
 
         if exteriorcolor.remarks:
-            remarks = '\nRemarks: {}'.format(
-                exteriorcolor.remarks)
+            remarks = '\n' + _(f"Remarks: {exteriorcolor.remarks}")
 
-        exteriorcolor_description = '''Body: {} ({})
-            Roof: {} ({})'''.format(
-                color_name_body,
-                exteriorcolor.lacquer_code_body,
-                color_name_roof,
-                lacquer_code_roof,
-            )
+        exteriorcolor_description = \
+            _(f'''Body: {color_name_body} ({exteriorcolor.lacquer_code_body})
+            Roof: {color_name_roof} ({lacquer_code_roof})''')
 
         if remarks:
             exteriorcolor_description += '\n' + remarks
@@ -986,7 +980,7 @@ class Engine(Model):
         max_length=50, blank=True)
     m_codes = models.CharField(
         max_length=50,
-        help_text=("List of M-codes for the corresponding extras"),
+        help_text=_("List of M-codes for the corresponding extras"),
         blank=True)
     years = models.CharField(
         max_length=65,
@@ -1000,7 +994,7 @@ class Gearbox(Model):
         max_length=35)
     m_codes = models.CharField(
         max_length=50,
-        help_text=("List of M-codes for the corresponding extras"),
+        help_text=_("List of M-codes for the corresponding extras"),
         blank=True)
     years = models.CharField(
         max_length=65,
@@ -1041,16 +1035,16 @@ class VwType2Model(Model):
     extras = models.PositiveSmallIntegerField()
     model_description = models.CharField(
         max_length=35,
-        help_text=("Model description"))
+        help_text=_("Model description"))
     configuration_description = models.TextField()
     extras_description = models.TextField()
     m_codes = models.CharField(
         max_length=100,
-        help_text=("List of M-codes for the corresponding extras"),
+        help_text=_("List of M-codes for the corresponding extras"),
         blank=True)
     chassis_plate = models.CharField(
         max_length=20,
-        help_text=("Model description as it appears on the chassis plate"),
+        help_text=_("Model description as it appears on the chassis plate"),
         blank=True)
     years = models.CharField(
             max_length=65, blank=True)
