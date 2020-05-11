@@ -4,6 +4,9 @@
 python manage.py migrate
 # Collect static files
 python manage.py collectstatic --noinput
+# Build translation catalogs
+python manage.py compilemessages
+
 
 # Prepare log files and start outputting logs to stdout
 mkdir /srv/logs
