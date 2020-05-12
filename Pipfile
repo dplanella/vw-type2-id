@@ -17,7 +17,7 @@ unittest-xml-reporting = "*"
 pylint-django = "*"
 
 [packages]
-django = "<3.0.0"
+django = "*"
 django-crispy-forms = "*"
 lxml = "*"
 pillow = "*"
@@ -26,10 +26,7 @@ django-inline-svg = "*"
 isoweek = "*"
 django-fullurl = "*"
 django-markdownify = "*"
-<<<<<<< HEAD
+django-crum = "*"
 
 [requires]
 python_version = "3.8"
-=======
-django-crum = "*"
->>>>>>> origin
