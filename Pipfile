@@ -27,6 +27,7 @@ isoweek = "*"
 django-fullurl = "*"
 django-markdownify = "*"
 django-crum = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
