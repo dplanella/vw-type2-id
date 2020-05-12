@@ -28,6 +28,7 @@ django-fullurl = "*"
 django-markdownify = "*"
 django-crum = "*"
 dj-database-url = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
