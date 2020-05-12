@@ -89,7 +89,7 @@ class Mplate(Model):
         max_length=4, blank=True, editable=False,
         help_text=_('Model year'))
     destination_country = models.CharField(
-        max_length=30, blank=True,
+        max_length=70, blank=True,
         help_text=_("Country of destination"))
 
     def __unicode__(self):
