@@ -7,7 +7,7 @@ stages:
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: DAST.gitlab-ci.yml
-  - template: License-Management.gitlab-ci.yml
+  - template: License-Scanning.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
   - template: Code-Quality.gitlab-ci.yml
 
@@ -21,7 +21,7 @@ cache:
     - ~/.cache/pipenv/
 
 default:
-  image: python:3.6
+  image: python:3.8
 
 .linter_template:
   stage: test
@@ -31,7 +31,10 @@ default:
 
 # Required for dependency scanning to work: build the binaries for the libraries
 # needed to build native pip dependencies
+# Note: the dependency_scanning seems to support Python 3.6 only, hence the
+# dedicated image here
 build_dep_wheels:
+  image: python:3.6
   stage: build
   script:
     - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
@@ -39,13 +42,13 @@ build_dep_wheels:
     paths:
       - $WHEEL_DIR
 
-# Override the dependency_scanning job to use PIP_DEPENDENCY_PATH and find
+# Override the dependency_scanning job to use DS_PIP_DEPENDENCY_PATH and find
 # the binaries required to build the native pip dependencies
 dependency_scanning:
   dependencies:
     - build_dep_wheels
   variables:
-    PIP_DEPENDENCY_PATH: $WHEEL_DIR
+    DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
@@ -63,9 +66,11 @@ flake8:
 pylint:
   extends: .linter_template
   script:
-  - pipenv run pylint **/*.py
+  - pipenv run pylint **/*.py --ignore=migrations
   allow_failure: true
 
+# Note: firefox-esr is only required as the firefox package is
+# not available on the Debian-based python:3.8 image
 test_apps:
   stage: test
   before_script:

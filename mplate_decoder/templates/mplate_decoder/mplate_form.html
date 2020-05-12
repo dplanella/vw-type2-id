@@ -18,10 +18,10 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="mod6869" role="tabpanel" aria-labelledby="mod6869-tab">
-      {% include "mplate_decoder/mplate_form_6869.html" with form_id=mplate_form_6869_id %}
+      {% include "mplate_decoder/partials/mplate_form_6869.html" with form_id=mplate_form_6869_id %}
     </div>
     <div class="tab-pane fade" id="mod7079" role="tabpanel" aria-labelledby="mod7079-tab">
-      {% include "mplate_decoder/mplate_form_7079.html" with form_id=mplate_form_7079_id %}
+      {% include "mplate_decoder/partials/mplate_form_7079.html" with form_id=mplate_form_7079_id %}
     </div>
   </div>
 
@@ -34,5 +34,15 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script type="text/javascript" src="{% static 'js/ajaxformsubmit.js' %}"></script>
+<script>
+  $( document ).ready(function() {
+      $(".chassis_number_short-6869 #id_chassis_number_short").attr('maxlength','7');
+  });
+
+  anchors.options.placement = 'left';
+  document.addEventListener('DOMContentLoaded', function(event) {
+    anchors.add();
+  });
+</script>
 
 {% endblock %}

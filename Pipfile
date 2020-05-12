@@ -14,9 +14,10 @@ pyvirtualdisplay = "*"
 coverage = "*"
 pylint = "*"
 unittest-xml-reporting = "*"
+pylint-django = "*"
 
 [packages]
-django = "==2.2.8"
+django = "<3.0.0"
 django-crispy-forms = "*"
 lxml = "*"
 pillow = "*"
@@ -25,6 +26,10 @@ django-inline-svg = "*"
 isoweek = "*"
 django-fullurl = "*"
 django-markdownify = "*"
+<<<<<<< HEAD
 
 [requires]
 python_version = "3.8"
+=======
+django-crum = "*"
+>>>>>>> origin

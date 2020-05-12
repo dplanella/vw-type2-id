@@ -1,0 +1,7 @@
+{% load fullurl %}
+
+<div class="alert alert-info" role="alert">
+  Once submitted, the M-plate data will be stored and available
+  at '{% fullurl 'mplate_decoder:mplate_index' %}CCCCCCCC', where 'CCCCCCCC'
+  is the shortened chassis number on the plate.
+</div>
