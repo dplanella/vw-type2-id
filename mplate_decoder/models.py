@@ -11,6 +11,7 @@ from django.core.exceptions import (
 )
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext
 from isoweek import Week
 from crum import get_current_user
 
@@ -891,7 +892,7 @@ class MplateDecoder:
             color_name_roof = color_name_body
 
         if exteriorcolor.remarks:
-            remarks = '\n' + _(f"Remarks: {exteriorcolor.remarks}")
+            remarks = "\n" + gettext(f"Remarks: {exteriorcolor.remarks}")
 
         exteriorcolor_description = \
             _(f'''Body: {color_name_body} ({exteriorcolor.lacquer_code_body})
