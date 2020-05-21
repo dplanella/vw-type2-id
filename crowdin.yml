@@ -1,0 +1,5 @@
+"commit_message": "[ci skip]"
+
+files:
+  - source: /vw_type2_id/locale/django.pot
+    translation: /vw_type2_id/locale/%two_letters_code%/LC_MESSAGES/django.po
