@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from mplate_decoder.models import Mplate, MplateDecoder
+from mplate_decoder.models import Mplate
 
 
 class Command(BaseCommand):
@@ -7,10 +7,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for mplate in Mplate.objects.all():
-            decoder = MplateDecoder(mplate)
-
-            description = mplate.get_exteriorcolor_description()
-            model_year = decoder.get_model_year().year
+            description = mplate.describe_exteriorcolor()
+            model_year = mplate.model_year
 
             if 'Unknown exterior color code' in description:
                 self.stdout.write(

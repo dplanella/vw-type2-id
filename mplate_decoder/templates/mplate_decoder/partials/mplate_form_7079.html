@@ -1,6 +1,5 @@
   {% load crispy_forms_tags %}
   {% load svg %}
-  {% load fullurl %}
 
   <div class="row mt-2">
   <div class="col">
@@ -9,9 +8,9 @@
 
     <h2 class="mt-4">Volkswagen Type 2 M-plate, model year 70-79</h2>
 
-    <p><div class="alert alert-secondary" role="alert">
-      Choose your bus' model year tab and fill in the fields to decode your M-plate. Scroll down to the reference info if you need help.
-    </div>
+    {% include "mplate_decoder/partials/mplate_form_alerts_pre.html"%}
+
+    <hr class="my-4">
 
     <div class="form-row">
       <div class="form-group col-md-4 mb-0">
@@ -26,7 +25,7 @@
 
     <div class="form-row">
       <div class="form-group col-md-3 mb-10">
-        {{ form.paint_and_interior|as_crispy_field }}
+        {{ form.paint_and_interior_code|as_crispy_field }}
       </div>
       <div class="form-group col-md-8 offset-md-1 mb-0">
         {{ form.m_codes_2|as_crispy_field }}
@@ -35,25 +34,25 @@
 
     <div class="form-row">
       <div class="form-group col-md-2 mb-0">
-        {{ form.production_date|as_crispy_field }}
+        {{ form.production_date_code|as_crispy_field }}
       </div>
       <div class="form-group col-md-2 mb-0">
         {{ form.production_planned|as_crispy_field }}
       </div>
       <div class="form-group col-md-2 mb-0">
-        {{ form.export_destination|as_crispy_field }}
+        {{ form.export_destination_code|as_crispy_field }}
       </div>
       <div class="form-group col-md-2 mb-0">
-        {{ form.model|as_crispy_field }}
+        {{ form.model_code|as_crispy_field }}
       </div> 
       <div class="form-group col-md-2 mb-0">
         {{ form.aggregate_code|as_crispy_field }}
       </div>
     </div>
+
     <hr class="mb-4">
-    <div class="alert alert-info" role="alert">
-      Once submitted, the M-plate data will be stored and always available at '{% fullurl 'mplate_decoder:mplate_index' %}CCCCCCCC', where 'CCCCCCCC' is the shortened chassis number on the plate.
-    </div>
+    {% include "mplate_decoder/partials/mplate_form_alerts_post.html"%}
+
     {% if object %}
     <button id="btn-update-7079" class="btn btn-primary btn-lg btn-block">Update this M-plate</button>
     {% else %}

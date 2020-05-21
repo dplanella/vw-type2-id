@@ -41,21 +41,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'mplate_decoder.apps.MplateDecoderConfig',
     'crispy_forms',
     'svg',
     'fullurl',
     'markdownify',
+    'users',
+    'contact.apps.ContactConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crum.CurrentRequestUserMiddleware',
 ]
 
 ROOT_URLCONF = 'vw_type2_id.urls'
@@ -150,3 +154,69 @@ MARKDOWNIFY_BLEACH = False
 # Generate jUnit test reports
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_DIR = 'test-results'
+
+# This tells Django that instead of using the default
+# User model look in our app users for the model called CustomUser
+# and use that instead everywhere in our project.
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'mplate_decoder:mplate_index'
+LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = os.environ.get('DJANGO_VW_TYPE2_EMAIL',
+                                    'VW Type 2 ID <info@vw-type2-id.xyz>')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '[{asctime}] {levelname} [{name}:{lineno}] '
+                      '{message}',
+            'datefmt': '%d/%b/%Y %H:%M:%S',
+            'style': '{',
+        },
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} '
+                      '{thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+        'server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        'mplate_decoder': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True,
+        },
+    },
+}
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Create a single set of PO files on this directory
+# It allows us to run the makemessages command at the root
+# directory
+LOCALE_PATHS = (
+    PROJECT_ROOT + '/locale', )
+
+
+# Default language used when Django cannot recognize user's language.
+LANGUAGE_CODE = 'en-us'

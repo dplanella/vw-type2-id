@@ -1,12 +1,18 @@
-from django.forms import ModelForm, ValidationError  # , TextInput
+from django.forms import ModelForm, ValidationError
+from django.urls import reverse
 import re
 from django.utils.text import slugify
+from django.utils.translation import gettext as _
 from .models import (
-    Mplate, Type2Model, Engine, Gearbox, MplateDecoder,
+    Mplate,
+    Engine,
+    Gearbox,
+    MplateDecoder,
+    VwType2Model,
 )
 
 import logging
-logger = logging.getLogger('django')
+logger = logging.getLogger(__name__)
 
 
 class MplateCreateForm(ModelForm):
@@ -17,18 +23,31 @@ class MplateCreateForm(ModelForm):
             'chassis_number_short',
             'm_codes_1',
             'm_codes_2',
-            'paint_and_interior',
-            'production_date',
+            'paint_and_interior_code',
+            'production_date_code',
             'production_planned',
-            'export_destination',
-            'model',
+            'export_destination_code',
+            'model_code',
             'aggregate_code',
             'emden',
         )
-        # widgets = {
-        #    'chassis_number_short': TextInput(
-        # attrs={'placeholder': 'CCCCCCCC'}),
-        # }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.saved_data = {}
+
+    # For each field in the form (in the order they are declared in the form
+    # definition),
+    # 1. the Field.clean() method (or its override) is run,
+    # 2. then clean_<fieldname>().
+    # 3. Finally, once those two methods are run for every field, the
+    #    Form.clean() method, or its override, is executed whether or not the
+    #    previous methods have raised errors.
+
+    # Validate each one of the fields:
+    # https://docs.djangoproject.com/en/dev/ref/forms/validation/#django.forms.Form.clean
+    # https://docs.djangoproject.com/en/dev/topics/forms/modelforms/#validation-on-a-modelform
 
     def clean_chassis_number_short(self):
         MODEL_6869_YEAR_CHASSIS_NR_LEN = 7
@@ -36,50 +55,55 @@ class MplateCreateForm(ModelForm):
         data = self.cleaned_data['chassis_number_short']
         decoder = MplateDecoder()
 
+        # 1. Check for correct length
         if len(data) < MODEL_6869_YEAR_CHASSIS_NR_LEN:
             raise ValidationError(
-                "Minimum digits: "
-                "{} (mod. 68-68) or {} digits (mod. 70-79)".format(
-                    MODEL_6869_YEAR_CHASSIS_NR_LEN,
-                    MODEL_7079_YEAR_CHASSIS_NR_LEN
-                ))
+                _(f"Minimum digits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) or {MODEL_7079_YEAR_CHASSIS_NR_LEN} digits (mod. 70-79)"))  # noqa: E501
 
-        # year_and_serial_from_chassis_no(str(data))
-        if not re.match("^[0-9]+$", data):
+        # 2. Check for correct format
+        if not re.match("^[0-9]{7,8}$", data):
             raise ValidationError(
-                "Only digits allowed (no spaces either)")
+                _("Only digits allowed, without spaces. "
+                  "The second digit is always a 2.")
+            )
 
+        # 3. Check for correctly decoded model year
+        # Raises ValidationError if no valid chassis number
+        # is provided, or if the length is invalid
         try:
-            model_year = decoder.get_model_year(data)
+            model_year = decoder.decode_model_year(data)
         except ValidationError:
             raise ValidationError(
-                "Invalid shortened chassis number. "
-                "Check first and second digits."
+                _("Invalid shortened chassis number. Check first digit.")
             )
 
-        logger.info(
-            "Model year validation: {} ({})".format(
-                model_year, type(model_year)))
-
-        if model_year.year not in range(1968, 1980):
+        # 4. Check for correct range
+        if model_year not in range(1968, 1980):
             raise ValidationError(
-                "Invalid shortened chassis number. "
-                "Check first and second digits."
+                _("Invalid shortened chassis number. "
+                  "Check first and second digits.")
             )
 
+        # 5. Convert string to URL slug
         data = slugify(data)
+
+        # There are two paths here:
+        # 1. When creating a new M-Plate (Mplate instance does not exist)
+        # 2. When updating an existing M-plate (Mplate instance exists)
 
         qs = Mplate.objects.filter(chassis_number_short=data)
 
-        # Update view
+        # If it already exists in the database
         if self.instance.pk:
             qs = qs.exclude(pk=self.instance.pk)
+            logger.info(f"Data after exclude: {data}")
 
         if qs.exists():
-            url = 'https://vw-type2-id.xyz/mplate/' + data
-            href = '<a href="{}">{}</a>'.format(url, data)
+            mplate_url = reverse('mplate_decoder:mplate_retrieve', args=[data])
+            mplate_link = f'<a href="{mplate_url}">M-plate {data}</a>'
+            self.saved_data['chassis_number_short'] = data
             raise ValidationError(
-                'M-Plate {} already exists.'.format(href))
+                _(f'M-Plate already exists. View {mplate_link}.'))
 
         return data
 
@@ -89,7 +113,7 @@ class MplateCreateForm(ModelForm):
         data = data.upper()
 
         if data and (data != 'E'):
-            raise ValidationError("Only the letter 'E' is allowed")
+            raise ValidationError(_("Only the letter 'E' is allowed"))
 
         return data
 
@@ -101,7 +125,7 @@ class MplateCreateForm(ModelForm):
             data = data.upper()
             if not re.match("^[A-Z0-9 ]+$", data):
                 raise ValidationError(
-                    "Only digits, letters and spaces allowed")
+                    _("Only digits, letters and spaces allowed"))
 
             if len(data) >= MCODE_LEN:
                 if ' ' in data:
@@ -113,15 +137,13 @@ class MplateCreateForm(ModelForm):
                 for mcode in mcodes_list:
                     if len(mcode) != MCODE_LEN:
                         raise ValidationError(
-                            "Code: {}. M-code length should be "
-                            "{} digits or letters".format(mcode, MCODE_LEN)
+                            _(f"Code: {mcode}. M-code length should be {MCODE_LEN} digits or letters")  # noqa: E501
                         )
                 data = ' '.join(mcodes_list)
             else:
                 raise ValidationError(
-                            "Minimum M-code length: "
-                            "{} digits or letters".format(MCODE_LEN)
-                        )
+                    _(f"Minimum M-code length: {MCODE_LEN} digits or letters")
+                )
 
         return data
 
@@ -135,38 +157,74 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_paint_and_interior(self):
+    def clean_paint_and_interior_code(self):
         PAINT_AND_INTERIOR_LEN = 6
-        data = self.cleaned_data['paint_and_interior']
+        data = self.cleaned_data['paint_and_interior_code']
 
         data = data.upper()
 
         if not re.match("^[A-Z0-9]+$", data):
-            raise ValidationError("Only digits and letters allowed")
+            raise ValidationError(_("Only digits and letters allowed"))
 
         if len(data) < PAINT_AND_INTERIOR_LEN:
             raise ValidationError(
-                "Minimum paint and interior code length: "
-                "{} digits or letters".format(
-                    PAINT_AND_INTERIOR_LEN)
+                _(f"Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or letters")  # noqa: E501
             )
 
         return data
 
-    def clean_production_date(self):
-        PRODUCTION_DATE_LEN = 3
-        data = self.cleaned_data['production_date']
+    def clean_production_date_code(self):
+        data = self.cleaned_data['production_date_code']
+        decoder = MplateDecoder()
 
-        data = data.upper()
-        if not re.match("^[0-9]{2}[0-9OND]$", data):
-            raise ValidationError("Only digits and letters allowed")
+        # Get the model year to check the date format
+        try:
+            chassis_number_short = self.cleaned_data['chassis_number_short']
+        except KeyError:
+            # This happens when chassis_number_short is not valid (i.e. the
+            # M-plate was already on the database)
+            logger.warning("Chassis no. short not available from cleaned_data."
+                           " Trying from saved data...")
+            try:
+                chassis_number_short = self.saved_data['chassis_number_short']
+                logger.warning(f"Chassis no. short: {chassis_number_short}")
+            except KeyError:
+                logger.warning(
+                    "Chassis no. short not available from saved_data.")
+                raise ValidationError(
+                    _("Cannot validate production date format without "
+                      "a valid chassis number."))
+        model_year = decoder.decode_model_year(chassis_number_short)
 
-        if len(data) < PRODUCTION_DATE_LEN:
-            raise ValidationError(
-                "Minimum production date code length: "
-                " {} digits or letters".format(
-                    PRODUCTION_DATE_LEN)
-            )
+        # Model year is 68-69, check if valid production date
+        if model_year < 1970:
+            data = data.upper()
+            if not re.match("^[1-3][0-9][1-9OND]$", data):
+                raise ValidationError(
+                    _("Invalid production date format. Please double check."))
+
+            try:
+                production_date_decoded = decoder.decode_production_date(
+                    chassis_number=chassis_number_short,
+                    encoded_production_date=data)
+                if not production_date_decoded:
+                    raise ValidationError(
+                        _("Invalid production date. Please double check."))
+            except ValueError as exc:
+                raise ValidationError(
+                    _(f"Invalid production date ({exc}). "
+                      "Please double check."))
+        # Model year is 70-79, check if valid production date
+        else:
+            if not re.match("^([0][1-9]|[1-4][0-9]|5[0-2])[1-6]$", data):
+                raise ValidationError(
+                    _("Invalid production date format. Please double check."))
+
+            iso_week = int(data[2:])
+            if iso_week > 52:
+                raise ValidationError(
+                    _("Invalid production week date. Please double check "
+                      "the two first digits."))
 
         return data
 
@@ -175,48 +233,49 @@ class MplateCreateForm(ModelForm):
 
         return data
 
-    def clean_export_destination(self):
+    def clean_export_destination_code(self):
         EXPORT_DESTINATION_LEN = 2
-        data = self.cleaned_data['export_destination']
+        data = self.cleaned_data['export_destination_code']
 
         if data:
             data = data.upper()
             if not re.match("^[A-Z0-9]+$", data):
-                raise ValidationError("Only digits and letters allowed")
+                raise ValidationError(_("Only digits and letters allowed"))
 
             if len(data) < EXPORT_DESTINATION_LEN:
                 raise ValidationError(
-                    "Minimum destination country length:"
-                    " {} letters or digits".format(
-                        EXPORT_DESTINATION_LEN)
+                    _(f"Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or digits")  # noqa: E501
                 )
 
         return data
 
-    def clean_model(self):
+    def clean_model_code(self):
         MODEL_LEN = 4
-        data = self.cleaned_data['model']
+        data = self.cleaned_data['model_code']
 
-        if len(data) < MODEL_LEN:
+        if len(data.strip()) < MODEL_LEN:
             raise ValidationError(
-                "Minimum model code length: {} digits".format(
-                    MODEL_LEN)
+                _(f"Minimum model code length: {MODEL_LEN} digits")
             )
 
-        VALID_MODELS = Type2Model.objects.values_list('model', flat=True)
-        VALID_MODELS = list(map(int, VALID_MODELS))
+        VALID_MODELS = VwType2Model.objects.values_list('model', flat=True)
+        VALID_MODELS = list(set(map(int, VALID_MODELS)))
 
-        logger.info('Valid models: {}'.format(VALID_MODELS))
+        logger.debug(f'Valid models: {VALID_MODELS}')
+
+        if not re.match("^2[1-467][14568][0-9]$", data):
+            raise ValidationError(
+               _("Invalid model. Please double check."))
 
         try:
             model_int = int(data[:2])
         except ValueError:
-            raise ValidationError("Only digits allowed in model code")
+            raise ValidationError(_("Only digits allowed in model code"))
 
-        logger.info('Model code: {}'.format(model_int))
+        logger.debug(f'Model code: {model_int}')
 
         if model_int not in VALID_MODELS:
-            raise ValidationError("Invalid model code")
+            raise ValidationError(_("Invalid model code"))
 
         return data
 
@@ -226,8 +285,8 @@ class MplateCreateForm(ModelForm):
 
         if len(data) < AGGREGATE_CODE_LEN:
             raise ValidationError(
-                "Minimum aggregate code length: {} digits".format(
-                    AGGREGATE_CODE_LEN)
+                _("Minimum aggregate code length: "
+                  f" {AGGREGATE_CODE_LEN} digits")
             )
 
         valid_aggregates = []
@@ -235,7 +294,7 @@ class MplateCreateForm(ModelForm):
         try:
             aggregate_int = int(data)
         except ValueError:
-            raise ValidationError("Only digits allowed in aggregate code")
+            raise ValidationError(_("Only digits allowed in aggregate code"))
 
         for engine in Engine.objects.all():
             for gearbox in Gearbox.objects.all():
@@ -248,7 +307,7 @@ class MplateCreateForm(ModelForm):
                         (engine.engine_code * 10) + gearbox.gearbox_code)
 
         if aggregate_int not in valid_aggregates:
-            raise ValidationError("Invalid aggregate code")
+            raise ValidationError(_("Invalid aggregate code"))
 
         return data
 
