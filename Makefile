@@ -7,8 +7,7 @@ PIPFILE_PROD_SECTION = .default
 PIPFILE_DEV_SECTION = .develop
 JSON_TRANSFORM_PROD = '.default | to_entries[] | .key + .value.version'
 JSON_TRANSFORM_DEV = '.develop | to_entries[] | .key + .value.version'
-#HOST_IP = `hostname -I | awk '{ print $1 }'`
-HOST_IP = 192.168.0.136
+HOST_IP := $(shell hostname -I | awk '{ print $$1 }')
 
 all: requirements
 
@@ -46,6 +45,6 @@ docker-run:
 	sudo docker run \
 		--env-file .env \
 		--publish 8000:8000 \
-		--add-host=database:${HOST_IP} \
+		--add-host=database:$(HOST_IP) \
 		--volume=static:/opt/vw_type2_id/static \
 		vw-type2-id:0.1
