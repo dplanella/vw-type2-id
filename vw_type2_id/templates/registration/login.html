@@ -1,5 +1,6 @@
 {% extends "base_bootstrap.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block content %}
 
@@ -12,11 +13,11 @@
           {% csrf_token %}
           {{ form|crispy }}
 
-          <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up now &rsaquo;</a></p>
+          <p>{% trans "Don't have an account yet?" %} <a href="{% url 'signup' %}">{% trans "Sign up now &rsaquo;" %}</a></p>
 
-          <p class="text-muted"><small>Lost your password? <a href="{% url 'password_reset' %}">Request new password &rsaquo;</a></small></p>
+          <p class="text-muted"><small>{% trans ">Lost your password?" %} <a href="{% url 'password_reset' %}">{% trans "Request new password &rsaquo;" %}</a></small></p>
           
-          <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">Log me in!</button>
+          <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">{% trans "Log me in!" %}</button>
         </form>
       </div>
     </div>
