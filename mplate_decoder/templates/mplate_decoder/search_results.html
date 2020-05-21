@@ -10,9 +10,9 @@
       <div class="table-responsive">
         <table class="table table-hover">
           <tr>
-            <th><strong>{% trans 'Code'|upper %}</strong></th> 
-            <th><strong>{% trans 'Years'|upper %}</strong></th>
-            <th><strong>{% trans 'Description'|upper %}</strong></th>            
+            <th><strong>{% filter upper %} {% trans 'Code' %} {% endfilter %}</strong></th> 
+            <th><strong>{% filter upper %} {% trans 'Years' %} {% endfilter %}</strong></th>
+            <th><strong>{% filter upper %} {% trans 'Description' %} {% endfilter %}</strong></th>            
           </tr>
     {% if m_code_query_set%}
       {% for mcode in m_code_query_set %}
@@ -23,7 +23,9 @@
               {% if mcode.description|length > 0 %}
                 {{ mcode.description }}
               {% else %}
-                {% trans "M-code collection:" %} {{ mcode.collection }}
+                {% blocktrans with collection=mcode.collection%}
+                M-code collection: {{ collection }}
+                {% endblocktrans %}
               {% endif %}
              </td>
           </tr>
@@ -43,8 +45,8 @@
     <div class="list-group mt-4">
         <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="my-1 no-anchor">{% trans "M-plate"|upper %}</h5>
-            <h5 class="my-1 no-anchor">{% trans "M-codes"|upper %}</h5>
+            <h5 class="my-1 no-anchor">{% filter upper %} {% trans "M-plate" %} {% endfilter %}</h5>
+            <h5 class="my-1 no-anchor">{% filter upper %} {% trans "M-codes" %} {% endfilter %}</h5>
           </div>
         </a>
       {% for mplate in mplates %}

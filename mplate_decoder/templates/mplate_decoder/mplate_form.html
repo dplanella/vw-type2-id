@@ -1,6 +1,7 @@
 {% extends "mplate_base_bootstrap.html" %}
 
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 {% with mplate_form_7079_id="mplate_form_7079" mplate_form_6869_id="mplate_form_6869" %}
@@ -10,10 +11,10 @@
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="mod6869-tab" data-toggle="tab" href="#mod6869" role="tab" aria-controls="mod6869" aria-selected="true">Model 68-69</a>
+      <a class="nav-link active" id="mod6869-tab" data-toggle="tab" href="#mod6869" role="tab" aria-controls="mod6869" aria-selected="true">{% trans "Model 68-69" %}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="mod7079-tab" data-toggle="tab" href="#mod7079" role="tab" aria-controls="mod7079" aria-selected="false">Model 70-79</a>
+      <a class="nav-link" id="mod7079-tab" data-toggle="tab" href="#mod7079" role="tab" aria-controls="mod7079" aria-selected="false">{% trans "Model 70-79" %}</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
