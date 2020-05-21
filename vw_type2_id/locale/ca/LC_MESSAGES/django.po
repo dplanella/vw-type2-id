@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Crowdin-Project: vw-type2-id\n"
 "X-Crowdin-Language: ca\n"
-"X-Crowdin-File: /master/vw_type2_id/locale/ca/LC_MESSAGES/django.po\n"
+"X-Crowdin-File: /master/vw_type2_id/locale/fr/LC_MESSAGES/django.po\n"
 
 #: mplate_decoder/forms.py:61
 #, python-brace-format
@@ -27,7 +27,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:77
 msgid "Invalid shortened chassis number. Check first digit."
-msgstr "Número de bastidor escurçat. Comproveu el primer dígit."
+msgstr ""
 
 #: mplate_decoder/forms.py:83
 msgid "Invalid shortened chassis number. Check first and second digits."
@@ -40,11 +40,11 @@ msgstr ""
 
 #: mplate_decoder/forms.py:116
 msgid "Only the letter 'E' is allowed"
-msgstr "Només es permet la lletra «E»"
+msgstr ""
 
 #: mplate_decoder/forms.py:128
 msgid "Only digits, letters and spaces allowed"
-msgstr "Només es permeten dígits, lletres i espais"
+msgstr ""
 
 #: mplate_decoder/forms.py:140
 #, python-brace-format
@@ -58,7 +58,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:167 mplate_decoder/forms.py:242
 msgid "Only digits and letters allowed"
-msgstr "Només es permeten dígits i lletres"
+msgstr ""
 
 #: mplate_decoder/forms.py:171
 #, python-brace-format
@@ -108,7 +108,7 @@ msgstr ""
 #: mplate_decoder/forms.py:277
 #| msgid "Model year"
 msgid "Invalid model code"
-msgstr "El codi de model no és vàlid"
+msgstr ""
 
 #: mplate_decoder/forms.py:287
 msgid "Minimum aggregate code length: "
@@ -124,31 +124,31 @@ msgstr ""
 
 #: mplate_decoder/models.py:27
 msgid "Shortened chassis number"
-msgstr "Número de bastidor escurçat"
+msgstr ""
 
 #: mplate_decoder/models.py:29
 msgid "Chassis number shortened, with the two leading digits removed."
-msgstr "Número de bastidor escurçat, sense els dos dígits inicials."
+msgstr ""
 
 #: mplate_decoder/models.py:32
 msgid "M-codes, row 1"
-msgstr "Codis M, fila 1"
+msgstr ""
 
 #: mplate_decoder/models.py:34
 msgid "Row 1 of M codes (max 5)"
-msgstr "Primera fila de codis M (5 codis màx.)"
+msgstr ""
 
 #: mplate_decoder/models.py:36
 msgid "M-codes, row 2"
-msgstr "Codis M, fila 2"
+msgstr ""
 
 #: mplate_decoder/models.py:38
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
-msgstr "Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 a 69-)"
+msgstr ""
 
 #: mplate_decoder/models.py:41
 msgid "Paint and interior"
-msgstr "Pintura i interior"
+msgstr ""
 
 #: mplate_decoder/models.py:43
 msgid "Combined VW body/roof paint and interior codes"
@@ -156,39 +156,39 @@ msgstr ""
 
 #: mplate_decoder/models.py:45
 msgid "Production date"
-msgstr "Data de producció"
+msgstr ""
 
 #: mplate_decoder/models.py:47
 msgid "Production date code"
-msgstr "Codi de data de producció"
+msgstr ""
 
 #: mplate_decoder/models.py:49
 msgid "Production planning"
-msgstr "Planificació de producció"
+msgstr ""
 
 #: mplate_decoder/models.py:51
 msgid "Production planning code"
-msgstr "Codi de planificació de producció"
+msgstr ""
 
 #: mplate_decoder/models.py:53
 msgid "Export destination"
-msgstr "Destinació d'exportació"
+msgstr ""
 
 #: mplate_decoder/models.py:55
 msgid "Export destination code"
-msgstr "Codi de destinació d'exportació"
+msgstr ""
 
 #: mplate_decoder/models.py:57
 msgid "Vehicle model"
-msgstr "Model de vehicle"
+msgstr ""
 
 #: mplate_decoder/models.py:59
 msgid "Vehicle model code"
-msgstr "Codi de model de vehicle"
+msgstr ""
 
 #: mplate_decoder/models.py:61
 msgid "Aggregate"
-msgstr "Agregat"
+msgstr ""
 
 #: mplate_decoder/models.py:63
 msgid "Engine and gearbox aggregate code"
@@ -196,40 +196,40 @@ msgstr ""
 
 #: mplate_decoder/models.py:65
 msgid "Emden"
-msgstr "Emden"
+msgstr ""
 
 #: mplate_decoder/models.py:67
 msgid "Optional \"E\" for Emden"
-msgstr "«E» opcional per a Emden"
+msgstr ""
 
 #: mplate_decoder/models.py:84
 msgid "Full list of M codes for this M plate"
-msgstr "Llista completa de codis M per a aquesta plaqueta"
+msgstr ""
 
 #: mplate_decoder/models.py:87
 msgid "Planned production date, in time format"
-msgstr "Data de producció planificada, en format de data"
+msgstr ""
 
 #: mplate_decoder/models.py:90
 msgid "Model year"
-msgstr "Any de model"
+msgstr ""
 
 #: mplate_decoder/models.py:93
 msgid "Country of destination"
-msgstr "País de destinació"
+msgstr ""
 
 #: mplate_decoder/models.py:227
 #, python-brace-format
 msgid "({interiorcolor_code}) Unknown color"
-msgstr "({interiorcolor_code}) Color desconegut"
+msgstr ""
 
 #: mplate_decoder/models.py:228
 msgid "Unknown material"
-msgstr "Material desconegut"
+msgstr ""
 
 #: mplate_decoder/models.py:240
 msgid "Error while fetching interior color code:"
-msgstr "Hi ha hagut un error en obtenir el codi de color de l'interior:"
+msgstr ""
 
 #: mplate_decoder/models.py:241
 #, python-brace-format
@@ -334,7 +334,7 @@ msgstr ""
 
 #: mplate_decoder/models.py:1038
 msgid "Model description"
-msgstr "Descripció del model"
+msgstr ""
 
 #: mplate_decoder/models.py:1047
 msgid "Model description as it appears on the chassis plate"
@@ -381,42 +381,42 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:13
 msgid "Code"
-msgstr "Codi"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:14
 msgid "Years"
-msgstr "Anys"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:15
 msgid "Description"
-msgstr "Descripció"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:26
 msgid "M-code collection:"
-msgstr "Col·lecció de codis M:"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:34
 #: mplate_decoder/templates/mplate_decoder/search_results.html:35
 #: mplate_decoder/views.py:435
 msgid "Unknown"
-msgstr "Desconegut"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:42
 #, python-format
 msgid "Found %(count)s M-plates with M-code:"
-msgstr "Hi ha %(count)s plaquetes amb el codi M:"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:46
 msgid "M-plate"
-msgstr "Plaqueta M"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:47
 msgid "M-codes"
-msgstr "Codis M"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:105
 msgid "There are currently no M-plates with M-code:"
-msgstr "No hi ha cap plaqueta amb el codi M:"
+msgstr ""
 
 #: mplate_decoder/urls.py:31
 msgid "VW Type 2 ID"
@@ -425,17 +425,17 @@ msgstr ""
 #: mplate_decoder/urls.py:32
 #, python-brace-format
 msgid "{SITE_NAME} Admin"
-msgstr "Administració de {SITE_NAME}"
+msgstr ""
 
 #: mplate_decoder/urls.py:33
 #, python-brace-format
 msgid "{SITE_NAME} Admin Portal"
-msgstr "Portal d'administració de {SITE_NAME}"
+msgstr ""
 
 #: mplate_decoder/urls.py:34
 #, python-brace-format
 msgid "Welcome to {SITE_NAME} Admin Portal"
-msgstr "Us donem la benvinguda al portal d'administració de {SITE_NAME}"
+msgstr ""
 
 #, fuzzy
 #~| msgid "Model year"
