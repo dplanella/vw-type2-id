@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-10 11:19+0000\n"
-"PO-Revision-Date: 2020-05-21 01:39\n"
+"PO-Revision-Date: 2020-05-21 01:52\n"
 "Last-Translator: David Planella <david.planella@gmail.com>\n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -58,7 +58,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:167 mplate_decoder/forms.py:242
 msgid "Only digits and letters allowed"
-msgstr ""
+msgstr "Només es permeten dígits i lletres"
 
 #: mplate_decoder/forms.py:171
 #, python-brace-format
@@ -108,7 +108,7 @@ msgstr ""
 #: mplate_decoder/forms.py:277
 #| msgid "Model year"
 msgid "Invalid model code"
-msgstr ""
+msgstr "El codi de model no és vàlid"
 
 #: mplate_decoder/forms.py:287
 msgid "Minimum aggregate code length: "
@@ -148,7 +148,7 @@ msgstr "Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -an
 
 #: mplate_decoder/models.py:41
 msgid "Paint and interior"
-msgstr ""
+msgstr "Pintura i interior"
 
 #: mplate_decoder/models.py:43
 msgid "Combined VW body/roof paint and interior codes"
@@ -404,7 +404,7 @@ msgstr "Desconegut"
 #: mplate_decoder/templates/mplate_decoder/search_results.html:42
 #, python-format
 msgid "Found %(count)s M-plates with M-code:"
-msgstr "Hi ha %(count)s plaquetes M amb el codi M:"
+msgstr "Hi ha %(count)s plaquetes amb el codi M:"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:46
 msgid "M-plate"
@@ -416,7 +416,7 @@ msgstr "Codis M"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:105
 msgid "There are currently no M-plates with M-code:"
-msgstr "No hi ha cap plaqueta M amb el codi M:"
+msgstr "No hi ha cap plaqueta amb el codi M:"
 
 #: mplate_decoder/urls.py:31
 msgid "VW Type 2 ID"
@@ -425,17 +425,17 @@ msgstr ""
 #: mplate_decoder/urls.py:32
 #, python-brace-format
 msgid "{SITE_NAME} Admin"
-msgstr ""
+msgstr "Administració de {SITE_NAME}"
 
 #: mplate_decoder/urls.py:33
 #, python-brace-format
 msgid "{SITE_NAME} Admin Portal"
-msgstr ""
+msgstr "Portal d'administració de {SITE_NAME}"
 
 #: mplate_decoder/urls.py:34
 #, python-brace-format
 msgid "Welcome to {SITE_NAME} Admin Portal"
-msgstr ""
+msgstr "Us donem la benvinguda al portal d'administració de {SITE_NAME}"
 
 #, fuzzy
 #~| msgid "Model year"
