@@ -209,7 +209,7 @@ class MplateCreateForm(ModelForm):
                     encoded_production_date=data)
                 if not production_date_decoded:
                     raise ValidationError(
-                        _(f"Invalid production date. Please double check."))
+                        _("Invalid production date. Please double check."))
             except ValueError as exc:
                 raise ValidationError(
                     _(f"Invalid production date ({exc}). "
