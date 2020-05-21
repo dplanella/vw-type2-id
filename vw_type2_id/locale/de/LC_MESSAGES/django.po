@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-10 11:19+0000\n"
-"PO-Revision-Date: 2020-05-21 01:02\n"
+"PO-Revision-Date: 2020-05-21 02:00\n"
 "Last-Translator: David Planella <david.planella@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Crowdin-Project: vw-type2-id\n"
 "X-Crowdin-Language: de\n"
-"X-Crowdin-File: /master/vw_type2_id/locale/ca/LC_MESSAGES/django.po\n"
+"X-Crowdin-File: /master/vw_type2_id/locale/fr/LC_MESSAGES/django.po\n"
 
 #: mplate_decoder/forms.py:61
 #, python-brace-format
