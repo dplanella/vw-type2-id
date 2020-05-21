@@ -1,12 +1,13 @@
 {% extends "mplate_base_bootstrap.html" %}
+{% load i18n %}
 
 {% block content %}
 
 <div class="row mt-4">
   <div class="col">
-<h2>Not found</h2>
+<h2>{% trans "Not found" %}</h2>
 
-<p>The requested page does not exist</p>
+<p>{% trans "The requested page does not exist" %}</p>
 </div>
 </div>
 
