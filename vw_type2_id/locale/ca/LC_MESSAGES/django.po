@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-10 11:19+0000\n"
-"PO-Revision-Date: 2020-05-21 01:52\n"
+"PO-Revision-Date: 2020-05-21 02:10\n"
 "Last-Translator: David Planella <david.planella@gmail.com>\n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -36,7 +36,7 @@ msgstr ""
 #: mplate_decoder/forms.py:106
 #, python-brace-format
 msgid "M-Plate already exists. View {mplate_link}."
-msgstr ""
+msgstr "La plaqueta ja existeix. Vegeu {mplate_link}."
 
 #: mplate_decoder/forms.py:116
 msgid "Only the letter 'E' is allowed"
@@ -44,7 +44,7 @@ msgstr "Només es permet la lletra «E»"
 
 #: mplate_decoder/forms.py:128
 msgid "Only digits, letters and spaces allowed"
-msgstr ""
+msgstr "Només es permeten dígits, lletres i espais"
 
 #: mplate_decoder/forms.py:140
 #, python-brace-format
@@ -128,7 +128,7 @@ msgstr "Número de bastidor escurçat"
 
 #: mplate_decoder/models.py:29
 msgid "Chassis number shortened, with the two leading digits removed."
-msgstr "Número de bastidor escurçat."
+msgstr "Número de bastidor escurçat, sense els dos dígits inicials."
 
 #: mplate_decoder/models.py:32
 msgid "M-codes, row 1"
@@ -319,7 +319,7 @@ msgstr ""
 #: mplate_decoder/models.py:894
 #, python-brace-format
 msgid "Remarks: {exteriorcolor.remarks}"
-msgstr ""
+msgstr "Comentaris: {exteriorcolor.remarks}"
 
 #: mplate_decoder/models.py:897
 #, python-brace-format
@@ -420,7 +420,7 @@ msgstr "No hi ha cap plaqueta amb el codi M:"
 
 #: mplate_decoder/urls.py:31
 msgid "VW Type 2 ID"
-msgstr ""
+msgstr "Identificació del tipus 2 de Volkswagen"
 
 #: mplate_decoder/urls.py:32
 #, python-brace-format
