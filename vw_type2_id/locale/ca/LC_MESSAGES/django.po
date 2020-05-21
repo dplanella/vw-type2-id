@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-10 11:19+0000\n"
-"PO-Revision-Date: 2020-05-21 01:29\n"
+"PO-Revision-Date: 2020-05-21 01:39\n"
 "Last-Translator: David Planella <david.planella@gmail.com>\n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:116
 msgid "Only the letter 'E' is allowed"
-msgstr ""
+msgstr "Només es permet la lletra «E»"
 
 #: mplate_decoder/forms.py:128
 msgid "Only digits, letters and spaces allowed"
@@ -128,7 +128,7 @@ msgstr "Número de bastidor escurçat"
 
 #: mplate_decoder/models.py:29
 msgid "Chassis number shortened, with the two leading digits removed."
-msgstr "Número de bastidor escurçat"
+msgstr "Número de bastidor escurçat."
 
 #: mplate_decoder/models.py:32
 msgid "M-codes, row 1"
@@ -196,19 +196,19 @@ msgstr ""
 
 #: mplate_decoder/models.py:65
 msgid "Emden"
-msgstr ""
+msgstr "Emden"
 
 #: mplate_decoder/models.py:67
 msgid "Optional \"E\" for Emden"
-msgstr ""
+msgstr "«E» opcional per a Emden"
 
 #: mplate_decoder/models.py:84
 msgid "Full list of M codes for this M plate"
-msgstr ""
+msgstr "Llista completa de codis M per a aquesta plaqueta"
 
 #: mplate_decoder/models.py:87
 msgid "Planned production date, in time format"
-msgstr ""
+msgstr "Data de producció planificada, en format de data"
 
 #: mplate_decoder/models.py:90
 msgid "Model year"
@@ -221,7 +221,7 @@ msgstr "País de destinació"
 #: mplate_decoder/models.py:227
 #, python-brace-format
 msgid "({interiorcolor_code}) Unknown color"
-msgstr ""
+msgstr "({interiorcolor_code}) Color desconegut"
 
 #: mplate_decoder/models.py:228
 msgid "Unknown material"
@@ -229,7 +229,7 @@ msgstr "Material desconegut"
 
 #: mplate_decoder/models.py:240
 msgid "Error while fetching interior color code:"
-msgstr ""
+msgstr "Hi ha hagut un error en obtenir el codi de color de l'interior:"
 
 #: mplate_decoder/models.py:241
 #, python-brace-format
