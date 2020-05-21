@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Crowdin-Project: vw-type2-id\n"
 "X-Crowdin-Language: fr\n"
-"X-Crowdin-File: /master/vw_type2_id/locale/fr/LC_MESSAGES/django.po\n"
+"X-Crowdin-File: /master/vw_type2_id/locale/de/LC_MESSAGES/django.po\n"
 
 #: mplate_decoder/forms.py:61
 #, python-brace-format
