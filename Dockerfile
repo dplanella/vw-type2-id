@@ -17,14 +17,21 @@ COPY ./docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
+# Install client libraries
+RUN apk update && apk add --virtual .run-deps \
+    libpq \
+    gettext
+
 # Install build dependencies
 # using the image's package manager
-RUN apk --no-cache add --virtual .build-dependencies \
+RUN apk --no-cache add --virtual .build-deps \
     build-base \
+    gettext-dev \
     jpeg-dev \
     libxml2-dev \
     libxslt-dev \
     python3-dev \
+    postgresql-dev \
     zlib-dev
 
 # Install app dependencies
@@ -40,3 +47,5 @@ COPY . ${CONTAINER_PROJECT}
 # Install local dependencies
 #RUN pipenv install --skip-lock --system --dev
 RUN pipenv install --system --deploy --ignore-pipfile
+
+#RUN apk del .build-deps

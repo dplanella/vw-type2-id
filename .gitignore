@@ -1,5 +1,6 @@
 .vscode
 .coverage
+.env
 *.sqlite3*
 mplate_decoder/fixtures/mplate_*
 __pycache__/*
@@ -11,6 +12,7 @@ cache/
 htmlcov/
 geckodriver.log
 test-results/
+*~
 *_models.png
 *.mo
 *.swp

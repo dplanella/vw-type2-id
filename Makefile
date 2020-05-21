@@ -7,6 +7,7 @@ PIPFILE_PROD_SECTION = .default
 PIPFILE_DEV_SECTION = .develop
 JSON_TRANSFORM_PROD = '.default | to_entries[] | .key + .value.version'
 JSON_TRANSFORM_DEV = '.develop | to_entries[] | .key + .value.version'
+HOST_IP := $(shell hostname -I | awk '{ print $$1 }')
 
 all: requirements
 
@@ -35,3 +36,15 @@ clean:
 		geckodriver.log \
 		builds \
 		cache
+
+docker-build:
+	sudo docker build --tag vw-type2-id:0.1 .
+
+docker-run:
+	# The host-ip needs to resolve to the host's eth0 IP
+	sudo docker run \
+		--env-file .env \
+		--publish 8000:8000 \
+		--add-host=database:$(HOST_IP) \
+		--volume=static:/opt/vw_type2_id/static \
+		vw-type2-id:0.1

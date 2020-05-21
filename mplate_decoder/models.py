@@ -11,6 +11,7 @@ from django.core.exceptions import (
 )
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext
 from isoweek import Week
 from crum import get_current_user
 
@@ -89,7 +90,7 @@ class Mplate(Model):
         max_length=4, blank=True, editable=False,
         help_text=_('Model year'))
     destination_country = models.CharField(
-        max_length=30, blank=True,
+        max_length=70, blank=True,
         help_text=_("Country of destination"))
 
     def __unicode__(self):
@@ -891,7 +892,7 @@ class MplateDecoder:
             color_name_roof = color_name_body
 
         if exteriorcolor.remarks:
-            remarks = '\n' + _(f"Remarks: {exteriorcolor.remarks}")
+            remarks = "\n" + gettext(f"Remarks: {exteriorcolor.remarks}")
 
         exteriorcolor_description = \
             _(f'''Body: {color_name_body} ({exteriorcolor.lacquer_code_body})
@@ -905,7 +906,7 @@ class MplateDecoder:
 
 class ExportDestination(Model):
     export_code = models.CharField(max_length=3)
-    destination = models.CharField(max_length=50, blank=True)
+    destination = models.CharField(max_length=70, blank=True)
     country = models.CharField(max_length=50, blank=True)
     region = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50, blank=True)
