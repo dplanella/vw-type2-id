@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.conf import settings
+from django.utils.translation import gettext as _
 
 
 def contactView(request):
@@ -27,7 +28,7 @@ def contactView(request):
 
 def successView(request):
 
-    success_message = 'Success! Thank you for your message.'
+    success_message = _('Success! Thank you for your message.')
 
     return render(request, "success.html",
                   {'success_message': success_message})

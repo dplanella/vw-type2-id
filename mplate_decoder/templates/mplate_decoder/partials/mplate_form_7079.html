@@ -1,12 +1,13 @@
   {% load crispy_forms_tags %}
   {% load svg %}
+  {% load i18n %}
 
   <div class="row mt-2">
   <div class="col">
   <form method="post" id="{{ form_id }}">
     {% csrf_token %}
 
-    <h2 class="mt-4">Volkswagen Type 2 M-plate, model year 70-79</h2>
+    <h2 class="mt-4">{% trans "Volkswagen Type 2 M-plate, model year 70-79" %}</h2>
 
     {% include "mplate_decoder/partials/mplate_form_alerts_pre.html"%}
 
@@ -54,9 +55,9 @@
     {% include "mplate_decoder/partials/mplate_form_alerts_post.html"%}
 
     {% if object %}
-    <button id="btn-update-7079" class="btn btn-primary btn-lg btn-block">Update this M-plate</button>
+    <button id="btn-update-7079" class="btn btn-primary btn-lg btn-block">{% trans "Update this M-plate" %}</button>
     {% else %}
-    <button id="btn-decode-7079" class="btn btn-primary btn-lg btn-block">Decode this M-plate</button>
+    <button id="btn-decode-7079" class="btn btn-primary btn-lg btn-block">{% trans "Decode this M-plate" %}</button>
     {% endif %}
   </form>
   </div>
@@ -64,7 +65,7 @@
 
   <div class="row mt-5">
     <div class="col">
-      <h2 id="#reference">Reference</h2>
+      <h2 id="#reference">{% trans "Reference" %}</h2>
     </div>
   </div>
 

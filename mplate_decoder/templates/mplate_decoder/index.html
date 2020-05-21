@@ -1,6 +1,7 @@
 {% extends "mplate_base_bootstrap.html" %}
 {% load svg %}
 {% load humanize %}
+{% load i18n %}
 
 {% block content %}
 
@@ -8,9 +9,11 @@
 <div class="row mt-4">
   <div class="col">
     <p class="lead">
+    {% blocktrans %}
       The M-plate is one of the identification plates found on VW busses. 
       Short for <em>Mehraustattung</em> (optional extras in German), it contains
       production codes with information about equipment, manufacturing date, destination, specs and more.
+    {% endblocktrans %}
     </p>
   </div>
 </div>
@@ -18,17 +21,21 @@
 <!-- Location rows -->
 <div class="row mt-4">
   <div class="col-sm">
-    <h2>Find it</h2>
+    <h2>{% trans "Find it" %}</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-sm">
     <h4>
-      <span class="text-muted">Model years 68-76</span>
+      <span class="text-muted">{% trans "Model years 68-76" %}</span>
     </h4>
     <img class="img-fluid img-thumbnail" src="https://www.thesamba.com/vw/gallery/pix/2000905.jpg">
-    <p><small class="text-muted">Image modified from <a href="https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789">The Samba forum</a> and <a href="https://www.thesamba.com/vw/forum/album_page.php?pic_id=1901273">album</a></small></p>
+    <p><small class="text-muted">
+    {% blocktrans with url_forum='https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789' url_img='https://www.thesamba.com/vw/forum/album_page.php?pic_id=1901273' %}
+    Image modified from <a href="{{ url_img }}">The Samba forum</a> and <a href="{{ url_img }}">album</a>
+    {% endblocktrans %}
+    </small></p>
     <p class="mt-1">
       <strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles).
     </p>
@@ -39,9 +46,13 @@
       <span class="text-muted">Model years 77-79</span>
     </h4>
     <img class="img-fluid img-thumbnail" src="https://www.thesamba.com/vw/gallery/pix/2000904.jpg">
-      <p><small class="text-muted">Image modified from <a href="https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789">The Samba forum</a></small></p>
+      <p><small class="text-muted">
+      {% blocktrans with url='https://www.thesamba.com/vw/forum/viewtopic.php?p=7551789' %}
+      Image modified from <a href="{{ url }}">The Samba forum</a>
+      {% endblocktrans %}
+      </small></p>
       <p class="mt-1">
-        <strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe. 
+        {% trans "<strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe." %} 
       </p>
   </div>
 </div>
@@ -49,7 +60,7 @@
 <!-- Decoder rows -->
 <div class="row mt-4">
   <div class="col-sm">
-    <h2>Decode it</h2>
+    <h2>{% trans "Decode it" %}</h2>
   </div>
 </div>
 
@@ -60,17 +71,16 @@
     {% svg 'mplate-7079-form' %}
   </div>
   <p class="mt-3">
-    Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields.
-  </p>
+    {% trans "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields." %}  </p>
   
   <div>
-    <a class="btn btn-primary btn-lg btn-block mt-3 mb-4" href="{% url 'mplate_decoder:mplate_create' %}" role="button">Decode an M-plate&raquo;</a>
+    <a class="btn btn-primary btn-lg btn-block mt-3 mb-4" href="{% url 'mplate_decoder:mplate_create' %}" role="button">{% trans "Decode an M-plate&raquo;" %}</a>
   </div>
 </div>
 
 <div class="col-sm">
     <h4 class="d-flex justify-content-between align-items-center mb-3">
-      <span class="text-muted">M-plate submissions</span>
+      <span class="text-muted">{% trans "M-plate submissions" %}</span>
       <span class="badge badge-secondary badge-pill">{{ object_list.count }}</span>
     </h4>
     <ul class="list-group">

@@ -1,4 +1,5 @@
 {% extends "mplate_base_bootstrap.html" %}
+{% load i18n %}
 
 {% block content %}
 
@@ -9,9 +10,9 @@
       <div class="table-responsive">
         <table class="table table-hover">
           <tr>
-            <th><strong>{{ 'M-plate ID'|upper }}</strong></th> 
-            <th><strong>{{ 'Model year'|upper }}</strong></th>
-            <th><strong>{{ 'Actions'|upper }}</strong></th>            
+            <th><strong>{% filter upper %} {% trans 'M-plate ID' %} {% endfilter %}</strong></th> 
+            <th><strong>{% filter upper %} {% trans 'Model year' %} {% endfilter %}</strong></th>
+            <th><strong>{% filter upper %} {% trans 'Actions' %} {% endfilter %}</strong></th>            
           </tr>
     {% if mplate_list %}
       {% for mplate in mplate_list %}
@@ -19,16 +20,16 @@
             <td><a href="{% url 'mplate_decoder:mplate_retrieve' mplate.chassis_number_short %}">{{ mplate.chassis_number_short }}</a></td>
             <td>{{ mplate.model_year }}</td>
             <td>
-              <a class="btn btn-primary btn-sm" role="button" href="{% url 'mplate_decoder:mplate_update' mplate.chassis_number_short %}">Edit</a>
-              <a class="btn btn-outline-danger btn-sm" role="button" href="{% url 'mplate_decoder:mplate_delete' mplate.chassis_number_short %}">Delete</a>
+              <a class="btn btn-primary btn-sm" role="button" href="{% url 'mplate_decoder:mplate_update' mplate.chassis_number_short %}">{% trans "Edit" %}</a>
+              <a class="btn btn-outline-danger btn-sm" role="button" href="{% url 'mplate_decoder:mplate_delete' mplate.chassis_number_short %}">{% trans "Delete" %}</a>
              </td>
           </tr>
       {% endfor %}
     {% else %}
           <tr>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
+            <td>{% trans "N/A" %}</td>
+            <td>{% trans "N/A" %}</td>
+            <td>{% trans "N/A" %}</td>
           </tr>
     {% endif %}
         </table>

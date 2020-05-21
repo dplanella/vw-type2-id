@@ -1,9 +1,11 @@
+{% load i18n %}
+
 <div class="alert alert-secondary" role="alert">
   <ol>
   {% if not object %}
     <li>To be able to list, edit and delete your M-plates, optionally <a href="{% url 'login' %}">sign up or log in</a>.</li>
   {% endif %}
     <li>Choose the tab for your bus' model year and fill in the fields to decode your M-plate.</li>
-    <li>If you need help, <a href="##reference">check out the reference</a>.</li>
+    <li>If you need help, <a href="#reference">check out the reference</a>.</li>
   </ol>
 </div>

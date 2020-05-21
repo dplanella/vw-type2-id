@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load svg %}
+{% load i18n %}
 
 {% block content %}
 
@@ -22,31 +23,33 @@
 <div class="table-responsive">
 <table class="table table-hover">
   <tr>
-    <td><strong>{{ 'Model'|upper }}</strong></td> 
-    <td>Volkswagen Type 2<br>
-        ➡ {{ model_description.model_description }} (model {{ model_description.model_code_catalog }})<br>
+    <td><strong>{% filter upper %} {% trans 'Model' %} {% endfilter %}</strong></td> 
+    <td>{% trans "Volkswagen Type 2" %}<br>
+    {% blocktrans with model_description=model_description.model_description model_code_catalog=model_description.model_code_catalog configuration_description=model_description.configuration_description extras_description=model_description.extras_description %}
+        ➡ {{ model_description }} (model {{ model_code_catalog }})<br>
         ➡ {{ model_description.configuration_description }}<br>
         ➡ {{ model_description.extras_description }}<br>
+    {% endblocktrans %}
     </td>
   </tr>
   <tr>
-    <td><strong>{{ 'Model year'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Model year' %} {% endfilter %}</strong></td> 
     <td>{{ model_year }}</td>
   </tr>
   <tr>
-    <td><strong>{{ 'Engine'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Engine' %} {% endfilter %}</strong></td> 
     <td>{{ engine_description }} </td>
   </tr>
   <tr>
-    <td><strong>{{ 'Transmission'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Transmission' %} {% endfilter %}</strong></td> 
     <td>{{ gearbox_description }} </td>
   </tr>
   <tr>
-    <td><strong>{{ 'Vehicle Ident. Nr.'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Vehicle Ident. Nr.' %} {% endfilter %}</strong></td> 
     <td>{{ chassis_number }}</td>
   </tr>
   <tr>
-    <td><strong>{{ 'Production date'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Production date' %} {% endfilter %}</strong></td> 
     <td id="production-date">
         {{ production_date }}{% if emden %}. Manufactured at the Emden plant
             <ion-icon
@@ -59,7 +62,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>{{ 'Optional extras'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Optional extras' %} {% endfilter %}</strong></td> 
     <!-- <td>{{ mplate.m_codes_1 }} {{ mplate.m_codes_2 }}</td> -->
     <td>
     {% for key, value in m_codes.items %}
@@ -67,22 +70,22 @@
     {% endfor %}
     </td>
   <tr>
-    <td><strong>{{ 'Exterior'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Exterior' %} {% endfilter %}</strong></td> 
     <td>{{ exteriorcolor_description|linebreaksbr }} </td>
   </tr>  
   <tr>
-    <td><strong>{{ 'Interior'|upper }}</strong></td> 
+    <td><strong>{% filter upper %} {% trans 'Interior' %} {% endfilter %}</strong></td> 
     <td>{{ interiorcolor_description }} </td>
   </tr>
   {% if export_destination and 'Unknown' not in export_destination and 'Not specified' not in export_destination %}
   <tr>
-    <td><strong>{{ 'Destination'|upper }}</strong></td>
+    <td><strong>{% filter upper %} {% trans 'Destination' %} {% endfilter %}</strong></td>
     <td>{{ export_destination }} </td>
   </tr>
   {% endif %}
   {% if export_destination_country %}
   <tr>
-    <td><strong>{{ 'Destination country'|upper }}</strong></td>
+    <td><strong>{% filter upper %} {% trans 'Destination country' %} {% endfilter %}</strong></td>
     <td>{{ export_destination_country }} </td>
   </tr>
   {% endif %}

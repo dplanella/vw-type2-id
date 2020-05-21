@@ -1,16 +1,17 @@
 {% extends "mplate_base_bootstrap.html" %}
+{% load i18n %}
 
 {% block content %}
 
 <div class="row mt-4">
 <div class="col">
-<h1>Delete M-plate</h1>
+<h1>{% trans "Delete M-plate" %}</h1>
 
-<p>Are you sure you want to delete M-plate {{ mplate.chassis_number_short }}?</p>
+<p>{% blocktrans %}Are you sure you want to delete M-plate {{ mplate.chassis_number_short }}?{% endblocktrans %}</p>
 
 <form action="" method="POST">
   {% csrf_token %}
-  <button type="submit" class="btn btn-primary">Yes, delete it</button>
+  <button type="submit" class="btn btn-primary">{% trans "Yes, delete it" %}</button>
 </form>
 </div>
 </div>

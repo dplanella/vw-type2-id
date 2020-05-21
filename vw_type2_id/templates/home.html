@@ -1,24 +1,25 @@
 {% extends "base_bootstrap.html" %}
+{% load i18n %}
 
 {% block contentnocontainer %}
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Volkswagen Type 2 identification</h1>
-    <p class="lead">A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979.</p>
+    <h1 class="display-4">{% trans "Volkswagen Type 2 identification" %}</h1>
+    <p class="lead">{% trans "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979." %}</p>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-md">
-      <h2>M-plate decoder</h2>
-      <p>Decode the M-plate and find information about your bus. </p>
-      <p><a class="btn btn-secondary" href="{% url 'mplate_decoder:mplate_index'%}" role="button">Learn more &raquo;</a></p>
+      <h2>{% trans "M-plate decoder" %}</h2>
+      <p>{% trans "Decode the M-plate and find information about your bus." %}</p>
+      <p><a class="btn btn-secondary" href="{% url 'mplate_decoder:mplate_index'%}" role="button">{% trans "Learn more &raquo;" %}</a></p>
     </div>
     <div class="col-md">
-      <h2>Engine number decoder</h2>
-      <p>Coming soon</p>
+      <h2>{% trans "Engine number decoder" %}</h2>
+      <p>{% trans "Coming soon" %}</p>
     </div>
 </div>
 
