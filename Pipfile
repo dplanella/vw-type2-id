@@ -24,11 +24,11 @@ pillow = "*"
 django-environ = "*"
 django-inline-svg = "*"
 isoweek = "*"
-django-fullurl = "*"
 django-markdownify = "*"
 django-crum = "*"
 dj-database-url = "*"
 psycopg2 = "*"
+django-fullurl = "==1.0"
 
 [requires]
 python_version = "3.8"
