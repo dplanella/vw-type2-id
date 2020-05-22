@@ -29,7 +29,7 @@ DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 
 ALLOWED_HOSTS = os.environ.get(
     'DJANGO_ALLOWED_HOSTS',
-    default='localhost 127.0.0.1']).split(' ')
+    default='localhost 127.0.0.1').split(' ')
 
 # Application definition
 
