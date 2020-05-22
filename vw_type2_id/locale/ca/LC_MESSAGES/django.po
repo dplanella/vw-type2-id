@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-22 09:14+0000\n"
-"PO-Revision-Date: 2020-05-22 09:30\n"
+"PO-Revision-Date: 2020-05-22 13:05\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -109,7 +109,7 @@ msgstr ""
 #: mplate_decoder/forms.py:258
 #, python-brace-format
 msgid "Minimum model code length: {MODEL_LEN} digits"
-msgstr ""
+msgstr "Llargada mínima del codi de model: {MODEL_LEN} dígits"
 
 #: mplate_decoder/forms.py:268
 msgid "Invalid model. Please double check."
@@ -117,7 +117,7 @@ msgstr "El model no és vàlid, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:273
 msgid "Only digits allowed in model code"
-msgstr ""
+msgstr "Només es permeten dígits al codi de model"
 
 #: mplate_decoder/forms.py:278
 msgid "Invalid model code"
@@ -255,7 +255,7 @@ msgstr ""
 
 #: mplate_decoder/models.py:248
 msgid "No description available for special paint jobs"
-msgstr ""
+msgstr "No hi ha descripcions disponibles per a pintura especial"
 
 #: mplate_decoder/models.py:267
 msgid "Unavailable engine description"
@@ -268,19 +268,19 @@ msgstr "La descripció de la transmissió no està disponible"
 #: mplate_decoder/models.py:336
 #, python-brace-format
 msgid "MplateDecoder requires an mplate or {attribute_name}"
-msgstr ""
+msgstr "MplateDecoder requereix una plaqueta o {attribute_name}"
 
 #: mplate_decoder/models.py:389
 msgid "MplateDecoder requires an mplate or model code"
-msgstr ""
+msgstr "MplateDecoder requereix una plaqueta o un codi de model"
 
 #: mplate_decoder/models.py:401
 msgid "MplateDecoder requires an mplate or model year"
-msgstr ""
+msgstr "MplateDecoder requereix una plaqueta o un any de model"
 
 #: mplate_decoder/models.py:408
 msgid "MplateDecoder requires an mplate or M codes"
-msgstr ""
+msgstr "MplateDecoder requereix una plaqueta o codis M"
 
 #: mplate_decoder/models.py:511
 #, python-brace-format
@@ -302,17 +302,17 @@ msgstr ""
 #: mplate_decoder/models.py:676
 #, python-brace-format
 msgid "Unknown code, year {model_year}"
-msgstr ""
+msgstr "Codi desconegut, any {model_year}"
 
 #: mplate_decoder/models.py:685
 #, python-brace-format
 msgid "Undefined code, year {model_year}"
-msgstr ""
+msgstr "Codi no definit, any {model_year}"
 
 #: mplate_decoder/models.py:752 mplate_decoder/models.py:802
 #, python-brace-format
 msgid "Unknown ({export_destination_code})"
-msgstr ""
+msgstr "Desconegut ({export_destination_code})"
 
 #: mplate_decoder/models.py:786
 msgid "Undefined country or region"
@@ -439,14 +439,16 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
 msgid "Model years 77-79"
-msgstr ""
+msgstr "Anys de model 77-79"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:50
 #, python-format
 msgid "\n"
 "      Image modified from <a href=\"%(url)s\">The Samba forum</a>\n"
 "      "
-msgstr ""
+msgstr "\n"
+"      Imatge modificada del <a href=\"%(url)s\">fòrum The Samba</a>\n"
+"      "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:55
 msgid "<strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe."
