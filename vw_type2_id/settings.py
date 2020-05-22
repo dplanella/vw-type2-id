@@ -27,11 +27,9 @@ SECRET_KEY = os.environ.get('DJANGO_VW_TYPE2_ID_SECRET_KEY')
 
 DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 
-ALLOWED_HOSTS = ['localhost',
-                 '127.0.0.1',
-                 'vw-type2-id.xyz',
-                 'www.vw-type2-id.xyz',
-                 ]
+ALLOWED_HOSTS = os.environ.get(
+    'DJANGO_ALLOWED_HOSTS',
+    default=['localhost', '127.0.0.1'])
 
 # Application definition
 
