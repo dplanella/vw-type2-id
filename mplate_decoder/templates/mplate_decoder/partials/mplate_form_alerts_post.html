@@ -2,10 +2,10 @@
 {% load i18n %}
 
 <div class="alert alert-info" role="alert">
-  {% fullurl 'mplate_decoder:mplate_index' as mplate_url %}
+  {% buildfullurl 'mplate_decoder:mplate_index' as mplate_fullurl %}
   {% blocktrans %}
   Once submitted, the M-plate data will be stored and available
-  at '{{ mplate_url }}CCCCCCCC', where 'CCCCCCCC'
+  at '{{ mplate_fullurl }}CCCCCCCC', where 'CCCCCCCC'
   is the shortened chassis number on the plate.
   {% endblocktrans %}
 </div>
