@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 06:25+0000\n"
+"POT-Creation-Date: 2020-05-22 09:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -456,6 +456,10 @@ msgid ""
 "    "
 msgstr ""
 
+#: mplate_decoder/templates/mplate_decoder/index.html:46
+msgid "Model years 77-79"
+msgstr ""
+
 #: mplate_decoder/templates/mplate_decoder/index.html:50
 #, python-format
 msgid ""
@@ -628,6 +632,11 @@ msgstr ""
 msgid "Yes, delete it"
 msgstr ""
 
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:9
+#: vw_type2_id/templates/base_bootstrap.html:77
+msgid "My M-plates"
+msgstr ""
+
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:13
 msgid "M-plate ID"
 msgstr ""
@@ -686,7 +695,7 @@ msgstr ""
 msgid ""
 "\n"
 "  Once submitted, the M-plate data will be stored and available\n"
-"  at '%(mplate_url)sCCCCCCCC', where 'CCCCCCCC'\n"
+"  at '%(mplate_fullurl)sCCCCCCCC', where 'CCCCCCCC'\n"
 "  is the shortened chassis number on the plate.\n"
 "  "
 msgstr ""
@@ -780,10 +789,6 @@ msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:63
 msgid "Search M-codes (e.g. 500)"
-msgstr ""
-
-#: vw_type2_id/templates/base_bootstrap.html:77
-msgid "My M-plates"
 msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:79
