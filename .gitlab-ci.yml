@@ -34,7 +34,7 @@ default:
 # Note: the dependency_scanning seems to support Python 3.6 only, hence the
 # dedicated image here
 build_dep_wheels:
-  image: python:3.6
+  image: python:3.8
   stage: build
   script:
     - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
