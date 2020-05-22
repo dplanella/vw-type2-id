@@ -12,9 +12,12 @@ LINTER_ARGS = --exclude=migrations
 HOST_IP := $(shell hostname -I | awk '{ print $$1 }')
 DOCKER_BIN = docker
 DOCKER = sudo $(DOCKER_BIN)
-IMAGE_NAME = vw-type2-id
-IMAGE_TAG = latest
-IMAGE = $(IMAGE_NAME):$(IMAGE_TAG)
+IMAGE_NAME = registry.gitlab.com/vw-type2/vw-type2-id
+IMAGE_TAG = master
+HOST_CODE_PATH = .
+HOST_STATIC_PATH = $(HOST_CODE_PATH)/static
+CONT_STATIC_PATH = /opt/vw_type2_id/static
+
 
 all: requirements
 
@@ -49,9 +52,9 @@ docker-build:
 
 docker-run:
 	# The host-ip needs to resolve to the host's eth0 IP
-	sudo docker run \
-		--env-file .env \
-		--publish 8000:8000 \
+	$(DOCKER) run \
+		--env-file $(HOST_CODE_PATH)/.env \
+		--publish 8001:8000 \
 		--add-host=database:$(HOST_IP) \
-		--volume=static:/opt/vw_type2_id/static \
+		--volume=$(HOST_STATIC_PATH):$(CONT_STATIC_PATH) \
 		$(IMAGE)
