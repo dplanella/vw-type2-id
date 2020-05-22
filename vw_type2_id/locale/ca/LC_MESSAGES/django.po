@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-22 06:25+0000\n"
-"PO-Revision-Date: 2020-05-22 06:37\n"
+"PO-Revision-Date: 2020-05-22 06:55\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -263,7 +263,7 @@ msgstr "La descripció del motor no està disponible"
 
 #: mplate_decoder/models.py:283
 msgid "Unavailable transmission description"
-msgstr ""
+msgstr "La descripció de la transmissió no està disponible"
 
 #: mplate_decoder/models.py:336
 #, python-brace-format
@@ -392,7 +392,7 @@ msgstr "Transmissió"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:48
 msgid "Vehicle Ident. Nr."
-msgstr ""
+msgstr "Núm. d'ident. del vehicle"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:65
 msgid "Optional extras"
@@ -424,11 +424,11 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:24
 msgid "Find it"
-msgstr ""
+msgstr "Trobeu-la"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:31
 msgid "Model years 68-76"
-msgstr ""
+msgstr "Anys de model 68-76"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:35
 #, python-format
@@ -450,7 +450,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:63
 msgid "Decode it"
-msgstr ""
+msgstr "Descodifiqueu-la"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:74
 msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
@@ -458,13 +458,13 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:77
 msgid "Decode an M-plate&raquo;"
-msgstr ""
+msgstr "Descodifica una plaqueta M&raquo;"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:83
 #: mplate_decoder/templates/mplate_decoder/metrics.html:61
 #: mplate_decoder/templates/mplate_decoder/metrics.html:85
 msgid "M-plate submissions"
-msgstr ""
+msgstr "Plaquetes M enviades"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:9
 msgid "Vehicle production data extracted from the M-plate decoder submissions"
@@ -476,7 +476,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:20
 msgid "Model years"
-msgstr ""
+msgstr "Anys de models"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:27
 msgid "Top 15 colors"
@@ -740,7 +740,7 @@ msgstr "Descodifiqueu la plaqueta M i obtingueu informació sobre la furgoneta."
 
 #: vw_type2_id/templates/home.html:18
 msgid "Learn more &raquo;"
-msgstr ""
+msgstr "Per saber-ne més &raquo;"
 
 #: vw_type2_id/templates/home.html:21
 msgid "Engine number decoder"
@@ -748,7 +748,7 @@ msgstr ""
 
 #: vw_type2_id/templates/home.html:22
 msgid "Coming soon"
-msgstr ""
+msgstr "Properament"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Don't have an account yet?"
@@ -756,37 +756,37 @@ msgstr "Encara no teniu un compte?"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Sign up now &rsaquo;"
-msgstr ""
+msgstr "Registreu-vos &rsaquo;"
 
 #: vw_type2_id/templates/registration/login.html:18
 msgid "Lost your password?"
-msgstr ""
+msgstr "Heu perdut la contrasenya?"
 
 #: vw_type2_id/templates/registration/login.html:18
 msgid "Request new password &rsaquo;"
-msgstr ""
+msgstr "Sol·liciteu una contrasenya nova &rsaquo;"
 
 #: vw_type2_id/templates/registration/login.html:20
 msgid "Log me in!"
-msgstr ""
+msgstr "Connecta'm!"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:11
 msgid "Password reset"
-msgstr ""
+msgstr "Restabliment de la contrasenya"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:12
 msgid "Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one."
-msgstr ""
+msgstr "Heu oblidat la contrasenya? Escriviu la vostra adreça electrònica aquí sota i us enviarem les instruccions per a restablir-la."
 
 #: vw_type2_id/templates/registration/password_reset_form.html:17
 msgid "Reset my password"
-msgstr ""
+msgstr "Restableix la meva contrasenya"
 
 #: vw_type2_id/templates/signup.html:11
 msgid "Sign up"
-msgstr ""
+msgstr "Registreu-vos"
 
 #: vw_type2_id/templates/signup.html:15
 msgid "Sign me up!"
-msgstr ""
+msgstr "Registra'm!"
 
