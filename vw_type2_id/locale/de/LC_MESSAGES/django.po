@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-21 19:09+0000\n"
-"PO-Revision-Date: 2020-05-22 06:20\n"
+"POT-Creation-Date: 2020-05-22 06:25+0000\n"
+"PO-Revision-Date: 2020-05-22 06:37\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -135,225 +135,225 @@ msgstr ""
 msgid "Invalid aggregate code"
 msgstr ""
 
-#: mplate_decoder/models.py:27
+#: mplate_decoder/models.py:28
 msgid "Shortened chassis number"
 msgstr ""
 
-#: mplate_decoder/models.py:29
+#: mplate_decoder/models.py:30
 msgid "Chassis number shortened, with the two leading digits removed."
 msgstr ""
 
-#: mplate_decoder/models.py:32
+#: mplate_decoder/models.py:33
 msgid "M-codes, row 1"
 msgstr ""
 
-#: mplate_decoder/models.py:34
+#: mplate_decoder/models.py:35
 msgid "Row 1 of M codes (max 5)"
 msgstr ""
 
-#: mplate_decoder/models.py:36
+#: mplate_decoder/models.py:37
 msgid "M-codes, row 2"
 msgstr ""
 
-#: mplate_decoder/models.py:38
+#: mplate_decoder/models.py:39
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
 msgstr ""
 
-#: mplate_decoder/models.py:41
+#: mplate_decoder/models.py:42
 msgid "Paint and interior"
 msgstr ""
 
-#: mplate_decoder/models.py:43
+#: mplate_decoder/models.py:44
 msgid "Combined VW body/roof paint and interior codes"
 msgstr ""
 
-#: mplate_decoder/models.py:45
+#: mplate_decoder/models.py:46
 #: mplate_decoder/templates/mplate_decoder/detail.html:52
 msgid "Production date"
 msgstr ""
 
-#: mplate_decoder/models.py:47
+#: mplate_decoder/models.py:48
 msgid "Production date code"
 msgstr ""
 
-#: mplate_decoder/models.py:49
+#: mplate_decoder/models.py:50
 msgid "Production planning"
 msgstr ""
 
-#: mplate_decoder/models.py:51
+#: mplate_decoder/models.py:52
 msgid "Production planning code"
 msgstr ""
 
-#: mplate_decoder/models.py:53
+#: mplate_decoder/models.py:54
 msgid "Export destination"
 msgstr ""
 
-#: mplate_decoder/models.py:55
+#: mplate_decoder/models.py:56
 msgid "Export destination code"
 msgstr ""
 
-#: mplate_decoder/models.py:57
+#: mplate_decoder/models.py:58
 msgid "Vehicle model"
 msgstr ""
 
-#: mplate_decoder/models.py:59
+#: mplate_decoder/models.py:60
 msgid "Vehicle model code"
 msgstr ""
 
-#: mplate_decoder/models.py:61
+#: mplate_decoder/models.py:62
 msgid "Aggregate"
 msgstr ""
 
-#: mplate_decoder/models.py:63
+#: mplate_decoder/models.py:64
 msgid "Engine and gearbox aggregate code"
 msgstr ""
 
-#: mplate_decoder/models.py:65
+#: mplate_decoder/models.py:66
 msgid "Emden"
 msgstr ""
 
-#: mplate_decoder/models.py:67
+#: mplate_decoder/models.py:68
 msgid "Optional \"E\" for Emden"
 msgstr ""
 
-#: mplate_decoder/models.py:84
+#: mplate_decoder/models.py:85
 msgid "Full list of M codes for this M plate"
 msgstr ""
 
-#: mplate_decoder/models.py:87
+#: mplate_decoder/models.py:88
 msgid "Planned production date, in time format"
 msgstr ""
 
-#: mplate_decoder/models.py:90
+#: mplate_decoder/models.py:91
 #: mplate_decoder/templates/mplate_decoder/detail.html:36
 #: mplate_decoder/templates/mplate_decoder/metrics.html:117
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:14
 msgid "Model year"
 msgstr ""
 
-#: mplate_decoder/models.py:93
+#: mplate_decoder/models.py:94
 msgid "Country of destination"
 msgstr ""
 
-#: mplate_decoder/models.py:227
+#: mplate_decoder/models.py:228
 #, python-brace-format
 msgid "({interiorcolor_code}) Unknown color"
 msgstr ""
 
-#: mplate_decoder/models.py:228
+#: mplate_decoder/models.py:229
 msgid "Unknown material"
 msgstr ""
 
-#: mplate_decoder/models.py:240
+#: mplate_decoder/models.py:241
 msgid "Error while fetching interior color code:"
 msgstr ""
 
-#: mplate_decoder/models.py:241
+#: mplate_decoder/models.py:242
 #, python-brace-format
 msgid " {interiorcolor_code}, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:247
+#: mplate_decoder/models.py:248
 msgid "No description available for special paint jobs"
 msgstr ""
 
-#: mplate_decoder/models.py:266
+#: mplate_decoder/models.py:267
 msgid "Unavailable engine description"
 msgstr ""
 
-#: mplate_decoder/models.py:282
+#: mplate_decoder/models.py:283
 msgid "Unavailable transmission description"
 msgstr ""
 
-#: mplate_decoder/models.py:335
+#: mplate_decoder/models.py:336
 #, python-brace-format
 msgid "MplateDecoder requires an mplate or {attribute_name}"
 msgstr ""
 
-#: mplate_decoder/models.py:388
+#: mplate_decoder/models.py:389
 msgid "MplateDecoder requires an mplate or model code"
 msgstr ""
 
-#: mplate_decoder/models.py:400
+#: mplate_decoder/models.py:401
 msgid "MplateDecoder requires an mplate or model year"
 msgstr ""
 
-#: mplate_decoder/models.py:407
+#: mplate_decoder/models.py:408
 msgid "MplateDecoder requires an mplate or M codes"
 msgstr ""
 
-#: mplate_decoder/models.py:510
+#: mplate_decoder/models.py:511
 #, python-brace-format
 msgid "Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}"
 msgstr ""
 
-#: mplate_decoder/models.py:531
+#: mplate_decoder/models.py:532
 msgid "MplateDecoder requires either an m-plate or chassis_number with encoded production date"
 msgstr ""
 
-#: mplate_decoder/models.py:630
+#: mplate_decoder/models.py:631
 msgid "MplateDecoder requires an mplate or mcodes_1/m_codes_2"
 msgstr ""
 
-#: mplate_decoder/models.py:638
+#: mplate_decoder/models.py:639
 msgid "MplateDecoder requires an mplate or chassis_number_short"
 msgstr ""
 
-#: mplate_decoder/models.py:675
+#: mplate_decoder/models.py:676
 #, python-brace-format
 msgid "Unknown code, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:684
+#: mplate_decoder/models.py:685
 #, python-brace-format
 msgid "Undefined code, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:751 mplate_decoder/models.py:801
+#: mplate_decoder/models.py:752 mplate_decoder/models.py:802
 #, python-brace-format
 msgid "Unknown ({export_destination_code})"
 msgstr ""
 
-#: mplate_decoder/models.py:785
+#: mplate_decoder/models.py:786
 msgid "Undefined country or region"
 msgstr ""
 
-#: mplate_decoder/models.py:866
+#: mplate_decoder/models.py:867
 #, python-brace-format
 msgid "Unknown exterior color code ({exteriorcolor_code})"
 msgstr ""
 
-#: mplate_decoder/models.py:877
+#: mplate_decoder/models.py:878
 #, python-brace-format
 msgid "Unknown color ({exteriorcolor.lacquer_code_body})"
 msgstr ""
 
-#: mplate_decoder/models.py:888
+#: mplate_decoder/models.py:889
 #, python-brace-format
 msgid "Unknown color ({exteriorcolor.lacquer_code_roof})"
 msgstr ""
 
-#: mplate_decoder/models.py:894
+#: mplate_decoder/models.py:895
 #, python-brace-format
 msgid "Remarks: {exteriorcolor.remarks}"
 msgstr ""
 
-#: mplate_decoder/models.py:897
+#: mplate_decoder/models.py:898
 #, python-brace-format
 msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
 msgstr ""
 
-#: mplate_decoder/models.py:983 mplate_decoder/models.py:997
-#: mplate_decoder/models.py:1043
+#: mplate_decoder/models.py:984 mplate_decoder/models.py:998
+#: mplate_decoder/models.py:1044
 msgid "List of M-codes for the corresponding extras"
 msgstr ""
 
-#: mplate_decoder/models.py:1038
+#: mplate_decoder/models.py:1039
 msgid "Model description"
 msgstr ""
 
-#: mplate_decoder/models.py:1047
+#: mplate_decoder/models.py:1048
 msgid "Model description as it appears on the chassis plate"
 msgstr ""
 
@@ -377,8 +377,8 @@ msgstr ""
 #, python-format
 msgid "\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
-"        ➡ %(model_description.configuration_description)s<br>\n"
-"        ➡ %(model_description.extras_description)s<br>\n"
+"        ➡ %(configuration_description)s<br>\n"
+"        ➡ %(extras_description)s<br>\n"
 "    "
 msgstr ""
 

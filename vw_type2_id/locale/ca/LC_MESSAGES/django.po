@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-21 19:09+0000\n"
-"PO-Revision-Date: 2020-05-22 06:20\n"
+"POT-Creation-Date: 2020-05-22 06:25+0000\n"
+"PO-Revision-Date: 2020-05-22 06:55\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -29,7 +29,7 @@ msgstr "Envia"
 
 #: contact/views.py:31
 msgid "Success! Thank you for your message."
-msgstr ""
+msgstr "S'ha enviat el missatge, gràcies per contactar-nos."
 
 #: mplate_decoder/forms.py:61
 #, python-brace-format
@@ -78,28 +78,28 @@ msgstr "Només es permeten dígits i lletres"
 #: mplate_decoder/forms.py:171
 #, python-brace-format
 msgid "Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or letters"
-msgstr ""
+msgstr "Mínima llargada del codi de pintura i interior: {PAINT_AND_INTERIOR_LEN} dígits o lletres"
 
 #: mplate_decoder/forms.py:195
 msgid "Cannot validate production date format without a valid chassis number."
-msgstr ""
+msgstr "No es pot validar el format de la data de producció sense un número de bastidor vàlid."
 
 #: mplate_decoder/forms.py:204 mplate_decoder/forms.py:221
 msgid "Invalid production date format. Please double check."
-msgstr ""
+msgstr "El format de la data de producció no és vàlid, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:212
 msgid "Invalid production date. Please double check."
-msgstr ""
+msgstr "La data de producció no és vàlida, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:215
 #, python-brace-format
 msgid "Invalid production date ({exc}). Please double check."
-msgstr ""
+msgstr "La data de producció ({exc}) no és vàlida, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:226
 msgid "Invalid production week date. Please double check the two first digits."
-msgstr ""
+msgstr "La setmana de producció no és vàlida. Comproveu els dos digits inicials."
 
 #: mplate_decoder/forms.py:247
 #, python-brace-format
@@ -113,7 +113,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:268
 msgid "Invalid model. Please double check."
-msgstr ""
+msgstr "El model no és vàlid, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:273
 msgid "Only digits allowed in model code"
@@ -135,225 +135,225 @@ msgstr ""
 msgid "Invalid aggregate code"
 msgstr ""
 
-#: mplate_decoder/models.py:27
+#: mplate_decoder/models.py:28
 msgid "Shortened chassis number"
 msgstr "Número de bastidor escurçat"
 
-#: mplate_decoder/models.py:29
+#: mplate_decoder/models.py:30
 msgid "Chassis number shortened, with the two leading digits removed."
 msgstr "Número de bastidor escurçat, sense els dos dígits inicials."
 
-#: mplate_decoder/models.py:32
+#: mplate_decoder/models.py:33
 msgid "M-codes, row 1"
 msgstr "Codis M, fila 1"
 
-#: mplate_decoder/models.py:34
+#: mplate_decoder/models.py:35
 msgid "Row 1 of M codes (max 5)"
 msgstr "Primera fila de codis M (5 codis màx.)"
 
-#: mplate_decoder/models.py:36
+#: mplate_decoder/models.py:37
 msgid "M-codes, row 2"
 msgstr "Codis M, fila 2"
 
-#: mplate_decoder/models.py:38
+#: mplate_decoder/models.py:39
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
 msgstr "Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 a 69-)"
 
-#: mplate_decoder/models.py:41
+#: mplate_decoder/models.py:42
 msgid "Paint and interior"
 msgstr "Pintura i interior"
 
-#: mplate_decoder/models.py:43
+#: mplate_decoder/models.py:44
 msgid "Combined VW body/roof paint and interior codes"
 msgstr ""
 
-#: mplate_decoder/models.py:45
+#: mplate_decoder/models.py:46
 #: mplate_decoder/templates/mplate_decoder/detail.html:52
 msgid "Production date"
 msgstr "Data de producció"
 
-#: mplate_decoder/models.py:47
+#: mplate_decoder/models.py:48
 msgid "Production date code"
 msgstr "Codi de data de producció"
 
-#: mplate_decoder/models.py:49
+#: mplate_decoder/models.py:50
 msgid "Production planning"
 msgstr "Planificació de producció"
 
-#: mplate_decoder/models.py:51
+#: mplate_decoder/models.py:52
 msgid "Production planning code"
 msgstr "Codi de planificació de producció"
 
-#: mplate_decoder/models.py:53
+#: mplate_decoder/models.py:54
 msgid "Export destination"
 msgstr "Destinació d'exportació"
 
-#: mplate_decoder/models.py:55
+#: mplate_decoder/models.py:56
 msgid "Export destination code"
 msgstr "Codi de destinació d'exportació"
 
-#: mplate_decoder/models.py:57
+#: mplate_decoder/models.py:58
 msgid "Vehicle model"
 msgstr "Model de vehicle"
 
-#: mplate_decoder/models.py:59
+#: mplate_decoder/models.py:60
 msgid "Vehicle model code"
 msgstr "Codi de model de vehicle"
 
-#: mplate_decoder/models.py:61
+#: mplate_decoder/models.py:62
 msgid "Aggregate"
 msgstr "Agregat"
 
-#: mplate_decoder/models.py:63
+#: mplate_decoder/models.py:64
 msgid "Engine and gearbox aggregate code"
 msgstr ""
 
-#: mplate_decoder/models.py:65
+#: mplate_decoder/models.py:66
 msgid "Emden"
 msgstr "Emden"
 
-#: mplate_decoder/models.py:67
+#: mplate_decoder/models.py:68
 msgid "Optional \"E\" for Emden"
 msgstr "«E» opcional per a Emden"
 
-#: mplate_decoder/models.py:84
+#: mplate_decoder/models.py:85
 msgid "Full list of M codes for this M plate"
 msgstr "Llista completa de codis M per a aquesta plaqueta"
 
-#: mplate_decoder/models.py:87
+#: mplate_decoder/models.py:88
 msgid "Planned production date, in time format"
 msgstr "Data de producció planificada, en format de data"
 
-#: mplate_decoder/models.py:90
+#: mplate_decoder/models.py:91
 #: mplate_decoder/templates/mplate_decoder/detail.html:36
 #: mplate_decoder/templates/mplate_decoder/metrics.html:117
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:14
 msgid "Model year"
 msgstr "Any de model"
 
-#: mplate_decoder/models.py:93
+#: mplate_decoder/models.py:94
 msgid "Country of destination"
 msgstr "País de destinació"
 
-#: mplate_decoder/models.py:227
+#: mplate_decoder/models.py:228
 #, python-brace-format
 msgid "({interiorcolor_code}) Unknown color"
 msgstr "({interiorcolor_code}) Color desconegut"
 
-#: mplate_decoder/models.py:228
+#: mplate_decoder/models.py:229
 msgid "Unknown material"
 msgstr "Material desconegut"
 
-#: mplate_decoder/models.py:240
+#: mplate_decoder/models.py:241
 msgid "Error while fetching interior color code:"
 msgstr "Hi ha hagut un error en obtenir el codi de color de l'interior:"
 
-#: mplate_decoder/models.py:241
+#: mplate_decoder/models.py:242
 #, python-brace-format
 msgid " {interiorcolor_code}, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:247
+#: mplate_decoder/models.py:248
 msgid "No description available for special paint jobs"
 msgstr ""
 
-#: mplate_decoder/models.py:266
+#: mplate_decoder/models.py:267
 msgid "Unavailable engine description"
-msgstr ""
+msgstr "La descripció del motor no està disponible"
 
-#: mplate_decoder/models.py:282
+#: mplate_decoder/models.py:283
 msgid "Unavailable transmission description"
-msgstr ""
+msgstr "La descripció de la transmissió no està disponible"
 
-#: mplate_decoder/models.py:335
+#: mplate_decoder/models.py:336
 #, python-brace-format
 msgid "MplateDecoder requires an mplate or {attribute_name}"
 msgstr ""
 
-#: mplate_decoder/models.py:388
+#: mplate_decoder/models.py:389
 msgid "MplateDecoder requires an mplate or model code"
 msgstr ""
 
-#: mplate_decoder/models.py:400
+#: mplate_decoder/models.py:401
 msgid "MplateDecoder requires an mplate or model year"
 msgstr ""
 
-#: mplate_decoder/models.py:407
+#: mplate_decoder/models.py:408
 msgid "MplateDecoder requires an mplate or M codes"
 msgstr ""
 
-#: mplate_decoder/models.py:510
+#: mplate_decoder/models.py:511
 #, python-brace-format
 msgid "Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}"
 msgstr ""
 
-#: mplate_decoder/models.py:531
+#: mplate_decoder/models.py:532
 msgid "MplateDecoder requires either an m-plate or chassis_number with encoded production date"
 msgstr ""
 
-#: mplate_decoder/models.py:630
+#: mplate_decoder/models.py:631
 msgid "MplateDecoder requires an mplate or mcodes_1/m_codes_2"
 msgstr ""
 
-#: mplate_decoder/models.py:638
+#: mplate_decoder/models.py:639
 msgid "MplateDecoder requires an mplate or chassis_number_short"
 msgstr ""
 
-#: mplate_decoder/models.py:675
+#: mplate_decoder/models.py:676
 #, python-brace-format
 msgid "Unknown code, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:684
+#: mplate_decoder/models.py:685
 #, python-brace-format
 msgid "Undefined code, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:751 mplate_decoder/models.py:801
+#: mplate_decoder/models.py:752 mplate_decoder/models.py:802
 #, python-brace-format
 msgid "Unknown ({export_destination_code})"
 msgstr ""
 
-#: mplate_decoder/models.py:785
+#: mplate_decoder/models.py:786
 msgid "Undefined country or region"
 msgstr "País o regió sense definir"
 
-#: mplate_decoder/models.py:866
+#: mplate_decoder/models.py:867
 #, python-brace-format
 msgid "Unknown exterior color code ({exteriorcolor_code})"
 msgstr "Codi de color exterior desconegut ({exteriorcolor_code})"
 
-#: mplate_decoder/models.py:877
+#: mplate_decoder/models.py:878
 #, python-brace-format
 msgid "Unknown color ({exteriorcolor.lacquer_code_body})"
 msgstr "Color desconegut ({exteriorcolor.lacquer_code_body})"
 
-#: mplate_decoder/models.py:888
+#: mplate_decoder/models.py:889
 #, python-brace-format
 msgid "Unknown color ({exteriorcolor.lacquer_code_roof})"
 msgstr "Color desconegut ({exteriorcolor.lacquer_code_roof})"
 
-#: mplate_decoder/models.py:894
+#: mplate_decoder/models.py:895
 #, python-brace-format
 msgid "Remarks: {exteriorcolor.remarks}"
 msgstr "Comentaris: {exteriorcolor.remarks}"
 
-#: mplate_decoder/models.py:897
+#: mplate_decoder/models.py:898
 #, python-brace-format
 msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
 msgstr ""
 
-#: mplate_decoder/models.py:983 mplate_decoder/models.py:997
-#: mplate_decoder/models.py:1043
+#: mplate_decoder/models.py:984 mplate_decoder/models.py:998
+#: mplate_decoder/models.py:1044
 msgid "List of M-codes for the corresponding extras"
 msgstr ""
 
-#: mplate_decoder/models.py:1038
+#: mplate_decoder/models.py:1039
 msgid "Model description"
 msgstr "Descripció del model"
 
-#: mplate_decoder/models.py:1047
+#: mplate_decoder/models.py:1048
 msgid "Model description as it appears on the chassis plate"
 msgstr ""
 
@@ -377,14 +377,10 @@ msgstr "Volkswagen Tipus 2"
 #, python-format
 msgid "\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
-"        ➡ %(model_description.configuration_description)s<br>\n"
-"        ➡ %(model_description.extras_description)s<br>\n"
+"        ➡ %(configuration_description)s<br>\n"
+"        ➡ %(extras_description)s<br>\n"
 "    "
-msgstr "\n"
-"        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
-"        ➡ %(model_description.configuration_description)s<br>\n"
-"        ➡ %(model_description.extras_description)s<br>\n"
-"    "
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:40
 msgid "Engine"
@@ -396,7 +392,7 @@ msgstr "Transmissió"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:48
 msgid "Vehicle Ident. Nr."
-msgstr ""
+msgstr "Núm. d'ident. del vehicle"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:65
 msgid "Optional extras"
@@ -428,11 +424,11 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:24
 msgid "Find it"
-msgstr ""
+msgstr "Trobeu-la"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:31
 msgid "Model years 68-76"
-msgstr ""
+msgstr "Anys de model 68-76"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:35
 #, python-format
@@ -454,7 +450,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:63
 msgid "Decode it"
-msgstr ""
+msgstr "Descodifiqueu-la"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:74
 msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
@@ -462,13 +458,13 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:77
 msgid "Decode an M-plate&raquo;"
-msgstr ""
+msgstr "Descodifica una plaqueta M&raquo;"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:83
 #: mplate_decoder/templates/mplate_decoder/metrics.html:61
 #: mplate_decoder/templates/mplate_decoder/metrics.html:85
 msgid "M-plate submissions"
-msgstr ""
+msgstr "Plaquetes M enviades"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:9
 msgid "Vehicle production data extracted from the M-plate decoder submissions"
@@ -480,7 +476,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:20
 msgid "Model years"
-msgstr ""
+msgstr "Anys de models"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:27
 msgid "Top 15 colors"
@@ -744,7 +740,7 @@ msgstr "Descodifiqueu la plaqueta M i obtingueu informació sobre la furgoneta."
 
 #: vw_type2_id/templates/home.html:18
 msgid "Learn more &raquo;"
-msgstr ""
+msgstr "Per saber-ne més &raquo;"
 
 #: vw_type2_id/templates/home.html:21
 msgid "Engine number decoder"
@@ -752,7 +748,7 @@ msgstr ""
 
 #: vw_type2_id/templates/home.html:22
 msgid "Coming soon"
-msgstr ""
+msgstr "Properament"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Don't have an account yet?"
@@ -760,37 +756,37 @@ msgstr "Encara no teniu un compte?"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Sign up now &rsaquo;"
-msgstr ""
+msgstr "Registreu-vos &rsaquo;"
 
 #: vw_type2_id/templates/registration/login.html:18
 msgid "Lost your password?"
-msgstr ""
+msgstr "Heu perdut la contrasenya?"
 
 #: vw_type2_id/templates/registration/login.html:18
 msgid "Request new password &rsaquo;"
-msgstr ""
+msgstr "Sol·liciteu una contrasenya nova &rsaquo;"
 
 #: vw_type2_id/templates/registration/login.html:20
 msgid "Log me in!"
-msgstr ""
+msgstr "Connecta'm!"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:11
 msgid "Password reset"
-msgstr ""
+msgstr "Restabliment de la contrasenya"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:12
 msgid "Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one."
-msgstr ""
+msgstr "Heu oblidat la contrasenya? Escriviu la vostra adreça electrònica aquí sota i us enviarem les instruccions per a restablir-la."
 
 #: vw_type2_id/templates/registration/password_reset_form.html:17
 msgid "Reset my password"
-msgstr ""
+msgstr "Restableix la meva contrasenya"
 
 #: vw_type2_id/templates/signup.html:11
 msgid "Sign up"
-msgstr ""
+msgstr "Registreu-vos"
 
 #: vw_type2_id/templates/signup.html:15
 msgid "Sign me up!"
-msgstr ""
+msgstr "Registra'm!"
 
