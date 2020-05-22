@@ -27,8 +27,8 @@
     <td>{% trans "Volkswagen Type 2" %}<br>
     {% blocktrans with model_description=model_description.model_description model_code_catalog=model_description.model_code_catalog configuration_description=model_description.configuration_description extras_description=model_description.extras_description %}
         ➡ {{ model_description }} (model {{ model_code_catalog }})<br>
-        ➡ {{ model_description.configuration_description }}<br>
-        ➡ {{ model_description.extras_description }}<br>
+        ➡ {{ configuration_description }}<br>
+        ➡ {{ extras_description }}<br>
     {% endblocktrans %}
     </td>
   </tr>
