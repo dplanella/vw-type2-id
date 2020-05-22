@@ -20,7 +20,8 @@ ENTRYPOINT ["/entrypoint.sh"]
 # Install client libraries
 RUN apk update && apk add --virtual .run-deps \
     libpq \
-    gettext
+    gettext \
+    postgresql-client
 
 # Install build dependencies
 # using the image's package manager
