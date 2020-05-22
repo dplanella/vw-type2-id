@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-21 19:09+0000\n"
-"PO-Revision-Date: 2020-05-21 12:03+0200\n"
-"Last-Translator: David Planella <david.planella@gmail.com>\n"
+"PO-Revision-Date: 2020-05-22 06:20\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,6 @@ msgstr ""
 "X-Crowdin-Project: vw-type2-id\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: /master/vw_type2_id/locale/django.pot\n"
-"X-Generator: Poedit 2.3\n"
 
 #: contact/forms.py:6
 msgid "Your e-mail"
@@ -341,8 +340,7 @@ msgstr "Comentaris: {exteriorcolor.remarks}"
 
 #: mplate_decoder/models.py:897
 #, python-brace-format
-msgid ""
-"Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
 msgstr ""
 
@@ -361,75 +359,67 @@ msgstr ""
 
 #: mplate_decoder/templates/404.html:8
 msgid "Not found"
-msgstr ""
+msgstr "No s'ha trobat"
 
 #: mplate_decoder/templates/404.html:10
 msgid "The requested page does not exist"
-msgstr ""
+msgstr "La pàgina sol·licitada no existeix"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:26
-#, fuzzy
-#| msgid "Model year"
 msgid "Model"
-msgstr "Any de model"
+msgstr "Model"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:27
-#, fuzzy
-#| msgid "Volkswagen Type 2 identification"
 msgid "Volkswagen Type 2"
-msgstr "Identificació del tipus 2 de Volkswagen"
+msgstr "Volkswagen Tipus 2"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:28
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
 "        ➡ %(model_description.configuration_description)s<br>\n"
 "        ➡ %(model_description.extras_description)s<br>\n"
 "    "
-msgstr ""
+msgstr "\n"
+"        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
+"        ➡ %(model_description.configuration_description)s<br>\n"
+"        ➡ %(model_description.extras_description)s<br>\n"
+"    "
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:40
 msgid "Engine"
-msgstr ""
+msgstr "Motor"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:44
 msgid "Transmission"
-msgstr ""
+msgstr "Transmissió"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:48
-#, fuzzy
-#| msgid "Vehicle model"
 msgid "Vehicle Ident. Nr."
-msgstr "Model de vehicle"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:65
 msgid "Optional extras"
-msgstr ""
+msgstr "Extres opcionals"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:73
 msgid "Exterior"
-msgstr ""
+msgstr "Exterior"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:77
 msgid "Interior"
-msgstr ""
+msgstr "Interior"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:82
-#, fuzzy
-#| msgid "Description"
 msgid "Destination"
-msgstr "Descripció"
+msgstr "Destinació"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:88
-#, fuzzy
-#| msgid "Export destination code"
 msgid "Destination country"
-msgstr "Codi de destinació d'exportació"
+msgstr "País de destinació"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:12
-msgid ""
-"\n"
+msgid "\n"
 "      The M-plate is one of the identification plates found on VW busses. \n"
 "      Short for <em>Mehraustattung</em> (optional extras in German), it contains\n"
 "      production codes with information about equipment, manufacturing date, destination, specs and more.\n"
@@ -441,23 +431,19 @@ msgid "Find it"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:31
-#, fuzzy
-#| msgid "Model year"
 msgid "Model years 68-76"
-msgstr "Any de model"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:35
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a href=\"%(url_img)s\">album</a>\n"
 "    "
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:50
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "      Image modified from <a href=\"%(url)s\">The Samba forum</a>\n"
 "      "
 msgstr ""
@@ -493,20 +479,16 @@ msgid "Top 10 models"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:20
-#, fuzzy
-#| msgid "Model year"
 msgid "Model years"
-msgstr "Any de model"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:27
 msgid "Top 15 colors"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:31
-#, fuzzy
-#| msgid "Export destination code"
 msgid "Top 10 destination countries"
-msgstr "Codi de destinació d'exportació"
+msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:38
 msgid "Daily M-plate submissions"
@@ -514,87 +496,67 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:79
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:97
-#, fuzzy
-#| msgid "VW Type 2 ID"
 msgid "VW Type 2 models"
-msgstr "Identificació del tipus 2 de Volkswagen"
+msgstr "Models de Volkswagen Tipus 2"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:135
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:156
 msgid "Countries"
-msgstr ""
+msgstr "Països"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_about.html:10
-msgid ""
-"\n"
-"## About this site\n"
-"\n"
+msgid "\n"
+"## About this site\n\n"
 "This site provides means to identify and understand the origin of Volkswagen Type 2 busses\n"
 "from years 1967 to 1979. At this time, via an online M-Plate decoder, but it might expand in the future.\n"
 "M-Plates were metallic plates present in all VW busses, which contained a set of alphanumeric production\n"
-"codes to identify a vehicle.\n"
-"\n"
+"codes to identify a vehicle.\n\n"
 "The site was created as a result of the [original VW M-Plate decoder](https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode.php)\n"
 "going offline, as a personal project to decode the author's own M-Plate and to experiment with code. From there,\n"
-"it evolved into a public website to share this tool with other vintage bus owners from the aircooled community. \n"
-"\n"
+"it evolved into a public website to share this tool with other vintage bus owners from the aircooled community. \n\n"
 "The data used to decode the M-plates comes mainly from these sources, and keeps getting expanded every time a user finds out more about\n"
-"an unknown code and shares it with the community:\n"
-"\n"
+"an unknown code and shares it with the community:\n\n"
 "- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www.crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and Alexander Prinz\n"
 "- [TheSamba.com forum](https://www.thesamba.com/vw/forum/viewforum.php?f=5)\n"
 "- [forum.bulli.org forum](https://forum.bulli.org/)\n"
 "- [type2.com](http://www.type2.com/m-codes/t2mcodes.html)\n"
-"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n"
-"\n"
-"Thanks so much to the authors of those resources and to everyone who share their knowledge. The M-plate decoder would not have been possible without that vast collaborative effort.\n"
-"\n"
-"## Privacy policy\n"
-"\n"
+"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n\n"
+"Thanks so much to the authors of those resources and to everyone who share their knowledge. The M-plate decoder would not have been possible without that vast collaborative effort.\n\n"
+"## Privacy policy\n\n"
 "This is a hobby site without a commercial purpose and without intention to seek financial profit. The stored database data\n"
 "will never be submitted to third parties or used for other purposes than improving the site and providing a better\n"
-"service to its users.\n"
-"\n"
+"service to its users.\n\n"
 "The code for this site is Open Source. You can explore it and contribute\n"
-"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-type2-id).\n"
-"\n"
-"The site's backend has a database that stores:\n"
-"\n"
+"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-type2-id).\n\n"
+"The site's backend has a database that stores:\n\n"
 "- The original data submitted through the M-plate form, along with some of the decoded values computed from that data (e.g. model year in readable form).\n"
 "- The creation date and last update date of the submitted M-plate data.\n"
-"- If the user has chosen to create an account on the site, their user name, e-mail and last login date.\n"
-"\n"
+"- If the user has chosen to create an account on the site, their user name, e-mail and last login date.\n\n"
 "If you've used this service without creating an account and would like to have the data for a particular M-plate removed or amended, feel free to [contact the author](#contact).\n"
-"If you have created an account, you already have full control over your data and should be able to either remove or change the data on the `My M-plates` section.\n"
-"\n"
-"## Disclaimer\n"
-"\n"
+"If you have created an account, you already have full control over your data and should be able to either remove or change the data on the `My M-plates` section.\n\n"
+"## Disclaimer\n\n"
 "The decoded vehicle data produced on this site comes from multiple sources. Despite best efforts to provide accurate data,\n"
-"it has to be noted that it comes from volunteer research over 40+ years of history of these vehicles.\n"
-"\n"
+"it has to be noted that it comes from volunteer research over 40+ years of history of these vehicles.\n\n"
 "As such, data is neither guaranteed to be accurate nor to have any legal validity. It should be considered as orientative\n"
-"only.\n"
-"\n"
-"## Contact\n"
-"\n"
-"If you've got feedback or questions about the site, feel free to [get in touch](/contact).\n"
-"\n"
+"only.\n\n"
+"## Contact\n\n"
+"If you've got feedback or questions about the site, feel free to [get in touch](/contact).\n\n"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:8
 msgid "Delete M-plate"
-msgstr "Suprimeix la plaqueta M"
+msgstr "Suprimeix la plaqueta"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:10
 #, python-format
 msgid "Are you sure you want to delete M-plate %(mplate.chassis_number_short)s?"
-msgstr ""
+msgstr "Segur que voleu suprimir la plaqueta %(mplate.chassis_number_short)s?"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:14
 msgid "Yes, delete it"
@@ -602,7 +564,7 @@ msgstr "Sí, suprimeix-la"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:13
 msgid "M-plate ID"
-msgstr "Identificador de plaqueta M"
+msgstr "Identificador de la plaqueta M"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:15
 msgid "Actions"
@@ -620,15 +582,15 @@ msgstr "Suprimeix"
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:31
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:32
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_form.html:14
 msgid "Model 68-69"
-msgstr ""
+msgstr "Model 68-69"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_form.html:17
 msgid "Model 70-79"
-msgstr ""
+msgstr "Model 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:10
 msgid "Volkswagen Type 2 M-plate, model year 68-69"
@@ -636,22 +598,18 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:55
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:58
-#, fuzzy
-#| msgid "Delete M-plate"
 msgid "Update this M-plate"
-msgstr "Suprimeix la plaqueta M"
+msgstr "Actualitza aquesta plaqueta"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:57
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:60
-#, fuzzy
-#| msgid "Delete M-plate"
 msgid "Decode this M-plate"
-msgstr "Suprimeix la plaqueta M"
+msgstr "Descodifica aquesta plaqueta"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:65
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:68
 msgid "Reference"
-msgstr ""
+msgstr "Referència"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:10
 msgid "Volkswagen Type 2 M-plate, model year 70-79"
@@ -659,8 +617,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_alerts_post.html:6
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "  Once submitted, the M-plate data will be stored and available\n"
 "  at '%(mplate_url)sCCCCCCCC', where 'CCCCCCCC'\n"
 "  is the shortened chassis number on the plate.\n"
@@ -681,8 +638,7 @@ msgstr "Descripció"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:26
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "                M-code collection: %(collection)s\n"
 "                "
 msgstr ""
@@ -732,21 +688,17 @@ msgstr "Us donem la benvinguda al portal d'administració de {SITE_NAME}"
 #: vw_type2_id/templates/base_bootstrap.html:35
 #: vw_type2_id/templates/home.html:8
 msgid "Volkswagen Type 2 identification"
-msgstr "Identificació del tipus 2 de Volkswagen"
+msgstr "Identificació del Volkswagen Tipus 2"
 
 #: vw_type2_id/templates/base_bootstrap.html:45
 msgid "Home"
-msgstr ""
+msgstr "Inici"
 
 #: vw_type2_id/templates/base_bootstrap.html:48
-#, fuzzy
-#| msgid "M-plate ID"
 msgid "M-Plate info"
-msgstr "Identificador de plaqueta M"
+msgstr "Informació sobre la plaqueta M"
 
 #: vw_type2_id/templates/base_bootstrap.html:51
-#, fuzzy
-#| msgid "M-plate decoder"
 msgid "M-Plate decoder"
 msgstr "Descodificador de plaquetes M"
 
@@ -756,29 +708,27 @@ msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:57
 msgid "About"
-msgstr ""
+msgstr "Quant a"
 
 #: vw_type2_id/templates/base_bootstrap.html:63
 msgid "Search M-codes (e.g. 500)"
-msgstr ""
+msgstr "Cerca codis M (p. ex. 500)"
 
 #: vw_type2_id/templates/base_bootstrap.html:77
-#, fuzzy
-#| msgid "M-plate"
 msgid "My M-plates"
-msgstr "Plaqueta M"
+msgstr "Les meves plaquetes"
 
 #: vw_type2_id/templates/base_bootstrap.html:79
 msgid "Admin"
-msgstr ""
+msgstr "Administració"
 
 #: vw_type2_id/templates/base_bootstrap.html:82
 msgid "Log out"
-msgstr ""
+msgstr "Surt"
 
 #: vw_type2_id/templates/base_bootstrap.html:87
 msgid "Sign up or login"
-msgstr ""
+msgstr "Registreu-vos o inicieu la sessió"
 
 #: vw_type2_id/templates/home.html:9
 msgid "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
@@ -790,7 +740,7 @@ msgstr "Descodificador de plaquetes M"
 
 #: vw_type2_id/templates/home.html:17
 msgid "Decode the M-plate and find information about your bus."
-msgstr "Descodifiqueu la plaqueta M i obtingueu informació sobre la furgoneta"
+msgstr "Descodifiqueu la plaqueta M i obtingueu informació sobre la furgoneta."
 
 #: vw_type2_id/templates/home.html:18
 msgid "Learn more &raquo;"
@@ -844,5 +794,3 @@ msgstr ""
 msgid "Sign me up!"
 msgstr ""
 
-#~ msgid "M-code collection:"
-#~ msgstr "Col·lecció de codis M:"
