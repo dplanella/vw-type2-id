@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-23 10:28+0000\n"
-"PO-Revision-Date: 2020-05-23 10:42\n"
+"PO-Revision-Date: 2020-05-23 12:37\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -710,7 +710,7 @@ msgstr "Inici"
 
 #: vw_type2_id/templates/base_bootstrap.html:48
 msgid "M-Plate info"
-msgstr "Informació sobre la plaqueta M"
+msgstr "Info plaqueta"
 
 #: vw_type2_id/templates/base_bootstrap.html:51
 msgid "M-Plate decoder"
