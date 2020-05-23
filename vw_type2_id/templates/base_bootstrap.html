@@ -20,7 +20,7 @@
 
     {% block style %}<!-- Additional styles -->{%endblock%}
 
-    {% block title %}<title>VW M-plate decoder</title>{% endblock %}
+    {% block title %}<title>{% trans "VW M-plate decoder" %}</title>{% endblock %}
 
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
@@ -48,7 +48,7 @@
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_index' %}">{% filter upper %} {% trans 'M-Plate info' %} {% endfilter %}</a>
           </li>
           <li class="nav-item {% navactive request 'mplate_decoder:mplate_create' %}">
-            <a class="nav-link" href="{% url 'mplate_decoder:mplate_create' %}">{% filter upper %} {% trans 'M-Plate decoder' %} {% endfilter %}</a>
+            <a class="nav-link" href="{% url 'mplate_decoder:mplate_create' %}">{% filter upper %} {% trans "M-Plate decoder" context "navbar" %} {% endfilter %}</a>
           </li>
           <li class="nav-item {% navactive request 'mplate_decoder:mplate_metrics' %}">
             <a class="nav-link" href="{% url 'mplate_decoder:mplate_metrics' %}">{% filter upper %} {% trans 'Metrics' %} {% endfilter %}</a>
