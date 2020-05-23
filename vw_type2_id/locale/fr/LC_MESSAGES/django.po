@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 10:28+0000\n"
-"PO-Revision-Date: 2020-05-23 10:42\n"
+"POT-Creation-Date: 2020-05-23 12:44+0000\n"
+"PO-Revision-Date: 2020-05-23 13:04\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -644,31 +644,29 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:26
 #, python-format
-msgid "\n"
-"                M-code collection: %(collection)s\n"
-"                "
+msgid "M-code collection: %(collection)s"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:36
-#: mplate_decoder/templates/mplate_decoder/search_results.html:37
+#: mplate_decoder/templates/mplate_decoder/search_results.html:34
+#: mplate_decoder/templates/mplate_decoder/search_results.html:35
 #: mplate_decoder/views.py:435
 msgid "Unknown"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:44
+#: mplate_decoder/templates/mplate_decoder/search_results.html:42
 #, python-format
 msgid "Found %(count)s M-plates with M-code:"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:48
+#: mplate_decoder/templates/mplate_decoder/search_results.html:46
 msgid "M-plate"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:49
+#: mplate_decoder/templates/mplate_decoder/search_results.html:47
 msgid "M-codes"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:107
+#: mplate_decoder/templates/mplate_decoder/search_results.html:105
 msgid "There are currently no M-plates with M-code:"
 msgstr ""
 
@@ -691,6 +689,10 @@ msgstr ""
 msgid "Welcome to {SITE_NAME} Admin Portal"
 msgstr ""
 
+#: vw_type2_id/templates/base_bootstrap.html:23
+msgid "VW M-plate decoder"
+msgstr ""
+
 #: vw_type2_id/templates/base_bootstrap.html:35
 #: vw_type2_id/templates/home.html:8
 msgid "Volkswagen Type 2 identification"
@@ -705,6 +707,7 @@ msgid "M-Plate info"
 msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:51
+msgctxt "navbar"
 msgid "M-Plate decoder"
 msgstr ""
 
