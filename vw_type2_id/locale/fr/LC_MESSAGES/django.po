@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 09:14+0000\n"
-"PO-Revision-Date: 2020-05-22 09:30\n"
+"POT-Creation-Date: 2020-05-23 07:28+0000\n"
+"PO-Revision-Date: 2020-05-23 07:49\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -456,6 +456,11 @@ msgstr ""
 msgid "Decode it"
 msgstr ""
 
+#: mplate_decoder/templates/mplate_decoder/index.html:69
+#: vw_type2_id/templates/home.html:16
+msgid "M-plate decoder"
+msgstr ""
+
 #: mplate_decoder/templates/mplate_decoder/index.html:74
 msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
 msgstr ""
@@ -620,15 +625,6 @@ msgstr ""
 msgid "Volkswagen Type 2 M-plate, model year 70-79"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_alerts_post.html:6
-#, python-format
-msgid "\n"
-"  Once submitted, the M-plate data will be stored and available\n"
-"  at '%(mplate_fullurl)sCCCCCCCC', where 'CCCCCCCC'\n"
-"  is the shortened chassis number on the plate.\n"
-"  "
-msgstr ""
-
 #: mplate_decoder/templates/mplate_decoder/search_results.html:13
 msgid "Code"
 msgstr ""
@@ -735,10 +731,6 @@ msgstr ""
 msgid "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
 msgstr ""
 
-#: vw_type2_id/templates/home.html:16
-msgid "M-plate decoder"
-msgstr ""
-
 #: vw_type2_id/templates/home.html:17
 msgid "Decode the M-plate and find information about your bus."
 msgstr ""
@@ -753,6 +745,10 @@ msgstr ""
 
 #: vw_type2_id/templates/home.html:22
 msgid "Coming soon"
+msgstr ""
+
+#: vw_type2_id/templates/registration/login.html:11
+msgid "Login"
 msgstr ""
 
 #: vw_type2_id/templates/registration/login.html:16
