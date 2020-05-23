@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 07:28+0000\n"
+"POT-Creation-Date: 2020-05-23 10:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,14 +132,15 @@ msgid "Invalid model code"
 msgstr ""
 
 #: mplate_decoder/forms.py:288
-msgid "Minimum aggregate code length: "
+#, python-brace-format
+msgid "Minimum aggregate code length: {AGGREGATE_CODE_LEN} digits"
 msgstr ""
 
-#: mplate_decoder/forms.py:297
+#: mplate_decoder/forms.py:296
 msgid "Only digits allowed in aggregate code"
 msgstr ""
 
-#: mplate_decoder/forms.py:310
+#: mplate_decoder/forms.py:309
 msgid "Invalid aggregate code"
 msgstr ""
 
@@ -454,6 +455,12 @@ msgid ""
 "    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a "
 "href=\"%(url_img)s\">album</a>\n"
 "    "
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/index.html:40
+msgid ""
+"<strong>Before model year 1977</strong>: the M-plate is located on the metal "
+"partition behind the driver's seat (passenger's seat for RHD vehicles)."
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
