@@ -23,9 +23,7 @@
               {% if mcode.description|length > 0 %}
                 {{ mcode.description }}
               {% else %}
-                {% blocktrans with collection=mcode.collection%}
-                M-code collection: {{ collection }}
-                {% endblocktrans %}
+                {% blocktrans with collection=mcode.collection%}M-code collection: {{ collection }}{% endblocktrans %}
               {% endif %}
              </td>
           </tr>
