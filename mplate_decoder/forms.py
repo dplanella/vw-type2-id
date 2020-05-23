@@ -285,8 +285,7 @@ class MplateCreateForm(ModelForm):
 
         if len(data) < AGGREGATE_CODE_LEN:
             raise ValidationError(
-                _("Minimum aggregate code length: "
-                  f" {AGGREGATE_CODE_LEN} digits")
+                _(f"Minimum aggregate code length: {AGGREGATE_CODE_LEN} digits")  # noqa: E501
             )
 
         valid_aggregates = []
