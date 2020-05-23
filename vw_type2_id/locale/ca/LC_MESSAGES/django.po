@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-23 12:44+0000\n"
-"PO-Revision-Date: 2020-05-23 13:04\n"
+"PO-Revision-Date: 2020-05-23 13:20\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -653,7 +653,7 @@ msgstr "Descripció"
 #: mplate_decoder/templates/mplate_decoder/search_results.html:26
 #, python-format
 msgid "M-code collection: %(collection)s"
-msgstr ""
+msgstr "Col·lecció de codis M: %(collection)s"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:34
 #: mplate_decoder/templates/mplate_decoder/search_results.html:35
@@ -699,7 +699,7 @@ msgstr "Us donem la benvinguda al portal d'administració de {SITE_NAME}"
 
 #: vw_type2_id/templates/base_bootstrap.html:23
 msgid "VW M-plate decoder"
-msgstr ""
+msgstr "Descodificador de plaquetes M de Volkswagen"
 
 #: vw_type2_id/templates/base_bootstrap.html:35
 #: vw_type2_id/templates/home.html:8
@@ -717,11 +717,11 @@ msgstr "Info plaqueta"
 #: vw_type2_id/templates/base_bootstrap.html:51
 msgctxt "navbar"
 msgid "M-Plate decoder"
-msgstr ""
+msgstr "Descodificador"
 
 #: vw_type2_id/templates/base_bootstrap.html:54
 msgid "Metrics"
-msgstr ""
+msgstr "Mètriques"
 
 #: vw_type2_id/templates/base_bootstrap.html:57
 msgid "About"
