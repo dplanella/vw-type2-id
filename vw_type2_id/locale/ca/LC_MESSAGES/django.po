@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-23 12:44+0000\n"
-"PO-Revision-Date: 2020-05-23 13:20\n"
+"PO-Revision-Date: 2020-05-23 15:05\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -126,7 +126,7 @@ msgstr "El codi de model no és vàlid"
 #: mplate_decoder/forms.py:288
 #, python-brace-format
 msgid "Minimum aggregate code length: {AGGREGATE_CODE_LEN} digits"
-msgstr ""
+msgstr "Llargada mínima del codi d'agregat: {AGGREGATE_CODE_LEN} dígits"
 
 #: mplate_decoder/forms.py:296
 msgid "Only digits allowed in aggregate code"
@@ -286,19 +286,19 @@ msgstr "MplateDecoder requereix una plaqueta o codis M"
 #: mplate_decoder/models.py:511
 #, python-brace-format
 msgid "Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}"
-msgstr ""
+msgstr "Llargada del codi d'any de model no vàlida: {model_year_code_len}, codi {model_year_code}, nr. de bastidor escurçat {chassis_number_short}"
 
 #: mplate_decoder/models.py:532
 msgid "MplateDecoder requires either an m-plate or chassis_number with encoded production date"
-msgstr ""
+msgstr "MplateDecoder requereix o bé una plaqueta o un número de bastidor escurçat amb la data de producció codificada"
 
 #: mplate_decoder/models.py:631
 msgid "MplateDecoder requires an mplate or mcodes_1/m_codes_2"
-msgstr ""
+msgstr "MplateDecoder requereix una plaqueta o codis M"
 
 #: mplate_decoder/models.py:639
 msgid "MplateDecoder requires an mplate or chassis_number_short"
-msgstr ""
+msgstr "MplateDecoder requereix una plaqueta o chassis_number_short"
 
 #: mplate_decoder/models.py:676
 #, python-brace-format
@@ -343,7 +343,8 @@ msgstr "Comentaris: {exteriorcolor.remarks}"
 #, python-brace-format
 msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
-msgstr ""
+msgstr "Cos: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+"            Sostre: {color_name_roof} ({lacquer_code_roof})"
 
 #: mplate_decoder/models.py:984 mplate_decoder/models.py:998
 #: mplate_decoder/models.py:1044
@@ -425,7 +426,11 @@ msgid "\n"
 "      Short for <em>Mehraustattung</em> (optional extras in German), it contains\n"
 "      production codes with information about equipment, manufacturing date, destination, specs and more.\n"
 "    "
-msgstr ""
+msgstr "\n"
+"La plaqueta M és una de les plaquetes d'identificació incorporades a les furgonetes VW. \n"
+"      El nom prové de <em>Mehraustattung</em> (extres opcionals en Alemany), i conté\n"
+"      codis de producció amb informaciçó sobre equipament, dates de producció, destinació, especificacions tècniques i més.\n"
+"    "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:24
 msgid "Find it"
@@ -446,7 +451,7 @@ msgstr "\n"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:40
 msgid "<strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles)."
-msgstr ""
+msgstr "<strong>Abans de l'any de model 1977</strong>: la plaqueta es troba a la partició de metall darrera del seient del conductor (seient de l'acompanyant per a vehicles d'accés a la dreta)."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
 msgid "Model years 77-79"
@@ -463,7 +468,7 @@ msgstr "\n"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:55
 msgid "<strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe."
-msgstr ""
+msgstr "<strong>Any de model 1977 i posteriors</strong>: la plaqueta es troba sota del tauler d'instruments, a sobre del conducte de ventilació."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:63
 msgid "Decode it"
@@ -490,11 +495,11 @@ msgstr "Plaquetes M enviades"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:9
 msgid "Vehicle production data extracted from the M-plate decoder submissions"
-msgstr ""
+msgstr "Dades de producció de vehicles extretes de les plaquetes enviades al descodificador"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:16
 msgid "Top 10 models"
-msgstr ""
+msgstr "Els 10 models més populars"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:20
 msgid "Model years"
@@ -502,11 +507,11 @@ msgstr "Anys de models"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:27
 msgid "Top 15 colors"
-msgstr ""
+msgstr "Els 15 colors més populars"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:31
 msgid "Top 10 destination countries"
-msgstr ""
+msgstr "Els 10 països de destinació més populars"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:38
 msgid "Daily M-plate submissions"
