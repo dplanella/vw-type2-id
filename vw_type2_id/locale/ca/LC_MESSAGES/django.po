@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-23 07:28+0000\n"
-"PO-Revision-Date: 2020-05-23 10:00\n"
+"PO-Revision-Date: 2020-05-23 10:11\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -125,7 +125,7 @@ msgstr "El codi de model no és vàlid"
 
 #: mplate_decoder/forms.py:288
 msgid "Minimum aggregate code length: "
-msgstr ""
+msgstr "Llargada mínima del codi de l'agregat: "
 
 #: mplate_decoder/forms.py:297
 msgid "Only digits allowed in aggregate code"
@@ -380,7 +380,11 @@ msgid "\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
 "    "
-msgstr ""
+msgstr "\n"
+"        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
+"        ➡ %(configuration_description)s<br>\n"
+"        ➡ %(extras_description)s<br>\n"
+"    "
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:40
 msgid "Engine"
@@ -608,7 +612,7 @@ msgstr "Model 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:10
 msgid "Volkswagen Type 2 M-plate, model year 68-69"
-msgstr ""
+msgstr "Plaqueta M Volkswagen Tipus 2, anys de model 68-69"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:55
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:58
@@ -627,7 +631,7 @@ msgstr "Referència"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:10
 msgid "Volkswagen Type 2 M-plate, model year 70-79"
-msgstr ""
+msgstr "Plaqueta M Volkswagen Tipus 2, anys de model 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:13
 msgid "Code"
