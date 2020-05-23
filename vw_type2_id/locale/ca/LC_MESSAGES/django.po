@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 09:14+0000\n"
-"PO-Revision-Date: 2020-05-22 13:05\n"
+"POT-Creation-Date: 2020-05-23 10:28+0000\n"
+"PO-Revision-Date: 2020-05-23 10:42\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -104,7 +104,7 @@ msgstr "La setmana de producció no és vàlida. Comproveu els dos digits inicia
 #: mplate_decoder/forms.py:247
 #, python-brace-format
 msgid "Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or digits"
-msgstr ""
+msgstr "Llargada mínima del país de destinació: {EXPORT_DESTINATION_LEN} lletres o dígits"
 
 #: mplate_decoder/forms.py:258
 #, python-brace-format
@@ -124,16 +124,17 @@ msgid "Invalid model code"
 msgstr "El codi de model no és vàlid"
 
 #: mplate_decoder/forms.py:288
-msgid "Minimum aggregate code length: "
+#, python-brace-format
+msgid "Minimum aggregate code length: {AGGREGATE_CODE_LEN} digits"
 msgstr ""
 
-#: mplate_decoder/forms.py:297
+#: mplate_decoder/forms.py:296
 msgid "Only digits allowed in aggregate code"
-msgstr ""
+msgstr "Només es permeten dígits al codi d'agregat"
 
-#: mplate_decoder/forms.py:310
+#: mplate_decoder/forms.py:309
 msgid "Invalid aggregate code"
-msgstr ""
+msgstr "Codi d'agregat no vàlid"
 
 #: mplate_decoder/models.py:28
 msgid "Shortened chassis number"
@@ -165,7 +166,7 @@ msgstr "Pintura i interior"
 
 #: mplate_decoder/models.py:44
 msgid "Combined VW body/roof paint and interior codes"
-msgstr ""
+msgstr "Codis VW combinats del color del cos i coberta, i de l'interior"
 
 #: mplate_decoder/models.py:46
 #: mplate_decoder/templates/mplate_decoder/detail.html:52
@@ -206,7 +207,7 @@ msgstr "Agregat"
 
 #: mplate_decoder/models.py:64
 msgid "Engine and gearbox aggregate code"
-msgstr ""
+msgstr "Codi de l'agregat del motor i canvi de marxes"
 
 #: mplate_decoder/models.py:66
 msgid "Emden"
@@ -251,7 +252,7 @@ msgstr "Hi ha hagut un error en obtenir el codi de color de l'interior:"
 #: mplate_decoder/models.py:242
 #, python-brace-format
 msgid " {interiorcolor_code}, year {model_year}"
-msgstr ""
+msgstr " {interiorcolor_code}, any {model_year}"
 
 #: mplate_decoder/models.py:248
 msgid "No description available for special paint jobs"
@@ -347,7 +348,7 @@ msgstr ""
 #: mplate_decoder/models.py:984 mplate_decoder/models.py:998
 #: mplate_decoder/models.py:1044
 msgid "List of M-codes for the corresponding extras"
-msgstr ""
+msgstr "Llista de codis M per als extres corresponents"
 
 #: mplate_decoder/models.py:1039
 msgid "Model description"
@@ -355,7 +356,7 @@ msgstr "Descripció del model"
 
 #: mplate_decoder/models.py:1048
 msgid "Model description as it appears on the chassis plate"
-msgstr ""
+msgstr "Descripció del model tal com es mostra a la plaqueta del xassís"
 
 #: mplate_decoder/templates/404.html:8
 msgid "Not found"
@@ -380,7 +381,11 @@ msgid "\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
 "    "
-msgstr ""
+msgstr "\n"
+"        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
+"        ➡ %(configuration_description)s<br>\n"
+"        ➡ %(extras_description)s<br>\n"
+"    "
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:40
 msgid "Engine"
@@ -435,6 +440,12 @@ msgstr "Anys de model 68-76"
 msgid "\n"
 "    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a href=\"%(url_img)s\">album</a>\n"
 "    "
+msgstr "\n"
+"    Image modificada del <a href=\"%(url_img)s\">fòrum The Samba</a>, en <a href=\"%(url_img)s\">aquest àlbum</a>\n"
+"    "
+
+#: mplate_decoder/templates/mplate_decoder/index.html:40
+msgid "<strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles)."
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
@@ -458,9 +469,14 @@ msgstr ""
 msgid "Decode it"
 msgstr "Descodifiqueu-la"
 
+#: mplate_decoder/templates/mplate_decoder/index.html:69
+#: vw_type2_id/templates/home.html:16
+msgid "M-plate decoder"
+msgstr "Descodificador de plaquetes M"
+
 #: mplate_decoder/templates/mplate_decoder/index.html:74
 msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
-msgstr ""
+msgstr "Feu servir el descodificador automàtic per obtenir més informació sobre la configuració original, l'equipament i extres per a una furgoneta Tipus 2. Simplement heu d'escollir l'any de model i introduir els camps de la plaqueta M."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:77
 msgid "Decode an M-plate&raquo;"
@@ -494,7 +510,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:38
 msgid "Daily M-plate submissions"
-msgstr ""
+msgstr "Enviaments diaris de plaquetes M"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:79
 msgid "Date"
@@ -601,7 +617,7 @@ msgstr "Model 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:10
 msgid "Volkswagen Type 2 M-plate, model year 68-69"
-msgstr ""
+msgstr "Plaqueta M Volkswagen Tipus 2, anys de model 68-69"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:55
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:58
@@ -620,16 +636,7 @@ msgstr "Referència"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:10
 msgid "Volkswagen Type 2 M-plate, model year 70-79"
-msgstr ""
-
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_alerts_post.html:6
-#, python-format
-msgid "\n"
-"  Once submitted, the M-plate data will be stored and available\n"
-"  at '%(mplate_fullurl)sCCCCCCCC', where 'CCCCCCCC'\n"
-"  is the shortened chassis number on the plate.\n"
-"  "
-msgstr ""
+msgstr "Plaqueta M Volkswagen Tipus 2, anys de model 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:13
 msgid "Code"
@@ -648,7 +655,7 @@ msgstr "Descripció"
 msgid "\n"
 "                M-code collection: %(collection)s\n"
 "                "
-msgstr ""
+msgstr "Col·lecció de codis M: %(collection)s"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:36
 #: mplate_decoder/templates/mplate_decoder/search_results.html:37
@@ -735,11 +742,7 @@ msgstr "Registreu-vos o inicieu la sessió"
 
 #: vw_type2_id/templates/home.html:9
 msgid "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
-msgstr ""
-
-#: vw_type2_id/templates/home.html:16
-msgid "M-plate decoder"
-msgstr "Descodificador de plaquetes M"
+msgstr "Joc d'eines per identificar vehicles Volkswagen Tipus 2 per als models dels anys 1968 a 1979."
 
 #: vw_type2_id/templates/home.html:17
 msgid "Decode the M-plate and find information about your bus."
@@ -751,11 +754,15 @@ msgstr "Per saber-ne més &raquo;"
 
 #: vw_type2_id/templates/home.html:21
 msgid "Engine number decoder"
-msgstr ""
+msgstr "Descodificador del número de motor"
 
 #: vw_type2_id/templates/home.html:22
 msgid "Coming soon"
 msgstr "Properament"
+
+#: vw_type2_id/templates/registration/login.html:11
+msgid "Login"
+msgstr "Inici de sessió"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Don't have an account yet?"
