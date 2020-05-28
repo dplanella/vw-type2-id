@@ -397,42 +397,52 @@ class MetricsView(generic.TemplateView):
             years_data.append(year[1])
 
         # Collect colors data
-        colors = [mplate.paint_and_interior_code for mplate in mplates_all]
-        colors_exterior = []
+        # Extract color codes from all M-plate
+        color_codes_pi = [mplate.paint_and_interior_code for mplate in mplates_all]
+        codes_exterior = []
         color_description = ''
         color_code = ''
         exteriorcolor_object = None
-        for color in colors:
-            if color.startswith('5'):
-                color_code = color[3:]
+        # Extract all paint (exterior) color codes
+        for code in color_codes_pi:
+            if code.startswith('5'):
+                color_code_paint = code[3:]
             else:
-                color_code = color[:4]
-            colors_exterior.append(color_code)
-        colors_most_common = Counter(colors_exterior).most_common(15)
-        logger.info(colors_most_common)
-        for color in colors_most_common:
+                color_code_paint = code[:4]
+            codes_exterior.append(color_code_paint)
+        codes_most_common = Counter(codes_exterior).most_common(15)
+        logger.debug(codes_most_common)
+        for code in codes_most_common:
+            color_code = code[0]
+            color_count = code[1]
             try:
                 exteriorcolor_object = \
                     ExteriorColor.objects.filter(
-                        plate_code=color[0])[0]
+                        plate_code=color_code)[0]
                 color_description = \
                     exteriorcolor_object.lacquer_code_body_link.color_name
                 color_chip = \
                     exteriorcolor_object.lacquer_code_body_link.chip
             except IndexError:
+                logger.error("Color index error")
                 continue
-            colors_labels.append(f'{color_description} ({color[0]})')
-            colors_data.append(color[1])
+
+            colors_labels.append(f'{color_description} ({color_code})')
+            colors_data.append(color_count)
             colors_backgroundcolor.append(color_chip)
 
         # Collect countries data
         countries = [mplate.destination_country for mplate in mplates_all]
-        countries_most_common = Counter(countries).most_common(10)
+        # Collect 10 + 1 to cater for the "Unknown" country
+        countries_most_common = Counter(countries).most_common(11)
         for country in countries_most_common:
             if country[0]:
                 countries_labels.append(country[0])
             else:
-                countries_labels.append(_('Unknown'))
+                # Ignore the instances in which the country
+                # was not specified
+                # countries_labels.append(_('Unknown'))
+                pass
             countries_data.append(country[1])
 
         end_date = datetime.today()
