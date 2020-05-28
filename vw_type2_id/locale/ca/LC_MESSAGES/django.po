@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-23 12:44+0000\n"
-"PO-Revision-Date: 2020-05-23 15:05\n"
+"PO-Revision-Date: 2020-05-23 17:42\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -14,6 +14,8 @@ msgstr ""
 "X-Crowdin-Project: vw-type2-id\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: /master/vw_type2_id/locale/django.pot\n"
+"Last-Translator: David Planella <david.planella@ubuntu.com>\n"
+"X-Generator: Poedit 2.3\n"
 
 #: contact/forms.py:6
 msgid "Your e-mail"
@@ -33,8 +35,12 @@ msgstr "S'ha enviat el missatge, gràcies per contactar-nos."
 
 #: mplate_decoder/forms.py:61
 #, python-brace-format
-msgid "Minimum digits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) or {MODEL_7079_YEAR_CHASSIS_NR_LEN} digits (mod. 70-79)"
-msgstr "Mínim de dígits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) o {MODEL_7079_YEAR_CHASSIS_NR_LEN} (mod. 70-79) dígits"
+msgid ""
+"Minimum digits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) or "
+"{MODEL_7079_YEAR_CHASSIS_NR_LEN} digits (mod. 70-79)"
+msgstr ""
+"Mínim de dígits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) o "
+"{MODEL_7079_YEAR_CHASSIS_NR_LEN} (mod. 70-79) dígits"
 
 #: mplate_decoder/forms.py:66
 msgid "Only digits allowed, without spaces. The second digit is always a 2."
@@ -46,7 +52,9 @@ msgstr "Número de bastidor escurçat. Comproveu el primer dígit."
 
 #: mplate_decoder/forms.py:83
 msgid "Invalid shortened chassis number. Check first and second digits."
-msgstr "El número de bastidor escurçat no és vàlid. Comproveu el primer i segon dígit."
+msgstr ""
+"El número de bastidor escurçat no és vàlid. Comproveu el primer i segon "
+"dígit."
 
 #: mplate_decoder/forms.py:106
 #, python-brace-format
@@ -64,7 +72,9 @@ msgstr "Només es permeten dígits, lletres i espais"
 #: mplate_decoder/forms.py:140
 #, python-brace-format
 msgid "Code: {mcode}. M-code length should be {MCODE_LEN} digits or letters"
-msgstr "Codi: {mcode}. La llargada del codi M ha de ser de {MCODE_LEN} dígits o lletres"
+msgstr ""
+"Codi: {mcode}. La llargada del codi M ha de ser de {MCODE_LEN} dígits o "
+"lletres"
 
 #: mplate_decoder/forms.py:145
 #, python-brace-format
@@ -77,12 +87,18 @@ msgstr "Només es permeten dígits i lletres"
 
 #: mplate_decoder/forms.py:171
 #, python-brace-format
-msgid "Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or letters"
-msgstr "Mínima llargada del codi de pintura i interior: {PAINT_AND_INTERIOR_LEN} dígits o lletres"
+msgid ""
+"Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or "
+"letters"
+msgstr ""
+"Mínima llargada del codi de pintura i interior: {PAINT_AND_INTERIOR_LEN} "
+"dígits o lletres"
 
 #: mplate_decoder/forms.py:195
 msgid "Cannot validate production date format without a valid chassis number."
-msgstr "No es pot validar el format de la data de producció sense un número de bastidor vàlid."
+msgstr ""
+"No es pot validar el format de la data de producció sense un número de "
+"bastidor vàlid."
 
 #: mplate_decoder/forms.py:204 mplate_decoder/forms.py:221
 msgid "Invalid production date format. Please double check."
@@ -99,12 +115,17 @@ msgstr "La data de producció ({exc}) no és vàlida, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:226
 msgid "Invalid production week date. Please double check the two first digits."
-msgstr "La setmana de producció no és vàlida. Comproveu els dos digits inicials."
+msgstr ""
+"La setmana de producció no és vàlida. Comproveu els dos digits inicials."
 
 #: mplate_decoder/forms.py:247
 #, python-brace-format
-msgid "Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or digits"
-msgstr "Llargada mínima del país de destinació: {EXPORT_DESTINATION_LEN} lletres o dígits"
+msgid ""
+"Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or "
+"digits"
+msgstr ""
+"Llargada mínima del país de destinació: {EXPORT_DESTINATION_LEN} lletres o "
+"dígits"
 
 #: mplate_decoder/forms.py:258
 #, python-brace-format
@@ -158,7 +179,9 @@ msgstr "Codis M, fila 2"
 
 #: mplate_decoder/models.py:39
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
-msgstr "Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 a 69-)"
+msgstr ""
+"Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 "
+"a 69-)"
 
 #: mplate_decoder/models.py:42
 msgid "Paint and interior"
@@ -285,12 +308,20 @@ msgstr "MplateDecoder requereix una plaqueta o codis M"
 
 #: mplate_decoder/models.py:511
 #, python-brace-format
-msgid "Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}"
-msgstr "Llargada del codi d'any de model no vàlida: {model_year_code_len}, codi {model_year_code}, nr. de bastidor escurçat {chassis_number_short}"
+msgid ""
+"Invalid model year code length: {model_year_code_len}, code "
+"{model_year_code}, chassis no. {chassis_number_short}"
+msgstr ""
+"Llargada del codi d'any de model no vàlida: {model_year_code_len}, codi "
+"{model_year_code}, nr. de bastidor escurçat {chassis_number_short}"
 
 #: mplate_decoder/models.py:532
-msgid "MplateDecoder requires either an m-plate or chassis_number with encoded production date"
-msgstr "MplateDecoder requereix o bé una plaqueta o un número de bastidor escurçat amb la data de producció codificada"
+msgid ""
+"MplateDecoder requires either an m-plate or chassis_number with encoded "
+"production date"
+msgstr ""
+"MplateDecoder requereix o bé una plaqueta o un número de bastidor escurçat "
+"amb la data de producció codificada"
 
 #: mplate_decoder/models.py:631
 msgid "MplateDecoder requires an mplate or mcodes_1/m_codes_2"
@@ -341,9 +372,11 @@ msgstr "Comentaris: {exteriorcolor.remarks}"
 
 #: mplate_decoder/models.py:898
 #, python-brace-format
-msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+msgid ""
+"Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
-msgstr "Cos: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+msgstr ""
+"Cos: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Sostre: {color_name_roof} ({lacquer_code_roof})"
 
 #: mplate_decoder/models.py:984 mplate_decoder/models.py:998
@@ -377,12 +410,14 @@ msgstr "Volkswagen Tipus 2"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:28
 #, python-format
-msgid "\n"
+msgid ""
+"\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
 "    "
-msgstr "\n"
+msgstr ""
+"\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
@@ -421,15 +456,18 @@ msgid "Destination country"
 msgstr "País de destinació"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:12
-msgid "\n"
+msgid ""
+"\n"
 "      The M-plate is one of the identification plates found on VW busses. \n"
-"      Short for <em>Mehraustattung</em> (optional extras in German), it contains\n"
-"      production codes with information about equipment, manufacturing date, destination, specs and more.\n"
+"      Short for <em>Mehraustattung</em> (optional extras in German), it "
+"contains\n"
+"      production codes with information about equipment, manufacturing date, "
+"destination, specs and more.\n"
 "    "
 msgstr "\n"
 "La plaqueta M és una de les plaquetes d'identificació incorporades a les furgonetes VW. \n"
-"      El nom prové de <em>Mehraustattung</em> (extres opcionals en Alemany), i conté\n"
-"      codis de producció amb informaciçó sobre equipament, dates de producció, destinació, especificacions tècniques i més.\n"
+"      El nom prové de <em>Mehraustattung</em> (extres opcionals en alemany), i conté\n"
+"      codis de producció amb informació sobre equipament, dates de producció, destinació, especificacions tècniques i més.\n"
 "    "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:24
@@ -442,16 +480,25 @@ msgstr "Anys de model 68-76"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:35
 #, python-format
-msgid "\n"
-"    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a href=\"%(url_img)s\">album</a>\n"
+msgid ""
+"\n"
+"    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a "
+"href=\"%(url_img)s\">album</a>\n"
 "    "
-msgstr "\n"
-"    Image modificada del <a href=\"%(url_img)s\">fòrum The Samba</a>, en <a href=\"%(url_img)s\">aquest àlbum</a>\n"
+msgstr ""
+"\n"
+"    Image modificada del <a href=\"%(url_img)s\">fòrum The Samba</a>, en <a "
+"href=\"%(url_img)s\">aquest àlbum</a>\n"
 "    "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:40
-msgid "<strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles)."
-msgstr "<strong>Abans de l'any de model 1977</strong>: la plaqueta es troba a la partició de metall darrera del seient del conductor (seient de l'acompanyant per a vehicles d'accés a la dreta)."
+msgid ""
+"<strong>Before model year 1977</strong>: the M-plate is located on the metal "
+"partition behind the driver's seat (passenger's seat for RHD vehicles)."
+msgstr ""
+"<strong>Abans de l'any de model 1977</strong>: la plaqueta es troba a la "
+"partició de metall darrera del seient del conductor (seient de l'acompanyant "
+"per a vehicles d'accés a la dreta)."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
 msgid "Model years 77-79"
@@ -459,16 +506,22 @@ msgstr "Anys de model 77-79"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:50
 #, python-format
-msgid "\n"
+msgid ""
+"\n"
 "      Image modified from <a href=\"%(url)s\">The Samba forum</a>\n"
 "      "
-msgstr "\n"
+msgstr ""
+"\n"
 "      Imatge modificada del <a href=\"%(url)s\">fòrum The Samba</a>\n"
 "      "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:55
-msgid "<strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe."
-msgstr "<strong>Any de model 1977 i posteriors</strong>: la plaqueta es troba sota del tauler d'instruments, a sobre del conducte de ventilació."
+msgid ""
+"<strong>Model year 1977 and after</strong>: the M-plate is located under the "
+"dashboard, on top of the metal fresh air pipe."
+msgstr ""
+"<strong>Any de model 1977 i posteriors</strong>: la plaqueta es troba sota "
+"del tauler d'instruments, a sobre del conducte de ventilació."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:63
 msgid "Decode it"
@@ -480,8 +533,15 @@ msgid "M-plate decoder"
 msgstr "Descodificador de plaquetes M"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:74
-msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
-msgstr "Feu servir el descodificador automàtic per obtenir més informació sobre la configuració original, l'equipament i extres per a una furgoneta Tipus 2. Simplement heu d'escollir l'any de model i introduir els camps de la plaqueta M."
+msgid ""
+"Use the automatic decoder to find out more about the original configuration, "
+"equipment and extras for a Type 2 bus. Simply choose the model year and fill "
+"in the M-plate fields."
+msgstr ""
+"Feu servir el descodificador automàtic per obtenir més informació sobre la "
+"configuració original, l'equipament i extres per a una furgoneta Tipus 2. "
+"Simplement heu d'escollir l'any de model i introduir els camps de la "
+"plaqueta M."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:77
 msgid "Decode an M-plate&raquo;"
@@ -495,7 +555,9 @@ msgstr "Plaquetes M enviades"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:9
 msgid "Vehicle production data extracted from the M-plate decoder submissions"
-msgstr "Dades de producció de vehicles extretes de les plaquetes enviades al descodificador"
+msgstr ""
+"Dades de producció de vehicles extretes de les plaquetes enviades al "
+"descodificador"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:16
 msgid "Top 10 models"
@@ -534,42 +596,86 @@ msgid "Countries"
 msgstr "Països"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_about.html:10
-msgid "\n"
-"## About this site\n\n"
-"This site provides means to identify and understand the origin of Volkswagen Type 2 busses\n"
-"from years 1967 to 1979. At this time, via an online M-Plate decoder, but it might expand in the future.\n"
-"M-Plates were metallic plates present in all VW busses, which contained a set of alphanumeric production\n"
-"codes to identify a vehicle.\n\n"
-"The site was created as a result of the [original VW M-Plate decoder](https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode.php)\n"
-"going offline, as a personal project to decode the author's own M-Plate and to experiment with code. From there,\n"
-"it evolved into a public website to share this tool with other vintage bus owners from the aircooled community. \n\n"
-"The data used to decode the M-plates comes mainly from these sources, and keeps getting expanded every time a user finds out more about\n"
-"an unknown code and shares it with the community:\n\n"
-"- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www.crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and Alexander Prinz\n"
+msgid ""
+"\n"
+"## About this site\n"
+"\n"
+"This site provides means to identify and understand the origin of Volkswagen "
+"Type 2 busses\n"
+"from years 1967 to 1979. At this time, via an online M-Plate decoder, but it "
+"might expand in the future.\n"
+"M-Plates were metallic plates present in all VW busses, which contained a "
+"set of alphanumeric production\n"
+"codes to identify a vehicle.\n"
+"\n"
+"The site was created as a result of the [original VW M-Plate decoder]"
+"(https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode."
+"php)\n"
+"going offline, as a personal project to decode the author's own M-Plate and "
+"to experiment with code. From there,\n"
+"it evolved into a public website to share this tool with other vintage bus "
+"owners from the aircooled community. \n"
+"\n"
+"The data used to decode the M-plates comes mainly from these sources, and "
+"keeps getting expanded every time a user finds out more about\n"
+"an unknown code and shares it with the community:\n"
+"\n"
+"- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www."
+"crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and "
+"Alexander Prinz\n"
 "- [TheSamba.com forum](https://www.thesamba.com/vw/forum/viewforum.php?f=5)\n"
 "- [forum.bulli.org forum](https://forum.bulli.org/)\n"
 "- [type2.com](http://www.type2.com/m-codes/t2mcodes.html)\n"
-"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n\n"
-"Thanks so much to the authors of those resources and to everyone who share their knowledge. The M-plate decoder would not have been possible without that vast collaborative effort.\n\n"
-"## Privacy policy\n\n"
-"This is a hobby site without a commercial purpose and without intention to seek financial profit. The stored database data\n"
-"will never be submitted to third parties or used for other purposes than improving the site and providing a better\n"
-"service to its users.\n\n"
+"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n"
+"\n"
+"Thanks so much to the authors of those resources and to everyone who share "
+"their knowledge. The M-plate decoder would not have been possible without "
+"that vast collaborative effort.\n"
+"\n"
+"## Privacy policy\n"
+"\n"
+"This is a hobby site without a commercial purpose and without intention to "
+"seek financial profit. The stored database data\n"
+"will never be submitted to third parties or used for other purposes than "
+"improving the site and providing a better\n"
+"service to its users.\n"
+"\n"
 "The code for this site is Open Source. You can explore it and contribute\n"
-"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-type2-id).\n\n"
-"The site's backend has a database that stores:\n\n"
-"- The original data submitted through the M-plate form, along with some of the decoded values computed from that data (e.g. model year in readable form).\n"
+"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-"
+"type2-id).\n"
+"\n"
+"The site's backend has a database that stores:\n"
+"\n"
+"- The original data submitted through the M-plate form, along with some of "
+"the decoded values computed from that data (e.g. model year in readable "
+"form).\n"
 "- The creation date and last update date of the submitted M-plate data.\n"
-"- If the user has chosen to create an account on the site, their user name, e-mail and last login date.\n\n"
-"If you've used this service without creating an account and would like to have the data for a particular M-plate removed or amended, feel free to [contact the author](#contact).\n"
-"If you have created an account, you already have full control over your data and should be able to either remove or change the data on the `My M-plates` section.\n\n"
-"## Disclaimer\n\n"
-"The decoded vehicle data produced on this site comes from multiple sources. Despite best efforts to provide accurate data,\n"
-"it has to be noted that it comes from volunteer research over 40+ years of history of these vehicles.\n\n"
-"As such, data is neither guaranteed to be accurate nor to have any legal validity. It should be considered as orientative\n"
-"only.\n\n"
-"## Contact\n\n"
-"If you've got feedback or questions about the site, feel free to [get in touch](/contact).\n\n"
+"- If the user has chosen to create an account on the site, their user name, "
+"e-mail and last login date.\n"
+"\n"
+"If you've used this service without creating an account and would like to "
+"have the data for a particular M-plate removed or amended, feel free to "
+"[contact the author](#contact).\n"
+"If you have created an account, you already have full control over your data "
+"and should be able to either remove or change the data on the `My M-plates` "
+"section.\n"
+"\n"
+"## Disclaimer\n"
+"\n"
+"The decoded vehicle data produced on this site comes from multiple sources. "
+"Despite best efforts to provide accurate data,\n"
+"it has to be noted that it comes from volunteer research over 40+ years of "
+"history of these vehicles.\n"
+"\n"
+"As such, data is neither guaranteed to be accurate nor to have any legal "
+"validity. It should be considered as orientative\n"
+"only.\n"
+"\n"
+"## Contact\n"
+"\n"
+"If you've got feedback or questions about the site, feel free to [get in "
+"touch](/contact).\n"
+"\n"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:8
@@ -578,7 +684,8 @@ msgstr "Suprimeix la plaqueta"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:10
 #, python-format
-msgid "Are you sure you want to delete M-plate %(mplate.chassis_number_short)s?"
+msgid ""
+"Are you sure you want to delete M-plate %(mplate.chassis_number_short)s?"
 msgstr "Segur que voleu suprimir la plaqueta %(mplate.chassis_number_short)s?"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:14
@@ -702,6 +809,1789 @@ msgstr "Portal d'administració de {SITE_NAME}"
 msgid "Welcome to {SITE_NAME} Admin Portal"
 msgstr "Us donem la benvinguda al portal d'administració de {SITE_NAME}"
 
+#: mplate_decoder.Mcode/description:0
+msgid "SO3, VW Kombi as traffic accident observation vehicle"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:0
+msgid "Conversion"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:1
+msgid "SO67, Westfalia Campmobile 67A"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:2
+msgid ""
+"SO67, Westfalia Campmobile 67B. As interior 67A but with additional pop-up "
+"roof, bed and built-in roof luggage rack"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:3
+msgid ""
+"SO67, Westfalia Campmobile 67D. As interior 67B but with additional tent"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:4
+msgid "SO67, Westfalia Campmobile 67E"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:5
+msgid "SO67, Westfalia Campmobile 67F"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:6
+msgid "SO67, Westfalia Campmobile 67G"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:7
+msgid "SO67, Westfalia Campmobile 67H"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:8
+msgid "VW Kombi as traffic accident vehicle"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:9
+msgid ""
+"VW Kombi as traffic accident vehicle with additional roof platform and ladder"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:10
+msgid "Double-seater middle bench and special rear bench"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:11
+msgid "Standard Campmobile, without pop-up roof, folding spare tyre"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:12
+msgid "Pop Up Top Campmobile, with pop-up roof, folding spare tyre"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:13
+msgid "Campmobile with pop-up roof"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:14
+msgid "Campmobile with pop-up roof and combined gas/electric refrigerator"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:17
+msgid ""
+"Deluxe Campmobile with pop-up roof, folding spare tyre, combined gas/"
+"electric refrigerator, gas stove"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:18
+msgid "With additional tent for P21 to P27"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:19
+msgid "With additional electricity inlet for 220V. For P25 and P26"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:20
+msgid "Westfalia interior (without pop-up roof)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:21
+msgid ""
+"Combined gas/electric refrigerator, with gas cooking unit, side bench in "
+"driving direction for storing gas bottles. For P21 and P22."
+msgstr ""
+
+#: mplate_decoder.Mcode/description:22
+msgid ""
+"Deluxe Campmobile with pop-up roof, folding spare tyre, electric "
+"refrigerator, snack table"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:23
+msgid "Additional tent for interior P31"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:24
+msgid ""
+"With US-specific sealed beam headlamps, for M027: with US-specific carriers "
+"for catalysts (only with M524)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:25
+msgid "Heater outlet in seat box of rear bench seat"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:25
+msgid "Westfalia Campmobiles"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:26
+msgid "Without tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:27
+msgid "Without battery"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:28
+msgid "Additional dust sealing for engine compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:28
+msgid "To chassis no. 2132 102 496"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:29
+msgid ""
+"Exhaust emission control installation and speedometer in miles instead of km "
+"(with M524 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:30
+msgid ""
+"Middle three-person bench seat, rear three-person bench seat and interior "
+"trim in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:31
+msgid ""
+"Middle three-person bench seat and interior trim in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:32
+msgid "With hazard light installation"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:33
+msgid "Without headlamp flasher"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:34
+msgid "Speedometer and odometer in miles"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:35
+msgid "Sealed beam headlamps"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:35
+msgid "Export, not Canada and USA"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:36
+msgid "Sealed beam headlamps, side marker reflectors and reversing lights"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:37
+msgid "Speedometer with trip recorder and clock"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:38
+msgid "With activated carbon container for absorbing fuel vapour"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:38
+msgid "USA-California"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:39
+msgid "Japan"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:40
+msgid "Australia"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:41
+msgid ""
+"Plate with emissions value and engine that complies to the California "
+"exhaust emission standards"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:42
+msgid "Plate with emissions value, engine with catalyst"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:43
+msgid "Without stretchers, also in combination with M152 (ambulance)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:44
+msgid "Towing hook front and rear"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:45
+msgid "Coupled headlamp flasher and licence plate light"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:46
+msgid ""
+"Battery approved by research and development department and free from import "
+"duty and costs"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:46
+msgid "To chassis no. 2122 088 996, Austria"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:47
+msgid "Lockable cap for fuel tank"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:48
+msgid "Red Crescent lamp instead of Red Cross lamp"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:49
+msgid ""
+"Side turn signals, altered handbrake handle, white front turn signal lenses"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:49
+msgid "Italy"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:50
+msgid ""
+"Side-mounted turn signals, altered handbrake handle, white front turn "
+"signals, without emergency light system, without hazard light system (France "
+"and Italy only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:51
+msgid "Without hazard light system"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:52
+msgid ""
+"Tyres approved by research and development department and free from import "
+"duty and costs"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:53
+msgid "Side turn signals and inner rear-view mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:54
+msgid "Side turn signals"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:55
+msgid "Two reversing lights"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:56
+msgid "Dual-brake-circuit control light (only with M511)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:57
+msgid "Dual-brake-circuit and handbrake control light"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:58
+msgid ""
+"With pedestal and double pulley for the later installation of a second "
+"generator (not in combination with M153, M157 and M251)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:59
+msgid "Cloth upholstery instead of leatherette"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:60
+msgid "Lockable glove compartment lid (only with M511)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:61
+msgid "With steering lock"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:61
+msgid "To VIN 2x9 300 000"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:63
+msgid "Hardwood strips for flatbed not fastened to vehicle"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:64
+msgid "Eberspacher BA6 petrol heater (LHD) (fitted under cargo floor)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:65
+msgid ""
+"Type labelling of seat mounting and identification plate for England and "
+"Ireland"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:66
+msgid ""
+"Convex rear-view mirror, outer, right. Inner rear-view mirror with shorter "
+"arm"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:67
+msgid "Sun visor, right without mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:67
+msgid "Sweden"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:68
+msgid "Compliance with Sweden exhaust emission standards"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:69
+msgid "Without sidegates and tailgate"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:70
+msgid "Writings for maximum axle loads and maximum weight"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:71
+msgid "Floor cover (rubber mat) in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:72
+msgid "12V 54A battery instead of standard 12V 45A battery"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:73
+msgid "Two front towing hooks"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:74
+msgid "Tilt and bows for Pick-Up"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:75
+msgid "Second lid for underfloor cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:76
+msgid "Battery under customs seal"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:77
+msgid "Roof opening and reinforcement for Westfalia pop-up roof SO 73"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:78
+msgid "Mud flaps, rear"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:79
+msgid "Mountings for first aid kit"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:80
+msgid "With warning triangle"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:81
+msgid ""
+"Filled in factory with double amount of petrol (used for driving on and off "
+"the train, for example)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:82
+msgid "Self-adjusting drum brakes (rear)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:83
+msgid "Laminated windscreen glass"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:85
+msgid "Gearbox with mountain ratio for mountainous areas"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:86
+msgid "Ventilation window in rear side panel opposite sliding door"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:87
+msgid "Lockable engine lid"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:88
+msgid "Wolfsburg car radio"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:89
+msgid "Braunschweig car radio"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:90
+msgid "Emden car radio"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:91
+msgid "Ingolstadt car radio"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:92
+msgid "Tubeless off-road tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:93
+msgid "Without VW logo on front"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:94
+msgid "Off-road tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:95
+msgid "Rear-window heating"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:96
+msgid "Heavy duty shock absorbers front and back"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:97
+msgid "Upholstery material, special version (cloth)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:98
+msgid "Removable prints ‘Deutsche Bundespost’ and ‘Posthorn’ logo"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:98
+msgid "German Mail"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:99
+msgid "Removable prints ‘Deutsche Bundesbahn’ and tyre-pressure text"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:100
+msgid "Removable prints ‘Unicef’"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:101
+msgid "Admittance plate for Canada"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:102
+msgid "Prepared for low-loader Pick-Up"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:103
+msgid ""
+"Surveyor measuring group vehicle. Same as M541 but with swivelling seat and "
+"table on division wall instead of bench (with M541 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:104
+msgid "Without seats in rear"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:105
+msgid "Altered heater outlet of optional petrol heater (only with M119)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:106
+msgid "Duty-free tyres (duty refund)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:107
+msgid "Eberspacher BN4 petrol heater with outlet in load/passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:108
+msgid ""
+"Eberspacher BN4 petrol heater with air recirculation connection and outlet "
+"in load/passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:109
+msgid "Eberspacher BN4 heater"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:110
+msgid "Without mountings for seats and safety belts in cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:111
+msgid "Two electric ventilators in fresh-air system"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:112
+msgid "Suppression equipment for radio reception"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:113
+msgid "Yellow headlamp bulbs and safety inner rear-view mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:113
+msgid "France"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:114
+msgid "Yellow headlamp bulbs"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:115
+msgid "1600cc engine with stiff instead of torsion-suspended clutch disc"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:116
+msgid "Rear panel lid without window"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:117
+msgid "Whitewall tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:118
+msgid "Without steel sliding roof"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:119
+msgid ""
+"Removable prints \"Deutsche Bundespost\", \"Fernmeldedienst\" and post horn "
+"logo"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:119
+msgid "German Mail (telecomms department)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:120
+msgid ""
+"Chassis plate without prints of the maximum total mass and the maximum axle "
+"loads"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:120
+msgid "Israel, Switzerland, Thailand"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:121
+msgid "Fold-down passenger seat"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:122
+msgid ""
+"Modifications for fire truck, front bumper mounted higher for taking steep "
+"slope; with laminated windscreen"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:123
+msgid ""
+"Modifications for fire truck, without deformation element behind front "
+"bumper; with laminated windscreen"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:124
+msgid "Heater outlet in rear part of cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:125
+msgid "With heater outlet under middle bench seat"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:126
+msgid "With safety lock for sliding door(s) and rear panel lid"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:127
+msgid ""
+"Middle bench seat (two persons), rear bench seat and interior trim in "
+"passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:128
+msgid "Seven-seater model instead of eight-seater model"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:130
+msgid "With hinged rear seat backrest"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:132
+msgid "Painted instead of chrome parts"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:133
+msgid ""
+"VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in "
+"bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, "
+"maximum tyre inflation written above the wheels, symbol notification of "
+"knobs on windscreen, reinforcement under upholstery for mounting of fire "
+"extinguishers in cabin, additional mountings for several pieces of equipment "
+"according to DIN requirement, transparent battery cases (only with M623)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:136
+msgid "Simplified rails, plus stretcher on right-hand side"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:137
+msgid ""
+"Paper element cyclone air filter without carburettor pre-heating (1300 and "
+"1600cc engines only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:138
+msgid "Two oil bath air filters with larger oil capacity"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:139
+msgid "Oil bath air filter with larger oil capacity for dusty regions"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:140
+msgid "Paper element air filter with cyclone function for dusty regions"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:140
+msgid "Type 1 engines"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:141
+msgid "Exhaust emission control system"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:142
+msgid ""
+"Exhaust emission control system and activated carbon container for absorbing "
+"fuel vapour"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:143
+msgid "Fuel injection engine"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:144
+msgid "Securing plate and rings for padlock"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:145
+msgid "Blue rotating light and siren"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:146
+msgid "Seats in cabin with mountings for headrests"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:147
+msgid "Rubber strips for bumpers"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:148
+msgid "Gauged trip writer"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:149
+msgid "Tubeless textile or steel-ply tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:150
+msgid "Tubeless steel-ply tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:151
+msgid ""
+"C-shaped guiding rails on metal partition between cabin and cargo "
+"compartment and on the side opposite the sliding door (for model 211 only "
+"with M540, for model 231 only wit M120, M540)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:152
+msgid "Three-seater bench in the back and interior trim"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:153
+msgid ""
+"Wooden floor panels with built-in guiding rails (also in side panels and on "
+"floor above engine compartment) for mounting tools and instruments"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:154
+msgid "Without three-seater middle bench seat"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:155
+msgid "Chrome hubcaps"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:156
+msgid "Chrome hubcaps and headlamp rings"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:157
+msgid "Chrome hubcaps, headlamp rings and rear-view mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:158
+msgid "With seatbelt mounting points for folding seat in rear compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:158
+msgid "Austria"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:159
+msgid ""
+"Three-point safety belts for driver and passenger seat with roll-up "
+"automatic and push-button lock"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:160
+msgid ""
+"Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:160
+msgid "USA and Canada"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:161
+msgid "Two-point seatbelts for all seats in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:162
+msgid "Headlamps for countries with left-hand traffic"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:163
+msgid ""
+"Simplified heating system with special heater boxes, no isolation on hot-air "
+"ducting, no noise isolation on front of car and on front wheel arches. Extra "
+"fresh-air ventilator and cabin-door ventilation (not with M60,M141,M505)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:164
+msgid "With outer and centre underfloor plates"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:165
+msgid ""
+"With electrical installation for Japan: with side turn signals front, back-"
+"up lamps, with parking light front and rear, without licence-plate light and "
+"engine that complies to Japanese exhaust regulations (with M26 and M187 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:166
+msgid ""
+"Convex outer rear-view mirrors left and right instead of mirrors with flat "
+"glass"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:167
+msgid "Exclusive use of Blaupunkt car radios (with M95, 97 or 98 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:168
+msgid "Rotating light red instead of blue (with M160 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:169
+msgid "Various parts not mounted; these parts sent via the CKD department"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:169
+msgid "Yugoslavia"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:170
+msgid "Pick-Up with enlarged wooden platform"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:171
+msgid "Eberspacher BN4 petrol heater"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:172
+msgid ""
+"With second hot-air outlet in metal Partition as in ambulance (with M500 "
+"only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:172
+msgid "Year might not be correct"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:173
+msgid "Inner rear-view mirror, anti-dazzle"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:175
+msgid "Trailer hitch and extra towing hook on front"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:176
+msgid "Trailer hitch"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:177
+msgid "Tilt made of PVC instead of sail-cloth (with M070 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:178
+msgid "Tilt made of PVC instead of sail-cloth (with M207 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:179
+msgid "With post horn sticker"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:179
+msgid "German Mail – Berlin"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:180
+msgid ""
+"With \"Fernmeldedienst\" (\"telecommunications department\") and post horn "
+"stickers"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:181
+msgid "Without rubber floor mat in Passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:181
+msgid "United Kingdom"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:182
+msgid "Detachable hinges and side-flap mountings"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:182
+msgid "For authorities only"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:183
+msgid "Without air vents in Cargo Compartment (with M500 and M510 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:184
+msgid ""
+"Flat bows with mountings for ladder and tilt made out of synthetic material"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:185
+msgid "Limited slip differential"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:186
+msgid "One ventilation window in cabin door on driver's side"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:187
+msgid ""
+"With fixed windows in passenger compartment instead of ventilation windows"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:188
+msgid "No window openings in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:189
+msgid ""
+"With upholstery on the boot floor, the sides of the boot and the rear hatch"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:190
+msgid "Retaining cables for tailboard"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:191
+msgid "Detachable headrests for all seats in cabin (with M161 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:192
+msgid ""
+"Detachable headrests for all seats in Passenger compartment (with M235 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:193
+msgid "Mountings for headrests for all seats in Passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:194
+msgid "Engine with recessed crown pistons for low-octane fuel"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:195
+msgid "Windscreen free from import duty for Canada (with M89 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:195
+msgid "Canada"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:196
+msgid "Windscreen free from import duty for USA (with M089 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:196
+msgid "USA"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:197
+msgid "Ignition lock without steering lock"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:198
+#, fuzzy
+#| msgid "Transmission"
+msgid "Automatic transmission"
+msgstr "Transmissió"
+
+#: mplate_decoder.Mcode/description:200
+msgid "1700cc (66bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:201
+msgid "1800cc (68bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:202
+msgid "2000cc (70bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:203
+msgid "1300cc (44bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:204
+msgid "Vehicle for North American market with tyres from specific companies"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:205
+msgid "Without spare tyre, tools, toolbag and jack (with M515/502 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:205
+msgid "Germany"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:206
+msgid "Higher driver- and passenger-seat backrest (headrest)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:207
+msgid ""
+"Passenger seat instead of passenger bench seat; spare tyre in cabin (with "
+"M500 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:208
+msgid "Payload of 1,200kg instead of 1,000kg"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:209
+msgid ""
+"Maintenance vehicle for communication cables. With closets, C-shaped rails, "
+"swivel chair and curtains in cargo compartment (with M120, M503, M539 only; "
+"not with M251)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:210
+msgid "With headlight washer installation"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:211
+msgid "Sheer bolt for steering-column tube attachment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:212
+msgid "Without bottom protection"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:213
+msgid "VW parts for type 214, 234 and 264 made by VW do Brasil (CKD only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:213
+msgid "Ony CKD vehicles"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:214
+msgid ""
+"ECE regulations sticker \"R 10\" (with M123 only) (suppression equipment for "
+"radio reception)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:215
+msgid "ECE regulations sticker \"R 11\" (door locks and hinges)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:216
+msgid "ECE regulations sticker \"R 14\" (seatbelt mountings)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:217
+msgid ""
+"Without metal division between cabin and cargo compartment, passenger seat "
+"adjustable on rails"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:218
+msgid "Fitted with Semperit tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:219
+msgid "Fitted with Uniroyal tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:220
+msgid "Special engine to comply with Austrian regulations (1600cc, 50bhp)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:221
+msgid ""
+"With American parts and constructions for the Campmobile versions P21, P22 "
+"and P27: free of import duty (with M609 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:222
+msgid ""
+"Prepared for the installation of a radio for LW, MW, SW, FM (not with M631)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:223
+msgid "Neckarsulm CR car radio, with Cassette player"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:224
+msgid "Braunschweig CR car radio, with Cassette player"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:225
+msgid "Full-width metal partition between cabin and load compartment"
+msgstr ""
+"Partició metàl·lica d'amplada completa entre la cabina i el compartiment de "
+"càrrega"
+
+#: mplate_decoder.Mcode/description:226
+msgid ""
+"Two-person Passenger seat instead of single Passenger seat in cabin, spare "
+"tyre in left side of luggage compartment (not with M500)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:227
+msgid "Hardboard interior side panels in cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:228
+msgid "Hardboard interior roof panels in cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:229
+msgid "Fresh-air duct to cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:230
+msgid "Hot-air outlet in front side of cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:231
+msgid "Brake servo and dual-circuit brake control lamp"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:232
+msgid "Brake servo"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:233
+msgid "Ventilation windows in cabin doors"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:234
+msgid ""
+"Ventilation window in sliding door and in all windows opposite sliding door "
+"in the Passenger compartment (three windows in total)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:235
+msgid ""
+"Ventilation windows in sliding doors (two windows in total) (when ordered "
+"with M520)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:236
+msgid ""
+"Ventilation window in rear Passenger door and in the window opposite this "
+"door (two windows in total)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:237
+msgid ""
+"One sliding window in sliding door and one in the opposite side panel of the "
+"passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:238
+msgid "One sliding window in the side panel opposite the sliding door"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:239
+msgid ""
+"With dust-protected air intake, larger oil bath air cleaner and additional "
+"dust sealing"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:240
+msgid "Upper division between cabin and cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:241
+msgid ""
+"Upper division between cabin and cargo compartment. Fibreboard door panel in "
+"sliding door (Type 21: with air vents in rear side panels of cargo "
+"compartment)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:242
+msgid "Padded dashboard and dashboard lid (not for RHD)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:243
+msgid "Without passenger seat in cabin"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:244
+#, fuzzy
+#| msgid "Production date code"
+msgid "Protection plate for gearbox"
+msgstr "Codi de data de producció"
+
+#: mplate_decoder.Mcode/description:245
+msgid "Air circulation connection for gasoline heater (only with M119)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:246
+msgid "High roof Panelvan with high-roof sliding door"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:247
+msgid "High roof (plastic)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:249
+msgid "Factory-prepared for Campmobile interior"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:250
+msgid "Opening in roof with reinforcement for Westfalia pop-up roof"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:251
+msgid "Air vents in cargo compartment (with M515 or 516 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:252
+msgid "With sliding door on left and right side"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:253
+msgid "With chrome trim and sun visor with mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:254
+msgid "With chrome trim and sun visor without mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:255
+msgid "Net division between cabin and cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:256
+msgid "USA and Canada specifications"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:257
+msgid "Seatbelts for USA and Canada"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:258
+msgid "Without inner rear-view mirror"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:259
+msgid "Japan and Sweden"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:260
+msgid "Convex rear-view mirror on right side (not for RHD)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:261
+msgid ""
+"Upper partition between cabin and passenger compartment with sliding window "
+"(only with M500)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:262
+msgid ""
+"Automatic step on passenger side (vehicles with two sliding doors only have "
+"the automatic step on the passenger side)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:263
+msgid ""
+"Harder rear torsion bars (like on Transporter version) (on model 23 only "
+"with M013, 015, 146, 177 or 609)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:264
+msgid "Foot-operated alarm installation (for Taxis and rental vehicles)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:265
+msgid "Speaker and microphone for communication between driver and passengers"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:266
+msgid ""
+"Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer "
+"(not in combination with M020)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:267
+msgid "With rubber valve in rear bottom panel for draining fuel"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:267
+msgid "Belgium"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:268
+msgid "Transistor lamp instead of regular interior light"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:269
+msgid ""
+"Interior with closets and wooden floor in the rear of the cabin, net "
+"partition between front and rear of cabin (with M117 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:270
+msgid "Wooden floor in cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:271
+msgid ""
+"Closets in cargo compartment and net partition between cabin and cargo "
+"compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:272
+msgid ""
+"Bench seat in upholstery cloth on metal partition behind cabin. Net division "
+"above closet but without net division between cabin and cargo compartment "
+"(with M503, M540 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:273
+msgid ""
+"Various special constructions for German Army purposes (with M149 only. In "
+"case of model 265, with M101, M178, M207, M209 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:274
+msgid "Without seats in passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:275
+msgid ""
+"High-roof Bus with shelves for piling packages in cargo compartment (with "
+"M502, M515 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:276
+msgid "Headliner in load-/passenger compartment (as in model 22, Microbus)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:277
+msgid "Turn signals at rear on roof"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:278
+msgid "Turn signals at rear on roof, lamp shines to both front and rear"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:279
+msgid "Extra rust-prevention treatment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:280
+msgid ""
+"Three-point safety belts for driver and outer passenger seat, two-point "
+"safety belt for middle seat (only in case of two-person Passenger seat in "
+"cabin)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:281
+msgid "Halogen headlamps"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:282
+msgid "Clock with heating time preselector, with trip counter (with M060 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:283
+msgid "Steel sliding roof"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:284
+msgid "Tinted windows (except windscreen)( with M671 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:285
+msgid "Tinted windows and windscreen, with laminated windscreen"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:286
+msgid "Air filter for dusty countries (2000cc with 70bhp only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:286
+msgid "South Africa and Australia"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:287
+msgid "Rear foglamp"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:288
+msgid "Air conditioning (on model 23 only for Campers)(with M251 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:289
+msgid ""
+"Preparation for construction of Campmobile by Jurgens-Caravan in South "
+"Africa or Karmann Mobil in Germany"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:290
+msgid "Without compressor for folding spare tyre (with M586 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:291
+msgid ""
+"Interior panel over entire width of vehicle for lower partition between "
+"cabin and cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:292
+msgid ""
+"With folding spare tyre instead of regular spare tyre, plus 12V air "
+"compressor and 12V connection on dashboard"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:292
+msgid "Westfalia Campmobile"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:293
+msgid ""
+"Hannover radio (LW, MW, FM) with automatic search, remote control, tape deck "
+"and automatic antenna connection"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:294
+msgid ""
+"Salzgitter radio (FM) with tape player connection and traffic broadcast "
+"decoder connection"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:295
+msgid "Stronger battery: 12V 63A instead of 12V 45A"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:296
+msgid "Comfort package"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:297
+msgid ""
+"Special options package comprising: back-up lamps (M047); rear-window "
+"defroster (M102); emergency warning lights; dual-circuit brake warning "
+"light; padded dashboard (for LHD)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:298
+msgid ""
+"Special options package comprising: hazard lights; dual-circuit brake "
+"warning light; padded dashboard (for LHD)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:299
+msgid ""
+"Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, "
+"M171)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:300
+msgid "2000cc dual carburettor engine with secondary air injection"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:301
+msgid "Seat belts according to Australian safety regulations."
+msgstr ""
+
+#: mplate_decoder.Mcode/description:302
+msgid "Compliance with Australian exhaust and safety standards"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:304
+msgid "Without diagnosis plug connection and wiring"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:305
+msgid ""
+"Adjustment mechanism for later gauging of speedometer (for rental vehicles "
+"and self-drive rentals only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:306
+msgid "Reversing lights (built-in with rearlight units)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:307
+msgid "Generator 70A instead of 55A (with M157 or M251 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:308
+msgid "Special suppression equipment, prepared for radio-traffic"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:309
+msgid ""
+"Commando vehicle equipment also usable as conversation vehicle, bureau "
+"vehicle and for similar purposes. Consisting of three-seater middle bench "
+"seat (built-in facing backwards); folding down backrest on sliding door "
+"side; one folding table; one transistorized light above table; one rubber "
+"floor cover in Passenger compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:310
+msgid ""
+"Mounting for radio-communication apparatus type ‘FuG 7b’ in glovebox "
+"(Telefunken or SEL)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:311
+msgid "Suppressed windscreen-wiper motor"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:312
+msgid "Further suppressed equipment"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:312
+msgid "German Army"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:313
+msgid "Windscreen-wiper blades and arms under customs seal"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:314
+msgid "Air-drying’ bottom protection instead of ‘wax paraffin’"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:315
+msgid "With USA-specific parts for the airconditioning (free from import duty)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:316
+msgid ""
+"Interval switch on windscreen wipers and wash-wipe installation. Interval "
+"ca.6 seconds"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:317
+msgid "Two halogen foglamps on front"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:318
+msgid "Stick-in head-/neck-rests, Not for driver's seat"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:319
+msgid "Sticker ECE regulations no, 14"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:320
+msgid "Tinted windscreen (laminated) (with M568 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:321
+msgid "Sealed speedometer (for leasing vehicles)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:322
+msgid ""
+"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
+"and net partition between cargo compartment and cabin (with M500, M502, M539 "
+"only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:323
+msgid ""
+"Interior as M677 with extra built-in closets and extractable vice (only with "
+"M677)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:324
+msgid "Motorola/USA car radio instead of Emden (with M097 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:325
+msgid ""
+"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
+"and net partition between Cargo compartment and cabin, with extra built-in "
+"closets and vice (with M500, M502, M539 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:326
+msgid ""
+"Passenger seat in cabin as swivelling seat, without metal partition behind "
+"this seat"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:326
+msgid "Chassis no. 2162 078 000"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:327
+msgid "Fitted with Continental-manufactured tyres"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:328
+msgid "Without chassis identification plate"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:329
+msgid "With protection wall in cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:330
+msgid "Transistorized ignition system"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:331
+msgid ""
+"Polyester high roof painted in body colour instead of white (with M515 or "
+"M516 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:332
+msgid ""
+"Without side and rear windows in passenger compartment (preparation for "
+"Westfalia isolation windows)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:333
+msgid ""
+"Zeiss-Ikon safety lock for rear panel lid (available with M145, one key "
+"combination)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:334
+msgid "Air conditioning"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:335
+msgid "Tail-light lenses yellow-red instead of yellow-red-white"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:336
+msgid "Without air vents in cargo compartment"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:337
+msgid ""
+"Factory-prepared for conversion to armoured money transporter (conversion by "
+"Thiele/Bremen or Bischoff & Hamel/Hannover)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:338
+msgid "Factory prepared for Electrotransporter-conversion"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:339
+msgid "Illuminated roof sign with Maltese or Red Cross logo"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:340
+msgid "Production number for special, documented built-ins"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:341
+msgid ""
+"Special sales campaign for \"Champagne Edition\", paint colour Agata Brown "
+"with Atlas White roof; interior cloth in Parchment (beige grey)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:342
+msgid "Chrome trim around Bus ca. 5cm below windows"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:343
+msgid "Textile radial tyres with tube"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:344
+msgid ""
+"2000cc fuel-injected engine with exhaust emission control concept of the "
+"1800cc engine (with M157 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:345
+msgid "Alternative loading arrangement (not with S751)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:346
+msgid "Without portable chair but with guiding rails on floor"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:347
+msgid ""
+"Window in sliding door (in case of double sliding door, there is a window in "
+"both sliding doors)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:348
+msgid "Without right stretcher and without right loading platform"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:349
+msgid "Factory-prepared for fitting a PVC tilt"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:350
+msgid ""
+"Wooden floor panels with built-in guide rails for mounting tools and "
+"instruments (only with M502 or bench seats)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:351
+msgid ""
+"Control number for conversions or other changes from the serial production"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:352
+msgid ""
+"Two head cushions, one back support, one belly support, guiding rail lock "
+"for stretcher; without infusion hooks"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:353
+msgid "Sliding door right instead of left (RHD vehicles)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:354
+msgid "Window in sliding door and one at opposite side panel"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:355
+msgid ""
+"Production number to indicate small special built-ins or deflections from "
+"the serial production"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:356
+msgid ""
+"With upholstery on floor above engine, the rear corners and the rear hatch "
+"(with M013, 015, 146 or 177 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:357
+msgid "70bhp engine"
+msgstr ""
+
+#: mplate_decoder.Mcode/remarks:357
+msgid "Australia, chassis nos. 2162 119 000 to 2162 164 000"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:358
+msgid "Upper fibreboard partition (with M013, 015, 146 or 177 only)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:359
+msgid "Seats and interior panels in black"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:360
+msgid "Special sales campaign for \"Champagne Edition II\""
+msgstr ""
+
+#: mplate_decoder.Mcode/description:361
+msgid "Special sales campaign for \"Silberfisch\" (Germany)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:362
+msgid "Illuminated roof sign with Maltese Cross logo"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:363
+msgid ""
+"Without sliding door; in case of double sliding door version (M520), both "
+"sliding doors left out"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:364
+msgid "Preparation for later installation of UTILA stretcher"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:365
+msgid "Ventilation window in cabin door on driver's side"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:366
+msgid "Sliding roof for RHD"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:368
+msgid ""
+"Production number indicating a special note in the German licence papers, "
+"saying that a Trumatic SB 2000 gas heater has been fitted"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:369
+msgid "Sliding door left instead of right"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:370
+msgid "Sliding door on the right with RHD (instead of on the left with RHD)"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:371
+msgid "Catalyst retrofit"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:372
+msgid "Special sales campaign for \"Wild Westerner\""
+msgstr ""
+
+#: mplate_decoder.Mcode/description:373
+msgid ""
+"Basic Campmobile equipment: stool, curtains, table, double bed, roof "
+"cabinet, birch paneling, floor covering, two louvered windows"
+msgstr ""
+
+#: mplate_decoder.Mcode/description:374
+msgid "Campmobile with pop-up roof, gas stove. Similar to SO 72/3 Helsinki."
+msgstr ""
+
+#: mplate_decoder.Mcode/description:375
+msgid ""
+"Campmobile with pop-up roof, electric refrigerator, gas stove. Similar to SO "
+"72/3 Helsinki."
+msgstr ""
+
 #: vw_type2_id/templates/base_bootstrap.html:23
 msgid "VW M-plate decoder"
 msgstr "Descodificador de plaquetes M de Volkswagen"
@@ -749,8 +2639,11 @@ msgid "Sign up or login"
 msgstr "Registreu-vos o inicieu la sessió"
 
 #: vw_type2_id/templates/home.html:9
-msgid "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
-msgstr "Joc d'eines per identificar vehicles Volkswagen Tipus 2 per als models dels anys 1968 a 1979."
+msgid ""
+"A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
+msgstr ""
+"Joc d'eines per identificar vehicles Volkswagen Tipus 2 per als models dels "
+"anys 1968 a 1979."
 
 #: vw_type2_id/templates/home.html:17
 msgid "Decode the M-plate and find information about your bus."
@@ -797,8 +2690,12 @@ msgid "Password reset"
 msgstr "Restabliment de la contrasenya"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:12
-msgid "Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one."
-msgstr "Heu oblidat la contrasenya? Escriviu la vostra adreça electrònica aquí sota i us enviarem les instruccions per a restablir-la."
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Heu oblidat la contrasenya? Escriviu la vostra adreça electrònica aquí sota "
+"i us enviarem les instruccions per a restablir-la."
 
 #: vw_type2_id/templates/registration/password_reset_form.html:17
 msgid "Reset my password"
@@ -811,4 +2708,3 @@ msgstr "Registreu-vos"
 #: vw_type2_id/templates/signup.html:15
 msgid "Sign me up!"
 msgstr "Registra'm!"
-
