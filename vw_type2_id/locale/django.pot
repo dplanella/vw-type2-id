@@ -379,6 +379,10 @@ msgstr ""
 msgid "The requested page does not exist"
 msgstr ""
 
+#: mplate_decoder/templates/mplate_decoder/detail.html:22
+msgid "Specifications"
+msgstr ""
+
 #: mplate_decoder/templates/mplate_decoder/detail.html:26
 msgid "Model"
 msgstr ""
