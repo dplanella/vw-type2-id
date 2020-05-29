@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 21:37+0000\n"
-"PO-Revision-Date: 2020-05-28 22:26\n"
+"PO-Revision-Date: 2020-05-29 05:12\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -364,6 +364,10 @@ msgstr ""
 
 #: mplate_decoder/templates/404.html:10
 msgid "The requested page does not exist"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/detail.html:22
+msgid "Specifications"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:26
