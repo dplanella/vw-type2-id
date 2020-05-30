@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 21:37+0000\n"
-"PO-Revision-Date: 2020-05-29 05:12\n"
+"PO-Revision-Date: 2020-05-30 10:36\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -356,7 +356,7 @@ msgstr ""
 
 #: mplate_decoder/models.py:1048
 msgid "Model description as it appears on the chassis plate"
-msgstr ""
+msgstr "Modellbeschreibung, wie sie auf der Fahrgestellplatte angezeigt wird"
 
 #: mplate_decoder/templates/404.html:8
 msgid "Not found"
