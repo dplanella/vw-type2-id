@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 21:37+0000\n"
-"PO-Revision-Date: 2020-05-30 10:36\n"
+"PO-Revision-Date: 2020-06-03 19:56\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: contact/forms.py:6
 msgid "Your e-mail"
-msgstr ""
+msgstr "Deine E-Mail"
 
 #: contact/templates/contact.html:11
 msgid "Contact"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:167 mplate_decoder/forms.py:243
 msgid "Only digits and letters allowed"
-msgstr ""
+msgstr "Nur Ziffern und Buchstaben erlaubt"
 
 #: mplate_decoder/forms.py:171
 #, python-brace-format
@@ -117,11 +117,11 @@ msgstr ""
 
 #: mplate_decoder/forms.py:273
 msgid "Only digits allowed in model code"
-msgstr ""
+msgstr "Nur Ziffern im Modellcode erlaubt"
 
 #: mplate_decoder/forms.py:278
 msgid "Invalid model code"
-msgstr ""
+msgstr "Ungültiger Modellcode"
 
 #: mplate_decoder/forms.py:288
 #, python-brace-format
@@ -138,7 +138,7 @@ msgstr ""
 
 #: mplate_decoder/models.py:28
 msgid "Shortened chassis number"
-msgstr ""
+msgstr "Verkürzte Fahrwerknummer"
 
 #: mplate_decoder/models.py:30
 msgid "Chassis number shortened, with the two leading digits removed."
@@ -146,64 +146,64 @@ msgstr ""
 
 #: mplate_decoder/models.py:33
 msgid "M-codes, row 1"
-msgstr ""
+msgstr "M-Codes, Zeile 1"
 
 #: mplate_decoder/models.py:35
 msgid "Row 1 of M codes (max 5)"
-msgstr ""
+msgstr "Zeile 1 der M-Codes (max. 5)"
 
 #: mplate_decoder/models.py:37
 msgid "M-codes, row 2"
-msgstr ""
+msgstr "M-Codes, Zeile 2"
 
 #: mplate_decoder/models.py:39
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
-msgstr ""
+msgstr "Reihe 2 der M-Codes (max. 4 -MJ '70-'79 oder 5 -MJ. '68-'69-)"
 
 #: mplate_decoder/models.py:42
 msgid "Paint and interior"
-msgstr ""
+msgstr "Farbe und Innenraum"
 
 #: mplate_decoder/models.py:44
 msgid "Combined VW body/roof paint and interior codes"
-msgstr ""
+msgstr "Kombinierte VW-Karosserie/Dachfarbe und Innenraumcodes"
 
 #: mplate_decoder/models.py:46
 #: mplate_decoder/templates/mplate_decoder/detail.html:52
 msgid "Production date"
-msgstr ""
+msgstr "Produktionsdatum"
 
 #: mplate_decoder/models.py:48
 msgid "Production date code"
-msgstr ""
+msgstr "Produktionsdatumscode"
 
 #: mplate_decoder/models.py:50
 msgid "Production planning"
-msgstr ""
+msgstr "Produktionsplanung"
 
 #: mplate_decoder/models.py:52
 msgid "Production planning code"
-msgstr ""
+msgstr "Produktionsplanungscode"
 
 #: mplate_decoder/models.py:54
 msgid "Export destination"
-msgstr ""
+msgstr "Bestimmungsland"
 
 #: mplate_decoder/models.py:56
 msgid "Export destination code"
-msgstr ""
+msgstr "Bestimmungsland-Code"
 
 #: mplate_decoder/models.py:58
 msgid "Vehicle model"
-msgstr ""
+msgstr "Fahrzeugtyp"
 
 #: mplate_decoder/models.py:60
 msgid "Vehicle model code"
-msgstr ""
+msgstr "Fahrzeugtypcode"
 
 #: mplate_decoder/models.py:62
 msgid "Aggregate"
-msgstr ""
+msgstr "Aggregat"
 
 #: mplate_decoder/models.py:64
 msgid "Engine and gearbox aggregate code"
@@ -211,11 +211,11 @@ msgstr ""
 
 #: mplate_decoder/models.py:66
 msgid "Emden"
-msgstr ""
+msgstr "Emden"
 
 #: mplate_decoder/models.py:68
 msgid "Optional \"E\" for Emden"
-msgstr ""
+msgstr "Optionales \"E\" für Emden"
 
 #: mplate_decoder/models.py:85
 msgid "Full list of M codes for this M plate"
@@ -223,18 +223,18 @@ msgstr ""
 
 #: mplate_decoder/models.py:88
 msgid "Planned production date, in time format"
-msgstr ""
+msgstr "Geplantes Produktionsdatum im Zeitformat"
 
 #: mplate_decoder/models.py:91
 #: mplate_decoder/templates/mplate_decoder/detail.html:36
 #: mplate_decoder/templates/mplate_decoder/metrics.html:117
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:14
 msgid "Model year"
-msgstr ""
+msgstr "Modelljahr"
 
 #: mplate_decoder/models.py:94
 msgid "Country of destination"
-msgstr ""
+msgstr "Bestimmungsland"
 
 #: mplate_decoder/models.py:228
 #, python-brace-format
@@ -260,7 +260,7 @@ msgstr ""
 
 #: mplate_decoder/models.py:267
 msgid "Unavailable engine description"
-msgstr ""
+msgstr "Nicht verfügbare Motorbeschreibung"
 
 #: mplate_decoder/models.py:283
 msgid "Unavailable transmission description"
@@ -303,7 +303,7 @@ msgstr ""
 #: mplate_decoder/models.py:676
 #, python-brace-format
 msgid "Unknown code, year {model_year}"
-msgstr ""
+msgstr "Unbekannter Code, Modelljahr {model_year}"
 
 #: mplate_decoder/models.py:685
 #, python-brace-format
@@ -352,7 +352,7 @@ msgstr ""
 
 #: mplate_decoder/models.py:1039
 msgid "Model description"
-msgstr ""
+msgstr "Modellbeschreibung"
 
 #: mplate_decoder/models.py:1048
 msgid "Model description as it appears on the chassis plate"
@@ -360,11 +360,11 @@ msgstr "Modellbeschreibung, wie sie auf der Fahrgestellplatte angezeigt wird"
 
 #: mplate_decoder/templates/404.html:8
 msgid "Not found"
-msgstr ""
+msgstr "Nicht gefunden"
 
 #: mplate_decoder/templates/404.html:10
 msgid "The requested page does not exist"
-msgstr ""
+msgstr "Die angeforderte Seite ist nicht vorhanden"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:22
 msgid "Specifications"
@@ -372,11 +372,11 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:26
 msgid "Model"
-msgstr ""
+msgstr "Modell"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:27
 msgid "Volkswagen Type 2"
-msgstr ""
+msgstr "Volkswagen Typ 2"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:28
 #, python-format
@@ -389,19 +389,19 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:40
 msgid "Engine"
-msgstr ""
+msgstr "Motor"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:44
 msgid "Transmission"
-msgstr ""
+msgstr "Getriebe"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:48
 msgid "Vehicle Ident. Nr."
-msgstr ""
+msgstr "Fahrzeug-Identifikations-Nr."
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:65
 msgid "Optional extras"
-msgstr ""
+msgstr "Mehraustattungen"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:73
 msgid "Exterior"
@@ -413,11 +413,11 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:82
 msgid "Destination"
-msgstr ""
+msgstr "Bestimmungsort"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:88
 msgid "Destination country"
-msgstr ""
+msgstr "Bestimmungsland"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:12
 msgid "\n"
@@ -433,7 +433,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:31
 msgid "Model years 68-76"
-msgstr ""
+msgstr "Modelljahre 68-76"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:35
 #, python-format
@@ -448,7 +448,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
 msgid "Model years 77-79"
-msgstr ""
+msgstr "Modelljahre 77-79"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:50
 #, python-format
@@ -494,7 +494,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:20
 msgid "Model years"
-msgstr ""
+msgstr "Modelljahre"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:27
 msgid "Top 15 colors"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:79
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:97
 msgid "VW Type 2 models"
@@ -518,11 +518,11 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:135
 msgid "Color"
-msgstr ""
+msgstr "Farbe"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:156
 msgid "Countries"
-msgstr ""
+msgstr "Länder"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_about.html:10
 msgid "\n"
@@ -574,7 +574,7 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:14
 msgid "Yes, delete it"
-msgstr ""
+msgstr "Ja, wirklich löschen"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:9
 #: vw_type2_id/templates/base_bootstrap.html:77
@@ -591,25 +591,25 @@ msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:23
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:24
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:30
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:31
 #: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:32
 msgid "N/A"
-msgstr ""
+msgstr "Nicht zutreffend"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_form.html:14
 msgid "Model 68-69"
-msgstr ""
+msgstr "Modelljahr 68-69"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_form.html:17
 msgid "Model 70-79"
-msgstr ""
+msgstr "Modelljahr 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:10
 msgid "Volkswagen Type 2 M-plate, model year 68-69"
@@ -2239,7 +2239,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:388
 msgid "Production number indicating a special note in the German licence papers, saying that a Trumatic SB 2000 gas heater has been fitted"
-msgstr ""
+msgstr "Kraftfahrzeugbrief-Aussteuerung bei einer Gasheizung der Firma Westfalia (Trumatic SB 2000)"
 
 #: vinaigrette-deleteme.py:389
 msgid "Sliding door left instead of right"
@@ -2337,31 +2337,31 @@ msgstr ""
 
 #: vw_type2_id/templates/registration/login.html:11
 msgid "Login"
-msgstr ""
+msgstr "Anmeldung"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Don't have an account yet?"
-msgstr ""
+msgstr "Noch keinen Konto?"
 
 #: vw_type2_id/templates/registration/login.html:16
 msgid "Sign up now &rsaquo;"
-msgstr ""
+msgstr "Jetzt anmelden &rsaquo;"
 
 #: vw_type2_id/templates/registration/login.html:18
 msgid "Lost your password?"
-msgstr ""
+msgstr "Passwort vergessen?"
 
 #: vw_type2_id/templates/registration/login.html:18
 msgid "Request new password &rsaquo;"
-msgstr ""
+msgstr "Neues Passwort anfordern &rsaquo;"
 
 #: vw_type2_id/templates/registration/login.html:20
 msgid "Log me in!"
-msgstr ""
+msgstr "Logge mich ein!"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:11
 msgid "Password reset"
-msgstr ""
+msgstr "Passwort zurücksetzen"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:12
 msgid "Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one."
@@ -2369,13 +2369,13 @@ msgstr ""
 
 #: vw_type2_id/templates/registration/password_reset_form.html:17
 msgid "Reset my password"
-msgstr ""
+msgstr "Mein Passwort zurücksetzen"
 
 #: vw_type2_id/templates/signup.html:11
 msgid "Sign up"
-msgstr ""
+msgstr "Registrieren"
 
 #: vw_type2_id/templates/signup.html:15
 msgid "Sign me up!"
-msgstr ""
+msgstr "Registrieren!"
 
