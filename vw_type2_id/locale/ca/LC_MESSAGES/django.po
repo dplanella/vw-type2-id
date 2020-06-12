@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 15:11+0000\n"
-"PO-Revision-Date: 2020-05-28 22:26\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-06-12 15:27\n"
+"Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
 "MIME-Version: 1.0\n"
@@ -12,8 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: vw-type2-id\n"
+"X-Crowdin-Project-ID: 403274\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: /master/vw_type2_id/locale/django.pot\n"
+"X-Crowdin-File-ID: 26\n"
 
 #: contact/forms.py:6
 msgid "Your e-mail"
@@ -33,12 +35,8 @@ msgstr "S'ha enviat el missatge, gràcies per contactar-nos."
 
 #: mplate_decoder/forms.py:61
 #, python-brace-format
-msgid ""
-"Minimum digits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) or "
-"{MODEL_7079_YEAR_CHASSIS_NR_LEN} digits (mod. 70-79)"
-msgstr ""
-"Mínim de dígits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) o "
-"{MODEL_7079_YEAR_CHASSIS_NR_LEN} (mod. 70-79) dígits"
+msgid "Minimum digits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) or {MODEL_7079_YEAR_CHASSIS_NR_LEN} digits (mod. 70-79)"
+msgstr "Mínim de dígits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) o {MODEL_7079_YEAR_CHASSIS_NR_LEN} (mod. 70-79) dígits"
 
 #: mplate_decoder/forms.py:66
 msgid "Only digits allowed, without spaces. The second digit is always a 2."
@@ -50,9 +48,7 @@ msgstr "Número de bastidor escurçat. Comproveu el primer dígit."
 
 #: mplate_decoder/forms.py:83
 msgid "Invalid shortened chassis number. Check first and second digits."
-msgstr ""
-"El número de bastidor escurçat no és vàlid. Comproveu el primer i segon "
-"dígit."
+msgstr "El número de bastidor escurçat no és vàlid. Comproveu el primer i segon dígit."
 
 #: mplate_decoder/forms.py:106
 #, python-brace-format
@@ -70,9 +66,7 @@ msgstr "Només es permeten dígits, lletres i espais"
 #: mplate_decoder/forms.py:140
 #, python-brace-format
 msgid "Code: {mcode}. M-code length should be {MCODE_LEN} digits or letters"
-msgstr ""
-"Codi: {mcode}. La llargada del codi M ha de ser de {MCODE_LEN} dígits o "
-"lletres"
+msgstr "Codi: {mcode}. La llargada del codi M ha de ser de {MCODE_LEN} dígits o lletres"
 
 #: mplate_decoder/forms.py:145
 #, python-brace-format
@@ -85,18 +79,12 @@ msgstr "Només es permeten dígits i lletres"
 
 #: mplate_decoder/forms.py:171
 #, python-brace-format
-msgid ""
-"Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or "
-"letters"
-msgstr ""
-"Mínima llargada del codi de pintura i interior: {PAINT_AND_INTERIOR_LEN} "
-"dígits o lletres"
+msgid "Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or letters"
+msgstr "Mínima llargada del codi de pintura i interior: {PAINT_AND_INTERIOR_LEN} dígits o lletres"
 
 #: mplate_decoder/forms.py:195
 msgid "Cannot validate production date format without a valid chassis number."
-msgstr ""
-"No es pot validar el format de la data de producció sense un número de "
-"bastidor vàlid."
+msgstr "No es pot validar el format de la data de producció sense un número de bastidor vàlid."
 
 #: mplate_decoder/forms.py:204 mplate_decoder/forms.py:221
 msgid "Invalid production date format. Please double check."
@@ -113,17 +101,12 @@ msgstr "La data de producció ({exc}) no és vàlida, l'hauríeu de comprovar."
 
 #: mplate_decoder/forms.py:226
 msgid "Invalid production week date. Please double check the two first digits."
-msgstr ""
-"La setmana de producció no és vàlida. Comproveu els dos digits inicials."
+msgstr "La setmana de producció no és vàlida. Comproveu els dos digits inicials."
 
 #: mplate_decoder/forms.py:247
 #, python-brace-format
-msgid ""
-"Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or "
-"digits"
-msgstr ""
-"Llargada mínima del país de destinació: {EXPORT_DESTINATION_LEN} lletres o "
-"dígits"
+msgid "Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or digits"
+msgstr "Llargada mínima del país de destinació: {EXPORT_DESTINATION_LEN} lletres o dígits"
 
 #: mplate_decoder/forms.py:258
 #, python-brace-format
@@ -177,9 +160,7 @@ msgstr "Codis M, fila 2"
 
 #: mplate_decoder/models.py:39
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
-msgstr ""
-"Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 "
-"a 69-)"
+msgstr "Segona fila de codis M (4 codis màx. -anys 70 a 79- o 5 codis màx. -anys 68 a 69-)"
 
 #: mplate_decoder/models.py:42
 msgid "Paint and interior"
@@ -306,20 +287,12 @@ msgstr "MplateDecoder requereix una plaqueta o codis M"
 
 #: mplate_decoder/models.py:511
 #, python-brace-format
-msgid ""
-"Invalid model year code length: {model_year_code_len}, code "
-"{model_year_code}, chassis no. {chassis_number_short}"
-msgstr ""
-"Llargada del codi d'any de model no vàlida: {model_year_code_len}, codi "
-"{model_year_code}, nr. de bastidor escurçat {chassis_number_short}"
+msgid "Invalid model year code length: {model_year_code_len}, code {model_year_code}, chassis no. {chassis_number_short}"
+msgstr "Llargada del codi d'any de model no vàlida: {model_year_code_len}, codi {model_year_code}, nr. de bastidor escurçat {chassis_number_short}"
 
 #: mplate_decoder/models.py:532
-msgid ""
-"MplateDecoder requires either an m-plate or chassis_number with encoded "
-"production date"
-msgstr ""
-"MplateDecoder requereix o bé una plaqueta o un número de bastidor escurçat "
-"amb la data de producció codificada"
+msgid "MplateDecoder requires either an m-plate or chassis_number with encoded production date"
+msgstr "MplateDecoder requereix o bé una plaqueta o un número de bastidor escurçat amb la data de producció codificada"
 
 #: mplate_decoder/models.py:631
 msgid "MplateDecoder requires an mplate or mcodes_1/m_codes_2"
@@ -384,11 +357,9 @@ msgstr "Comentaris: {exteriorcolor.remarks}"
 
 #: mplate_decoder/models.py:898
 #, python-brace-format
-msgid ""
-"Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
-msgstr ""
-"Cos: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+msgstr "Cos: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Sostre: {color_name_roof} ({lacquer_code_roof})"
 
 #: mplate_decoder/models.py:984 mplate_decoder/models.py:998
@@ -426,14 +397,12 @@ msgstr "Volkswagen Tipus 2"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:28
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
 "    "
-msgstr ""
-"\n"
+msgstr "\n"
 "        ➡ %(model_description)s (model %(model_code_catalog)s)<br>\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
@@ -472,22 +441,15 @@ msgid "Destination country"
 msgstr "País de destinació"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:12
-msgid ""
-"\n"
+msgid "\n"
 "      The M-plate is one of the identification plates found on VW busses. \n"
-"      Short for <em>Mehraustattung</em> (optional extras in German), it "
-"contains\n"
-"      production codes with information about equipment, manufacturing date, "
-"destination, specs and more.\n"
+"      Short for <em>Mehraustattung</em> (optional extras in German), it contains\n"
+"      production codes with information about equipment, manufacturing date, destination, specs and more.\n"
 "    "
-msgstr ""
-"\n"
-"La plaqueta M és una de les plaquetes d'identificació incorporades a les "
-"furgonetes VW. \n"
-"      El nom prové de <em>Mehraustattung</em> (extres opcionals en alemany), "
-"i conté\n"
-"      codis de producció amb informació sobre equipament, dates de "
-"producció, destinació, especificacions tècniques i més.\n"
+msgstr "\n"
+"La plaqueta M és una de les plaquetes d'identificació incorporades a les furgonetes VW. \n"
+"      El nom prové de <em>Mehraustattung</em> (extres opcionals en alemany), i conté\n"
+"      codis de producció amb informació sobre equipament, dates de producció, destinació, especificacions tècniques i més.\n"
 "    "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:24
@@ -500,25 +462,16 @@ msgstr "Anys de model 68-76"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:35
 #, python-format
-msgid ""
-"\n"
-"    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a "
-"href=\"%(url_img)s\">album</a>\n"
+msgid "\n"
+"    Image modified from <a href=\"%(url_img)s\">The Samba forum</a> and <a href=\"%(url_img)s\">album</a>\n"
 "    "
-msgstr ""
-"\n"
-"    Image modificada del <a href=\"%(url_img)s\">fòrum The Samba</a>, en <a "
-"href=\"%(url_img)s\">aquest àlbum</a>\n"
+msgstr "\n"
+"    Image modificada del <a href=\"%(url_img)s\">fòrum The Samba</a>, en <a href=\"%(url_img)s\">aquest àlbum</a>\n"
 "    "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:40
-msgid ""
-"<strong>Before model year 1977</strong>: the M-plate is located on the metal "
-"partition behind the driver's seat (passenger's seat for RHD vehicles)."
-msgstr ""
-"<strong>Abans de l'any de model 1977</strong>: la plaqueta es troba a la "
-"partició de metall darrera del seient del conductor (seient de l'acompanyant "
-"per a vehicles d'accés a la dreta)."
+msgid "<strong>Before model year 1977</strong>: the M-plate is located on the metal partition behind the driver's seat (passenger's seat for RHD vehicles)."
+msgstr "<strong>Abans de l'any de model 1977</strong>: la plaqueta es troba a la partició de metall darrera del seient del conductor (seient de l'acompanyant per a vehicles d'accés a la dreta)."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:46
 msgid "Model years 77-79"
@@ -526,22 +479,16 @@ msgstr "Anys de model 77-79"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:50
 #, python-format
-msgid ""
-"\n"
+msgid "\n"
 "      Image modified from <a href=\"%(url)s\">The Samba forum</a>\n"
 "      "
-msgstr ""
-"\n"
+msgstr "\n"
 "      Imatge modificada del <a href=\"%(url)s\">fòrum The Samba</a>\n"
 "      "
 
 #: mplate_decoder/templates/mplate_decoder/index.html:55
-msgid ""
-"<strong>Model year 1977 and after</strong>: the M-plate is located under the "
-"dashboard, on top of the metal fresh air pipe."
-msgstr ""
-"<strong>Any de model 1977 i posteriors</strong>: la plaqueta es troba sota "
-"del tauler d'instruments, a sobre del conducte de ventilació."
+msgid "<strong>Model year 1977 and after</strong>: the M-plate is located under the dashboard, on top of the metal fresh air pipe."
+msgstr "<strong>Any de model 1977 i posteriors</strong>: la plaqueta es troba sota del tauler d'instruments, a sobre del conducte de ventilació."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:63
 msgid "Decode it"
@@ -553,15 +500,8 @@ msgid "M-plate decoder"
 msgstr "Descodificador de plaquetes M"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:74
-msgid ""
-"Use the automatic decoder to find out more about the original configuration, "
-"equipment and extras for a Type 2 bus. Simply choose the model year and fill "
-"in the M-plate fields."
-msgstr ""
-"Feu servir el descodificador automàtic per obtenir més informació sobre la "
-"configuració original, l'equipament i extres per a una furgoneta Tipus 2. "
-"Simplement heu d'escollir l'any de model i introduir els camps de la "
-"plaqueta M."
+msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
+msgstr "Feu servir el descodificador automàtic per obtenir més informació sobre la configuració original, l'equipament i extres per a una furgoneta Tipus 2. Simplement heu d'escollir l'any de model i introduir els camps de la plaqueta M."
 
 #: mplate_decoder/templates/mplate_decoder/index.html:77
 msgid "Decode an M-plate&raquo;"
@@ -575,9 +515,7 @@ msgstr "Plaquetes M enviades"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:9
 msgid "Vehicle production data extracted from the M-plate decoder submissions"
-msgstr ""
-"Dades de producció de vehicles extretes de les plaquetes enviades al "
-"descodificador"
+msgstr "Dades de producció de vehicles extretes de les plaquetes enviades al descodificador"
 
 #: mplate_decoder/templates/mplate_decoder/metrics.html:16
 msgid "Top 10 models"
@@ -616,86 +554,42 @@ msgid "Countries"
 msgstr "Països"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_about.html:10
-msgid ""
-"\n"
-"## About this site\n"
-"\n"
-"This site provides means to identify and understand the origin of Volkswagen "
-"Type 2 busses\n"
-"from years 1967 to 1979. At this time, via an online M-Plate decoder, but it "
-"might expand in the future.\n"
-"M-Plates were metallic plates present in all VW busses, which contained a "
-"set of alphanumeric production\n"
-"codes to identify a vehicle.\n"
-"\n"
-"The site was created as a result of the [original VW M-Plate decoder]"
-"(https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode."
-"php)\n"
-"going offline, as a personal project to decode the author's own M-Plate and "
-"to experiment with code. From there,\n"
-"it evolved into a public website to share this tool with other vintage bus "
-"owners from the aircooled community. \n"
-"\n"
-"The data used to decode the M-plates comes mainly from these sources, and "
-"keeps getting expanded every time a user finds out more about\n"
-"an unknown code and shares it with the community:\n"
-"\n"
-"- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www."
-"crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and "
-"Alexander Prinz\n"
+msgid "\n"
+"## About this site\n\n"
+"This site provides means to identify and understand the origin of Volkswagen Type 2 busses\n"
+"from years 1967 to 1979. At this time, via an online M-Plate decoder, but it might expand in the future.\n"
+"M-Plates were metallic plates present in all VW busses, which contained a set of alphanumeric production\n"
+"codes to identify a vehicle.\n\n"
+"The site was created as a result of the [original VW M-Plate decoder](https://web.archive.org/web/20181005162116/http://www.vw-mplate.com/mcode.php)\n"
+"going offline, as a personal project to decode the author's own M-Plate and to experiment with code. From there,\n"
+"it evolved into a public website to share this tool with other vintage bus owners from the aircooled community. \n\n"
+"The data used to decode the M-plates comes mainly from these sources, and keeps getting expanded every time a user finds out more about\n"
+"an unknown code and shares it with the community:\n\n"
+"- [VW Transporter and Microbus, Specification Guide 1967-1979](https://www.crowood.com/details.asp?isbn=9781847974808) - by Vincent Molenaar and Alexander Prinz\n"
 "- [TheSamba.com forum](https://www.thesamba.com/vw/forum/viewforum.php?f=5)\n"
 "- [forum.bulli.org forum](https://forum.bulli.org/)\n"
 "- [type2.com](http://www.type2.com/m-codes/t2mcodes.html)\n"
-"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n"
-"\n"
-"Thanks so much to the authors of those resources and to everyone who share "
-"their knowledge. The M-plate decoder would not have been possible without "
-"that vast collaborative effort.\n"
-"\n"
-"## Privacy policy\n"
-"\n"
-"This is a hobby site without a commercial purpose and without intention to "
-"seek financial profit. The stored database data\n"
-"will never be submitted to third parties or used for other purposes than "
-"improving the site and providing a better\n"
-"service to its users.\n"
-"\n"
+"- [Rolf-Stephan Badura's VW T2 Bulli site](https://www.vw-t2-bulli.de)\n\n"
+"Thanks so much to the authors of those resources and to everyone who share their knowledge. The M-plate decoder would not have been possible without that vast collaborative effort.\n\n"
+"## Privacy policy\n\n"
+"This is a hobby site without a commercial purpose and without intention to seek financial profit. The stored database data\n"
+"will never be submitted to third parties or used for other purposes than improving the site and providing a better\n"
+"service to its users.\n\n"
 "The code for this site is Open Source. You can explore it and contribute\n"
-"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-"
-"type2-id).\n"
-"\n"
-"The site's backend has a database that stores:\n"
-"\n"
-"- The original data submitted through the M-plate form, along with some of "
-"the decoded values computed from that data (e.g. model year in readable "
-"form).\n"
+"to the [`vw-type2-id` project on GitLab](https://gitlab.com/vw-type2/vw-type2-id).\n\n"
+"The site's backend has a database that stores:\n\n"
+"- The original data submitted through the M-plate form, along with some of the decoded values computed from that data (e.g. model year in readable form).\n"
 "- The creation date and last update date of the submitted M-plate data.\n"
-"- If the user has chosen to create an account on the site, their user name, "
-"e-mail and last login date.\n"
-"\n"
-"If you've used this service without creating an account and would like to "
-"have the data for a particular M-plate removed or amended, feel free to "
-"[contact the author](#contact).\n"
-"If you have created an account, you already have full control over your data "
-"and should be able to either remove or change the data on the `My M-plates` "
-"section.\n"
-"\n"
-"## Disclaimer\n"
-"\n"
-"The decoded vehicle data produced on this site comes from multiple sources. "
-"Despite best efforts to provide accurate data,\n"
-"it has to be noted that it comes from volunteer research over 40+ years of "
-"history of these vehicles.\n"
-"\n"
-"As such, data is neither guaranteed to be accurate nor to have any legal "
-"validity. It should be considered as orientative\n"
-"only.\n"
-"\n"
-"## Contact\n"
-"\n"
-"If you've got feedback or questions about the site, feel free to [get in "
-"touch](/contact).\n"
-"\n"
+"- If the user has chosen to create an account on the site, their user name, e-mail and last login date.\n\n"
+"If you've used this service without creating an account and would like to have the data for a particular M-plate removed or amended, feel free to [contact the author](#contact).\n"
+"If you have created an account, you already have full control over your data and should be able to either remove or change the data on the `My M-plates` section.\n\n"
+"## Disclaimer\n\n"
+"The decoded vehicle data produced on this site comes from multiple sources. Despite best efforts to provide accurate data,\n"
+"it has to be noted that it comes from volunteer research over 40+ years of history of these vehicles.\n\n"
+"As such, data is neither guaranteed to be accurate nor to have any legal validity. It should be considered as orientative\n"
+"only.\n\n"
+"## Contact\n\n"
+"If you've got feedback or questions about the site, feel free to [get in touch](/contact).\n\n"
 msgstr ""
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:8
@@ -704,8 +598,7 @@ msgstr "Suprimeix la plaqueta"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:10
 #, python-format
-msgid ""
-"Are you sure you want to delete M-plate %(mplate.chassis_number_short)s?"
+msgid "Are you sure you want to delete M-plate %(mplate.chassis_number_short)s?"
 msgstr "Segur que voleu suprimir la plaqueta %(mplate.chassis_number_short)s?"
 
 #: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:14
@@ -829,3093 +722,2888 @@ msgstr "Portal d'administració de {SITE_NAME}"
 msgid "Welcome to {SITE_NAME} Admin Portal"
 msgstr "Us donem la benvinguda al portal d'administració de {SITE_NAME}"
 
-#: mplate_decoder.Color/color_name:0
+#: vinaigrette-deleteme.py:2
 msgid "Grey"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:1 mplate_decoder.InteriorColor/color_name:7
+#: vinaigrette-deleteme.py:3 vinaigrette-deleteme.py:324
 msgid "Black"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:2
+#: vinaigrette-deleteme.py:4
 msgid "Middle Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:3
+#: vinaigrette-deleteme.py:5
 msgid "White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:5
+#: vinaigrette-deleteme.py:6
 msgid "Burgundy Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:6
+#: vinaigrette-deleteme.py:7
 msgid "Rally Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:7
+#: vinaigrette-deleteme.py:8
 msgid "Sahara Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:8
+#: vinaigrette-deleteme.py:9
 msgid "Sierra Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:9
+#: vinaigrette-deleteme.py:10
 msgid "Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:11
+#: vinaigrette-deleteme.py:11
 msgid "Hannen Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:12
+#: vinaigrette-deleteme.py:12
 msgid "Panama Brown"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:13
+#: vinaigrette-deleteme.py:13
 msgid "Yellow/Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:14
+#: vinaigrette-deleteme.py:14
 msgid "BP Yellow-White-Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:15
+#: vinaigrette-deleteme.py:15
 msgid "Dakota Beige"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:16
+#: vinaigrette-deleteme.py:16
 msgid "Ceylon Beige"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:17
+#: vinaigrette-deleteme.py:17
 msgid "Ceylon Beige/Pastel White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:18
+#: vinaigrette-deleteme.py:18
 msgid "Sun Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:19
+#: vinaigrette-deleteme.py:19
 msgid "Saturn Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:20
+#: vinaigrette-deleteme.py:20
 msgid "Curry Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:22
+#: vinaigrette-deleteme.py:21
 msgid "Schindler Yellow/Ebony Black"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:26
+#: vinaigrette-deleteme.py:22
 msgid "Yellow/Ebony Black"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:27
+#: vinaigrette-deleteme.py:23
 msgid "Chrome Yellow, hubcaps and bumpers standard colour"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:28
+#: vinaigrette-deleteme.py:24
 msgid "Wagner Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:29
+#: vinaigrette-deleteme.py:25
 msgid "Karcher Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:30
+#: vinaigrette-deleteme.py:26
 msgid "Yellow-Brown/White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:31
+#: vinaigrette-deleteme.py:27
 msgid "Chrome Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:32
+#: vinaigrette-deleteme.py:28
 msgid "Brilliant Orange"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:33
+#: vinaigrette-deleteme.py:29
 msgid "Brown-Orange"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:34
+#: vinaigrette-deleteme.py:30
 msgid "Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:36
+#: vinaigrette-deleteme.py:31
 msgid "Orange"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:37
+#: vinaigrette-deleteme.py:32
 msgid "Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:38
+#: vinaigrette-deleteme.py:33
 msgid "Blue/Grey"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:39
+#: vinaigrette-deleteme.py:34
 msgid "Orange-Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:41
+#: vinaigrette-deleteme.py:35
 msgid "Fire Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:42
+#: vinaigrette-deleteme.py:36
 msgid "Fire Red/White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:45
+#: vinaigrette-deleteme.py:37
 msgid "Yellow/Brown"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:46
+#: vinaigrette-deleteme.py:38
 msgid "Wüstenrot Orange"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:47
+#: vinaigrette-deleteme.py:39
 msgid "Orange, hubcaps and bumpers Orange"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:48
+#: vinaigrette-deleteme.py:40
 msgid "Orange wheels, hubcaps and bumpers Ebony Black"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:50
+#: vinaigrette-deleteme.py:41
 msgid "Orange/White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:51
+#: vinaigrette-deleteme.py:42
 msgid "Police-White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:52
+#: vinaigrette-deleteme.py:43
 msgid "Lotus White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:53
+#: vinaigrette-deleteme.py:44
 msgid "Kasan Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:54
+#: vinaigrette-deleteme.py:45
 msgid "Kasan Red/Pastel White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:55
+#: vinaigrette-deleteme.py:46
 msgid "Montana Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:56
+#: vinaigrette-deleteme.py:47
 msgid "Brilliant Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:57
+#: vinaigrette-deleteme.py:48
 msgid "Olive Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:58
+#: vinaigrette-deleteme.py:49
 msgid "Senegal Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:59
+#: vinaigrette-deleteme.py:50
 msgid "Mars Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:60
+#: vinaigrette-deleteme.py:51
 msgid "Chianti Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:61
+#: vinaigrette-deleteme.py:52
 msgid "Phoenix Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:62
+#: vinaigrette-deleteme.py:53
 msgid "Dusky Pink"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:63
+#: vinaigrette-deleteme.py:54
 msgid "Light Grey"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:64
+#: vinaigrette-deleteme.py:55
 msgid "Cola Red-New"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:65
+#: vinaigrette-deleteme.py:56
 msgid "Cola Red-New/Papyrus White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:66
+#: vinaigrette-deleteme.py:57
 msgid "Bright Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:68
+#: vinaigrette-deleteme.py:58
 msgid "Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:70
+#: vinaigrette-deleteme.py:59
 msgid "Ruby Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:72
+#: vinaigrette-deleteme.py:60
 msgid "Meadow Green, wheels, hubcaps and bumpers standard colour"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:73
+#: vinaigrette-deleteme.py:61
 msgid "Brilliant Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:74
+#: vinaigrette-deleteme.py:62
 msgid "Neptune Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:75
+#: vinaigrette-deleteme.py:63
 msgid "Velvet Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:76
+#: vinaigrette-deleteme.py:64
 msgid "Velvet Green/Blue White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:77
+#: vinaigrette-deleteme.py:65
 msgid "Gentian Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:78
+#: vinaigrette-deleteme.py:66
 msgid "Miami Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:79
+#: vinaigrette-deleteme.py:67
 msgid "Beat Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:80
+#: vinaigrette-deleteme.py:68
 msgid "Kings Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:81
+#: vinaigrette-deleteme.py:69
 msgid "Linen Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:82
+#: vinaigrette-deleteme.py:70
 msgid "Linen Blue, roof: White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:83
+#: vinaigrette-deleteme.py:71
 msgid "Orient Blue/Pastel White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:84
+#: vinaigrette-deleteme.py:72
 msgid "Light Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:86
+#: vinaigrette-deleteme.py:73
 msgid "Karstadt Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:87
+#: vinaigrette-deleteme.py:74
 msgid "Niagara Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:88
+#: vinaigrette-deleteme.py:75
 msgid "Orient Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:91
+#: vinaigrette-deleteme.py:76
 msgid "Marina Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:93
+#: vinaigrette-deleteme.py:77
 msgid "Linde Blue/Papyrus White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:94
+#: vinaigrette-deleteme.py:78
 msgid "Signal Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:95
+#: vinaigrette-deleteme.py:79
 msgid "Miele Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:96
+#: vinaigrette-deleteme.py:80
 msgid "Titian Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:97
+#: vinaigrette-deleteme.py:81
 msgid "Green-Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:98
+#: vinaigrette-deleteme.py:82
 msgid "ADAC Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:99
+#: vinaigrette-deleteme.py:83
 msgid "Ivory"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:100
+#: vinaigrette-deleteme.py:84
 msgid "Conti Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:101
+#: vinaigrette-deleteme.py:85
 msgid "Brown"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:102
+#: vinaigrette-deleteme.py:86
 msgid "Reef Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:103
+#: vinaigrette-deleteme.py:87
 msgid "Pure White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:106
+#: vinaigrette-deleteme.py:88
 msgid "Elm Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:107
+#: vinaigrette-deleteme.py:89
 msgid "Delta Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:108
+#: vinaigrette-deleteme.py:90
 msgid "Brilliant Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:109
+#: vinaigrette-deleteme.py:91
 msgid "Cliff Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:110
+#: vinaigrette-deleteme.py:92
 msgid "Sumatra Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:111
+#: vinaigrette-deleteme.py:93
 msgid "Sumatra Green/Pastel White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:113
+#: vinaigrette-deleteme.py:94
 msgid "Savanna Beige"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:114
+#: vinaigrette-deleteme.py:95
 msgid "Bali Yellow/Yosemite Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:115
+#: vinaigrette-deleteme.py:96
 msgid "Pop Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:116
+#: vinaigrette-deleteme.py:97
 msgid "Vaillant Green/Papyrus White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:117
+#: vinaigrette-deleteme.py:98
 msgid "Cobalt Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:118
+#: vinaigrette-deleteme.py:99
 msgid "VW-Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:119
+#: vinaigrette-deleteme.py:100
 msgid "Zenit Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:120
+#: vinaigrette-deleteme.py:101
 msgid "Sage Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:121
+#: vinaigrette-deleteme.py:102
 msgid "Hippie Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:122
+#: vinaigrette-deleteme.py:103
 msgid "Turquoise Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:123
+#: vinaigrette-deleteme.py:104
 msgid "Island Blue"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:125
+#: vinaigrette-deleteme.py:105
 msgid "Ravenna Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:126
+#: vinaigrette-deleteme.py:106
 msgid "Flamuco Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:127
+#: vinaigrette-deleteme.py:107
 msgid "Lufthansa Yellow"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:129
+#: vinaigrette-deleteme.py:108
 msgid "Mint Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:131
+#: vinaigrette-deleteme.py:109
 msgid "Industry Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:132
+#: vinaigrette-deleteme.py:110
 msgid "Dark Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:133
+#: vinaigrette-deleteme.py:111
 msgid "Siemens Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:134
+#: vinaigrette-deleteme.py:112
 msgid "Aero-Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:135
+#: vinaigrette-deleteme.py:113
 msgid "Silver Grey"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:136
+#: vinaigrette-deleteme.py:114
 msgid "Hoechst-Grey"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:138
+#: vinaigrette-deleteme.py:115
 msgid "Wolf-Miller-Brown"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:140
+#: vinaigrette-deleteme.py:116
 msgid "Agate Brown"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:141
+#: vinaigrette-deleteme.py:117
 msgid "Pearl White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:143
+#: vinaigrette-deleteme.py:118
 msgid "Pastel White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:144
+#: vinaigrette-deleteme.py:119
 msgid "Papyrus White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:145
+#: vinaigrette-deleteme.py:120
 msgid "Kansas Beige"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:147
+#: vinaigrette-deleteme.py:121
 msgid "White/Mint Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:148
+#: vinaigrette-deleteme.py:122
 msgid "White/Green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:149
+#: vinaigrette-deleteme.py:123
 msgid "Silver Metallic"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:150
+#: vinaigrette-deleteme.py:124
 msgid "Clear White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:152
+#: vinaigrette-deleteme.py:125
 msgid "BP-White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:153
+#: vinaigrette-deleteme.py:126
 msgid "Mexico Beige"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:154
+#: vinaigrette-deleteme.py:127
 msgid "Date Brown"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:156
+#: vinaigrette-deleteme.py:128
 msgid "Cloud White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:157
+#: vinaigrette-deleteme.py:129
 msgid "Atlas White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:158
+#: vinaigrette-deleteme.py:130
 msgid "Primered"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:163
+#: vinaigrette-deleteme.py:131
 msgid "Enamel White"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:165
+#: vinaigrette-deleteme.py:132
 msgid "Apple green"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:166
+#: vinaigrette-deleteme.py:133
 msgid "Mouse grey"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:167
+#: vinaigrette-deleteme.py:134
 msgid "Fox Red"
 msgstr ""
 
-#: mplate_decoder.Color/color_name:168
+#: vinaigrette-deleteme.py:135
 msgid "Post Yellow/Cadmium Yellow"
 msgstr ""
 
-#: mplate_decoder.Engine/engine_type:1
+#: vinaigrette-deleteme.py:136
 msgid "Type 4"
 msgstr ""
 
-#: mplate_decoder.Engine/fuel_induction:1
+#: vinaigrette-deleteme.py:137
 msgid "Fuel injection (L-Jetronic)"
 msgstr ""
 
-#: mplate_decoder.Engine/engine_type:2
+#: vinaigrette-deleteme.py:138
 msgid "Type 1"
 msgstr ""
 
-#: mplate_decoder.Engine/fuel_induction:2
+#: vinaigrette-deleteme.py:139
 msgid "Single carburetor"
 msgstr ""
 
-#: mplate_decoder.Engine/extra_specs:3
+#: vinaigrette-deleteme.py:140
 msgid "Exhaust emission control"
 msgstr ""
 
-#: mplate_decoder.Engine/fuel_induction:4
+#: vinaigrette-deleteme.py:141
 msgid "Dual carburetor"
 msgstr ""
 
-#: mplate_decoder.Engine/extra_specs:6
+#: vinaigrette-deleteme.py:142
 msgid "Stiff instead of torsion suspended clutch plate"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:1
+#: vinaigrette-deleteme.py:143
 msgid "Afghanistan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:2 mplate_decoder.Mcode/remarks:40
+#: vinaigrette-deleteme.py:144 vinaigrette-deleteme.py:385
 msgid "Australia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:3
+#: vinaigrette-deleteme.py:145
 msgid "Andorra"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:6
+#: vinaigrette-deleteme.py:146
 msgid "Egypt"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:8
+#: vinaigrette-deleteme.py:147
 msgid "Angola"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:9
-#, fuzzy
-#| msgid "About"
+#: vinaigrette-deleteme.py:148
 msgid "Djibouti"
-msgstr "Quant a"
+msgstr ""
 
-#: mplate_decoder.ExportDestination/country:10
+#: vinaigrette-deleteme.py:149
 msgid "Algeria"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:15
+#: vinaigrette-deleteme.py:150
 msgid "Argentina"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:17
+#: vinaigrette-deleteme.py:151
 msgid "Ethiopia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:19
+#: vinaigrette-deleteme.py:152
 msgid "Albania"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:20
+#: vinaigrette-deleteme.py:153
 msgid "People's Republic of South Yemen"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:21
+#: vinaigrette-deleteme.py:154
 msgid "Bahrain"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:22
+#: vinaigrette-deleteme.py:155
 msgid "Burundi"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:23 mplate_decoder.Mcode/remarks:267
+#: vinaigrette-deleteme.py:156 vinaigrette-deleteme.py:624
 msgid "Belgium"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:24
+#: vinaigrette-deleteme.py:157
 msgid "Bulgaria"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:26
+#: vinaigrette-deleteme.py:158
 msgid "Republic of the Congo"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:28
+#: vinaigrette-deleteme.py:159
 msgid "Bermuda"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:29
+#: vinaigrette-deleteme.py:160
 msgid "British New Guinea"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:30
+#: vinaigrette-deleteme.py:161
 msgid "Bolivia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:31
+#: vinaigrette-deleteme.py:162
 msgid "Papua"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:32
+#: vinaigrette-deleteme.py:163
 msgid "Brazil"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:33
+#: vinaigrette-deleteme.py:164
 msgid "British Solomon Islands Protectorate"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:34
+#: vinaigrette-deleteme.py:165
 msgid "Burma"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:35
+#: vinaigrette-deleteme.py:166
 msgid "British Samoa"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:37
+#: vinaigrette-deleteme.py:167
 msgid "Ceylon"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:38
+#: vinaigrette-deleteme.py:168
 msgid "Chile"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:39
+#: vinaigrette-deleteme.py:169
 msgid "Zaire (Democratic Republic of The Congo)"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:40
+#: vinaigrette-deleteme.py:170
 msgid "Czeckoslovakia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:41
+#: vinaigrette-deleteme.py:171
 msgid "Cyprus"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:42
+#: vinaigrette-deleteme.py:172
 msgid "Denmark"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:43
+#: vinaigrette-deleteme.py:173
 msgid "Denmak"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:45 mplate_decoder.Mcode/remarks:181
+#: vinaigrette-deleteme.py:174 vinaigrette-deleteme.py:534
 msgid "United Kingdom"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:48
+#: vinaigrette-deleteme.py:175
 msgid "Ecuador"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:50
+#: vinaigrette-deleteme.py:176
 msgid "Eritrea"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:52 mplate_decoder.Mcode/remarks:113
+#: vinaigrette-deleteme.py:177 vinaigrette-deleteme.py:462
 msgid "France"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:53
+#: vinaigrette-deleteme.py:178
 msgid "Ivory Coast"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:54
+#: vinaigrette-deleteme.py:179
 msgid "Republic of Gabon"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:55
+#: vinaigrette-deleteme.py:180
 msgid "Republic of Guinea"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:56
+#: vinaigrette-deleteme.py:181
 msgid "Cameroon"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:57
+#: vinaigrette-deleteme.py:182
 msgid "Finland"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:59
+#: vinaigrette-deleteme.py:183
 msgid "Senegal"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:60
+#: vinaigrette-deleteme.py:184
 msgid "Togo"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:62
+#: vinaigrette-deleteme.py:185
 msgid "People's Republic of Benin"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:64
+#: vinaigrette-deleteme.py:186
 msgid "Chad"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:66
+#: vinaigrette-deleteme.py:187
 msgid "Volta"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:67
+#: vinaigrette-deleteme.py:188
 msgid "Sudan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:68
+#: vinaigrette-deleteme.py:189
 msgid "Niger"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:69
+#: vinaigrette-deleteme.py:190
 msgid "Fiji Islands"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:70
+#: vinaigrette-deleteme.py:191
 msgid "Gambia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:71
+#: vinaigrette-deleteme.py:192
 msgid "Ghana"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:72
+#: vinaigrette-deleteme.py:193
 msgid "Gibraltar"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:73
+#: vinaigrette-deleteme.py:194
 msgid "Guam"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:74
+#: vinaigrette-deleteme.py:195
 msgid "Greece"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:76
+#: vinaigrette-deleteme.py:196
 msgid "Gaza"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:77
+#: vinaigrette-deleteme.py:197
 msgid "Hong Kong"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:78
+#: vinaigrette-deleteme.py:198
 msgid "The Netherlands"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:80 mplate_decoder.Mcode/remarks:39
+#: vinaigrette-deleteme.py:199 vinaigrette-deleteme.py:384
 msgid "Japan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:81 mplate_decoder.Mcode/remarks:49
+#: vinaigrette-deleteme.py:200 vinaigrette-deleteme.py:396
 msgid "Italy"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:83
+#: vinaigrette-deleteme.py:201
 msgid "Indonesia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:86
+#: vinaigrette-deleteme.py:202
 msgid "India"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:87
+#: vinaigrette-deleteme.py:203
 msgid "Iraq"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:88
+#: vinaigrette-deleteme.py:204
 msgid "Israel"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:89
+#: vinaigrette-deleteme.py:205
 msgid "Somalia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:90
+#: vinaigrette-deleteme.py:206
 msgid "Iran"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:91
+#: vinaigrette-deleteme.py:207
 msgid "Jordan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:93
+#: vinaigrette-deleteme.py:208
 msgid "Ireland"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:94
+#: vinaigrette-deleteme.py:209
 msgid "Iceland"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:96 mplate_decoder.Mcode/remarks:169
+#: vinaigrette-deleteme.py:210 vinaigrette-deleteme.py:520
 msgid "Yugoslavia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:101 mplate_decoder.Mcode/remarks:195
+#: vinaigrette-deleteme.py:211 vinaigrette-deleteme.py:550
 msgid "Canada"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:102
+#: vinaigrette-deleteme.py:212
 msgid "Cambodia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:104
+#: vinaigrette-deleteme.py:213
 msgid "Kenya"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:105
+#: vinaigrette-deleteme.py:214
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:107
+#: vinaigrette-deleteme.py:215
 msgid "Spain"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:110
+#: vinaigrette-deleteme.py:216
 msgid "Columbia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:113
+#: vinaigrette-deleteme.py:217
 msgid "Korea"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:116
+#: vinaigrette-deleteme.py:218
 msgid "Kuwait"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:118
+#: vinaigrette-deleteme.py:219
 msgid "Libya"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:119
+#: vinaigrette-deleteme.py:220
 msgid "Lebanon"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:120
+#: vinaigrette-deleteme.py:221
 msgid "Liberia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:121
+#: vinaigrette-deleteme.py:222
 msgid "Luxemburg"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:122
+#: vinaigrette-deleteme.py:223
 msgid "Libya, Tripoli"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:123
+#: vinaigrette-deleteme.py:224
 msgid "Malta"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:124
+#: vinaigrette-deleteme.py:225
 msgid "Mozambique, Geira"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:125
+#: vinaigrette-deleteme.py:226
 msgid "Malaysia, Kuching"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:126
+#: vinaigrette-deleteme.py:227
 msgid "Madagascar"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:127
+#: vinaigrette-deleteme.py:228
 msgid "Mexico"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:128
+#: vinaigrette-deleteme.py:229
 msgid "Malaysia, Kuala Belait"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:129
+#: vinaigrette-deleteme.py:230
 msgid "Malaysia, Penang"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:130
+#: vinaigrette-deleteme.py:231
 msgid "Malaysia, Jesselton"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:131
+#: vinaigrette-deleteme.py:232
 msgid "Morocco, Casablanca"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:132
+#: vinaigrette-deleteme.py:233
 msgid "Malaysia, Kuala Lumpur"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:133
+#: vinaigrette-deleteme.py:234
 msgid "Singapore"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:134
+#: vinaigrette-deleteme.py:235
 msgid "Mozambique, Nacala"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:135
+#: vinaigrette-deleteme.py:236
 msgid "Mozambique"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:136
+#: vinaigrette-deleteme.py:237
 msgid "Mozambique, Porto Amelia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:137
+#: vinaigrette-deleteme.py:238
 msgid "Mozambique, Quelimone"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:138
+#: vinaigrette-deleteme.py:239
 msgid "Malaysia, Sandakan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:139
+#: vinaigrette-deleteme.py:240
 msgid "Mauritius"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:140
+#: vinaigrette-deleteme.py:241
 msgid "Malaysia, Tawau"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:141
+#: vinaigrette-deleteme.py:242
 msgid "Malawi"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:142
+#: vinaigrette-deleteme.py:243
 msgid "Mexico, Veracruz"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:144
+#: vinaigrette-deleteme.py:244
 msgid "New Zealand"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:145
+#: vinaigrette-deleteme.py:245
 msgid "Nepal"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:146
+#: vinaigrette-deleteme.py:246
 msgid "New Hebrides"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:147
+#: vinaigrette-deleteme.py:247
 msgid "Nigeria"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:149
+#: vinaigrette-deleteme.py:248
 msgid "Norway"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:151
+#: vinaigrette-deleteme.py:249
 msgid "Nigeria, Port Harcourt"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:155
+#: vinaigrette-deleteme.py:250
 msgid "Africa, Middle East including Iran and Afganistan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:156
+#: vinaigrette-deleteme.py:251
 msgid "Middle and South America, Caribbean Sea"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:157
+#: vinaigrette-deleteme.py:252
 msgid "North America"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:158 mplate_decoder.Mcode/remarks:158
+#: vinaigrette-deleteme.py:253 vinaigrette-deleteme.py:507
 msgid "Austria"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:162
+#: vinaigrette-deleteme.py:254
 msgid "Panama"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:163
+#: vinaigrette-deleteme.py:255
 msgid "Pakistan, Chittagong"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:164
+#: vinaigrette-deleteme.py:256
 msgid "Philippines"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:165
+#: vinaigrette-deleteme.py:257
 msgid "Peru"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:166
+#: vinaigrette-deleteme.py:258
 msgid "Portugal"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:167
+#: vinaigrette-deleteme.py:259
 msgid "Paraguay"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:169
+#: vinaigrette-deleteme.py:260
 msgid "Panama, Canal Zone"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:170
+#: vinaigrette-deleteme.py:261
 msgid "Poland"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:172
+#: vinaigrette-deleteme.py:262
 msgid "Pakistan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:175
+#: vinaigrette-deleteme.py:263
 msgid "Puerto Rico"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:177
+#: vinaigrette-deleteme.py:264
 msgid "St. Thomas (Canada)"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:178
+#: vinaigrette-deleteme.py:265
 msgid "St. Croix (Caribbean)"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:180
+#: vinaigrette-deleteme.py:266
 msgid "Qatar"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:182
+#: vinaigrette-deleteme.py:267
 msgid "Reunion"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:183
+#: vinaigrette-deleteme.py:268
 msgid "Rhodesia, Beira"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:184
+#: vinaigrette-deleteme.py:269
 msgid "Nyasaland"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:185
+#: vinaigrette-deleteme.py:270
 msgid "Rhodesia, Lourenco Marques"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:186
+#: vinaigrette-deleteme.py:271
 msgid "Romania"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:187
+#: vinaigrette-deleteme.py:272
 msgid "Rwanda"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:188
+#: vinaigrette-deleteme.py:273
 msgid "Saudi Arabia/East, Dammam"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:191 mplate_decoder.Mcode/remarks:67
+#: vinaigrette-deleteme.py:274 vinaigrette-deleteme.py:415
 msgid "Sweden"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:192
+#: vinaigrette-deleteme.py:275
 msgid "Switzerland"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:193
+#: vinaigrette-deleteme.py:276
 msgid "South Africa"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:196
+#: vinaigrette-deleteme.py:277
 msgid "Sierra Leone"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:199
+#: vinaigrette-deleteme.py:278
 msgid "USSR"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:202
+#: vinaigrette-deleteme.py:279
 msgid "Morocco"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:205
+#: vinaigrette-deleteme.py:280
 msgid "Saudi Arabia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:207
+#: vinaigrette-deleteme.py:281
 msgid "Syria"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:209
+#: vinaigrette-deleteme.py:282
 msgid "Tangiers, Morocco"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:211
+#: vinaigrette-deleteme.py:283
 msgid "Tanzania, Tanga"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:212
+#: vinaigrette-deleteme.py:284
 msgid "Thailand"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:213
+#: vinaigrette-deleteme.py:285
 msgid "Tahiti"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:214
+#: vinaigrette-deleteme.py:286
 msgid "Turkey"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:215
+#: vinaigrette-deleteme.py:287
 msgid "Thailand, Laos"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:216
+#: vinaigrette-deleteme.py:288
 msgid "Tunisia"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:217 mplate_decoder.Mcode/remarks:196
+#: vinaigrette-deleteme.py:289 vinaigrette-deleteme.py:552
 msgid "USA"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:218
+#: vinaigrette-deleteme.py:290
 msgid "Tanzania"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:220
+#: vinaigrette-deleteme.py:291
 msgid "Taiwan"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:222
+#: vinaigrette-deleteme.py:292
 msgid "Tanzania, Zanzibar"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:248
+#: vinaigrette-deleteme.py:293
 msgid "Venezula"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:249
+#: vinaigrette-deleteme.py:294
 msgid "Uganda"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:250
+#: vinaigrette-deleteme.py:295
 msgid "Vietnam"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:251
+#: vinaigrette-deleteme.py:296
 msgid "Hungary"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:252
+#: vinaigrette-deleteme.py:297
 msgid "Iruguay"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:255
+#: vinaigrette-deleteme.py:298
 msgid "Denmark, Copenhagen"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:256
+#: vinaigrette-deleteme.py:299
 msgid "England via Ostende"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:268
+#: vinaigrette-deleteme.py:300
 msgid "Yemin"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:272
+#: vinaigrette-deleteme.py:301
 msgid "Yugoslavia, Skopje"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:273
+#: vinaigrette-deleteme.py:302
 msgid "Yugoslavia, Ljubljana"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:274
+#: vinaigrette-deleteme.py:303
 msgid "Yugoslavia, Mostar"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:275
+#: vinaigrette-deleteme.py:304
 msgid "Yugoslavia, Novi Sad"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:276
+#: vinaigrette-deleteme.py:305
 msgid "Yugoslavia, Sarajevo"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:278
+#: vinaigrette-deleteme.py:306
 msgid "Yugoslavia, Rijeka"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:280
+#: vinaigrette-deleteme.py:307
 msgid "Yugoslavia, Split"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:281
+#: vinaigrette-deleteme.py:308
 msgid "Yugoslavia, Zagreb"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:282
+#: vinaigrette-deleteme.py:309
 msgid "Central America"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:283
+#: vinaigrette-deleteme.py:310
 msgid "Zambia, Beira"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:285
+#: vinaigrette-deleteme.py:311
 msgid "Zambia, Lourenco Marques"
 msgstr ""
 
-#: mplate_decoder.ExportDestination/country:286 mplate_decoder.Mcode/remarks:205
+#: vinaigrette-deleteme.py:312 vinaigrette-deleteme.py:561
 msgid "Germany"
 msgstr ""
 
-#: mplate_decoder.Gearbox/gearbox_description:1
+#: vinaigrette-deleteme.py:313
 msgid "Manual transmission, 4-speed"
 msgstr ""
 
-#: mplate_decoder.Gearbox/gearbox_description:2
+#: vinaigrette-deleteme.py:314
 msgid "Automatic transmission, 3-speed"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:0
+#: vinaigrette-deleteme.py:315
 msgid "Alabaster (Grey)"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/material:0
+#: vinaigrette-deleteme.py:316
 msgid "Cloth"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:1
+#: vinaigrette-deleteme.py:317
 msgid "Camping Red"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:2
+#: vinaigrette-deleteme.py:318
 msgid "Light Grey/Medium Grey"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/material:2
+#: vinaigrette-deleteme.py:319
 msgid "Leatherette"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:3
+#: vinaigrette-deleteme.py:320
 msgid "Light Sand/Khaki Brown"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:4
+#: vinaigrette-deleteme.py:321
 msgid "Camping Green Yellow"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:5
+#: vinaigrette-deleteme.py:322
 msgid "Dark Blue"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:6
+#: vinaigrette-deleteme.py:323
 msgid "Beige"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:8
+#: vinaigrette-deleteme.py:325
 msgid "Indian Red"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:9
+#: vinaigrette-deleteme.py:326
 msgid "Camping Green Red"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:10
+#: vinaigrette-deleteme.py:327
 msgid "Medium Grey"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:11
+#: vinaigrette-deleteme.py:328
 msgid "Camping Brown Beige"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:12
+#: vinaigrette-deleteme.py:329
 msgid "Gala Red"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:13
+#: vinaigrette-deleteme.py:330
 msgid "Camping Green"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:15
+#: vinaigrette-deleteme.py:331
 msgid "Dark Beige"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:17
+#: vinaigrette-deleteme.py:332
 msgid "Cork"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:18
+#: vinaigrette-deleteme.py:333
 msgid "Leather Beige"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:21
+#: vinaigrette-deleteme.py:334
 msgid "Canyon Brown"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:25
+#: vinaigrette-deleteme.py:335
 msgid "Marine (Dark Blue)"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:30
+#: vinaigrette-deleteme.py:336
 msgid "Parchment (Beige Grey)"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:31
-#, fuzzy
-#| msgid "M-plate"
+#: vinaigrette-deleteme.py:337
 msgid "Slate"
-msgstr "Plaqueta M"
+msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:32
+#: vinaigrette-deleteme.py:338
 msgid "Juniper (Green)"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:33
+#: vinaigrette-deleteme.py:339
 msgid "Lapis Blue"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:35
+#: vinaigrette-deleteme.py:340
 msgid "Bamboo (Beige)"
 msgstr ""
 
-#: mplate_decoder.InteriorColor/color_name:40
+#: vinaigrette-deleteme.py:341
 msgid "Sienna (Red Brown)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:0
+#: vinaigrette-deleteme.py:342
 msgid "SO3, VW Kombi as traffic accident observation vehicle"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:0
+#: vinaigrette-deleteme.py:343
 msgid "Conversion"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:1
+#: vinaigrette-deleteme.py:344
 msgid "SO67, Westfalia Campmobile 67A"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:2
-msgid ""
-"SO67, Westfalia Campmobile 67B. As interior 67A but with additional pop-up "
-"roof, bed and built-in roof luggage rack"
+#: vinaigrette-deleteme.py:345
+msgid "SO67, Westfalia Campmobile 67B. As interior 67A but with additional pop-up roof, bed and built-in roof luggage rack"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:3
-msgid ""
-"SO67, Westfalia Campmobile 67D. As interior 67B but with additional tent"
+#: vinaigrette-deleteme.py:346
+msgid "SO67, Westfalia Campmobile 67D. As interior 67B but with additional tent"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:4
+#: vinaigrette-deleteme.py:347
 msgid "SO67, Westfalia Campmobile 67E"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:5
+#: vinaigrette-deleteme.py:348
 msgid "SO67, Westfalia Campmobile 67F"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:6
+#: vinaigrette-deleteme.py:349
 msgid "SO67, Westfalia Campmobile 67G"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:7
+#: vinaigrette-deleteme.py:350
 msgid "SO67, Westfalia Campmobile 67H"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:8
+#: vinaigrette-deleteme.py:351
 msgid "VW Kombi as traffic accident vehicle"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:9
-msgid ""
-"VW Kombi as traffic accident vehicle with additional roof platform and ladder"
+#: vinaigrette-deleteme.py:352
+msgid "VW Kombi as traffic accident vehicle with additional roof platform and ladder"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:10
+#: vinaigrette-deleteme.py:353
 msgid "Double-seater middle bench and special rear bench"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:11
+#: vinaigrette-deleteme.py:354
 msgid "Standard Campmobile, without pop-up roof, folding spare tyre"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:12
+#: vinaigrette-deleteme.py:355
 msgid "Pop Up Top Campmobile, with pop-up roof, folding spare tyre"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:13
+#: vinaigrette-deleteme.py:356
 msgid "Campmobile with pop-up roof"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:14
+#: vinaigrette-deleteme.py:357
 msgid "Campmobile with pop-up roof and combined gas/electric refrigerator"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:17
-msgid ""
-"Deluxe Campmobile with pop-up roof, folding spare tyre, combined gas/"
-"electric refrigerator, gas stove"
+#: vinaigrette-deleteme.py:358
+msgid "Deluxe Campmobile with pop-up roof, folding spare tyre, combined gas/electric refrigerator, gas stove"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:18
+#: vinaigrette-deleteme.py:359
 msgid "With additional tent for P21 to P27"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:19
+#: vinaigrette-deleteme.py:360
 msgid "With additional electricity inlet for 220V. For P25 and P26"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:20
+#: vinaigrette-deleteme.py:361
 msgid "Westfalia interior (without pop-up roof)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:21
-msgid ""
-"Combined gas/electric refrigerator, with gas cooking unit, side bench in "
-"driving direction for storing gas bottles. For P21 and P22."
+#: vinaigrette-deleteme.py:362
+msgid "Combined gas/electric refrigerator, with gas cooking unit, side bench in driving direction for storing gas bottles. For P21 and P22."
 msgstr ""
 
-#: mplate_decoder.Mcode/description:22
-msgid ""
-"Deluxe Campmobile with pop-up roof, folding spare tyre, electric "
-"refrigerator, snack table"
+#: vinaigrette-deleteme.py:363
+msgid "Deluxe Campmobile with pop-up roof, folding spare tyre, electric refrigerator, snack table"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:23
+#: vinaigrette-deleteme.py:364
 msgid "Additional tent for interior P31"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:24
-msgid ""
-"With US-specific sealed beam headlamps, for M027: with US-specific carriers "
-"for catalysts (only with M524)"
+#: vinaigrette-deleteme.py:365
+msgid "With US-specific sealed beam headlamps, for M027: with US-specific carriers for catalysts (only with M524)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:25
+#: vinaigrette-deleteme.py:366
 msgid "Heater outlet in seat box of rear bench seat"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:25
+#: vinaigrette-deleteme.py:367
 msgid "Westfalia Campmobiles"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:26
+#: vinaigrette-deleteme.py:368
 msgid "Without tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:27
+#: vinaigrette-deleteme.py:369
 msgid "Without battery"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:28
+#: vinaigrette-deleteme.py:370
 msgid "Additional dust sealing for engine compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:28
+#: vinaigrette-deleteme.py:371
 msgid "To chassis no. 2132 102 496"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:29
-msgid ""
-"Exhaust emission control installation and speedometer in miles instead of km "
-"(with M524 only)"
+#: vinaigrette-deleteme.py:372
+msgid "Exhaust emission control installation and speedometer in miles instead of km (with M524 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:30
-msgid ""
-"Middle three-person bench seat, rear three-person bench seat and interior "
-"trim in passenger compartment"
+#: vinaigrette-deleteme.py:373
+msgid "Middle three-person bench seat, rear three-person bench seat and interior trim in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:31
-msgid ""
-"Middle three-person bench seat and interior trim in passenger compartment"
+#: vinaigrette-deleteme.py:374
+msgid "Middle three-person bench seat and interior trim in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:32
+#: vinaigrette-deleteme.py:375
 msgid "With hazard light installation"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:33
+#: vinaigrette-deleteme.py:376
 msgid "Without headlamp flasher"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:34
+#: vinaigrette-deleteme.py:377
 msgid "Speedometer and odometer in miles"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:35
+#: vinaigrette-deleteme.py:378
 msgid "Sealed beam headlamps"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:35
+#: vinaigrette-deleteme.py:379
 msgid "Export, not Canada and USA"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:36
+#: vinaigrette-deleteme.py:380
 msgid "Sealed beam headlamps, side marker reflectors and reversing lights"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:37
+#: vinaigrette-deleteme.py:381
 msgid "Speedometer with trip recorder and clock"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:38
+#: vinaigrette-deleteme.py:382
 msgid "With activated carbon container for absorbing fuel vapour"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:38
+#: vinaigrette-deleteme.py:383
 msgid "USA-California"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:41
-msgid ""
-"Plate with emissions value and engine that complies to the California "
-"exhaust emission standards"
+#: vinaigrette-deleteme.py:386
+msgid "Plate with emissions value and engine that complies to the California exhaust emission standards"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:42
+#: vinaigrette-deleteme.py:387
 msgid "Plate with emissions value, engine with catalyst"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:43
+#: vinaigrette-deleteme.py:388
 msgid "Without stretchers, also in combination with M152 (ambulance)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:44
+#: vinaigrette-deleteme.py:389
 msgid "Towing hook front and rear"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:45
+#: vinaigrette-deleteme.py:390
 msgid "Coupled headlamp flasher and licence plate light"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:46
-msgid ""
-"Battery approved by research and development department and free from import "
-"duty and costs"
+#: vinaigrette-deleteme.py:391
+msgid "Battery approved by research and development department and free from import duty and costs"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:46
+#: vinaigrette-deleteme.py:392
 msgid "To chassis no. 2122 088 996, Austria"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:47
+#: vinaigrette-deleteme.py:393
 msgid "Lockable cap for fuel tank"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:48
+#: vinaigrette-deleteme.py:394
 msgid "Red Crescent lamp instead of Red Cross lamp"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:49
-msgid ""
-"Side turn signals, altered handbrake handle, white front turn signal lenses"
+#: vinaigrette-deleteme.py:395
+msgid "Side turn signals, altered handbrake handle, white front turn signal lenses"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:50
-msgid ""
-"Side-mounted turn signals, altered handbrake handle, white front turn "
-"signals, without emergency light system, without hazard light system (France "
-"and Italy only)"
+#: vinaigrette-deleteme.py:397
+msgid "Side-mounted turn signals, altered handbrake handle, white front turn signals, without emergency light system, without hazard light system (France and Italy only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:51
+#: vinaigrette-deleteme.py:398
 msgid "Without hazard light system"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:52
-msgid ""
-"Tyres approved by research and development department and free from import "
-"duty and costs"
+#: vinaigrette-deleteme.py:399
+msgid "Tyres approved by research and development department and free from import duty and costs"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:53
+#: vinaigrette-deleteme.py:400
 msgid "Side turn signals and inner rear-view mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:54
+#: vinaigrette-deleteme.py:401
 msgid "Side turn signals"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:55
+#: vinaigrette-deleteme.py:402
 msgid "Two reversing lights"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:56
+#: vinaigrette-deleteme.py:403
 msgid "Dual-brake-circuit control light (only with M511)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:57
+#: vinaigrette-deleteme.py:404
 msgid "Dual-brake-circuit and handbrake control light"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:58
-msgid ""
-"With pedestal and double pulley for the later installation of a second "
-"generator (not in combination with M153, M157 and M251)"
+#: vinaigrette-deleteme.py:405
+msgid "With pedestal and double pulley for the later installation of a second generator (not in combination with M153, M157 and M251)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:59
+#: vinaigrette-deleteme.py:406
 msgid "Cloth upholstery instead of leatherette"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:60
+#: vinaigrette-deleteme.py:407
 msgid "Lockable glove compartment lid (only with M511)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:61
+#: vinaigrette-deleteme.py:408
 msgid "With steering lock"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:61
+#: vinaigrette-deleteme.py:409
 msgid "To VIN 2x9 300 000"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:63
+#: vinaigrette-deleteme.py:410
 msgid "Hardwood strips for flatbed not fastened to vehicle"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:64
+#: vinaigrette-deleteme.py:411
 msgid "Eberspacher BA6 petrol heater (LHD) (fitted under cargo floor)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:65
-msgid ""
-"Type labelling of seat mounting and identification plate for England and "
-"Ireland"
+#: vinaigrette-deleteme.py:412
+msgid "Type labelling of seat mounting and identification plate for England and Ireland"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:66
-msgid ""
-"Convex rear-view mirror, outer, right. Inner rear-view mirror with shorter "
-"arm"
+#: vinaigrette-deleteme.py:413
+msgid "Convex rear-view mirror, outer, right. Inner rear-view mirror with shorter arm"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:67
+#: vinaigrette-deleteme.py:414
 msgid "Sun visor, right without mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:68
+#: vinaigrette-deleteme.py:416
 msgid "Compliance with Sweden exhaust emission standards"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:69
+#: vinaigrette-deleteme.py:417
 msgid "Without sidegates and tailgate"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:70
+#: vinaigrette-deleteme.py:418
 msgid "Writings for maximum axle loads and maximum weight"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:71
+#: vinaigrette-deleteme.py:419
 msgid "Floor cover (rubber mat) in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:72
+#: vinaigrette-deleteme.py:420
 msgid "12V 54A battery instead of standard 12V 45A battery"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:73
+#: vinaigrette-deleteme.py:421
 msgid "Two front towing hooks"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:74
+#: vinaigrette-deleteme.py:422
 msgid "Tilt and bows for Pick-Up"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:75
+#: vinaigrette-deleteme.py:423
 msgid "Second lid for underfloor cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:76
+#: vinaigrette-deleteme.py:424
 msgid "Battery under customs seal"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:77
+#: vinaigrette-deleteme.py:425
 msgid "Roof opening and reinforcement for Westfalia pop-up roof SO 73"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:78
+#: vinaigrette-deleteme.py:426
 msgid "Mud flaps, rear"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:79
+#: vinaigrette-deleteme.py:427
 msgid "Mountings for first aid kit"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:80
+#: vinaigrette-deleteme.py:428
 msgid "With warning triangle"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:81
-msgid ""
-"Filled in factory with double amount of petrol (used for driving on and off "
-"the train, for example)"
+#: vinaigrette-deleteme.py:429
+msgid "Filled in factory with double amount of petrol (used for driving on and off the train, for example)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:82
+#: vinaigrette-deleteme.py:430
 msgid "Self-adjusting drum brakes (rear)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:83
+#: vinaigrette-deleteme.py:431
 msgid "Laminated windscreen glass"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:85
+#: vinaigrette-deleteme.py:432
 msgid "Gearbox with mountain ratio for mountainous areas"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:86
+#: vinaigrette-deleteme.py:433
 msgid "Ventilation window in rear side panel opposite sliding door"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:87
+#: vinaigrette-deleteme.py:434
 msgid "Lockable engine lid"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:88
+#: vinaigrette-deleteme.py:435
 msgid "Wolfsburg car radio"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:89
+#: vinaigrette-deleteme.py:436
 msgid "Braunschweig car radio"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:90
+#: vinaigrette-deleteme.py:437
 msgid "Emden car radio"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:91
+#: vinaigrette-deleteme.py:438
 msgid "Ingolstadt car radio"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:92
+#: vinaigrette-deleteme.py:439
 msgid "Tubeless off-road tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:93
+#: vinaigrette-deleteme.py:440
 msgid "Without VW logo on front"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:94
+#: vinaigrette-deleteme.py:441
 msgid "Off-road tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:95
+#: vinaigrette-deleteme.py:442
 msgid "Rear-window heating"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:96
+#: vinaigrette-deleteme.py:443
 msgid "Heavy duty shock absorbers front and back"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:97
+#: vinaigrette-deleteme.py:444
 msgid "Upholstery material, special version (cloth)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:98
+#: vinaigrette-deleteme.py:445
 msgid "Removable prints ‘Deutsche Bundespost’ and ‘Posthorn’ logo"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:98
+#: vinaigrette-deleteme.py:446
 msgid "German Mail"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:99
+#: vinaigrette-deleteme.py:447
 msgid "Removable prints ‘Deutsche Bundesbahn’ and tyre-pressure text"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:100
+#: vinaigrette-deleteme.py:448
 msgid "Removable prints ‘Unicef’"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:101
+#: vinaigrette-deleteme.py:449
 msgid "Admittance plate for Canada"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:102
+#: vinaigrette-deleteme.py:450
 msgid "Prepared for low-loader Pick-Up"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:103
-msgid ""
-"Surveyor measuring group vehicle. Same as M541 but with swivelling seat and "
-"table on division wall instead of bench (with M541 only)"
+#: vinaigrette-deleteme.py:451
+msgid "Surveyor measuring group vehicle. Same as M541 but with swivelling seat and table on division wall instead of bench (with M541 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:104
+#: vinaigrette-deleteme.py:452
 msgid "Without seats in rear"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:105
+#: vinaigrette-deleteme.py:453
 msgid "Altered heater outlet of optional petrol heater (only with M119)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:106
+#: vinaigrette-deleteme.py:454
 msgid "Duty-free tyres (duty refund)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:107
+#: vinaigrette-deleteme.py:455
 msgid "Eberspacher BN4 petrol heater with outlet in load/passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:108
-msgid ""
-"Eberspacher BN4 petrol heater with air recirculation connection and outlet "
-"in load/passenger compartment"
+#: vinaigrette-deleteme.py:456
+msgid "Eberspacher BN4 petrol heater with air recirculation connection and outlet in load/passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:109
+#: vinaigrette-deleteme.py:457
 msgid "Eberspacher BN4 heater"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:110
+#: vinaigrette-deleteme.py:458
 msgid "Without mountings for seats and safety belts in cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:111
+#: vinaigrette-deleteme.py:459
 msgid "Two electric ventilators in fresh-air system"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:112
+#: vinaigrette-deleteme.py:460
 msgid "Suppression equipment for radio reception"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:113
+#: vinaigrette-deleteme.py:461
 msgid "Yellow headlamp bulbs and safety inner rear-view mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:114
+#: vinaigrette-deleteme.py:463
 msgid "Yellow headlamp bulbs"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:115
+#: vinaigrette-deleteme.py:464
 msgid "1600cc engine with stiff instead of torsion-suspended clutch disc"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:116
+#: vinaigrette-deleteme.py:465
 msgid "Rear panel lid without window"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:117
+#: vinaigrette-deleteme.py:466
 msgid "Whitewall tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:118
+#: vinaigrette-deleteme.py:467
 msgid "Without steel sliding roof"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:119
-msgid ""
-"Removable prints \"Deutsche Bundespost\", \"Fernmeldedienst\" and post horn "
-"logo"
+#: vinaigrette-deleteme.py:468
+msgid "Removable prints \"Deutsche Bundespost\", \"Fernmeldedienst\" and post horn logo"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:119
+#: vinaigrette-deleteme.py:469
 msgid "German Mail (telecomms department)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:120
-msgid ""
-"Chassis plate without prints of the maximum total mass and the maximum axle "
-"loads"
+#: vinaigrette-deleteme.py:470
+msgid "Chassis plate without prints of the maximum total mass and the maximum axle loads"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:120
+#: vinaigrette-deleteme.py:471
 msgid "Israel, Switzerland, Thailand"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:121
+#: vinaigrette-deleteme.py:472
 msgid "Fold-down passenger seat"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:122
-msgid ""
-"Modifications for fire truck, front bumper mounted higher for taking steep "
-"slope; with laminated windscreen"
+#: vinaigrette-deleteme.py:473
+msgid "Modifications for fire truck, front bumper mounted higher for taking steep slope; with laminated windscreen"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:123
-msgid ""
-"Modifications for fire truck, without deformation element behind front "
-"bumper; with laminated windscreen"
+#: vinaigrette-deleteme.py:474
+msgid "Modifications for fire truck, without deformation element behind front bumper; with laminated windscreen"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:124
+#: vinaigrette-deleteme.py:475
 msgid "Heater outlet in rear part of cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:125
+#: vinaigrette-deleteme.py:476
 msgid "With heater outlet under middle bench seat"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:126
+#: vinaigrette-deleteme.py:477
 msgid "With safety lock for sliding door(s) and rear panel lid"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:127
-msgid ""
-"Middle bench seat (two persons), rear bench seat and interior trim in "
-"passenger compartment"
+#: vinaigrette-deleteme.py:478
+msgid "Middle bench seat (two persons), rear bench seat and interior trim in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:128
+#: vinaigrette-deleteme.py:479
 msgid "Seven-seater model instead of eight-seater model"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:130
+#: vinaigrette-deleteme.py:480
 msgid "With hinged rear seat backrest"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:132
+#: vinaigrette-deleteme.py:481
 msgid "Painted instead of chrome parts"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:133
-msgid ""
-"VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in "
-"bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, "
-"maximum tyre inflation written above the wheels, symbol notification of "
-"knobs on windscreen, reinforcement under upholstery for mounting of fire "
-"extinguishers in cabin, additional mountings for several pieces of equipment "
-"according to DIN requirement, transparent battery cases (only with M623)"
+#: vinaigrette-deleteme.py:482
+msgid "VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, maximum tyre inflation written above the wheels, symbol notification of knobs on windscreen, reinforcement under upholstery for mounting of fire extinguishers in cabin, additional mountings for several pieces of equipment according to DIN requirement, transparent battery cases (only with M623)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:136
+#: vinaigrette-deleteme.py:483
 msgid "Simplified rails, plus stretcher on right-hand side"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:137
-msgid ""
-"Paper element cyclone air filter without carburettor pre-heating (1300 and "
-"1600cc engines only)"
+#: vinaigrette-deleteme.py:484
+msgid "Paper element cyclone air filter without carburettor pre-heating (1300 and 1600cc engines only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:138
+#: vinaigrette-deleteme.py:485
 msgid "Two oil bath air filters with larger oil capacity"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:139
+#: vinaigrette-deleteme.py:486
 msgid "Oil bath air filter with larger oil capacity for dusty regions"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:140
+#: vinaigrette-deleteme.py:487
 msgid "Paper element air filter with cyclone function for dusty regions"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:140
+#: vinaigrette-deleteme.py:488
 msgid "Type 1 engines"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:141
+#: vinaigrette-deleteme.py:489
 msgid "Exhaust emission control system"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:142
-msgid ""
-"Exhaust emission control system and activated carbon container for absorbing "
-"fuel vapour"
+#: vinaigrette-deleteme.py:490
+msgid "Exhaust emission control system and activated carbon container for absorbing fuel vapour"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:143
+#: vinaigrette-deleteme.py:491
 msgid "Fuel injection engine"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:144
+#: vinaigrette-deleteme.py:492
 msgid "Securing plate and rings for padlock"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:145
+#: vinaigrette-deleteme.py:493
 msgid "Blue rotating light and siren"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:146
+#: vinaigrette-deleteme.py:494
 msgid "Seats in cabin with mountings for headrests"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:147
+#: vinaigrette-deleteme.py:495
 msgid "Rubber strips for bumpers"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:148
+#: vinaigrette-deleteme.py:496
 msgid "Gauged trip writer"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:149
+#: vinaigrette-deleteme.py:497
 msgid "Tubeless textile or steel-ply tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:150
+#: vinaigrette-deleteme.py:498
 msgid "Tubeless steel-ply tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:151
-msgid ""
-"C-shaped guiding rails on metal partition between cabin and cargo "
-"compartment and on the side opposite the sliding door (for model 211 only "
-"with M540, for model 231 only wit M120, M540)"
+#: vinaigrette-deleteme.py:499
+msgid "C-shaped guiding rails on metal partition between cabin and cargo compartment and on the side opposite the sliding door (for model 211 only with M540, for model 231 only wit M120, M540)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:152
+#: vinaigrette-deleteme.py:500
 msgid "Three-seater bench in the back and interior trim"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:153
-msgid ""
-"Wooden floor panels with built-in guiding rails (also in side panels and on "
-"floor above engine compartment) for mounting tools and instruments"
+#: vinaigrette-deleteme.py:501
+msgid "Wooden floor panels with built-in guiding rails (also in side panels and on floor above engine compartment) for mounting tools and instruments"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:154
+#: vinaigrette-deleteme.py:502
 msgid "Without three-seater middle bench seat"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:155
+#: vinaigrette-deleteme.py:503
 msgid "Chrome hubcaps"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:156
+#: vinaigrette-deleteme.py:504
 msgid "Chrome hubcaps and headlamp rings"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:157
+#: vinaigrette-deleteme.py:505
 msgid "Chrome hubcaps, headlamp rings and rear-view mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:158
+#: vinaigrette-deleteme.py:506
 msgid "With seatbelt mounting points for folding seat in rear compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:159
-msgid ""
-"Three-point safety belts for driver and passenger seat with roll-up "
-"automatic and push-button lock"
+#: vinaigrette-deleteme.py:508
+msgid "Three-point safety belts for driver and passenger seat with roll-up automatic and push-button lock"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:160
-msgid ""
-"Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
+#: vinaigrette-deleteme.py:509
+msgid "Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:160
+#: vinaigrette-deleteme.py:510
 msgid "USA and Canada"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:161
+#: vinaigrette-deleteme.py:511
 msgid "Two-point seatbelts for all seats in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:162
+#: vinaigrette-deleteme.py:512
 msgid "Headlamps for countries with left-hand traffic"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:163
-msgid ""
-"Simplified heating system with special heater boxes, no isolation on hot-air "
-"ducting, no noise isolation on front of car and on front wheel arches. Extra "
-"fresh-air ventilator and cabin-door ventilation (not with M60,M141,M505)"
+#: vinaigrette-deleteme.py:513
+msgid "Simplified heating system with special heater boxes, no isolation on hot-air ducting, no noise isolation on front of car and on front wheel arches. Extra fresh-air ventilator and cabin-door ventilation (not with M60,M141,M505)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:164
+#: vinaigrette-deleteme.py:514
 msgid "With outer and centre underfloor plates"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:165
-msgid ""
-"With electrical installation for Japan: with side turn signals front, back-"
-"up lamps, with parking light front and rear, without licence-plate light and "
-"engine that complies to Japanese exhaust regulations (with M26 and M187 only)"
+#: vinaigrette-deleteme.py:515
+msgid "With electrical installation for Japan: with side turn signals front, back-up lamps, with parking light front and rear, without licence-plate light and engine that complies to Japanese exhaust regulations (with M26 and M187 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:166
-msgid ""
-"Convex outer rear-view mirrors left and right instead of mirrors with flat "
-"glass"
+#: vinaigrette-deleteme.py:516
+msgid "Convex outer rear-view mirrors left and right instead of mirrors with flat glass"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:167
+#: vinaigrette-deleteme.py:517
 msgid "Exclusive use of Blaupunkt car radios (with M95, 97 or 98 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:168
+#: vinaigrette-deleteme.py:518
 msgid "Rotating light red instead of blue (with M160 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:169
+#: vinaigrette-deleteme.py:519
 msgid "Various parts not mounted; these parts sent via the CKD department"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:170
+#: vinaigrette-deleteme.py:521
 msgid "Pick-Up with enlarged wooden platform"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:171
+#: vinaigrette-deleteme.py:522
 msgid "Eberspacher BN4 petrol heater"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:172
-msgid ""
-"With second hot-air outlet in metal Partition as in ambulance (with M500 "
-"only)"
+#: vinaigrette-deleteme.py:523
+msgid "With second hot-air outlet in metal Partition as in ambulance (with M500 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:172
+#: vinaigrette-deleteme.py:524
 msgid "Year might not be correct"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:173
+#: vinaigrette-deleteme.py:525
 msgid "Inner rear-view mirror, anti-dazzle"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:175
+#: vinaigrette-deleteme.py:526
 msgid "Trailer hitch and extra towing hook on front"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:176
+#: vinaigrette-deleteme.py:527
 msgid "Trailer hitch"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:177
+#: vinaigrette-deleteme.py:528
 msgid "Tilt made of PVC instead of sail-cloth (with M070 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:178
+#: vinaigrette-deleteme.py:529
 msgid "Tilt made of PVC instead of sail-cloth (with M207 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:179
+#: vinaigrette-deleteme.py:530
 msgid "With post horn sticker"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:179
+#: vinaigrette-deleteme.py:531
 msgid "German Mail – Berlin"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:180
-msgid ""
-"With \"Fernmeldedienst\" (\"telecommunications department\") and post horn "
-"stickers"
+#: vinaigrette-deleteme.py:532
+msgid "With \"Fernmeldedienst\" (\"telecommunications department\") and post horn stickers"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:181
+#: vinaigrette-deleteme.py:533
 msgid "Without rubber floor mat in Passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:182
+#: vinaigrette-deleteme.py:535
 msgid "Detachable hinges and side-flap mountings"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:182
+#: vinaigrette-deleteme.py:536
 msgid "For authorities only"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:183
+#: vinaigrette-deleteme.py:537
 msgid "Without air vents in Cargo Compartment (with M500 and M510 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:184
-msgid ""
-"Flat bows with mountings for ladder and tilt made out of synthetic material"
+#: vinaigrette-deleteme.py:538
+msgid "Flat bows with mountings for ladder and tilt made out of synthetic material"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:185
+#: vinaigrette-deleteme.py:539
 msgid "Limited slip differential"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:186
+#: vinaigrette-deleteme.py:540
 msgid "One ventilation window in cabin door on driver's side"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:187
-msgid ""
-"With fixed windows in passenger compartment instead of ventilation windows"
+#: vinaigrette-deleteme.py:541
+msgid "With fixed windows in passenger compartment instead of ventilation windows"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:188
+#: vinaigrette-deleteme.py:542
 msgid "No window openings in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:189
-msgid ""
-"With upholstery on the boot floor, the sides of the boot and the rear hatch"
+#: vinaigrette-deleteme.py:543
+msgid "With upholstery on the boot floor, the sides of the boot and the rear hatch"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:190
+#: vinaigrette-deleteme.py:544
 msgid "Retaining cables for tailboard"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:191
+#: vinaigrette-deleteme.py:545
 msgid "Detachable headrests for all seats in cabin (with M161 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:192
-msgid ""
-"Detachable headrests for all seats in Passenger compartment (with M235 only)"
+#: vinaigrette-deleteme.py:546
+msgid "Detachable headrests for all seats in Passenger compartment (with M235 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:193
+#: vinaigrette-deleteme.py:547
 msgid "Mountings for headrests for all seats in Passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:194
+#: vinaigrette-deleteme.py:548
 msgid "Engine with recessed crown pistons for low-octane fuel"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:195
+#: vinaigrette-deleteme.py:549
 msgid "Windscreen free from import duty for Canada (with M89 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:196
+#: vinaigrette-deleteme.py:551
 msgid "Windscreen free from import duty for USA (with M089 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:197
+#: vinaigrette-deleteme.py:553
 msgid "Ignition lock without steering lock"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:198
+#: vinaigrette-deleteme.py:554
 msgid "Automatic transmission"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:200
+#: vinaigrette-deleteme.py:555
 msgid "1700cc (66bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:201
+#: vinaigrette-deleteme.py:556
 msgid "1800cc (68bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:202
+#: vinaigrette-deleteme.py:557
 msgid "2000cc (70bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:203
+#: vinaigrette-deleteme.py:558
 msgid "1300cc (44bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:204
+#: vinaigrette-deleteme.py:559
 msgid "Vehicle for North American market with tyres from specific companies"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:205
+#: vinaigrette-deleteme.py:560
 msgid "Without spare tyre, tools, toolbag and jack (with M515/502 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:206
+#: vinaigrette-deleteme.py:562
 msgid "Higher driver- and passenger-seat backrest (headrest)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:207
-msgid ""
-"Passenger seat instead of passenger bench seat; spare tyre in cabin (with "
-"M500 only)"
+#: vinaigrette-deleteme.py:563
+msgid "Passenger seat instead of passenger bench seat; spare tyre in cabin (with M500 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:208
+#: vinaigrette-deleteme.py:564
 msgid "Payload of 1,200kg instead of 1,000kg"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:209
-msgid ""
-"Maintenance vehicle for communication cables. With closets, C-shaped rails, "
-"swivel chair and curtains in cargo compartment (with M120, M503, M539 only; "
-"not with M251)"
+#: vinaigrette-deleteme.py:565
+msgid "Maintenance vehicle for communication cables. With closets, C-shaped rails, swivel chair and curtains in cargo compartment (with M120, M503, M539 only; not with M251)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:210
+#: vinaigrette-deleteme.py:566
 msgid "With headlight washer installation"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:211
+#: vinaigrette-deleteme.py:567
 msgid "Sheer bolt for steering-column tube attachment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:212
+#: vinaigrette-deleteme.py:568
 msgid "Without bottom protection"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:213
+#: vinaigrette-deleteme.py:569
 msgid "VW parts for type 214, 234 and 264 made by VW do Brasil (CKD only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:213
+#: vinaigrette-deleteme.py:570
 msgid "Ony CKD vehicles"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:214
-msgid ""
-"ECE regulations sticker \"R 10\" (with M123 only) (suppression equipment for "
-"radio reception)"
+#: vinaigrette-deleteme.py:571
+msgid "ECE regulations sticker \"R 10\" (with M123 only) (suppression equipment for radio reception)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:215
+#: vinaigrette-deleteme.py:572
 msgid "ECE regulations sticker \"R 11\" (door locks and hinges)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:216
+#: vinaigrette-deleteme.py:573
 msgid "ECE regulations sticker \"R 14\" (seatbelt mountings)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:217
-msgid ""
-"Without metal division between cabin and cargo compartment, passenger seat "
-"adjustable on rails"
+#: vinaigrette-deleteme.py:574
+msgid "Without metal division between cabin and cargo compartment, passenger seat adjustable on rails"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:218
+#: vinaigrette-deleteme.py:575
 msgid "Fitted with Semperit tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:219
+#: vinaigrette-deleteme.py:576
 msgid "Fitted with Uniroyal tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:220
+#: vinaigrette-deleteme.py:577
 msgid "Special engine to comply with Austrian regulations (1600cc, 50bhp)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:221
-msgid ""
-"With American parts and constructions for the Campmobile versions P21, P22 "
-"and P27: free of import duty (with M609 only)"
+#: vinaigrette-deleteme.py:578
+msgid "With American parts and constructions for the Campmobile versions P21, P22 and P27: free of import duty (with M609 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:222
-msgid ""
-"Prepared for the installation of a radio for LW, MW, SW, FM (not with M631)"
+#: vinaigrette-deleteme.py:579
+msgid "Prepared for the installation of a radio for LW, MW, SW, FM (not with M631)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:223
+#: vinaigrette-deleteme.py:580
 msgid "Neckarsulm CR car radio, with Cassette player"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:224
+#: vinaigrette-deleteme.py:581
 msgid "Braunschweig CR car radio, with Cassette player"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:225
+#: vinaigrette-deleteme.py:582
 msgid "Full-width metal partition between cabin and load compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:226
-msgid ""
-"Two-person Passenger seat instead of single Passenger seat in cabin, spare "
-"tyre in left side of luggage compartment (not with M500)"
+#: vinaigrette-deleteme.py:583
+msgid "Two-person Passenger seat instead of single Passenger seat in cabin, spare tyre in left side of luggage compartment (not with M500)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:227
+#: vinaigrette-deleteme.py:584
 msgid "Hardboard interior side panels in cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:228
+#: vinaigrette-deleteme.py:585
 msgid "Hardboard interior roof panels in cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:229
+#: vinaigrette-deleteme.py:586
 msgid "Fresh-air duct to cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:230
+#: vinaigrette-deleteme.py:587
 msgid "Hot-air outlet in front side of cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:231
+#: vinaigrette-deleteme.py:588
 msgid "Brake servo and dual-circuit brake control lamp"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:232
+#: vinaigrette-deleteme.py:589
 msgid "Brake servo"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:233
+#: vinaigrette-deleteme.py:590
 msgid "Ventilation windows in cabin doors"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:234
-msgid ""
-"Ventilation window in sliding door and in all windows opposite sliding door "
-"in the Passenger compartment (three windows in total)"
+#: vinaigrette-deleteme.py:591
+msgid "Ventilation window in sliding door and in all windows opposite sliding door in the Passenger compartment (three windows in total)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:235
-msgid ""
-"Ventilation windows in sliding doors (two windows in total) (when ordered "
-"with M520)"
+#: vinaigrette-deleteme.py:592
+msgid "Ventilation windows in sliding doors (two windows in total) (when ordered with M520)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:236
-msgid ""
-"Ventilation window in rear Passenger door and in the window opposite this "
-"door (two windows in total)"
+#: vinaigrette-deleteme.py:593
+msgid "Ventilation window in rear Passenger door and in the window opposite this door (two windows in total)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:237
-msgid ""
-"One sliding window in sliding door and one in the opposite side panel of the "
-"passenger compartment"
+#: vinaigrette-deleteme.py:594
+msgid "One sliding window in sliding door and one in the opposite side panel of the passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:238
+#: vinaigrette-deleteme.py:595
 msgid "One sliding window in the side panel opposite the sliding door"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:239
-msgid ""
-"With dust-protected air intake, larger oil bath air cleaner and additional "
-"dust sealing"
+#: vinaigrette-deleteme.py:596
+msgid "With dust-protected air intake, larger oil bath air cleaner and additional dust sealing"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:240
+#: vinaigrette-deleteme.py:597
 msgid "Upper division between cabin and cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:241
-msgid ""
-"Upper division between cabin and cargo compartment. Fibreboard door panel in "
-"sliding door (Type 21: with air vents in rear side panels of cargo "
-"compartment)"
+#: vinaigrette-deleteme.py:598
+msgid "Upper division between cabin and cargo compartment. Fibreboard door panel in sliding door (Type 21: with air vents in rear side panels of cargo compartment)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:242
+#: vinaigrette-deleteme.py:599
 msgid "Padded dashboard and dashboard lid (not for RHD)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:243
+#: vinaigrette-deleteme.py:600
 msgid "Without passenger seat in cabin"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:244
+#: vinaigrette-deleteme.py:601
 msgid "Protection plate for gearbox"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:245
+#: vinaigrette-deleteme.py:602
 msgid "Air circulation connection for gasoline heater (only with M119)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:246
+#: vinaigrette-deleteme.py:603
 msgid "High roof Panelvan with high-roof sliding door"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:247
+#: vinaigrette-deleteme.py:604
 msgid "High roof (plastic)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:249
+#: vinaigrette-deleteme.py:605
 msgid "Factory-prepared for Campmobile interior"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:250
+#: vinaigrette-deleteme.py:606
 msgid "Opening in roof with reinforcement for Westfalia pop-up roof"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:251
+#: vinaigrette-deleteme.py:607
 msgid "Air vents in cargo compartment (with M515 or 516 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:252
+#: vinaigrette-deleteme.py:608
 msgid "With sliding door on left and right side"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:253
+#: vinaigrette-deleteme.py:609
 msgid "With chrome trim and sun visor with mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:254
+#: vinaigrette-deleteme.py:610
 msgid "With chrome trim and sun visor without mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:255
+#: vinaigrette-deleteme.py:611
 msgid "Net division between cabin and cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:256
+#: vinaigrette-deleteme.py:612
 msgid "USA and Canada specifications"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:257
+#: vinaigrette-deleteme.py:613
 msgid "Seatbelts for USA and Canada"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:258
+#: vinaigrette-deleteme.py:614
 msgid "Without inner rear-view mirror"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:259
+#: vinaigrette-deleteme.py:615
 msgid "Japan and Sweden"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:260
+#: vinaigrette-deleteme.py:616
 msgid "Convex rear-view mirror on right side (not for RHD)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:261
-msgid ""
-"Upper partition between cabin and passenger compartment with sliding window "
-"(only with M500)"
+#: vinaigrette-deleteme.py:617
+msgid "Upper partition between cabin and passenger compartment with sliding window (only with M500)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:262
-msgid ""
-"Automatic step on passenger side (vehicles with two sliding doors only have "
-"the automatic step on the passenger side)"
+#: vinaigrette-deleteme.py:618
+msgid "Automatic step on passenger side (vehicles with two sliding doors only have the automatic step on the passenger side)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:263
-msgid ""
-"Harder rear torsion bars (like on Transporter version) (on model 23 only "
-"with M013, 015, 146, 177 or 609)"
+#: vinaigrette-deleteme.py:619
+msgid "Harder rear torsion bars (like on Transporter version) (on model 23 only with M013, 015, 146, 177 or 609)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:264
+#: vinaigrette-deleteme.py:620
 msgid "Foot-operated alarm installation (for Taxis and rental vehicles)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:265
+#: vinaigrette-deleteme.py:621
 msgid "Speaker and microphone for communication between driver and passengers"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:266
-msgid ""
-"Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer "
-"(not in combination with M020)"
+#: vinaigrette-deleteme.py:622
+msgid "Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer (not in combination with M020)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:267
+#: vinaigrette-deleteme.py:623
 msgid "With rubber valve in rear bottom panel for draining fuel"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:268
+#: vinaigrette-deleteme.py:625
 msgid "Transistor lamp instead of regular interior light"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:269
-msgid ""
-"Interior with closets and wooden floor in the rear of the cabin, net "
-"partition between front and rear of cabin (with M117 only)"
+#: vinaigrette-deleteme.py:626
+msgid "Interior with closets and wooden floor in the rear of the cabin, net partition between front and rear of cabin (with M117 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:270
+#: vinaigrette-deleteme.py:627
 msgid "Wooden floor in cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:271
-msgid ""
-"Closets in cargo compartment and net partition between cabin and cargo "
-"compartment"
+#: vinaigrette-deleteme.py:628
+msgid "Closets in cargo compartment and net partition between cabin and cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:272
-msgid ""
-"Bench seat in upholstery cloth on metal partition behind cabin. Net division "
-"above closet but without net division between cabin and cargo compartment "
-"(with M503, M540 only)"
+#: vinaigrette-deleteme.py:629
+msgid "Bench seat in upholstery cloth on metal partition behind cabin. Net division above closet but without net division between cabin and cargo compartment (with M503, M540 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:273
-msgid ""
-"Various special constructions for German Army purposes (with M149 only. In "
-"case of model 265, with M101, M178, M207, M209 only)"
+#: vinaigrette-deleteme.py:630
+msgid "Various special constructions for German Army purposes (with M149 only. In case of model 265, with M101, M178, M207, M209 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:274
+#: vinaigrette-deleteme.py:631
 msgid "Without seats in passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:275
-msgid ""
-"High-roof Bus with shelves for piling packages in cargo compartment (with "
-"M502, M515 only)"
+#: vinaigrette-deleteme.py:632
+msgid "High-roof Bus with shelves for piling packages in cargo compartment (with M502, M515 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:276
+#: vinaigrette-deleteme.py:633
 msgid "Headliner in load-/passenger compartment (as in model 22, Microbus)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:277
+#: vinaigrette-deleteme.py:634
 msgid "Turn signals at rear on roof"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:278
+#: vinaigrette-deleteme.py:635
 msgid "Turn signals at rear on roof, lamp shines to both front and rear"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:279
+#: vinaigrette-deleteme.py:636
 msgid "Extra rust-prevention treatment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:280
-msgid ""
-"Three-point safety belts for driver and outer passenger seat, two-point "
-"safety belt for middle seat (only in case of two-person Passenger seat in "
-"cabin)"
+#: vinaigrette-deleteme.py:637
+msgid "Three-point safety belts for driver and outer passenger seat, two-point safety belt for middle seat (only in case of two-person Passenger seat in cabin)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:281
+#: vinaigrette-deleteme.py:638
 msgid "Halogen headlamps"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:282
+#: vinaigrette-deleteme.py:639
 msgid "Clock with heating time preselector, with trip counter (with M060 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:283
+#: vinaigrette-deleteme.py:640
 msgid "Steel sliding roof"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:284
+#: vinaigrette-deleteme.py:641
 msgid "Tinted windows (except windscreen)( with M671 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:285
+#: vinaigrette-deleteme.py:642
 msgid "Tinted windows and windscreen, with laminated windscreen"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:286
+#: vinaigrette-deleteme.py:643
 msgid "Air filter for dusty countries (2000cc with 70bhp only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:286
+#: vinaigrette-deleteme.py:644
 msgid "South Africa and Australia"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:287
+#: vinaigrette-deleteme.py:645
 msgid "Rear foglamp"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:288
+#: vinaigrette-deleteme.py:646
 msgid "Air conditioning (on model 23 only for Campers)(with M251 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:289
-msgid ""
-"Preparation for construction of Campmobile by Jurgens-Caravan in South "
-"Africa or Karmann Mobil in Germany"
+#: vinaigrette-deleteme.py:647
+msgid "Preparation for construction of Campmobile by Jurgens-Caravan in South Africa or Karmann Mobil in Germany"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:290
+#: vinaigrette-deleteme.py:648
 msgid "Without compressor for folding spare tyre (with M586 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:291
-msgid ""
-"Interior panel over entire width of vehicle for lower partition between "
-"cabin and cargo compartment"
+#: vinaigrette-deleteme.py:649
+msgid "Interior panel over entire width of vehicle for lower partition between cabin and cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:292
-msgid ""
-"With folding spare tyre instead of regular spare tyre, plus 12V air "
-"compressor and 12V connection on dashboard"
+#: vinaigrette-deleteme.py:650
+msgid "With folding spare tyre instead of regular spare tyre, plus 12V air compressor and 12V connection on dashboard"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:292
+#: vinaigrette-deleteme.py:651
 msgid "Westfalia Campmobile"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:293
-msgid ""
-"Hannover radio (LW, MW, FM) with automatic search, remote control, tape deck "
-"and automatic antenna connection"
+#: vinaigrette-deleteme.py:652
+msgid "Hannover radio (LW, MW, FM) with automatic search, remote control, tape deck and automatic antenna connection"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:294
-msgid ""
-"Salzgitter radio (FM) with tape player connection and traffic broadcast "
-"decoder connection"
+#: vinaigrette-deleteme.py:653
+msgid "Salzgitter radio (FM) with tape player connection and traffic broadcast decoder connection"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:295
+#: vinaigrette-deleteme.py:654
 msgid "Stronger battery: 12V 63A instead of 12V 45A"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:296
+#: vinaigrette-deleteme.py:655
 msgid "Comfort package"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:297
-msgid ""
-"Special options package comprising: back-up lamps (M047); rear-window "
-"defroster (M102); emergency warning lights; dual-circuit brake warning "
-"light; padded dashboard (for LHD)"
+#: vinaigrette-deleteme.py:656
+msgid "Special options package comprising: back-up lamps (M047); rear-window defroster (M102); emergency warning lights; dual-circuit brake warning light; padded dashboard (for LHD)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:298
-msgid ""
-"Special options package comprising: hazard lights; dual-circuit brake "
-"warning light; padded dashboard (for LHD)"
+#: vinaigrette-deleteme.py:657
+msgid "Special options package comprising: hazard lights; dual-circuit brake warning light; padded dashboard (for LHD)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:299
-msgid ""
-"Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, "
-"M171)"
+#: vinaigrette-deleteme.py:658
+msgid "Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, M171)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:300
+#: vinaigrette-deleteme.py:659
 msgid "2000cc dual carburettor engine with secondary air injection"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:301
+#: vinaigrette-deleteme.py:660
 msgid "Seat belts according to Australian safety regulations."
 msgstr ""
 
-#: mplate_decoder.Mcode/description:302
+#: vinaigrette-deleteme.py:661
 msgid "Compliance with Australian exhaust and safety standards"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:304
+#: vinaigrette-deleteme.py:662
 msgid "Without diagnosis plug connection and wiring"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:305
-msgid ""
-"Adjustment mechanism for later gauging of speedometer (for rental vehicles "
-"and self-drive rentals only)"
+#: vinaigrette-deleteme.py:663
+msgid "Adjustment mechanism for later gauging of speedometer (for rental vehicles and self-drive rentals only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:306
+#: vinaigrette-deleteme.py:664
 msgid "Reversing lights (built-in with rearlight units)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:307
+#: vinaigrette-deleteme.py:665
 msgid "Generator 70A instead of 55A (with M157 or M251 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:308
+#: vinaigrette-deleteme.py:666
 msgid "Special suppression equipment, prepared for radio-traffic"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:309
-msgid ""
-"Commando vehicle equipment also usable as conversation vehicle, bureau "
-"vehicle and for similar purposes. Consisting of three-seater middle bench "
-"seat (built-in facing backwards); folding down backrest on sliding door "
-"side; one folding table; one transistorized light above table; one rubber "
-"floor cover in Passenger compartment"
+#: vinaigrette-deleteme.py:667
+msgid "Commando vehicle equipment also usable as conversation vehicle, bureau vehicle and for similar purposes. Consisting of three-seater middle bench seat (built-in facing backwards); folding down backrest on sliding door side; one folding table; one transistorized light above table; one rubber floor cover in Passenger compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:310
-msgid ""
-"Mounting for radio-communication apparatus type ‘FuG 7b’ in glovebox "
-"(Telefunken or SEL)"
+#: vinaigrette-deleteme.py:668
+msgid "Mounting for radio-communication apparatus type ‘FuG 7b’ in glovebox (Telefunken or SEL)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:311
+#: vinaigrette-deleteme.py:669
 msgid "Suppressed windscreen-wiper motor"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:312
+#: vinaigrette-deleteme.py:670
 msgid "Further suppressed equipment"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:312
+#: vinaigrette-deleteme.py:671
 msgid "German Army"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:313
+#: vinaigrette-deleteme.py:672
 msgid "Windscreen-wiper blades and arms under customs seal"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:314
+#: vinaigrette-deleteme.py:673
 msgid "Air-drying’ bottom protection instead of ‘wax paraffin’"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:315
+#: vinaigrette-deleteme.py:674
 msgid "With USA-specific parts for the airconditioning (free from import duty)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:316
-msgid ""
-"Interval switch on windscreen wipers and wash-wipe installation. Interval "
-"ca.6 seconds"
+#: vinaigrette-deleteme.py:675
+msgid "Interval switch on windscreen wipers and wash-wipe installation. Interval ca.6 seconds"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:317
+#: vinaigrette-deleteme.py:676
 msgid "Two halogen foglamps on front"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:318
+#: vinaigrette-deleteme.py:677
 msgid "Stick-in head-/neck-rests, Not for driver's seat"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:319
+#: vinaigrette-deleteme.py:678
 msgid "Sticker ECE regulations no, 14"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:320
+#: vinaigrette-deleteme.py:679
 msgid "Tinted windscreen (laminated) (with M568 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:321
+#: vinaigrette-deleteme.py:680
 msgid "Sealed speedometer (for leasing vehicles)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:322
-msgid ""
-"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
-"and net partition between cargo compartment and cabin (with M500, M502, M539 "
-"only)"
+#: vinaigrette-deleteme.py:681
+msgid "Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails and net partition between cargo compartment and cabin (with M500, M502, M539 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:323
-msgid ""
-"Interior as M677 with extra built-in closets and extractable vice (only with "
-"M677)"
+#: vinaigrette-deleteme.py:682
+msgid "Interior as M677 with extra built-in closets and extractable vice (only with M677)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:324
+#: vinaigrette-deleteme.py:683
 msgid "Motorola/USA car radio instead of Emden (with M097 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:325
-msgid ""
-"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
-"and net partition between Cargo compartment and cabin, with extra built-in "
-"closets and vice (with M500, M502, M539 only)"
+#: vinaigrette-deleteme.py:684
+msgid "Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails and net partition between Cargo compartment and cabin, with extra built-in closets and vice (with M500, M502, M539 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:326
-msgid ""
-"Passenger seat in cabin as swivelling seat, without metal partition behind "
-"this seat"
+#: vinaigrette-deleteme.py:685
+msgid "Passenger seat in cabin as swivelling seat, without metal partition behind this seat"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:326
+#: vinaigrette-deleteme.py:686
 msgid "Chassis no. 2162 078 000"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:327
+#: vinaigrette-deleteme.py:687
 msgid "Fitted with Continental-manufactured tyres"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:328
+#: vinaigrette-deleteme.py:688
 msgid "Without chassis identification plate"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:329
+#: vinaigrette-deleteme.py:689
 msgid "With protection wall in cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:330
+#: vinaigrette-deleteme.py:690
 msgid "Transistorized ignition system"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:331
-msgid ""
-"Polyester high roof painted in body colour instead of white (with M515 or "
-"M516 only)"
+#: vinaigrette-deleteme.py:691
+msgid "Polyester high roof painted in body colour instead of white (with M515 or M516 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:332
-msgid ""
-"Without side and rear windows in passenger compartment (preparation for "
-"Westfalia isolation windows)"
+#: vinaigrette-deleteme.py:692
+msgid "Without side and rear windows in passenger compartment (preparation for Westfalia isolation windows)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:333
-msgid ""
-"Zeiss-Ikon safety lock for rear panel lid (available with M145, one key "
-"combination)"
+#: vinaigrette-deleteme.py:693
+msgid "Zeiss-Ikon safety lock for rear panel lid (available with M145, one key combination)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:334
+#: vinaigrette-deleteme.py:694
 msgid "Air conditioning"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:335
+#: vinaigrette-deleteme.py:695
 msgid "Tail-light lenses yellow-red instead of yellow-red-white"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:336
+#: vinaigrette-deleteme.py:696
 msgid "Without air vents in cargo compartment"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:337
-msgid ""
-"Factory-prepared for conversion to armoured money transporter (conversion by "
-"Thiele/Bremen or Bischoff & Hamel/Hannover)"
+#: vinaigrette-deleteme.py:697
+msgid "Factory-prepared for conversion to armoured money transporter (conversion by Thiele/Bremen or Bischoff & Hamel/Hannover)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:338
+#: vinaigrette-deleteme.py:698
 msgid "Factory prepared for Electrotransporter-conversion"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:339
+#: vinaigrette-deleteme.py:699
 msgid "Illuminated roof sign with Maltese or Red Cross logo"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:340
+#: vinaigrette-deleteme.py:700
 msgid "Production number for special, documented built-ins"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:341
-msgid ""
-"Special sales campaign for \"Champagne Edition\", paint colour Agata Brown "
-"with Atlas White roof; interior cloth in Parchment (beige grey)"
+#: vinaigrette-deleteme.py:701
+msgid "Special sales campaign for \"Champagne Edition\", paint colour Agata Brown with Atlas White roof; interior cloth in Parchment (beige grey)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:342
+#: vinaigrette-deleteme.py:702
 msgid "Chrome trim around Bus ca. 5cm below windows"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:343
+#: vinaigrette-deleteme.py:703
 msgid "Textile radial tyres with tube"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:344
-msgid ""
-"2000cc fuel-injected engine with exhaust emission control concept of the "
-"1800cc engine (with M157 only)"
+#: vinaigrette-deleteme.py:704
+msgid "2000cc fuel-injected engine with exhaust emission control concept of the 1800cc engine (with M157 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:345
+#: vinaigrette-deleteme.py:705
 msgid "Alternative loading arrangement (not with S751)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:346
+#: vinaigrette-deleteme.py:706
 msgid "Without portable chair but with guiding rails on floor"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:347
-msgid ""
-"Window in sliding door (in case of double sliding door, there is a window in "
-"both sliding doors)"
+#: vinaigrette-deleteme.py:707
+msgid "Window in sliding door (in case of double sliding door, there is a window in both sliding doors)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:348
+#: vinaigrette-deleteme.py:708
 msgid "Without right stretcher and without right loading platform"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:349
+#: vinaigrette-deleteme.py:709
 msgid "Factory-prepared for fitting a PVC tilt"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:350
-msgid ""
-"Wooden floor panels with built-in guide rails for mounting tools and "
-"instruments (only with M502 or bench seats)"
+#: vinaigrette-deleteme.py:710
+msgid "Wooden floor panels with built-in guide rails for mounting tools and instruments (only with M502 or bench seats)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:351
-msgid ""
-"Control number for conversions or other changes from the serial production"
+#: vinaigrette-deleteme.py:711
+msgid "Control number for conversions or other changes from the serial production"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:352
-msgid ""
-"Two head cushions, one back support, one belly support, guiding rail lock "
-"for stretcher; without infusion hooks"
+#: vinaigrette-deleteme.py:712
+msgid "Two head cushions, one back support, one belly support, guiding rail lock for stretcher; without infusion hooks"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:353
+#: vinaigrette-deleteme.py:713
 msgid "Sliding door right instead of left (RHD vehicles)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:354
+#: vinaigrette-deleteme.py:714
 msgid "Window in sliding door and one at opposite side panel"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:355
-msgid ""
-"Production number to indicate small special built-ins or deflections from "
-"the serial production"
+#: vinaigrette-deleteme.py:715
+msgid "Production number to indicate small special built-ins or deflections from the serial production"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:356
-msgid ""
-"With upholstery on floor above engine, the rear corners and the rear hatch "
-"(with M013, 015, 146 or 177 only)"
+#: vinaigrette-deleteme.py:716
+msgid "With upholstery on floor above engine, the rear corners and the rear hatch (with M013, 015, 146 or 177 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:357
+#: vinaigrette-deleteme.py:717
 msgid "70bhp engine"
 msgstr ""
 
-#: mplate_decoder.Mcode/remarks:357
+#: vinaigrette-deleteme.py:718
 msgid "Australia, chassis nos. 2162 119 000 to 2162 164 000"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:358
+#: vinaigrette-deleteme.py:719
 msgid "Upper fibreboard partition (with M013, 015, 146 or 177 only)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:359
+#: vinaigrette-deleteme.py:720
 msgid "Seats and interior panels in black"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:360
+#: vinaigrette-deleteme.py:721
 msgid "Special sales campaign for \"Champagne Edition II\""
 msgstr ""
 
-#: mplate_decoder.Mcode/description:361
+#: vinaigrette-deleteme.py:722
 msgid "Special sales campaign for \"Silberfisch\" (Germany)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:362
+#: vinaigrette-deleteme.py:723
 msgid "Illuminated roof sign with Maltese Cross logo"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:363
-msgid ""
-"Without sliding door; in case of double sliding door version (M520), both "
-"sliding doors left out"
+#: vinaigrette-deleteme.py:724
+msgid "Without sliding door; in case of double sliding door version (M520), both sliding doors left out"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:364
+#: vinaigrette-deleteme.py:725
 msgid "Preparation for later installation of UTILA stretcher"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:365
+#: vinaigrette-deleteme.py:726
 msgid "Ventilation window in cabin door on driver's side"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:366
+#: vinaigrette-deleteme.py:727
 msgid "Sliding roof for RHD"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:368
-msgid ""
-"Production number indicating a special note in the German licence papers, "
-"saying that a Trumatic SB 2000 gas heater has been fitted"
+#: vinaigrette-deleteme.py:728
+msgid "Production number indicating a special note in the German licence papers, saying that a Trumatic SB 2000 gas heater has been fitted"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:369
+#: vinaigrette-deleteme.py:729
 msgid "Sliding door left instead of right"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:370
+#: vinaigrette-deleteme.py:730
 msgid "Sliding door on the right with RHD (instead of on the left with RHD)"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:371
+#: vinaigrette-deleteme.py:731
 msgid "Catalyst retrofit"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:372
+#: vinaigrette-deleteme.py:732
 msgid "Special sales campaign for \"Wild Westerner\""
 msgstr ""
 
-#: mplate_decoder.Mcode/description:373
-msgid ""
-"Basic Campmobile equipment: stool, curtains, table, double bed, roof "
-"cabinet, birch paneling, floor covering, two louvered windows"
+#: vinaigrette-deleteme.py:733
+msgid "Basic Campmobile equipment: stool, curtains, table, double bed, roof cabinet, birch paneling, floor covering, two louvered windows"
 msgstr ""
 
-#: mplate_decoder.Mcode/description:374
+#: vinaigrette-deleteme.py:734
 msgid "Campmobile with pop-up roof, gas stove. Similar to SO 72/3 Helsinki."
 msgstr ""
 
-#: mplate_decoder.Mcode/description:375
-msgid ""
-"Campmobile with pop-up roof, electric refrigerator, gas stove. Similar to SO "
-"72/3 Helsinki."
+#: vinaigrette-deleteme.py:735
+msgid "Campmobile with pop-up roof, electric refrigerator, gas stove. Similar to SO 72/3 Helsinki."
 msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:23
@@ -3965,11 +3653,8 @@ msgid "Sign up or login"
 msgstr "Registreu-vos o inicieu la sessió"
 
 #: vw_type2_id/templates/home.html:9
-msgid ""
-"A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
-msgstr ""
-"Joc d'eines per identificar vehicles Volkswagen Tipus 2 per als models dels "
-"anys 1968 a 1979."
+msgid "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
+msgstr "Joc d'eines per identificar vehicles Volkswagen Tipus 2 per als models dels anys 1968 a 1979."
 
 #: vw_type2_id/templates/home.html:17
 msgid "Decode the M-plate and find information about your bus."
@@ -4016,12 +3701,8 @@ msgid "Password reset"
 msgstr "Restabliment de la contrasenya"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:12
-msgid ""
-"Forgotten your password? Enter your email address below, and we'll email "
-"instructions for setting a new one."
-msgstr ""
-"Heu oblidat la contrasenya? Escriviu la vostra adreça electrònica aquí sota "
-"i us enviarem les instruccions per a restablir-la."
+msgid "Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one."
+msgstr "Heu oblidat la contrasenya? Escriviu la vostra adreça electrònica aquí sota i us enviarem les instruccions per a restablir-la."
 
 #: vw_type2_id/templates/registration/password_reset_form.html:17
 msgid "Reset my password"
@@ -4034,3 +3715,4 @@ msgstr "Registreu-vos"
 #: vw_type2_id/templates/signup.html:15
 msgid "Sign me up!"
 msgstr "Registra'm!"
+
