@@ -791,18 +791,18 @@ class MplateDecoder:
                         destination_country_description += \
                             f", {export_destination.region}"
                     if export_destination.port:
-                        destination_country_description += \
-                            f" via {export_destination.port}"
+                        destination_country_description = \
+                            _(f"{destination_country_description} via {export_destination.port}")  # noqa: E501
                     elif export_destination.city:
-                        destination_country_description += \
-                            f" via {export_destination.city}"
+                        destination_country_description = \
+                            _(f"{destination_country_description} via {export_destination.city}")  # noqa: E501
             else:
                 # The export code is not on the database
                 destination_country_description = \
                     _(f"Unknown ({export_destination_code})")
         else:
             # The export code hasn't been specified on M-plate form submission
-            destination_country_description = "Not specified"
+            destination_country_description = _("Not specified")
 
         logger.debug(f'Export destination country desc.:'
                      f' {destination_country_description}')
