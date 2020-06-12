@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 15:11+0000\n"
-"PO-Revision-Date: 2020-06-12 15:27\n"
+"PO-Revision-Date: 2020-06-12 22:23\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: mplate_decoder/forms.py:128
 msgid "Only digits, letters and spaces allowed"
-msgstr ""
+msgstr "Nur Ziffern, Buchstaben und Leerzeichen erlaubt"
 
 #: mplate_decoder/forms.py:140
 #, python-brace-format
@@ -324,12 +324,12 @@ msgstr ""
 #: mplate_decoder/models.py:795
 #, python-brace-format
 msgid "{destination_country_description} via {export_destination.port}"
-msgstr ""
+msgstr "{destination_country_description} über {export_destination.port}"
 
 #: mplate_decoder/models.py:798
 #, python-brace-format
 msgid "{destination_country_description} via {export_destination.city}"
-msgstr ""
+msgstr "{destination_country_description} über {export_destination.city}"
 
 #: mplate_decoder/models.py:805
 msgid "Not specified"
