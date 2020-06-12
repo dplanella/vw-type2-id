@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 21:37+0000\n"
+"POT-Creation-Date: 2020-06-12 15:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,6 +329,20 @@ msgstr ""
 
 #: mplate_decoder/models.py:786
 msgid "Undefined country or region"
+msgstr ""
+
+#: mplate_decoder/models.py:795
+#, python-brace-format
+msgid "{destination_country_description} via {export_destination.port}"
+msgstr ""
+
+#: mplate_decoder/models.py:798
+#, python-brace-format
+msgid "{destination_country_description} via {export_destination.city}"
+msgstr ""
+
+#: mplate_decoder/models.py:805
+msgid "Not specified"
 msgstr ""
 
 #: mplate_decoder/models.py:867
@@ -766,615 +780,1951 @@ msgid "Welcome to {SITE_NAME} Admin Portal"
 msgstr ""
 
 #: vinaigrette-deleteme.py:2
-msgid "SO3, VW Kombi as traffic accident observation vehicle"
+msgid "Grey"
 msgstr ""
 
-#: vinaigrette-deleteme.py:3
-msgid "Conversion"
+#: vinaigrette-deleteme.py:3 vinaigrette-deleteme.py:324
+msgid "Black"
 msgstr ""
 
 #: vinaigrette-deleteme.py:4
-msgid "SO67, Westfalia Campmobile 67A"
+msgid "Middle Red"
 msgstr ""
 
 #: vinaigrette-deleteme.py:5
+msgid "White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:6
+msgid "Burgundy Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:7
+msgid "Rally Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:8
+msgid "Sahara Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:9
+msgid "Sierra Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:10
+msgid "Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:11
+msgid "Hannen Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:12
+msgid "Panama Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:13
+msgid "Yellow/Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:14
+msgid "BP Yellow-White-Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:15
+msgid "Dakota Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:16
+msgid "Ceylon Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:17
+msgid "Ceylon Beige/Pastel White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:18
+msgid "Sun Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:19
+msgid "Saturn Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:20
+msgid "Curry Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:21
+msgid "Schindler Yellow/Ebony Black"
+msgstr ""
+
+#: vinaigrette-deleteme.py:22
+msgid "Yellow/Ebony Black"
+msgstr ""
+
+#: vinaigrette-deleteme.py:23
+msgid "Chrome Yellow, hubcaps and bumpers standard colour"
+msgstr ""
+
+#: vinaigrette-deleteme.py:24
+msgid "Wagner Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:25
+msgid "Karcher Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:26
+msgid "Yellow-Brown/White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:27
+msgid "Chrome Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:28
+msgid "Brilliant Orange"
+msgstr ""
+
+#: vinaigrette-deleteme.py:29
+msgid "Brown-Orange"
+msgstr ""
+
+#: vinaigrette-deleteme.py:30
+msgid "Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:31
+msgid "Orange"
+msgstr ""
+
+#: vinaigrette-deleteme.py:32
+msgid "Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:33
+msgid "Blue/Grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:34
+msgid "Orange-Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:35
+msgid "Fire Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:36
+msgid "Fire Red/White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:37
+msgid "Yellow/Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:38
+msgid "Wüstenrot Orange"
+msgstr ""
+
+#: vinaigrette-deleteme.py:39
+msgid "Orange, hubcaps and bumpers Orange"
+msgstr ""
+
+#: vinaigrette-deleteme.py:40
+msgid "Orange wheels, hubcaps and bumpers Ebony Black"
+msgstr ""
+
+#: vinaigrette-deleteme.py:41
+msgid "Orange/White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:42
+msgid "Police-White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:43
+msgid "Lotus White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:44
+msgid "Kasan Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:45
+msgid "Kasan Red/Pastel White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:46
+msgid "Montana Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:47
+msgid "Brilliant Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:48
+msgid "Olive Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:49
+msgid "Senegal Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:50
+msgid "Mars Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:51
+msgid "Chianti Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:52
+msgid "Phoenix Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:53
+msgid "Dusky Pink"
+msgstr ""
+
+#: vinaigrette-deleteme.py:54
+msgid "Light Grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:55
+msgid "Cola Red-New"
+msgstr ""
+
+#: vinaigrette-deleteme.py:56
+msgid "Cola Red-New/Papyrus White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:57
+msgid "Bright Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:58
+msgid "Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:59
+msgid "Ruby Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:60
+msgid "Meadow Green, wheels, hubcaps and bumpers standard colour"
+msgstr ""
+
+#: vinaigrette-deleteme.py:61
+msgid "Brilliant Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:62
+msgid "Neptune Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:63
+msgid "Velvet Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:64
+msgid "Velvet Green/Blue White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:65
+msgid "Gentian Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:66
+msgid "Miami Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:67
+msgid "Beat Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:68
+msgid "Kings Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:69
+msgid "Linen Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:70
+msgid "Linen Blue, roof: White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:71
+msgid "Orient Blue/Pastel White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:72
+msgid "Light Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:73
+msgid "Karstadt Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:74
+msgid "Niagara Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:75
+msgid "Orient Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:76
+msgid "Marina Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:77
+msgid "Linde Blue/Papyrus White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:78
+msgid "Signal Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:79
+msgid "Miele Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:80
+msgid "Titian Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:81
+msgid "Green-Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:82
+msgid "ADAC Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:83
+msgid "Ivory"
+msgstr ""
+
+#: vinaigrette-deleteme.py:84
+msgid "Conti Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:85
+msgid "Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:86
+msgid "Reef Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:87
+msgid "Pure White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:88
+msgid "Elm Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:89
+msgid "Delta Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:90
+msgid "Brilliant Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:91
+msgid "Cliff Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:92
+msgid "Sumatra Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:93
+msgid "Sumatra Green/Pastel White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:94
+msgid "Savanna Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:95
+msgid "Bali Yellow/Yosemite Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:96
+msgid "Pop Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:97
+msgid "Vaillant Green/Papyrus White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:98
+msgid "Cobalt Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:99
+msgid "VW-Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:100
+msgid "Zenit Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:101
+msgid "Sage Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:102
+msgid "Hippie Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:103
+msgid "Turquoise Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:104
+msgid "Island Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:105
+msgid "Ravenna Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:106
+msgid "Flamuco Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:107
+msgid "Lufthansa Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:108
+msgid "Mint Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:109
+msgid "Industry Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:110
+msgid "Dark Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:111
+msgid "Siemens Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:112
+msgid "Aero-Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:113
+msgid "Silver Grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:114
+msgid "Hoechst-Grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:115
+msgid "Wolf-Miller-Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:116
+msgid "Agate Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:117
+msgid "Pearl White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:118
+msgid "Pastel White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:119
+msgid "Papyrus White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:120
+msgid "Kansas Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:121
+msgid "White/Mint Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:122
+msgid "White/Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:123
+msgid "Silver Metallic"
+msgstr ""
+
+#: vinaigrette-deleteme.py:124
+msgid "Clear White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:125
+msgid "BP-White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:126
+msgid "Mexico Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:127
+msgid "Date Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:128
+msgid "Cloud White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:129
+msgid "Atlas White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:130
+msgid "Primered"
+msgstr ""
+
+#: vinaigrette-deleteme.py:131
+msgid "Enamel White"
+msgstr ""
+
+#: vinaigrette-deleteme.py:132
+msgid "Apple green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:133
+msgid "Mouse grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:134
+msgid "Fox Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:135
+msgid "Post Yellow/Cadmium Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:136
+msgid "Type 4"
+msgstr ""
+
+#: vinaigrette-deleteme.py:137
+msgid "Fuel injection (L-Jetronic)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:138
+msgid "Type 1"
+msgstr ""
+
+#: vinaigrette-deleteme.py:139
+msgid "Single carburetor"
+msgstr ""
+
+#: vinaigrette-deleteme.py:140
+msgid "Exhaust emission control"
+msgstr ""
+
+#: vinaigrette-deleteme.py:141
+msgid "Dual carburetor"
+msgstr ""
+
+#: vinaigrette-deleteme.py:142
+msgid "Stiff instead of torsion suspended clutch plate"
+msgstr ""
+
+#: vinaigrette-deleteme.py:143
+msgid "Afghanistan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:144 vinaigrette-deleteme.py:385
+msgid "Australia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:145
+msgid "Andorra"
+msgstr ""
+
+#: vinaigrette-deleteme.py:146
+msgid "Egypt"
+msgstr ""
+
+#: vinaigrette-deleteme.py:147
+msgid "Angola"
+msgstr ""
+
+#: vinaigrette-deleteme.py:148
+msgid "Djibouti"
+msgstr ""
+
+#: vinaigrette-deleteme.py:149
+msgid "Algeria"
+msgstr ""
+
+#: vinaigrette-deleteme.py:150
+msgid "Argentina"
+msgstr ""
+
+#: vinaigrette-deleteme.py:151
+msgid "Ethiopia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:152
+msgid "Albania"
+msgstr ""
+
+#: vinaigrette-deleteme.py:153
+msgid "People's Republic of South Yemen"
+msgstr ""
+
+#: vinaigrette-deleteme.py:154
+msgid "Bahrain"
+msgstr ""
+
+#: vinaigrette-deleteme.py:155
+msgid "Burundi"
+msgstr ""
+
+#: vinaigrette-deleteme.py:156 vinaigrette-deleteme.py:624
+msgid "Belgium"
+msgstr ""
+
+#: vinaigrette-deleteme.py:157
+msgid "Bulgaria"
+msgstr ""
+
+#: vinaigrette-deleteme.py:158
+msgid "Republic of the Congo"
+msgstr ""
+
+#: vinaigrette-deleteme.py:159
+msgid "Bermuda"
+msgstr ""
+
+#: vinaigrette-deleteme.py:160
+msgid "British New Guinea"
+msgstr ""
+
+#: vinaigrette-deleteme.py:161
+msgid "Bolivia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:162
+msgid "Papua"
+msgstr ""
+
+#: vinaigrette-deleteme.py:163
+msgid "Brazil"
+msgstr ""
+
+#: vinaigrette-deleteme.py:164
+msgid "British Solomon Islands Protectorate"
+msgstr ""
+
+#: vinaigrette-deleteme.py:165
+msgid "Burma"
+msgstr ""
+
+#: vinaigrette-deleteme.py:166
+msgid "British Samoa"
+msgstr ""
+
+#: vinaigrette-deleteme.py:167
+msgid "Ceylon"
+msgstr ""
+
+#: vinaigrette-deleteme.py:168
+msgid "Chile"
+msgstr ""
+
+#: vinaigrette-deleteme.py:169
+msgid "Zaire (Democratic Republic of The Congo)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:170
+msgid "Czeckoslovakia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:171
+msgid "Cyprus"
+msgstr ""
+
+#: vinaigrette-deleteme.py:172
+msgid "Denmark"
+msgstr ""
+
+#: vinaigrette-deleteme.py:173
+msgid "Denmak"
+msgstr ""
+
+#: vinaigrette-deleteme.py:174 vinaigrette-deleteme.py:534
+msgid "United Kingdom"
+msgstr ""
+
+#: vinaigrette-deleteme.py:175
+msgid "Ecuador"
+msgstr ""
+
+#: vinaigrette-deleteme.py:176
+msgid "Eritrea"
+msgstr ""
+
+#: vinaigrette-deleteme.py:177 vinaigrette-deleteme.py:462
+msgid "France"
+msgstr ""
+
+#: vinaigrette-deleteme.py:178
+msgid "Ivory Coast"
+msgstr ""
+
+#: vinaigrette-deleteme.py:179
+msgid "Republic of Gabon"
+msgstr ""
+
+#: vinaigrette-deleteme.py:180
+msgid "Republic of Guinea"
+msgstr ""
+
+#: vinaigrette-deleteme.py:181
+msgid "Cameroon"
+msgstr ""
+
+#: vinaigrette-deleteme.py:182
+msgid "Finland"
+msgstr ""
+
+#: vinaigrette-deleteme.py:183
+msgid "Senegal"
+msgstr ""
+
+#: vinaigrette-deleteme.py:184
+msgid "Togo"
+msgstr ""
+
+#: vinaigrette-deleteme.py:185
+msgid "People's Republic of Benin"
+msgstr ""
+
+#: vinaigrette-deleteme.py:186
+msgid "Chad"
+msgstr ""
+
+#: vinaigrette-deleteme.py:187
+msgid "Volta"
+msgstr ""
+
+#: vinaigrette-deleteme.py:188
+msgid "Sudan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:189
+msgid "Niger"
+msgstr ""
+
+#: vinaigrette-deleteme.py:190
+msgid "Fiji Islands"
+msgstr ""
+
+#: vinaigrette-deleteme.py:191
+msgid "Gambia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:192
+msgid "Ghana"
+msgstr ""
+
+#: vinaigrette-deleteme.py:193
+msgid "Gibraltar"
+msgstr ""
+
+#: vinaigrette-deleteme.py:194
+msgid "Guam"
+msgstr ""
+
+#: vinaigrette-deleteme.py:195
+msgid "Greece"
+msgstr ""
+
+#: vinaigrette-deleteme.py:196
+msgid "Gaza"
+msgstr ""
+
+#: vinaigrette-deleteme.py:197
+msgid "Hong Kong"
+msgstr ""
+
+#: vinaigrette-deleteme.py:198
+msgid "The Netherlands"
+msgstr ""
+
+#: vinaigrette-deleteme.py:199 vinaigrette-deleteme.py:384
+msgid "Japan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:200 vinaigrette-deleteme.py:396
+msgid "Italy"
+msgstr ""
+
+#: vinaigrette-deleteme.py:201
+msgid "Indonesia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:202
+msgid "India"
+msgstr ""
+
+#: vinaigrette-deleteme.py:203
+msgid "Iraq"
+msgstr ""
+
+#: vinaigrette-deleteme.py:204
+msgid "Israel"
+msgstr ""
+
+#: vinaigrette-deleteme.py:205
+msgid "Somalia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:206
+msgid "Iran"
+msgstr ""
+
+#: vinaigrette-deleteme.py:207
+msgid "Jordan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:208
+msgid "Ireland"
+msgstr ""
+
+#: vinaigrette-deleteme.py:209
+msgid "Iceland"
+msgstr ""
+
+#: vinaigrette-deleteme.py:210 vinaigrette-deleteme.py:520
+msgid "Yugoslavia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:211 vinaigrette-deleteme.py:550
+msgid "Canada"
+msgstr ""
+
+#: vinaigrette-deleteme.py:212
+msgid "Cambodia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:213
+msgid "Kenya"
+msgstr ""
+
+#: vinaigrette-deleteme.py:214
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: vinaigrette-deleteme.py:215
+msgid "Spain"
+msgstr ""
+
+#: vinaigrette-deleteme.py:216
+msgid "Columbia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:217
+msgid "Korea"
+msgstr ""
+
+#: vinaigrette-deleteme.py:218
+msgid "Kuwait"
+msgstr ""
+
+#: vinaigrette-deleteme.py:219
+msgid "Libya"
+msgstr ""
+
+#: vinaigrette-deleteme.py:220
+msgid "Lebanon"
+msgstr ""
+
+#: vinaigrette-deleteme.py:221
+msgid "Liberia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:222
+msgid "Luxemburg"
+msgstr ""
+
+#: vinaigrette-deleteme.py:223
+msgid "Libya, Tripoli"
+msgstr ""
+
+#: vinaigrette-deleteme.py:224
+msgid "Malta"
+msgstr ""
+
+#: vinaigrette-deleteme.py:225
+msgid "Mozambique, Geira"
+msgstr ""
+
+#: vinaigrette-deleteme.py:226
+msgid "Malaysia, Kuching"
+msgstr ""
+
+#: vinaigrette-deleteme.py:227
+msgid "Madagascar"
+msgstr ""
+
+#: vinaigrette-deleteme.py:228
+msgid "Mexico"
+msgstr ""
+
+#: vinaigrette-deleteme.py:229
+msgid "Malaysia, Kuala Belait"
+msgstr ""
+
+#: vinaigrette-deleteme.py:230
+msgid "Malaysia, Penang"
+msgstr ""
+
+#: vinaigrette-deleteme.py:231
+msgid "Malaysia, Jesselton"
+msgstr ""
+
+#: vinaigrette-deleteme.py:232
+msgid "Morocco, Casablanca"
+msgstr ""
+
+#: vinaigrette-deleteme.py:233
+msgid "Malaysia, Kuala Lumpur"
+msgstr ""
+
+#: vinaigrette-deleteme.py:234
+msgid "Singapore"
+msgstr ""
+
+#: vinaigrette-deleteme.py:235
+msgid "Mozambique, Nacala"
+msgstr ""
+
+#: vinaigrette-deleteme.py:236
+msgid "Mozambique"
+msgstr ""
+
+#: vinaigrette-deleteme.py:237
+msgid "Mozambique, Porto Amelia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:238
+msgid "Mozambique, Quelimone"
+msgstr ""
+
+#: vinaigrette-deleteme.py:239
+msgid "Malaysia, Sandakan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:240
+msgid "Mauritius"
+msgstr ""
+
+#: vinaigrette-deleteme.py:241
+msgid "Malaysia, Tawau"
+msgstr ""
+
+#: vinaigrette-deleteme.py:242
+msgid "Malawi"
+msgstr ""
+
+#: vinaigrette-deleteme.py:243
+msgid "Mexico, Veracruz"
+msgstr ""
+
+#: vinaigrette-deleteme.py:244
+msgid "New Zealand"
+msgstr ""
+
+#: vinaigrette-deleteme.py:245
+msgid "Nepal"
+msgstr ""
+
+#: vinaigrette-deleteme.py:246
+msgid "New Hebrides"
+msgstr ""
+
+#: vinaigrette-deleteme.py:247
+msgid "Nigeria"
+msgstr ""
+
+#: vinaigrette-deleteme.py:248
+msgid "Norway"
+msgstr ""
+
+#: vinaigrette-deleteme.py:249
+msgid "Nigeria, Port Harcourt"
+msgstr ""
+
+#: vinaigrette-deleteme.py:250
+msgid "Africa, Middle East including Iran and Afganistan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:251
+msgid "Middle and South America, Caribbean Sea"
+msgstr ""
+
+#: vinaigrette-deleteme.py:252
+msgid "North America"
+msgstr ""
+
+#: vinaigrette-deleteme.py:253 vinaigrette-deleteme.py:507
+msgid "Austria"
+msgstr ""
+
+#: vinaigrette-deleteme.py:254
+msgid "Panama"
+msgstr ""
+
+#: vinaigrette-deleteme.py:255
+msgid "Pakistan, Chittagong"
+msgstr ""
+
+#: vinaigrette-deleteme.py:256
+msgid "Philippines"
+msgstr ""
+
+#: vinaigrette-deleteme.py:257
+msgid "Peru"
+msgstr ""
+
+#: vinaigrette-deleteme.py:258
+msgid "Portugal"
+msgstr ""
+
+#: vinaigrette-deleteme.py:259
+msgid "Paraguay"
+msgstr ""
+
+#: vinaigrette-deleteme.py:260
+msgid "Panama, Canal Zone"
+msgstr ""
+
+#: vinaigrette-deleteme.py:261
+msgid "Poland"
+msgstr ""
+
+#: vinaigrette-deleteme.py:262
+msgid "Pakistan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:263
+msgid "Puerto Rico"
+msgstr ""
+
+#: vinaigrette-deleteme.py:264
+msgid "St. Thomas (Canada)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:265
+msgid "St. Croix (Caribbean)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:266
+msgid "Qatar"
+msgstr ""
+
+#: vinaigrette-deleteme.py:267
+msgid "Reunion"
+msgstr ""
+
+#: vinaigrette-deleteme.py:268
+msgid "Rhodesia, Beira"
+msgstr ""
+
+#: vinaigrette-deleteme.py:269
+msgid "Nyasaland"
+msgstr ""
+
+#: vinaigrette-deleteme.py:270
+msgid "Rhodesia, Lourenco Marques"
+msgstr ""
+
+#: vinaigrette-deleteme.py:271
+msgid "Romania"
+msgstr ""
+
+#: vinaigrette-deleteme.py:272
+msgid "Rwanda"
+msgstr ""
+
+#: vinaigrette-deleteme.py:273
+msgid "Saudi Arabia/East, Dammam"
+msgstr ""
+
+#: vinaigrette-deleteme.py:274 vinaigrette-deleteme.py:415
+msgid "Sweden"
+msgstr ""
+
+#: vinaigrette-deleteme.py:275
+msgid "Switzerland"
+msgstr ""
+
+#: vinaigrette-deleteme.py:276
+msgid "South Africa"
+msgstr ""
+
+#: vinaigrette-deleteme.py:277
+msgid "Sierra Leone"
+msgstr ""
+
+#: vinaigrette-deleteme.py:278
+msgid "USSR"
+msgstr ""
+
+#: vinaigrette-deleteme.py:279
+msgid "Morocco"
+msgstr ""
+
+#: vinaigrette-deleteme.py:280
+msgid "Saudi Arabia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:281
+msgid "Syria"
+msgstr ""
+
+#: vinaigrette-deleteme.py:282
+msgid "Tangiers, Morocco"
+msgstr ""
+
+#: vinaigrette-deleteme.py:283
+msgid "Tanzania, Tanga"
+msgstr ""
+
+#: vinaigrette-deleteme.py:284
+msgid "Thailand"
+msgstr ""
+
+#: vinaigrette-deleteme.py:285
+msgid "Tahiti"
+msgstr ""
+
+#: vinaigrette-deleteme.py:286
+msgid "Turkey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:287
+msgid "Thailand, Laos"
+msgstr ""
+
+#: vinaigrette-deleteme.py:288
+msgid "Tunisia"
+msgstr ""
+
+#: vinaigrette-deleteme.py:289 vinaigrette-deleteme.py:552
+msgid "USA"
+msgstr ""
+
+#: vinaigrette-deleteme.py:290
+msgid "Tanzania"
+msgstr ""
+
+#: vinaigrette-deleteme.py:291
+msgid "Taiwan"
+msgstr ""
+
+#: vinaigrette-deleteme.py:292
+msgid "Tanzania, Zanzibar"
+msgstr ""
+
+#: vinaigrette-deleteme.py:293
+msgid "Venezula"
+msgstr ""
+
+#: vinaigrette-deleteme.py:294
+msgid "Uganda"
+msgstr ""
+
+#: vinaigrette-deleteme.py:295
+msgid "Vietnam"
+msgstr ""
+
+#: vinaigrette-deleteme.py:296
+msgid "Hungary"
+msgstr ""
+
+#: vinaigrette-deleteme.py:297
+msgid "Iruguay"
+msgstr ""
+
+#: vinaigrette-deleteme.py:298
+msgid "Denmark, Copenhagen"
+msgstr ""
+
+#: vinaigrette-deleteme.py:299
+msgid "England via Ostende"
+msgstr ""
+
+#: vinaigrette-deleteme.py:300
+msgid "Yemin"
+msgstr ""
+
+#: vinaigrette-deleteme.py:301
+msgid "Yugoslavia, Skopje"
+msgstr ""
+
+#: vinaigrette-deleteme.py:302
+msgid "Yugoslavia, Ljubljana"
+msgstr ""
+
+#: vinaigrette-deleteme.py:303
+msgid "Yugoslavia, Mostar"
+msgstr ""
+
+#: vinaigrette-deleteme.py:304
+msgid "Yugoslavia, Novi Sad"
+msgstr ""
+
+#: vinaigrette-deleteme.py:305
+msgid "Yugoslavia, Sarajevo"
+msgstr ""
+
+#: vinaigrette-deleteme.py:306
+msgid "Yugoslavia, Rijeka"
+msgstr ""
+
+#: vinaigrette-deleteme.py:307
+msgid "Yugoslavia, Split"
+msgstr ""
+
+#: vinaigrette-deleteme.py:308
+msgid "Yugoslavia, Zagreb"
+msgstr ""
+
+#: vinaigrette-deleteme.py:309
+msgid "Central America"
+msgstr ""
+
+#: vinaigrette-deleteme.py:310
+msgid "Zambia, Beira"
+msgstr ""
+
+#: vinaigrette-deleteme.py:311
+msgid "Zambia, Lourenco Marques"
+msgstr ""
+
+#: vinaigrette-deleteme.py:312 vinaigrette-deleteme.py:561
+msgid "Germany"
+msgstr ""
+
+#: vinaigrette-deleteme.py:313
+msgid "Manual transmission, 4-speed"
+msgstr ""
+
+#: vinaigrette-deleteme.py:314
+msgid "Automatic transmission, 3-speed"
+msgstr ""
+
+#: vinaigrette-deleteme.py:315
+msgid "Alabaster (Grey)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:316
+msgid "Cloth"
+msgstr ""
+
+#: vinaigrette-deleteme.py:317
+msgid "Camping Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:318
+msgid "Light Grey/Medium Grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:319
+msgid "Leatherette"
+msgstr ""
+
+#: vinaigrette-deleteme.py:320
+msgid "Light Sand/Khaki Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:321
+msgid "Camping Green Yellow"
+msgstr ""
+
+#: vinaigrette-deleteme.py:322
+msgid "Dark Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:323
+msgid "Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:325
+msgid "Indian Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:326
+msgid "Camping Green Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:327
+msgid "Medium Grey"
+msgstr ""
+
+#: vinaigrette-deleteme.py:328
+msgid "Camping Brown Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:329
+msgid "Gala Red"
+msgstr ""
+
+#: vinaigrette-deleteme.py:330
+msgid "Camping Green"
+msgstr ""
+
+#: vinaigrette-deleteme.py:331
+msgid "Dark Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:332
+msgid "Cork"
+msgstr ""
+
+#: vinaigrette-deleteme.py:333
+msgid "Leather Beige"
+msgstr ""
+
+#: vinaigrette-deleteme.py:334
+msgid "Canyon Brown"
+msgstr ""
+
+#: vinaigrette-deleteme.py:335
+msgid "Marine (Dark Blue)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:336
+msgid "Parchment (Beige Grey)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:337
+msgid "Slate"
+msgstr ""
+
+#: vinaigrette-deleteme.py:338
+msgid "Juniper (Green)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:339
+msgid "Lapis Blue"
+msgstr ""
+
+#: vinaigrette-deleteme.py:340
+msgid "Bamboo (Beige)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:341
+msgid "Sienna (Red Brown)"
+msgstr ""
+
+#: vinaigrette-deleteme.py:342
+msgid "SO3, VW Kombi as traffic accident observation vehicle"
+msgstr ""
+
+#: vinaigrette-deleteme.py:343
+msgid "Conversion"
+msgstr ""
+
+#: vinaigrette-deleteme.py:344
+msgid "SO67, Westfalia Campmobile 67A"
+msgstr ""
+
+#: vinaigrette-deleteme.py:345
 msgid ""
 "SO67, Westfalia Campmobile 67B. As interior 67A but with additional pop-up "
 "roof, bed and built-in roof luggage rack"
 msgstr ""
 
-#: vinaigrette-deleteme.py:6
+#: vinaigrette-deleteme.py:346
 msgid ""
 "SO67, Westfalia Campmobile 67D. As interior 67B but with additional tent"
 msgstr ""
 
-#: vinaigrette-deleteme.py:7
+#: vinaigrette-deleteme.py:347
 msgid "SO67, Westfalia Campmobile 67E"
 msgstr ""
 
-#: vinaigrette-deleteme.py:8
+#: vinaigrette-deleteme.py:348
 msgid "SO67, Westfalia Campmobile 67F"
 msgstr ""
 
-#: vinaigrette-deleteme.py:9
+#: vinaigrette-deleteme.py:349
 msgid "SO67, Westfalia Campmobile 67G"
 msgstr ""
 
-#: vinaigrette-deleteme.py:10
+#: vinaigrette-deleteme.py:350
 msgid "SO67, Westfalia Campmobile 67H"
 msgstr ""
 
-#: vinaigrette-deleteme.py:11
+#: vinaigrette-deleteme.py:351
 msgid "VW Kombi as traffic accident vehicle"
 msgstr ""
 
-#: vinaigrette-deleteme.py:12
+#: vinaigrette-deleteme.py:352
 msgid ""
 "VW Kombi as traffic accident vehicle with additional roof platform and ladder"
 msgstr ""
 
-#: vinaigrette-deleteme.py:13
+#: vinaigrette-deleteme.py:353
 msgid "Double-seater middle bench and special rear bench"
 msgstr ""
 
-#: vinaigrette-deleteme.py:14
+#: vinaigrette-deleteme.py:354
 msgid "Standard Campmobile, without pop-up roof, folding spare tyre"
 msgstr ""
 
-#: vinaigrette-deleteme.py:15
+#: vinaigrette-deleteme.py:355
 msgid "Pop Up Top Campmobile, with pop-up roof, folding spare tyre"
 msgstr ""
 
-#: vinaigrette-deleteme.py:16
+#: vinaigrette-deleteme.py:356
 msgid "Campmobile with pop-up roof"
 msgstr ""
 
-#: vinaigrette-deleteme.py:17
+#: vinaigrette-deleteme.py:357
 msgid "Campmobile with pop-up roof and combined gas/electric refrigerator"
 msgstr ""
 
-#: vinaigrette-deleteme.py:18
+#: vinaigrette-deleteme.py:358
 msgid ""
 "Deluxe Campmobile with pop-up roof, folding spare tyre, combined gas/"
 "electric refrigerator, gas stove"
 msgstr ""
 
-#: vinaigrette-deleteme.py:19
+#: vinaigrette-deleteme.py:359
 msgid "With additional tent for P21 to P27"
 msgstr ""
 
-#: vinaigrette-deleteme.py:20
+#: vinaigrette-deleteme.py:360
 msgid "With additional electricity inlet for 220V. For P25 and P26"
 msgstr ""
 
-#: vinaigrette-deleteme.py:21
+#: vinaigrette-deleteme.py:361
 msgid "Westfalia interior (without pop-up roof)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:22
+#: vinaigrette-deleteme.py:362
 msgid ""
 "Combined gas/electric refrigerator, with gas cooking unit, side bench in "
 "driving direction for storing gas bottles. For P21 and P22."
 msgstr ""
 
-#: vinaigrette-deleteme.py:23
+#: vinaigrette-deleteme.py:363
 msgid ""
 "Deluxe Campmobile with pop-up roof, folding spare tyre, electric "
 "refrigerator, snack table"
 msgstr ""
 
-#: vinaigrette-deleteme.py:24
+#: vinaigrette-deleteme.py:364
 msgid "Additional tent for interior P31"
 msgstr ""
 
-#: vinaigrette-deleteme.py:25
+#: vinaigrette-deleteme.py:365
 msgid ""
 "With US-specific sealed beam headlamps, for M027: with US-specific carriers "
 "for catalysts (only with M524)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:26
+#: vinaigrette-deleteme.py:366
 msgid "Heater outlet in seat box of rear bench seat"
 msgstr ""
 
-#: vinaigrette-deleteme.py:27
+#: vinaigrette-deleteme.py:367
 msgid "Westfalia Campmobiles"
 msgstr ""
 
-#: vinaigrette-deleteme.py:28
+#: vinaigrette-deleteme.py:368
 msgid "Without tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:29
+#: vinaigrette-deleteme.py:369
 msgid "Without battery"
 msgstr ""
 
-#: vinaigrette-deleteme.py:30
+#: vinaigrette-deleteme.py:370
 msgid "Additional dust sealing for engine compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:31
+#: vinaigrette-deleteme.py:371
 msgid "To chassis no. 2132 102 496"
 msgstr ""
 
-#: vinaigrette-deleteme.py:32
+#: vinaigrette-deleteme.py:372
 msgid ""
 "Exhaust emission control installation and speedometer in miles instead of km "
 "(with M524 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:33
+#: vinaigrette-deleteme.py:373
 msgid ""
 "Middle three-person bench seat, rear three-person bench seat and interior "
 "trim in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:34
+#: vinaigrette-deleteme.py:374
 msgid ""
 "Middle three-person bench seat and interior trim in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:35
+#: vinaigrette-deleteme.py:375
 msgid "With hazard light installation"
 msgstr ""
 
-#: vinaigrette-deleteme.py:36
+#: vinaigrette-deleteme.py:376
 msgid "Without headlamp flasher"
 msgstr ""
 
-#: vinaigrette-deleteme.py:37
+#: vinaigrette-deleteme.py:377
 msgid "Speedometer and odometer in miles"
 msgstr ""
 
-#: vinaigrette-deleteme.py:38
+#: vinaigrette-deleteme.py:378
 msgid "Sealed beam headlamps"
 msgstr ""
 
-#: vinaigrette-deleteme.py:39
+#: vinaigrette-deleteme.py:379
 msgid "Export, not Canada and USA"
 msgstr ""
 
-#: vinaigrette-deleteme.py:40
+#: vinaigrette-deleteme.py:380
 msgid "Sealed beam headlamps, side marker reflectors and reversing lights"
 msgstr ""
 
-#: vinaigrette-deleteme.py:41
+#: vinaigrette-deleteme.py:381
 msgid "Speedometer with trip recorder and clock"
 msgstr ""
 
-#: vinaigrette-deleteme.py:42
+#: vinaigrette-deleteme.py:382
 msgid "With activated carbon container for absorbing fuel vapour"
 msgstr ""
 
-#: vinaigrette-deleteme.py:43
+#: vinaigrette-deleteme.py:383
 msgid "USA-California"
 msgstr ""
 
-#: vinaigrette-deleteme.py:44
-msgid "Japan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:45
-msgid "Australia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:46
+#: vinaigrette-deleteme.py:386
 msgid ""
 "Plate with emissions value and engine that complies to the California "
 "exhaust emission standards"
 msgstr ""
 
-#: vinaigrette-deleteme.py:47
+#: vinaigrette-deleteme.py:387
 msgid "Plate with emissions value, engine with catalyst"
 msgstr ""
 
-#: vinaigrette-deleteme.py:48
+#: vinaigrette-deleteme.py:388
 msgid "Without stretchers, also in combination with M152 (ambulance)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:49
+#: vinaigrette-deleteme.py:389
 msgid "Towing hook front and rear"
 msgstr ""
 
-#: vinaigrette-deleteme.py:50
+#: vinaigrette-deleteme.py:390
 msgid "Coupled headlamp flasher and licence plate light"
 msgstr ""
 
-#: vinaigrette-deleteme.py:51
+#: vinaigrette-deleteme.py:391
 msgid ""
 "Battery approved by research and development department and free from import "
 "duty and costs"
 msgstr ""
 
-#: vinaigrette-deleteme.py:52
+#: vinaigrette-deleteme.py:392
 msgid "To chassis no. 2122 088 996, Austria"
 msgstr ""
 
-#: vinaigrette-deleteme.py:53
+#: vinaigrette-deleteme.py:393
 msgid "Lockable cap for fuel tank"
 msgstr ""
 
-#: vinaigrette-deleteme.py:54
+#: vinaigrette-deleteme.py:394
 msgid "Red Crescent lamp instead of Red Cross lamp"
 msgstr ""
 
-#: vinaigrette-deleteme.py:55
+#: vinaigrette-deleteme.py:395
 msgid ""
 "Side turn signals, altered handbrake handle, white front turn signal lenses"
 msgstr ""
 
-#: vinaigrette-deleteme.py:56
-msgid "Italy"
-msgstr ""
-
-#: vinaigrette-deleteme.py:57
+#: vinaigrette-deleteme.py:397
 msgid ""
 "Side-mounted turn signals, altered handbrake handle, white front turn "
 "signals, without emergency light system, without hazard light system (France "
 "and Italy only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:58
+#: vinaigrette-deleteme.py:398
 msgid "Without hazard light system"
 msgstr ""
 
-#: vinaigrette-deleteme.py:59
+#: vinaigrette-deleteme.py:399
 msgid ""
 "Tyres approved by research and development department and free from import "
 "duty and costs"
 msgstr ""
 
-#: vinaigrette-deleteme.py:60
+#: vinaigrette-deleteme.py:400
 msgid "Side turn signals and inner rear-view mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:61
+#: vinaigrette-deleteme.py:401
 msgid "Side turn signals"
 msgstr ""
 
-#: vinaigrette-deleteme.py:62
+#: vinaigrette-deleteme.py:402
 msgid "Two reversing lights"
 msgstr ""
 
-#: vinaigrette-deleteme.py:63
+#: vinaigrette-deleteme.py:403
 msgid "Dual-brake-circuit control light (only with M511)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:64
+#: vinaigrette-deleteme.py:404
 msgid "Dual-brake-circuit and handbrake control light"
 msgstr ""
 
-#: vinaigrette-deleteme.py:65
+#: vinaigrette-deleteme.py:405
 msgid ""
 "With pedestal and double pulley for the later installation of a second "
 "generator (not in combination with M153, M157 and M251)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:66
+#: vinaigrette-deleteme.py:406
 msgid "Cloth upholstery instead of leatherette"
 msgstr ""
 
-#: vinaigrette-deleteme.py:67
+#: vinaigrette-deleteme.py:407
 msgid "Lockable glove compartment lid (only with M511)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:68
+#: vinaigrette-deleteme.py:408
 msgid "With steering lock"
 msgstr ""
 
-#: vinaigrette-deleteme.py:69
+#: vinaigrette-deleteme.py:409
 msgid "To VIN 2x9 300 000"
 msgstr ""
 
-#: vinaigrette-deleteme.py:70
+#: vinaigrette-deleteme.py:410
 msgid "Hardwood strips for flatbed not fastened to vehicle"
 msgstr ""
 
-#: vinaigrette-deleteme.py:71
+#: vinaigrette-deleteme.py:411
 msgid "Eberspacher BA6 petrol heater (LHD) (fitted under cargo floor)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:72
+#: vinaigrette-deleteme.py:412
 msgid ""
 "Type labelling of seat mounting and identification plate for England and "
 "Ireland"
 msgstr ""
 
-#: vinaigrette-deleteme.py:73
+#: vinaigrette-deleteme.py:413
 msgid ""
 "Convex rear-view mirror, outer, right. Inner rear-view mirror with shorter "
 "arm"
 msgstr ""
 
-#: vinaigrette-deleteme.py:74
+#: vinaigrette-deleteme.py:414
 msgid "Sun visor, right without mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:75
-msgid "Sweden"
-msgstr ""
-
-#: vinaigrette-deleteme.py:76
+#: vinaigrette-deleteme.py:416
 msgid "Compliance with Sweden exhaust emission standards"
 msgstr ""
 
-#: vinaigrette-deleteme.py:77
+#: vinaigrette-deleteme.py:417
 msgid "Without sidegates and tailgate"
 msgstr ""
 
-#: vinaigrette-deleteme.py:78
+#: vinaigrette-deleteme.py:418
 msgid "Writings for maximum axle loads and maximum weight"
 msgstr ""
 
-#: vinaigrette-deleteme.py:79
+#: vinaigrette-deleteme.py:419
 msgid "Floor cover (rubber mat) in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:80
+#: vinaigrette-deleteme.py:420
 msgid "12V 54A battery instead of standard 12V 45A battery"
 msgstr ""
 
-#: vinaigrette-deleteme.py:81
+#: vinaigrette-deleteme.py:421
 msgid "Two front towing hooks"
 msgstr ""
 
-#: vinaigrette-deleteme.py:82
+#: vinaigrette-deleteme.py:422
 msgid "Tilt and bows for Pick-Up"
 msgstr ""
 
-#: vinaigrette-deleteme.py:83
+#: vinaigrette-deleteme.py:423
 msgid "Second lid for underfloor cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:84
+#: vinaigrette-deleteme.py:424
 msgid "Battery under customs seal"
 msgstr ""
 
-#: vinaigrette-deleteme.py:85
+#: vinaigrette-deleteme.py:425
 msgid "Roof opening and reinforcement for Westfalia pop-up roof SO 73"
 msgstr ""
 
-#: vinaigrette-deleteme.py:86
+#: vinaigrette-deleteme.py:426
 msgid "Mud flaps, rear"
 msgstr ""
 
-#: vinaigrette-deleteme.py:87
+#: vinaigrette-deleteme.py:427
 msgid "Mountings for first aid kit"
 msgstr ""
 
-#: vinaigrette-deleteme.py:88
+#: vinaigrette-deleteme.py:428
 msgid "With warning triangle"
 msgstr ""
 
-#: vinaigrette-deleteme.py:89
+#: vinaigrette-deleteme.py:429
 msgid ""
 "Filled in factory with double amount of petrol (used for driving on and off "
 "the train, for example)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:90
+#: vinaigrette-deleteme.py:430
 msgid "Self-adjusting drum brakes (rear)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:91
+#: vinaigrette-deleteme.py:431
 msgid "Laminated windscreen glass"
 msgstr ""
 
-#: vinaigrette-deleteme.py:92
+#: vinaigrette-deleteme.py:432
 msgid "Gearbox with mountain ratio for mountainous areas"
 msgstr ""
 
-#: vinaigrette-deleteme.py:93
+#: vinaigrette-deleteme.py:433
 msgid "Ventilation window in rear side panel opposite sliding door"
 msgstr ""
 
-#: vinaigrette-deleteme.py:94
+#: vinaigrette-deleteme.py:434
 msgid "Lockable engine lid"
 msgstr ""
 
-#: vinaigrette-deleteme.py:95
+#: vinaigrette-deleteme.py:435
 msgid "Wolfsburg car radio"
 msgstr ""
 
-#: vinaigrette-deleteme.py:96
+#: vinaigrette-deleteme.py:436
 msgid "Braunschweig car radio"
 msgstr ""
 
-#: vinaigrette-deleteme.py:97
+#: vinaigrette-deleteme.py:437
 msgid "Emden car radio"
 msgstr ""
 
-#: vinaigrette-deleteme.py:98
+#: vinaigrette-deleteme.py:438
 msgid "Ingolstadt car radio"
 msgstr ""
 
-#: vinaigrette-deleteme.py:99
+#: vinaigrette-deleteme.py:439
 msgid "Tubeless off-road tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:100
+#: vinaigrette-deleteme.py:440
 msgid "Without VW logo on front"
 msgstr ""
 
-#: vinaigrette-deleteme.py:101
+#: vinaigrette-deleteme.py:441
 msgid "Off-road tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:102
+#: vinaigrette-deleteme.py:442
 msgid "Rear-window heating"
 msgstr ""
 
-#: vinaigrette-deleteme.py:103
+#: vinaigrette-deleteme.py:443
 msgid "Heavy duty shock absorbers front and back"
 msgstr ""
 
-#: vinaigrette-deleteme.py:104
+#: vinaigrette-deleteme.py:444
 msgid "Upholstery material, special version (cloth)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:105
+#: vinaigrette-deleteme.py:445
 msgid "Removable prints ‘Deutsche Bundespost’ and ‘Posthorn’ logo"
 msgstr ""
 
-#: vinaigrette-deleteme.py:106
+#: vinaigrette-deleteme.py:446
 msgid "German Mail"
 msgstr ""
 
-#: vinaigrette-deleteme.py:107
+#: vinaigrette-deleteme.py:447
 msgid "Removable prints ‘Deutsche Bundesbahn’ and tyre-pressure text"
 msgstr ""
 
-#: vinaigrette-deleteme.py:108
+#: vinaigrette-deleteme.py:448
 msgid "Removable prints ‘Unicef’"
 msgstr ""
 
-#: vinaigrette-deleteme.py:109
+#: vinaigrette-deleteme.py:449
 msgid "Admittance plate for Canada"
 msgstr ""
 
-#: vinaigrette-deleteme.py:110
+#: vinaigrette-deleteme.py:450
 msgid "Prepared for low-loader Pick-Up"
 msgstr ""
 
-#: vinaigrette-deleteme.py:111
+#: vinaigrette-deleteme.py:451
 msgid ""
 "Surveyor measuring group vehicle. Same as M541 but with swivelling seat and "
 "table on division wall instead of bench (with M541 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:112
+#: vinaigrette-deleteme.py:452
 msgid "Without seats in rear"
 msgstr ""
 
-#: vinaigrette-deleteme.py:113
+#: vinaigrette-deleteme.py:453
 msgid "Altered heater outlet of optional petrol heater (only with M119)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:114
+#: vinaigrette-deleteme.py:454
 msgid "Duty-free tyres (duty refund)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:115
+#: vinaigrette-deleteme.py:455
 msgid "Eberspacher BN4 petrol heater with outlet in load/passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:116
+#: vinaigrette-deleteme.py:456
 msgid ""
 "Eberspacher BN4 petrol heater with air recirculation connection and outlet "
 "in load/passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:117
+#: vinaigrette-deleteme.py:457
 msgid "Eberspacher BN4 heater"
 msgstr ""
 
-#: vinaigrette-deleteme.py:118
+#: vinaigrette-deleteme.py:458
 msgid "Without mountings for seats and safety belts in cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:119
+#: vinaigrette-deleteme.py:459
 msgid "Two electric ventilators in fresh-air system"
 msgstr ""
 
-#: vinaigrette-deleteme.py:120
+#: vinaigrette-deleteme.py:460
 msgid "Suppression equipment for radio reception"
 msgstr ""
 
-#: vinaigrette-deleteme.py:121
+#: vinaigrette-deleteme.py:461
 msgid "Yellow headlamp bulbs and safety inner rear-view mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:122
-msgid "France"
-msgstr ""
-
-#: vinaigrette-deleteme.py:123
+#: vinaigrette-deleteme.py:463
 msgid "Yellow headlamp bulbs"
 msgstr ""
 
-#: vinaigrette-deleteme.py:124
+#: vinaigrette-deleteme.py:464
 msgid "1600cc engine with stiff instead of torsion-suspended clutch disc"
 msgstr ""
 
-#: vinaigrette-deleteme.py:125
+#: vinaigrette-deleteme.py:465
 msgid "Rear panel lid without window"
 msgstr ""
 
-#: vinaigrette-deleteme.py:126
+#: vinaigrette-deleteme.py:466
 msgid "Whitewall tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:127
+#: vinaigrette-deleteme.py:467
 msgid "Without steel sliding roof"
 msgstr ""
 
-#: vinaigrette-deleteme.py:128
+#: vinaigrette-deleteme.py:468
 msgid ""
 "Removable prints \"Deutsche Bundespost\", \"Fernmeldedienst\" and post horn "
 "logo"
 msgstr ""
 
-#: vinaigrette-deleteme.py:129
+#: vinaigrette-deleteme.py:469
 msgid "German Mail (telecomms department)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:130
+#: vinaigrette-deleteme.py:470
 msgid ""
 "Chassis plate without prints of the maximum total mass and the maximum axle "
 "loads"
 msgstr ""
 
-#: vinaigrette-deleteme.py:131
+#: vinaigrette-deleteme.py:471
 msgid "Israel, Switzerland, Thailand"
 msgstr ""
 
-#: vinaigrette-deleteme.py:132
+#: vinaigrette-deleteme.py:472
 msgid "Fold-down passenger seat"
 msgstr ""
 
-#: vinaigrette-deleteme.py:133
+#: vinaigrette-deleteme.py:473
 msgid ""
 "Modifications for fire truck, front bumper mounted higher for taking steep "
 "slope; with laminated windscreen"
 msgstr ""
 
-#: vinaigrette-deleteme.py:134
+#: vinaigrette-deleteme.py:474
 msgid ""
 "Modifications for fire truck, without deformation element behind front "
 "bumper; with laminated windscreen"
 msgstr ""
 
-#: vinaigrette-deleteme.py:135
+#: vinaigrette-deleteme.py:475
 msgid "Heater outlet in rear part of cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:136
+#: vinaigrette-deleteme.py:476
 msgid "With heater outlet under middle bench seat"
 msgstr ""
 
-#: vinaigrette-deleteme.py:137
+#: vinaigrette-deleteme.py:477
 msgid "With safety lock for sliding door(s) and rear panel lid"
 msgstr ""
 
-#: vinaigrette-deleteme.py:138
+#: vinaigrette-deleteme.py:478
 msgid ""
 "Middle bench seat (two persons), rear bench seat and interior trim in "
 "passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:139
+#: vinaigrette-deleteme.py:479
 msgid "Seven-seater model instead of eight-seater model"
 msgstr ""
 
-#: vinaigrette-deleteme.py:140
+#: vinaigrette-deleteme.py:480
 msgid "With hinged rear seat backrest"
 msgstr ""
 
-#: vinaigrette-deleteme.py:141
+#: vinaigrette-deleteme.py:481
 msgid "Painted instead of chrome parts"
 msgstr ""
 
-#: vinaigrette-deleteme.py:142
+#: vinaigrette-deleteme.py:482
 msgid ""
 "VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in "
 "bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, "
@@ -1384,839 +2734,811 @@ msgid ""
 "according to DIN requirement, transparent battery cases (only with M623)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:143
+#: vinaigrette-deleteme.py:483
 msgid "Simplified rails, plus stretcher on right-hand side"
 msgstr ""
 
-#: vinaigrette-deleteme.py:144
+#: vinaigrette-deleteme.py:484
 msgid ""
 "Paper element cyclone air filter without carburettor pre-heating (1300 and "
 "1600cc engines only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:145
+#: vinaigrette-deleteme.py:485
 msgid "Two oil bath air filters with larger oil capacity"
 msgstr ""
 
-#: vinaigrette-deleteme.py:146
+#: vinaigrette-deleteme.py:486
 msgid "Oil bath air filter with larger oil capacity for dusty regions"
 msgstr ""
 
-#: vinaigrette-deleteme.py:147
+#: vinaigrette-deleteme.py:487
 msgid "Paper element air filter with cyclone function for dusty regions"
 msgstr ""
 
-#: vinaigrette-deleteme.py:148
+#: vinaigrette-deleteme.py:488
 msgid "Type 1 engines"
 msgstr ""
 
-#: vinaigrette-deleteme.py:149
+#: vinaigrette-deleteme.py:489
 msgid "Exhaust emission control system"
 msgstr ""
 
-#: vinaigrette-deleteme.py:150
+#: vinaigrette-deleteme.py:490
 msgid ""
 "Exhaust emission control system and activated carbon container for absorbing "
 "fuel vapour"
 msgstr ""
 
-#: vinaigrette-deleteme.py:151
+#: vinaigrette-deleteme.py:491
 msgid "Fuel injection engine"
 msgstr ""
 
-#: vinaigrette-deleteme.py:152
+#: vinaigrette-deleteme.py:492
 msgid "Securing plate and rings for padlock"
 msgstr ""
 
-#: vinaigrette-deleteme.py:153
+#: vinaigrette-deleteme.py:493
 msgid "Blue rotating light and siren"
 msgstr ""
 
-#: vinaigrette-deleteme.py:154
+#: vinaigrette-deleteme.py:494
 msgid "Seats in cabin with mountings for headrests"
 msgstr ""
 
-#: vinaigrette-deleteme.py:155
+#: vinaigrette-deleteme.py:495
 msgid "Rubber strips for bumpers"
 msgstr ""
 
-#: vinaigrette-deleteme.py:156
+#: vinaigrette-deleteme.py:496
 msgid "Gauged trip writer"
 msgstr ""
 
-#: vinaigrette-deleteme.py:157
+#: vinaigrette-deleteme.py:497
 msgid "Tubeless textile or steel-ply tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:158
+#: vinaigrette-deleteme.py:498
 msgid "Tubeless steel-ply tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:159
+#: vinaigrette-deleteme.py:499
 msgid ""
 "C-shaped guiding rails on metal partition between cabin and cargo "
 "compartment and on the side opposite the sliding door (for model 211 only "
 "with M540, for model 231 only wit M120, M540)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:160
+#: vinaigrette-deleteme.py:500
 msgid "Three-seater bench in the back and interior trim"
 msgstr ""
 
-#: vinaigrette-deleteme.py:161
+#: vinaigrette-deleteme.py:501
 msgid ""
 "Wooden floor panels with built-in guiding rails (also in side panels and on "
 "floor above engine compartment) for mounting tools and instruments"
 msgstr ""
 
-#: vinaigrette-deleteme.py:162
+#: vinaigrette-deleteme.py:502
 msgid "Without three-seater middle bench seat"
 msgstr ""
 
-#: vinaigrette-deleteme.py:163
+#: vinaigrette-deleteme.py:503
 msgid "Chrome hubcaps"
 msgstr ""
 
-#: vinaigrette-deleteme.py:164
+#: vinaigrette-deleteme.py:504
 msgid "Chrome hubcaps and headlamp rings"
 msgstr ""
 
-#: vinaigrette-deleteme.py:165
+#: vinaigrette-deleteme.py:505
 msgid "Chrome hubcaps, headlamp rings and rear-view mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:166
+#: vinaigrette-deleteme.py:506
 msgid "With seatbelt mounting points for folding seat in rear compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:167
-msgid "Austria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:168
+#: vinaigrette-deleteme.py:508
 msgid ""
 "Three-point safety belts for driver and passenger seat with roll-up "
 "automatic and push-button lock"
 msgstr ""
 
-#: vinaigrette-deleteme.py:169
+#: vinaigrette-deleteme.py:509
 msgid ""
 "Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:170
+#: vinaigrette-deleteme.py:510
 msgid "USA and Canada"
 msgstr ""
 
-#: vinaigrette-deleteme.py:171
+#: vinaigrette-deleteme.py:511
 msgid "Two-point seatbelts for all seats in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:172
+#: vinaigrette-deleteme.py:512
 msgid "Headlamps for countries with left-hand traffic"
 msgstr ""
 
-#: vinaigrette-deleteme.py:173
+#: vinaigrette-deleteme.py:513
 msgid ""
 "Simplified heating system with special heater boxes, no isolation on hot-air "
 "ducting, no noise isolation on front of car and on front wheel arches. Extra "
 "fresh-air ventilator and cabin-door ventilation (not with M60,M141,M505)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:174
+#: vinaigrette-deleteme.py:514
 msgid "With outer and centre underfloor plates"
 msgstr ""
 
-#: vinaigrette-deleteme.py:175
+#: vinaigrette-deleteme.py:515
 msgid ""
 "With electrical installation for Japan: with side turn signals front, back-"
 "up lamps, with parking light front and rear, without licence-plate light and "
 "engine that complies to Japanese exhaust regulations (with M26 and M187 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:176
+#: vinaigrette-deleteme.py:516
 msgid ""
 "Convex outer rear-view mirrors left and right instead of mirrors with flat "
 "glass"
 msgstr ""
 
-#: vinaigrette-deleteme.py:177
+#: vinaigrette-deleteme.py:517
 msgid "Exclusive use of Blaupunkt car radios (with M95, 97 or 98 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:178
+#: vinaigrette-deleteme.py:518
 msgid "Rotating light red instead of blue (with M160 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:179
+#: vinaigrette-deleteme.py:519
 msgid "Various parts not mounted; these parts sent via the CKD department"
 msgstr ""
 
-#: vinaigrette-deleteme.py:180
-msgid "Yugoslavia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:181
+#: vinaigrette-deleteme.py:521
 msgid "Pick-Up with enlarged wooden platform"
 msgstr ""
 
-#: vinaigrette-deleteme.py:182
+#: vinaigrette-deleteme.py:522
 msgid "Eberspacher BN4 petrol heater"
 msgstr ""
 
-#: vinaigrette-deleteme.py:183
+#: vinaigrette-deleteme.py:523
 msgid ""
 "With second hot-air outlet in metal Partition as in ambulance (with M500 "
 "only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:184
+#: vinaigrette-deleteme.py:524
 msgid "Year might not be correct"
 msgstr ""
 
-#: vinaigrette-deleteme.py:185
+#: vinaigrette-deleteme.py:525
 msgid "Inner rear-view mirror, anti-dazzle"
 msgstr ""
 
-#: vinaigrette-deleteme.py:186
+#: vinaigrette-deleteme.py:526
 msgid "Trailer hitch and extra towing hook on front"
 msgstr ""
 
-#: vinaigrette-deleteme.py:187
+#: vinaigrette-deleteme.py:527
 msgid "Trailer hitch"
 msgstr ""
 
-#: vinaigrette-deleteme.py:188
+#: vinaigrette-deleteme.py:528
 msgid "Tilt made of PVC instead of sail-cloth (with M070 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:189
+#: vinaigrette-deleteme.py:529
 msgid "Tilt made of PVC instead of sail-cloth (with M207 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:190
+#: vinaigrette-deleteme.py:530
 msgid "With post horn sticker"
 msgstr ""
 
-#: vinaigrette-deleteme.py:191
+#: vinaigrette-deleteme.py:531
 msgid "German Mail – Berlin"
 msgstr ""
 
-#: vinaigrette-deleteme.py:192
+#: vinaigrette-deleteme.py:532
 msgid ""
 "With \"Fernmeldedienst\" (\"telecommunications department\") and post horn "
 "stickers"
 msgstr ""
 
-#: vinaigrette-deleteme.py:193
+#: vinaigrette-deleteme.py:533
 msgid "Without rubber floor mat in Passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:194
-msgid "United Kingdom"
-msgstr ""
-
-#: vinaigrette-deleteme.py:195
+#: vinaigrette-deleteme.py:535
 msgid "Detachable hinges and side-flap mountings"
 msgstr ""
 
-#: vinaigrette-deleteme.py:196
+#: vinaigrette-deleteme.py:536
 msgid "For authorities only"
 msgstr ""
 
-#: vinaigrette-deleteme.py:197
+#: vinaigrette-deleteme.py:537
 msgid "Without air vents in Cargo Compartment (with M500 and M510 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:198
+#: vinaigrette-deleteme.py:538
 msgid ""
 "Flat bows with mountings for ladder and tilt made out of synthetic material"
 msgstr ""
 
-#: vinaigrette-deleteme.py:199
+#: vinaigrette-deleteme.py:539
 msgid "Limited slip differential"
 msgstr ""
 
-#: vinaigrette-deleteme.py:200
+#: vinaigrette-deleteme.py:540
 msgid "One ventilation window in cabin door on driver's side"
 msgstr ""
 
-#: vinaigrette-deleteme.py:201
+#: vinaigrette-deleteme.py:541
 msgid ""
 "With fixed windows in passenger compartment instead of ventilation windows"
 msgstr ""
 
-#: vinaigrette-deleteme.py:202
+#: vinaigrette-deleteme.py:542
 msgid "No window openings in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:203
+#: vinaigrette-deleteme.py:543
 msgid ""
 "With upholstery on the boot floor, the sides of the boot and the rear hatch"
 msgstr ""
 
-#: vinaigrette-deleteme.py:204
+#: vinaigrette-deleteme.py:544
 msgid "Retaining cables for tailboard"
 msgstr ""
 
-#: vinaigrette-deleteme.py:205
+#: vinaigrette-deleteme.py:545
 msgid "Detachable headrests for all seats in cabin (with M161 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:206
+#: vinaigrette-deleteme.py:546
 msgid ""
 "Detachable headrests for all seats in Passenger compartment (with M235 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:207
+#: vinaigrette-deleteme.py:547
 msgid "Mountings for headrests for all seats in Passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:208
+#: vinaigrette-deleteme.py:548
 msgid "Engine with recessed crown pistons for low-octane fuel"
 msgstr ""
 
-#: vinaigrette-deleteme.py:209
+#: vinaigrette-deleteme.py:549
 msgid "Windscreen free from import duty for Canada (with M89 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:210
-msgid "Canada"
-msgstr ""
-
-#: vinaigrette-deleteme.py:211
+#: vinaigrette-deleteme.py:551
 msgid "Windscreen free from import duty for USA (with M089 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:212
-msgid "USA"
-msgstr ""
-
-#: vinaigrette-deleteme.py:213
+#: vinaigrette-deleteme.py:553
 msgid "Ignition lock without steering lock"
 msgstr ""
 
-#: vinaigrette-deleteme.py:214
+#: vinaigrette-deleteme.py:554
 msgid "Automatic transmission"
 msgstr ""
 
-#: vinaigrette-deleteme.py:215
+#: vinaigrette-deleteme.py:555
 msgid "1700cc (66bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:216
+#: vinaigrette-deleteme.py:556
 msgid "1800cc (68bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:217
+#: vinaigrette-deleteme.py:557
 msgid "2000cc (70bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:218
+#: vinaigrette-deleteme.py:558
 msgid "1300cc (44bhp) engine instead of 1600cc (50bhp)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:219
+#: vinaigrette-deleteme.py:559
 msgid "Vehicle for North American market with tyres from specific companies"
 msgstr ""
 
-#: vinaigrette-deleteme.py:220
+#: vinaigrette-deleteme.py:560
 msgid "Without spare tyre, tools, toolbag and jack (with M515/502 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:221
-msgid "Germany"
-msgstr ""
-
-#: vinaigrette-deleteme.py:222
+#: vinaigrette-deleteme.py:562
 msgid "Higher driver- and passenger-seat backrest (headrest)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:223
+#: vinaigrette-deleteme.py:563
 msgid ""
 "Passenger seat instead of passenger bench seat; spare tyre in cabin (with "
 "M500 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:224
+#: vinaigrette-deleteme.py:564
 msgid "Payload of 1,200kg instead of 1,000kg"
 msgstr ""
 
-#: vinaigrette-deleteme.py:225
+#: vinaigrette-deleteme.py:565
 msgid ""
 "Maintenance vehicle for communication cables. With closets, C-shaped rails, "
 "swivel chair and curtains in cargo compartment (with M120, M503, M539 only; "
 "not with M251)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:226
+#: vinaigrette-deleteme.py:566
 msgid "With headlight washer installation"
 msgstr ""
 
-#: vinaigrette-deleteme.py:227
+#: vinaigrette-deleteme.py:567
 msgid "Sheer bolt for steering-column tube attachment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:228
+#: vinaigrette-deleteme.py:568
 msgid "Without bottom protection"
 msgstr ""
 
-#: vinaigrette-deleteme.py:229
+#: vinaigrette-deleteme.py:569
 msgid "VW parts for type 214, 234 and 264 made by VW do Brasil (CKD only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:230
+#: vinaigrette-deleteme.py:570
 msgid "Ony CKD vehicles"
 msgstr ""
 
-#: vinaigrette-deleteme.py:231
+#: vinaigrette-deleteme.py:571
 msgid ""
 "ECE regulations sticker \"R 10\" (with M123 only) (suppression equipment for "
 "radio reception)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:232
+#: vinaigrette-deleteme.py:572
 msgid "ECE regulations sticker \"R 11\" (door locks and hinges)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:233
+#: vinaigrette-deleteme.py:573
 msgid "ECE regulations sticker \"R 14\" (seatbelt mountings)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:234
+#: vinaigrette-deleteme.py:574
 msgid ""
 "Without metal division between cabin and cargo compartment, passenger seat "
 "adjustable on rails"
 msgstr ""
 
-#: vinaigrette-deleteme.py:235
+#: vinaigrette-deleteme.py:575
 msgid "Fitted with Semperit tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:236
+#: vinaigrette-deleteme.py:576
 msgid "Fitted with Uniroyal tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:237
+#: vinaigrette-deleteme.py:577
 msgid "Special engine to comply with Austrian regulations (1600cc, 50bhp)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:238
+#: vinaigrette-deleteme.py:578
 msgid ""
 "With American parts and constructions for the Campmobile versions P21, P22 "
 "and P27: free of import duty (with M609 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:239
+#: vinaigrette-deleteme.py:579
 msgid ""
 "Prepared for the installation of a radio for LW, MW, SW, FM (not with M631)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:240
+#: vinaigrette-deleteme.py:580
 msgid "Neckarsulm CR car radio, with Cassette player"
 msgstr ""
 
-#: vinaigrette-deleteme.py:241
+#: vinaigrette-deleteme.py:581
 msgid "Braunschweig CR car radio, with Cassette player"
 msgstr ""
 
-#: vinaigrette-deleteme.py:242
+#: vinaigrette-deleteme.py:582
 msgid "Full-width metal partition between cabin and load compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:243
+#: vinaigrette-deleteme.py:583
 msgid ""
 "Two-person Passenger seat instead of single Passenger seat in cabin, spare "
 "tyre in left side of luggage compartment (not with M500)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:244
+#: vinaigrette-deleteme.py:584
 msgid "Hardboard interior side panels in cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:245
+#: vinaigrette-deleteme.py:585
 msgid "Hardboard interior roof panels in cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:246
+#: vinaigrette-deleteme.py:586
 msgid "Fresh-air duct to cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:247
+#: vinaigrette-deleteme.py:587
 msgid "Hot-air outlet in front side of cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:248
+#: vinaigrette-deleteme.py:588
 msgid "Brake servo and dual-circuit brake control lamp"
 msgstr ""
 
-#: vinaigrette-deleteme.py:249
+#: vinaigrette-deleteme.py:589
 msgid "Brake servo"
 msgstr ""
 
-#: vinaigrette-deleteme.py:250
+#: vinaigrette-deleteme.py:590
 msgid "Ventilation windows in cabin doors"
 msgstr ""
 
-#: vinaigrette-deleteme.py:251
+#: vinaigrette-deleteme.py:591
 msgid ""
 "Ventilation window in sliding door and in all windows opposite sliding door "
 "in the Passenger compartment (three windows in total)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:252
+#: vinaigrette-deleteme.py:592
 msgid ""
 "Ventilation windows in sliding doors (two windows in total) (when ordered "
 "with M520)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:253
+#: vinaigrette-deleteme.py:593
 msgid ""
 "Ventilation window in rear Passenger door and in the window opposite this "
 "door (two windows in total)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:254
+#: vinaigrette-deleteme.py:594
 msgid ""
 "One sliding window in sliding door and one in the opposite side panel of the "
 "passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:255
+#: vinaigrette-deleteme.py:595
 msgid "One sliding window in the side panel opposite the sliding door"
 msgstr ""
 
-#: vinaigrette-deleteme.py:256
+#: vinaigrette-deleteme.py:596
 msgid ""
 "With dust-protected air intake, larger oil bath air cleaner and additional "
 "dust sealing"
 msgstr ""
 
-#: vinaigrette-deleteme.py:257
+#: vinaigrette-deleteme.py:597
 msgid "Upper division between cabin and cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:258
+#: vinaigrette-deleteme.py:598
 msgid ""
 "Upper division between cabin and cargo compartment. Fibreboard door panel in "
 "sliding door (Type 21: with air vents in rear side panels of cargo "
 "compartment)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:259
+#: vinaigrette-deleteme.py:599
 msgid "Padded dashboard and dashboard lid (not for RHD)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:260
+#: vinaigrette-deleteme.py:600
 msgid "Without passenger seat in cabin"
 msgstr ""
 
-#: vinaigrette-deleteme.py:261
+#: vinaigrette-deleteme.py:601
 msgid "Protection plate for gearbox"
 msgstr ""
 
-#: vinaigrette-deleteme.py:262
+#: vinaigrette-deleteme.py:602
 msgid "Air circulation connection for gasoline heater (only with M119)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:263
+#: vinaigrette-deleteme.py:603
 msgid "High roof Panelvan with high-roof sliding door"
 msgstr ""
 
-#: vinaigrette-deleteme.py:264
+#: vinaigrette-deleteme.py:604
 msgid "High roof (plastic)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:265
+#: vinaigrette-deleteme.py:605
 msgid "Factory-prepared for Campmobile interior"
 msgstr ""
 
-#: vinaigrette-deleteme.py:266
+#: vinaigrette-deleteme.py:606
 msgid "Opening in roof with reinforcement for Westfalia pop-up roof"
 msgstr ""
 
-#: vinaigrette-deleteme.py:267
+#: vinaigrette-deleteme.py:607
 msgid "Air vents in cargo compartment (with M515 or 516 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:268
+#: vinaigrette-deleteme.py:608
 msgid "With sliding door on left and right side"
 msgstr ""
 
-#: vinaigrette-deleteme.py:269
+#: vinaigrette-deleteme.py:609
 msgid "With chrome trim and sun visor with mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:270
+#: vinaigrette-deleteme.py:610
 msgid "With chrome trim and sun visor without mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:271
+#: vinaigrette-deleteme.py:611
 msgid "Net division between cabin and cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:272
+#: vinaigrette-deleteme.py:612
 msgid "USA and Canada specifications"
 msgstr ""
 
-#: vinaigrette-deleteme.py:273
+#: vinaigrette-deleteme.py:613
 msgid "Seatbelts for USA and Canada"
 msgstr ""
 
-#: vinaigrette-deleteme.py:274
+#: vinaigrette-deleteme.py:614
 msgid "Without inner rear-view mirror"
 msgstr ""
 
-#: vinaigrette-deleteme.py:275
+#: vinaigrette-deleteme.py:615
 msgid "Japan and Sweden"
 msgstr ""
 
-#: vinaigrette-deleteme.py:276
+#: vinaigrette-deleteme.py:616
 msgid "Convex rear-view mirror on right side (not for RHD)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:277
+#: vinaigrette-deleteme.py:617
 msgid ""
 "Upper partition between cabin and passenger compartment with sliding window "
 "(only with M500)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:278
+#: vinaigrette-deleteme.py:618
 msgid ""
 "Automatic step on passenger side (vehicles with two sliding doors only have "
 "the automatic step on the passenger side)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:279
+#: vinaigrette-deleteme.py:619
 msgid ""
 "Harder rear torsion bars (like on Transporter version) (on model 23 only "
 "with M013, 015, 146, 177 or 609)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:280
+#: vinaigrette-deleteme.py:620
 msgid "Foot-operated alarm installation (for Taxis and rental vehicles)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:281
+#: vinaigrette-deleteme.py:621
 msgid "Speaker and microphone for communication between driver and passengers"
 msgstr ""
 
-#: vinaigrette-deleteme.py:282
+#: vinaigrette-deleteme.py:622
 msgid ""
 "Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer "
 "(not in combination with M020)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:283
+#: vinaigrette-deleteme.py:623
 msgid "With rubber valve in rear bottom panel for draining fuel"
 msgstr ""
 
-#: vinaigrette-deleteme.py:284
-msgid "Belgium"
-msgstr ""
-
-#: vinaigrette-deleteme.py:285
+#: vinaigrette-deleteme.py:625
 msgid "Transistor lamp instead of regular interior light"
 msgstr ""
 
-#: vinaigrette-deleteme.py:286
+#: vinaigrette-deleteme.py:626
 msgid ""
 "Interior with closets and wooden floor in the rear of the cabin, net "
 "partition between front and rear of cabin (with M117 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:287
+#: vinaigrette-deleteme.py:627
 msgid "Wooden floor in cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:288
+#: vinaigrette-deleteme.py:628
 msgid ""
 "Closets in cargo compartment and net partition between cabin and cargo "
 "compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:289
+#: vinaigrette-deleteme.py:629
 msgid ""
 "Bench seat in upholstery cloth on metal partition behind cabin. Net division "
 "above closet but without net division between cabin and cargo compartment "
 "(with M503, M540 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:290
+#: vinaigrette-deleteme.py:630
 msgid ""
 "Various special constructions for German Army purposes (with M149 only. In "
 "case of model 265, with M101, M178, M207, M209 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:291
+#: vinaigrette-deleteme.py:631
 msgid "Without seats in passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:292
+#: vinaigrette-deleteme.py:632
 msgid ""
 "High-roof Bus with shelves for piling packages in cargo compartment (with "
 "M502, M515 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:293
+#: vinaigrette-deleteme.py:633
 msgid "Headliner in load-/passenger compartment (as in model 22, Microbus)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:294
+#: vinaigrette-deleteme.py:634
 msgid "Turn signals at rear on roof"
 msgstr ""
 
-#: vinaigrette-deleteme.py:295
+#: vinaigrette-deleteme.py:635
 msgid "Turn signals at rear on roof, lamp shines to both front and rear"
 msgstr ""
 
-#: vinaigrette-deleteme.py:296
+#: vinaigrette-deleteme.py:636
 msgid "Extra rust-prevention treatment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:297
+#: vinaigrette-deleteme.py:637
 msgid ""
 "Three-point safety belts for driver and outer passenger seat, two-point "
 "safety belt for middle seat (only in case of two-person Passenger seat in "
 "cabin)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:298
+#: vinaigrette-deleteme.py:638
 msgid "Halogen headlamps"
 msgstr ""
 
-#: vinaigrette-deleteme.py:299
+#: vinaigrette-deleteme.py:639
 msgid "Clock with heating time preselector, with trip counter (with M060 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:300
+#: vinaigrette-deleteme.py:640
 msgid "Steel sliding roof"
 msgstr ""
 
-#: vinaigrette-deleteme.py:301
+#: vinaigrette-deleteme.py:641
 msgid "Tinted windows (except windscreen)( with M671 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:302
+#: vinaigrette-deleteme.py:642
 msgid "Tinted windows and windscreen, with laminated windscreen"
 msgstr ""
 
-#: vinaigrette-deleteme.py:303
+#: vinaigrette-deleteme.py:643
 msgid "Air filter for dusty countries (2000cc with 70bhp only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:304
+#: vinaigrette-deleteme.py:644
 msgid "South Africa and Australia"
 msgstr ""
 
-#: vinaigrette-deleteme.py:305
+#: vinaigrette-deleteme.py:645
 msgid "Rear foglamp"
 msgstr ""
 
-#: vinaigrette-deleteme.py:306
+#: vinaigrette-deleteme.py:646
 msgid "Air conditioning (on model 23 only for Campers)(with M251 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:307
+#: vinaigrette-deleteme.py:647
 msgid ""
 "Preparation for construction of Campmobile by Jurgens-Caravan in South "
 "Africa or Karmann Mobil in Germany"
 msgstr ""
 
-#: vinaigrette-deleteme.py:308
+#: vinaigrette-deleteme.py:648
 msgid "Without compressor for folding spare tyre (with M586 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:309
+#: vinaigrette-deleteme.py:649
 msgid ""
 "Interior panel over entire width of vehicle for lower partition between "
 "cabin and cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:310
+#: vinaigrette-deleteme.py:650
 msgid ""
 "With folding spare tyre instead of regular spare tyre, plus 12V air "
 "compressor and 12V connection on dashboard"
 msgstr ""
 
-#: vinaigrette-deleteme.py:311
+#: vinaigrette-deleteme.py:651
 msgid "Westfalia Campmobile"
 msgstr ""
 
-#: vinaigrette-deleteme.py:312
+#: vinaigrette-deleteme.py:652
 msgid ""
 "Hannover radio (LW, MW, FM) with automatic search, remote control, tape deck "
 "and automatic antenna connection"
 msgstr ""
 
-#: vinaigrette-deleteme.py:313
+#: vinaigrette-deleteme.py:653
 msgid ""
 "Salzgitter radio (FM) with tape player connection and traffic broadcast "
 "decoder connection"
 msgstr ""
 
-#: vinaigrette-deleteme.py:314
+#: vinaigrette-deleteme.py:654
 msgid "Stronger battery: 12V 63A instead of 12V 45A"
 msgstr ""
 
-#: vinaigrette-deleteme.py:315
+#: vinaigrette-deleteme.py:655
 msgid "Comfort package"
 msgstr ""
 
-#: vinaigrette-deleteme.py:316
+#: vinaigrette-deleteme.py:656
 msgid ""
 "Special options package comprising: back-up lamps (M047); rear-window "
 "defroster (M102); emergency warning lights; dual-circuit brake warning "
 "light; padded dashboard (for LHD)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:317
+#: vinaigrette-deleteme.py:657
 msgid ""
 "Special options package comprising: hazard lights; dual-circuit brake "
 "warning light; padded dashboard (for LHD)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:318
+#: vinaigrette-deleteme.py:658
 msgid ""
 "Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, "
 "M171)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:319
+#: vinaigrette-deleteme.py:659
 msgid "2000cc dual carburettor engine with secondary air injection"
 msgstr ""
 
-#: vinaigrette-deleteme.py:320
+#: vinaigrette-deleteme.py:660
 msgid "Seat belts according to Australian safety regulations."
 msgstr ""
 
-#: vinaigrette-deleteme.py:321
+#: vinaigrette-deleteme.py:661
 msgid "Compliance with Australian exhaust and safety standards"
 msgstr ""
 
-#: vinaigrette-deleteme.py:322
+#: vinaigrette-deleteme.py:662
 msgid "Without diagnosis plug connection and wiring"
 msgstr ""
 
-#: vinaigrette-deleteme.py:323
+#: vinaigrette-deleteme.py:663
 msgid ""
 "Adjustment mechanism for later gauging of speedometer (for rental vehicles "
 "and self-drive rentals only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:324
+#: vinaigrette-deleteme.py:664
 msgid "Reversing lights (built-in with rearlight units)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:325
+#: vinaigrette-deleteme.py:665
 msgid "Generator 70A instead of 55A (with M157 or M251 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:326
+#: vinaigrette-deleteme.py:666
 msgid "Special suppression equipment, prepared for radio-traffic"
 msgstr ""
 
-#: vinaigrette-deleteme.py:327
+#: vinaigrette-deleteme.py:667
 msgid ""
 "Commando vehicle equipment also usable as conversation vehicle, bureau "
 "vehicle and for similar purposes. Consisting of three-seater middle bench "
@@ -2225,318 +3547,318 @@ msgid ""
 "floor cover in Passenger compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:328
+#: vinaigrette-deleteme.py:668
 msgid ""
 "Mounting for radio-communication apparatus type ‘FuG 7b’ in glovebox "
 "(Telefunken or SEL)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:329
+#: vinaigrette-deleteme.py:669
 msgid "Suppressed windscreen-wiper motor"
 msgstr ""
 
-#: vinaigrette-deleteme.py:330
+#: vinaigrette-deleteme.py:670
 msgid "Further suppressed equipment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:331
+#: vinaigrette-deleteme.py:671
 msgid "German Army"
 msgstr ""
 
-#: vinaigrette-deleteme.py:332
+#: vinaigrette-deleteme.py:672
 msgid "Windscreen-wiper blades and arms under customs seal"
 msgstr ""
 
-#: vinaigrette-deleteme.py:333
+#: vinaigrette-deleteme.py:673
 msgid "Air-drying’ bottom protection instead of ‘wax paraffin’"
 msgstr ""
 
-#: vinaigrette-deleteme.py:334
+#: vinaigrette-deleteme.py:674
 msgid "With USA-specific parts for the airconditioning (free from import duty)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:335
+#: vinaigrette-deleteme.py:675
 msgid ""
 "Interval switch on windscreen wipers and wash-wipe installation. Interval "
 "ca.6 seconds"
 msgstr ""
 
-#: vinaigrette-deleteme.py:336
+#: vinaigrette-deleteme.py:676
 msgid "Two halogen foglamps on front"
 msgstr ""
 
-#: vinaigrette-deleteme.py:337
+#: vinaigrette-deleteme.py:677
 msgid "Stick-in head-/neck-rests, Not for driver's seat"
 msgstr ""
 
-#: vinaigrette-deleteme.py:338
+#: vinaigrette-deleteme.py:678
 msgid "Sticker ECE regulations no, 14"
 msgstr ""
 
-#: vinaigrette-deleteme.py:339
+#: vinaigrette-deleteme.py:679
 msgid "Tinted windscreen (laminated) (with M568 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:340
+#: vinaigrette-deleteme.py:680
 msgid "Sealed speedometer (for leasing vehicles)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:341
+#: vinaigrette-deleteme.py:681
 msgid ""
 "Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
 "and net partition between cargo compartment and cabin (with M500, M502, M539 "
 "only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:342
+#: vinaigrette-deleteme.py:682
 msgid ""
 "Interior as M677 with extra built-in closets and extractable vice (only with "
 "M677)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:343
+#: vinaigrette-deleteme.py:683
 msgid "Motorola/USA car radio instead of Emden (with M097 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:344
+#: vinaigrette-deleteme.py:684
 msgid ""
 "Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
 "and net partition between Cargo compartment and cabin, with extra built-in "
 "closets and vice (with M500, M502, M539 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:345
+#: vinaigrette-deleteme.py:685
 msgid ""
 "Passenger seat in cabin as swivelling seat, without metal partition behind "
 "this seat"
 msgstr ""
 
-#: vinaigrette-deleteme.py:346
+#: vinaigrette-deleteme.py:686
 msgid "Chassis no. 2162 078 000"
 msgstr ""
 
-#: vinaigrette-deleteme.py:347
+#: vinaigrette-deleteme.py:687
 msgid "Fitted with Continental-manufactured tyres"
 msgstr ""
 
-#: vinaigrette-deleteme.py:348
+#: vinaigrette-deleteme.py:688
 msgid "Without chassis identification plate"
 msgstr ""
 
-#: vinaigrette-deleteme.py:349
+#: vinaigrette-deleteme.py:689
 msgid "With protection wall in cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:350
+#: vinaigrette-deleteme.py:690
 msgid "Transistorized ignition system"
 msgstr ""
 
-#: vinaigrette-deleteme.py:351
+#: vinaigrette-deleteme.py:691
 msgid ""
 "Polyester high roof painted in body colour instead of white (with M515 or "
 "M516 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:352
+#: vinaigrette-deleteme.py:692
 msgid ""
 "Without side and rear windows in passenger compartment (preparation for "
 "Westfalia isolation windows)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:353
+#: vinaigrette-deleteme.py:693
 msgid ""
 "Zeiss-Ikon safety lock for rear panel lid (available with M145, one key "
 "combination)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:354
+#: vinaigrette-deleteme.py:694
 msgid "Air conditioning"
 msgstr ""
 
-#: vinaigrette-deleteme.py:355
+#: vinaigrette-deleteme.py:695
 msgid "Tail-light lenses yellow-red instead of yellow-red-white"
 msgstr ""
 
-#: vinaigrette-deleteme.py:356
+#: vinaigrette-deleteme.py:696
 msgid "Without air vents in cargo compartment"
 msgstr ""
 
-#: vinaigrette-deleteme.py:357
+#: vinaigrette-deleteme.py:697
 msgid ""
 "Factory-prepared for conversion to armoured money transporter (conversion by "
 "Thiele/Bremen or Bischoff & Hamel/Hannover)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:358
+#: vinaigrette-deleteme.py:698
 msgid "Factory prepared for Electrotransporter-conversion"
 msgstr ""
 
-#: vinaigrette-deleteme.py:359
+#: vinaigrette-deleteme.py:699
 msgid "Illuminated roof sign with Maltese or Red Cross logo"
 msgstr ""
 
-#: vinaigrette-deleteme.py:360
+#: vinaigrette-deleteme.py:700
 msgid "Production number for special, documented built-ins"
 msgstr ""
 
-#: vinaigrette-deleteme.py:361
+#: vinaigrette-deleteme.py:701
 msgid ""
 "Special sales campaign for \"Champagne Edition\", paint colour Agata Brown "
 "with Atlas White roof; interior cloth in Parchment (beige grey)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:362
+#: vinaigrette-deleteme.py:702
 msgid "Chrome trim around Bus ca. 5cm below windows"
 msgstr ""
 
-#: vinaigrette-deleteme.py:363
+#: vinaigrette-deleteme.py:703
 msgid "Textile radial tyres with tube"
 msgstr ""
 
-#: vinaigrette-deleteme.py:364
+#: vinaigrette-deleteme.py:704
 msgid ""
 "2000cc fuel-injected engine with exhaust emission control concept of the "
 "1800cc engine (with M157 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:365
+#: vinaigrette-deleteme.py:705
 msgid "Alternative loading arrangement (not with S751)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:366
+#: vinaigrette-deleteme.py:706
 msgid "Without portable chair but with guiding rails on floor"
 msgstr ""
 
-#: vinaigrette-deleteme.py:367
+#: vinaigrette-deleteme.py:707
 msgid ""
 "Window in sliding door (in case of double sliding door, there is a window in "
 "both sliding doors)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:368
+#: vinaigrette-deleteme.py:708
 msgid "Without right stretcher and without right loading platform"
 msgstr ""
 
-#: vinaigrette-deleteme.py:369
+#: vinaigrette-deleteme.py:709
 msgid "Factory-prepared for fitting a PVC tilt"
 msgstr ""
 
-#: vinaigrette-deleteme.py:370
+#: vinaigrette-deleteme.py:710
 msgid ""
 "Wooden floor panels with built-in guide rails for mounting tools and "
 "instruments (only with M502 or bench seats)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:371
+#: vinaigrette-deleteme.py:711
 msgid ""
 "Control number for conversions or other changes from the serial production"
 msgstr ""
 
-#: vinaigrette-deleteme.py:372
+#: vinaigrette-deleteme.py:712
 msgid ""
 "Two head cushions, one back support, one belly support, guiding rail lock "
 "for stretcher; without infusion hooks"
 msgstr ""
 
-#: vinaigrette-deleteme.py:373
+#: vinaigrette-deleteme.py:713
 msgid "Sliding door right instead of left (RHD vehicles)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:374
+#: vinaigrette-deleteme.py:714
 msgid "Window in sliding door and one at opposite side panel"
 msgstr ""
 
-#: vinaigrette-deleteme.py:375
+#: vinaigrette-deleteme.py:715
 msgid ""
 "Production number to indicate small special built-ins or deflections from "
 "the serial production"
 msgstr ""
 
-#: vinaigrette-deleteme.py:376
+#: vinaigrette-deleteme.py:716
 msgid ""
 "With upholstery on floor above engine, the rear corners and the rear hatch "
 "(with M013, 015, 146 or 177 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:377
+#: vinaigrette-deleteme.py:717
 msgid "70bhp engine"
 msgstr ""
 
-#: vinaigrette-deleteme.py:378
+#: vinaigrette-deleteme.py:718
 msgid "Australia, chassis nos. 2162 119 000 to 2162 164 000"
 msgstr ""
 
-#: vinaigrette-deleteme.py:379
+#: vinaigrette-deleteme.py:719
 msgid "Upper fibreboard partition (with M013, 015, 146 or 177 only)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:380
+#: vinaigrette-deleteme.py:720
 msgid "Seats and interior panels in black"
 msgstr ""
 
-#: vinaigrette-deleteme.py:381
+#: vinaigrette-deleteme.py:721
 msgid "Special sales campaign for \"Champagne Edition II\""
 msgstr ""
 
-#: vinaigrette-deleteme.py:382
+#: vinaigrette-deleteme.py:722
 msgid "Special sales campaign for \"Silberfisch\" (Germany)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:383
+#: vinaigrette-deleteme.py:723
 msgid "Illuminated roof sign with Maltese Cross logo"
 msgstr ""
 
-#: vinaigrette-deleteme.py:384
+#: vinaigrette-deleteme.py:724
 msgid ""
 "Without sliding door; in case of double sliding door version (M520), both "
 "sliding doors left out"
 msgstr ""
 
-#: vinaigrette-deleteme.py:385
+#: vinaigrette-deleteme.py:725
 msgid "Preparation for later installation of UTILA stretcher"
 msgstr ""
 
-#: vinaigrette-deleteme.py:386
+#: vinaigrette-deleteme.py:726
 msgid "Ventilation window in cabin door on driver's side"
 msgstr ""
 
-#: vinaigrette-deleteme.py:387
+#: vinaigrette-deleteme.py:727
 msgid "Sliding roof for RHD"
 msgstr ""
 
-#: vinaigrette-deleteme.py:388
+#: vinaigrette-deleteme.py:728
 msgid ""
 "Production number indicating a special note in the German licence papers, "
 "saying that a Trumatic SB 2000 gas heater has been fitted"
 msgstr ""
 
-#: vinaigrette-deleteme.py:389
+#: vinaigrette-deleteme.py:729
 msgid "Sliding door left instead of right"
 msgstr ""
 
-#: vinaigrette-deleteme.py:390
+#: vinaigrette-deleteme.py:730
 msgid "Sliding door on the right with RHD (instead of on the left with RHD)"
 msgstr ""
 
-#: vinaigrette-deleteme.py:391
+#: vinaigrette-deleteme.py:731
 msgid "Catalyst retrofit"
 msgstr ""
 
-#: vinaigrette-deleteme.py:392
+#: vinaigrette-deleteme.py:732
 msgid "Special sales campaign for \"Wild Westerner\""
 msgstr ""
 
-#: vinaigrette-deleteme.py:393
+#: vinaigrette-deleteme.py:733
 msgid ""
 "Basic Campmobile equipment: stool, curtains, table, double bed, roof "
 "cabinet, birch paneling, floor covering, two louvered windows"
 msgstr ""
 
-#: vinaigrette-deleteme.py:394
+#: vinaigrette-deleteme.py:734
 msgid "Campmobile with pop-up roof, gas stove. Similar to SO 72/3 Helsinki."
 msgstr ""
 
-#: vinaigrette-deleteme.py:395
+#: vinaigrette-deleteme.py:735
 msgid ""
 "Campmobile with pop-up roof, electric refrigerator, gas stove. Similar to SO "
 "72/3 Helsinki."
