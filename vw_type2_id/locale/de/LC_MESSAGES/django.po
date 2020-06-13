@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 15:11+0000\n"
-"PO-Revision-Date: 2020-06-13 13:38\n"
+"PO-Revision-Date: 2020-06-13 13:49\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -1508,7 +1508,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:200 vinaigrette-deleteme.py:396
 msgid "Italy"
-msgstr ""
+msgstr "Italien"
 
 #: vinaigrette-deleteme.py:201
 msgid "Indonesia"
@@ -1552,7 +1552,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:211 vinaigrette-deleteme.py:550
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 #: vinaigrette-deleteme.py:212
 msgid "Cambodia"
@@ -1804,7 +1804,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:274 vinaigrette-deleteme.py:415
 msgid "Sweden"
-msgstr ""
+msgstr "Schweden"
 
 #: vinaigrette-deleteme.py:275
 msgid "Switzerland"
@@ -1956,15 +1956,15 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:312 vinaigrette-deleteme.py:561
 msgid "Germany"
-msgstr ""
+msgstr "Deutschland"
 
 #: vinaigrette-deleteme.py:313
 msgid "Manual transmission, 4-speed"
-msgstr ""
+msgstr "Schaltgetriebe, 4-Gang"
 
 #: vinaigrette-deleteme.py:314
 msgid "Automatic transmission, 3-speed"
-msgstr ""
+msgstr "Automatikgetriebe, 3-Gang"
 
 #: vinaigrette-deleteme.py:315
 msgid "Alabaster (Grey)"
@@ -1972,7 +1972,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:316
 msgid "Cloth"
-msgstr ""
+msgstr "Stoff"
 
 #: vinaigrette-deleteme.py:317
 msgid "Camping Red"
@@ -1984,7 +1984,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:319
 msgid "Leatherette"
-msgstr ""
+msgstr "Kunstleder"
 
 #: vinaigrette-deleteme.py:320
 msgid "Light Sand/Khaki Brown"
@@ -2020,19 +2020,19 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:329
 msgid "Gala Red"
-msgstr ""
+msgstr "Galarot"
 
 #: vinaigrette-deleteme.py:330
 msgid "Camping Green"
-msgstr ""
+msgstr "Campinggrün"
 
 #: vinaigrette-deleteme.py:331
 msgid "Dark Beige"
-msgstr ""
+msgstr "Dunkelbeige"
 
 #: vinaigrette-deleteme.py:332
 msgid "Cork"
-msgstr ""
+msgstr "Kork"
 
 #: vinaigrette-deleteme.py:333
 msgid "Leather Beige"
@@ -2040,7 +2040,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:334
 msgid "Canyon Brown"
-msgstr ""
+msgstr "Canyonbraun"
 
 #: vinaigrette-deleteme.py:335
 msgid "Marine (Dark Blue)"
@@ -2164,11 +2164,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:365
 msgid "With US-specific sealed beam headlamps, for M027: with US-specific carriers for catalysts (only with M524)"
-msgstr ""
+msgstr "Mit USA-Landeseigegen Sealed-Beam-Lampen, für M027 mit landeseigenen Trägermaterial für Katalysatoren (Zwangskombination: M524)"
 
 #: vinaigrette-deleteme.py:366
 msgid "Heater outlet in seat box of rear bench seat"
-msgstr ""
+msgstr "Vorbereitung für einen 2. Heizungsausströmer im Sitzkasten der Hintersitzbank"
 
 #: vinaigrette-deleteme.py:367
 msgid "Westfalia Campmobiles"
@@ -2176,15 +2176,15 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:368
 msgid "Without tyres"
-msgstr ""
+msgstr "Ohne Bereifung"
 
 #: vinaigrette-deleteme.py:369
 msgid "Without battery"
-msgstr ""
+msgstr "Ohne Batterie"
 
 #: vinaigrette-deleteme.py:370
 msgid "Additional dust sealing for engine compartment"
-msgstr ""
+msgstr "Zusätzliche Motorraumabdichtung"
 
 #: vinaigrette-deleteme.py:371
 msgid "To chassis no. 2132 102 496"
@@ -2192,7 +2192,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:372
 msgid "Exhaust emission control installation and speedometer in miles instead of km (with M524 only)"
-msgstr ""
+msgstr "Abgas-Überwachungsanlage und Meilentacho anst. v. Km-Tacho (Zwangskombination: M524)(Kombinationsverbot: M020/M113)"
 
 #: vinaigrette-deleteme.py:373
 msgid "Middle three-person bench seat, rear three-person bench seat and interior trim in passenger compartment"
@@ -2208,11 +2208,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:376
 msgid "Without headlamp flasher"
-msgstr ""
+msgstr "Ohne Lichthupe"
 
 #: vinaigrette-deleteme.py:377
 msgid "Speedometer and odometer in miles"
-msgstr ""
+msgstr "Meilentachometer"
 
 #: vinaigrette-deleteme.py:378
 msgid "Sealed beam headlamps"
@@ -2224,15 +2224,15 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:380
 msgid "Sealed beam headlamps, side marker reflectors and reversing lights"
-msgstr ""
+msgstr "Sealed-Beam-Scheinwerfer und Lampen, Gelbe Blinkposit. und Seitenmarkierungsleuchte vorn; zus. seitl. Blinkleuchte; Glühlampe und Leitung für Rückfahrscheinwerfer in SBBR-Leuchte, Park-(Standlicht) vorn und hinten, ohne Kennzeichenleuchte"
 
 #: vinaigrette-deleteme.py:381
 msgid "Speedometer with trip recorder and clock"
-msgstr ""
+msgstr "Tageskilometerzähler und Zeituhr"
 
 #: vinaigrette-deleteme.py:382
 msgid "With activated carbon container for absorbing fuel vapour"
-msgstr ""
+msgstr "Aktivkohlebehälter für Tankentlüftung"
 
 #: vinaigrette-deleteme.py:383
 msgid "USA-California"
@@ -2252,7 +2252,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:389
 msgid "Towing hook front and rear"
-msgstr ""
+msgstr "Anhängevorrichtung und vorderer Abschlepphaken"
 
 #: vinaigrette-deleteme.py:390
 msgid "Coupled headlamp flasher and licence plate light"
@@ -2260,7 +2260,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:391
 msgid "Battery approved by research and development department and free from import duty and costs"
-msgstr ""
+msgstr "Zoll- und kostenfreie v.f. FE genehmigte Batterie"
 
 #: vinaigrette-deleteme.py:392
 msgid "To chassis no. 2122 088 996, Austria"
@@ -2268,15 +2268,15 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:393
 msgid "Lockable cap for fuel tank"
-msgstr ""
+msgstr "Abschließbarer Tankdeckel-Verschluß"
 
 #: vinaigrette-deleteme.py:394
 msgid "Red Crescent lamp instead of Red Cross lamp"
-msgstr ""
+msgstr "Halbmondleuchte anstelle der Rotkreuzleuchte"
 
 #: vinaigrette-deleteme.py:395
 msgid "Side turn signals, altered handbrake handle, white front turn signal lenses"
-msgstr ""
+msgstr "Blinkleuchte vorn in weiß anst. gelb, seitl. Blinkleuchte (gelb), ohne Warnblinkanlage Lichthupenumschaltung auf Abblendlicht (b.Komb.m. M201 zus. mit loser Seitenblinkleuchte)(Kvb.: M194, n.f. Mod.21-26)"
 
 #: vinaigrette-deleteme.py:397
 msgid "Side-mounted turn signals, altered handbrake handle, white front turn signals, without emergency light system, without hazard light system (France and Italy only)"
@@ -2288,7 +2288,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:399
 msgid "Tyres approved by research and development department and free from import duty and costs"
-msgstr ""
+msgstr "Mit zoll- und kostenfreier v.d. FE genehmigter Reifen"
 
 #: vinaigrette-deleteme.py:400
 msgid "Side turn signals and inner rear-view mirror"
@@ -2296,11 +2296,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:401
 msgid "Side turn signals"
-msgstr ""
+msgstr "Seitliche Blinkleuchte (Zwangskombination: M024/M034/M524)"
 
 #: vinaigrette-deleteme.py:402
 msgid "Two reversing lights"
-msgstr ""
+msgstr "Zwei Rückfahrleuchten"
 
 #: vinaigrette-deleteme.py:403
 msgid "Dual-brake-circuit control light (only with M511)"
@@ -2312,19 +2312,19 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:405
 msgid "With pedestal and double pulley for the later installation of a second generator (not in combination with M153, M157 and M251)"
-msgstr ""
+msgstr "Konsole und Doppelriemenscheibe für nachträgl. Einbau einer 2. Lichtmaschine (24V) (Kvb.: M153/M157/M251)"
 
 #: vinaigrette-deleteme.py:406
 msgid "Cloth upholstery instead of leatherette"
-msgstr ""
+msgstr "Stoff- statt Kunstlederpolsterung"
 
 #: vinaigrette-deleteme.py:407
 msgid "Lockable glove compartment lid (only with M511)"
-msgstr ""
+msgstr "Mit abschließbarem Ablagefachverschluß (Zwangskombination M511)"
 
 #: vinaigrette-deleteme.py:408
 msgid "With steering lock"
-msgstr ""
+msgstr "Mit Lenkradschloß"
 
 #: vinaigrette-deleteme.py:409
 msgid "To VIN 2x9 300 000"
@@ -2332,7 +2332,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:410
 msgid "Hardwood strips for flatbed not fastened to vehicle"
-msgstr ""
+msgstr "Bodenleisten für Ladefläche lose beigelegt"
 
 #: vinaigrette-deleteme.py:411
 msgid "Eberspacher BA6 petrol heater (LHD) (fitted under cargo floor)"
@@ -2364,7 +2364,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:419
 msgid "Floor cover (rubber mat) in passenger compartment"
-msgstr ""
+msgstr "Bodenbelag (Gummimatte) im Fahrgastraum"
 
 #: vinaigrette-deleteme.py:420
 msgid "12V 54A battery instead of standard 12V 45A battery"
@@ -2372,7 +2372,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:421
 msgid "Two front towing hooks"
-msgstr ""
+msgstr "Zwei Abschlepphaken vorne"
 
 #: vinaigrette-deleteme.py:422
 msgid "Tilt and bows for Pick-Up"
@@ -2388,7 +2388,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:425
 msgid "Roof opening and reinforcement for Westfalia pop-up roof SO 73"
-msgstr ""
+msgstr "Dachausschnitt und -verstärkung für Westfalia-Aufstelldach, nicht für Hubdach"
 
 #: vinaigrette-deleteme.py:426
 msgid "Mud flaps, rear"
@@ -2396,11 +2396,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:427
 msgid "Mountings for first aid kit"
-msgstr ""
+msgstr "Aufnahme für Verbandkasten"
 
 #: vinaigrette-deleteme.py:428
 msgid "With warning triangle"
-msgstr ""
+msgstr "Mit Warndreieck"
 
 #: vinaigrette-deleteme.py:429
 msgid "Filled in factory with double amount of petrol (used for driving on and off the train, for example)"
@@ -2408,11 +2408,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:430
 msgid "Self-adjusting drum brakes (rear)"
-msgstr ""
+msgstr "Selbstnachstellende Trommelbremsen (nur Schweden)"
 
 #: vinaigrette-deleteme.py:431
 msgid "Laminated windscreen glass"
-msgstr ""
+msgstr "Windschutzscheibe aus Verbundglas"
 
 #: vinaigrette-deleteme.py:432
 msgid "Gearbox with mountain ratio for mountainous areas"
@@ -2424,23 +2424,23 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:434
 msgid "Lockable engine lid"
-msgstr ""
+msgstr "Abschließbarer Motorraumdeckel"
 
 #: vinaigrette-deleteme.py:435
 msgid "Wolfsburg car radio"
-msgstr ""
+msgstr "VW-Radio 'Wolfsburg' MW und LW"
 
 #: vinaigrette-deleteme.py:436
 msgid "Braunschweig car radio"
-msgstr ""
+msgstr "VW-Radio 'Braunschweig'"
 
 #: vinaigrette-deleteme.py:437
 msgid "Emden car radio"
-msgstr ""
+msgstr "VW-Radio 'Emden' UKW, MW, ab 8/67 LW"
 
 #: vinaigrette-deleteme.py:438
 msgid "Ingolstadt car radio"
-msgstr ""
+msgstr "VW-Radio 'Ingolstadt'"
 
 #: vinaigrette-deleteme.py:439
 msgid "Tubeless off-road tyres"
@@ -2448,7 +2448,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:440
 msgid "Without VW logo on front"
-msgstr ""
+msgstr "Ohne VW-Zeichen an der Vorderfront"
 
 #: vinaigrette-deleteme.py:441
 msgid "Off-road tyres"
@@ -2712,7 +2712,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:508
 msgid "Three-point safety belts for driver and passenger seat with roll-up automatic and push-button lock"
-msgstr ""
+msgstr "3-Punkt-Sicherheitsgurte für Fahrer- und Einzelbeifahrersitz (m: nicht für Linkslenker Automatik, nur USA, Kanada)"
 
 #: vinaigrette-deleteme.py:509
 msgid "Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
@@ -2776,7 +2776,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:525
 msgid "Inner rear-view mirror, anti-dazzle"
-msgstr ""
+msgstr "Abblendbarer Innenspiegel"
 
 #: vinaigrette-deleteme.py:526
 msgid "Trailer hitch and extra towing hook on front"
@@ -2848,7 +2848,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:544
 msgid "Retaining cables for tailboard"
-msgstr ""
+msgstr "Halteseile für hintere Ladebordwand"
 
 #: vinaigrette-deleteme.py:545
 msgid "Detachable headrests for all seats in cabin (with M161 only)"
@@ -2880,7 +2880,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:554
 msgid "Automatic transmission"
-msgstr ""
+msgstr "Automatikgetriebe"
 
 #: vinaigrette-deleteme.py:555
 msgid "1700cc (66bhp) engine instead of 1600cc (50bhp)"
@@ -3012,15 +3012,15 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:588
 msgid "Brake servo and dual-circuit brake control lamp"
-msgstr ""
+msgstr "Bremskraftverstärker und Zweikreis-Bremskontrolleuchte"
 
 #: vinaigrette-deleteme.py:589
 msgid "Brake servo"
-msgstr ""
+msgstr "Bremskraftverstärker"
 
 #: vinaigrette-deleteme.py:590
 msgid "Ventilation windows in cabin doors"
-msgstr ""
+msgstr "Schwenkfenster in den Fahrerhaustüren"
 
 #: vinaigrette-deleteme.py:591
 msgid "Ventilation window in sliding door and in all windows opposite sliding door in the Passenger compartment (three windows in total)"
@@ -3056,7 +3056,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:599
 msgid "Padded dashboard and dashboard lid (not for RHD)"
-msgstr ""
+msgstr "Schalttafelpolsterung (Linkslenker) und Ablagefachdeckel (Serie bei Typ 22)"
 
 #: vinaigrette-deleteme.py:600
 msgid "Without passenger seat in cabin"
@@ -3080,11 +3080,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:605
 msgid "Factory-prepared for Campmobile interior"
-msgstr ""
+msgstr "Werksvorbereitung für Campingwagen"
 
 #: vinaigrette-deleteme.py:606
 msgid "Opening in roof with reinforcement for Westfalia pop-up roof"
-msgstr ""
+msgstr "Dachverstärkung für Campingwagen mit Aufstelldach"
 
 #: vinaigrette-deleteme.py:607
 msgid "Air vents in cargo compartment (with M515 or 516 only)"
@@ -3148,7 +3148,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:622
 msgid "Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer (not in combination with M020)"
-msgstr ""
+msgstr "Fahrtsichtschreiber 'Diehl Co-Pilot' (Moto Meter). Kombinationsverbot: M020/M025"
 
 #: vinaigrette-deleteme.py:623
 msgid "With rubber valve in rear bottom panel for draining fuel"
@@ -3208,7 +3208,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:638
 msgid "Halogen headlamps"
-msgstr ""
+msgstr "Hauptscheinwerfer mit Halogenlampen"
 
 #: vinaigrette-deleteme.py:639
 msgid "Clock with heating time preselector, with trip counter (with M060 only)"
@@ -3236,7 +3236,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:645
 msgid "Rear foglamp"
-msgstr ""
+msgstr "Nebelschlußleuchte"
 
 #: vinaigrette-deleteme.py:646
 msgid "Air conditioning (on model 23 only for Campers)(with M251 only)"
@@ -3280,11 +3280,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:656
 msgid "Special options package comprising: back-up lamps (M047); rear-window defroster (M102); emergency warning lights; dual-circuit brake warning light; padded dashboard (for LHD)"
-msgstr ""
+msgstr "Sonderausstattungspaket aus M047 (Rückfahrscheinwerfer), M102 (heizbare Heckscheibe), Warnblinkanlage, Zweikreisbremskontrolleuchte (M050) (und gepolsterter Armaturentafel bei Linkslenker)"
 
 #: vinaigrette-deleteme.py:657
 msgid "Special options package comprising: hazard lights; dual-circuit brake warning light; padded dashboard (for LHD)"
-msgstr ""
+msgstr "Sonderausstattungspaket aus Warnblinkanlage, Zweikreisbremse und gepolsterter Armaturentafel (nur Linkslenker)"
 
 #: vinaigrette-deleteme.py:658
 msgid "Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, M171)"
@@ -3312,7 +3312,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:664
 msgid "Reversing lights (built-in with rearlight units)"
-msgstr ""
+msgstr "Glühlampen und Leitung für Rückfahrscheinwerfer in der SBBR-Leuchte (Kombinationsverbot: M024/M193/M524)"
 
 #: vinaigrette-deleteme.py:665
 msgid "Generator 70A instead of 55A (with M157 or M251 only)"
@@ -3356,11 +3356,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:675
 msgid "Interval switch on windscreen wipers and wash-wipe installation. Interval ca.6 seconds"
-msgstr ""
+msgstr "Intervallschalter (stufenlos 3 - 15 s.) und Trockenwischautomatik für Scheibenwischer"
 
 #: vinaigrette-deleteme.py:676
 msgid "Two halogen foglamps on front"
-msgstr ""
+msgstr "Halogen-Nebelscheinwerfer"
 
 #: vinaigrette-deleteme.py:677
 msgid "Stick-in head-/neck-rests, Not for driver's seat"
@@ -3609,16 +3609,16 @@ msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:45
 msgid "Home"
-msgstr ""
+msgstr "Start"
 
 #: vw_type2_id/templates/base_bootstrap.html:48
 msgid "M-Plate info"
-msgstr ""
+msgstr "M-Plate Info"
 
 #: vw_type2_id/templates/base_bootstrap.html:51
 msgctxt "navbar"
 msgid "M-Plate decoder"
-msgstr ""
+msgstr "M-Plate Decoder"
 
 #: vw_type2_id/templates/base_bootstrap.html:54
 msgid "Metrics"
@@ -3630,7 +3630,7 @@ msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:63
 msgid "Search M-codes (e.g. 500)"
-msgstr ""
+msgstr "M-Codes suchen (z.B. 500)"
 
 #: vw_type2_id/templates/base_bootstrap.html:79
 msgid "Admin"
@@ -3638,11 +3638,11 @@ msgstr ""
 
 #: vw_type2_id/templates/base_bootstrap.html:82
 msgid "Log out"
-msgstr ""
+msgstr "Abmelden"
 
 #: vw_type2_id/templates/base_bootstrap.html:87
 msgid "Sign up or login"
-msgstr ""
+msgstr "Registrieren oder anmelden"
 
 #: vw_type2_id/templates/home.html:9
 msgid "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
@@ -3654,15 +3654,15 @@ msgstr ""
 
 #: vw_type2_id/templates/home.html:18
 msgid "Learn more &raquo;"
-msgstr ""
+msgstr "Mehr erfahren &raquo;"
 
 #: vw_type2_id/templates/home.html:21
 msgid "Engine number decoder"
-msgstr ""
+msgstr "Motornummer Decoder"
 
 #: vw_type2_id/templates/home.html:22
 msgid "Coming soon"
-msgstr ""
+msgstr "In Kürze verfügbar"
 
 #: vw_type2_id/templates/registration/login.html:11
 msgid "Login"
@@ -3694,7 +3694,7 @@ msgstr "Passwort zurücksetzen"
 
 #: vw_type2_id/templates/registration/password_reset_form.html:12
 msgid "Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one."
-msgstr ""
+msgstr "Passwort vergessen? Geben Sie unten Ihre E-Mail-Adresse ein und wir senden Ihnen Anweisungen zum Setzen eines neuen Passwortes."
 
 #: vw_type2_id/templates/registration/password_reset_form.html:17
 msgid "Reset my password"
