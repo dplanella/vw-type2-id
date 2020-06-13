@@ -7,6 +7,7 @@ class MplateDecodeTestCase(TestCase):
 
     LATE_BAY_01_CHASSIS = "92023025"
     LATE_BAY_02_CHASSIS = "22138101"
+    LATE_BAY_03_CHASSIS = "02057644"
     EARLY_BAY_01_CHASSIS = "9123833"
 
     def setUp(self):
@@ -33,6 +34,19 @@ class MplateDecodeTestCase(TestCase):
             export_destination_code='056',
             model_code='2319',
             aggregate_code='31',
+            emden='',
+        )
+
+        Mplate.objects.create(
+            chassis_number_short=self.LATE_BAY_03_CHASSIS,
+            m_codes_1='',
+            m_codes_2='C88 072 119',
+            paint_and_interior_code='474751',
+            production_date_code='431',
+            production_planned='',
+            export_destination_code='KN',
+            model_code='2310',
+            aggregate_code='21',
             emden='',
         )
 
@@ -74,6 +88,9 @@ class MplateDecodeTestCase(TestCase):
         late_bay_02 = Mplate.objects.get(
             chassis_number_short=self.LATE_BAY_02_CHASSIS)
 
+        late_bay_03 = Mplate.objects.get(
+            chassis_number_short=self.LATE_BAY_03_CHASSIS)
+
         early_bay_01 = Mplate.objects.get(
             chassis_number_short=self.EARLY_BAY_01_CHASSIS)
 
@@ -81,5 +98,7 @@ class MplateDecodeTestCase(TestCase):
                          date(1978, 9, 19))
         self.assertEqual(late_bay_02.production_date_as_time,
                          date(1972, 3, 10))
+        self.assertEqual(late_bay_03.production_date_as_time,
+                         date(1969, 10, 20))
         self.assertEqual(early_bay_01.production_date_as_time,
                          date(1969, 2, 7))
