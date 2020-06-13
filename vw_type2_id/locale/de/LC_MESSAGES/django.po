@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 15:11+0000\n"
-"PO-Revision-Date: 2020-06-12 22:23\n"
+"PO-Revision-Date: 2020-06-13 13:31\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -353,13 +353,14 @@ msgstr ""
 #: mplate_decoder/models.py:895
 #, python-brace-format
 msgid "Remarks: {exteriorcolor.remarks}"
-msgstr ""
+msgstr "Bemerkungen: {exteriorcolor.remarks}"
 
 #: mplate_decoder/models.py:898
 #, python-brace-format
 msgid "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
-msgstr ""
+msgstr "Karosserie: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
+"            Dach: {color_name_roof} ({lacquer_code_roof})"
 
 #: mplate_decoder/models.py:984 mplate_decoder/models.py:998
 #: mplate_decoder/models.py:1044
@@ -384,7 +385,7 @@ msgstr "Die angeforderte Seite ist nicht vorhanden"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:22
 msgid "Specifications"
-msgstr ""
+msgstr "Kenndaten"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:26
 msgid "Model"
@@ -401,7 +402,11 @@ msgid "\n"
 "        ➡ %(configuration_description)s<br>\n"
 "        ➡ %(extras_description)s<br>\n"
 "    "
-msgstr ""
+msgstr "\n"
+"        ➡ %(model_description)s (Modell %(model_code_catalog)s)<br>\n"
+"        ➡ %(configuration_description)s<br>\n"
+"        ➡ %(extras_description)s<br>\n"
+"    "
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:40
 msgid "Engine"
@@ -421,11 +426,11 @@ msgstr "Mehraustattungen"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:73
 msgid "Exterior"
-msgstr ""
+msgstr "Farbe"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:77
 msgid "Interior"
-msgstr ""
+msgstr "Polsterung"
 
 #: mplate_decoder/templates/mplate_decoder/detail.html:82
 msgid "Destination"
@@ -484,7 +489,7 @@ msgstr ""
 #: mplate_decoder/templates/mplate_decoder/index.html:69
 #: vw_type2_id/templates/home.html:16
 msgid "M-plate decoder"
-msgstr ""
+msgstr "M-Plate Decoder"
 
 #: mplate_decoder/templates/mplate_decoder/index.html:74
 msgid "Use the automatic decoder to find out more about the original configuration, equipment and extras for a Type 2 bus. Simply choose the model year and fill in the M-plate fields."
@@ -629,66 +634,66 @@ msgstr "Modelljahr 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:10
 msgid "Volkswagen Type 2 M-plate, model year 68-69"
-msgstr ""
+msgstr "Volkswagen Typ 2 Mehraustattungsplakette, Modelljahr 68-69"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:55
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:58
 msgid "Update this M-plate"
-msgstr ""
+msgstr "M-Platte aktualisieren"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:57
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:60
 msgid "Decode this M-plate"
-msgstr ""
+msgstr "M-Platte decodieren"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:65
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:68
 msgid "Reference"
-msgstr ""
+msgstr "Verweis"
 
 #: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:10
 msgid "Volkswagen Type 2 M-plate, model year 70-79"
-msgstr ""
+msgstr "Volkswagen Typ 2 Mehraustattungsplakette, Modelljahr 70-79"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:13
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:14
 msgid "Years"
-msgstr ""
+msgstr "Jahre"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:15
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:26
 #, python-format
 msgid "M-code collection: %(collection)s"
-msgstr ""
+msgstr "M-Code-Sammlung: %(collection)s"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:34
 #: mplate_decoder/templates/mplate_decoder/search_results.html:35
 #: mplate_decoder/views.py:435
 msgid "Unknown"
-msgstr ""
+msgstr "Unbekannt"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:42
 #, python-format
 msgid "Found %(count)s M-plates with M-code:"
-msgstr ""
+msgstr "%(count)s M-Platten mit M-Code gefunden:"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:46
 msgid "M-plate"
-msgstr ""
+msgstr "M-Plate"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:47
 msgid "M-codes"
-msgstr ""
+msgstr "M-Codes"
 
 #: mplate_decoder/templates/mplate_decoder/search_results.html:105
 msgid "There are currently no M-plates with M-code:"
-msgstr ""
+msgstr "Derzeit gibt es keine Mehraustattungsplaketten mit M-Code:"
 
 #: mplate_decoder/urls.py:31
 msgid "VW Type 2 ID"
@@ -711,11 +716,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:2
 msgid "Grey"
-msgstr ""
+msgstr "Grau"
 
 #: vinaigrette-deleteme.py:3 vinaigrette-deleteme.py:324
 msgid "Black"
-msgstr ""
+msgstr "Schwarz"
 
 #: vinaigrette-deleteme.py:4
 msgid "Middle Red"
@@ -723,7 +728,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:5
 msgid "White"
-msgstr ""
+msgstr "Weiß"
 
 #: vinaigrette-deleteme.py:6
 msgid "Burgundy Red"
@@ -739,11 +744,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:9
 msgid "Sierra Yellow"
-msgstr ""
+msgstr "Sierragelb"
 
 #: vinaigrette-deleteme.py:10
 msgid "Yellow"
-msgstr ""
+msgstr "Gelb"
 
 #: vinaigrette-deleteme.py:11
 msgid "Hannen Yellow"
@@ -755,7 +760,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:13
 msgid "Yellow/Blue"
-msgstr ""
+msgstr "Gelb/Blau"
 
 #: vinaigrette-deleteme.py:14
 msgid "BP Yellow-White-Green"
@@ -811,7 +816,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:27
 msgid "Chrome Yellow"
-msgstr ""
+msgstr "Marinogelb"
 
 #: vinaigrette-deleteme.py:28
 msgid "Brilliant Orange"
@@ -831,7 +836,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:32
 msgid "Blue"
-msgstr ""
+msgstr "Blau"
 
 #: vinaigrette-deleteme.py:33
 msgid "Blue/Grey"
@@ -875,7 +880,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:43
 msgid "Lotus White"
-msgstr ""
+msgstr "Lotusweiß"
 
 #: vinaigrette-deleteme.py:44
 msgid "Kasan Red"
@@ -919,7 +924,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:54
 msgid "Light Grey"
-msgstr ""
+msgstr "Lichtgrau"
 
 #: vinaigrette-deleteme.py:55
 msgid "Cola Red-New"
@@ -951,11 +956,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:62
 msgid "Neptune Blue"
-msgstr ""
+msgstr "Neptunblau"
 
 #: vinaigrette-deleteme.py:63
 msgid "Velvet Green"
-msgstr ""
+msgstr "Samtgrün"
 
 #: vinaigrette-deleteme.py:64
 msgid "Velvet Green/Blue White"
@@ -999,7 +1004,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:74
 msgid "Niagara Blue"
-msgstr ""
+msgstr "Niagarablau"
 
 #: vinaigrette-deleteme.py:75
 msgid "Orient Blue"
@@ -1107,7 +1112,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:101
 msgid "Sage Green"
-msgstr ""
+msgstr "Taigagrün"
 
 #: vinaigrette-deleteme.py:102
 msgid "Hippie Green"
@@ -1171,11 +1176,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:117
 msgid "Pearl White"
-msgstr ""
+msgstr "Perlweiß"
 
 #: vinaigrette-deleteme.py:118
 msgid "Pastel White"
-msgstr ""
+msgstr "Pastellweiß"
 
 #: vinaigrette-deleteme.py:119
 msgid "Papyrus White"
@@ -1247,7 +1252,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:136
 msgid "Type 4"
-msgstr ""
+msgstr "Typ 4"
 
 #: vinaigrette-deleteme.py:137
 msgid "Fuel injection (L-Jetronic)"
@@ -1255,19 +1260,19 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:138
 msgid "Type 1"
-msgstr ""
+msgstr "Typ 1"
 
 #: vinaigrette-deleteme.py:139
 msgid "Single carburetor"
-msgstr ""
+msgstr "Einzelvergaser"
 
 #: vinaigrette-deleteme.py:140
 msgid "Exhaust emission control"
-msgstr ""
+msgstr "Abgasreinigungsanlage"
 
 #: vinaigrette-deleteme.py:141
 msgid "Dual carburetor"
-msgstr ""
+msgstr "Doppelvergaser"
 
 #: vinaigrette-deleteme.py:142
 msgid "Stiff instead of torsion suspended clutch plate"
@@ -1279,7 +1284,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:144 vinaigrette-deleteme.py:385
 msgid "Australia"
-msgstr ""
+msgstr "Australien"
 
 #: vinaigrette-deleteme.py:145
 msgid "Andorra"
@@ -1327,7 +1332,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:156 vinaigrette-deleteme.py:624
 msgid "Belgium"
-msgstr ""
+msgstr "Belgien"
 
 #: vinaigrette-deleteme.py:157
 msgid "Bulgaria"
@@ -1399,7 +1404,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:174 vinaigrette-deleteme.py:534
 msgid "United Kingdom"
-msgstr ""
+msgstr "Großbritannien"
 
 #: vinaigrette-deleteme.py:175
 msgid "Ecuador"
@@ -1411,7 +1416,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:177 vinaigrette-deleteme.py:462
 msgid "France"
-msgstr ""
+msgstr "Frankreich"
 
 #: vinaigrette-deleteme.py:178
 msgid "Ivory Coast"
@@ -1495,7 +1500,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:198
 msgid "The Netherlands"
-msgstr ""
+msgstr "Niederlande"
 
 #: vinaigrette-deleteme.py:199 vinaigrette-deleteme.py:384
 msgid "Japan"
@@ -2447,15 +2452,15 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:441
 msgid "Off-road tyres"
-msgstr ""
+msgstr "Gelände-Gürtelreifen"
 
 #: vinaigrette-deleteme.py:442
 msgid "Rear-window heating"
-msgstr ""
+msgstr "Beheizbare Heckscheibe"
 
 #: vinaigrette-deleteme.py:443
 msgid "Heavy duty shock absorbers front and back"
-msgstr ""
+msgstr "Verstärkte Stoßdämpfer vorn und hinten"
 
 #: vinaigrette-deleteme.py:444
 msgid "Upholstery material, special version (cloth)"
@@ -2467,7 +2472,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:446
 msgid "German Mail"
-msgstr ""
+msgstr "Deutsche Post"
 
 #: vinaigrette-deleteme.py:447
 msgid "Removable prints ‘Deutsche Bundesbahn’ and tyre-pressure text"
@@ -2483,7 +2488,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:450
 msgid "Prepared for low-loader Pick-Up"
-msgstr ""
+msgstr "Tieflader-Grundausstattung"
 
 #: vinaigrette-deleteme.py:451
 msgid "Surveyor measuring group vehicle. Same as M541 but with swivelling seat and table on division wall instead of bench (with M541 only)"
@@ -2523,7 +2528,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:460
 msgid "Suppression equipment for radio reception"
-msgstr ""
+msgstr "Entstörung für Radiobetrieb (nur Export)"
 
 #: vinaigrette-deleteme.py:461
 msgid "Yellow headlamp bulbs and safety inner rear-view mirror"
@@ -2539,7 +2544,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:465
 msgid "Rear panel lid without window"
-msgstr ""
+msgstr "Heckklappe ohne Fenster"
 
 #: vinaigrette-deleteme.py:466
 msgid "Whitewall tyres"
