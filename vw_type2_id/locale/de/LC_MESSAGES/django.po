@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: vw-type2-id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 15:11+0000\n"
-"PO-Revision-Date: 2020-06-13 13:31\n"
+"PO-Revision-Date: 2020-06-13 13:38\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -2572,7 +2572,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:472
 msgid "Fold-down passenger seat"
-msgstr ""
+msgstr "Mit klappbarem Beifahrersitz"
 
 #: vinaigrette-deleteme.py:473
 msgid "Modifications for fire truck, front bumper mounted higher for taking steep slope; with laminated windscreen"
@@ -2600,7 +2600,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:479
 msgid "Seven-seater model instead of eight-seater model"
-msgstr ""
+msgstr "Siebensitzer statt Achtsitzer"
 
 #: vinaigrette-deleteme.py:480
 msgid "With hinged rear seat backrest"
@@ -2608,7 +2608,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:481
 msgid "Painted instead of chrome parts"
-msgstr ""
+msgstr "Lackierte statt verchromter Teile"
 
 #: vinaigrette-deleteme.py:482
 msgid "VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, maximum tyre inflation written above the wheels, symbol notification of knobs on windscreen, reinforcement under upholstery for mounting of fire extinguishers in cabin, additional mountings for several pieces of equipment according to DIN requirement, transparent battery cases (only with M623)"
@@ -2636,11 +2636,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:488
 msgid "Type 1 engines"
-msgstr ""
+msgstr "Typ 1 Motoren"
 
 #: vinaigrette-deleteme.py:489
 msgid "Exhaust emission control system"
-msgstr ""
+msgstr "Abgasreinigungsanlage"
 
 #: vinaigrette-deleteme.py:490
 msgid "Exhaust emission control system and activated carbon container for absorbing fuel vapour"
@@ -2652,7 +2652,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:492
 msgid "Securing plate and rings for padlock"
-msgstr ""
+msgstr "Öse für Vorhängeschloß"
 
 #: vinaigrette-deleteme.py:493
 msgid "Blue rotating light and siren"
@@ -2660,11 +2660,11 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:494
 msgid "Seats in cabin with mountings for headrests"
-msgstr ""
+msgstr "Aufnahmen für Kopfstützen im Fahrerhaus"
 
 #: vinaigrette-deleteme.py:495
 msgid "Rubber strips for bumpers"
-msgstr ""
+msgstr "Gummiauflage für Stoßfänger"
 
 #: vinaigrette-deleteme.py:496
 msgid "Gauged trip writer"
@@ -2676,7 +2676,7 @@ msgstr ""
 
 #: vinaigrette-deleteme.py:498
 msgid "Tubeless steel-ply tyres"
-msgstr ""
+msgstr "Stahlgürtelreifen schlauchlos"
 
 #: vinaigrette-deleteme.py:499
 msgid "C-shaped guiding rails on metal partition between cabin and cargo compartment and on the side opposite the sliding door (for model 211 only with M540, for model 231 only wit M120, M540)"
