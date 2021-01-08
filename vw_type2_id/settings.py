@@ -161,6 +161,7 @@ LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = os.environ.get('DJANGO_VW_TYPE2_EMAIL',
                                     'VW Type 2 ID <info@vw-type2-id.xyz>')
+EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST', 'localhost')
 
 LOGGING = {
     'version': 1,
