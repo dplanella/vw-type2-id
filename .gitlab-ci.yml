@@ -29,27 +29,6 @@ default:
     - pip3 install pipenv
     - pipenv install --dev
 
-# Required for dependency scanning to work: build the binaries for the libraries
-# needed to build native pip dependencies
-build_dep_wheels:
-  stage: build
-  script:
-    - pip wheel --no-binary=':all:' --wheel-dir $WHEEL_DIR -r requirements.txt
-  artifacts:
-    paths:
-      - $WHEEL_DIR
-
-# Override the dependency_scanning job to use DS_PIP_DEPENDENCY_PATH and find
-# the binaries required to build the native pip dependencies
-dependency_scanning:
-  dependencies:
-    - build_dep_wheels
-  variables:
-    DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
-    SECURE_LOG_LEVEL: error  
-  artifacts:
-    paths: [gl-dependency-scanning-report.json]
-
 # Override the code_quality job to make the code quality report artifact
 # downloadable from the job detail page
 code_quality:
