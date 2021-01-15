@@ -471,17 +471,28 @@ class MplateDecoder:
         model_description_dict = {}
 
         t2_model = self.decode_model()
-        model_code_catalog = \
-            f'{t2_model.model}{t2_model.configuration}'
 
-        model_description_dict['model_description'] = \
-            t2_model.model_description
-        model_description_dict['model_code_catalog'] = \
-            model_code_catalog
-        model_description_dict['configuration_description'] = \
-            t2_model.configuration_description
-        model_description_dict['extras_description'] = \
-            t2_model.extras_description
+        if t2_model is not None:
+            model_code_catalog = \
+                f'{t2_model.model}{t2_model.configuration}'
+
+            model_description_dict['model_description'] = \
+                t2_model.model_description
+            model_description_dict['model_code_catalog'] = \
+                model_code_catalog
+            model_description_dict['configuration_description'] = \
+                t2_model.configuration_description
+            model_description_dict['extras_description'] = \
+                t2_model.extras_description
+        else:
+            model_description_dict['model_description'] = \
+                _(f"Unknown ({self.mplate.model_code})")
+            model_description_dict['model_code_catalog'] = \
+                _("Unknown")
+            model_description_dict['configuration_description'] = \
+                _("Unknown")
+            model_description_dict['extras_description'] = \
+                _("Unknown")
 
         return model_description_dict
 
