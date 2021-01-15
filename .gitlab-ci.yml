@@ -14,6 +14,7 @@ include:
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
   WHEEL_DIR: ./dist
+  SECURE_LOG_LEVEL: error
 
 cache:
   paths:
