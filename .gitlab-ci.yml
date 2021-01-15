@@ -14,7 +14,6 @@ include:
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
   WHEEL_DIR: ./dist
-  SECURE_LOG_LEVEL: error
 
 cache:
   paths:
@@ -47,6 +46,7 @@ dependency_scanning:
     - build_dep_wheels
   variables:
     DS_PIP_DEPENDENCY_PATH: $WHEEL_DIR
+    SECURE_LOG_LEVEL: error  
   artifacts:
     paths: [gl-dependency-scanning-report.json]
 
