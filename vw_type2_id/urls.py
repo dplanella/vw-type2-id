@@ -19,6 +19,11 @@ from django.views.generic import TemplateView
 from . import settings
 from django.contrib.staticfiles.urls import static
 
+
+def trigger_error(request):
+    division_by_zero = 1 / 0  # noqa: F841
+
+
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
@@ -26,6 +31,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('', include('contact.urls')),
+    path('sentry-debug/', trigger_error),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
