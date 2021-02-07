@@ -30,6 +30,7 @@ dj-database-url = "*"
 psycopg2 = "*"
 django-fullurl = "==1.0"
 django-vinaigrette = "*"
+sentry-sdk = "*"
 
 [requires]
 python_version = "3.8"
