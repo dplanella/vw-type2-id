@@ -9,7 +9,10 @@ def navactive(request, url):
     ACTIVE_CLASS = "active"
     is_active = ""
 
-    if request.path == reverse(url):
-        is_active = ACTIVE_CLASS
+    try:
+        if request.path == reverse(url):
+            is_active = ACTIVE_CLASS
+    except AttributeError:
+        pass
 
     return is_active
