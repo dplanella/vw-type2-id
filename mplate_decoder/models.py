@@ -239,8 +239,9 @@ class Mplate(Model):
                 else:
                     color_name = (
                         _("Error while fetching interior color code:") +
-                        _(f" {interiorcolor_code}, year {model_year}"))
-                    material = ""
+                        gettext(f" {interiorcolor_code}, year {model_year}"))
+                    material = _("Unknown material")
+                    logger.error(color_name)
 
             interiorcolor_description = '{}, {}'.format(color_name, material)
         else:
