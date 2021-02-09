@@ -164,7 +164,8 @@ class Mplate(Model):
         return self.decoder.describe_export_destination()
 
     def describe_export_destination_country(self, with_port=True):
-        return self.decoder.describe_export_destination_country(with_port)
+        return self.decoder.describe_export_destination_country(
+            with_port=with_port)
 
     def describe_exteriorcolor(self):
         return self.decoder.describe_exteriorcolor()
@@ -747,6 +748,7 @@ class MplateDecoder:
         but otherwise will not contain any other geographical information.
         '''
 
+        # Pass the attribute name via f-string debugging
         export_destination_code = self._get_value_or_mplate(
             f'{export_destination_code=}'.split('=')[0],
             export_destination_code
@@ -782,6 +784,8 @@ class MplateDecoder:
             f'{export_destination_code=}'.split('=')[0],
             export_destination_code
         )
+        logger.debug(f'Export destination code:'
+                     f' {export_destination_code}')
 
         if export_destination_code:
             export_destination = self.decode_export_destination()
