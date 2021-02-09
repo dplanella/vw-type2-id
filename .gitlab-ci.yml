@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - package
   - deploy
   - dast
 
@@ -14,6 +15,7 @@ include:
 variables:
   DAST_WEBSITE: https://vw-type2-id.xyz/mplate/decode
   WHEEL_DIR: ./dist
+  SECURE_LOG_LEVEL: error
 
 cache:
   paths:
@@ -104,9 +106,9 @@ pages:
   only:
     - master
 
-build:
+build_image:
   image: docker:19.03.8
-  stage: build
+  stage: package
   services:
     - docker:19.03.8-dind
   variables:
