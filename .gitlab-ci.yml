@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - package
   - deploy
   - dast
 
@@ -105,9 +106,9 @@ pages:
   only:
     - master
 
-build:
+build_image:
   image: docker:19.03.8
-  stage: build
+  stage: package
   services:
     - docker:19.03.8-dind
   variables:
