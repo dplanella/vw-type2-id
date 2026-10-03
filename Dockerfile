@@ -35,18 +35,11 @@ RUN apk --no-cache add --virtual .build-deps \
     postgresql-dev \
     zlib-dev
 
-# Install app dependencies
-# using pipenv
-RUN pip install --upgrade pip \
-    pipenv \
-    gunicorn
-
 # Copy the app's source code to the project location
 # within the container
 COPY . ${CONTAINER_PROJECT}
 
 # Install local dependencies
-#RUN pipenv install --skip-lock --system --dev
-RUN pipenv install --system --deploy --ignore-pipfile
+RUN pip install --no-cache-dir -r requirements.txt
 
 #RUN apk del .build-deps
