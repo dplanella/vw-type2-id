@@ -40,6 +40,10 @@ class OwnerQuerysetMixin(object):
         return queryset
 
 
+def is_ajax(request):
+    return request.headers.get('x-requested-with') == 'XMLHttpRequest'
+
+
 class AjaxableResponseMixin:
     """
     Mixin to add AJAX support to a form.
@@ -47,7 +51,7 @@ class AjaxableResponseMixin:
     """
     def form_invalid(self, form):
         response = super().form_invalid(form)
-        if self.request.is_ajax():
+        if is_ajax(self.request):
             logger.info("form_invalid: ajax request")
             data = form.errors.as_json()
             response = HttpResponse(
@@ -68,7 +72,7 @@ class AjaxableResponseMixin:
         # it might do some processing (in the case of CreateView, it will
         # call form.save() for example).
         response = super().form_valid(form)
-        if self.request.is_ajax():
+        if is_ajax(self.request):
             logger.debug("form_valid: ajax request")
             data = {
                 'chassis_number_short': self.object.chassis_number_short,
