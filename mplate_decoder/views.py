@@ -135,7 +135,7 @@ class MplateRetrieve(generic.DetailView):
         # its value
         for field in fields:
             mplate_field = tree.find(
-                "//n:text[@id='{}']/n:tspan".format(field),
+                ".//n:text[@id='{}']/n:tspan".format(field),
                 namespaces={'n': SVG_NAMESPACE})
             mplate_field.text = getattr(mplate, field)
 
@@ -144,7 +144,7 @@ class MplateRetrieve(generic.DetailView):
         if color_chip_body:
             # Replace gradient color
             stop_color = tree.find(
-                "//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
+                ".//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
                 namespaces={'n': SVG_NAMESPACE}
             )
 
