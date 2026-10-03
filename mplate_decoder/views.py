@@ -11,11 +11,12 @@ from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from collections import Counter
 import logging
 from lxml import etree
-from datetime import datetime, timedelta
+from datetime import timedelta
 import os
 from vw_type2_id.settings import BASE_DIR
 
@@ -439,7 +440,7 @@ class MetricsView(generic.TemplateView):
                 countries_labels.append(_('Unknown'))
             countries_data.append(country[1])
 
-        end_date = datetime.today()
+        end_date = timezone.now()
         start_date = end_date - timedelta(days=30)
 
         # Collect submissions data
