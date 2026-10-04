@@ -14,10 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.db import connection
+from django.http import HttpResponse
 from django.urls import include, path
 from django.views.generic import TemplateView
 from . import settings
 from django.contrib.staticfiles.urls import static
+
+
+def health(request):
+    with connection.cursor() as cursor:
+        cursor.execute('SELECT 1')
+    return HttpResponse('ok', content_type='text/plain')
 
 
 def trigger_error(request):
@@ -32,6 +40,7 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     path('', include('contact.urls')),
     path('sentry-debug/', trigger_error),
+    path('health/', health),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

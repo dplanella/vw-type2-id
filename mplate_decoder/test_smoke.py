@@ -51,7 +51,7 @@ class SmokeTest(TestCase):
     def test_public_pages(self):
         for url in ['/', '/mplate/', '/mplate/decode/', '/mplate/about/',
                     '/mplate/search/?q=920', '/contact/', '/success/',
-                    '/users/signup/', '/users/login/']:
+                    '/users/signup/', '/users/login/', '/health/']:
             self.assert_ok(url)
 
     def test_inline_svg(self):
