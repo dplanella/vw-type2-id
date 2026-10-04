@@ -13,27 +13,26 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 import sentry_sdk
+from pathlib import Path
 from sentry_sdk.integrations.django import DjangoIntegration
 
-sentry_sdk.init(
-    dsn='https://262dd48ae02e47a9b75b8e2c24de692a@o360843.ingest.sentry.io/5227538',  # noqa: E501
-    integrations=[DjangoIntegration()],
 
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    # We recommend adjusting this value in production,
-    traces_sample_rate=1.0,
+def secret(name, env_var):
+    """Read the container secret /run/secrets/<name>, else env_var."""
+    path = Path('/run/secrets') / name
+    if path.exists():
+        return path.read_text().strip()
+    return os.environ.get(env_var)
 
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True,
 
-    # By default the SDK will try to use the SENTRY_RELEASE
-    # environment variable, or infer a git commit
-    # SHA as release, however you may want to set
-    # something more human-readable.
-    # release="myapp@1.0.0",
-)
+SENTRY_DSN = secret('vw-sentry-dsn', 'SENTRY_DSN')
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=1.0,
+        send_default_pii=True,
+    )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # This is the top-level root
@@ -45,7 +44,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get('DJANGO_VW_TYPE2_ID_SECRET_KEY')
+SECRET_KEY = secret('vw-secret-key', 'DJANGO_VW_TYPE2_ID_SECRET_KEY')
 
 DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 
@@ -109,8 +108,9 @@ WSGI_APPLICATION = 'vw_type2_id.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-DATABASES = {'default': dj_database_url.config(
-    default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}")}
+DATABASES = {'default': dj_database_url.parse(
+    secret('vw-database-url', 'DATABASE_URL')
+    or f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}")}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
