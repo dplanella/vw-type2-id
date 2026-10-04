@@ -131,3 +131,6 @@ class SmokeTest(TestCase):
         })
         self.assertRedirects(response, '/success/')
         self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].from_email,
+                         'VW Type 2 ID <info@vw-type2-id.xyz>')
+        self.assertEqual(mail.outbox[0].reply_to, ['visitor@example.com'])
