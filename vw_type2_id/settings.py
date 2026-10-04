@@ -66,7 +66,6 @@ INSTALLED_APPS = [
     'mplate_decoder.apps.MplateDecoderConfig',
     'crispy_forms',
     'crispy_bootstrap4',
-    'svg',
     'fullurl',
     'markdownify',
     'users',

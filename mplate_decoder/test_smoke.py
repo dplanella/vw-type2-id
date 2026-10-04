@@ -54,6 +54,9 @@ class SmokeTest(TestCase):
                     '/users/signup/', '/users/login/']:
             self.assert_ok(url)
 
+    def test_inline_svg(self):
+        self.assertContains(self.client.get('/mplate/decode/'), '<svg')
+
     def test_translated_pages(self):
         for lang in ['ca', 'de', 'es', 'fr', 'nl']:
             response = self.client.get(
