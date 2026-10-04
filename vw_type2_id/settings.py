@@ -187,6 +187,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = os.environ.get('DJANGO_VW_TYPE2_EMAIL',
                                     'VW Type 2 ID <info@vw-type2-id.xyz>')
 EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST', 'localhost')
+EMAIL_PORT = int(os.environ.get('DJANGO_EMAIL_PORT', 25))
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_USER', '')
+EMAIL_HOST_PASSWORD = secret('vw-email-password', 'DJANGO_EMAIL_PASSWORD')
+EMAIL_USE_TLS = bool(int(os.environ.get('DJANGO_EMAIL_USE_TLS', 0)))
 
 LOGGING = {
     'version': 1,
