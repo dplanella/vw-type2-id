@@ -52,6 +52,15 @@ ALLOWED_HOSTS = os.environ.get(
     'DJANGO_ALLOWED_HOSTS',
     default='localhost 127.0.0.1').split(' ')
 
+# Behind a reverse proxy that terminates TLS and redirects HTTP to HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# HSTS covers this domain only, not subdomains or the preload list
+SILENCED_SYSTEM_CHECKS = ['security.W005', 'security.W008', 'security.W021']
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,6 +89,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'crum.CurrentRequestUserMiddleware',
     'vinaigrette.middleware.VinaigretteAdminLanguageMiddleware',
 ]
