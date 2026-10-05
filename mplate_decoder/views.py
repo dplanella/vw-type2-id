@@ -89,8 +89,13 @@ class AjaxableResponseMixin:
 
 
 class MplateIndex(generic.ListView):
-    model = Mplate
+    queryset = Mplate.objects.order_by('-id')[:7]
     template_name = 'mplate_decoder/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mplate_count'] = Mplate.objects.count()
+        return context
 
 
 class MplateAbout(generic.TemplateView):

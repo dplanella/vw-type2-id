@@ -87,10 +87,10 @@
 <div class="col-sm">
     <h4 class="d-flex justify-content-between align-items-center mb-3">
       <span class="text-muted">{% trans "M-plate submissions" %}</span>
-      <span class="badge badge-secondary badge-pill">{{ object_list.count }}</span>
+      <span class="badge badge-secondary badge-pill">{{ mplate_count }}</span>
     </h4>
     <ul class="list-group">
-        {% for mplate in object_list|dictsortreversed:"id"|slice:":7" %}
+        {% for mplate in object_list %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <h6 class="my-1 text-info no-anchor">
                 <a href="{% url 'mplate_decoder:mplate_retrieve' mplate.chassis_number_short %}">{{ mplate.chassis_number_short }}</a>

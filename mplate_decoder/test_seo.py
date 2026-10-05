@@ -3,7 +3,7 @@ import re
 
 from django.test import TestCase
 
-from mplate_decoder.models import ExportDestination
+from mplate_decoder.models import ExportDestination, Mplate
 from mplate_decoder.test_smoke import PLATE
 
 
@@ -124,3 +124,19 @@ class SharingTest(TestCase):
         self.assertEqual(data['@type'], 'WebSite')
         self.assertEqual(data['name'], 'VW Type 2 Identification')
         self.assertEqual(data['url'], 'http://testserver/')
+
+
+class IndexPageTest(TestCase):
+    """The M-plate page shows the total and only the latest plates."""
+
+    def test_latest_plates(self):
+        Mplate.objects.bulk_create([Mplate(
+            chassis_number_short=f'2200000{n}',
+            production_date_as_time='1971-01-01', model_year='1972')
+            for n in range(10)])
+        with self.assertNumQueries(2):
+            response = self.client.get('/mplate/')
+        self.assertEqual(
+            [m.chassis_number_short for m in response.context['object_list']],
+            [f'2200000{n}' for n in range(9, 2, -1)])
+        self.assertEqual(response.context['mplate_count'], 10)
