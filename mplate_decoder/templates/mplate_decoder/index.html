@@ -3,6 +3,12 @@
 {% load humanize %}
 {% load i18n %}
 
+{% block meta %}
+{% trans "VW Bus M-plate decoder: Type 2 Bay Window option codes explained" as title %}
+{% trans "What the M-plate of a 1968–1979 VW Type 2 Bay Window bus is, where to find it and what its option codes, paint codes and dates mean." as description %}
+{% include "head_meta.html" %}
+{% endblock %}
+
 {% block content %}
 
 <!-- Intro row -->

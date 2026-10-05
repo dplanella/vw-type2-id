@@ -3,6 +3,11 @@
 {% load i18n %}
 {% load summarizemodelyears %}
 
+{% block meta %}
+{% blocktrans with query=request.GET.q asvar title %}Search results for {{ query }}{% endblocktrans %}
+{% include "head_meta.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="row">

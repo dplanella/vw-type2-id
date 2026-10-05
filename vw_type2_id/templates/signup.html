@@ -2,6 +2,11 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
+{% block meta %}
+{% trans "Sign up" as title %}
+{% include "head_meta.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="row justify-content-center mt-4">

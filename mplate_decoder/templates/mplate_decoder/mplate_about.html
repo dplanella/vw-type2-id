@@ -2,6 +2,12 @@
 {% load markdownify %}
 {% load i18n %}
 
+{% block meta %}
+{% trans "About this site" as title %}
+{% trans "Why this VW Type 2 M-plate decoder exists, where its data comes from, its privacy policy and disclaimer." as description %}
+{% include "head_meta.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="row mt-4">
