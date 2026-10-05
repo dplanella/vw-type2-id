@@ -121,6 +121,14 @@ class SmokeTest(TestCase):
                     '/admin/users/customuser/']:
             self.assert_ok(url)
 
+    def test_logout(self):
+        self.client.force_login(self.user)
+        response = self.client.get('/mplate/')
+        self.assertContains(response, 'action="/users/logout/"')
+        response = self.client.post('/users/logout/')
+        self.assertRedirects(response, '/mplate/')
+        self.assertNotIn('_auth_user_id', self.client.session)
+
     @override_settings(
         EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
     def test_contact(self):
