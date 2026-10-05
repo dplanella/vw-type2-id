@@ -2,6 +2,9 @@ import re
 
 from django.test import TestCase
 
+from mplate_decoder.models import ExportDestination
+from mplate_decoder.test_smoke import PLATE
+
 
 class SeoTest(TestCase):
     """Pages carry the tags search engines read."""
@@ -25,3 +28,34 @@ class SeoTest(TestCase):
                 html).group(1))
         self.assertEqual(len(titles), len(self.PAGES))
         self.assertEqual(len(descriptions), len(self.PAGES))
+
+
+class PlatePageTest(TestCase):
+    """Plate pages describe the bus in their title, heading and summary."""
+
+    fixtures = [
+        'tst_mplate_gearbox.json',
+        'tst_mplate_engine.json',
+        'tst_mplate_vwtype2model',
+    ]
+
+    def test_plate_page(self):
+        self.client.post('/mplate/decode/', PLATE)
+        html = self.client.get(
+            f"/mplate/{PLATE['chassis_number_short']}/").content.decode()
+        heading = re.search(r'<h1[^>]*>(.+?)</h1>', html).group(1)
+        self.assertRegex(heading, r'^19\d\d VW ')
+        self.assertIn(
+            f"<title>{heading}: M-plate {PLATE['chassis_number_short']} "
+            "decoded | ", html)
+        summary = re.search(r'<p class="lead">(.+?)</p>', html).group(1)
+        self.assertIn(f'This {heading} was built on ', summary)
+        self.assertIn(f'<meta name="description" content="{summary}">', html)
+
+    def test_plate_page_destination(self):
+        ExportDestination.objects.create(
+            export_code=PLATE['export_destination_code'], country='Germany')
+        self.client.post('/mplate/decode/', PLATE)
+        response = self.client.get(
+            f"/mplate/{PLATE['chassis_number_short']}/")
+        self.assertContains(response, ' for Germany. ')
