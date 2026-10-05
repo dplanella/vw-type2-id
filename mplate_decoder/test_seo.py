@@ -1,3 +1,4 @@
+import json
 import re
 
 from django.test import TestCase
@@ -102,3 +103,24 @@ class CrawlingTest(TestCase):
                     f"/mplate/{PLATE['chassis_number_short']}/"]:
             self.assertContains(response, f'<loc>http://testserver{url}</loc>')
         self.assertContains(response, '<lastmod>', count=1)
+
+
+class SharingTest(TestCase):
+    """Pages carry Open Graph tags; the home page names the site."""
+
+    def test_open_graph(self):
+        response = self.client.get('/mplate/about/')
+        self.assertContains(
+            response, '<meta property="og:url" '
+            'content="http://testserver/mplate/about/">')
+        self.assertContains(response, '<meta property="og:title" '
+                            'content="About this site">')
+
+    def test_site_name(self):
+        html = self.client.get('/').content.decode()
+        data = json.loads(re.search(
+            r'<script type="application/ld\+json">(.+?)</script>',
+            html, re.S).group(1))
+        self.assertEqual(data['@type'], 'WebSite')
+        self.assertEqual(data['name'], 'VW Type 2 Identification')
+        self.assertEqual(data['url'], 'http://testserver/')
