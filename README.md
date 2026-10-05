@@ -22,11 +22,10 @@ https://vw-type2-id.xyz/mplate/decode/
 
 #### Local development
 
-Local development is done via a virtual environment managed with [`pipenv`](https://github.com/pypa/pipenv). To get started:
+Local development is done in a Python virtual environment. To get started:
 
 1. Clone this repository
-1. Install `pipenv` => `pip3 install pipenv --user`
 1. `cd vw-type2-id`
-1. `pipenv shell`
-1. Install project dependencies, if you've not already done it => `pipenv install`
+1. `python3 -m venv .venv && . .venv/bin/activate`
+1. Install project dependencies => `pip install -r requirements-dev.txt`
 1. You should be all set for development in this virtual environment. Use the django management commands to run and manage your app. E.g. `python ./manage.py runserver` to start the server.

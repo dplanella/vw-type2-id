@@ -11,11 +11,12 @@ from .forms import MplateCreateForm, MplateUpdateForm
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from collections import Counter
 import logging
 from lxml import etree
-from datetime import datetime, timedelta
+from datetime import timedelta
 import os
 from vw_type2_id.settings import BASE_DIR
 
@@ -40,6 +41,10 @@ class OwnerQuerysetMixin(object):
         return queryset
 
 
+def is_ajax(request):
+    return request.headers.get('x-requested-with') == 'XMLHttpRequest'
+
+
 class AjaxableResponseMixin:
     """
     Mixin to add AJAX support to a form.
@@ -47,7 +52,7 @@ class AjaxableResponseMixin:
     """
     def form_invalid(self, form):
         response = super().form_invalid(form)
-        if self.request.is_ajax():
+        if is_ajax(self.request):
             logger.info("form_invalid: ajax request")
             data = form.errors.as_json()
             response = HttpResponse(
@@ -68,7 +73,7 @@ class AjaxableResponseMixin:
         # it might do some processing (in the case of CreateView, it will
         # call form.save() for example).
         response = super().form_valid(form)
-        if self.request.is_ajax():
+        if is_ajax(self.request):
             logger.debug("form_valid: ajax request")
             data = {
                 'chassis_number_short': self.object.chassis_number_short,
@@ -130,7 +135,7 @@ class MplateRetrieve(generic.DetailView):
         # its value
         for field in fields:
             mplate_field = tree.find(
-                "//n:text[@id='{}']/n:tspan".format(field),
+                ".//n:text[@id='{}']/n:tspan".format(field),
                 namespaces={'n': SVG_NAMESPACE})
             mplate_field.text = getattr(mplate, field)
 
@@ -139,7 +144,7 @@ class MplateRetrieve(generic.DetailView):
         if color_chip_body:
             # Replace gradient color
             stop_color = tree.find(
-                "//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
+                ".//n:stop[@id='{}']".format(MPLATE_STOP_COLOR_ID),
                 namespaces={'n': SVG_NAMESPACE}
             )
 
@@ -435,7 +440,7 @@ class MetricsView(generic.TemplateView):
                 countries_labels.append(_('Unknown'))
             countries_data.append(country[1])
 
-        end_date = datetime.today()
+        end_date = timezone.now()
         start_date = end_date - timedelta(days=30)
 
         # Collect submissions data

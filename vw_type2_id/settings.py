@@ -13,27 +13,26 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 import sentry_sdk
+from pathlib import Path
 from sentry_sdk.integrations.django import DjangoIntegration
 
-sentry_sdk.init(
-    dsn='https://262dd48ae02e47a9b75b8e2c24de692a@o360843.ingest.sentry.io/5227538',  # noqa: E501
-    integrations=[DjangoIntegration()],
 
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    # We recommend adjusting this value in production,
-    traces_sample_rate=1.0,
+def secret(name, env_var):
+    """Read the container secret /run/secrets/<name>, else env_var."""
+    path = Path('/run/secrets') / name
+    if path.exists():
+        return path.read_text().strip()
+    return os.environ.get(env_var)
 
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True,
 
-    # By default the SDK will try to use the SENTRY_RELEASE
-    # environment variable, or infer a git commit
-    # SHA as release, however you may want to set
-    # something more human-readable.
-    # release="myapp@1.0.0",
-)
+SENTRY_DSN = secret('vw-sentry-dsn', 'SENTRY_DSN')
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=1.0,
+        send_default_pii=True,
+    )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # This is the top-level root
@@ -45,13 +44,22 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get('DJANGO_VW_TYPE2_ID_SECRET_KEY')
+SECRET_KEY = secret('vw-secret-key', 'DJANGO_VW_TYPE2_ID_SECRET_KEY')
 
 DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 
 ALLOWED_HOSTS = os.environ.get(
     'DJANGO_ALLOWED_HOSTS',
     default='localhost 127.0.0.1').split(' ')
+
+# Behind a reverse proxy that terminates TLS and redirects HTTP to HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# HSTS covers this domain only, not subdomains or the preload list
+SILENCED_SYSTEM_CHECKS = ['security.W005', 'security.W008', 'security.W021']
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
 
 # Application definition
 
@@ -65,7 +73,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'mplate_decoder.apps.MplateDecoderConfig',
     'crispy_forms',
-    'svg',
+    'crispy_bootstrap4',
     'fullurl',
     'markdownify',
     'users',
@@ -75,12 +83,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'crum.CurrentRequestUserMiddleware',
     'vinaigrette.middleware.VinaigretteAdminLanguageMiddleware',
 ]
@@ -109,8 +119,9 @@ WSGI_APPLICATION = 'vw_type2_id.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-DATABASES = {'default': dj_database_url.config(
-    default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}")}
+DATABASES = {'default': dj_database_url.parse(
+    secret('vw-database-url', 'DATABASE_URL')
+    or f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}")}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -140,8 +151,6 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
@@ -164,9 +173,23 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "static"),
 ]
 
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-MARKDOWNIFY_BLEACH = False
+MARKDOWNIFY = {
+    'default': {
+        'BLEACH': False,
+    },
+}
 
 # Generate jUnit test reports
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
@@ -182,8 +205,14 @@ LOGOUT_REDIRECT_URL = 'mplate_decoder:mplate_index'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = os.environ.get('DJANGO_VW_TYPE2_EMAIL',
-                                    'VW Type 2 ID <info@vw-type2-id.xyz>')
+                                    'VW Type 2 ID <no-reply@vw-type2-id.xyz>')
+CONTACT_EMAIL = os.environ.get('DJANGO_CONTACT_EMAIL',
+                               'contact@vw-type2-id.xyz')
 EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST', 'localhost')
+EMAIL_PORT = int(os.environ.get('DJANGO_EMAIL_PORT', 25))
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_USER', '')
+EMAIL_HOST_PASSWORD = secret('vw-email-password', 'DJANGO_EMAIL_PASSWORD')
+EMAIL_USE_TLS = bool(int(os.environ.get('DJANGO_EMAIL_USE_TLS', 0)))
 
 LOGGING = {
     'version': 1,
@@ -225,6 +254,8 @@ LOGGING = {
         },
     },
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

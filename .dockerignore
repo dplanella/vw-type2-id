@@ -12,3 +12,6 @@ static/
 **/htmlcov/
 **/geckodriver.log
 **/test-results/
+.env
+.venv/
+.github/

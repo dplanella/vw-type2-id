@@ -1,52 +1,26 @@
-# Pull official base image
-FROM python:3.8-alpine
+FROM python:3.13-slim AS build
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-# Do not buffer stdout and stderr output.
-# Required to see logs for containers in detached mode
-# See https://stackoverflow.com/q/29663459
-ENV PYTHONUNBUFFERED 1
-ENV PROJECT=vw_type2_id
-ENV CONTAINER_HOME=/opt
-ENV CONTAINER_PROJECT=$CONTAINER_HOME/$PROJECT
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gettext \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+RUN export DJANGO_VW_TYPE2_ID_SECRET_KEY=build \
+    && python manage.py compilemessages \
+    && python manage.py collectstatic --noinput
 
-# Set working directory
-WORKDIR ${CONTAINER_PROJECT}
-COPY ./docker-entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+FROM python:3.13-slim
 
-# Install client libraries
-RUN apk update && apk add --virtual .run-deps \
-    libpq \
-    gettext \
-    postgresql-client
-
-# Install build dependencies
-# using the image's package manager
-RUN apk --no-cache add --virtual .build-deps \
-    build-base \
-    gettext-dev \
-    jpeg-dev \
-    libxml2-dev \
-    libxslt-dev \
-    python3-dev \
-    postgresql-dev \
-    zlib-dev
-
-# Install app dependencies
-# using pipenv
-RUN pip install --upgrade pip \
-    pipenv \
-    gunicorn
-
-# Copy the app's source code to the project location
-# within the container
-COPY . ${CONTAINER_PROJECT}
-
-# Install local dependencies
-#RUN pipenv install --skip-lock --system --dev
-RUN pipenv install --system --deploy --ignore-pipfile
-
-#RUN apk del .build-deps
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt \
+    && useradd --system --no-create-home app
+COPY --from=build /app .
+USER app
+EXPOSE 8000
+CMD ["gunicorn", "vw_type2_id.wsgi", "--bind", "0.0.0.0:8000", \
+     "--workers", "2", "--access-logfile", "-"]
