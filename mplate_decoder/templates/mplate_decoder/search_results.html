@@ -5,7 +5,7 @@
 
 {% block meta %}
 {% blocktrans with query=request.GET.q asvar title %}Search results for {{ query }}{% endblocktrans %}
-{% include "head_meta.html" %}
+{% include "head_meta.html" with noindex=True %}
 {% endblock %}
 
 {% block content %}

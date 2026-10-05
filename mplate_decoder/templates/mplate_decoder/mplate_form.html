@@ -10,7 +10,7 @@
 {% trans "Decode your VW Bus M-plate (1968–1979)" as title %}
 {% trans "Enter the codes from your VW Type 2 M-plate to decode its model, optional extras, paint and interior, production date and export destination." as description %}
 {% endif %}
-{% include "head_meta.html" %}
+{% include "head_meta.html" with noindex=object %}
 {% endblock %}
 
 {% block content %}

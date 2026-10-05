@@ -59,3 +59,24 @@ class PlatePageTest(TestCase):
         response = self.client.get(
             f"/mplate/{PLATE['chassis_number_short']}/")
         self.assertContains(response, ' for Germany. ')
+
+
+class IndexingTest(TestCase):
+    """Indexable pages have a canonical link, others are noindex."""
+
+    def test_canonical(self):
+        response = self.client.get('/mplate/?utm_source=x')
+        self.assertContains(response, '<link rel="canonical" '
+                                      'href="http://testserver/mplate/">')
+        self.assertNotContains(response, 'noindex')
+
+    def test_noindex(self):
+        for url in ['/mplate/search/?q=500', '/users/login/',
+                    '/users/signup/', '/users/password_reset/',
+                    '/success/', '/missing/']:
+            response = self.client.get(url)
+            self.assertContains(
+                response, '<meta name="robots" content="noindex, follow">',
+                status_code=response.status_code)
+            self.assertNotContains(response, 'rel="canonical"',
+                                   status_code=response.status_code)
