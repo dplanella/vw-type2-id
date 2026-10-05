@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core import mail
 from django.test import TestCase, override_settings
 from django.utils import translation
+from lxml import html
 
 from mplate_decoder.models import ExportDestination, Mplate
 
@@ -128,6 +129,78 @@ class SmokeTest(TestCase):
         response = self.client.post('/users/logout/')
         self.assertRedirects(response, '/mplate/')
         self.assertNotIn('_auth_user_id', self.client.session)
+
+    def admin_save(self, url, **changes):
+        page = html.fromstring(self.client.get(url).content)
+        form = page.get_element_by_id(changes.pop('form_id'))
+        data = dict(form.form_values())
+        data.update(changes, _save='Save')
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, 302, url)
+
+    def test_admin_save(self):
+        self.create_plate(self.user)
+        self.client.force_login(self.admin)
+        plate = Mplate.objects.get()
+        self.admin_save(f'/admin/mplate_decoder/mplate/{plate.pk}/change/',
+                        form_id='mplate_form', production_planned='7495')
+        self.assertEqual(Mplate.objects.get().production_planned, '7495')
+        self.admin_save(f'/admin/users/customuser/{self.user.pk}/change/',
+                        form_id='customuser_form', first_name='Owner')
+        self.user.refresh_from_db()
+        self.assertEqual(self.user.first_name, 'Owner')
+
+    def test_admin_logout(self):
+        self.client.force_login(self.admin)
+        self.assertEqual(self.client.post('/admin/logout/').status_code, 302)
+        self.assertNotIn('_auth_user_id', self.client.session)
+
+    def test_signup(self):
+        response = self.client.post('/users/signup/', {
+            'username': 'newbie',
+            'email': 'newbie@example.com',
+            'password1': 'a-Long-pass-1234',
+            'password2': 'a-Long-pass-1234',
+        })
+        self.assertRedirects(response, '/mplate/mine/')
+        self.assertEqual(self.client.session['_auth_user_id'],
+                         str(get_user_model().objects.get(
+                             username='newbie').pk))
+
+    def test_password_change(self):
+        self.client.force_login(self.user)
+        response = self.client.post('/users/password_change/', {
+            'old_password': 'pw',
+            'new_password1': 'a-New-pass-1234',
+            'new_password2': 'a-New-pass-1234',
+        })
+        self.assertRedirects(response, '/users/password_change/done/')
+        self.client.post('/users/logout/')
+        response = self.client.post('/users/login/', {
+            'username': 'owner', 'password': 'a-New-pass-1234'})
+        self.assertEqual(response.status_code, 302)
+        self.assertIn('_auth_user_id', self.client.session)
+
+    @override_settings(
+        EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+    def test_password_reset(self):
+        self.user.email = 'owner@example.com'
+        self.user.save()
+        response = self.client.post('/users/password_reset/',
+                                    {'email': 'owner@example.com'})
+        self.assertRedirects(response, '/users/password_reset/done/')
+        self.assertEqual(len(mail.outbox), 1)
+        link = next(word for word in mail.outbox[0].body.split()
+                    if '/users/reset/' in word)
+        response = self.client.get(link, follow=True)
+        url = response.redirect_chain[-1][0]
+        response = self.client.post(url, {
+            'new_password1': 'a-New-pass-1234',
+            'new_password2': 'a-New-pass-1234',
+        })
+        self.assertRedirects(response, '/users/reset/done/')
+        self.user.refresh_from_db()
+        self.assertTrue(self.user.check_password('a-New-pass-1234'))
 
     @override_settings(
         EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
