@@ -80,3 +80,25 @@ class IndexingTest(TestCase):
                 status_code=response.status_code)
             self.assertNotContains(response, 'rel="canonical"',
                                    status_code=response.status_code)
+
+
+class CrawlingTest(TestCase):
+    """robots.txt points to a sitemap listing pages and plates."""
+
+    fixtures = PlatePageTest.fixtures
+
+    def test_robots_txt(self):
+        response = self.client.get('/robots.txt')
+        self.assertEqual(response['Content-Type'], 'text/plain')
+        self.assertEqual(response.content.decode(), 'User-agent: *\n'
+                         'Disallow: /admin/\n'
+                         'Sitemap: http://testserver/sitemap.xml\n')
+
+    def test_sitemap(self):
+        self.client.post('/mplate/decode/', PLATE)
+        response = self.client.get('/sitemap.xml')
+        for url in ['/', '/mplate/', '/mplate/decode/', '/mplate/metrics/',
+                    '/mplate/about/', '/contact/',
+                    f"/mplate/{PLATE['chassis_number_short']}/"]:
+            self.assertContains(response, f'<loc>http://testserver{url}</loc>')
+        self.assertContains(response, '<lastmod>', count=1)
