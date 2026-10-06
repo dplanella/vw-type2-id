@@ -96,7 +96,7 @@
                 <a href="{% url 'mplate_decoder:mplate_retrieve' mplate.chassis_number_short %}">{{ mplate.chassis_number_short }}</a>
                 <span class="badge badge-secondary badge-pill">{{ mplate.model_year }}</span>
                 {% if mplate.destination_country %}
-                <span class="badge badge-secondary badge-pill">{{ mplate.destination_country }}</span>
+                <span class="badge badge-secondary badge-pill">{% translate mplate.destination_country %}</span>
                 {% endif %}
               </h6>
               <span class="badge badge-info badge-pill">{{ mplate.created_at|naturalday }}</span>

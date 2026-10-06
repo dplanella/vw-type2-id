@@ -29,3 +29,29 @@ Local development is done in a Python virtual environment. To get started:
 1. `python3 -m venv .venv && . .venv/bin/activate`
 1. Install project dependencies => `pip install -r requirements-dev.txt`
 1. You should be all set for development in this virtual environment. Use the django management commands to run and manage your app. E.g. `python ./manage.py runserver` to start the server.
+
+#### Translations
+
+Translatable strings come from two places: the code and templates, and the reference data (M-code descriptions, colours, countries, engines and gearboxes), which lives in the production database. The reference data strings are exported to `mplate_decoder/db_strings.py`, which is committed, so the translation catalogs can be regenerated without a database.
+
+```mermaid
+flowchart LR
+    subgraph prod["Only with production access"]
+        A["Edit reference data<br>in the admin"] --> B["Refresh db_strings.py<br>(export_db_strings)"]
+    end
+    B -->|commit| R[("Repo: code +<br>db_strings.py")]
+    subgraph any["Anyone, no database"]
+        R --> C["makemessages<br>regenerates the .pot"]
+        C --> D["Translate<br>(Crowdin or .po files)"]
+        D -->|commit| R
+    end
+```
+
+**For admins with database access**
+- After editing the reference data: with the full reference data loaded, run `python manage.py export_db_strings`, commit `db_strings.py` and regenerate the catalogs as per the instructions below.
+- Don't edit `db_strings.py` by hand.
+
+**For developers**
+- Regenerate the catalogs (no database needed):
+  `python manage.py makemessages --all --keep-pot --ignore=.venv` updates `vw_type2_id/locale/django.pot` and the `.po` files. Then run `python manage.py compilemessages`.
+

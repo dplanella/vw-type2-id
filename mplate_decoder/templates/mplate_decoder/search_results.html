@@ -26,7 +26,7 @@
             <td>{{ mcode.years|summarizemodelyears }}</td>
             <td>
               {% if mcode.description|length > 0 %}
-                {{ mcode.description }}
+                {% translate mcode.description %}
               {% else %}
                 {% blocktrans with collection=mcode.collection%}M-code collection: {{ collection }}{% endblocktrans %}
               {% endif %}
@@ -60,7 +60,7 @@
               <span class="badge badge-secondary badge-pill">{{ mplate.model_year }}</span>
               <span class="badge badge-secondary badge-pill">{{ mplate.model.model_description }}</span>
               <span class="badge badge-secondary badge-pill">{{ mplate.model.extras_description }}</span>              
-              <span class="badge badge-secondary badge-pill">{{ mplate.destination_country }}</span>
+              <span class="badge badge-secondary badge-pill">{% translate mplate.destination_country %}</span>
             </h5>
             <span>{{ mplate.m_codes }}</span>
           </div>

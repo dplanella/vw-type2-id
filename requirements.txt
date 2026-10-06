@@ -8,7 +8,6 @@ django-crispy-forms==2.7
 django-crum==0.7.9
 django-fullurl==1.4
 django-markdownify==0.9.7
-django-vinaigrette==2.0.1
 gunicorn==26.2.0
 isoweek==1.3.3
 lxml==6.1.3
