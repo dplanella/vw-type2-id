@@ -39,6 +39,7 @@ jobs:
       - run: python manage.py compilemessages
       - run: python manage.py makemigrations --check --dry-run
       - run: python manage.py check --deploy --fail-level WARNING
+      - run: python manage.py collectstatic --noinput
       - run: pytest
 
   image:
