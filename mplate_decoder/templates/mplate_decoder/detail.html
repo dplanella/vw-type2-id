@@ -6,7 +6,7 @@
 
 {% block meta %}
 {% blocktrans with chassis_number=object.chassis_number_short asvar title %}{{ heading }}: M-plate {{ chassis_number }} decoded{% endblocktrans %}
-{% include "head_meta.html" with description=summary %}
+{% include "head_meta.html" %}
 {% endblock %}
 
 {% block content %}

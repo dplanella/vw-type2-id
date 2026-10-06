@@ -227,14 +227,13 @@ class MplateRetrieve(generic.DetailView):
         return schematic
 
     def describe_bus(self, mplate):
-        """Return a short name for the bus, e.g. 1971 VW Microbus (221)."""
+        """Return a short name for the bus, e.g. 1971 VW Microbus."""
         t2_model = mplate.model
         if t2_model is None:
             return gettext('%(year)s VW Type 2') % {'year': mplate.model_year}
-        return gettext('%(year)s VW %(model)s (%(code)s)') % {
+        return gettext('%(year)s VW %(model)s') % {
             'year': mplate.model_year,
             'model': t2_model.model_description,
-            'code': f'{t2_model.model}{t2_model.configuration}',
         }
 
     def body_color_name(self, mplate):
@@ -245,27 +244,34 @@ class MplateRetrieve(generic.DetailView):
             lacquer_code=exteriorcolor.lacquer_code_body).first()
         return color.color_name if color else ''
 
-    def summarize(self, mplate, bus, m_codes):
-        """Return a one-paragraph summary of the decoded plate."""
+    def summarize(self, mplate, heading, m_codes):
+        """
+        Return a summary of the decoded plate to show under the heading, and
+        a description that also names the bus.
+        """
         destination = mplate.export_destination
         country = destination and (destination.country or destination.region)
         values = {
-            'bus': bus,
+            'bus': heading,
             'date': date_format(mplate.production_date_as_time),
             'country': country,
             'count': len(m_codes),
         }
         if country:
-            summary = gettext(
-                'This %(bus)s was built on %(date)s for %(country)s.')
+            summary = gettext('Built on %(date)s for %(country)s.')
+            description = gettext(
+                '%(bus)s, built on %(date)s for %(country)s.')
         else:
-            summary = gettext('This %(bus)s was built on %(date)s.')
+            summary = gettext('Built on %(date)s.')
+            description = gettext('%(bus)s, built on %(date)s.')
         if m_codes:
-            summary += ' ' + ngettext(
+            extras = ' ' + ngettext(
                 'Its M-plate lists %(count)d optional extra.',
                 'Its M-plate lists %(count)d optional extras.',
                 len(m_codes))
-        return summary % values
+            summary += extras
+            description += extras
+        return summary % values, description % values
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -296,7 +302,8 @@ class MplateRetrieve(generic.DetailView):
                 'bus': bus, 'color': color}
         else:
             context['heading'] = bus
-        context['summary'] = self.summarize(mplate, bus, m_codes)
+        context['summary'], context['description'] = self.summarize(
+            mplate, context['heading'], m_codes)
 
         return context
 
