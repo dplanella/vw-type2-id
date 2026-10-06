@@ -1,7 +1,7 @@
 .PHONY: lint clean
 
 LINTER = flake8
-LINTER_ARGS = --exclude=migrations
+LINTER_ARGS = --exclude=migrations,.venv
 
 lint:
 	@echo "Linting code..."
