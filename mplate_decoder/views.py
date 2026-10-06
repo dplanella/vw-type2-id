@@ -435,10 +435,15 @@ class MetricsView(generic.TemplateView):
 
         context = super().get_context_data(**kwargs)
 
-        mplates_all = Mplate.objects.all()
+        mplates_all = Mplate.objects.select_related('decoded_model').only(
+            'model_year', 'paint_and_interior_code', 'destination_country',
+            'decoded_model',
+            'decoded_model__model', 'decoded_model__configuration',
+            'decoded_model__extras', 'decoded_model__model_description',
+            'decoded_model__extras_description')
 
         # Collect model data
-        models = [mplate.model for mplate in mplates_all]
+        models = [mplate.decoded_model for mplate in mplates_all]
         models_most_common = Counter(models).most_common(10)
 
         for model in models_most_common:

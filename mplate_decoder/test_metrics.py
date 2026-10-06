@@ -5,7 +5,7 @@ from mplate_decoder.test_smoke import PLATE
 
 
 class DecodedModelTest(TestCase):
-    """Plates store their decoded model."""
+    """Plates store their decoded model, which the metrics page counts."""
 
     fixtures = [
         'tst_mplate_gearbox.json',
@@ -18,3 +18,12 @@ class DecodedModelTest(TestCase):
         plate = Mplate.objects.get()
         self.assertIsNotNone(plate.decoded_model)
         self.assertEqual(plate.decoded_model, plate.model)
+
+    def test_metrics(self):
+        self.client.post('/mplate/decode/', PLATE)
+        model = Mplate.objects.get().decoded_model
+        with self.assertNumQueries(3):
+            response = self.client.get('/mplate/metrics/')
+        self.assertEqual(response.context['modelsData'], [1])
+        self.assertIn(f'({model.model}{model.configuration}{model.extras})',
+                      response.context['modelsLabels'][0])
