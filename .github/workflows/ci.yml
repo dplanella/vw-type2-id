@@ -38,6 +38,8 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: flake8 --exclude=migrations
       - run: python manage.py compilemessages
+      - run: make messages
+      - run: git diff --exit-code -I POT-Creation-Date -- '*.pot'
       - run: python manage.py makemigrations --check --dry-run
       - run: python manage.py check --deploy --fail-level WARNING
       - run: python manage.py collectstatic --noinput

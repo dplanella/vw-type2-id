@@ -53,5 +53,6 @@ flowchart LR
 
 **For developers**
 - Regenerate the catalogs (no database needed):
-  `python manage.py makemessages --all --keep-pot --ignore=.venv` updates `vw_type2_id/locale/django.pot` and the `.po` files. Then run `python manage.py compilemessages`.
+  `make messages` updates `vw_type2_id/locale/django.pot` and the `.po` files. Then run `python manage.py compilemessages`.
+- Commit the updated .pot with the code change that adds or changes a string. CI fails if the committed .pot is out of date.
 
