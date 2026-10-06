@@ -50,8 +50,10 @@ class PlatePageTest(TestCase):
             f"<title>{heading}: M-plate {PLATE['chassis_number_short']} "
             "decoded | ", html)
         summary = re.search(r'<p class="lead">(.+?)</p>', html).group(1)
-        self.assertIn(f'This {heading} was built on ', summary)
-        self.assertIn(f'<meta name="description" content="{summary}">', html)
+        self.assertTrue(summary.startswith('Built on '))
+        self.assertIn(f'<meta name="description" content="{heading}, '
+                      f'built on ', html)
+        self.assertNotRegex(heading, r'\(\d+\)')
 
     def test_plate_page_destination(self):
         ExportDestination.objects.create(
