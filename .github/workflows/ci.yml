@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   test:
+    name: Run tests
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     services:
@@ -43,6 +44,7 @@ jobs:
       - run: pytest
 
   image:
+    name: Build image
     needs: test
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
@@ -60,3 +62,26 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACTOR: ${{ github.actor }}
       - run: docker push "$IMAGE"
+
+  deploy:
+    name: Deploy to production
+    needs: image
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    # Holds the deploy key and the server's host key as environment secrets.
+    environment: production
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
+    steps:
+      - name: Deploy
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/deploy
+          ssh -i ~/.ssh/deploy -o IdentitiesOnly=yes webapps@141.94.204.108 "deploy vw $GITHUB_SHA"
