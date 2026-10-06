@@ -55,6 +55,12 @@ class SmokeTest(TestCase):
                     '/users/signup/', '/users/login/', '/health/']:
             self.assert_ok(url)
 
+    @override_settings(GIT_COMMIT='0123456789abcdef0123456789abcdef01234567')
+    def test_commit_shown(self):
+        self.assertEqual(self.client.get('/health/').content,
+                         b'ok 0123456789abcdef0123456789abcdef01234567')
+        self.assertContains(self.client.get('/'), '>0123456<')
+
     def test_inline_svg(self):
         self.assertContains(self.client.get('/mplate/decode/'), '<svg')
 

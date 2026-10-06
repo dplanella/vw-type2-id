@@ -56,7 +56,7 @@ jobs:
       IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: docker build --tag "$IMAGE" .
+      - run: docker build --build-arg GIT_COMMIT="$GITHUB_SHA" --tag "$IMAGE" .
       - run: echo "$TOKEN" | docker login ghcr.io -u "$ACTOR" --password-stdin
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}

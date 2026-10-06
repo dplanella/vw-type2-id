@@ -110,6 +110,12 @@
     </div>
     {% block contentnocontainer %}<!-- Content that defines its own container here -->{% endblock %}
 
+    {% if git_commit %}
+    <footer class="container text-muted small py-3">
+      <a class="text-muted" href="https://github.com/dplanella/vw-type2-id/commit/{{ git_commit }}">{{ git_commit|slice:":7" }}</a>
+    </footer>
+    {% endif %}
+
     <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

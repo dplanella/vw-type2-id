@@ -48,6 +48,9 @@ SECRET_KEY = secret('vw-secret-key', 'DJANGO_VW_TYPE2_ID_SECRET_KEY')
 
 DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 
+# Commit the running image was built from, set at build time
+GIT_COMMIT = os.environ.get('GIT_COMMIT', '')
+
 ALLOWED_HOSTS = os.environ.get(
     'DJANGO_ALLOWED_HOSTS',
     default='localhost 127.0.0.1').split(' ')
@@ -109,6 +112,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'vw_type2_id.context_processors.git_commit',
             ],
             'debug': DEBUG,
         },
