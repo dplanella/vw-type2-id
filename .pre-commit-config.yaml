@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: messages
+        name: Regenerate the translation catalogs
+        entry: make messages
+        language: system
+        files: \.(py|html|txt)$
+        pass_filenames: false
