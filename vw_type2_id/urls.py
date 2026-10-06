@@ -13,13 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.db import connection
 from django.http import HttpResponse
 from django.urls import include, path, reverse
 from django.views.generic import TemplateView
-from . import settings
 from .sitemaps import sitemaps
 from django.contrib.staticfiles.urls import static
 
@@ -27,7 +27,8 @@ from django.contrib.staticfiles.urls import static
 def health(request):
     with connection.cursor() as cursor:
         cursor.execute('SELECT 1')
-    return HttpResponse('ok', content_type='text/plain')
+    body = f'ok {settings.GIT_COMMIT}'.strip()
+    return HttpResponse(body, content_type='text/plain')
 
 
 def robots_txt(request):

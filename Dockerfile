@@ -20,6 +20,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
     && useradd --system --no-create-home app
 COPY --from=build /app .
+ARG GIT_COMMIT=
+ENV GIT_COMMIT=$GIT_COMMIT
+LABEL org.opencontainers.image.revision=$GIT_COMMIT
 USER app
 EXPOSE 8000
 CMD ["gunicorn", "vw_type2_id.wsgi", "--bind", "0.0.0.0:8000", \
