@@ -1,0 +1,15 @@
+{% load i18n %}
+<title>{{ title }}{% if not hide_site_name %} | VW Type 2 Identification{% endif %}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+{% if noindex %}
+<meta name="robots" content="noindex, follow">
+{% else %}
+{% with url=request.scheme|add:"://"|add:request.get_host|add:request.path %}
+<link rel="canonical" href="{{ url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VW Type 2 Identification">
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+<meta property="og:url" content="{{ url }}">
+{% endwith %}
+{% endif %}

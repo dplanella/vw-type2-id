@@ -30,7 +30,9 @@
 
     {% block style %}<!-- Additional styles -->{%endblock%}
 
-    {% block title %}<title>{% trans "VW M-plate decoder" %}</title>{% endblock %}
+    {% block meta %}
+    {% include "head_meta.html" with title="VW Type 2 Identification" hide_site_name=True %}
+    {% endblock %}
 
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">

@@ -1,6 +1,11 @@
 {% extends "mplate_base_bootstrap.html" %}
 {% load i18n %}
 
+{% block meta %}
+{% trans "Not found" as title %}
+{% include "head_meta.html" with noindex=True %}
+{% endblock %}
+
 {% block content %}
 
 <div class="row mt-4">

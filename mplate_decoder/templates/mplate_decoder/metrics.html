@@ -1,6 +1,12 @@
 {% extends "mplate_base_bootstrap.html" %}
 {% load i18n %}
 
+{% block meta %}
+{% trans "VW Type 2 production statistics from 4,000+ decoded M-plates" as title %}
+{% trans "Models, model years, paint colours and destination countries of VW Type 2 buses, from the M-plates decoded on this site." as description %}
+{% include "head_meta.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="row">

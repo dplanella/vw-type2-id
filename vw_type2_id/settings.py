@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sitemaps',
     'mplate_decoder.apps.MplateDecoderConfig',
     'crispy_forms',
     'crispy_bootstrap4',

@@ -1,6 +1,21 @@
 {% extends "base_bootstrap.html" %}
 {% load i18n %}
 
+{% block meta %}
+{% trans "VW Type 2 identification: M-plate and engine number decoder" as title %}
+{% trans "Identify your 1968–1979 Volkswagen Type 2 bus: decode its M-plate to find the model, optional extras, paint, production date and destination." as description %}
+{% include "head_meta.html" with hide_site_name=True %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "VW Type 2 Identification",
+  "alternateName": "Type 2 ID",
+  "url": "{{ request.scheme }}://{{ request.get_host }}/"
+}
+</script>
+{% endblock %}
+
 {% block contentnocontainer %}
 
 <div class="jumbotron jumbotron-fluid">

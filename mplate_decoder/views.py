@@ -1,6 +1,7 @@
 from django.views import generic
 from django.http import JsonResponse, HttpResponse
 from .models import (
+    Color,
     Mplate,
     MplateDecoder,
     Mcode,
@@ -12,6 +13,8 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
+from django.utils.formats import date_format
+from django.utils.translation import gettext, ngettext
 from django.utils.translation import gettext_lazy as _
 from collections import Counter
 import logging
@@ -86,8 +89,13 @@ class AjaxableResponseMixin:
 
 
 class MplateIndex(generic.ListView):
-    model = Mplate
+    queryset = Mplate.objects.order_by('-id')[:7]
     template_name = 'mplate_decoder/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mplate_count'] = Mplate.objects.count()
+        return context
 
 
 class MplateAbout(generic.TemplateView):
@@ -218,10 +226,54 @@ class MplateRetrieve(generic.DetailView):
 
         return schematic
 
+    def describe_bus(self, mplate):
+        """Return a short name for the bus, e.g. 1971 VW Microbus (221)."""
+        t2_model = mplate.model
+        if t2_model is None:
+            return gettext('%(year)s VW Type 2') % {'year': mplate.model_year}
+        return gettext('%(year)s VW %(model)s (%(code)s)') % {
+            'year': mplate.model_year,
+            'model': t2_model.model_description,
+            'code': f'{t2_model.model}{t2_model.configuration}',
+        }
+
+    def body_color_name(self, mplate):
+        exteriorcolor = mplate.exteriorcolor
+        if not exteriorcolor:
+            return ''
+        color = Color.objects.filter(
+            lacquer_code=exteriorcolor.lacquer_code_body).first()
+        return color.color_name if color else ''
+
+    def summarize(self, mplate, bus, m_codes):
+        """Return a one-paragraph summary of the decoded plate."""
+        destination = mplate.export_destination
+        country = destination and (destination.country or destination.region)
+        values = {
+            'bus': bus,
+            'date': date_format(mplate.production_date_as_time),
+            'country': country,
+            'count': len(m_codes),
+        }
+        if country:
+            summary = gettext(
+                'This %(bus)s was built on %(date)s for %(country)s.')
+        else:
+            summary = gettext('This %(bus)s was built on %(date)s.')
+        if m_codes:
+            summary += ' ' + ngettext(
+                'Its M-plate lists %(count)d optional extra.',
+                'Its M-plate lists %(count)d optional extras.',
+                len(m_codes))
+        return summary % values
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         mplate = super().get_object()
         decoder = MplateDecoder(mplate)
+        m_codes = decoder.decode_mcodes()
+        bus = self.describe_bus(mplate)
+        color = self.body_color_name(mplate)
 
         context['plate'] = self.render_plate(mplate)
         context['schematic'] = self.render_schematic(mplate)
@@ -237,8 +289,14 @@ class MplateRetrieve(generic.DetailView):
             mplate.describe_exteriorcolor()
         context['engine_description'] = mplate.get_engine()
         context['gearbox_description'] = mplate.get_gearbox()
-        context['m_codes'] = decoder.decode_mcodes()
+        context['m_codes'] = m_codes
         context['emden'] = mplate.emden
+        if color:
+            context['heading'] = gettext('%(bus)s, %(color)s') % {
+                'bus': bus, 'color': color}
+        else:
+            context['heading'] = bus
+        context['summary'] = self.summarize(mplate, bus, m_codes)
 
         return context
 
