@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 15:11+0000\n"
+"POT-Creation-Date: 2026-10-06 19:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,396 +16,3519 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: contact/forms.py:6
+#: contact/forms.py
 msgid "Your e-mail"
 msgstr ""
 
-#: contact/templates/contact.html:11
+#: contact/templates/contact.html
 msgid "Contact"
 msgstr ""
 
-#: contact/templates/contact.html:16
+#: contact/templates/contact.html
+msgid ""
+"Get in touch about the VW Type 2 M-plate decoder: corrections, missing codes "
+"or questions about your bus."
+msgstr ""
+
+#: contact/templates/contact.html
 msgid "Send"
 msgstr ""
 
-#: contact/views.py:31
+#: contact/templates/success.html
+msgid "Message sent"
+msgstr ""
+
+#: contact/views.py
 msgid "Success! Thank you for your message."
 msgstr ""
 
-#: mplate_decoder/forms.py:61
+#: mplate_decoder/db_strings.py
+msgid "12V 54A battery instead of standard 12V 45A battery"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "1300cc (44bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "1600cc engine with stiff instead of torsion-suspended clutch disc"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "1700cc (66bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "1800cc (68bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "2000cc (70bhp) engine instead of 1600cc (50bhp)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "2000cc dual carburettor engine with secondary air injection"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"2000cc fuel-injected engine with exhaust emission control concept of the "
+"1800cc engine (with M157 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "70bhp engine"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "ADAC Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Additional dust sealing for engine compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Additional tent for interior P31"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Adjustment mechanism for later gauging of speedometer (for rental vehicles "
+"and self-drive rentals only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Admittance plate for Canada"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Aero-Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Afghanistan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Africa, Middle East including Iran and Afganistan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Agate Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Air circulation connection for gasoline heater (only with M119)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Air conditioning"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Air conditioning (on model 23 only for Campers)(with M251 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Air filter for dusty countries (2000cc with 70bhp only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Air vents in cargo compartment (with M515 or 516 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Air-drying’ bottom protection instead of ‘wax paraffin’"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Alabaster (Grey)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Albania"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Algeria"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Altered heater outlet of optional petrol heater (only with M119)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Alternative loading arrangement (not with S751)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Andorra"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Angola"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Apple green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Argentina"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Atlas White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Australia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Australia, chassis nos. 2162 119 000 to 2162 164 000"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Austria"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Automatic step on passenger side (vehicles with two sliding doors only have "
+"the automatic step on the passenger side)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Automatic transmission"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Automatic transmission, 3-speed"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "BP Yellow-White-Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "BP-White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bahrain"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bali Yellow/Yosemite Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bamboo (Beige)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Basic Campmobile equipment: stool, curtains, table, double bed, roof "
+"cabinet, birch paneling, floor covering, two louvered windows"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Battery approved by research and development department and free from import "
+"duty and costs"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Battery under customs seal"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Beat Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Belgium"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Bench seat in upholstery cloth on metal partition behind cabin. Net division "
+"above closet but without net division between cabin and cargo compartment "
+"(with M503, M540 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bermuda"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Black"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Blue rotating light and siren"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Blue/Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bolivia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brake servo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brake servo and dual-circuit brake control lamp"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Braunschweig CR car radio, with Cassette player"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Braunschweig car radio"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brazil"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bright Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brilliant Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brilliant Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brilliant Orange"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brilliant Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "British New Guinea"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "British Samoa"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "British Solomon Islands Protectorate"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Brown-Orange"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Bulgaria"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Burgundy Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Burma"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Burundi"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"C-shaped guiding rails on metal partition between cabin and cargo "
+"compartment and on the side opposite the sliding door (for model 211 only "
+"with M540, for model 231 only wit M120, M540)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cambodia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cameroon"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Camping Brown Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Camping Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Camping Green Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Camping Green Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Camping Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Campmobile with pop-up roof"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Campmobile with pop-up roof and combined gas/electric refrigerator"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Campmobile with pop-up roof, electric refrigerator, gas stove. Similar to SO "
+"72/3 Helsinki."
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Campmobile with pop-up roof, gas stove. Similar to SO 72/3 Helsinki."
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Canada"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Canyon Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Catalyst retrofit"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Central America"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ceylon"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ceylon Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ceylon Beige/Pastel White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chad"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chassis no. 2162 078 000"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Chassis plate without prints of the maximum total mass and the maximum axle "
+"loads"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chianti Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chile"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chrome Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chrome Yellow, hubcaps and bumpers standard colour"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chrome hubcaps"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chrome hubcaps and headlamp rings"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chrome hubcaps, headlamp rings and rear-view mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Chrome trim around Bus ca. 5cm below windows"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Clear White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cliff Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Clock with heating time preselector, with trip counter (with M060 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Closets in cargo compartment and net partition between cabin and cargo "
+"compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cloth"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cloth upholstery instead of leatherette"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cloud White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cobalt Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cola Red-New"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cola Red-New/Papyrus White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Columbia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Combined gas/electric refrigerator, with gas cooking unit, side bench in "
+"driving direction for storing gas bottles. For P21 and P22."
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Comfort package"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Commando vehicle equipment also usable as conversation vehicle, bureau "
+"vehicle and for similar purposes. Consisting of three-seater middle bench "
+"seat (built-in facing backwards); folding down backrest on sliding door "
+"side; one folding table; one transistorized light above table; one rubber "
+"floor cover in Passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Compliance with Australian exhaust and safety standards"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Compliance with Sweden exhaust emission standards"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Conti Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Control number for conversions or other changes from the serial production"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Conversion"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Convex outer rear-view mirrors left and right instead of mirrors with flat "
+"glass"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Convex rear-view mirror on right side (not for RHD)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Convex rear-view mirror, outer, right. Inner rear-view mirror with shorter "
+"arm"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cork"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Coupled headlamp flasher and licence plate light"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Curry Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Cyprus"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Czeckoslovakia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dakota Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dark Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dark Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dark Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Date Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Delta Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Deluxe Campmobile with pop-up roof, folding spare tyre, combined gas/"
+"electric refrigerator, gas stove"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Deluxe Campmobile with pop-up roof, folding spare tyre, electric "
+"refrigerator, snack table"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, "
+"M171)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Denmak"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Denmark"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Denmark, Copenhagen"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Detachable headrests for all seats in Passenger compartment (with M235 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Detachable headrests for all seats in cabin (with M161 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Detachable hinges and side-flap mountings"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Djibouti"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Double-seater middle bench and special rear bench"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dual carburetor"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dual-brake-circuit and handbrake control light"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dual-brake-circuit control light (only with M511)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Dusky Pink"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Duty-free tyres (duty refund)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"ECE regulations sticker \"R 10\" (with M123 only) (suppression equipment for "
+"radio reception)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "ECE regulations sticker \"R 11\" (door locks and hinges)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "ECE regulations sticker \"R 14\" (seatbelt mountings)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Eberspacher BA6 petrol heater (LHD) (fitted under cargo floor)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Eberspacher BN4 heater"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Eberspacher BN4 petrol heater"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Eberspacher BN4 petrol heater with air recirculation connection and outlet "
+"in load/passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Eberspacher BN4 petrol heater with outlet in load/passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ecuador"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Egypt"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Elm Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Emden car radio"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Enamel White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Engine with recessed crown pistons for low-octane fuel"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "England via Ostende"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Eritrea"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ethiopia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Exclusive use of Blaupunkt car radios (with M95, 97 or 98 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Exhaust emission control"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Exhaust emission control installation and speedometer in miles instead of km "
+"(with M524 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Exhaust emission control system"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Exhaust emission control system and activated carbon container for absorbing "
+"fuel vapour"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Export, not Canada and USA"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Extra rust-prevention treatment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Factory prepared for Electrotransporter-conversion"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Factory-prepared for Campmobile interior"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Factory-prepared for conversion to armoured money transporter (conversion by "
+"Thiele/Bremen or Bischoff & Hamel/Hannover)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Factory-prepared for fitting a PVC tilt"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fiji Islands"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Filled in factory with double amount of petrol (used for driving on and off "
+"the train, for example)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Finland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fire Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fire Red/White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fitted with Continental-manufactured tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fitted with Semperit tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fitted with Uniroyal tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Flamuco Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Flat bows with mountings for ladder and tilt made out of synthetic material"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Floor cover (rubber mat) in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fold-down passenger seat"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Foot-operated alarm installation (for Taxis and rental vehicles)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "For authorities only"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fox Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "France"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fresh-air duct to cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fuel injection (L-Jetronic)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Fuel injection engine"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Full-width metal partition between cabin and load compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Further suppressed equipment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gala Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gambia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gauged trip writer"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gaza"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gearbox with mountain ratio for mountainous areas"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Generator 70A instead of 55A (with M157 or M251 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gentian Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "German Army"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "German Mail"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "German Mail (telecomms department)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "German Mail – Berlin"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Germany"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ghana"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Gibraltar"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Greece"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Green-Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Guam"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Halogen headlamps"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hannen Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Hannover radio (LW, MW, FM) with automatic search, remote control, tape deck "
+"and automatic antenna connection"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hardboard interior roof panels in cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hardboard interior side panels in cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Harder rear torsion bars (like on Transporter version) (on model 23 only "
+"with M013, 015, 146, 177 or 609)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hardwood strips for flatbed not fastened to vehicle"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Headlamps for countries with left-hand traffic"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Headliner in load-/passenger compartment (as in model 22, Microbus)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Heater outlet in rear part of cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Heater outlet in seat box of rear bench seat"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Heavy duty shock absorbers front and back"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "High roof (plastic)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "High roof Panelvan with high-roof sliding door"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"High-roof Bus with shelves for piling packages in cargo compartment (with "
+"M502, M515 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Higher driver- and passenger-seat backrest (headrest)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hippie Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hoechst-Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hong Kong"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hot-air outlet in front side of cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Hungary"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Iceland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ignition lock without steering lock"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Illuminated roof sign with Maltese Cross logo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Illuminated roof sign with Maltese or Red Cross logo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "India"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Indian Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Indonesia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Industry Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ingolstadt car radio"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Inner rear-view mirror, anti-dazzle"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Interior as M677 with extra built-in closets and extractable vice (only with "
+"M677)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Interior panel over entire width of vehicle for lower partition between "
+"cabin and cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Interior with closets and wooden floor in the rear of the cabin, net "
+"partition between front and rear of cabin (with M117 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Interval switch on windscreen wipers and wash-wipe installation. Interval "
+"ca.6 seconds"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Iran"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Iraq"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ireland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Iruguay"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Island Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Israel"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Israel, Switzerland, Thailand"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Italy"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ivory"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ivory Coast"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Japan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Japan and Sweden"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Jordan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Juniper (Green)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Kansas Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Karcher Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Karstadt Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Kasan Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Kasan Red/Pastel White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Kenya"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Kings Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Korea"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Kuwait"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Laminated windscreen glass"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lapis Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Leather Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Leatherette"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lebanon"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Liberia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Libya"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Libya, Tripoli"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Light Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Light Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Light Grey/Medium Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Light Sand/Khaki Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Limited slip differential"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Linde Blue/Papyrus White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Linen Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Linen Blue, roof: White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lockable cap for fuel tank"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lockable engine lid"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lockable glove compartment lid (only with M511)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lotus White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Lufthansa Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Luxemburg"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Madagascar"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Maintenance vehicle for communication cables. With closets, C-shaped rails, "
+"swivel chair and curtains in cargo compartment (with M120, M503, M539 only; "
+"not with M251)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malawi"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Jesselton"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Kuala Belait"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Kuala Lumpur"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Kuching"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Penang"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Sandakan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malaysia, Tawau"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Malta"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Manual transmission, 4-speed"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Marina Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Marine (Dark Blue)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mars Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mauritius"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Meadow Green, wheels, hubcaps and bumpers standard colour"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Medium Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mexico"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mexico Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mexico, Veracruz"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Miami Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Middle Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Middle and South America, Caribbean Sea"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Middle bench seat (two persons), rear bench seat and interior trim in "
+"passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Middle three-person bench seat and interior trim in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Middle three-person bench seat, rear three-person bench seat and interior "
+"trim in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Miele Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mint Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Modifications for fire truck, front bumper mounted higher for taking steep "
+"slope; with laminated windscreen"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Modifications for fire truck, without deformation element behind front "
+"bumper; with laminated windscreen"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Montana Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Morocco"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Morocco, Casablanca"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Motorola/USA car radio instead of Emden (with M097 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Mounting for radio-communication apparatus type ‘FuG 7b’ in glovebox "
+"(Telefunken or SEL)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mountings for first aid kit"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mountings for headrests for all seats in Passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mouse grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mozambique"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mozambique, Geira"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mozambique, Nacala"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mozambique, Porto Amelia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mozambique, Quelimone"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Mud flaps, rear"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Neckarsulm CR car radio, with Cassette player"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Nepal"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Neptune Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Net division between cabin and cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "New Hebrides"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "New Zealand"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Niagara Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Niger"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Nigeria"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Nigeria, Port Harcourt"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "No window openings in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "North America"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Norway"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Nyasaland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Off-road tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Oil bath air filter with larger oil capacity for dusty regions"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Olive Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"One sliding window in sliding door and one in the opposite side panel of the "
+"passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "One sliding window in the side panel opposite the sliding door"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "One ventilation window in cabin door on driver's side"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ony CKD vehicles"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Opening in roof with reinforcement for Westfalia pop-up roof"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orange"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orange wheels, hubcaps and bumpers Ebony Black"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orange, hubcaps and bumpers Orange"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orange-Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orange/White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orient Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Orient Blue/Pastel White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Padded dashboard and dashboard lid (not for RHD)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Painted instead of chrome parts"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pakistan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pakistan, Chittagong"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Panama"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Panama Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Panama, Canal Zone"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Paper element air filter with cyclone function for dusty regions"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Paper element cyclone air filter without carburettor pre-heating (1300 and "
+"1600cc engines only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Papua"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Papyrus White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Paraguay"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Parchment (Beige Grey)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Passenger seat in cabin as swivelling seat, without metal partition behind "
+"this seat"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Passenger seat instead of passenger bench seat; spare tyre in cabin (with "
+"M500 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pastel White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Payload of 1,200kg instead of 1,000kg"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pearl White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "People's Republic of Benin"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "People's Republic of South Yemen"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Peru"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Philippines"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Phoenix Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pick-Up with enlarged wooden platform"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Plate with emissions value and engine that complies to the California "
+"exhaust emission standards"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Plate with emissions value, engine with catalyst"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Poland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Police-White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Polyester high roof painted in body colour instead of white (with M515 or "
+"M516 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pop Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pop Up Top Campmobile, with pop-up roof, folding spare tyre"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Portugal"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Post Yellow/Cadmium Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Preparation for construction of Campmobile by Jurgens-Caravan in South "
+"Africa or Karmann Mobil in Germany"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Preparation for later installation of UTILA stretcher"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Prepared for low-loader Pick-Up"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Prepared for the installation of a radio for LW, MW, SW, FM (not with M631)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Primered"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Production number for special, documented built-ins"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Production number indicating a special note in the German licence papers, "
+"saying that a Trumatic SB 2000 gas heater has been fitted"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Production number to indicate small special built-ins or deflections from "
+"the serial production"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Protection plate for gearbox"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Puerto Rico"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Pure White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Qatar"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rally Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ravenna Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rear foglamp"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rear panel lid without window"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rear-window heating"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Red Crescent lamp instead of Red Cross lamp"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Reef Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Removable prints \"Deutsche Bundespost\", \"Fernmeldedienst\" and post horn "
+"logo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Removable prints ‘Deutsche Bundesbahn’ and tyre-pressure text"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Removable prints ‘Deutsche Bundespost’ and ‘Posthorn’ logo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Removable prints ‘Unicef’"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Republic of Gabon"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Republic of Guinea"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Republic of the Congo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Retaining cables for tailboard"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Reunion"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Reversing lights (built-in with rearlight units)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rhodesia, Beira"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rhodesia, Lourenco Marques"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Romania"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Roof opening and reinforcement for Westfalia pop-up roof SO 73"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rotating light red instead of blue (with M160 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rubber strips for bumpers"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ruby Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Rwanda"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "SO3, VW Kombi as traffic accident observation vehicle"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "SO67, Westfalia Campmobile 67A"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"SO67, Westfalia Campmobile 67B. As interior 67A but with additional pop-up "
+"roof, bed and built-in roof luggage rack"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"SO67, Westfalia Campmobile 67D. As interior 67B but with additional tent"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "SO67, Westfalia Campmobile 67E"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "SO67, Westfalia Campmobile 67F"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "SO67, Westfalia Campmobile 67G"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "SO67, Westfalia Campmobile 67H"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sage Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sahara Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Salzgitter radio (FM) with tape player connection and traffic broadcast "
+"decoder connection"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Saturn Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Saudi Arabia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Saudi Arabia/East, Dammam"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Savanna Beige"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Schindler Yellow/Ebony Black"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sealed beam headlamps"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sealed beam headlamps, side marker reflectors and reversing lights"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sealed speedometer (for leasing vehicles)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Seat belts according to Australian safety regulations."
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Seatbelts for USA and Canada"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Seats and interior panels in black"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Seats in cabin with mountings for headrests"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Second lid for underfloor cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Securing plate and rings for padlock"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Self-adjusting drum brakes (rear)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Senegal"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Senegal Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Seven-seater model instead of eight-seater model"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sheer bolt for steering-column tube attachment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Side turn signals"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Side turn signals and inner rear-view mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Side turn signals, altered handbrake handle, white front turn signal lenses"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Side-mounted turn signals, altered handbrake handle, white front turn "
+"signals, without emergency light system, without hazard light system (France "
+"and Italy only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Siemens Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sienna (Red Brown)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sierra Leone"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sierra Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Signal Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Silver Grey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Silver Metallic"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Simplified heating system with special heater boxes, no isolation on hot-air "
+"ducting, no noise isolation on front of car and on front wheel arches. Extra "
+"fresh-air ventilator and cabin-door ventilation (not with M60,M141,M505)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Simplified rails, plus stretcher on right-hand side"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Singapore"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Single carburetor"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Slate"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sliding door left instead of right"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sliding door on the right with RHD (instead of on the left with RHD)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sliding door right instead of left (RHD vehicles)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sliding roof for RHD"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Somalia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "South Africa"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "South Africa and Australia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Spain"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Speaker and microphone for communication between driver and passengers"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Special engine to comply with Austrian regulations (1600cc, 50bhp)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Special options package comprising: back-up lamps (M047); rear-window "
+"defroster (M102); emergency warning lights; dual-circuit brake warning "
+"light; padded dashboard (for LHD)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Special options package comprising: hazard lights; dual-circuit brake "
+"warning light; padded dashboard (for LHD)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Special sales campaign for \"Champagne Edition II\""
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Special sales campaign for \"Champagne Edition\", paint colour Agata Brown "
+"with Atlas White roof; interior cloth in Parchment (beige grey)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Special sales campaign for \"Silberfisch\" (Germany)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Special sales campaign for \"Wild Westerner\""
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Special suppression equipment, prepared for radio-traffic"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Speedometer and odometer in miles"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Speedometer with trip recorder and clock"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "St. Croix (Caribbean)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "St. Thomas (Canada)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Standard Campmobile, without pop-up roof, folding spare tyre"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Steel sliding roof"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Stick-in head-/neck-rests, Not for driver's seat"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sticker ECE regulations no, 14"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Stiff instead of torsion suspended clutch plate"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Stronger battery: 12V 63A instead of 12V 45A"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sudan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sumatra Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sumatra Green/Pastel White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sun Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sun visor, right without mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Suppressed windscreen-wiper motor"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Suppression equipment for radio reception"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Surveyor measuring group vehicle. Same as M541 but with swivelling seat and "
+"table on division wall instead of bench (with M541 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Sweden"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Switzerland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Syria"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer "
+"(not in combination with M020)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tahiti"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tail-light lenses yellow-red instead of yellow-red-white"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Taiwan"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tangiers, Morocco"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tanzania"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tanzania, Tanga"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tanzania, Zanzibar"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Textile radial tyres with tube"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Thailand"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Thailand, Laos"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "The Netherlands"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Three-point safety belts for driver and outer passenger seat, two-point "
+"safety belt for middle seat (only in case of two-person Passenger seat in "
+"cabin)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Three-point safety belts for driver and passenger seat with roll-up "
+"automatic and push-button lock"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Three-seater bench in the back and interior trim"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tilt and bows for Pick-Up"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tilt made of PVC instead of sail-cloth (with M070 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tilt made of PVC instead of sail-cloth (with M207 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tinted windows (except windscreen) (with M671 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tinted windows and windscreen, with laminated windscreen"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tinted windscreen (laminated) (with M568 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Titian Red"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "To VIN 2x9 300 000"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "To chassis no. 2122 088 996, Austria"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "To chassis no. 2132 102 496"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Togo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Towing hook front and rear"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Trailer hitch"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Trailer hitch and extra towing hook on front"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Transistor lamp instead of regular interior light"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Transistorized ignition system"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tubeless off-road tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tubeless steel-ply tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tubeless textile or steel-ply tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Tunisia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Turkey"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Turn signals at rear on roof"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Turn signals at rear on roof, lamp shines to both front and rear"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Turquoise Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Two electric ventilators in fresh-air system"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Two front towing hooks"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Two halogen foglamps on front"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Two head cushions, one back support, one belly support, guiding rail lock "
+"for stretcher; without infusion hooks"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Two oil bath air filters with larger oil capacity"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Two reversing lights"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Two-person Passenger seat instead of single Passenger seat in cabin, spare "
+"tyre in left side of luggage compartment (not with M500)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Two-point seatbelts for all seats in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Type 1"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Type 1 engines"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Type 4"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Type labelling of seat mounting and identification plate for England and "
+"Ireland"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Tyres approved by research and development department and free from import "
+"duty and costs"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "USA"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "USA and Canada"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "USA and Canada specifications"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "USA-California"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "USSR"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Uganda"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "United Kingdom"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Upholstery material, special version (cloth)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Upper division between cabin and cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Upper division between cabin and cargo compartment. Fibreboard door panel in "
+"sliding door (Type 21: with air vents in rear side panels of cargo "
+"compartment)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Upper fibreboard partition (with M013, 015, 146 or 177 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Upper partition between cabin and passenger compartment with sliding window "
+"(only with M500)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in "
+"bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, "
+"maximum tyre inflation written above the wheels, symbol notification of "
+"knobs on windscreen, reinforcement under upholstery for mounting of fire "
+"extinguishers in cabin, additional mountings for several pieces of equipment "
+"according to DIN requirement, transparent battery cases (only with M623)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"VW Automatic Shiftstick (semi-automatic transmission). Type 1/1300, 1500, "
+"1600 engines."
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "VW Kombi as traffic accident vehicle"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"VW Kombi as traffic accident vehicle with additional roof platform and ladder"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "VW parts for type 214, 234 and 264 made by VW do Brasil (CKD only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "VW-Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Vaillant Green/Papyrus White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Various parts not mounted; these parts sent via the CKD department"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Various special constructions for German Army purposes (with M149 only. In "
+"case of model 265, with M101, M178, M207, M209 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Vehicle for North American market with tyres from specific companies"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Velvet Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Velvet Green/Blue White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Venezula"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ventilation window in cabin door on driver's side"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Ventilation window in rear Passenger door and in the window opposite this "
+"door (two windows in total)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ventilation window in rear side panel opposite sliding door"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Ventilation window in sliding door and in all windows opposite sliding door "
+"in the Passenger compartment (three windows in total)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Ventilation windows in cabin doors"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Ventilation windows in sliding doors (two windows in total) (when ordered "
+"with M520)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Vietnam"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Volta"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Wagner Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Westfalia Campmobile"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Westfalia Campmobiles"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Westfalia interior (without pop-up roof)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "White/Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "White/Mint Green"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Whitewall tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Window in sliding door (in case of double sliding door, there is a window in "
+"both sliding doors)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Window in sliding door and one at opposite side panel"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Windscreen free from import duty for Canada (with M89 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Windscreen free from import duty for USA (with M089 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Windscreen-wiper blades and arms under customs seal"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With \"Fernmeldedienst\" (\"telecommunications department\") and post horn "
+"stickers"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With American parts and constructions for the Campmobile versions P21, P22 "
+"and P27: free of import duty (with M609 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With US-specific sealed beam headlamps, for M027: with US-specific carriers "
+"for catalysts (only with M524)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With USA-specific parts for the airconditioning (free from import duty)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With activated carbon container for absorbing fuel vapour"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With additional electricity inlet for 220V. For P25 and P26"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With additional tent for P21 to P27"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With chrome trim and sun visor with mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With chrome trim and sun visor without mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With dust-protected air intake, larger oil bath air cleaner and additional "
+"dust sealing"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With electrical installation for Japan: with side turn signals front, back-"
+"up lamps, with parking light front and rear, without licence-plate light and "
+"engine that complies to Japanese exhaust regulations (with M26 and M187 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With fixed windows in passenger compartment instead of ventilation windows"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With folding spare tyre instead of regular spare tyre, plus 12V air "
+"compressor and 12V connection on dashboard"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With hazard light installation"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With headlight washer installation"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With heater outlet under middle bench seat"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With hinged rear seat backrest"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With outer and centre underfloor plates"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With pedestal and double pulley for the later installation of a second "
+"generator (not in combination with M153, M157 and M251)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With post horn sticker"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With protection wall in cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With rubber valve in rear bottom panel for draining fuel"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With safety lock for sliding door(s) and rear panel lid"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With seatbelt mounting points for folding seat in rear compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With second hot-air outlet in metal Partition as in ambulance (with M500 "
+"only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With sliding door on left and right side"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With steering lock"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With upholstery on floor above engine, the rear corners and the rear hatch "
+"(with M013, 015, 146 or 177 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"With upholstery on the boot floor, the sides of the boot and the rear hatch"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "With warning triangle"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without VW logo on front"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without air vents in Cargo Compartment (with M500 and M510 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without air vents in cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without battery"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without bottom protection"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without chassis identification plate"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without compressor for folding spare tyre (with M586 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without diagnosis plug connection and wiring"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without hazard light system"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without headlamp flasher"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without inner rear-view mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Without metal division between cabin and cargo compartment, passenger seat "
+"adjustable on rails"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without mountings for seats and safety belts in cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without passenger seat in cabin"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without portable chair but with guiding rails on floor"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without right stretcher and without right loading platform"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without rubber floor mat in Passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without seats in passenger compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without seats in rear"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Without side and rear windows in passenger compartment (preparation for "
+"Westfalia isolation windows)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without sidegates and tailgate"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Without sliding door; in case of double sliding door version (M520), both "
+"sliding doors left out"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without spare tyre, tools, toolbag and jack (with M515/502 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without steel sliding roof"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without stretchers, also in combination with M152 (ambulance)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without three-seater middle bench seat"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Without tyres"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Wolf-Miller-Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Wolfsburg car radio"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Wooden floor in cargo compartment"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Wooden floor panels with built-in guide rails for mounting tools and "
+"instruments (only with M502 or bench seats)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Wooden floor panels with built-in guiding rails (also in side panels and on "
+"floor above engine compartment) for mounting tools and instruments"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
+"and net partition between Cargo compartment and cabin, with extra built-in "
+"closets and vice (with M500, M502, M539 only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
+"and net partition between cargo compartment and cabin (with M500, M502, M539 "
+"only)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Writings for maximum axle loads and maximum weight"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Wüstenrot Orange"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Year might not be correct"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow headlamp bulbs"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow headlamp bulbs and safety inner rear-view mirror"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow-Brown/White"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow/Blue"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow/Brown"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yellow/Ebony Black"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yemin"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Ljubljana"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Mostar"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Novi Sad"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Rijeka"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Sarajevo"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Skopje"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Split"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Yugoslavia, Zagreb"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Zaire (Democratic Republic of The Congo)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Zambia, Beira"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Zambia, Lourenco Marques"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid ""
+"Zeiss-Ikon safety lock for rear panel lid (available with M145, one key "
+"combination)"
+msgstr ""
+
+#: mplate_decoder/db_strings.py
+msgid "Zenit Blue"
+msgstr ""
+
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid ""
 "Minimum digits: {MODEL_6869_YEAR_CHASSIS_NR_LEN} (mod. 68-68) or "
 "{MODEL_7079_YEAR_CHASSIS_NR_LEN} digits (mod. 70-79)"
 msgstr ""
 
-#: mplate_decoder/forms.py:66
+#: mplate_decoder/forms.py
 msgid "Only digits allowed, without spaces. The second digit is always a 2."
 msgstr ""
 
-#: mplate_decoder/forms.py:77
+#: mplate_decoder/forms.py
 msgid "Invalid shortened chassis number. Check first digit."
 msgstr ""
 
-#: mplate_decoder/forms.py:83
+#: mplate_decoder/forms.py
 msgid "Invalid shortened chassis number. Check first and second digits."
 msgstr ""
 
-#: mplate_decoder/forms.py:106
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid "M-Plate already exists. View {mplate_link}."
 msgstr ""
 
-#: mplate_decoder/forms.py:116
+#: mplate_decoder/forms.py
 msgid "Only the letter 'E' is allowed"
 msgstr ""
 
-#: mplate_decoder/forms.py:128
+#: mplate_decoder/forms.py
 msgid "Only digits, letters and spaces allowed"
 msgstr ""
 
-#: mplate_decoder/forms.py:140
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid "Code: {mcode}. M-code length should be {MCODE_LEN} digits or letters"
 msgstr ""
 
-#: mplate_decoder/forms.py:145
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid "Minimum M-code length: {MCODE_LEN} digits or letters"
 msgstr ""
 
-#: mplate_decoder/forms.py:167 mplate_decoder/forms.py:243
+#: mplate_decoder/forms.py
 msgid "Only digits and letters allowed"
 msgstr ""
 
-#: mplate_decoder/forms.py:171
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid ""
 "Minimum paint and interior code length: {PAINT_AND_INTERIOR_LEN} digits or "
 "letters"
 msgstr ""
 
-#: mplate_decoder/forms.py:195
+#: mplate_decoder/forms.py
 msgid "Cannot validate production date format without a valid chassis number."
 msgstr ""
 
-#: mplate_decoder/forms.py:204 mplate_decoder/forms.py:221
+#: mplate_decoder/forms.py
 msgid "Invalid production date format. Please double check."
 msgstr ""
 
-#: mplate_decoder/forms.py:212
+#: mplate_decoder/forms.py
 msgid "Invalid production date. Please double check."
 msgstr ""
 
-#: mplate_decoder/forms.py:215
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid "Invalid production date ({exc}). Please double check."
 msgstr ""
 
-#: mplate_decoder/forms.py:226
+#: mplate_decoder/forms.py
 msgid "Invalid production week date. Please double check the two first digits."
 msgstr ""
 
-#: mplate_decoder/forms.py:247
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid ""
 "Minimum destination country length: {EXPORT_DESTINATION_LEN} letters or "
 "digits"
 msgstr ""
 
-#: mplate_decoder/forms.py:258
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid "Minimum model code length: {MODEL_LEN} digits"
 msgstr ""
 
-#: mplate_decoder/forms.py:268
+#: mplate_decoder/forms.py
 msgid "Invalid model. Please double check."
 msgstr ""
 
-#: mplate_decoder/forms.py:273
+#: mplate_decoder/forms.py
 msgid "Only digits allowed in model code"
 msgstr ""
 
-#: mplate_decoder/forms.py:278
+#: mplate_decoder/forms.py
 msgid "Invalid model code"
 msgstr ""
 
-#: mplate_decoder/forms.py:288
+#: mplate_decoder/forms.py
 #, python-brace-format
 msgid "Minimum aggregate code length: {AGGREGATE_CODE_LEN} digits"
 msgstr ""
 
-#: mplate_decoder/forms.py:296
+#: mplate_decoder/forms.py
 msgid "Only digits allowed in aggregate code"
 msgstr ""
 
-#: mplate_decoder/forms.py:309
+#: mplate_decoder/forms.py
 msgid "Invalid aggregate code"
 msgstr ""
 
-#: mplate_decoder/models.py:28
+#: mplate_decoder/models.py
 msgid "Shortened chassis number"
 msgstr ""
 
-#: mplate_decoder/models.py:30
+#: mplate_decoder/models.py
 msgid "Chassis number shortened, with the two leading digits removed."
 msgstr ""
 
-#: mplate_decoder/models.py:33
+#: mplate_decoder/models.py
 msgid "M-codes, row 1"
 msgstr ""
 
-#: mplate_decoder/models.py:35
+#: mplate_decoder/models.py
 msgid "Row 1 of M codes (max 5)"
 msgstr ""
 
-#: mplate_decoder/models.py:37
+#: mplate_decoder/models.py
 msgid "M-codes, row 2"
 msgstr ""
 
-#: mplate_decoder/models.py:39
+#: mplate_decoder/models.py
 msgid "Row 2 of M codes (max 4 -mod. '70-'79 or 5 -mod. '68-'69-)"
 msgstr ""
 
-#: mplate_decoder/models.py:42
+#: mplate_decoder/models.py
 msgid "Paint and interior"
 msgstr ""
 
-#: mplate_decoder/models.py:44
+#: mplate_decoder/models.py
 msgid "Combined VW body/roof paint and interior codes"
 msgstr ""
 
-#: mplate_decoder/models.py:46
-#: mplate_decoder/templates/mplate_decoder/detail.html:52
+#: mplate_decoder/models.py mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Production date"
 msgstr ""
 
-#: mplate_decoder/models.py:48
+#: mplate_decoder/models.py
 msgid "Production date code"
 msgstr ""
 
-#: mplate_decoder/models.py:50
+#: mplate_decoder/models.py
 msgid "Production planning"
 msgstr ""
 
-#: mplate_decoder/models.py:52
+#: mplate_decoder/models.py
 msgid "Production planning code"
 msgstr ""
 
-#: mplate_decoder/models.py:54
+#: mplate_decoder/models.py
 msgid "Export destination"
 msgstr ""
 
-#: mplate_decoder/models.py:56
+#: mplate_decoder/models.py
 msgid "Export destination code"
 msgstr ""
 
-#: mplate_decoder/models.py:58
+#: mplate_decoder/models.py
 msgid "Vehicle model"
 msgstr ""
 
-#: mplate_decoder/models.py:60
+#: mplate_decoder/models.py
 msgid "Vehicle model code"
 msgstr ""
 
-#: mplate_decoder/models.py:62
+#: mplate_decoder/models.py
 msgid "Aggregate"
 msgstr ""
 
-#: mplate_decoder/models.py:64
+#: mplate_decoder/models.py
 msgid "Engine and gearbox aggregate code"
 msgstr ""
 
-#: mplate_decoder/models.py:66
+#: mplate_decoder/models.py
 msgid "Emden"
 msgstr ""
 
-#: mplate_decoder/models.py:68
+#: mplate_decoder/models.py
 msgid "Optional \"E\" for Emden"
 msgstr ""
 
-#: mplate_decoder/models.py:85
+#: mplate_decoder/models.py
 msgid "Full list of M codes for this M plate"
 msgstr ""
 
-#: mplate_decoder/models.py:88
+#: mplate_decoder/models.py
 msgid "Planned production date, in time format"
 msgstr ""
 
-#: mplate_decoder/models.py:91
-#: mplate_decoder/templates/mplate_decoder/detail.html:36
-#: mplate_decoder/templates/mplate_decoder/metrics.html:117
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:14
+#: mplate_decoder/models.py mplate_decoder/templates/mplate_decoder/detail.html
+#: mplate_decoder/templates/mplate_decoder/metrics.html
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
 msgid "Model year"
 msgstr ""
 
-#: mplate_decoder/models.py:94
+#: mplate_decoder/models.py
 msgid "Country of destination"
 msgstr ""
 
-#: mplate_decoder/models.py:228
+#: mplate_decoder/models.py
+msgid "Decoded vehicle model"
+msgstr ""
+
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "({interiorcolor_code}) Unknown color"
 msgstr ""
 
-#: mplate_decoder/models.py:229
+#: mplate_decoder/models.py
 msgid "Unknown material"
 msgstr ""
 
-#: mplate_decoder/models.py:241
+#: mplate_decoder/models.py
 msgid "Error while fetching interior color code:"
 msgstr ""
 
-#: mplate_decoder/models.py:242
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid " {interiorcolor_code}, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:248
+#: mplate_decoder/models.py
 msgid "No description available for special paint jobs"
 msgstr ""
 
-#: mplate_decoder/models.py:267
+#: mplate_decoder/models.py
 msgid "Unavailable engine description"
 msgstr ""
 
-#: mplate_decoder/models.py:283
+#: mplate_decoder/models.py
 msgid "Unavailable transmission description"
 msgstr ""
 
-#: mplate_decoder/models.py:336
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "MplateDecoder requires an mplate or {attribute_name}"
 msgstr ""
 
-#: mplate_decoder/models.py:389
+#: mplate_decoder/models.py
 msgid "MplateDecoder requires an mplate or model code"
 msgstr ""
 
-#: mplate_decoder/models.py:401
+#: mplate_decoder/models.py
 msgid "MplateDecoder requires an mplate or model year"
 msgstr ""
 
-#: mplate_decoder/models.py:408
+#: mplate_decoder/models.py
 msgid "MplateDecoder requires an mplate or M codes"
 msgstr ""
 
-#: mplate_decoder/models.py:511
+#: mplate_decoder/models.py
+#, python-brace-format
+msgid "Unknown ({self.mplate.model_code})"
+msgstr ""
+
+#: mplate_decoder/models.py
+#: mplate_decoder/templates/mplate_decoder/search_results.html
+#: mplate_decoder/views.py
+msgid "Unknown"
+msgstr ""
+
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid ""
 "Invalid model year code length: {model_year_code_len}, code "
 "{model_year_code}, chassis no. {chassis_number_short}"
 msgstr ""
 
-#: mplate_decoder/models.py:532
+#: mplate_decoder/models.py
 msgid ""
 "MplateDecoder requires either an m-plate or chassis_number with encoded "
 "production date"
 msgstr ""
 
-#: mplate_decoder/models.py:631
+#: mplate_decoder/models.py
 msgid "MplateDecoder requires an mplate or mcodes_1/m_codes_2"
 msgstr ""
 
-#: mplate_decoder/models.py:639
+#: mplate_decoder/models.py
 msgid "MplateDecoder requires an mplate or chassis_number_short"
 msgstr ""
 
-#: mplate_decoder/models.py:676
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Unknown code, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:685
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Undefined code, year {model_year}"
 msgstr ""
 
-#: mplate_decoder/models.py:752 mplate_decoder/models.py:802
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Unknown ({export_destination_code})"
 msgstr ""
 
-#: mplate_decoder/models.py:786
+#: mplate_decoder/models.py
 msgid "Undefined country or region"
 msgstr ""
 
-#: mplate_decoder/models.py:795
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "{destination_country_description} via {export_destination.port}"
 msgstr ""
 
-#: mplate_decoder/models.py:798
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "{destination_country_description} via {export_destination.city}"
 msgstr ""
 
-#: mplate_decoder/models.py:805
+#: mplate_decoder/models.py
 msgid "Not specified"
 msgstr ""
 
-#: mplate_decoder/models.py:867
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Unknown exterior color code ({exteriorcolor_code})"
 msgstr ""
 
-#: mplate_decoder/models.py:878
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Unknown color ({exteriorcolor.lacquer_code_body})"
 msgstr ""
 
-#: mplate_decoder/models.py:889
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Unknown color ({exteriorcolor.lacquer_code_roof})"
 msgstr ""
 
-#: mplate_decoder/models.py:895
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid "Remarks: {exteriorcolor.remarks}"
 msgstr ""
 
-#: mplate_decoder/models.py:898
+#: mplate_decoder/models.py
 #, python-brace-format
 msgid ""
 "Body: {color_name_body} ({exteriorcolor.lacquer_code_body})\n"
 "            Roof: {color_name_roof} ({lacquer_code_roof})"
 msgstr ""
 
-#: mplate_decoder/models.py:984 mplate_decoder/models.py:998
-#: mplate_decoder/models.py:1044
+#: mplate_decoder/models.py
 msgid "List of M-codes for the corresponding extras"
 msgstr ""
 
-#: mplate_decoder/models.py:1039
+#: mplate_decoder/models.py
 msgid "Model description"
 msgstr ""
 
-#: mplate_decoder/models.py:1048
+#: mplate_decoder/models.py
 msgid "Model description as it appears on the chassis plate"
 msgstr ""
 
-#: mplate_decoder/templates/404.html:8
+#: mplate_decoder/templates/404.html
 msgid "Not found"
 msgstr ""
 
-#: mplate_decoder/templates/404.html:10
+#: mplate_decoder/templates/404.html
 msgid "The requested page does not exist"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:22
+#: mplate_decoder/templates/500.html
+msgid "Internal error"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/detail.html
+#, python-format
+msgid "%(heading)s: M-plate %(chassis_number)s decoded"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Specifications"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:26
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Model"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:27
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Volkswagen Type 2"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:28
+#: mplate_decoder/templates/mplate_decoder/detail.html
 #, python-format
 msgid ""
 "\n"
@@ -415,39 +3538,49 @@ msgid ""
 "    "
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:40
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Engine"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:44
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Transmission"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:48
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Vehicle Ident. Nr."
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:65
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Optional extras"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:73
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Exterior"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:77
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Interior"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:82
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Destination"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/detail.html:88
+#: mplate_decoder/templates/mplate_decoder/detail.html
 msgid "Destination country"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:12
+#: mplate_decoder/templates/mplate_decoder/index.html
+msgid "VW Bus M-plate decoder: Type 2 Bay Window option codes explained"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/index.html
+msgid ""
+"What the M-plate of a 1968–1979 VW Type 2 Bay Window bus is, where to find "
+"it and what its option codes, paint codes and dates mean."
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid ""
 "\n"
 "      The M-plate is one of the identification plates found on VW busses. \n"
@@ -458,15 +3591,15 @@ msgid ""
 "    "
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:24
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid "Find it"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:31
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid "Model years 68-76"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:35
+#: mplate_decoder/templates/mplate_decoder/index.html
 #, python-format
 msgid ""
 "\n"
@@ -475,17 +3608,17 @@ msgid ""
 "    "
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:40
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid ""
 "<strong>Before model year 1977</strong>: the M-plate is located on the metal "
 "partition behind the driver's seat (passenger's seat for RHD vehicles)."
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:46
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid "Model years 77-79"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:50
+#: mplate_decoder/templates/mplate_decoder/index.html
 #, python-format
 msgid ""
 "\n"
@@ -493,79 +3626,98 @@ msgid ""
 "      "
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:55
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid ""
 "<strong>Model year 1977 and after</strong>: the M-plate is located under the "
 "dashboard, on top of the metal fresh air pipe."
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:63
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid "Decode it"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:69
-#: vw_type2_id/templates/home.html:16
+#: mplate_decoder/templates/mplate_decoder/index.html
+#: vw_type2_id/templates/home.html
 msgid "M-plate decoder"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:74
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid ""
 "Use the automatic decoder to find out more about the original configuration, "
 "equipment and extras for a Type 2 bus. Simply choose the model year and fill "
 "in the M-plate fields."
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:77
+#: mplate_decoder/templates/mplate_decoder/index.html
 msgid "Decode an M-plate&raquo;"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/index.html:83
-#: mplate_decoder/templates/mplate_decoder/metrics.html:61
-#: mplate_decoder/templates/mplate_decoder/metrics.html:85
+#: mplate_decoder/templates/mplate_decoder/index.html
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "M-plate submissions"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:9
+#: mplate_decoder/templates/mplate_decoder/metrics.html
+msgid "VW Type 2 production statistics from 4,000+ decoded M-plates"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/metrics.html
+msgid ""
+"Models, model years, paint colours and destination countries of VW Type 2 "
+"buses, from the M-plates decoded on this site."
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Vehicle production data extracted from the M-plate decoder submissions"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:16
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Top 10 models"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:20
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Model years"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:27
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Top 15 colors"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:31
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Top 10 destination countries"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:38
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Daily M-plate submissions"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:79
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Date"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:97
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "VW Type 2 models"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:135
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Color"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/metrics.html:156
+#: mplate_decoder/templates/mplate_decoder/metrics.html
 msgid "Countries"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_about.html:10
+#: mplate_decoder/templates/mplate_decoder/mplate_about.html
+msgid "About this site"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/mplate_about.html
+msgid ""
+"Why this VW Type 2 M-plate decoder exists, where its data comes from, its "
+"privacy policy and disclaimer."
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/mplate_about.html
 msgid ""
 "\n"
 "## About this site\n"
@@ -648,3331 +3800,305 @@ msgid ""
 "\n"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:8
+#: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html
 msgid "Delete M-plate"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:10
+#: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html
 #, python-format
 msgid ""
 "Are you sure you want to delete M-plate %(mplate.chassis_number_short)s?"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html:14
+#: mplate_decoder/templates/mplate_decoder/mplate_confirm_delete.html
 msgid "Yes, delete it"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:9
-#: vw_type2_id/templates/base_bootstrap.html:77
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "My M-plates"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:13
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
 msgid "M-plate ID"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:15
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
 msgid "Actions"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:23
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
 msgid "Edit"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:24
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
 msgid "Delete"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:30
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:31
-#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html:32
+#: mplate_decoder/templates/mplate_decoder/mplate_created_by_user.html
 msgid "N/A"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_form.html:14
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html
+#, python-format
+msgid "Edit M-plate %(chassis_number)s"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html
+msgid "Decode your VW Bus M-plate (1968–1979)"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html
+msgid ""
+"Enter the codes from your VW Type 2 M-plate to decode its model, optional "
+"extras, paint and interior, production date and export destination."
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html
 msgid "Model 68-69"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/mplate_form.html:17
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html
 msgid "Model 70-79"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:10
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html
 msgid "Volkswagen Type 2 M-plate, model year 68-69"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:55
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:58
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html
 msgid "Update this M-plate"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:57
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:60
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html
 msgid "Decode this M-plate"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html:65
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:68
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_6869.html
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html
 msgid "Reference"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html:10
+#: mplate_decoder/templates/mplate_decoder/partials/mplate_form_7079.html
 msgid "Volkswagen Type 2 M-plate, model year 70-79"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:13
+#: mplate_decoder/templates/mplate_decoder/search_results.html
+#, python-format
+msgid "Search results for %(query)s"
+msgstr ""
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 msgid "Code"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:14
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 msgid "Years"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:15
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 msgid "Description"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:26
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 #, python-format
 msgid "M-code collection: %(collection)s"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:34
-#: mplate_decoder/templates/mplate_decoder/search_results.html:35
-#: mplate_decoder/views.py:435
-msgid "Unknown"
-msgstr ""
-
-#: mplate_decoder/templates/mplate_decoder/search_results.html:42
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 #, python-format
 msgid "Found %(count)s M-plates with M-code:"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:46
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 msgid "M-plate"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:47
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 msgid "M-codes"
 msgstr ""
 
-#: mplate_decoder/templates/mplate_decoder/search_results.html:105
+#: mplate_decoder/templates/mplate_decoder/search_results.html
 msgid "There are currently no M-plates with M-code:"
 msgstr ""
 
-#: mplate_decoder/urls.py:31
+#: mplate_decoder/urls.py
 msgid "VW Type 2 ID"
 msgstr ""
 
-#: mplate_decoder/urls.py:32
+#: mplate_decoder/urls.py
 #, python-brace-format
 msgid "{SITE_NAME} Admin"
 msgstr ""
 
-#: mplate_decoder/urls.py:33
+#: mplate_decoder/urls.py
 #, python-brace-format
 msgid "{SITE_NAME} Admin Portal"
 msgstr ""
 
-#: mplate_decoder/urls.py:34
+#: mplate_decoder/urls.py
 #, python-brace-format
 msgid "Welcome to {SITE_NAME} Admin Portal"
 msgstr ""
 
-#: vinaigrette-deleteme.py:2
-msgid "Grey"
+#: mplate_decoder/views.py
+#, python-format
+msgid "%(year)s VW Type 2"
 msgstr ""
 
-#: vinaigrette-deleteme.py:3 vinaigrette-deleteme.py:324
-msgid "Black"
+#: mplate_decoder/views.py
+#, python-format
+msgid "%(year)s VW %(model)s"
 msgstr ""
 
-#: vinaigrette-deleteme.py:4
-msgid "Middle Red"
+#: mplate_decoder/views.py
+#, python-format
+msgid "Built on %(date)s for %(country)s."
 msgstr ""
 
-#: vinaigrette-deleteme.py:5
-msgid "White"
+#: mplate_decoder/views.py
+#, python-format
+msgid "%(bus)s, built on %(date)s for %(country)s."
 msgstr ""
 
-#: vinaigrette-deleteme.py:6
-msgid "Burgundy Red"
+#: mplate_decoder/views.py
+#, python-format
+msgid "Built on %(date)s."
 msgstr ""
 
-#: vinaigrette-deleteme.py:7
-msgid "Rally Yellow"
+#: mplate_decoder/views.py
+#, python-format
+msgid "%(bus)s, built on %(date)s."
 msgstr ""
 
-#: vinaigrette-deleteme.py:8
-msgid "Sahara Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:9
-msgid "Sierra Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:10
-msgid "Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:11
-msgid "Hannen Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:12
-msgid "Panama Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:13
-msgid "Yellow/Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:14
-msgid "BP Yellow-White-Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:15
-msgid "Dakota Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:16
-msgid "Ceylon Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:17
-msgid "Ceylon Beige/Pastel White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:18
-msgid "Sun Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:19
-msgid "Saturn Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:20
-msgid "Curry Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:21
-msgid "Schindler Yellow/Ebony Black"
-msgstr ""
-
-#: vinaigrette-deleteme.py:22
-msgid "Yellow/Ebony Black"
-msgstr ""
-
-#: vinaigrette-deleteme.py:23
-msgid "Chrome Yellow, hubcaps and bumpers standard colour"
-msgstr ""
-
-#: vinaigrette-deleteme.py:24
-msgid "Wagner Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:25
-msgid "Karcher Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:26
-msgid "Yellow-Brown/White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:27
-msgid "Chrome Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:28
-msgid "Brilliant Orange"
-msgstr ""
-
-#: vinaigrette-deleteme.py:29
-msgid "Brown-Orange"
-msgstr ""
-
-#: vinaigrette-deleteme.py:30
-msgid "Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:31
-msgid "Orange"
-msgstr ""
-
-#: vinaigrette-deleteme.py:32
-msgid "Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:33
-msgid "Blue/Grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:34
-msgid "Orange-Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:35
-msgid "Fire Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:36
-msgid "Fire Red/White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:37
-msgid "Yellow/Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:38
-msgid "Wüstenrot Orange"
-msgstr ""
-
-#: vinaigrette-deleteme.py:39
-msgid "Orange, hubcaps and bumpers Orange"
-msgstr ""
-
-#: vinaigrette-deleteme.py:40
-msgid "Orange wheels, hubcaps and bumpers Ebony Black"
-msgstr ""
-
-#: vinaigrette-deleteme.py:41
-msgid "Orange/White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:42
-msgid "Police-White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:43
-msgid "Lotus White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:44
-msgid "Kasan Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:45
-msgid "Kasan Red/Pastel White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:46
-msgid "Montana Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:47
-msgid "Brilliant Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:48
-msgid "Olive Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:49
-msgid "Senegal Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:50
-msgid "Mars Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:51
-msgid "Chianti Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:52
-msgid "Phoenix Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:53
-msgid "Dusky Pink"
-msgstr ""
-
-#: vinaigrette-deleteme.py:54
-msgid "Light Grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:55
-msgid "Cola Red-New"
-msgstr ""
-
-#: vinaigrette-deleteme.py:56
-msgid "Cola Red-New/Papyrus White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:57
-msgid "Bright Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:58
-msgid "Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:59
-msgid "Ruby Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:60
-msgid "Meadow Green, wheels, hubcaps and bumpers standard colour"
-msgstr ""
-
-#: vinaigrette-deleteme.py:61
-msgid "Brilliant Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:62
-msgid "Neptune Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:63
-msgid "Velvet Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:64
-msgid "Velvet Green/Blue White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:65
-msgid "Gentian Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:66
-msgid "Miami Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:67
-msgid "Beat Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:68
-msgid "Kings Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:69
-msgid "Linen Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:70
-msgid "Linen Blue, roof: White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:71
-msgid "Orient Blue/Pastel White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:72
-msgid "Light Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:73
-msgid "Karstadt Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:74
-msgid "Niagara Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:75
-msgid "Orient Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:76
-msgid "Marina Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:77
-msgid "Linde Blue/Papyrus White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:78
-msgid "Signal Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:79
-msgid "Miele Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:80
-msgid "Titian Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:81
-msgid "Green-Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:82
-msgid "ADAC Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:83
-msgid "Ivory"
-msgstr ""
-
-#: vinaigrette-deleteme.py:84
-msgid "Conti Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:85
-msgid "Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:86
-msgid "Reef Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:87
-msgid "Pure White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:88
-msgid "Elm Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:89
-msgid "Delta Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:90
-msgid "Brilliant Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:91
-msgid "Cliff Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:92
-msgid "Sumatra Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:93
-msgid "Sumatra Green/Pastel White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:94
-msgid "Savanna Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:95
-msgid "Bali Yellow/Yosemite Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:96
-msgid "Pop Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:97
-msgid "Vaillant Green/Papyrus White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:98
-msgid "Cobalt Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:99
-msgid "VW-Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:100
-msgid "Zenit Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:101
-msgid "Sage Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:102
-msgid "Hippie Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:103
-msgid "Turquoise Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:104
-msgid "Island Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:105
-msgid "Ravenna Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:106
-msgid "Flamuco Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:107
-msgid "Lufthansa Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:108
-msgid "Mint Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:109
-msgid "Industry Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:110
-msgid "Dark Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:111
-msgid "Siemens Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:112
-msgid "Aero-Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:113
-msgid "Silver Grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:114
-msgid "Hoechst-Grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:115
-msgid "Wolf-Miller-Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:116
-msgid "Agate Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:117
-msgid "Pearl White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:118
-msgid "Pastel White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:119
-msgid "Papyrus White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:120
-msgid "Kansas Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:121
-msgid "White/Mint Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:122
-msgid "White/Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:123
-msgid "Silver Metallic"
-msgstr ""
-
-#: vinaigrette-deleteme.py:124
-msgid "Clear White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:125
-msgid "BP-White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:126
-msgid "Mexico Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:127
-msgid "Date Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:128
-msgid "Cloud White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:129
-msgid "Atlas White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:130
-msgid "Primered"
-msgstr ""
-
-#: vinaigrette-deleteme.py:131
-msgid "Enamel White"
-msgstr ""
-
-#: vinaigrette-deleteme.py:132
-msgid "Apple green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:133
-msgid "Mouse grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:134
-msgid "Fox Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:135
-msgid "Post Yellow/Cadmium Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:136
-msgid "Type 4"
-msgstr ""
-
-#: vinaigrette-deleteme.py:137
-msgid "Fuel injection (L-Jetronic)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:138
-msgid "Type 1"
-msgstr ""
-
-#: vinaigrette-deleteme.py:139
-msgid "Single carburetor"
-msgstr ""
-
-#: vinaigrette-deleteme.py:140
-msgid "Exhaust emission control"
-msgstr ""
-
-#: vinaigrette-deleteme.py:141
-msgid "Dual carburetor"
-msgstr ""
-
-#: vinaigrette-deleteme.py:142
-msgid "Stiff instead of torsion suspended clutch plate"
-msgstr ""
-
-#: vinaigrette-deleteme.py:143
-msgid "Afghanistan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:144 vinaigrette-deleteme.py:385
-msgid "Australia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:145
-msgid "Andorra"
-msgstr ""
-
-#: vinaigrette-deleteme.py:146
-msgid "Egypt"
-msgstr ""
-
-#: vinaigrette-deleteme.py:147
-msgid "Angola"
-msgstr ""
-
-#: vinaigrette-deleteme.py:148
-msgid "Djibouti"
-msgstr ""
-
-#: vinaigrette-deleteme.py:149
-msgid "Algeria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:150
-msgid "Argentina"
-msgstr ""
-
-#: vinaigrette-deleteme.py:151
-msgid "Ethiopia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:152
-msgid "Albania"
-msgstr ""
-
-#: vinaigrette-deleteme.py:153
-msgid "People's Republic of South Yemen"
-msgstr ""
-
-#: vinaigrette-deleteme.py:154
-msgid "Bahrain"
-msgstr ""
-
-#: vinaigrette-deleteme.py:155
-msgid "Burundi"
-msgstr ""
-
-#: vinaigrette-deleteme.py:156 vinaigrette-deleteme.py:624
-msgid "Belgium"
-msgstr ""
-
-#: vinaigrette-deleteme.py:157
-msgid "Bulgaria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:158
-msgid "Republic of the Congo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:159
-msgid "Bermuda"
-msgstr ""
-
-#: vinaigrette-deleteme.py:160
-msgid "British New Guinea"
-msgstr ""
-
-#: vinaigrette-deleteme.py:161
-msgid "Bolivia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:162
-msgid "Papua"
-msgstr ""
-
-#: vinaigrette-deleteme.py:163
-msgid "Brazil"
-msgstr ""
-
-#: vinaigrette-deleteme.py:164
-msgid "British Solomon Islands Protectorate"
-msgstr ""
-
-#: vinaigrette-deleteme.py:165
-msgid "Burma"
-msgstr ""
-
-#: vinaigrette-deleteme.py:166
-msgid "British Samoa"
-msgstr ""
-
-#: vinaigrette-deleteme.py:167
-msgid "Ceylon"
-msgstr ""
-
-#: vinaigrette-deleteme.py:168
-msgid "Chile"
-msgstr ""
-
-#: vinaigrette-deleteme.py:169
-msgid "Zaire (Democratic Republic of The Congo)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:170
-msgid "Czeckoslovakia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:171
-msgid "Cyprus"
-msgstr ""
-
-#: vinaigrette-deleteme.py:172
-msgid "Denmark"
-msgstr ""
-
-#: vinaigrette-deleteme.py:173
-msgid "Denmak"
-msgstr ""
-
-#: vinaigrette-deleteme.py:174 vinaigrette-deleteme.py:534
-msgid "United Kingdom"
-msgstr ""
-
-#: vinaigrette-deleteme.py:175
-msgid "Ecuador"
-msgstr ""
-
-#: vinaigrette-deleteme.py:176
-msgid "Eritrea"
-msgstr ""
-
-#: vinaigrette-deleteme.py:177 vinaigrette-deleteme.py:462
-msgid "France"
-msgstr ""
-
-#: vinaigrette-deleteme.py:178
-msgid "Ivory Coast"
-msgstr ""
-
-#: vinaigrette-deleteme.py:179
-msgid "Republic of Gabon"
-msgstr ""
-
-#: vinaigrette-deleteme.py:180
-msgid "Republic of Guinea"
-msgstr ""
-
-#: vinaigrette-deleteme.py:181
-msgid "Cameroon"
-msgstr ""
-
-#: vinaigrette-deleteme.py:182
-msgid "Finland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:183
-msgid "Senegal"
-msgstr ""
-
-#: vinaigrette-deleteme.py:184
-msgid "Togo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:185
-msgid "People's Republic of Benin"
-msgstr ""
-
-#: vinaigrette-deleteme.py:186
-msgid "Chad"
-msgstr ""
-
-#: vinaigrette-deleteme.py:187
-msgid "Volta"
-msgstr ""
-
-#: vinaigrette-deleteme.py:188
-msgid "Sudan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:189
-msgid "Niger"
-msgstr ""
-
-#: vinaigrette-deleteme.py:190
-msgid "Fiji Islands"
-msgstr ""
-
-#: vinaigrette-deleteme.py:191
-msgid "Gambia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:192
-msgid "Ghana"
-msgstr ""
-
-#: vinaigrette-deleteme.py:193
-msgid "Gibraltar"
-msgstr ""
-
-#: vinaigrette-deleteme.py:194
-msgid "Guam"
-msgstr ""
-
-#: vinaigrette-deleteme.py:195
-msgid "Greece"
-msgstr ""
-
-#: vinaigrette-deleteme.py:196
-msgid "Gaza"
-msgstr ""
-
-#: vinaigrette-deleteme.py:197
-msgid "Hong Kong"
-msgstr ""
-
-#: vinaigrette-deleteme.py:198
-msgid "The Netherlands"
-msgstr ""
-
-#: vinaigrette-deleteme.py:199 vinaigrette-deleteme.py:384
-msgid "Japan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:200 vinaigrette-deleteme.py:396
-msgid "Italy"
-msgstr ""
-
-#: vinaigrette-deleteme.py:201
-msgid "Indonesia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:202
-msgid "India"
-msgstr ""
-
-#: vinaigrette-deleteme.py:203
-msgid "Iraq"
-msgstr ""
-
-#: vinaigrette-deleteme.py:204
-msgid "Israel"
-msgstr ""
-
-#: vinaigrette-deleteme.py:205
-msgid "Somalia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:206
-msgid "Iran"
-msgstr ""
-
-#: vinaigrette-deleteme.py:207
-msgid "Jordan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:208
-msgid "Ireland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:209
-msgid "Iceland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:210 vinaigrette-deleteme.py:520
-msgid "Yugoslavia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:211 vinaigrette-deleteme.py:550
-msgid "Canada"
-msgstr ""
-
-#: vinaigrette-deleteme.py:212
-msgid "Cambodia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:213
-msgid "Kenya"
-msgstr ""
-
-#: vinaigrette-deleteme.py:214
-msgid "Equatorial Guinea"
-msgstr ""
-
-#: vinaigrette-deleteme.py:215
-msgid "Spain"
-msgstr ""
-
-#: vinaigrette-deleteme.py:216
-msgid "Columbia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:217
-msgid "Korea"
-msgstr ""
-
-#: vinaigrette-deleteme.py:218
-msgid "Kuwait"
-msgstr ""
-
-#: vinaigrette-deleteme.py:219
-msgid "Libya"
-msgstr ""
-
-#: vinaigrette-deleteme.py:220
-msgid "Lebanon"
-msgstr ""
-
-#: vinaigrette-deleteme.py:221
-msgid "Liberia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:222
-msgid "Luxemburg"
-msgstr ""
-
-#: vinaigrette-deleteme.py:223
-msgid "Libya, Tripoli"
-msgstr ""
-
-#: vinaigrette-deleteme.py:224
-msgid "Malta"
-msgstr ""
-
-#: vinaigrette-deleteme.py:225
-msgid "Mozambique, Geira"
-msgstr ""
-
-#: vinaigrette-deleteme.py:226
-msgid "Malaysia, Kuching"
-msgstr ""
-
-#: vinaigrette-deleteme.py:227
-msgid "Madagascar"
-msgstr ""
-
-#: vinaigrette-deleteme.py:228
-msgid "Mexico"
-msgstr ""
-
-#: vinaigrette-deleteme.py:229
-msgid "Malaysia, Kuala Belait"
-msgstr ""
-
-#: vinaigrette-deleteme.py:230
-msgid "Malaysia, Penang"
-msgstr ""
-
-#: vinaigrette-deleteme.py:231
-msgid "Malaysia, Jesselton"
-msgstr ""
-
-#: vinaigrette-deleteme.py:232
-msgid "Morocco, Casablanca"
-msgstr ""
-
-#: vinaigrette-deleteme.py:233
-msgid "Malaysia, Kuala Lumpur"
-msgstr ""
-
-#: vinaigrette-deleteme.py:234
-msgid "Singapore"
-msgstr ""
-
-#: vinaigrette-deleteme.py:235
-msgid "Mozambique, Nacala"
-msgstr ""
-
-#: vinaigrette-deleteme.py:236
-msgid "Mozambique"
-msgstr ""
-
-#: vinaigrette-deleteme.py:237
-msgid "Mozambique, Porto Amelia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:238
-msgid "Mozambique, Quelimone"
-msgstr ""
-
-#: vinaigrette-deleteme.py:239
-msgid "Malaysia, Sandakan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:240
-msgid "Mauritius"
-msgstr ""
-
-#: vinaigrette-deleteme.py:241
-msgid "Malaysia, Tawau"
-msgstr ""
-
-#: vinaigrette-deleteme.py:242
-msgid "Malawi"
-msgstr ""
-
-#: vinaigrette-deleteme.py:243
-msgid "Mexico, Veracruz"
-msgstr ""
-
-#: vinaigrette-deleteme.py:244
-msgid "New Zealand"
-msgstr ""
-
-#: vinaigrette-deleteme.py:245
-msgid "Nepal"
-msgstr ""
-
-#: vinaigrette-deleteme.py:246
-msgid "New Hebrides"
-msgstr ""
-
-#: vinaigrette-deleteme.py:247
-msgid "Nigeria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:248
-msgid "Norway"
-msgstr ""
-
-#: vinaigrette-deleteme.py:249
-msgid "Nigeria, Port Harcourt"
-msgstr ""
-
-#: vinaigrette-deleteme.py:250
-msgid "Africa, Middle East including Iran and Afganistan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:251
-msgid "Middle and South America, Caribbean Sea"
-msgstr ""
-
-#: vinaigrette-deleteme.py:252
-msgid "North America"
-msgstr ""
-
-#: vinaigrette-deleteme.py:253 vinaigrette-deleteme.py:507
-msgid "Austria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:254
-msgid "Panama"
-msgstr ""
-
-#: vinaigrette-deleteme.py:255
-msgid "Pakistan, Chittagong"
-msgstr ""
-
-#: vinaigrette-deleteme.py:256
-msgid "Philippines"
-msgstr ""
-
-#: vinaigrette-deleteme.py:257
-msgid "Peru"
-msgstr ""
-
-#: vinaigrette-deleteme.py:258
-msgid "Portugal"
-msgstr ""
-
-#: vinaigrette-deleteme.py:259
-msgid "Paraguay"
-msgstr ""
-
-#: vinaigrette-deleteme.py:260
-msgid "Panama, Canal Zone"
-msgstr ""
-
-#: vinaigrette-deleteme.py:261
-msgid "Poland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:262
-msgid "Pakistan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:263
-msgid "Puerto Rico"
-msgstr ""
-
-#: vinaigrette-deleteme.py:264
-msgid "St. Thomas (Canada)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:265
-msgid "St. Croix (Caribbean)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:266
-msgid "Qatar"
-msgstr ""
-
-#: vinaigrette-deleteme.py:267
-msgid "Reunion"
-msgstr ""
-
-#: vinaigrette-deleteme.py:268
-msgid "Rhodesia, Beira"
-msgstr ""
-
-#: vinaigrette-deleteme.py:269
-msgid "Nyasaland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:270
-msgid "Rhodesia, Lourenco Marques"
-msgstr ""
-
-#: vinaigrette-deleteme.py:271
-msgid "Romania"
-msgstr ""
-
-#: vinaigrette-deleteme.py:272
-msgid "Rwanda"
-msgstr ""
-
-#: vinaigrette-deleteme.py:273
-msgid "Saudi Arabia/East, Dammam"
-msgstr ""
-
-#: vinaigrette-deleteme.py:274 vinaigrette-deleteme.py:415
-msgid "Sweden"
-msgstr ""
-
-#: vinaigrette-deleteme.py:275
-msgid "Switzerland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:276
-msgid "South Africa"
-msgstr ""
-
-#: vinaigrette-deleteme.py:277
-msgid "Sierra Leone"
-msgstr ""
-
-#: vinaigrette-deleteme.py:278
-msgid "USSR"
-msgstr ""
-
-#: vinaigrette-deleteme.py:279
-msgid "Morocco"
-msgstr ""
-
-#: vinaigrette-deleteme.py:280
-msgid "Saudi Arabia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:281
-msgid "Syria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:282
-msgid "Tangiers, Morocco"
-msgstr ""
-
-#: vinaigrette-deleteme.py:283
-msgid "Tanzania, Tanga"
-msgstr ""
-
-#: vinaigrette-deleteme.py:284
-msgid "Thailand"
-msgstr ""
-
-#: vinaigrette-deleteme.py:285
-msgid "Tahiti"
-msgstr ""
-
-#: vinaigrette-deleteme.py:286
-msgid "Turkey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:287
-msgid "Thailand, Laos"
-msgstr ""
-
-#: vinaigrette-deleteme.py:288
-msgid "Tunisia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:289 vinaigrette-deleteme.py:552
-msgid "USA"
-msgstr ""
-
-#: vinaigrette-deleteme.py:290
-msgid "Tanzania"
-msgstr ""
-
-#: vinaigrette-deleteme.py:291
-msgid "Taiwan"
-msgstr ""
-
-#: vinaigrette-deleteme.py:292
-msgid "Tanzania, Zanzibar"
-msgstr ""
-
-#: vinaigrette-deleteme.py:293
-msgid "Venezula"
-msgstr ""
-
-#: vinaigrette-deleteme.py:294
-msgid "Uganda"
-msgstr ""
-
-#: vinaigrette-deleteme.py:295
-msgid "Vietnam"
-msgstr ""
-
-#: vinaigrette-deleteme.py:296
-msgid "Hungary"
-msgstr ""
-
-#: vinaigrette-deleteme.py:297
-msgid "Iruguay"
-msgstr ""
-
-#: vinaigrette-deleteme.py:298
-msgid "Denmark, Copenhagen"
-msgstr ""
-
-#: vinaigrette-deleteme.py:299
-msgid "England via Ostende"
-msgstr ""
-
-#: vinaigrette-deleteme.py:300
-msgid "Yemin"
-msgstr ""
-
-#: vinaigrette-deleteme.py:301
-msgid "Yugoslavia, Skopje"
-msgstr ""
-
-#: vinaigrette-deleteme.py:302
-msgid "Yugoslavia, Ljubljana"
-msgstr ""
-
-#: vinaigrette-deleteme.py:303
-msgid "Yugoslavia, Mostar"
-msgstr ""
-
-#: vinaigrette-deleteme.py:304
-msgid "Yugoslavia, Novi Sad"
-msgstr ""
-
-#: vinaigrette-deleteme.py:305
-msgid "Yugoslavia, Sarajevo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:306
-msgid "Yugoslavia, Rijeka"
-msgstr ""
-
-#: vinaigrette-deleteme.py:307
-msgid "Yugoslavia, Split"
-msgstr ""
-
-#: vinaigrette-deleteme.py:308
-msgid "Yugoslavia, Zagreb"
-msgstr ""
-
-#: vinaigrette-deleteme.py:309
-msgid "Central America"
-msgstr ""
-
-#: vinaigrette-deleteme.py:310
-msgid "Zambia, Beira"
-msgstr ""
-
-#: vinaigrette-deleteme.py:311
-msgid "Zambia, Lourenco Marques"
-msgstr ""
-
-#: vinaigrette-deleteme.py:312 vinaigrette-deleteme.py:561
-msgid "Germany"
-msgstr ""
-
-#: vinaigrette-deleteme.py:313
-msgid "Manual transmission, 4-speed"
-msgstr ""
-
-#: vinaigrette-deleteme.py:314
-msgid "Automatic transmission, 3-speed"
-msgstr ""
-
-#: vinaigrette-deleteme.py:315
-msgid "Alabaster (Grey)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:316
-msgid "Cloth"
-msgstr ""
-
-#: vinaigrette-deleteme.py:317
-msgid "Camping Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:318
-msgid "Light Grey/Medium Grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:319
-msgid "Leatherette"
-msgstr ""
-
-#: vinaigrette-deleteme.py:320
-msgid "Light Sand/Khaki Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:321
-msgid "Camping Green Yellow"
-msgstr ""
-
-#: vinaigrette-deleteme.py:322
-msgid "Dark Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:323
-msgid "Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:325
-msgid "Indian Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:326
-msgid "Camping Green Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:327
-msgid "Medium Grey"
-msgstr ""
-
-#: vinaigrette-deleteme.py:328
-msgid "Camping Brown Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:329
-msgid "Gala Red"
-msgstr ""
-
-#: vinaigrette-deleteme.py:330
-msgid "Camping Green"
-msgstr ""
-
-#: vinaigrette-deleteme.py:331
-msgid "Dark Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:332
-msgid "Cork"
-msgstr ""
-
-#: vinaigrette-deleteme.py:333
-msgid "Leather Beige"
-msgstr ""
-
-#: vinaigrette-deleteme.py:334
-msgid "Canyon Brown"
-msgstr ""
-
-#: vinaigrette-deleteme.py:335
-msgid "Marine (Dark Blue)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:336
-msgid "Parchment (Beige Grey)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:337
-msgid "Slate"
-msgstr ""
-
-#: vinaigrette-deleteme.py:338
-msgid "Juniper (Green)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:339
-msgid "Lapis Blue"
-msgstr ""
-
-#: vinaigrette-deleteme.py:340
-msgid "Bamboo (Beige)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:341
-msgid "Sienna (Red Brown)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:342
-msgid "SO3, VW Kombi as traffic accident observation vehicle"
-msgstr ""
-
-#: vinaigrette-deleteme.py:343
-msgid "Conversion"
-msgstr ""
-
-#: vinaigrette-deleteme.py:344
-msgid "SO67, Westfalia Campmobile 67A"
-msgstr ""
-
-#: vinaigrette-deleteme.py:345
-msgid ""
-"SO67, Westfalia Campmobile 67B. As interior 67A but with additional pop-up "
-"roof, bed and built-in roof luggage rack"
-msgstr ""
-
-#: vinaigrette-deleteme.py:346
-msgid ""
-"SO67, Westfalia Campmobile 67D. As interior 67B but with additional tent"
-msgstr ""
-
-#: vinaigrette-deleteme.py:347
-msgid "SO67, Westfalia Campmobile 67E"
-msgstr ""
-
-#: vinaigrette-deleteme.py:348
-msgid "SO67, Westfalia Campmobile 67F"
-msgstr ""
-
-#: vinaigrette-deleteme.py:349
-msgid "SO67, Westfalia Campmobile 67G"
-msgstr ""
-
-#: vinaigrette-deleteme.py:350
-msgid "SO67, Westfalia Campmobile 67H"
-msgstr ""
-
-#: vinaigrette-deleteme.py:351
-msgid "VW Kombi as traffic accident vehicle"
-msgstr ""
-
-#: vinaigrette-deleteme.py:352
-msgid ""
-"VW Kombi as traffic accident vehicle with additional roof platform and ladder"
-msgstr ""
-
-#: vinaigrette-deleteme.py:353
-msgid "Double-seater middle bench and special rear bench"
-msgstr ""
-
-#: vinaigrette-deleteme.py:354
-msgid "Standard Campmobile, without pop-up roof, folding spare tyre"
-msgstr ""
-
-#: vinaigrette-deleteme.py:355
-msgid "Pop Up Top Campmobile, with pop-up roof, folding spare tyre"
-msgstr ""
-
-#: vinaigrette-deleteme.py:356
-msgid "Campmobile with pop-up roof"
-msgstr ""
-
-#: vinaigrette-deleteme.py:357
-msgid "Campmobile with pop-up roof and combined gas/electric refrigerator"
-msgstr ""
-
-#: vinaigrette-deleteme.py:358
-msgid ""
-"Deluxe Campmobile with pop-up roof, folding spare tyre, combined gas/"
-"electric refrigerator, gas stove"
-msgstr ""
-
-#: vinaigrette-deleteme.py:359
-msgid "With additional tent for P21 to P27"
-msgstr ""
-
-#: vinaigrette-deleteme.py:360
-msgid "With additional electricity inlet for 220V. For P25 and P26"
-msgstr ""
-
-#: vinaigrette-deleteme.py:361
-msgid "Westfalia interior (without pop-up roof)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:362
-msgid ""
-"Combined gas/electric refrigerator, with gas cooking unit, side bench in "
-"driving direction for storing gas bottles. For P21 and P22."
-msgstr ""
-
-#: vinaigrette-deleteme.py:363
-msgid ""
-"Deluxe Campmobile with pop-up roof, folding spare tyre, electric "
-"refrigerator, snack table"
-msgstr ""
-
-#: vinaigrette-deleteme.py:364
-msgid "Additional tent for interior P31"
-msgstr ""
-
-#: vinaigrette-deleteme.py:365
-msgid ""
-"With US-specific sealed beam headlamps, for M027: with US-specific carriers "
-"for catalysts (only with M524)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:366
-msgid "Heater outlet in seat box of rear bench seat"
-msgstr ""
-
-#: vinaigrette-deleteme.py:367
-msgid "Westfalia Campmobiles"
-msgstr ""
-
-#: vinaigrette-deleteme.py:368
-msgid "Without tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:369
-msgid "Without battery"
-msgstr ""
-
-#: vinaigrette-deleteme.py:370
-msgid "Additional dust sealing for engine compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:371
-msgid "To chassis no. 2132 102 496"
-msgstr ""
-
-#: vinaigrette-deleteme.py:372
-msgid ""
-"Exhaust emission control installation and speedometer in miles instead of km "
-"(with M524 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:373
-msgid ""
-"Middle three-person bench seat, rear three-person bench seat and interior "
-"trim in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:374
-msgid ""
-"Middle three-person bench seat and interior trim in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:375
-msgid "With hazard light installation"
-msgstr ""
-
-#: vinaigrette-deleteme.py:376
-msgid "Without headlamp flasher"
-msgstr ""
-
-#: vinaigrette-deleteme.py:377
-msgid "Speedometer and odometer in miles"
-msgstr ""
-
-#: vinaigrette-deleteme.py:378
-msgid "Sealed beam headlamps"
-msgstr ""
-
-#: vinaigrette-deleteme.py:379
-msgid "Export, not Canada and USA"
-msgstr ""
-
-#: vinaigrette-deleteme.py:380
-msgid "Sealed beam headlamps, side marker reflectors and reversing lights"
-msgstr ""
-
-#: vinaigrette-deleteme.py:381
-msgid "Speedometer with trip recorder and clock"
-msgstr ""
-
-#: vinaigrette-deleteme.py:382
-msgid "With activated carbon container for absorbing fuel vapour"
-msgstr ""
-
-#: vinaigrette-deleteme.py:383
-msgid "USA-California"
-msgstr ""
-
-#: vinaigrette-deleteme.py:386
-msgid ""
-"Plate with emissions value and engine that complies to the California "
-"exhaust emission standards"
-msgstr ""
-
-#: vinaigrette-deleteme.py:387
-msgid "Plate with emissions value, engine with catalyst"
-msgstr ""
-
-#: vinaigrette-deleteme.py:388
-msgid "Without stretchers, also in combination with M152 (ambulance)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:389
-msgid "Towing hook front and rear"
-msgstr ""
-
-#: vinaigrette-deleteme.py:390
-msgid "Coupled headlamp flasher and licence plate light"
-msgstr ""
-
-#: vinaigrette-deleteme.py:391
-msgid ""
-"Battery approved by research and development department and free from import "
-"duty and costs"
-msgstr ""
-
-#: vinaigrette-deleteme.py:392
-msgid "To chassis no. 2122 088 996, Austria"
-msgstr ""
-
-#: vinaigrette-deleteme.py:393
-msgid "Lockable cap for fuel tank"
-msgstr ""
-
-#: vinaigrette-deleteme.py:394
-msgid "Red Crescent lamp instead of Red Cross lamp"
-msgstr ""
-
-#: vinaigrette-deleteme.py:395
-msgid ""
-"Side turn signals, altered handbrake handle, white front turn signal lenses"
-msgstr ""
-
-#: vinaigrette-deleteme.py:397
-msgid ""
-"Side-mounted turn signals, altered handbrake handle, white front turn "
-"signals, without emergency light system, without hazard light system (France "
-"and Italy only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:398
-msgid "Without hazard light system"
-msgstr ""
-
-#: vinaigrette-deleteme.py:399
-msgid ""
-"Tyres approved by research and development department and free from import "
-"duty and costs"
-msgstr ""
-
-#: vinaigrette-deleteme.py:400
-msgid "Side turn signals and inner rear-view mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:401
-msgid "Side turn signals"
-msgstr ""
-
-#: vinaigrette-deleteme.py:402
-msgid "Two reversing lights"
-msgstr ""
-
-#: vinaigrette-deleteme.py:403
-msgid "Dual-brake-circuit control light (only with M511)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:404
-msgid "Dual-brake-circuit and handbrake control light"
-msgstr ""
-
-#: vinaigrette-deleteme.py:405
-msgid ""
-"With pedestal and double pulley for the later installation of a second "
-"generator (not in combination with M153, M157 and M251)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:406
-msgid "Cloth upholstery instead of leatherette"
-msgstr ""
-
-#: vinaigrette-deleteme.py:407
-msgid "Lockable glove compartment lid (only with M511)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:408
-msgid "With steering lock"
-msgstr ""
-
-#: vinaigrette-deleteme.py:409
-msgid "To VIN 2x9 300 000"
-msgstr ""
-
-#: vinaigrette-deleteme.py:410
-msgid "Hardwood strips for flatbed not fastened to vehicle"
-msgstr ""
-
-#: vinaigrette-deleteme.py:411
-msgid "Eberspacher BA6 petrol heater (LHD) (fitted under cargo floor)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:412
-msgid ""
-"Type labelling of seat mounting and identification plate for England and "
-"Ireland"
-msgstr ""
-
-#: vinaigrette-deleteme.py:413
-msgid ""
-"Convex rear-view mirror, outer, right. Inner rear-view mirror with shorter "
-"arm"
-msgstr ""
-
-#: vinaigrette-deleteme.py:414
-msgid "Sun visor, right without mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:416
-msgid "Compliance with Sweden exhaust emission standards"
-msgstr ""
-
-#: vinaigrette-deleteme.py:417
-msgid "Without sidegates and tailgate"
-msgstr ""
-
-#: vinaigrette-deleteme.py:418
-msgid "Writings for maximum axle loads and maximum weight"
-msgstr ""
-
-#: vinaigrette-deleteme.py:419
-msgid "Floor cover (rubber mat) in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:420
-msgid "12V 54A battery instead of standard 12V 45A battery"
-msgstr ""
-
-#: vinaigrette-deleteme.py:421
-msgid "Two front towing hooks"
-msgstr ""
-
-#: vinaigrette-deleteme.py:422
-msgid "Tilt and bows for Pick-Up"
-msgstr ""
-
-#: vinaigrette-deleteme.py:423
-msgid "Second lid for underfloor cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:424
-msgid "Battery under customs seal"
-msgstr ""
-
-#: vinaigrette-deleteme.py:425
-msgid "Roof opening and reinforcement for Westfalia pop-up roof SO 73"
-msgstr ""
-
-#: vinaigrette-deleteme.py:426
-msgid "Mud flaps, rear"
-msgstr ""
-
-#: vinaigrette-deleteme.py:427
-msgid "Mountings for first aid kit"
-msgstr ""
-
-#: vinaigrette-deleteme.py:428
-msgid "With warning triangle"
-msgstr ""
-
-#: vinaigrette-deleteme.py:429
-msgid ""
-"Filled in factory with double amount of petrol (used for driving on and off "
-"the train, for example)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:430
-msgid "Self-adjusting drum brakes (rear)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:431
-msgid "Laminated windscreen glass"
-msgstr ""
-
-#: vinaigrette-deleteme.py:432
-msgid "Gearbox with mountain ratio for mountainous areas"
-msgstr ""
-
-#: vinaigrette-deleteme.py:433
-msgid "Ventilation window in rear side panel opposite sliding door"
-msgstr ""
-
-#: vinaigrette-deleteme.py:434
-msgid "Lockable engine lid"
-msgstr ""
-
-#: vinaigrette-deleteme.py:435
-msgid "Wolfsburg car radio"
-msgstr ""
-
-#: vinaigrette-deleteme.py:436
-msgid "Braunschweig car radio"
-msgstr ""
-
-#: vinaigrette-deleteme.py:437
-msgid "Emden car radio"
-msgstr ""
-
-#: vinaigrette-deleteme.py:438
-msgid "Ingolstadt car radio"
-msgstr ""
-
-#: vinaigrette-deleteme.py:439
-msgid "Tubeless off-road tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:440
-msgid "Without VW logo on front"
-msgstr ""
-
-#: vinaigrette-deleteme.py:441
-msgid "Off-road tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:442
-msgid "Rear-window heating"
-msgstr ""
-
-#: vinaigrette-deleteme.py:443
-msgid "Heavy duty shock absorbers front and back"
-msgstr ""
-
-#: vinaigrette-deleteme.py:444
-msgid "Upholstery material, special version (cloth)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:445
-msgid "Removable prints ‘Deutsche Bundespost’ and ‘Posthorn’ logo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:446
-msgid "German Mail"
-msgstr ""
-
-#: vinaigrette-deleteme.py:447
-msgid "Removable prints ‘Deutsche Bundesbahn’ and tyre-pressure text"
-msgstr ""
-
-#: vinaigrette-deleteme.py:448
-msgid "Removable prints ‘Unicef’"
-msgstr ""
-
-#: vinaigrette-deleteme.py:449
-msgid "Admittance plate for Canada"
-msgstr ""
-
-#: vinaigrette-deleteme.py:450
-msgid "Prepared for low-loader Pick-Up"
-msgstr ""
-
-#: vinaigrette-deleteme.py:451
-msgid ""
-"Surveyor measuring group vehicle. Same as M541 but with swivelling seat and "
-"table on division wall instead of bench (with M541 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:452
-msgid "Without seats in rear"
-msgstr ""
-
-#: vinaigrette-deleteme.py:453
-msgid "Altered heater outlet of optional petrol heater (only with M119)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:454
-msgid "Duty-free tyres (duty refund)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:455
-msgid "Eberspacher BN4 petrol heater with outlet in load/passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:456
-msgid ""
-"Eberspacher BN4 petrol heater with air recirculation connection and outlet "
-"in load/passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:457
-msgid "Eberspacher BN4 heater"
-msgstr ""
-
-#: vinaigrette-deleteme.py:458
-msgid "Without mountings for seats and safety belts in cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:459
-msgid "Two electric ventilators in fresh-air system"
-msgstr ""
-
-#: vinaigrette-deleteme.py:460
-msgid "Suppression equipment for radio reception"
-msgstr ""
-
-#: vinaigrette-deleteme.py:461
-msgid "Yellow headlamp bulbs and safety inner rear-view mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:463
-msgid "Yellow headlamp bulbs"
-msgstr ""
-
-#: vinaigrette-deleteme.py:464
-msgid "1600cc engine with stiff instead of torsion-suspended clutch disc"
-msgstr ""
-
-#: vinaigrette-deleteme.py:465
-msgid "Rear panel lid without window"
-msgstr ""
-
-#: vinaigrette-deleteme.py:466
-msgid "Whitewall tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:467
-msgid "Without steel sliding roof"
-msgstr ""
-
-#: vinaigrette-deleteme.py:468
-msgid ""
-"Removable prints \"Deutsche Bundespost\", \"Fernmeldedienst\" and post horn "
-"logo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:469
-msgid "German Mail (telecomms department)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:470
-msgid ""
-"Chassis plate without prints of the maximum total mass and the maximum axle "
-"loads"
-msgstr ""
-
-#: vinaigrette-deleteme.py:471
-msgid "Israel, Switzerland, Thailand"
-msgstr ""
-
-#: vinaigrette-deleteme.py:472
-msgid "Fold-down passenger seat"
-msgstr ""
-
-#: vinaigrette-deleteme.py:473
-msgid ""
-"Modifications for fire truck, front bumper mounted higher for taking steep "
-"slope; with laminated windscreen"
-msgstr ""
-
-#: vinaigrette-deleteme.py:474
-msgid ""
-"Modifications for fire truck, without deformation element behind front "
-"bumper; with laminated windscreen"
-msgstr ""
-
-#: vinaigrette-deleteme.py:475
-msgid "Heater outlet in rear part of cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:476
-msgid "With heater outlet under middle bench seat"
-msgstr ""
-
-#: vinaigrette-deleteme.py:477
-msgid "With safety lock for sliding door(s) and rear panel lid"
-msgstr ""
-
-#: vinaigrette-deleteme.py:478
-msgid ""
-"Middle bench seat (two persons), rear bench seat and interior trim in "
-"passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:479
-msgid "Seven-seater model instead of eight-seater model"
-msgstr ""
-
-#: vinaigrette-deleteme.py:480
-msgid "With hinged rear seat backrest"
-msgstr ""
-
-#: vinaigrette-deleteme.py:481
-msgid "Painted instead of chrome parts"
-msgstr ""
-
-#: vinaigrette-deleteme.py:482
-msgid ""
-"VW Ambulance according to requirement DIN 75080: two foglamps on bumper (in "
-"bumpers on 1968 1969 1970 1971 1972 models), protection plates for bottom, "
-"maximum tyre inflation written above the wheels, symbol notification of "
-"knobs on windscreen, reinforcement under upholstery for mounting of fire "
-"extinguishers in cabin, additional mountings for several pieces of equipment "
-"according to DIN requirement, transparent battery cases (only with M623)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:483
-msgid "Simplified rails, plus stretcher on right-hand side"
-msgstr ""
-
-#: vinaigrette-deleteme.py:484
-msgid ""
-"Paper element cyclone air filter without carburettor pre-heating (1300 and "
-"1600cc engines only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:485
-msgid "Two oil bath air filters with larger oil capacity"
-msgstr ""
-
-#: vinaigrette-deleteme.py:486
-msgid "Oil bath air filter with larger oil capacity for dusty regions"
-msgstr ""
-
-#: vinaigrette-deleteme.py:487
-msgid "Paper element air filter with cyclone function for dusty regions"
-msgstr ""
-
-#: vinaigrette-deleteme.py:488
-msgid "Type 1 engines"
-msgstr ""
-
-#: vinaigrette-deleteme.py:489
-msgid "Exhaust emission control system"
-msgstr ""
-
-#: vinaigrette-deleteme.py:490
-msgid ""
-"Exhaust emission control system and activated carbon container for absorbing "
-"fuel vapour"
-msgstr ""
-
-#: vinaigrette-deleteme.py:491
-msgid "Fuel injection engine"
-msgstr ""
-
-#: vinaigrette-deleteme.py:492
-msgid "Securing plate and rings for padlock"
-msgstr ""
-
-#: vinaigrette-deleteme.py:493
-msgid "Blue rotating light and siren"
-msgstr ""
-
-#: vinaigrette-deleteme.py:494
-msgid "Seats in cabin with mountings for headrests"
-msgstr ""
-
-#: vinaigrette-deleteme.py:495
-msgid "Rubber strips for bumpers"
-msgstr ""
-
-#: vinaigrette-deleteme.py:496
-msgid "Gauged trip writer"
-msgstr ""
-
-#: vinaigrette-deleteme.py:497
-msgid "Tubeless textile or steel-ply tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:498
-msgid "Tubeless steel-ply tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:499
-msgid ""
-"C-shaped guiding rails on metal partition between cabin and cargo "
-"compartment and on the side opposite the sliding door (for model 211 only "
-"with M540, for model 231 only wit M120, M540)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:500
-msgid "Three-seater bench in the back and interior trim"
-msgstr ""
-
-#: vinaigrette-deleteme.py:501
-msgid ""
-"Wooden floor panels with built-in guiding rails (also in side panels and on "
-"floor above engine compartment) for mounting tools and instruments"
-msgstr ""
-
-#: vinaigrette-deleteme.py:502
-msgid "Without three-seater middle bench seat"
-msgstr ""
-
-#: vinaigrette-deleteme.py:503
-msgid "Chrome hubcaps"
-msgstr ""
-
-#: vinaigrette-deleteme.py:504
-msgid "Chrome hubcaps and headlamp rings"
-msgstr ""
-
-#: vinaigrette-deleteme.py:505
-msgid "Chrome hubcaps, headlamp rings and rear-view mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:506
-msgid "With seatbelt mounting points for folding seat in rear compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:508
-msgid ""
-"Three-point safety belts for driver and passenger seat with roll-up "
-"automatic and push-button lock"
-msgstr ""
-
-#: vinaigrette-deleteme.py:509
-msgid ""
-"Seatbelts for all factory-mounted seats in cabin and in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:510
-msgid "USA and Canada"
-msgstr ""
-
-#: vinaigrette-deleteme.py:511
-msgid "Two-point seatbelts for all seats in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:512
-msgid "Headlamps for countries with left-hand traffic"
-msgstr ""
-
-#: vinaigrette-deleteme.py:513
-msgid ""
-"Simplified heating system with special heater boxes, no isolation on hot-air "
-"ducting, no noise isolation on front of car and on front wheel arches. Extra "
-"fresh-air ventilator and cabin-door ventilation (not with M60,M141,M505)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:514
-msgid "With outer and centre underfloor plates"
-msgstr ""
-
-#: vinaigrette-deleteme.py:515
-msgid ""
-"With electrical installation for Japan: with side turn signals front, back-"
-"up lamps, with parking light front and rear, without licence-plate light and "
-"engine that complies to Japanese exhaust regulations (with M26 and M187 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:516
-msgid ""
-"Convex outer rear-view mirrors left and right instead of mirrors with flat "
-"glass"
-msgstr ""
-
-#: vinaigrette-deleteme.py:517
-msgid "Exclusive use of Blaupunkt car radios (with M95, 97 or 98 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:518
-msgid "Rotating light red instead of blue (with M160 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:519
-msgid "Various parts not mounted; these parts sent via the CKD department"
-msgstr ""
-
-#: vinaigrette-deleteme.py:521
-msgid "Pick-Up with enlarged wooden platform"
-msgstr ""
-
-#: vinaigrette-deleteme.py:522
-msgid "Eberspacher BN4 petrol heater"
-msgstr ""
-
-#: vinaigrette-deleteme.py:523
-msgid ""
-"With second hot-air outlet in metal Partition as in ambulance (with M500 "
-"only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:524
-msgid "Year might not be correct"
-msgstr ""
-
-#: vinaigrette-deleteme.py:525
-msgid "Inner rear-view mirror, anti-dazzle"
-msgstr ""
-
-#: vinaigrette-deleteme.py:526
-msgid "Trailer hitch and extra towing hook on front"
-msgstr ""
-
-#: vinaigrette-deleteme.py:527
-msgid "Trailer hitch"
-msgstr ""
-
-#: vinaigrette-deleteme.py:528
-msgid "Tilt made of PVC instead of sail-cloth (with M070 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:529
-msgid "Tilt made of PVC instead of sail-cloth (with M207 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:530
-msgid "With post horn sticker"
-msgstr ""
-
-#: vinaigrette-deleteme.py:531
-msgid "German Mail – Berlin"
-msgstr ""
-
-#: vinaigrette-deleteme.py:532
-msgid ""
-"With \"Fernmeldedienst\" (\"telecommunications department\") and post horn "
-"stickers"
-msgstr ""
-
-#: vinaigrette-deleteme.py:533
-msgid "Without rubber floor mat in Passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:535
-msgid "Detachable hinges and side-flap mountings"
-msgstr ""
-
-#: vinaigrette-deleteme.py:536
-msgid "For authorities only"
-msgstr ""
-
-#: vinaigrette-deleteme.py:537
-msgid "Without air vents in Cargo Compartment (with M500 and M510 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:538
-msgid ""
-"Flat bows with mountings for ladder and tilt made out of synthetic material"
-msgstr ""
-
-#: vinaigrette-deleteme.py:539
-msgid "Limited slip differential"
-msgstr ""
-
-#: vinaigrette-deleteme.py:540
-msgid "One ventilation window in cabin door on driver's side"
-msgstr ""
-
-#: vinaigrette-deleteme.py:541
-msgid ""
-"With fixed windows in passenger compartment instead of ventilation windows"
-msgstr ""
-
-#: vinaigrette-deleteme.py:542
-msgid "No window openings in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:543
-msgid ""
-"With upholstery on the boot floor, the sides of the boot and the rear hatch"
-msgstr ""
-
-#: vinaigrette-deleteme.py:544
-msgid "Retaining cables for tailboard"
-msgstr ""
-
-#: vinaigrette-deleteme.py:545
-msgid "Detachable headrests for all seats in cabin (with M161 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:546
-msgid ""
-"Detachable headrests for all seats in Passenger compartment (with M235 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:547
-msgid "Mountings for headrests for all seats in Passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:548
-msgid "Engine with recessed crown pistons for low-octane fuel"
-msgstr ""
-
-#: vinaigrette-deleteme.py:549
-msgid "Windscreen free from import duty for Canada (with M89 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:551
-msgid "Windscreen free from import duty for USA (with M089 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:553
-msgid "Ignition lock without steering lock"
-msgstr ""
-
-#: vinaigrette-deleteme.py:554
-msgid "Automatic transmission"
-msgstr ""
-
-#: vinaigrette-deleteme.py:555
-msgid "1700cc (66bhp) engine instead of 1600cc (50bhp)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:556
-msgid "1800cc (68bhp) engine instead of 1600cc (50bhp)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:557
-msgid "2000cc (70bhp) engine instead of 1600cc (50bhp)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:558
-msgid "1300cc (44bhp) engine instead of 1600cc (50bhp)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:559
-msgid "Vehicle for North American market with tyres from specific companies"
-msgstr ""
-
-#: vinaigrette-deleteme.py:560
-msgid "Without spare tyre, tools, toolbag and jack (with M515/502 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:562
-msgid "Higher driver- and passenger-seat backrest (headrest)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:563
-msgid ""
-"Passenger seat instead of passenger bench seat; spare tyre in cabin (with "
-"M500 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:564
-msgid "Payload of 1,200kg instead of 1,000kg"
-msgstr ""
-
-#: vinaigrette-deleteme.py:565
-msgid ""
-"Maintenance vehicle for communication cables. With closets, C-shaped rails, "
-"swivel chair and curtains in cargo compartment (with M120, M503, M539 only; "
-"not with M251)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:566
-msgid "With headlight washer installation"
-msgstr ""
-
-#: vinaigrette-deleteme.py:567
-msgid "Sheer bolt for steering-column tube attachment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:568
-msgid "Without bottom protection"
-msgstr ""
-
-#: vinaigrette-deleteme.py:569
-msgid "VW parts for type 214, 234 and 264 made by VW do Brasil (CKD only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:570
-msgid "Ony CKD vehicles"
-msgstr ""
-
-#: vinaigrette-deleteme.py:571
-msgid ""
-"ECE regulations sticker \"R 10\" (with M123 only) (suppression equipment for "
-"radio reception)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:572
-msgid "ECE regulations sticker \"R 11\" (door locks and hinges)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:573
-msgid "ECE regulations sticker \"R 14\" (seatbelt mountings)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:574
-msgid ""
-"Without metal division between cabin and cargo compartment, passenger seat "
-"adjustable on rails"
-msgstr ""
-
-#: vinaigrette-deleteme.py:575
-msgid "Fitted with Semperit tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:576
-msgid "Fitted with Uniroyal tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:577
-msgid "Special engine to comply with Austrian regulations (1600cc, 50bhp)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:578
-msgid ""
-"With American parts and constructions for the Campmobile versions P21, P22 "
-"and P27: free of import duty (with M609 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:579
-msgid ""
-"Prepared for the installation of a radio for LW, MW, SW, FM (not with M631)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:580
-msgid "Neckarsulm CR car radio, with Cassette player"
-msgstr ""
-
-#: vinaigrette-deleteme.py:581
-msgid "Braunschweig CR car radio, with Cassette player"
-msgstr ""
-
-#: vinaigrette-deleteme.py:582
-msgid "Full-width metal partition between cabin and load compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:583
-msgid ""
-"Two-person Passenger seat instead of single Passenger seat in cabin, spare "
-"tyre in left side of luggage compartment (not with M500)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:584
-msgid "Hardboard interior side panels in cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:585
-msgid "Hardboard interior roof panels in cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:586
-msgid "Fresh-air duct to cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:587
-msgid "Hot-air outlet in front side of cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:588
-msgid "Brake servo and dual-circuit brake control lamp"
-msgstr ""
-
-#: vinaigrette-deleteme.py:589
-msgid "Brake servo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:590
-msgid "Ventilation windows in cabin doors"
-msgstr ""
-
-#: vinaigrette-deleteme.py:591
-msgid ""
-"Ventilation window in sliding door and in all windows opposite sliding door "
-"in the Passenger compartment (three windows in total)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:592
-msgid ""
-"Ventilation windows in sliding doors (two windows in total) (when ordered "
-"with M520)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:593
-msgid ""
-"Ventilation window in rear Passenger door and in the window opposite this "
-"door (two windows in total)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:594
-msgid ""
-"One sliding window in sliding door and one in the opposite side panel of the "
-"passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:595
-msgid "One sliding window in the side panel opposite the sliding door"
-msgstr ""
-
-#: vinaigrette-deleteme.py:596
-msgid ""
-"With dust-protected air intake, larger oil bath air cleaner and additional "
-"dust sealing"
-msgstr ""
-
-#: vinaigrette-deleteme.py:597
-msgid "Upper division between cabin and cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:598
-msgid ""
-"Upper division between cabin and cargo compartment. Fibreboard door panel in "
-"sliding door (Type 21: with air vents in rear side panels of cargo "
-"compartment)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:599
-msgid "Padded dashboard and dashboard lid (not for RHD)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:600
-msgid "Without passenger seat in cabin"
-msgstr ""
-
-#: vinaigrette-deleteme.py:601
-msgid "Protection plate for gearbox"
-msgstr ""
-
-#: vinaigrette-deleteme.py:602
-msgid "Air circulation connection for gasoline heater (only with M119)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:603
-msgid "High roof Panelvan with high-roof sliding door"
-msgstr ""
-
-#: vinaigrette-deleteme.py:604
-msgid "High roof (plastic)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:605
-msgid "Factory-prepared for Campmobile interior"
-msgstr ""
-
-#: vinaigrette-deleteme.py:606
-msgid "Opening in roof with reinforcement for Westfalia pop-up roof"
-msgstr ""
-
-#: vinaigrette-deleteme.py:607
-msgid "Air vents in cargo compartment (with M515 or 516 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:608
-msgid "With sliding door on left and right side"
-msgstr ""
-
-#: vinaigrette-deleteme.py:609
-msgid "With chrome trim and sun visor with mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:610
-msgid "With chrome trim and sun visor without mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:611
-msgid "Net division between cabin and cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:612
-msgid "USA and Canada specifications"
-msgstr ""
-
-#: vinaigrette-deleteme.py:613
-msgid "Seatbelts for USA and Canada"
-msgstr ""
-
-#: vinaigrette-deleteme.py:614
-msgid "Without inner rear-view mirror"
-msgstr ""
-
-#: vinaigrette-deleteme.py:615
-msgid "Japan and Sweden"
-msgstr ""
-
-#: vinaigrette-deleteme.py:616
-msgid "Convex rear-view mirror on right side (not for RHD)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:617
-msgid ""
-"Upper partition between cabin and passenger compartment with sliding window "
-"(only with M500)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:618
-msgid ""
-"Automatic step on passenger side (vehicles with two sliding doors only have "
-"the automatic step on the passenger side)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:619
-msgid ""
-"Harder rear torsion bars (like on Transporter version) (on model 23 only "
-"with M013, 015, 146, 177 or 609)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:620
-msgid "Foot-operated alarm installation (for Taxis and rental vehicles)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:621
-msgid "Speaker and microphone for communication between driver and passengers"
-msgstr ""
-
-#: vinaigrette-deleteme.py:622
-msgid ""
-"Tachograph \"Diehl Co-Pilot\" (MotoMeter) instead of standard speedometer "
-"(not in combination with M020)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:623
-msgid "With rubber valve in rear bottom panel for draining fuel"
-msgstr ""
-
-#: vinaigrette-deleteme.py:625
-msgid "Transistor lamp instead of regular interior light"
-msgstr ""
-
-#: vinaigrette-deleteme.py:626
-msgid ""
-"Interior with closets and wooden floor in the rear of the cabin, net "
-"partition between front and rear of cabin (with M117 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:627
-msgid "Wooden floor in cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:628
-msgid ""
-"Closets in cargo compartment and net partition between cabin and cargo "
-"compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:629
-msgid ""
-"Bench seat in upholstery cloth on metal partition behind cabin. Net division "
-"above closet but without net division between cabin and cargo compartment "
-"(with M503, M540 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:630
-msgid ""
-"Various special constructions for German Army purposes (with M149 only. In "
-"case of model 265, with M101, M178, M207, M209 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:631
-msgid "Without seats in passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:632
-msgid ""
-"High-roof Bus with shelves for piling packages in cargo compartment (with "
-"M502, M515 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:633
-msgid "Headliner in load-/passenger compartment (as in model 22, Microbus)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:634
-msgid "Turn signals at rear on roof"
-msgstr ""
-
-#: vinaigrette-deleteme.py:635
-msgid "Turn signals at rear on roof, lamp shines to both front and rear"
-msgstr ""
-
-#: vinaigrette-deleteme.py:636
-msgid "Extra rust-prevention treatment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:637
-msgid ""
-"Three-point safety belts for driver and outer passenger seat, two-point "
-"safety belt for middle seat (only in case of two-person Passenger seat in "
-"cabin)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:638
-msgid "Halogen headlamps"
-msgstr ""
-
-#: vinaigrette-deleteme.py:639
-msgid "Clock with heating time preselector, with trip counter (with M060 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:640
-msgid "Steel sliding roof"
-msgstr ""
-
-#: vinaigrette-deleteme.py:641
-msgid "Tinted windows (except windscreen)( with M671 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:642
-msgid "Tinted windows and windscreen, with laminated windscreen"
-msgstr ""
-
-#: vinaigrette-deleteme.py:643
-msgid "Air filter for dusty countries (2000cc with 70bhp only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:644
-msgid "South Africa and Australia"
-msgstr ""
-
-#: vinaigrette-deleteme.py:645
-msgid "Rear foglamp"
-msgstr ""
-
-#: vinaigrette-deleteme.py:646
-msgid "Air conditioning (on model 23 only for Campers)(with M251 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:647
-msgid ""
-"Preparation for construction of Campmobile by Jurgens-Caravan in South "
-"Africa or Karmann Mobil in Germany"
-msgstr ""
-
-#: vinaigrette-deleteme.py:648
-msgid "Without compressor for folding spare tyre (with M586 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:649
-msgid ""
-"Interior panel over entire width of vehicle for lower partition between "
-"cabin and cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:650
-msgid ""
-"With folding spare tyre instead of regular spare tyre, plus 12V air "
-"compressor and 12V connection on dashboard"
-msgstr ""
-
-#: vinaigrette-deleteme.py:651
-msgid "Westfalia Campmobile"
-msgstr ""
-
-#: vinaigrette-deleteme.py:652
-msgid ""
-"Hannover radio (LW, MW, FM) with automatic search, remote control, tape deck "
-"and automatic antenna connection"
-msgstr ""
-
-#: vinaigrette-deleteme.py:653
-msgid ""
-"Salzgitter radio (FM) with tape player connection and traffic broadcast "
-"decoder connection"
-msgstr ""
-
-#: vinaigrette-deleteme.py:654
-msgid "Stronger battery: 12V 63A instead of 12V 45A"
-msgstr ""
-
-#: vinaigrette-deleteme.py:655
-msgid "Comfort package"
-msgstr ""
-
-#: vinaigrette-deleteme.py:656
-msgid ""
-"Special options package comprising: back-up lamps (M047); rear-window "
-"defroster (M102); emergency warning lights; dual-circuit brake warning "
-"light; padded dashboard (for LHD)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:657
-msgid ""
-"Special options package comprising: hazard lights; dual-circuit brake "
-"warning light; padded dashboard (for LHD)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:658
-msgid ""
-"Deluxe version (with M025, M162, M507, M616 only. In case of 1600cc engine, "
-"M171)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:659
-msgid "2000cc dual carburettor engine with secondary air injection"
-msgstr ""
-
-#: vinaigrette-deleteme.py:660
-msgid "Seat belts according to Australian safety regulations."
-msgstr ""
-
-#: vinaigrette-deleteme.py:661
-msgid "Compliance with Australian exhaust and safety standards"
-msgstr ""
-
-#: vinaigrette-deleteme.py:662
-msgid "Without diagnosis plug connection and wiring"
-msgstr ""
-
-#: vinaigrette-deleteme.py:663
-msgid ""
-"Adjustment mechanism for later gauging of speedometer (for rental vehicles "
-"and self-drive rentals only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:664
-msgid "Reversing lights (built-in with rearlight units)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:665
-msgid "Generator 70A instead of 55A (with M157 or M251 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:666
-msgid "Special suppression equipment, prepared for radio-traffic"
-msgstr ""
-
-#: vinaigrette-deleteme.py:667
-msgid ""
-"Commando vehicle equipment also usable as conversation vehicle, bureau "
-"vehicle and for similar purposes. Consisting of three-seater middle bench "
-"seat (built-in facing backwards); folding down backrest on sliding door "
-"side; one folding table; one transistorized light above table; one rubber "
-"floor cover in Passenger compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:668
-msgid ""
-"Mounting for radio-communication apparatus type ‘FuG 7b’ in glovebox "
-"(Telefunken or SEL)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:669
-msgid "Suppressed windscreen-wiper motor"
-msgstr ""
-
-#: vinaigrette-deleteme.py:670
-msgid "Further suppressed equipment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:671
-msgid "German Army"
-msgstr ""
-
-#: vinaigrette-deleteme.py:672
-msgid "Windscreen-wiper blades and arms under customs seal"
-msgstr ""
-
-#: vinaigrette-deleteme.py:673
-msgid "Air-drying’ bottom protection instead of ‘wax paraffin’"
-msgstr ""
-
-#: vinaigrette-deleteme.py:674
-msgid "With USA-specific parts for the airconditioning (free from import duty)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:675
-msgid ""
-"Interval switch on windscreen wipers and wash-wipe installation. Interval "
-"ca.6 seconds"
-msgstr ""
-
-#: vinaigrette-deleteme.py:676
-msgid "Two halogen foglamps on front"
-msgstr ""
-
-#: vinaigrette-deleteme.py:677
-msgid "Stick-in head-/neck-rests, Not for driver's seat"
-msgstr ""
-
-#: vinaigrette-deleteme.py:678
-msgid "Sticker ECE regulations no, 14"
-msgstr ""
-
-#: vinaigrette-deleteme.py:679
-msgid "Tinted windscreen (laminated) (with M568 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:680
-msgid "Sealed speedometer (for leasing vehicles)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:681
-msgid ""
-"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
-"and net partition between cargo compartment and cabin (with M500, M502, M539 "
-"only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:682
-msgid ""
-"Interior as M677 with extra built-in closets and extractable vice (only with "
-"M677)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:683
-msgid "Motorola/USA car radio instead of Emden (with M097 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:684
-msgid ""
-"Workshop vehicle for Deutsche Bundespost (German Mail) with C-shaped rails "
-"and net partition between Cargo compartment and cabin, with extra built-in "
-"closets and vice (with M500, M502, M539 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:685
-msgid ""
-"Passenger seat in cabin as swivelling seat, without metal partition behind "
-"this seat"
-msgstr ""
-
-#: vinaigrette-deleteme.py:686
-msgid "Chassis no. 2162 078 000"
-msgstr ""
-
-#: vinaigrette-deleteme.py:687
-msgid "Fitted with Continental-manufactured tyres"
-msgstr ""
-
-#: vinaigrette-deleteme.py:688
-msgid "Without chassis identification plate"
-msgstr ""
-
-#: vinaigrette-deleteme.py:689
-msgid "With protection wall in cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:690
-msgid "Transistorized ignition system"
-msgstr ""
-
-#: vinaigrette-deleteme.py:691
-msgid ""
-"Polyester high roof painted in body colour instead of white (with M515 or "
-"M516 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:692
-msgid ""
-"Without side and rear windows in passenger compartment (preparation for "
-"Westfalia isolation windows)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:693
-msgid ""
-"Zeiss-Ikon safety lock for rear panel lid (available with M145, one key "
-"combination)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:694
-msgid "Air conditioning"
-msgstr ""
-
-#: vinaigrette-deleteme.py:695
-msgid "Tail-light lenses yellow-red instead of yellow-red-white"
-msgstr ""
-
-#: vinaigrette-deleteme.py:696
-msgid "Without air vents in cargo compartment"
-msgstr ""
-
-#: vinaigrette-deleteme.py:697
-msgid ""
-"Factory-prepared for conversion to armoured money transporter (conversion by "
-"Thiele/Bremen or Bischoff & Hamel/Hannover)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:698
-msgid "Factory prepared for Electrotransporter-conversion"
-msgstr ""
-
-#: vinaigrette-deleteme.py:699
-msgid "Illuminated roof sign with Maltese or Red Cross logo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:700
-msgid "Production number for special, documented built-ins"
-msgstr ""
-
-#: vinaigrette-deleteme.py:701
-msgid ""
-"Special sales campaign for \"Champagne Edition\", paint colour Agata Brown "
-"with Atlas White roof; interior cloth in Parchment (beige grey)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:702
-msgid "Chrome trim around Bus ca. 5cm below windows"
-msgstr ""
-
-#: vinaigrette-deleteme.py:703
-msgid "Textile radial tyres with tube"
-msgstr ""
-
-#: vinaigrette-deleteme.py:704
-msgid ""
-"2000cc fuel-injected engine with exhaust emission control concept of the "
-"1800cc engine (with M157 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:705
-msgid "Alternative loading arrangement (not with S751)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:706
-msgid "Without portable chair but with guiding rails on floor"
-msgstr ""
-
-#: vinaigrette-deleteme.py:707
-msgid ""
-"Window in sliding door (in case of double sliding door, there is a window in "
-"both sliding doors)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:708
-msgid "Without right stretcher and without right loading platform"
-msgstr ""
-
-#: vinaigrette-deleteme.py:709
-msgid "Factory-prepared for fitting a PVC tilt"
-msgstr ""
-
-#: vinaigrette-deleteme.py:710
-msgid ""
-"Wooden floor panels with built-in guide rails for mounting tools and "
-"instruments (only with M502 or bench seats)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:711
-msgid ""
-"Control number for conversions or other changes from the serial production"
-msgstr ""
-
-#: vinaigrette-deleteme.py:712
-msgid ""
-"Two head cushions, one back support, one belly support, guiding rail lock "
-"for stretcher; without infusion hooks"
-msgstr ""
-
-#: vinaigrette-deleteme.py:713
-msgid "Sliding door right instead of left (RHD vehicles)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:714
-msgid "Window in sliding door and one at opposite side panel"
-msgstr ""
-
-#: vinaigrette-deleteme.py:715
-msgid ""
-"Production number to indicate small special built-ins or deflections from "
-"the serial production"
-msgstr ""
-
-#: vinaigrette-deleteme.py:716
-msgid ""
-"With upholstery on floor above engine, the rear corners and the rear hatch "
-"(with M013, 015, 146 or 177 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:717
-msgid "70bhp engine"
-msgstr ""
-
-#: vinaigrette-deleteme.py:718
-msgid "Australia, chassis nos. 2162 119 000 to 2162 164 000"
-msgstr ""
-
-#: vinaigrette-deleteme.py:719
-msgid "Upper fibreboard partition (with M013, 015, 146 or 177 only)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:720
-msgid "Seats and interior panels in black"
-msgstr ""
-
-#: vinaigrette-deleteme.py:721
-msgid "Special sales campaign for \"Champagne Edition II\""
-msgstr ""
-
-#: vinaigrette-deleteme.py:722
-msgid "Special sales campaign for \"Silberfisch\" (Germany)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:723
-msgid "Illuminated roof sign with Maltese Cross logo"
-msgstr ""
-
-#: vinaigrette-deleteme.py:724
-msgid ""
-"Without sliding door; in case of double sliding door version (M520), both "
-"sliding doors left out"
-msgstr ""
-
-#: vinaigrette-deleteme.py:725
-msgid "Preparation for later installation of UTILA stretcher"
-msgstr ""
-
-#: vinaigrette-deleteme.py:726
-msgid "Ventilation window in cabin door on driver's side"
-msgstr ""
-
-#: vinaigrette-deleteme.py:727
-msgid "Sliding roof for RHD"
-msgstr ""
-
-#: vinaigrette-deleteme.py:728
-msgid ""
-"Production number indicating a special note in the German licence papers, "
-"saying that a Trumatic SB 2000 gas heater has been fitted"
-msgstr ""
-
-#: vinaigrette-deleteme.py:729
-msgid "Sliding door left instead of right"
-msgstr ""
-
-#: vinaigrette-deleteme.py:730
-msgid "Sliding door on the right with RHD (instead of on the left with RHD)"
-msgstr ""
-
-#: vinaigrette-deleteme.py:731
-msgid "Catalyst retrofit"
-msgstr ""
-
-#: vinaigrette-deleteme.py:732
-msgid "Special sales campaign for \"Wild Westerner\""
-msgstr ""
-
-#: vinaigrette-deleteme.py:733
-msgid ""
-"Basic Campmobile equipment: stool, curtains, table, double bed, roof "
-"cabinet, birch paneling, floor covering, two louvered windows"
-msgstr ""
-
-#: vinaigrette-deleteme.py:734
-msgid "Campmobile with pop-up roof, gas stove. Similar to SO 72/3 Helsinki."
-msgstr ""
-
-#: vinaigrette-deleteme.py:735
-msgid ""
-"Campmobile with pop-up roof, electric refrigerator, gas stove. Similar to SO "
-"72/3 Helsinki."
-msgstr ""
+#: mplate_decoder/views.py
+#, python-format
+msgid "Its M-plate lists %(count)d optional extra."
+msgid_plural "Its M-plate lists %(count)d optional extras."
+msgstr[0] ""
+msgstr[1] ""
 
-#: vw_type2_id/templates/base_bootstrap.html:23
-msgid "VW M-plate decoder"
+#: mplate_decoder/views.py
+#, python-format
+msgid "%(bus)s, %(color)s"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:35
-#: vw_type2_id/templates/home.html:8
+#: vw_type2_id/templates/base_bootstrap.html vw_type2_id/templates/home.html
 msgid "Volkswagen Type 2 identification"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:45
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "Home"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:48
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "M-Plate info"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:51
+#: vw_type2_id/templates/base_bootstrap.html
 msgctxt "navbar"
 msgid "M-Plate decoder"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:54
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "Metrics"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:57
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "About"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:63
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "Search M-codes (e.g. 500)"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:79
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "Admin"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:82
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "Log out"
 msgstr ""
 
-#: vw_type2_id/templates/base_bootstrap.html:87
+#: vw_type2_id/templates/base_bootstrap.html
 msgid "Sign up or login"
 msgstr ""
 
-#: vw_type2_id/templates/home.html:9
+#: vw_type2_id/templates/home.html
+msgid "VW Type 2 identification: M-plate and engine number decoder"
+msgstr ""
+
+#: vw_type2_id/templates/home.html
+msgid ""
+"Identify your 1968–1979 Volkswagen Type 2 bus: decode its M-plate to find "
+"the model, optional extras, paint, production date and destination."
+msgstr ""
+
+#: vw_type2_id/templates/home.html
 msgid ""
 "A set of tools to identify VW Type 2 vehicles for model years 1968 to 1979."
 msgstr ""
 
-#: vw_type2_id/templates/home.html:17
+#: vw_type2_id/templates/home.html
 msgid "Decode the M-plate and find information about your bus."
 msgstr ""
 
-#: vw_type2_id/templates/home.html:18
+#: vw_type2_id/templates/home.html
 msgid "Learn more &raquo;"
 msgstr ""
 
-#: vw_type2_id/templates/home.html:21
+#: vw_type2_id/templates/home.html
 msgid "Engine number decoder"
 msgstr ""
 
-#: vw_type2_id/templates/home.html:22
+#: vw_type2_id/templates/home.html
 msgid "Coming soon"
 msgstr ""
 
-#: vw_type2_id/templates/registration/login.html:11
+#: vw_type2_id/templates/registration/login.html
 msgid "Login"
 msgstr ""
 
-#: vw_type2_id/templates/registration/login.html:16
+#: vw_type2_id/templates/registration/login.html
 msgid "Don't have an account yet?"
 msgstr ""
 
-#: vw_type2_id/templates/registration/login.html:16
+#: vw_type2_id/templates/registration/login.html
 msgid "Sign up now &rsaquo;"
 msgstr ""
 
-#: vw_type2_id/templates/registration/login.html:18
+#: vw_type2_id/templates/registration/login.html
 msgid "Lost your password?"
 msgstr ""
 
-#: vw_type2_id/templates/registration/login.html:18
+#: vw_type2_id/templates/registration/login.html
 msgid "Request new password &rsaquo;"
 msgstr ""
 
-#: vw_type2_id/templates/registration/login.html:20
+#: vw_type2_id/templates/registration/login.html
 msgid "Log me in!"
 msgstr ""
 
-#: vw_type2_id/templates/registration/password_reset_form.html:11
+#: vw_type2_id/templates/registration/password_reset_form.html
 msgid "Password reset"
 msgstr ""
 
-#: vw_type2_id/templates/registration/password_reset_form.html:12
+#: vw_type2_id/templates/registration/password_reset_form.html
 msgid ""
 "Forgotten your password? Enter your email address below, and we'll email "
 "instructions for setting a new one."
 msgstr ""
 
-#: vw_type2_id/templates/registration/password_reset_form.html:17
+#: vw_type2_id/templates/registration/password_reset_form.html
 msgid "Reset my password"
 msgstr ""
 
-#: vw_type2_id/templates/signup.html:11
+#: vw_type2_id/templates/signup.html
 msgid "Sign up"
 msgstr ""
 
-#: vw_type2_id/templates/signup.html:15
+#: vw_type2_id/templates/signup.html
 msgid "Sign me up!"
 msgstr ""
