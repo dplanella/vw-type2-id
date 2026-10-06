@@ -16,3 +16,10 @@ clean:
 		geckodriver.log \
 		builds \
 		cache
+
+.PHONY: messages
+
+messages:
+	@echo "Regenerating translation catalogs..."
+	python manage.py makemessages --all --keep-pot --add-location file \
+		--ignore=.venv --ignore=static
