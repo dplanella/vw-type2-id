@@ -48,7 +48,7 @@ flowchart LR
 ```
 
 **For admins with database access**
-- After editing the reference data: with the full reference data loaded, run `python manage.py export_db_strings`, commit `db_strings.py` and regenerate the catalogs as per the instructions below.
+- After editing the reference data: save a dump of the production reference data as `mplate_decoder/fixtures/mplate_reference.json`, run `make db-strings` and commit `db_strings.py` and the catalogs. The rule loads the dump into your development database.
 - Don't edit `db_strings.py` by hand.
 
 **For developers**

@@ -27,3 +27,11 @@ messages:
 	@for f in $$(git diff --name-only -- vw_type2_id/locale); do \
 		git diff --quiet -I POT-Creation-Date -- "$$f" && git checkout -q -- "$$f"; \
 	done; true
+
+.PHONY: db-strings
+
+db-strings:
+	@echo "Exporting reference data strings..."
+	python manage.py loaddata mplate_reference
+	python manage.py export_db_strings
+	$(MAKE) messages
