@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   test:
+    name: Run tests
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     services:
@@ -43,6 +44,7 @@ jobs:
       - run: pytest
 
   image:
+    name: Build image
     needs: test
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
@@ -62,6 +64,7 @@ jobs:
       - run: docker push "$IMAGE"
 
   deploy:
+    name: Deploy to production
     needs: image
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
