@@ -4034,3 +4034,116 @@ msgstr "Registreu-vos"
 #: vw_type2_id/templates/signup.html:15
 msgid "Sign me up!"
 msgstr "Registra'm!"
+
+#: contact/templates/contact.html:7
+msgid "Get in touch about the VW Type 2 M-plate decoder: corrections, missing codes or questions about your bus."
+msgstr "Poseu-vos en contacte sobre el descodificador de plaquetes M del VW Tipus 2: correccions, codis que hi falten o preguntes sobre la vostra furgoneta."
+
+#: contact/templates/success.html:6
+msgid "Message sent"
+msgstr "Missatge enviat"
+
+#: mplate_decoder/models.py:98
+msgid "Decoded vehicle model"
+msgstr "Model de vehicle descodificat"
+
+#: mplate_decoder/templates/500.html:5
+msgid "Internal error"
+msgstr "Error intern"
+
+#: mplate_decoder/templates/mplate_decoder/detail.html:8
+#, python-format
+msgid "%(heading)s: M-plate %(chassis_number)s decoded"
+msgstr "%(heading)s: plaqueta M %(chassis_number)s descodificada"
+
+#: mplate_decoder/templates/mplate_decoder/index.html:7
+msgid "VW Bus M-plate decoder: Type 2 Bay Window option codes explained"
+msgstr "Descodificador de plaquetes M de VW: els codis d'opcions de la furgoneta VW Tipus 2 explicats"
+
+#: mplate_decoder/templates/mplate_decoder/index.html:8
+msgid "What the M-plate of a 1968–1979 VW Type 2 Bay Window bus is, where to find it and what its option codes, paint codes and dates mean."
+msgstr "Què és la plaqueta M d'una furgoneta VW Tipus 2 de 1968–1979, on trobar-la i què volen dir els seus codis d'opcions, de pintura i de dates."
+
+#: mplate_decoder/templates/mplate_decoder/metrics.html:5
+msgid "VW Type 2 production statistics from 4,000+ decoded M-plates"
+msgstr "Estadístiques de producció del VW Tipus 2 a partir de més de 4.000 plaquetes M descodificades"
+
+#: mplate_decoder/templates/mplate_decoder/metrics.html:6
+msgid "Models, model years, paint colours and destination countries of VW Type 2 buses, from the M-plates decoded on this site."
+msgstr "Models, anys de model, colors de pintura i països de destinació de les furgonetes VW Tipus 2, a partir de les plaquetes M descodificades en aquest lloc."
+
+#: mplate_decoder/templates/mplate_decoder/mplate_about.html:6
+msgid "About this site"
+msgstr "Quant a aquest lloc"
+
+#: mplate_decoder/templates/mplate_decoder/mplate_about.html:7
+msgid "Why this VW Type 2 M-plate decoder exists, where its data comes from, its privacy policy and disclaimer."
+msgstr "Per què existeix aquest descodificador de plaquetes M de la VW Tipus 2, d'on provenen les dades, la política de privadesa i l'avís legal."
+
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html:8
+#, python-format
+msgid "Edit M-plate %(chassis_number)s"
+msgstr "Edita la plaqueta M %(chassis_number)s"
+
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html:10
+msgid "Decode your VW Bus M-plate (1968–1979)"
+msgstr "Descodifiqueu la plaqueta M de la vostra furgoneta VW (1968–1979)"
+
+#: mplate_decoder/templates/mplate_decoder/mplate_form.html:11
+msgid "Enter the codes from your VW Type 2 M-plate to decode its model, optional extras, paint and interior, production date and export destination."
+msgstr "Introduïu els codis de la plaqueta M del vostre VW Tipus 2 per descodificar-ne el model, els extres opcionals, la pintura i l'interior, la data de producció i el destí d'exportació."
+
+#: mplate_decoder/templates/mplate_decoder/search_results.html:7
+#, python-format
+msgid "Search results for %(query)s"
+msgstr "Resultats de la cerca de %(query)s"
+
+#: mplate_decoder/views.py:233
+#, python-format
+msgid "%(year)s VW Type 2"
+msgstr "%(year)s VW Tipus 2"
+
+#: mplate_decoder/views.py:234
+#, python-format
+msgid "%(year)s VW %(model)s"
+msgstr "%(year)s VW %(model)s"
+
+#: mplate_decoder/views.py:261
+#, python-format
+msgid "Built on %(date)s for %(country)s."
+msgstr "Fabricada el %(date)s per a %(country)s."
+
+#: mplate_decoder/views.py:263
+#, python-format
+msgid "%(bus)s, built on %(date)s for %(country)s."
+msgstr "%(bus)s, fabricada el %(date)s per a %(country)s."
+
+#: mplate_decoder/views.py:265
+#, python-format
+msgid "Built on %(date)s."
+msgstr "Fabricada el %(date)s."
+
+#: mplate_decoder/views.py:266
+#, python-format
+msgid "%(bus)s, built on %(date)s."
+msgstr "%(bus)s, fabricada el %(date)s."
+
+#: mplate_decoder/views.py:269
+#, python-format
+msgid "Its M-plate lists %(count)d optional extra."
+msgid_plural "Its M-plate lists %(count)d optional extras."
+msgstr[0] "La plaqueta M inclou %(count)d extra opcional."
+msgstr[1] "La plaqueta M inclou %(count)d extres opcionals."
+
+#: mplate_decoder/views.py:301
+#, python-format
+msgid "%(bus)s, %(color)s"
+msgstr "%(bus)s, %(color)s"
+
+#: vw_type2_id/templates/home.html:5
+msgid "VW Type 2 identification: M-plate and engine number decoder"
+msgstr "Identificació del VW Tipus 2: descodificador de plaquetes M i de números de motor"
+
+#: vw_type2_id/templates/home.html:6
+msgid "Identify your 1968–1979 Volkswagen Type 2 bus: decode its M-plate to find the model, optional extras, paint, production date and destination."
+msgstr "Identifiqueu la vostra furgoneta Volkswagen Tipus 2 de 1968–1979: descodifiqueu-ne la plaqueta M per conèixer-ne el model, els extres opcionals, la pintura, la data de producció i el destí."
