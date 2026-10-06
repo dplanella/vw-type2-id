@@ -82,3 +82,30 @@ class ReferenceDataTranslationTest(TestCase):
                 form.cleaned_data = {'aggregate_code': '13'}
                 with self.assertRaises(ValidationError):
                     form.clean_aggregate_code()
+
+
+class StoreDestinationCountryMigrationTest(TestCase):
+    """The migration rewrites countries saved in another language."""
+
+    def test_migration(self):
+        from importlib import import_module
+
+        from django.apps import apps
+
+        migration = import_module('mplate_decoder.migrations.'
+                                  '0037_store_destination_country_in_english')
+        ExportDestination.objects.create(export_code='XX', country='Germany')
+        plate = Mplate.objects.create(
+            chassis_number_short='92023025', m_codes_1='', m_codes_2='',
+            paint_and_interior_code='9451EB', production_date_code='382',
+            production_planned='7494', export_destination_code='XX',
+            model_code='2319', aggregate_code='43', emden='')
+        Mplate.objects.filter(pk=plate.pk).update(
+            destination_country='Deutschland')
+        updated_at = Mplate.objects.get().updated_at
+
+        migration.store_in_english(apps, None)
+
+        plate = Mplate.objects.get()
+        self.assertEqual(plate.destination_country, 'Germany')
+        self.assertEqual(plate.updated_at, updated_at)
