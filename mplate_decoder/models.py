@@ -92,6 +92,10 @@ class Mplate(Model):
     destination_country = models.CharField(
         max_length=70, blank=True,
         help_text=_("Country of destination"))
+    decoded_model = models.ForeignKey(
+        'VwType2Model', on_delete=models.SET_NULL,
+        blank=True, null=True, editable=False, related_name='+',
+        help_text=_("Decoded vehicle model"))
 
     def __unicode__(self):
         return self.chassis_number_short
@@ -299,6 +303,9 @@ class Mplate(Model):
         # Calculate destination country
         self.destination_country = \
             self.describe_export_destination_country(with_port=False)
+
+        # Calculate model
+        self.decoded_model = self.model
 
         # Calculate owner
         # Get currently logged in user
