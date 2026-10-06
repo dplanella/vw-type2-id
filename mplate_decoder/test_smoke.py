@@ -1,10 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.core import mail
 from django.test import TestCase, override_settings
-from django.utils import translation
 from lxml import html
 
-from mplate_decoder.models import ExportDestination, Mplate
+from mplate_decoder.models import Mplate
 
 
 PLATE = {
@@ -70,12 +69,6 @@ class SmokeTest(TestCase):
                 '/mplate/', HTTP_ACCEPT_LANGUAGE=lang)
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response['Content-Language'], lang)
-
-    def test_translated_model_fields(self):
-        ExportDestination.objects.create(export_code='XX', country='Germany')
-        with translation.override('de'):
-            self.assertEqual(ExportDestination.objects.get().country,
-                             'Deutschland')
 
     def test_create_sets_owner(self):
         plate = self.create_plate(self.user)

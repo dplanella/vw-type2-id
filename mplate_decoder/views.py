@@ -242,7 +242,7 @@ class MplateRetrieve(generic.DetailView):
             return ''
         color = Color.objects.filter(
             lacquer_code=exteriorcolor.lacquer_code_body).first()
-        return color.color_name if color else ''
+        return gettext(color.color_name) if color else ''
 
     def summarize(self, mplate, heading, m_codes):
         """
@@ -250,7 +250,8 @@ class MplateRetrieve(generic.DetailView):
         a description that also names the bus.
         """
         destination = mplate.export_destination
-        country = destination and (destination.country or destination.region)
+        country = destination and (
+            gettext(destination.country) or destination.region)
         values = {
             'bus': heading,
             'date': date_format(mplate.production_date_as_time),
@@ -490,8 +491,8 @@ class MetricsView(generic.TemplateView):
                 exteriorcolor_object = \
                     ExteriorColor.objects.filter(
                         plate_code=color[0])[0]
-                color_description = \
-                    exteriorcolor_object.lacquer_code_body_link.color_name
+                color_description = gettext(
+                    exteriorcolor_object.lacquer_code_body_link.color_name)
                 color_chip = \
                     exteriorcolor_object.lacquer_code_body_link.chip
             except IndexError:
@@ -505,7 +506,7 @@ class MetricsView(generic.TemplateView):
         countries_most_common = Counter(countries).most_common(10)
         for country in countries_most_common:
             if country[0]:
-                countries_labels.append(country[0])
+                countries_labels.append(gettext(country[0]))
             else:
                 countries_labels.append(_('Unknown'))
             countries_data.append(country[1])

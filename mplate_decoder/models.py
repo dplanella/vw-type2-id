@@ -11,7 +11,7 @@ from django.core.exceptions import (
 )
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import gettext
+from django.utils.translation import gettext, override
 from isoweek import Week
 from crum import get_current_user
 
@@ -226,8 +226,8 @@ class Mplate(Model):
                 interiorcolor = InteriorColor.objects.get(
                     plate_code=interiorcolor_code
                 )
-                color_name = interiorcolor.color_name
-                material = interiorcolor.material
+                color_name = gettext(interiorcolor.color_name)
+                material = gettext(interiorcolor.material)
             except ObjectDoesNotExist:
                 color_name = _(f"({interiorcolor_code}) Unknown color")
                 material = _("Unknown material")
@@ -238,8 +238,8 @@ class Mplate(Model):
                     years__contains=model_year,
                 )
                 if interiorcolor:
-                    color_name = interiorcolor.first().color_name
-                    material = interiorcolor.first().material
+                    color_name = gettext(interiorcolor.first().color_name)
+                    material = gettext(interiorcolor.first().material)
                 else:
                     color_name = (
                         _("Error while fetching interior color code:") +
@@ -262,11 +262,11 @@ class Mplate(Model):
                 engine_code=engine_code
             )
             engine_description = '{}, {}'.format(
-                engine.engine_type,
-                engine.fuel_induction,
+                gettext(engine.engine_type),
+                gettext(engine.fuel_induction),
             )
             if engine.extra_specs:
-                engine_description += ", " + engine.extra_specs
+                engine_description += ", " + gettext(engine.extra_specs)
 
         except ObjectDoesNotExist:
             engine_description = _("Unavailable engine description")
@@ -282,7 +282,7 @@ class Mplate(Model):
                 gearbox_code=gearbox_code
             )
             gearbox_description = '{}'.format(
-                gearbox.gearbox_description,
+                gettext(gearbox.gearbox_description),
             )
         except ObjectDoesNotExist:
             gearbox_description = _("Unavailable transmission description")
@@ -300,9 +300,10 @@ class Mplate(Model):
         # Calculate production date
         self.production_date_as_time = self._decode_production_date()
 
-        # Calculate destination country
-        self.destination_country = \
-            self.describe_export_destination_country(with_port=False)
+        # Calculate destination country, stored untranslated
+        with override(settings.LANGUAGE_CODE):
+            self.destination_country = str(
+                self.describe_export_destination_country(with_port=False))
 
         # Calculate model
         self.decoded_model = self.model
@@ -704,7 +705,7 @@ class MplateDecoder:
                         _(f"Undefined code, year {model_year}")
 
             if m_code_query_set:
-                description = m_code_query_set.description
+                description = gettext(m_code_query_set.description)
                 if m_code_query_set.is_special_code:
                     mcode_prepend = 'S'
             else:
@@ -796,7 +797,7 @@ class MplateDecoder:
             if export_destination:
                 if export_destination.country:
                     destination_country_description = \
-                        export_destination.country
+                        gettext(export_destination.country)
                 elif (export_destination.region and
                       not export_destination.country):
                     destination_country_description = export_destination.region
@@ -891,7 +892,7 @@ class MplateDecoder:
             color_body = Color.objects.get(
                 lacquer_code=exteriorcolor.lacquer_code_body
             )
-            color_name_body = color_body.color_name
+            color_name_body = gettext(color_body.color_name)
         except ObjectDoesNotExist:
             color_name_body = \
                 _(f"Unknown color ({exteriorcolor.lacquer_code_body})")
@@ -902,7 +903,7 @@ class MplateDecoder:
                 color_roof = Color.objects.get(
                     lacquer_code=exteriorcolor.lacquer_code_roof
                 )
-                color_name_roof = color_roof.color_name
+                color_name_roof = gettext(color_roof.color_name)
             except ObjectDoesNotExist:
                 color_name_roof = \
                     _(f"Unknown color ({exteriorcolor.lacquer_code_roof})")

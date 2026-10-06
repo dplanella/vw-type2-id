@@ -82,7 +82,6 @@ INSTALLED_APPS = [
     'markdownify',
     'users',
     'contact.apps.ContactConfig',
-    'vinaigrette',
 ]
 
 MIDDLEWARE = [
@@ -96,7 +95,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'crum.CurrentRequestUserMiddleware',
-    'vinaigrette.middleware.VinaigretteAdminLanguageMiddleware',
 ]
 
 ROOT_URLCONF = 'vw_type2_id.urls'
