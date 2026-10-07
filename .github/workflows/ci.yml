@@ -4,6 +4,11 @@ on:
   pull_request:
   push:
     branches: [master]
+    # Documentation-only merges don't build or deploy.
+    paths-ignore:
+      - README.md
+      - CONTRIBUTING.md
+      - docs/**
   workflow_dispatch:
 
 permissions:
