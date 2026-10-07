@@ -80,7 +80,7 @@ class DecodeModelTest(TestCase):
 
     @expectedFailure
     def test_m_codes_pick_among_matches(self):
-        """Wrong model chosen when several match (fixed later)."""
+        """GitHub #14: model decoded from another model code or year."""
         self.assertEqual(self.decode('2215', 1973, ['500']), 27)
         self.assertEqual(self.decode('2218', 1977, ['147']), 31)
 
@@ -196,7 +196,7 @@ class ExportDestinationTest(TestCase):
 
     @expectedFailure
     def test_plate_country(self):
-        """GitLab #101: plate pages show "Unknown (True)" (fixed later)."""
+        """GitHub #15: plate pages show "Unknown (True)"."""
         for code, expected in [('Q9', 'Unknown (Q9)'), ('', 'Not specified')]:
             plate = Mplate(**dict(PLATE, export_destination_code=code))
             self.assertEqual(plate.describe_export_destination_country(),
@@ -204,7 +204,7 @@ class ExportDestinationTest(TestCase):
 
     @expectedFailure
     def test_stored_country(self):
-        """GitLab #101: the port is stored with the country (fixed later)."""
+        """GitHub #15: the port is stored with the country."""
         plate = create_plate(export_destination_code='T1')
         self.assertEqual(plate.destination_country, 'Testland')
 

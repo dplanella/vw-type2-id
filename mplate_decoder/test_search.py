@@ -49,12 +49,12 @@ class SearchTest(TestCase):
 
     @expectedFailure
     def test_model(self):
-        """model: search crashes (fixed later)."""
+        """GitHub #16: model: search crashes."""
         self.assertEqual(self.search('model:2311'), ['22138101'])
         self.assertEqual(self.search('-model:2311'), ['92023025'])
 
     @expectedFailure
     def test_country(self):
-        """country: search looks in the M-codes (fixed later)."""
+        """GitHub #17: country: search looks in the M-codes."""
         self.assertEqual(self.search('country:Testland'), ['22138101'])
         self.assertEqual(self.search('-country:Testland'), ['92023025'])
