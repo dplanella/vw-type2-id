@@ -5,3 +5,5 @@
   running the site and the tests
 - [Translations](translations.md): how translatable strings are extracted,
   translated and kept up to date
+- [Architecture](architecture.md): code structure, data model and how a
+  plate is decoded
